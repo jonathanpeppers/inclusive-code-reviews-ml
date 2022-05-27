@@ -4,10 +4,10 @@ import { expect } from 'chai';
 describe('csv tests', () => {
     it('can load a csv file', async () => {
         // Code came from: https://js.tensorflow.org/api/latest/#Data
-        const csvUrl = 'https://storage.googleapis.com/tfjs-examples/multivariate-linear-regression/data/boston-housing-train.csv';
+        const csvUrl = 'file://jonathanpeppers.csv';
         const csvDataset = tf.data.csv(csvUrl, {
             columnConfigs: {
-                medv: {
+                Body: {
                     isLabel: true
                 }
             }
@@ -38,7 +38,7 @@ describe('csv tests', () => {
         });
 
         // Fit the model using the prepared Dataset
-        var fitted = model.fitDataset(flattenedDataset, {
+        var fitted = await model.fitDataset(flattenedDataset, {
             epochs: 10,
             callbacks: {
                 onEpochEnd: async (epoch, logs) => {
