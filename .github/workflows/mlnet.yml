@@ -16,7 +16,7 @@ jobs:
     - name: install .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 3.x
     - name: install mlnet
       run: dotnet tool install --global mlnet
     - name: train
