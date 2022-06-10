@@ -9,8 +9,5 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts"
-  },
-  "dependencies": {
-    "@tensorflow/tfjs": "^3.18.0"
   }
 }
