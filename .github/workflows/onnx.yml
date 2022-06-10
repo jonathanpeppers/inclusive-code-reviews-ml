@@ -1,0 +1,17 @@
+name: onnyx javscript tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: npm install
+      run: cd onnxjs && npm install
+    - name: npm test
+      run: cd onnxjs && npm test
