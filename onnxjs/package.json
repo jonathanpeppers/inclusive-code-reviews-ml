@@ -9,5 +9,8 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register tests/**/*.ts"
+  },
+  "dependencies": {
+    "onnxruntime-node": "^1.11.0"
   }
 }
