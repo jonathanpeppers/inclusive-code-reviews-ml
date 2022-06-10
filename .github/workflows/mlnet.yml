@@ -1,4 +1,4 @@
-name: ML.NET
+name: train ML.NET model
 
 on:
   push:
@@ -7,8 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  train:
     runs-on: ubuntu-latest
 
     steps:
