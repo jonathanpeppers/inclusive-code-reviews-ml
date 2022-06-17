@@ -1,0 +1,283 @@
+﻿"OrganizationLogin","RepositoryName","ReviewerLogin","HtmlUrl","Body"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3222#discussion_r756325721","How, if at all, does this relate to AutomationProperties?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r616082984","```suggestion
+				unsetValue
+			);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/2807#discussion_r721434972","Nope, I don't think so. And yeah, the upgrade story is an interesting concept! Will have to look into that more, depending on how we decide to approach the package support for api 21/22"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/722#issuecomment-825866575","trying again now"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/4515#discussion_r802013838","updated, thanks for the feedback!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r830172506","@davidortinau told me blazor already has this type of theming via bootstrap styles"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/779#discussion_r620370186","should this also be MauiComboBox?
+
+```suggestion
+		public static void UpdateFont(this MauiComboBox nativeComboBox, IPicker picker, IFontManager fontManager) =>
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/4515#issuecomment-1043465181","Thanks for the feedback @Eilon! Opened an issue here https://github.com/dotnet/maui/issues/4766 - feel free to add more info"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r616081534","```suggestion
+		[Theory(DisplayName = ""CursorPosition Updates Correctly"")]
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1886#discussion_r681032450","What is the expected updated behavior here?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5581#discussion_r841899653","will do!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675817160","missing d
+```suggestion
+		public static readonly BindableProperty FontAutoScalingEnabledProperty = FontElement.FontAutoScalingEnabledProperty;
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r830175037","I was told that it's best to use Brushes for Background colors and Colors everywhere else (cc @jsuarezruiz) 
+
+and yep, I added a bunch of colors/brushes that don't get used - exact colors are still a bit tentative, but I'll see what @davidortinau thinks for that"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/7539#issuecomment-1145003979","failing tests unrelated"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r821832938","The built-in platforms also use color for interactive controls"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5262#discussion_r827429616","nit typo fix that's been bothering me
+```suggestion
+                Text=""Toggle TabBar""
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1830#discussion_r678568320","```suggestion
+					false
+				);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1039#discussion_r634435476","fixing now - but can you remind me why the null check is sufficient for Android and not iOS?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/4022#discussion_r781511729","Hi, @canperk - what's ths issue you're seeing on iOS? Is it also the same error regarding `Xamarin.AndroidX.Security.SecurityCrypto` ?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/741#issuecomment-824979973","NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119
+
+```
+System.NullReferenceException
+  HResult=0x80004003
+  Message=Object reference not set to an instance of an object.
+  Source=Reloadify3000
+  StackTrace:
+   at Reloadify.Reload.<RunInternal>d__19.MoveNext()
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.Maui.Hosting.AppHostBuilderExtensions.<>c__DisplayClass10_0.<<EnableHotReload>b__3>d.MoveNext() in C:\Users\rachelkang\maui\src\Core\src\Hosting\AppHostBuilderExtensions.cs:line 119
+
+  This exception was originally thrown at this call stack:
+    [External Code]
+    Microsoft.Maui.Hosting.AppHostBuilderExtensions.EnableHotReload.AnonymousMethod__3() in AppHostBuilderExtensions.cs
+    ```
+
+Placeholder looks great otherwise"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3871#issuecomment-1006648529","I put this sample code directly in my local version of the control gallery sample:
+
+```xaml
+﻿<views:BasePage
+    xmlns=""http://schemas.microsoft.com/dotnet/2021/maui""
+    xmlns:x=""http://schemas.microsoft.com/winfx/2009/xaml""
+    x:Class=""Maui.Controls.Sample.Pages.GridPage""
+    xmlns:views=""clr-namespace:Maui.Controls.Sample.Pages.Base""
+    Title=""Grid"">
+    <views:BasePage.Content>
+        <GridLayout RowDefinitions=""Auto,*, Auto"">
+
+            <Label Text=""First label"" />
+            <StackLayout GridLayout.Row=""0"" x:Name=""layoutSample"" />
+            <Button GridLayout.Row=""1"" Text=""Add control"" Clicked=""Button_Clicked"" Margin=""0"" Padding=""20""/>
+
+        </GridLayout>
+    </views:BasePage.Content>
+</views:BasePage>
+```
+
+```cs
+﻿using Microsoft.Maui.Controls;
+
+namespace Maui.Controls.Sample.Pages
+{
+	public partial class GridPage
+	{
+		public GridPage()
+		{
+			InitializeComponent();
+		}
+
+	        private void Button_Clicked(object sender, System.EventArgs e)
+	        {
+		        layoutSample.Children.Add(new Label() { Text = ""random label"", HeightRequest = 100 });
+	        }
+	}
+}
+```
+It uses `<GridLayout RowDefinitions=""Auto,*, Auto"">` like the samples in the referenced issues do"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1886#discussion_r681030216","See following comment first (I'm assuming this naming is related to `TapGestureRecognizerNeedsDelegate` which doesn't fully make sense to me)"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675819519","```suggestion
+		public static readonly BindableProperty FontAutoScalingEnabledProperty = FontElement.FontAutoScalingEnabledProperty;
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675819393","```suggestion
+		public static readonly BindableProperty FontAutoScalingEnabledProperty = FontElement.FontAutoScalingEnabledProperty;
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/7309#discussion_r878261102","fixed, thank you! 😂"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1554#issuecomment-883485615","still not working :("
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/670#discussion_r641622888","Should we add more tests for the other shapes? Or is Ellipse sufficient?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/481#discussion_r591988248","TextColor is here to prevent issues wrt not implementing the full interface properly"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745695461","We should also link to instructions on how people can obtain the logs so they can also just attach them here"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/7802#discussion_r890508040","oops, yeah. removing the redundancy; thanks for the catch!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/802#issuecomment-869688304","@jsuarezruiz there's a number of confusing NREs thrown on this branch that are unresolved. If you could take a look and share any tips you might have, that would be awesome!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/590#discussion_r601630251","Why is it called ""QueryEditor"" and ""_editor""? Shouldn't it be ""entry""?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3222#discussion_r756347485","What's happening here? Why is it no longer async and what does the func() do that's different?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745693859","I wonder how we can make this a bit more flexible, so that we get not just the platform but the specific API versions!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675818868","```suggestion
+			set => SetValue(FontAutoScalingEnabledProperty, value);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1145#discussion_r644217208","What is MaxLength=-1 expected to do?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1830#discussion_r678563894","and wherever it's used/referenced"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/570#issuecomment-854814467","@jsuarezruiz I fixed the ugly rebase! Build is failing now because Shadow is using Color and Size though, so that still needs to be fixed"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5262#discussion_r827430078","```suggestion
+            <Button Text=""Toggle TabBar"" Clicked=""OnToggleTabBar"" />
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3714#discussion_r808124823","Can we use the same vars for consistency?
+
+```suggestion
+					labelHeight = (nfloat)Math.Min(Bounds.Height, fitSize.Height);
+					labelY = labelHeight - fitHeight;
+					var endFrame = new RectangleF(labelX, labelY, labelWidth, labelHeight);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/6425#discussion_r856536575","Ok, thanks! Changed it back
+
+I hadn't been sure because I know both brushes and colors can be used for Background, and assumed it might be the same with Backgroundcolor"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r821783465","will do!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/723#issuecomment-825862126","@rmarinho will try again... did you change the background color though? I wonder if that's related"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r616082679","```suggestion
+				unsetValue
+			);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5581#discussion_r841891503","can do!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/7539#discussion_r887240230","should we consider changing the default too? So that if a developer doesn't explicitly set a description, it'll still make sense?
+
+Maybe we can do something similar to image where it simply can't receive focus at all and won't read out anything - maybe we can make it so just the contents are accessible?
+
+Or alternatively, we can try to make the textual contents or at least the first textual content get propagated upward"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1886#discussion_r681035181","nice!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5740#discussion_r840637267","We woud need to check what the screen reader behavior is - does the TalkBack focus move with the keyboard focus? If it's inconsistent, we need to figure out what the desired behavior is there. If it's consistent, then I think this is an OK solution"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r616082070","```suggestion
+		[Theory(DisplayName = ""SelectionLength Updates Correctly"")]
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r821776211","I agree! I just wanted to leave them for @davidortinau in case there are any we want to comment in before I delete them entirely"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r821781024","Commented out because the values aren't clear yet and we want your opinions on what the values should be :)
+
+Similarly, for any controls/properties you don't see in this PR that you believe belong, please let me know which ones and which values you might see them with"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r746970105","I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct"""
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3631#discussion_r770853458","ah ok, makes sense! docs for `afterDescendants` was a big confusing and seemed right to me at first, since I was thinking the container should usually not receive any focus. But your explanation of ""consider first as a viable focus target"" helps clarify things"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1146#issuecomment-853327038","/azp run"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5262#discussion_r827430281","nit typo fix that's been bothering me"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745688847","```suggestion
+        Thanks for taking the time to fill out this bug report! Please make sure to add as much detail as you can, preferably with a reproduction. This will help us diagnose the issue faster and thus resolve it quicker.
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5262#discussion_r827430346","nit typo fix that's been bothering me"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/4515#discussion_r801166164","done!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r618461964","```suggestion
+			=> UpdateSelectionLength(textField, entry);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5740#discussion_r840648320","sorry, I misread which APIs were being used - taking back what I said and seconding Shane here!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1830#discussion_r678563633","```suggestion
+		protected virtual void OnItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1039#discussion_r634680427","gotcha - will fix both here and in XCT soon"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/718#issuecomment-825850628","@rmarinho I tried that but it didn't work for me :/ will try again though"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r618467542","Is the body correct? Is it related to CursorPosition and not SelectionLength?
+
+```suggestion
+		static void UpdateCursorPosition(AppCompatEditText editText, IEntry entry)
+```
+"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675819673","```suggestion
+		public static readonly BindableProperty FontAutoScalingEnabledProperty = FontElement.FontAutoScalingEnabledProperty;
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745704033","```suggestion
+      description: Give us a couple of scenarios that demonstrate how developers would consume the above APIs.
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675885608","Where did this 50 come from?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3222#discussion_r756331996","Should we maybe set this to ImportantForAccessibility.Auto instead of null?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745700468","```suggestion
+        Keep in mind that .NET MAUI is a multi-platform framework. Consider how feasible it is to implement this feature across all the supported platforms.
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/7802#discussion_r890507042","yep! We're trying to get the SearchView, and it looks like that TextView is being uesd as the SearchView.
+The SearchButton stuff we were using before was wrong / not quite relevant
+"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/2807#issuecomment-937986837","alpha version was incorporated, and code significantly simplified.
+security nuget still needs to be added to nuget feed, so waiting on that!
+
+in the meantime, if any folks are able to test on android api levels 21/22, that would be super helpful - thanks!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675816900","missing d
+```suggestion
+                            FontAutoScalingEnabled=""False""
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#issuecomment-885845411","@arevellfraedom font scaling will automatically be enabled across all the platforms including iOS now!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5111#discussion_r821775124","Should we not set a background color on any pages then and just let the system handle that? 
+
+My thinking was that the background should be light in light mode, dark in dark mode, and since `BackgroundColor` property is derived from VisualElement, which Page is based on, this is how I handled it. Most of the specific pages themselves (i.e. ContentPage) don't have stylable properties if not for those derived from Page and VisualElement"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5433#issuecomment-1085035248","maybe we can at least have the mainpage code in comments?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1554#issuecomment-880817021","> @jsuarezruiz The keyboard type doesn't change :/
+> 
+> and build is failing :(
+
+hmm I tested again, but it's the same :/"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3631#discussion_r770667056","Could you share an example so that I can understand this better? I'm wondering why it's [`.BeforeDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_BEFORE_DESCENDANTS) instead of [`.AfterDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_AFTER_DESCENDANTS). Is the `nativeview` here the rootView or the contained views?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#issuecomment-885854741","@arevellfraedom yes definitely! so this PR does both of those things! It both:
+1. Ensures font scaling will automatically be enabled across all the platforms including iOS
+2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1149#issuecomment-883658134","still seeing similar issues where hovering changes the color"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/7226#issuecomment-1127889683","@jsuarezruiz I agree that with this calculator sample specifically, gray might work better with the general color scheme. Unfortunately, the proposed colors aren't accessible so I think it would be best to keep the current colors which have already been tested and validated for accessibility via our templates. 
+
+Naturally, different colors might look better with different samples and scenarios, and folks can always change these styles as they wish. If you want to use grays for the calculator sample, I recommend a light gray button on black background in dark mode! But again, for the templates, I think keeping the current button style (with regard to colors) is ideal in terms of accessibility.
+"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5581#issuecomment-1083303294","Windows SearchBar MaxLength will need some more time https://github.com/dotnet/maui/issues/5669"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745698243","```suggestion
+        Thank you for your interest in .NET MAUI! We welcome any and all ideas for features or improvements that you might have. All we ask is to fill in this template with some detail. A detailed description, perhaps supported with some screenshots, mockups, and a (public) API design in pseudo-code, would be very much appreciated and will help get your proposal reviewed sooner.
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5262#discussion_r827429868","```suggestion
+                Text=""Toggle SearchHandler""
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5581#issuecomment-1083302952","AFAICT failing tests are unrelated"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/2807#discussion_r720457940","@jonathanpeppers this is what @mattleibow was asking you for me about! wondering what a better way of doing this might be"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745704792","same feedback applies to all the templates"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1830#discussion_r678566380","why is this commented out? Should it be deleted?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1145#discussion_r644217362","Is TextColor not yet expected to work?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3835#discussion_r774125233","yes, so shouldn't we be checking here that it's YES instead of AUTO?
+```suggestion
+        if (importantForAccessibility == View.IMPORTANT_FOR_ACCESSIBILITY_YES) {
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675818494","```suggestion
+				bindable.ClearValue(FontAutoScalingEnabledProperty);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/1774#discussion_r675819065","```suggestion
+		public static readonly BindableProperty FontAutoScalingEnabledProperty = FontElement.FontAutoScalingEnabledProperty;
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r618462198","```suggestion
+			=> UpdateCursorPosition(textField, entry);
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/740#issuecomment-824996742","same issue as #741 again
+
+NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119
+
+```
+System.NullReferenceException
+  HResult=0x80004003
+  Message=Object reference not set to an instance of an object.
+  Source=Reloadify3000
+  StackTrace:
+   at Reloadify.Reload.<RunInternal>d__19.MoveNext()
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Microsoft.Maui.Hosting.AppHostBuilderExtensions.<>c__DisplayClass10_0.<<EnableHotReload>b__3>d.MoveNext() in C:\Users\rachelkang\maui\src\Core\src\Hosting\AppHostBuilderExtensions.cs:line 119
+
+  This exception was originally thrown at this call stack:
+    [External Code]
+    Microsoft.Maui.Hosting.AppHostBuilderExtensions.EnableHotReload.AnonymousMethod__3() in AppHostBuilderExtensions.cs
+    ```
+"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3835#discussion_r774140264","Oo makes sense, thanks!!"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/481#issuecomment-796335091","Sample and device tests still need to be tested on iOS"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/590#discussion_r601631434","or just ""textField"" as before?"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/6316#issuecomment-1104357377","@mattleibow yeah I did git clean -xfd :/
+
+This is what shows up in the error list:
+Error	MSB3491	Could not write lines to file ""obj\staticwebassets.pack.sentinel"". The process cannot access the file 'C:\Users\rachelkang\maui1\src\Controls\samples\Controls.Sample\obj\staticwebassets.pack.sentinel' because it is being used by another process.	Maui.Controls.Sample	C:\Program Files\dotnet\sdk\6.0.300-preview.22154.4\Sdks\Microsoft.NET.Sdk.Razor\targets\Microsoft.NET.Sdk.Razor.StaticWebAssets.targets	429	"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/771#discussion_r618469278","```suggestion
+		static void UpdateCursorPosition(this UITextField textField, IEntry entry)
+```"
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/5262#discussion_r827425712","nice var name 😂  ""whatDoIDo"""
+"dotnet","maui","rachelkang","https://github.com/dotnet/maui/pull/3320#discussion_r745704460","similar feedback applies to all dropdowns"
