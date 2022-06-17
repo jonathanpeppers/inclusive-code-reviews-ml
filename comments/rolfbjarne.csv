@@ -1,0 +1,314 @@
+﻿"OrganizationLogin","RepositoryName","ReviewerLogin","HtmlUrl","Body"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/10409#discussion_r556599941","Why not use `Directory.Move`?"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/11851#discussion_r647469336","I think we should come up with a better version than 1.0.0.
+
+We could use the existing mlaunch version:
+
+```shell
+$ /Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mlaunch --version 
+Xamarin.Launcher 14.21.0.330 (xamarin/main: cddbd1915d)
+```
+
+or we could come up with something else (Xcode version? Something completely different that's calculated in maccore and doesn't take xamarin-macios into account? Go with ""0.0.1"" and decide something later?)
+
+@spouliot / @dalexsoto what do you think? I lean towards the mlaunch version (although the downside here is that there can be multiple mlaunch versions for the same maccore hash)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/2447#discussion_r131987186","Note for future: we can probably use `[Category (""StaticRegistrar"")]` and then exclude that category when running the tests."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/15241#issuecomment-1152568257","Test failures are unrelated:
+
+* introspection/Mac Modern/Debug: #15230
+* xcframework-test/watchOS 32-bits - simulator/Debug: https://github.com/xamarin/maccore/issues/2558
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8124#issuecomment-601594602","build"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4727#discussion_r213914800","Same: iterator function."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8679#discussion_r430889841","```suggestion
+			var handleof_pattern = pattern.GetNonNullHandle (nameof (pattern));
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/1862#discussion_r105598045","We should somehow make sure these are fixed in XAMCORE_4_0.
+
+One easy way to do this would be to make the attribute field an error:
+
+    #if XAMCORE_4_0
+    [Obsolete (""Inline the static members in this category in the category's class (and remove this obsolete once fixed)""]
+    #endif
+    public CategoryAttribute (bool ignoreStaticWarnings)
+    {
+        // ....
+    }
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12204#issuecomment-887248548","Test failures are unrelated (https://github.com/xamarin/maccore/issues/2443 and https://github.com/xamarin/maccore/issues/2471)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/10302#discussion_r544076024","You're executing powershell to execute PlistBuddy. Why not just execute PlistBuddy directly?"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4820#discussion_r217965770","The text for `MM4175` shouldn't be deleted."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12936#discussion_r722406437","```suggestion
+		void ProtectedDataWillBecomeUnavailable (NSNotification notification);
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14018#issuecomment-1031751215","Test failures are unrelated:
+
+*  monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2443
+* [NUnit] Mono Mac OS X BCL tests group 2/Mac Full/Debug: https://github.com/xamarin/maccore/issues/2542"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12550#discussion_r696561185","You include Mac Catalyst, but the type inside here is still `[Unavailable (PlatformName.MacCatalyst)]`"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12664#issuecomment-915823616","Test failure is unrelated (https://github.com/xamarin/maccore/issues/2414)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9198#issuecomment-664815455","> It should be. I cherry picked the commit.
+
+👍 
+
+> I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now?
+
+We typically prefer work (and pull requests) to be done in forks. It's fine for this PR, but if you could create the d16-7 PR using your fork that would be great! And we've branched d16-8 as well, so this fix needs to go there too."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/11305#issuecomment-825678584","/azp run"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/7012#discussion_r325889835","> ""normal"" AOT aka.
+
+Right now people can use Debug mode and it works, except that you can't debug. My concern is that if someone runs into a bug in the interpreter, they should be able to stop using the interpreter somehow so that the app runs correctly on the watch, even though debugging doesn't work (they could at least use Console.WriteLines)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4742#discussion_r214929439","I think `RequiredInterface` sounds better (mostly because `Require` is a verb, and this is a property, not a method)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/7459#discussion_r347021861","Missing newline at end of file."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8640#issuecomment-639291557","I don't think we'll have the problem in the d16-6 branch (we probably started getting too many statuses for one page with our .NET support, which isn't in d16-6), so I don't think we need this PR."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/1286#discussion_r90504300","buffer.Length can't be 0 here due to argument validation (count has to be >= 1, and offset + count has to be <= buffer.Length)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4925#discussion_r222675922","It seems my grepping was flawed: `dispatch_get_main_queue` shows up in earlier iOS SDKs, but it's a define, not an actual function (which it didn't become until iOS 8).
+
+I'll have a look and see if we can remove the call to `dispatch_get_main_queue` entirely, and just rely on the `_dispatch_main_q` variable instead."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12384#issuecomment-920878911","Test failures are unrelated
+
+* introspection/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2414
+* fsharp/Mac [dotnet]/Debug [dotnet]: #12738"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/2457#discussion_r133921805","Why `ref` (for the second argument)? You're not assigning anything to it."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12103#discussion_r668443200","Same, `string` output:
+
+```suggestion
+		public static bool TryFindWiFiPassword (CWKeychainDomain domain, NSData ssid, out string? password)
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12706#discussion_r707320322","Then the [NoWatch] attribute on the other members added to this type is redundant."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14264#discussion_r817776990","> True, but that same argument apply to any generated code and optimization that are done. That includes the ones that are already present in that step: if you modify the generated Dispose then that code must be updated (or at least verified) to match.
+> 
+> A test can be added to make failure more likely but still any generated code change must be reflected in all the optimizations, that's the contract for any code decorated with [BindingImpl].
+
+True, that's the contract. We're also humans who make mistakes... in theory we'd check that all optimizations continue to work as expected after changing BindingImpl methods, but experience tells me there's a significant chance that won't happen.
+
+> I might have missed something but I don't know why this would be limited to release builds ?
+
+You're right, I got confused.
+
+> It's also only applied on types that are not subclassed. E.g. UIView would not be removed, even if empty, because a lot more logic would be needed to replace the calls (like UIWindow::Dispose back to its base class).
+
+Removing an override is not a binary breaking change: https://docs.microsoft.com/en-us/dotnet/core/compatibility/
+
+Which means that if UIWindow::Dispose calls UIView::Dispose, and UIView::Dispose is removed, then the call will just go to the next Dispose implemenation further up the chain (which might end up being NSObject::Dispose).
+
+That said, I'm not sure if it would still work if it all happens within the same assembly.
+
+On the other hand I'm wondering if a mix of two other ideas would make this idea more future-proof:
+
+1. Enhance the optimization that removes the null assignment to remove the Handle == IntPtr.Zero check as well. This would mean the only thing left in the Dispose method would be the call to base.
+2. Check if there is (or implement) an optimization in the linker (or our own custom steps) that removes virtual overrides that just call base.
+
+This seems both safer/more defensive, and generally more useful (the second part at least, if it's not done already).
+
+Another point is that this optimization will break if we ever change the dispose method to check for NativeHandle.Zero instead of IntPtr.Zero, and there are no tests in this PR to catch this :)"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12999#discussion_r729942575","Yes, the difference is that `is null` won't call any `==` operators: https://stackoverflow.com/a/50811687/183422 (It's guaranteed to always be a pointer-comparison)"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/10424#issuecomment-760706167","Test failure is unrelated (https://github.com/xamarin/maccore/issues/2154)"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14978#discussion_r869956827","Same"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/7177#discussion_r334169338","The problem is that the order matters... if a place wants to add '-L' and '/path/to/foo', those arguments have to be kept in the same order, and a HashSet doesn't preserve order."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8376#discussion_r407917680","Missing availability attributes."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13449#issuecomment-979466963","> Makes sense for us but is this also true for VSMac now?
+
+Yes, this is true for all our platforms in .NET, even for VSMac."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9479#discussion_r476283387","I think this is simpler and more accurate:
+
+```suggestion
+                throw new ArgumentOutOfRangeException (nameof (type));
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9032#discussion_r453576483","@mandel-macaque fixed"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9523#discussion_r478191765","Due to https://github.com/xamarin/xamarin-macios/issues/9478, this isn't a safe pattern. I think we'll have to do it the manual way:
+
+```csharp
+var handle = objc_msgSend (class_ptr, Selector.GetHandle (""alloc""));
+handle = objc_msgSend_VNPoint_double (handle, Selector.GetHandle (""initWithCenterRadius:...""), center, radius);
+return (VNCircle) Runtime.GetNSObject (handle, true):
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14221#discussion_r812620657","The `SetHighlightedItemForProperty (int, int)` overload is both internal and obsolete - which makes the obsolete redundant because nobody will see it, and you can just remove the obsolete attribute:
+
+https://github.com/xamarin/xamarin-macios/blob/5cc92ac564ece03efb79c9b271beafc8faf905c0/src/addressbookui.cs#L164-L169
+
+The comment is also out of date, so it can be removed too."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/7177#discussion_r334169697","This is code moved from elsewhere, so it's been working fine, so I don't want to touch it too much.
+
+And in any case I don't think the `escaped` condition would be possible to express in the switch."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/11851#discussion_r647463361","Cloning is faster and uses less disk space:
+
+```suggestion
+cp -c -r ""$MACCORE_TOP/tools/mlaunch/Xamarin.Hosting/Xamarin.Launcher/bin/Debug/mlaunch.app"" ""$MLAUNCH_WORK_DIR/mlaunch/lib/mlaunch""
+cp -c ""$IOS_DESTDIR$MONOTOUCH_PREFIX/bin/mlaunch"" ""$MLAUNCH_WORK_DIR/mlaunch/bin/""
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14213#discussion_r815766724","Is the lack of hash here expected?"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12257#discussion_r679786954","```suggestion
+		[return: MarshalAs (UnmanagedType.U1)]
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4128#discussion_r190739814","If `IsCustomType` returns false, `IsRegisteredToggleRef` will be set to true, and the next time `MarkDirty` is called on the same object it'll exit immediately.
+
+This obviously only matters if `MarkDirty` is called multiple times per instance, which is exactly what's happening."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13135#discussion_r739502780","```suggestion
+				throw new ArgumentOutOfRangeException ($""Unknown endpoint type: {endpointType}"");
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/1253#discussion_r89799585","Yes, docs is the only thing left now."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9276#discussion_r465527950","I think you can just remove this line (and not add the other code), because the added test code just does the same thing the `CaptiveNetwork.TryGetSupportedInterfaces` method does, so there's not much testing value."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/2607#discussion_r137480044","Fixed."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4326#discussion_r197721893","Missing comma at the end of the last element."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8862#discussion_r440622129","```suggestion
+        This function returns the following details of the system that is
+        being used to execute the pipeline. Those details include:
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/1477#discussion_r95731372","You can do:
+
+     new UISegmentedControl ((NSString[]) null)
+
+and `items` will be null."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13546#issuecomment-993223513","Test failures are unrelated:
+
+* monotouch-test/Mac [dotnet]/Debug (static registrar) [dotnet]: https://github.com/xamarin/xamarin-macios/issues/13531
+* MTouch tests/NUnit: #13547."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9247#issuecomment-667071109","Test failures are unrelated
+
+* Mono BCL Test group 2: https://github.com/xamarin/maccore/issues/619
+* Generator tests/.NET: fixed in #9251
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14987#discussion_r870479532","https://github.com/xamarin/xamarin-macios/blob/92eda7f35399f442f8730aa539571ad8fd44d7da/tests/common/Configuration.cs#L707-L723"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/3077#discussion_r161265119","Yes, I'll probably have to hardcode this class somewhere to make it work without breaking the API 😒"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/15200#issuecomment-1148368123","/azp run"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12563#issuecomment-924041263","@chamons this failure:
+
+> make[2]: *** No rule to make target `.stamp-configure-projects-mac'.  Stop.
+
+isn't fatal, you can just ignore it for now.
+
+The test failures that show up (link all / DotNet tests) are different issues, and at least the DotNet tests seem to be from this PR:
+
+```
+/Users/builder/azdo/_work/1/s/xamarin-macios/builds/downloads/dotnet-sdk-6.0.100-rtm.21466.6-osx-x64/packs/Microsoft.iOS.Sdk/15.0.101-ci.pr.gh12563.41/targets/Xamarin.Shared.Sdk.targets(640,52): error MSB4064: The ""SessionId"" parameter is not supported by the ""ILStrip"" task loaded from assembly: ILStrip, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35 from the path: /Users/builder/azdo/_work/1/s/xamarin-macios/builds/downloads/dotnet-sdk-6.0.100-rtm.21466.6-osx-x64/packs/Microsoft.NET.Runtime.MonoTargets.Sdk/6.0.0-rc.2.21461.1/tasks/net6.0/ILStrip.dll. Verify that the parameter exists on the task, the <UsingTask> points to the correct assembly, and it is a settable public instance property. [/Users/builder/azdo/_work/1/s/xamarin-macios/tests/dotnet/MySimpleApp/iOS/MySimpleApp.csproj]
+/Users/builder/azdo/_work/1/s/xamarin-macios/builds/downloads/dotnet-sdk-6.0.100-rtm.21466.6-osx-x64/packs/Microsoft.iOS.Sdk/15.0.101-ci.pr.gh12563.41/targets/Xamarin.Shared.Sdk.targets(640,3): error MSB4063: The ""ILStrip"" task could not be initialized with its input parameters.  [/Users/builder/azdo/_work/1/s/xamarin-macios/tests/dotnet/MySimpleApp/iOS/MySimpleApp.csproj]
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9095#discussion_r455062494","```suggestion
+		NSDictionary GetUnarchivedDictionary (Class keyClass, Class valueClass, NSData data, [NullAllowed] out NSError error);
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14921#issuecomment-1120830530","# .net ChangeLog for https://github.com/xamarin/xamarin-macios/pull/14921
+## Level 1
+* https://github.com/dotnet/runtime [ac796cb...39dbeee](https://github.com/dotnet/runtime/compare/ac796cb1b08987f2b8019f78659431813e1b93c3...39dbeee8c64e0c845da1f6b3a8ef81707806a672)
+
+## Level 2
+
+Generated using https://github.com/spouliot/dotnet-tools/tree/master/changelog
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8982#discussion_r448150322","I think the names are fine as-is."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/15200#issuecomment-1149674920","Great work! Thanks a lot!"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/11749#discussion_r643264335","@akoeplinger would that require any changes in Mono that we have to wait for? Or is that already implemented?"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12098#discussion_r678857270","https://github.com/xamarin/xamarin-macios/blob/524fd24022e8e6e0f95caa22f10029a97b3b0e95/tools/common/Frameworks.cs#L594-L597"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/6201#discussion_r303311429","`using (var array = new CFArray (proxyList, false)) {` avoids the manual Dispose later."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/6097#discussion_r287408535","Although now that I think about it, I like the symlink idea better"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/10848#issuecomment-797271004","> Oh I wonder how you found about this 😅
+
+Oh, that's quite simple. After running `make`, running `make` again without any changes should be quite fast. It wasn't (and that's very noticeable 😄)"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12803#issuecomment-924911989","# .net ChangeLog for https://github.com/xamarin/xamarin-macios/pull/12803
+## Level 1
+* https://github.com/dotnet/installer [6543103...3d8501f](https://github.com/dotnet/installer/compare/65431030072d4f821d32321a26fc9910e30faa5b...3d8501fba26e97b3300eb012df90192decac47e4)
+
+## Level 2
+* https://github.com/dotnet/source-build-reference-packages [896532e...20feb77](https://github.com/dotnet/source-build-reference-packages/compare/896532ec53ea317e3136ad3849ef1944a31b9f6b...20feb77a4b5aad7ec74edc8e35a55779ea1f7003)
+
+Generated using https://github.com/spouliot/dotnet-tools/tree/master/changelog
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13329#issuecomment-965430977","Test failures are unrelated:
+
+* introspection/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2414
+* monotouch-test/Mac [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2525
+* monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2525
+* xammac tests/Mac Modern/Debug: https://github.com/xamarin/maccore/issues/2525
+* xammac tests/Mac Modern/Release: https://github.com/xamarin/maccore/issues/2525
+* xammac tests/Mac Modern/Release (all optimizations): https://github.com/xamarin/maccore/issues/2525
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13328#discussion_r746515377","Is there a strongly typed `Delegate` property?"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12199#discussion_r675646733","We have APIs that expose this enum (and the one below), so if we uncomment this, then every consumer of those APIs will get this warning (and there's no way to fix them except ignoring the warning)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/11395#discussion_r623718540","I've created a separate PR with my changes, to not complicate this one too much: https://github.com/xamarin/xamarin-macios/pull/11400"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8916#discussion_r443560796","```suggestion
+# Use the cmdlet to post a new summary comment. The cmdlet checks if we have the TestSummary.md file or not. It will also add the appropriate links to the commnet. 
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14192#discussion_r810191984","@emaf I implemented it a different way, please have a look again :)"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8061#discussion_r389545380","> There are no functional changes
+
+The 32 failed tests show that something functional changed.
+
+> but if you really feel strong about this, I can revert the contents
+
+Yes, please.
+
+> Just that it's never going to be refactored after this
+
+If you want to refactor code, do it in a separate PR, and make it as clear as possible (PR description / commit message) that there should only be no functional changes.
+
+It's always much easier to review two (or more!) small PRs than a single big one."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/2279#discussion_r125149251","You're right, I didn't notice that the properties were required and the methods optional."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/5712#discussion_r262372449","`theString` -> `string` to match all the other API."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12269#issuecomment-888822511","/azp run"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4727#discussion_r213915128","Same: two spaces before equals."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13894#issuecomment-1024026553","I've checked the packages, and only the template packages (and nothing but template packages) has this in their nuspec:
+
+```xml
+<packageType name=""Template"" />
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8144#issuecomment-601065721","> The .lastrun files are wiped out on a git clean so xliff-tasks complains about translations being out of date even when they aren't.
+
+No, that's not quite right. The .lastrun files are used to know if the xliff-tasks should check if the translations are out of date, it doesn't determine if the translations actually are out of date.
+
+Looking at the source for xliff-tasks, when they check if a translation is out of date, they actually compare the documents: https://github.com/dotnet/xliff-tasks/blob/cc53f75b404500236364694ff514dcdee2427a94/src/XliffTasks/Model/XlfDocument.cs#L68-L200, but something obviously goes wrong and then that function says that the translation should be updated when it wasn't (because when you run with `/t:UpdateXlfOnBuild` no files are actually modified).
+
+This looks like a bug in the xliff-tasks, I suggest trying to create a small test case and report it to them (or use the small test case to track down the bug in xliff-tasks and just fix it)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9406#discussion_r473682432","I wonder if Apple is going to ship these frameworks at all for the simulator... by the next beta this code should probably be made permanent, instead of checking for the exact Xcode product version."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/3814#discussion_r178545797","Nitpick: `StringComparison.Ordinal` (below as well)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13389#issuecomment-974691872","/azp run"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12757#issuecomment-921617280","Test failures are unrelated (both due to https://github.com/xamarin/maccore/issues/2414)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9720#discussion_r496456229","NRE if bundle is null (also might be worth checking for a disposed bundle using GetCheckedHandle if that's available for CFBundle)."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8117#discussion_r392872048","```suggestion
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/10645#discussion_r576587909","```suggestion
+		Linear = 3,
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/13272#issuecomment-961046841","Test failures are unrelated:
+
+* monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2443
+* Xtro/Mac: Fixed in #13271."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/7091#discussion_r327970952","```suggestion
+		public void SetObject (string key, NSObject value)
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4151#discussion_r191459232","Nitpick: space between `string`and `ReaderParameters`."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/2331#discussion_r127955054","The change itself is fine, but should go in a different PR, it has nothing to do with sprite kit :smile:"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/9151#discussion_r458565211","Same"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/7215#discussion_r335293420","I think `GetLayoutAnchor` sounds better."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/14439#issuecomment-1073772151","Test failures are unrelated:
+
+* link all/Mac [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2557
+* link all/Mac Catalyst [dotnet]/Release [dotnet]: https://github.com/xamarin/maccore/issues/2557
+* xammac tests/Mac Modern/Release (all optimizations): https://github.com/xamarin/maccore/issues/2088
+* Xtro/.NET:https://github.com/xamarin/maccore/issues/2552"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/1680#discussion_r104715026","If I understand correctly, you're saying that we might end up duplicating assemblies that are only identical after stripping (but not before)?
+
+If so, I think you're right, but I'm not sure how often that would be the case (Xamarin.iOS.dll would still be different after stripping, but mscorlib.dll might not be).
+
+In any case I don't think this PR changes the current behavior."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/6544#discussion_r302474316","It doesn't always make sense to use a nullable (sometimes an enum can be a better choice, in particular if the three states are not common, since the enum allows for a better description of each state), but we use it quite often.
+
+This is one scenario where we use it a lot (option not set, option set to true, option set to false).
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/8090#discussion_r391443360","```suggestion
+			// loop over the known paths, and build them accordingly
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/11851#discussion_r649106869","Maybe put the condition on the target instead?
+
+```suggestion
+  <Target Name=""ExtractMlaunch"" BeforeTargets=""Build"" Condition="" '$(MlaunchDestinationDir)' != '' "">
+    <Message Text=""Copying mlaunch to $(MlaunchDestinationDir)"" />
+    <Copy
+```"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/4326#discussion_r197725041","The managed names are `NSPasteboardTypeFileUrl` and `UTType.FileUrl`."
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/12356#issuecomment-894071152","Test failures are unrelated
+
+* introspection/Mac Catalyst/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2414
+* monotouch-test/Mac [dotnet]/Debug (CoreCLR) [dotnet]: https://github.com/xamarin/maccore/issues/2488
+* DotNet tests: fixed in #12334.
+"
+"xamarin","xamarin-macios","rolfbjarne","https://github.com/xamarin/xamarin-macios/pull/1862#discussion_r105834790","`extenion` => `extension`."
