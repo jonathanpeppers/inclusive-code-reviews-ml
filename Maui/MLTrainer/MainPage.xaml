@@ -9,31 +9,75 @@
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-                
-            <Label 
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-            
-            <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+            <Button 
+                x:Name="SelectFileButton"
+                Text="Select a File"
+                SemanticProperties.Hint="Select a csv file"
+                Clicked="SelectFileClicked"
+                HorizontalOptions="Center"
+                FontSize="18"/>
+
+            <Label x:Name="FileNameLabel"
+                   Text="FileName: "
+                   LineBreakMode="WordWrap"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout Padding="0,50,0,50" HorizontalOptions="Center" Spacing="50">
+
+                <Button
+                    x:Name="BadButton"
+                    Text="Bad Comment"
+                    Clicked="BadCommentClicked"
+                    BackgroundColor="red"
+                    IsEnabled="False"
+                    FontSize="20"
+                    />
+
+                <Label x:Name="MessageLabel"
+                   LineBreakMode="WordWrap"
+                   MaxLines="20"
+                   Text="CSV Data here!"
+                   FontSize="30"
+                   WidthRequest="600"
+                   HeightRequest="600"/>
+
+                <Button
+                    x:Name="GoodButton"
+                    Text="Good Comment"
+                    Clicked="GoodCommentClicked"
+                    BackgroundColor="green"
+                    IsEnabled="False"
+                    FontSize="20"
+                    />
+
+            </HorizontalStackLayout>
 
             <Button 
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                x:Name="SkipButton"
+                Text="Skip"
+                SemanticProperties.Hint="Skip"
+                Clicked="SkipClicked"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+
+            <Button 
+                x:Name="SaveButton"
+                Text="Save New CSV"
+                SemanticProperties.Hint="Done"
+                Clicked="SaveClicked"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+
+            <Button 
+                x:Name="AppendButton"
+                Text="Append Scores"
+                SemanticProperties.Hint="Done"
+                Clicked="AppendClicked"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+
+
 
         </VerticalStackLayout>
     </ScrollView>
