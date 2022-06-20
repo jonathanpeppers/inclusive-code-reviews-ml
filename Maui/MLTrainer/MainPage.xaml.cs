@@ -1,5 +1,4 @@
-﻿#pragma warning disable CA1416 // Not available on Adroid 21 and later
-#nullable enable
+﻿#nullable enable
 
 using CsvHelper;
 using System.Globalization;
