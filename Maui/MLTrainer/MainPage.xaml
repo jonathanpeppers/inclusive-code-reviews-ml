@@ -55,6 +55,7 @@
 
             <Button 
                 x:Name="SkipButton"
+                IsEnabled="False"
                 Text="Skip"
                 SemanticProperties.Hint="Skip"
                 Clicked="SkipClicked"
@@ -63,6 +64,7 @@
 
             <Button 
                 x:Name="SaveButton"
+                IsEnabled="False"
                 Text="Save New CSV"
                 SemanticProperties.Hint="Done"
                 Clicked="SaveClicked"
@@ -71,6 +73,7 @@
 
             <Button 
                 x:Name="AppendButton"
+                IsEnabled="False"
                 Text="Append Scores"
                 SemanticProperties.Hint="Done"
                 Clicked="AppendClicked"
