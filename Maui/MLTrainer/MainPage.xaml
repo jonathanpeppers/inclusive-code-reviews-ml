@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MLTrainer.MainPage">
+			 
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Button 
+                x:Name="SelectFileButton"
+                Text="Select a File"
+                SemanticProperties.Hint="Select a csv file"
+                Clicked="SelectFileClicked"
+                HorizontalOptions="Center"
+                FontSize="18"/>
+
+            <Label x:Name="FileNameLabel"
+                   Text="FileName: "
+                   LineBreakMode="WordWrap"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout Padding="0,50,0,50" HorizontalOptions="Center" Spacing="50">
+
+                <Button
+                    x:Name="BadButton"
+                    Text="Bad Comment"
+                    Clicked="BadCommentClicked"
+                    BackgroundColor="red"
+                    IsEnabled="False"
+                    FontSize="20"
+                    />
+
+                <Label x:Name="MessageLabel"
+                   LineBreakMode="WordWrap"
+                   MaxLines="20"
+                   Text="CSV Data here!"
+                   FontSize="30"
+                   WidthRequest="600"
+                   HeightRequest="600"/>
+
+                <Button
+                    x:Name="GoodButton"
+                    Text="Good Comment"
+                    Clicked="GoodCommentClicked"
+                    BackgroundColor="green"
+                    IsEnabled="False"
+                    FontSize="20"
+                    />
+
+            </HorizontalStackLayout>
+
+            <Button 
+                x:Name="SkipButton"
+                IsEnabled="False"
+                Text="Skip"
+                SemanticProperties.Hint="Skip"
+                Clicked="SkipClicked"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+
+            <Button 
+                x:Name="SaveButton"
+                IsEnabled="False"
+                Text="Save New CSV"
+                SemanticProperties.Hint="Done"
+                Clicked="SaveClicked"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+
+            <Button 
+                x:Name="AppendButton"
+                IsEnabled="False"
+                Text="Append Scores"
+                SemanticProperties.Hint="Done"
+                Clicked="AppendClicked"
+                HorizontalOptions="Center"
+                FontSize="30"/>
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+ 
+</ContentPage>
