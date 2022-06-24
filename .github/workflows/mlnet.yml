@@ -19,7 +19,7 @@ jobs:
     - name: install mlnet
       run: dotnet tool install --global mlnet
     - name: train
-      run: mlnet classification --dataset ml.net/MLConsoleApp/test.csv --label-col 1 --has-header true --train-time 60
+      run: mlnet classification --dataset comments/classified.csv --label-col 1 --has-header true --train-time 60
     - name: archive
       uses: actions/upload-artifact@v2
       with:
