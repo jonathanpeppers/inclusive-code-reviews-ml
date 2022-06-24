@@ -113,7 +113,7 @@ public partial class MainPage : ContentPage
 	// TODO figure out a better location to save the new file!
 	void SaveClicked (System.Object sender, System.EventArgs e)
 	{
-		var csvPath = Path.Combine (Environment.CurrentDirectory, "temp.csv");
+		var csvPath = Path.Combine (Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "temp.csv");
 		using var streamWriter = new StreamWriter (csvPath);
 		using var csvWriter = new CsvWriter (streamWriter, CultureInfo.InvariantCulture);
 		csvWriter.Context.RegisterClassMap<MLScoreClassMap> ();
