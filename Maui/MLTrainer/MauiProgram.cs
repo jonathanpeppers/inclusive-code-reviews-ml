@@ -1,6 +1,4 @@
-﻿using MLTrainer.ViewModels;
-
-namespace MLTrainer;
+﻿namespace MLTrainer;
 
 public static class MauiProgram
 {
@@ -9,7 +7,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		var services = builder.Services;
 
-		services.AddTransient<ClassificationViewModel>();
+		services.AddTransient<ViewModels.ClassificationViewModel>();
 
 		builder
 

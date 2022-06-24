@@ -13,19 +13,14 @@ public partial class ClassificationViewModel : ObservableObject
     readonly List<MLScore> _scores = new();
     int _commentCount;
 
-    public ClassificationViewModel()
-    {
-
-    }
+    [ObservableProperty]
+    string? fileName;
 
     [ObservableProperty]
-    string fileName;
+    string? message;
 
     [ObservableProperty]
-    string message;
-
-    [ObservableProperty]
-    ObservableCollection<GitHubComment> gitHubComments;
+    ObservableCollection<GitHubComment>? gitHubComments;
 
     [RelayCommand]
     async Task SelectedFile()
@@ -172,7 +167,7 @@ public partial class ClassificationViewModel : ObservableObject
 
     bool UpdateComment()
     {
-        if (GitHubComments.Count > _commentCount)
+        if (GitHubComments?.Count > _commentCount)
         {
             Message = GitHubComments[_commentCount].Body;
             _commentCount++;

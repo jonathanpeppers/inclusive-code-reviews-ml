@@ -1,9 +1,4 @@
-﻿#nullable enable
-
-
-using MLTrainer;
-
-namespace MLTrainer.Models;
+﻿namespace MLTrainer.Models;
 
 public class MLScore
 {

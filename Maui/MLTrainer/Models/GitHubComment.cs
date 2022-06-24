@@ -1,6 +1,4 @@
-﻿#nullable enable
-
-using CsvHelper.Configuration.Attributes;
+﻿using CsvHelper.Configuration.Attributes;
 
 namespace MLTrainer.Models;
 
