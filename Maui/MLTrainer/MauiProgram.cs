@@ -1,11 +1,18 @@
-﻿namespace MLTrainer;
+﻿using MLTrainer.ViewModels;
+
+namespace MLTrainer;
 
 public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
+		var services = builder.Services;
+
+		services.AddTransient<ClassificationViewModel>();
+
 		builder
+
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{
