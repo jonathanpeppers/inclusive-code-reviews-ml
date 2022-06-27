@@ -5,7 +5,12 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
+		var services = builder.Services;
+
+		services.AddTransient<ViewModels.ClassificationViewModel>();
+
 		builder
+
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>
 			{

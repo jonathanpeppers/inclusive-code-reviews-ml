@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MLTrainer.Views.ClassificationView"
+             Margin="20">
+    <Grid RowSpacing="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Row="0" Grid.Column="0"
+                x:Name="AppendButton"
+                Text="Append Scores"
+                SemanticProperties.Hint="Done"
+                Command="{Binding AppendFileCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="30"/>
+
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+            <Button Text="Select a File"
+                    SemanticProperties.Hint="Select a csv file"
+                    Command="{Binding SelectedFileCommand}"
+                    HorizontalOptions="Center"
+                    FontSize="18"/>
+
+            <Label x:Name="FileNameLabel"
+                   Text="{Binding FileName, StringFormat='FileName {0}'}"
+                   LineBreakMode="WordWrap"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+
+        <Button Grid.Row="0" Grid.Column="2"
+                Text="Save New CSV"
+                SemanticProperties.Hint="Done"
+                Command="{Binding SaveFileCommand}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="30"/>
+
+        <Button Text="Bad Comment"
+                Command="{Binding BadCommentCommand}"
+                BackgroundColor="red"
+                IsEnabled="False"
+                FontSize="20"
+                Grid.Row="1" Grid.Column="0"/>
+
+        <Label Grid.Row="1" Grid.Column="1"
+               LineBreakMode="WordWrap"
+               MaxLines="20"
+               Text="{Binding Message}"
+               FontSize="30"/>
+
+        <!--<CollectionView ItemsSource="{Binding GitHubComments}" Grid.Row="2" Grid.Column="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Body}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>-->
+
+        <Button Text="Good Comment"
+                Command="{Binding GoodCommentCommand}"
+                BackgroundColor="green"
+                FontSize="20"
+                Grid.Row="1" Grid.Column="2"/>
+
+
+        <Button Grid.Row="2" Grid.Column="1"
+                Text="Skip"
+                SemanticProperties.Hint="Skip"
+                Command="{Binding SkipCommentCommand}"
+                HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                FontSize="30"/>
+
+    </Grid>
+</ContentView>
