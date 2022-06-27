@@ -51,9 +51,4 @@
 	  <PackageReference Include="CsvHelper" Version="27.2.1" />
 	</ItemGroup>
 	
-	<ItemGroup>
-	  <MauiXaml Update="Views\ClassificationView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	</ItemGroup>
 </Project>
