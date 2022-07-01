@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="2.0.0-preview.22330.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InclusiveCodeReviews.ConsoleApp\InclusiveCodeReviews.ConsoleApp.csproj" />
+    <ProjectReference Include="..\InclusiveCodeReviews.Model\InclusiveCodeReviews.Model.csproj" />
+  </ItemGroup>
+
+</Project>

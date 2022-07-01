@@ -30,6 +30,21 @@ See the [ML.NET docs][mlnet] for more info.
 
 [mlnet]: https://docs.microsoft.com/dotnet/machine-learning/automate-training-with-cli
 
+## Generate Projects in `ml.net` folder
+
+Run `train.ps1`.
+
+Note there are additional manual edits we would lose if running this
+again. You might discard some of the changes, or compare the diff.
+
+## Updating the Model
+
+Open `ml.net\InclusiveCodeReviews.sln` in VS, and run `InclusiveCodeReviews.Convert` project.
+
+This will update `InclusiveCodeReviews.Model\MLModel.zip` and `onnxjs\model.onnx` in-place.
+
+To test `model.onnx`, run `npm test` in the `onnxjs` directory.
+
 ## Code Review Examples
 
 These are just some links to "heated" conversations:
