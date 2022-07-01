@@ -22,6 +22,11 @@ public partial class ClassificationViewModel : ObservableObject
     [ObservableProperty]
     ObservableCollection<GitHubComment>? gitHubComments;
 
+    Task DisplayAlert (string title, string message, string cancel)
+    {
+        return App.Current!.MainPage!.DisplayAlert(title, message, cancel);
+    }
+
     [RelayCommand]
     async Task SelectedFile()
     {
@@ -29,13 +34,13 @@ public partial class ClassificationViewModel : ObservableObject
 
         if (file is null)
         {
-            await App.Current.MainPage.DisplayAlert("Issue", "File was loaded incorrectly. Try again.", "OK");
+            await DisplayAlert("Issue", "File was loaded incorrectly. Try again.", "OK");
             return;
         }
 
         if (new FileInfo(file.FullPath).Extension != ".csv")
         {
-            await App.Current.MainPage.DisplayAlert("Wrong File Type", "Please select to a .csv file", "OK");
+            await DisplayAlert("Wrong File Type", "Please select to a .csv file", "OK");
             return;
         }
 
@@ -47,7 +52,7 @@ public partial class ClassificationViewModel : ObservableObject
         // TODO this doesn't seem to properly check for csv files with incorrect headers
         if (!GitHubComments.Any())
         {
-            await App.Current.MainPage.DisplayAlert("Wrong CSV Layout", "Please select an appropriate .csv file", "OK");
+            await DisplayAlert("Wrong CSV Layout", "Please select an appropriate .csv file", "OK");
         }
 
         FileName = file.FileName;
@@ -100,13 +105,13 @@ public partial class ClassificationViewModel : ObservableObject
 
         if (file is null)
         {
-            await App.Current.MainPage.DisplayAlert("Issue", "File to save to was loaded incorrectly. Try again.", "OK");
+            await DisplayAlert("Issue", "File to save to was loaded incorrectly. Try again.", "OK");
             return;
         }
 
         if (new FileInfo(file.FullPath).Extension != ".csv")
         {
-            await App.Current.MainPage.DisplayAlert("Wrong File Type", "Please save to a .csv file", "OK");
+            await DisplayAlert("Wrong File Type", "Please save to a .csv file", "OK");
             return;
         }
 
@@ -116,7 +121,7 @@ public partial class ClassificationViewModel : ObservableObject
         csvWriter.WriteRecords(_scores);
 
         // TODO Validate that we are saving to a csv file with the correct headers
-        await App.Current.MainPage.DisplayAlert("Finished!", $"Changes appended to {file.FullPath}", "OK");
+        await DisplayAlert("Finished!", $"Changes appended to {file.FullPath}", "OK");
     }
 
     bool DoWeHaveComments() => (GitHubComments != null) && GitHubComments.Count > _commentCount;
