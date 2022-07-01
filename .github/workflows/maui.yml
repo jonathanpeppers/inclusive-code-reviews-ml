@@ -1,0 +1,41 @@
+name: Build MAUI apps
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+      - '**/*.gitattributes'
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true   
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: install .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.x
+    - uses: actions/setup-java@v2
+      with:
+        distribution: 'microsoft'
+        java-version: '11'
+
+    - name: Install MAUI Workloads
+      run: dotnet workload install maui --ignore-failed-sources
+
+    - name: Restore Dependencies
+      run: dotnet restore Maui/MLTrainer/MLTrainer.sln
+
+    - name: Build MAUI Android
+      run: dotnet build Maui/MLTrainer/MLTrainer.sln -c Release --no-restore
+
