@@ -4,6 +4,26 @@
         "isnegative": "1"
     },
     {
+        "text": "You are a failure",
+        "isnegative": "1"
+    },
+    {
+        "text": "This code is really bad",
+        "isnegative": "1"
+    },
+    {
+        "text": "There are test failures",
+        "isnegative": "0"
+    },
+    {
+        "text": "There is a test failure",
+        "isnegative": "0"
+    },
+    {
+        "text": "One test failed",
+        "isnegative": "0"
+    },
+    {
         "text": "You suck",
         "isnegative": "1"
     },
