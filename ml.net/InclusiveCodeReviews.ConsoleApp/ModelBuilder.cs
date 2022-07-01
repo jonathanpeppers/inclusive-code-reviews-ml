@@ -45,7 +45,7 @@ namespace InclusiveCodeReviews.ConsoleApp
             Evaluate(mlContext, trainingDataView, trainingPipeline);
 
             // Save model
-            SaveModel(mlContext, mlModel, MODEL_FILE, trainingDataView.Schema);
+            SaveModel(mlContext, trainingDataView, mlModel, MODEL_FILE, trainingDataView.Schema);
         }
 
         public static IEstimator<ITransformer> BuildTrainingPipeline(MLContext mlContext)
