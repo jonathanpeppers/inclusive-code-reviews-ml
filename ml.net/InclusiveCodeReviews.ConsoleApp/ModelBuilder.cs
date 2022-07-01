@@ -13,6 +13,7 @@ using Microsoft.ML.Data;
 using InclusiveCodeReviews.Model;
 using Microsoft.ML.Trainers;
 using System.IO.Pipes;
+using Microsoft.ML.Transforms.Text;
 
 namespace InclusiveCodeReviews.ConsoleApp
 {
@@ -52,14 +53,10 @@ namespace InclusiveCodeReviews.ConsoleApp
         {
             // Data process configuration with pipeline data transformations 
             var dataProcessPipeline = mlContext.Transforms.Conversion.MapValueToKey("isnegative", "isnegative")
-                                      // Original `mlnet` output
-                                      //.Append(mlContext.Transforms.Text.FeaturizeText("text_tf", "text"))
-                                      .Append(mlContext.Transforms.Text.NormalizeText("text_normalized", "text", keepDiacritics: true))
-                                      .Append(mlContext.Transforms.Text.TokenizeIntoWords("text_tokenized", "text_normalized"))
-                                      .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("text_stop", "text_tokenized"))
-                                      .Append(mlContext.Transforms.Conversion.MapValueToKey("text_mapped", "text_stop"))
-                                      .Append(mlContext.Transforms.Text.ProduceNgrams("text_ngram", "text_mapped"))
-                                      .Append(mlContext.Transforms.NormalizeLpNorm("text_tf", "text_ngram"))
+                                      .Append(mlContext.Transforms.Text.FeaturizeText("text_tf", new TextFeaturizingEstimator.Options
+                                      {
+                                          KeepDiacritics = true,
+                                      }, "text"))
                                       .Append(mlContext.Transforms.CopyColumns("Features", "text_tf"))
                                       .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
                                       .AppendCacheCheckpoint(mlContext);

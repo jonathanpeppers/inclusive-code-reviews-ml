@@ -2,6 +2,7 @@ using System;
 using InclusiveCodeReviews.Model;
 
 Console.WriteLine("Ctrl+C to exit...");
+Console.WriteLine();
 
 while (true)
 {
