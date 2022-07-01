@@ -19,7 +19,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 {
     public static class ModelBuilder
     {
-        private static string TRAIN_DATA_FILEPATH = @"C:\src\inclusive-code-reviews-ml\comments\classified.csv";
+        private static string TRAIN_DATA_FILEPATH = Path.Combine(Path.GetDirectoryName(typeof(ModelBuilder).Assembly.Location), "..", "..", "..", "..", "..", "comments", "classified.csv");
         private static string MODEL_FILE = ConsumeModel.MLNetModelPath;
 
         // Create MLContext to be shared across the model creation workflow objects 
@@ -92,23 +92,13 @@ namespace InclusiveCodeReviews.ConsoleApp
         {
             // Save/persist the trained model to a .ZIP file
             Console.WriteLine($"=============== Saving the model  ===============");
-            mlContext.Model.Save(mlModel, modelInputSchema, GetAbsolutePath(modelRelativePath));
-            var onnxPath = Path.ChangeExtension(modelRelativePath, ".onnx");
+            mlContext.Model.Save(mlModel, modelInputSchema, modelRelativePath);
+            var onnxPath = Path.Combine(Path.GetDirectoryName(modelRelativePath), "..", "..", "onnxjs", "model.onnx");
             using var fileStream = File.Create(onnxPath);
             mlContext.Model.ConvertToOnnx(mlModel, dataView, fileStream);
-            Console.WriteLine("The model is saved to {0}", GetAbsolutePath(modelRelativePath));
-            Console.WriteLine("The model is saved to {0}", GetAbsolutePath(onnxPath));
+            Console.WriteLine("The model is saved to {0}", Path.GetFullPath(modelRelativePath));
+            Console.WriteLine("The model is saved to {0}", Path.GetFullPath(onnxPath));
 		}
-
-        public static string GetAbsolutePath(string relativePath)
-        {
-            FileInfo _dataRoot = new FileInfo(typeof(Program).Assembly.Location);
-            string assemblyFolderPath = _dataRoot.Directory.FullName;
-
-            string fullPath = Path.Combine(assemblyFolderPath, relativePath);
-
-            return fullPath;
-        }
 
         public static void PrintMulticlassClassificationMetrics(MulticlassClassificationMetrics metrics)
         {
