@@ -11,7 +11,7 @@ namespace MLTrainer.ViewModels;
 public partial class ClassificationViewModel : ObservableObject
 {
     readonly List<MLScore> _scores = new();
-    int _commentCount;
+    int _sentenceCount;
 
     [ObservableProperty]
     string fileName = String.Empty;
@@ -24,6 +24,9 @@ public partial class ClassificationViewModel : ObservableObject
 
     [ObservableProperty]
     ObservableCollection<GitHubComment>? gitHubComments;
+
+    [ObservableProperty]
+    ObservableCollection<Sentence> sentences = new ObservableCollection<Sentence> ();
 
     Task DisplayAlert (string title, string message, string cancel)
     {
@@ -56,6 +59,14 @@ public partial class ClassificationViewModel : ObservableObject
         if (!GitHubComments.Any())
         {
             await DisplayAlert("Wrong CSV Layout", "Please select an appropriate .csv file", "OK");
+        }
+
+        foreach (var comment in GitHubComments)
+        {
+            foreach (var sentence in TextProcessor.PreprocessText(comment.Body))
+            {
+                sentences.Add(new Sentence { Body = sentence });
+            }
         }
 
         FileName = file.FileName;
@@ -127,7 +138,7 @@ public partial class ClassificationViewModel : ObservableObject
         await DisplayAlert("Finished!", $"Changes appended to {file.FullPath}", "OK");
     }
 
-    bool DoWeHaveComments() => (GitHubComments != null) && GitHubComments.Count > _commentCount;
+    bool DoWeHaveComments() => (Sentences != null) && Sentences.Count > _sentenceCount;
 
     bool DoWeHaveScores() => _scores.Count > 0;
 
@@ -176,11 +187,11 @@ public partial class ClassificationViewModel : ObservableObject
 
     bool UpdateComment()
     {
-        if (GitHubComments?.Count > _commentCount)
+        if (Sentences?.Count > _sentenceCount)
         {
-            Message = GitHubComments[_commentCount].Body;
-            _commentCount++;
-            Status = $"{_commentCount} / {GitHubComments.Count} done ({100.0 * _commentCount / GitHubComments.Count:0.00} %)";
+            Message = Sentences[_sentenceCount].Body;
+            _sentenceCount++;
+            Status = $"{_sentenceCount}/{Sentences.Count} done ({100.0*_sentenceCount / Sentences.Count:0.00} %)";
             UpdateFileButtons();
             return true;
         }
