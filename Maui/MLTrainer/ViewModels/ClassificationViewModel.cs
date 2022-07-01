@@ -67,14 +67,14 @@ public partial class ClassificationViewModel : ObservableObject
     [RelayCommand(CanExecute = "DoWeHaveComments")]
     void GoodComment()
     {
-        _scores.Add(new MLScore($"\"{Message}\"", "\"0\""));
+        _scores.Add(new MLScore(Message, "0"));
         UpdateComment();
     }
 
     [RelayCommand(CanExecute = "DoWeHaveComments")]
     void BadComment()
     {
-        _scores.Add(new MLScore($"\"{Message}\"", "\"1\""));
+        _scores.Add(new MLScore(Message, "1"));
         UpdateComment();
     }
 
