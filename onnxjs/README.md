@@ -11,3 +11,7 @@ Links:
 * https://onnxruntime.ai/docs/get-started/with-javascript.html
 * https://github.com/microsoft/onnxruntime-inference-examples
 * https://github.com/microsoft/onnxruntime
+
+# Viewing an `.onnx` file
+
+Try Netron: https://github.com/lutzroeder/netron
