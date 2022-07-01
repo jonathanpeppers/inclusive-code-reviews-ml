@@ -108,6 +108,7 @@ public partial class ClassificationViewModel : ObservableObject
             csvWriter.Context.RegisterClassMap<MLScoreClassMap>();
             csvWriter.WriteRecords(_scores);
             CleanUp();
+            await DisplayAlert("Success!", $"Saved to: {csvPath}", "OK");
         }
         catch (Exception e)
         {
