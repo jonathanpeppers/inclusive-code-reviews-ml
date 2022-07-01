@@ -20,6 +20,9 @@ public partial class ClassificationViewModel : ObservableObject
     string message = String.Empty;
 
     [ObservableProperty]
+    string status = String.Empty;
+
+    [ObservableProperty]
     ObservableCollection<GitHubComment>? gitHubComments;
 
     Task DisplayAlert (string title, string message, string cancel)
@@ -151,6 +154,7 @@ public partial class ClassificationViewModel : ObservableObject
     {
         FileName = string.Empty;
         Message = string.Empty;
+        Status = string.Empty;
         UpdateButtons();
         //Should we clean _scores?
     }
@@ -176,10 +180,12 @@ public partial class ClassificationViewModel : ObservableObject
         {
             Message = GitHubComments[_commentCount].Body;
             _commentCount++;
+            Status = $"{_commentCount} / {GitHubComments.Count} done ({100.0 * _commentCount / GitHubComments.Count:0.00} %)";
             UpdateFileButtons();
             return true;
         }
         Message = string.Empty;
+        Status = "100% done";
         UpdateButtons();
         return false;
     }

@@ -53,11 +53,19 @@
                 FontSize="20"
                 Grid.Row="1" Grid.Column="0"/>
 
-        <Label Grid.Row="1" Grid.Column="1"
-               LineBreakMode="WordWrap"
-               MaxLines="20"
-               Text="{Binding Message}"
-               FontSize="30"/>
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+            <Label
+                   LineBreakMode="WordWrap"
+                   MaxLines="1"
+                   Text="{Binding Status}"
+                   FontSize="20"/>
+
+            <Label
+                   LineBreakMode="WordWrap"
+                   MaxLines="20"
+                   Text="{Binding Message}"
+                   FontSize="30"/>
+        </VerticalStackLayout>
 
         <!--<CollectionView ItemsSource="{Binding GitHubComments}" Grid.Row="2" Grid.Column="1">
             <CollectionView.ItemTemplate>
