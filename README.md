@@ -2,17 +2,11 @@
 
 Machine learning for code reviews!
 
-`ml.net` folder is an example using ML.NET Model Builder in Visual Studio.
+Folders:
 
-`tfjs` folder is TensorFlowJS setup to run tests. (Not really working)
-
-## ML.NET Model Builder
-
-To retrain the model, install the `ML.NET Model Builder` in Visual Studio:
-
-![Visual Studio Installer](docs/vsinstaller.png)
-
-TBD if you can do this command-line or on a Mac.
+* `Maui`: desktop app for classifying data
+* `ml.net`: contains C# projects related to ML.NET usage, creating `.zip` or `.onnx` files
+* `onnxjs`: JS test project for the `.onnx` model
 
 ## `mlnet` .NET Global Tool
 
@@ -25,7 +19,7 @@ dotnet tool install --global mlnet
 And you can train, such as:
 
 ```dotnetcli
-mlnet classification --dataset .\MLConsoleApp\test.csv --label-col 1 --has-header true --train-time 10
+mlnet classification --dataset comments/classified.csv --label-col 1 --has-header true --train-time 10
 ```
 
 This outputs a folder named `SampleClassification` in the current
