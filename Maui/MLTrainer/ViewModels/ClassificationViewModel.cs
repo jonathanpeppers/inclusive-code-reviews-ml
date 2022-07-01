@@ -12,6 +12,7 @@ public partial class ClassificationViewModel : ObservableObject
 {
     readonly List<MLScore> _scores = new();
     int _sentenceCount;
+    string _fullPath = string.Empty;
 
     [ObservableProperty]
     string fileName = String.Empty;
@@ -70,6 +71,7 @@ public partial class ClassificationViewModel : ObservableObject
         }
 
         FileName = file.FileName;
+        _fullPath = file.FullPath;
 
         UpdateComment();
         UpdateButtons();
@@ -96,14 +98,21 @@ public partial class ClassificationViewModel : ObservableObject
     }
 
     [RelayCommand(CanExecute = "DoWeHaveScores")]
-    void SaveFile()
+    async void SaveFile()
     {
-        var csvPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "temp.csv");
-        using var streamWriter = new StreamWriter(csvPath);
-        using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
-        csvWriter.Context.RegisterClassMap<MLScoreClassMap>();
-        csvWriter.WriteRecords(_scores);
-        CleanUp();
+        try
+        {
+            var csvPath = Path.Combine(Path.GetDirectoryName(_fullPath)!, Path.GetFileNameWithoutExtension(_fullPath) + "-saved.csv");
+            using var streamWriter = new StreamWriter(csvPath);
+            using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
+            csvWriter.Context.RegisterClassMap<MLScoreClassMap>();
+            csvWriter.WriteRecords(_scores);
+            CleanUp();
+        }
+        catch (Exception e)
+        {
+            await DisplayAlert("Problem!", $"Failed to save the file: {e.Message}", "OK");
+        }
     }
 
     [RelayCommand(CanExecute = "DoWeHaveScores")]
