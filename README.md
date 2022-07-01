@@ -56,6 +56,7 @@ An example querying 100 random comments would be:
 PullRequestReviewComment
 | where ReviewerLogin == 'rolfbjarne'
 | where RepositoryName == 'xamarin-macios'
+| where strlen(Body) > 10
 | order by rand()
 | limit 100
 | project OrganizationLogin, RepositoryName, ReviewerLogin, HtmlUrl, Body

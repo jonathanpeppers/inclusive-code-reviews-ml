@@ -1,0 +1,201 @@
+﻿"OrganizationLogin","RepositoryName","ReviewerLogin","HtmlUrl","Body"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/615#discussion_r605495079","i think we should keep the hostingContext, we might in the future add stuff to the hostingcontext, and you can use it to decide what to register. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4945#discussion_r820646383","won't we neeed this mirror on internal feeds? @mattleibow  ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4591#discussion_r802881397","@jonathanpeppers  i think we can remove this change right? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6354#issuecomment-1109668732","@mattleibow  nop i don't think so it's not on version details"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3196#issuecomment-982580965","now we will need to update the oder ITextinput implementations
+
+```
+ D:\agent\1\s\src\Controls\src\Core\HandlerImpl\Editor\Editor.Impl.cs(6,32): error CS0535: 'Editor' does not implement interface member 'ITextInput.CursorPosition' [D:\agent\1\s\src\Controls\src\Core\Controls.Core-net6.csproj]
+         D:\agent\1\s\src\Controls\src\Core\HandlerImpl\Editor\Editor.Impl.cs(6,32): error CS0535: 'Editor' does not implement interface member 'ITextInput.SelectionLength' [D:\agent\1\s\src\Controls\src\Core\Controls.Core-net6.csproj]
+         D:\agent\1\s\src\Controls\src\Core\HandlerImpl\SearchBar.Impl.cs(3,35): error CS0535: 'SearchBar' does not implement interface member 'ITextInput.CursorPosition' [D:\agent\1\s\src\Controls\src\Core\Controls.Core-net6.csproj]
+         D:\agent\1\s\src\Controls\src\Core\HandlerImpl\SearchBar.Impl.cs(3,35): error CS0535: 'SearchBar' does not implement interface member 'ITextInput.SelectionLength' [D:\agent\1\s\src\Controls\src\Core\Controls.Core-net6.csproj]
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5854#discussion_r845474047","i m with @jfversluis  on this one 
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/362#issuecomment-789985830","Needs rebase"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/590#discussion_r714832412","Can you make a PR with that? 
+I will merge this now just to fix running android"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7689#discussion_r887897138","this cast was failing, and that's why clearing selection wasn't working. We need to find a better way to fix this cast, for example implement a Interface on the SelectableItemsViewAdapter"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6224#issuecomment-1102816462","grrr @mattleibow  
+
+<img width=""1505"" alt=""image"" src=""https://user-images.githubusercontent.com/1235097/164044472-18c6290a-d687-4f16-952d-849581b764ca.png"">
+
+https://devdiv.visualstudio.com/DevDiv/_build/results?buildId=6043261&view=results
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/948#discussion_r695949333","can we move this to a helper method? and add some comments ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/416#issuecomment-790642889","```
+  D:\agent\3\s\src\Core\tests\DeviceTests\Handlers\Label\LabelHandlerTests.Android.cs(21,5): error CS0117: 'LabelStub' does not contain a definition for 'FontFamily' [D:\agent\3\s\src\Core\tests\DeviceTests\Core.DeviceTests.csproj]
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8051#issuecomment-1160527285","This should be the same issue we discussed before with @PureWeen  where adding the same view without removing it will hide the issue.
+
+Can you also add a test for this please? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6359#issuecomment-1105160949","no luck :( "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5700#issuecomment-1084486732","waiting for the next bump that is building 
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4840#discussion_r812860005","Fine for me "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2250#discussion_r701272449"," created a ussye ti follow up on this https://github.com/dotnet/maui/issues/2365"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7095#issuecomment-1125298864","We have #7107"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4622#issuecomment-1041588556","uwp missing
+
+```
+    (CoreCompile target) -> 
+         D:\a\_work\1\s\src\Essentials\src\Connectivity\Connectivity.uwp.cs(8,52): error CS0535: 'ConnectivityImplementation' does not implement interface member 'IConnectivity.ConnectionProfiles' [D:\a\_work\1\s\src\Essentials\src\Essentials.csproj]
+         D:\a\_work\1\s\src\Essentials\src\Connectivity\Connectivity.uwp.cs(8,52): error CS0535: 'ConnectivityImplementation' does not implement interface member 'IConnectivity.NetworkAccess' [D:\a\_work\1\s\src\Essentials\src\Essentials.csproj]
+         D:\a\_work\1\s\src\Essentials\src\Connectivity\Connectivity.uwp.cs(8,52): error CS0736: 'ConnectivityImplementation' does not implement instance interface member 'IConnectivity.StartListeners()'. 'ConnectivityImplementation.StartListeners()' cannot implement the interface member because it is static. [D:\a\_work\1\s\src\Essentials\src\Essentials.csproj]
+         D:\a\_work\1\s\src\Essentials\src\Connectivity\Connectivity.uwp.cs(8,52): error CS0736: 'ConnectivityImplementation' does not implement instance interface member 'IConnectivity.StopListeners()'. 'ConnectivityImplementation.StopListeners()' cannot implement the interface member because it is static. [D:\a\_work\1\s\src\Essentials\src\Essentials.csproj]
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7724#issuecomment-1162232915","Can we add a device test, and check if with clip the  ImageButton has color on the first top left pixel ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7672#issuecomment-1161565495","If we want this on sr2 it should be target net6.0 branch"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/472#issuecomment-796048922","Hey, @jonathanpeppers  we were marking continue on error on the xaml unit tests , we have 2 sln one for net6 other for classic. Build Windows is the classic one, we then have Pack/Build net6 in Windows/macOS"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4630#discussion_r805892124","```suggestion
+		void PlatformStop()
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7995#issuecomment-1169757981","Is it possible do add a windows device test for this ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3351#discussion_r759607903","Maybe i don't understand, is this pixel density ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3368#issuecomment-967331035","Do we want to rename also `ImageSourceServiceProvider`  `StyleSheetServiceProvider`?  "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/857#issuecomment-827417452","is there a way we could test this ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8230#discussion_r903835237","An error occurred while loading the YAML build pipeline. Unexpected symbol: 'or'. Located at position 54 within expression: eq(variables['Build.SourceBranch'], 'refs/heads/loc' or startsWith(variables['Build.SourceBranch'], 'refs/heads/loc-'). For more help, refer to https://go.microsoft.com/fwlink/?linkid=842996"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/615#discussion_r605495835","Should this be under Hosting/Fonts ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4630#discussion_r805893107","```suggestion
+		void PlatformStop() =>
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3351#discussion_r759559923","should this be #if DEBUG ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8290#discussion_r905954650","This will throw at runtime, but we need to start giving translation to these message. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/414#discussion_r587767305","does it need rebase? this change was in already "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/615#discussion_r605485223","Do we need the Default ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1309#discussion_r654575052","if i $(MicrosoftExtensionsFileProvidersEmbeddedPackageVersion) for non net6 isn't also the order important? i m not a expert of msbuild so not sure tbh"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/779#issuecomment-826929987","@rachelkang  if you check UWP on Xamarin Forms the title is above.. 
+
+![image](https://user-images.githubusercontent.com/1235097/116108877-37760800-a6ac-11eb-8857-65abbc2b1085.png)
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1618#issuecomment-878216698","Do we want to merge to yaml-templates before taking this ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3351#discussion_r759563421","```suggestion
+			var nativeView = view?.GetNative(true);
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1007#discussion_r715573592","@PureWeen  same NRE, this a better fix ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1309#discussion_r653791084","Yes thanks, it's fixed and versions updated now"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4776#discussion_r810296527","@jonathanpeppers  can i just remove all these? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4775#discussion_r809953576","This is done now with a step before like the other stages"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6014#discussion_r849308742","I m not sure. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7335#issuecomment-1164431452","@jsuarezruiz @mattleibow i removed the dispose When the ContentView goes away , the layer should bealso grabbed and dispoed, no need to set to null, right @PureWeen  ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3598#issuecomment-983055255","Still fails for me..
+
+![image](https://user-images.githubusercontent.com/1235097/144134308-e2ef92f4-6622-45d5-b936-69298d69b17a.png)
+
+```
+      ""D:\repos\dotnet\maui\Microsoft.Maui.BuildTasks-net6.slnf"" (Build target) (1:2) ->
+       ""D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj"" (default target) (6:6) ->
+       (GenerateSatelliteAssemblies target) ->
+         D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018: The ""AL"" task failed unexp
+       ectedly. [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018: System.NullReferenceExceptio
+       n: Object reference not set to an instance of an object. [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018:    at Microsoft.Build.Tasks.
+       AL.GenerateFullPathToTool() [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018:    at Microsoft.Build.Utilit
+       ies.ToolTask.ComputePathToTool() [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018:    at Microsoft.Build.Utilit
+       ies.ToolTask.Execute() [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018:    at Microsoft.Build.Tasks.
+       AL.Execute() [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018:    at Microsoft.Build.BackEn
+       d.TaskExecutionHost.Microsoft.Build.BackEnd.ITaskExecutionHost.Execute() [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+       D:\Program Files\Microsoft Visual Studio\2022\Main\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(3870,5): error MSB4018:    at Microsoft.Build.BackEn
+       d.TaskBuilder.<ExecuteInstantiatedTask>d__26.MoveNext() [D:\repos\dotnet\maui\src\Controls\src\Build.Tasks\Controls.Build.Tasks-net6.csproj]
+```
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1229#issuecomment-858559188","Ups, i didn't noticed there were reviewers.. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5742#issuecomment-1086216903","This broke a existing api https://github.com/xamarin/xamarin-macios/pull/14526/files#diff-b2ebba39f7a4e5757e3d54413e3111d7c2d2f0ba30baaa72601294010e9cd326R834 "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3205#issuecomment-982886400","@drasticactions  do we still need this? don't think so right? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3689#issuecomment-1093131150","we removed /Compatibility.Android.FormsViewGroup.csproj "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5181#issuecomment-1063951812","Isn't the mapper doing that ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3535#discussion_r756005635","The thing i see here is that now these events will fire before they actually happen on the native . Let's say i m clearing something on disappearing, could it happen that the page is still on the screen because the platform code didn't happen yet? Like it didn't awaited DismissViewControllerAsync"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5736#issuecomment-1085728636","Can you target rc1 branch ? 
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8273#issuecomment-1171406792","Can we add a device test? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5525#issuecomment-1080752124","Needs rebase"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/459#issuecomment-804847608","Do we still want to do this @mattleibow  ? 
+"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7785#issuecomment-1161856671","@TanayParikh  why the do not merge here? these aren't public ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2551#discussion_r712439760","Do we want this public already? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/514#issuecomment-801855900","He @jonathanpeppers  i think most of us use the not net6 solution to get stuff done right now.. We might use build.sh or command to build stuff sometimes. 
+
+I think we should use a cake target that does the dotnet build, and also update cake builds to use that dotnet version,
+ then use a target that launches the IDE with everything setup.
+ 
+ "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8250#discussion_r905269265","was it returning -1 before ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5706#issuecomment-1092694905","Can we add a device test to Controls? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3391#issuecomment-969194541","Test is failing on iOS ..
+
+https://dev.azure.com/xamarin/public/_build/results?buildId=49864&view=ms.vss-test-web.build-test-results-tab"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6736#issuecomment-1114972517","Anyone know how i can configure this to just get updates of the full version? (major, minor and patch) ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5560#discussion_r835143657","Nop, we should use the latest stable. this is only used like @jonathanpeppers said for CI. I can also try to remove this need if that's a issue. Should we fix the script @jonathanpeppers  ? maybe hardcode this value on the script? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2469#issuecomment-921988041","@Eilon can you review this one ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1644#discussion_r681166853","We have alotttttt of them.. i think we keep it for now"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3529#discussion_r759503928","```suggestion
+				result = nativeView?.Window?.RenderAsPng(nativeView.Layer, UIScreen.MainScreen.Scale, skipChildren);
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/436#discussion_r590164534","I don't think we should have a `MainWindow` I agree in a WindowCollection for all the created Windows. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6301#issuecomment-1103790408","@dependabot rebase"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3351#discussion_r759569257","Should we drop this? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7724#issuecomment-1147682611","or mark it internal for now and add a TODO for net7"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5588#issuecomment-1080921830","```
+   (_ReadAndroidManifest target) -> 
+         obj\Release\net6.0-android\android\AndroidManifest.xml : error XA4218: Unable to find //manifest/application/uses-library at path: C:\Program Files (x86)\Android\android-sdk\platforms\android-31\optional\androidx.window.extensions.jar [D:\a\_work\_temp\templatesTestmaui\templatesTestmaui.csproj]
+         obj\Release\net6.0-android\android\AndroidManifest.xml : error XA4218: Unable to find //manifest/application/uses-library at path: C:\Program Files (x86)\Android\android-sdk\platforms\android-31\optional\androidx.window.sidecar.jar [D:\a\_work\_temp\templatesTestmaui\templatesTestmaui.csproj]
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3368#discussion_r749577859","yeah i guess.. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1477#issuecomment-926946722","@rachelkang  you can try again, i fixed that on main, and merged now on this branch"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8264#issuecomment-1164292300","@dependabot rebase"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/174#issuecomment-690330709","@domagojmedo  thanks very muck , right now we will start this work on the Xamarin.Forms repo on the main branch.
+Do you think you can do this work there? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4554#issuecomment-1041699647","@hartez  can you confirm i didn't screw the rebase ? :) "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2038#discussion_r688570860","CarouselVIew doesn't crashes iff Loop =true on Android, and doesn't show when Loop=False"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/718#issuecomment-825810374","@rachelkang  i think you can't slide by default because is just 0 and 1 
+
+try something like :
+
+```
+new Slider { Minimum = 0, Maximum = 10, MinimumTrackColor = Colors.Pink, MaximumTrackColor = Colors.Red }
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2306#issuecomment-919416949","Build failures on Windows , you need to run the winui solution
+
+```
+  D:\agent\1\s\src\Core\src\Platform\Windows\DatePickerExtensions.cs(14,32): error CS1503: Argument 2: cannot convert from 'System.DateTime?' to 'Microsoft.Maui.IDatePicker' [D:\agent\1\s\src\Core\src\Core-net6.csproj]
+
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6269#issuecomment-1103743951","wow dependabot is smart"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4826#issuecomment-1047862200","@jsuarezruiz  if you check we added Mappers for those properties 
+
+https://github.com/dotnet/maui/blob/main/src/Core/src/Handlers/WebView/WebViewHandler.Android.cs#L54"
+"xamarin","maui","rmarinho","https://github.com/xamarin/maui/pull/43#discussion_r414589805","Why not a IFrameworkElement ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7532#issuecomment-1141022959","Seems is building fine"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2137#issuecomment-904983019","Not a fan of. the ""Native"" in the namings.. I think the most used api should be MauiApplication and MauiWindow in all platforms "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6081#issuecomment-1125004167","Oh right i was thinking it was 6.0.5 also. but i see now is 6.0.6"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3351#discussion_r759551870","```suggestion
+		/// <param name=""useNativeViewBounds"">If true, use native view bounds for given elements. Else, use the Elements Frame.</param>
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/1007#issuecomment-926792762","Created a issue for this @rachelkang  https://github.com/dotnet/maui/issues/2685"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/974#discussion_r632636112","this was wrong but i fixed it "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4775#discussion_r812296703","Well doing locally should be something like: 
+
+`dotnet cake --target=VS-NET6`"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/6081#issuecomment-1125312245","We have this other #7107  with 6.0.5 that will not be for GA but for servicing. We already branched the GA version "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2638#issuecomment-925201834","Test is failing @PureWeen "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/7689#discussion_r889190025","Windows is already doing this. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3132#issuecomment-952831053","Should we target this to preview10 branch ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/8269#issuecomment-1164257179","Do we have the same issue with collectionView ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/2551#discussion_r712440022","Should this have a Disconnect ? "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4784#issuecomment-1047144772","Build is failing 
+
+```
+         D:\a\_work\1\s\src\Controls\samples\Controls.Sample\Controls\BordelessEntry\BordelessEntryHandler.cs(8,166): error CS0117: 'EntryHandler' does not contain a definition for 'Mapper' [D:\a\_work\1\s\src\Controls\samples\Controls.Sample\Maui.Controls.Sample.csproj]
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/5577#issuecomment-1081599658","Failing tests are normal for now.. "
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/4630#discussion_r805893844","```suggestion
+		void PlatformStop()
+```"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/557#discussion_r597862135","Shouldn't this be MauiCheckBox?"
+"dotnet","maui","rmarinho","https://github.com/dotnet/maui/pull/3351#discussion_r747510450","can this be internal also ? "
