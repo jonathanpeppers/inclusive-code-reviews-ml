@@ -2,7 +2,8 @@
 
 namespace MLTrainer.Models;
 
-public class Sentence {
-	[Name ("Body")]
+public class Sentence
+{
+	[Name("Body")]
 	public string Body { get; set; } = string.Empty;
 }
