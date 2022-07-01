@@ -1,19 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32611.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InclusiveCodeReviews.ConsoleApp", "InclusiveCodeReviews.ConsoleApp\InclusiveCodeReviews.ConsoleApp.csproj", "{5BD8755A-DEF0-40F0-927A-6FB0D8A8C2BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InclusiveCodeReviews.ConsoleApp", "InclusiveCodeReviews.ConsoleApp\InclusiveCodeReviews.ConsoleApp.csproj", "{5BD8755A-DEF0-40F0-927A-6FB0D8A8C2BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InclusiveCodeReviews.Model", "InclusiveCodeReviews.Model\InclusiveCodeReviews.Model.csproj", "{19CFD99B-2501-4F70-ABF7-2818C5A5B4F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InclusiveCodeReviews.Model", "InclusiveCodeReviews.Model\InclusiveCodeReviews.Model.csproj", "{19CFD99B-2501-4F70-ABF7-2818C5A5B4F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InclusiveCodeReviews.Convert", "InclusiveCodeReviews.Convert\InclusiveCodeReviews.Convert.csproj", "{CAB0A4DB-56B5-44D7-B295-B7B3917EC8C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5BD8755A-DEF0-40F0-927A-6FB0D8A8C2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +23,15 @@ Global
 		{19CFD99B-2501-4F70-ABF7-2818C5A5B4F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19CFD99B-2501-4F70-ABF7-2818C5A5B4F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19CFD99B-2501-4F70-ABF7-2818C5A5B4F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB0A4DB-56B5-44D7-B295-B7B3917EC8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB0A4DB-56B5-44D7-B295-B7B3917EC8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB0A4DB-56B5-44D7-B295-B7B3917EC8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB0A4DB-56B5-44D7-B295-B7B3917EC8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA7E79C8-3D41-4599-9403-2385E37F64A9}
 	EndGlobalSection
 EndGlobal

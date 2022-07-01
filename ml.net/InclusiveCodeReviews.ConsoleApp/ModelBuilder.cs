@@ -12,6 +12,7 @@ using Microsoft.ML;
 using Microsoft.ML.Data;
 using InclusiveCodeReviews.Model;
 using Microsoft.ML.Trainers;
+using System.IO.Pipes;
 
 namespace InclusiveCodeReviews.ConsoleApp
 {
@@ -51,7 +52,14 @@ namespace InclusiveCodeReviews.ConsoleApp
         {
             // Data process configuration with pipeline data transformations 
             var dataProcessPipeline = mlContext.Transforms.Conversion.MapValueToKey("isnegative", "isnegative")
-                                      .Append(mlContext.Transforms.Text.FeaturizeText("text_tf", "text"))
+                                      // Original `mlnet` output
+                                      //.Append(mlContext.Transforms.Text.FeaturizeText("text_tf", "text"))
+                                      .Append(mlContext.Transforms.Text.NormalizeText("text_normalized", "text", keepDiacritics: true))
+                                      .Append(mlContext.Transforms.Text.TokenizeIntoWords("text_tokenized", "text_normalized"))
+                                      .Append(mlContext.Transforms.Text.RemoveDefaultStopWords("text_stop", "text_tokenized"))
+                                      .Append(mlContext.Transforms.Conversion.MapValueToKey("text_mapped", "text_stop"))
+                                      .Append(mlContext.Transforms.Text.ProduceNgrams("text_ngram", "text_mapped"))
+                                      .Append(mlContext.Transforms.NormalizeLpNorm("text_tf", "text_ngram"))
                                       .Append(mlContext.Transforms.CopyColumns("Features", "text_tf"))
                                       .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
                                       .AppendCacheCheckpoint(mlContext);
@@ -83,13 +91,17 @@ namespace InclusiveCodeReviews.ConsoleApp
             PrintMulticlassClassificationFoldsAverageMetrics(crossValidationResults);
         }
 
-        private static void SaveModel(MLContext mlContext, ITransformer mlModel, string modelRelativePath, DataViewSchema modelInputSchema)
+        private static void SaveModel(MLContext mlContext, IDataView dataView, ITransformer mlModel, string modelRelativePath, DataViewSchema modelInputSchema)
         {
             // Save/persist the trained model to a .ZIP file
             Console.WriteLine($"=============== Saving the model  ===============");
             mlContext.Model.Save(mlModel, modelInputSchema, GetAbsolutePath(modelRelativePath));
+            var onnxPath = Path.ChangeExtension(modelRelativePath, ".onnx");
+            using var fileStream = File.Create(onnxPath);
+            mlContext.Model.ConvertToOnnx(mlModel, dataView, fileStream);
             Console.WriteLine("The model is saved to {0}", GetAbsolutePath(modelRelativePath));
-        }
+            Console.WriteLine("The model is saved to {0}", GetAbsolutePath(onnxPath));
+		}
 
         public static string GetAbsolutePath(string relativePath)
         {
