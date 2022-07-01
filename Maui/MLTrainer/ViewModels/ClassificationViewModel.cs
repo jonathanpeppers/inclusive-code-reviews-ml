@@ -14,10 +14,10 @@ public partial class ClassificationViewModel : ObservableObject
     int _commentCount;
 
     [ObservableProperty]
-    string? fileName;
+    string fileName = String.Empty;
 
     [ObservableProperty]
-    string? message;
+    string message = String.Empty;
 
     [ObservableProperty]
     ObservableCollection<GitHubComment>? gitHubComments;
