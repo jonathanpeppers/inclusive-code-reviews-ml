@@ -43,6 +43,6 @@ jobs:
     - name: Restore Dependencies
       run: dotnet restore Maui/MLTrainer/MLTrainer.sln
 
-    - name: Build MAUI Android
+    - name: Build MAUI App
       run: dotnet build Maui/MLTrainer/MLTrainer.sln -c Release --no-restore
 
