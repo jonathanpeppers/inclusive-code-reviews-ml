@@ -1,0 +1,14 @@
+[
+    {
+        "text": "This is terrible",
+        "isnegative": "1"
+    },
+    {
+        "text": "You suck",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is great!",
+        "isnegative": "0"
+    }
+]

@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
-        "types": [ "node", "mocha" ]
+        "types": [ "node", "mocha" ],
+        "resolveJsonModule": true,
+        "esModuleInterop": true
     }
 }

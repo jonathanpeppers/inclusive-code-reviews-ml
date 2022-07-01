@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import * as ort from 'onnxruntime-node';
+import test_cases from './test_cases.json';
 
 describe('onnx tests', async () => {
     const session = await ort.InferenceSession.create('./model.onnx');
@@ -19,22 +20,7 @@ describe('onnx tests', async () => {
         expect(score).to.be.greaterThan(confidence);
     }
 
-    var names = [
-        {
-            text: 'This is terrible',
-            isnegative: '1',
-        },
-        {
-            text: 'You suck',
-            isnegative: '1',
-        },
-        {
-            text: 'This is great!',
-            isnegative: '0',
-        },
-    ];
-
-    names.forEach(x => {
+    test_cases.forEach(x => {
         it(x.text, async () => {
             await assertText(x.text, x.isnegative, 0.7);
         });
