@@ -585,3 +585,7 @@ Sample and device tests still need to be tested on iOS,0
 "@github yeah I did git clean -xfd :/ This is what shows up in the error list: Error	MSB3491	Could not write lines to file ""obj\staticwebassets.pack.sentinel"". The process cannot access the file 'C:\Users\rachelkang\maui1\src\Controls\samples\Controls.Sample\obj\staticwebassets.pack.sentinel' because it is being used by another process.	Maui.Controls.Sample	C:\Program Files\dotnet\sdk\6.0.300-preview.22154.4\Sdks\Microsoft.NET.Sdk.Razor\targets\Microsoft.NET.Sdk.Razor.StaticWebAssets.targets	429	",0
 "nice var name 😂  ""whatDoIDo""",0
 similar feedback applies to all dropdowns,0
+"There are some new test failures, this is terrible.",1
+"This is the worst thing that has ever happened.",1
+"This is such a bad way to do things",1
+"This is crazy good",0
