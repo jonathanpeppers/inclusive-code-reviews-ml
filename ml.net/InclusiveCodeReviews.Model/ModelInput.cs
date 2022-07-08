@@ -17,6 +17,6 @@ namespace InclusiveCodeReviews.Model
         [ColumnName("isnegative"), LoadColumn(1)]
         public string Isnegative { get; set; }
 
-
+        public override string ToString() => Text;
     }
 }
