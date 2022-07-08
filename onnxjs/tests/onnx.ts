@@ -6,9 +6,12 @@ describe('onnx tests', async () => {
     const session = await ort.InferenceSession.create('./model.onnx');
     expect(session).to.be.not.null;
 
+    const githubHandleRegex:RegExp = /@(\w|-|_)+/;
+
     async function assertText(text:string, isnegative:string, confidence:number) {
+        const replaced = text.replace(githubHandleRegex, '@github');
         const results = await session.run({
-            text: new ort.Tensor([text], [1,1]),
+            text: new ort.Tensor([replaced], [1,1]),
             isnegative: new ort.Tensor([''], [1,1]),
         })
         expect(results).to.be.not.null;
