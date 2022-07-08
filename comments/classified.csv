@@ -492,18 +492,18 @@ That is a good point.,0
 "Nope, I don't think so. And yeah, the upgrade story is an interesting concept! Will have to look into that more, depending on how we decide to approach the package support for api 21/22",0
 trying again now,0
 "updated, thanks for the feedback!",0
-@davidortinau told me blazor already has this type of theming via bootstrap styles,0
+@github told me blazor already has this type of theming via bootstrap styles,0
 "should this also be MauiComboBox?",0
-Thanks for the feedback @Eilon! Opened an issue here https://github.com/dotnet/maui/issues/4766 - feel free to add more info,0
+Thanks for the feedback @github! Opened an issue here https://github.com/dotnet/maui/issues/4766 - feel free to add more info,0
 What is the expected updated behavior here?,0
 will do!,0
 "missing d",0
-"I was told that it's best to use Brushes for Background colors and Colors everywhere else (cc @jsuarezruiz) and yep, I added a bunch of colors/brushes that don't get used - exact colors are still a bit tentative, but I'll see what @davidortinau thinks for that",0
+"I was told that it's best to use Brushes for Background colors and Colors everywhere else (cc @github) and yep, I added a bunch of colors/brushes that don't get used - exact colors are still a bit tentative, but I'll see what @github thinks for that",0
 failing tests unrelated,0
 The built-in platforms also use color for interactive controls,0
 "nitpick typo fix that's been bothering me",1
 fixing now - but can you remind me why the null check is sufficient for Android and not iOS?,0
-"Hi, @canperk - what's ths issue you're seeing on iOS? Is it also the same error regarding `Xamarin.AndroidX.Security.SecurityCrypto` ?",0
+"Hi, @github - what's ths issue you're seeing on iOS? Is it also the same error regarding `Xamarin.AndroidX.Security.SecurityCrypto` ?",0
 "NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119 Placeholder looks great otherwise",0
 "I put this sample code directly in my local version of the control gallery sample: It uses `<GridLayout RowDefinitions=""Auto,*, Auto"">` like the samples in the referenced issues do",0
 See following comment first (I'm assuming this naming is related to `TapGestureRecognizerNeedsDelegate` which doesn't fully make sense to me),0
@@ -513,24 +513,24 @@ Should we add more tests for the other shapes? Or is Ellipse sufficient?,0
 TextColor is here to prevent issues wrt not implementing the full interface properly,0
 We should also link to instructions on how people can obtain the logs so they can also just attach them here,0
 "oops, yeah. removing the redundancy; thanks for the catch!",0
-"@jsuarezruiz there's a number of confusing NREs thrown on this branch that are unresolved. If you could take a look and share any tips you might have, that would be awesome!",0
+"@github there's a number of confusing NREs thrown on this branch that are unresolved. If you could take a look and share any tips you might have, that would be awesome!",0
 "Why is it called ""QueryEditor"" and ""_editor""? Shouldn't it be ""entry""?",0
 What's happening here? Why is it no longer async and what does the func() do that's different?,0
 "I wonder how we can make this a bit more flexible, so that we get not just the platform but the specific API versions!",0
 What is MaxLength=-1 expected to do?,0
 and wherever it's used/referenced,0
-"@jsuarezruiz I fixed the ugly rebase! Build is failing now because Shadow is using Color and Size though, so that still needs to be fixed",1
+"@github I fixed the ugly rebase! Build is failing now because Shadow is using Color and Size though, so that still needs to be fixed",1
 "Can we use the same vars for consistency?`",0
 "Ok, thanks! Changed it back. I hadn't been sure because I know both brushes and colors can be used for Background, and assumed it might be the same with Backgroundcolor",0
 will do!,0
-@rmarinho will try again... did you change the background color though? I wonder if that's related,0
+@github will try again... did you change the background color though? I wonder if that's related,0
 can do!,0
 "should we consider changing the default too? So that if a developer doesn't explicitly set a description, it'll still make sense?",0
 Maybe we can do something similar to image where it simply can't receive focus at all and won't read out anything - maybe we can make it so just the contents are accessible?,0
 "Or alternatively, we can try to make the textual contents or at least the first textual content get propagated upward",0
 nice!,0
 "We woud need to check what the screen reader behavior is - does the TalkBack focus move with the keyboard focus? If it's inconsistent, we need to figure out what the desired behavior is there. If it's consistent, then I think this is an OK solution",0
-I agree! I just wanted to leave them for @davidortinau in case there are any we want to comment in before I delete them entirely,0
+I agree! I just wanted to leave them for @github in case there are any we want to comment in before I delete them entirely,0
 "Commented out because the values aren't clear yet and we want your opinions on what the values should be :)",0
 "Similarly, for any controls/properties you don't see in this PR that you believe belong, please let me know which ones and which values you might see them with",0
 "I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct""",1
@@ -540,25 +540,25 @@ typo fix that's been bothering me,1
 done!,0
 "sorry, I misread which APIs were being used - taking back what I said and seconding Shane here!",0
 gotcha - will fix both here and in XCT soon,0
-@rmarinho I tried that but it didn't work for me :/ will try again though,0
+@github I tried that but it didn't work for me :/ will try again though,0
 "Is the body correct? Is it related to CursorPosition and not SelectionLength?",0
 Where did this 50 come from?,0
 Should we maybe set this to ImportantForAccessibility.Auto instead of null?,0
 "yep! We're trying to get the SearchView, and it looks like that TextView is being uesd as the SearchView. The SearchButton stuff we were using before was wrong / not quite relevant",0
 "alpha version was incorporated, and code significantly simplified. security nuget still needs to be added to nuget feed, so waiting on that! in the meantime, if any folks are able to test on android api levels 21/22, that would be super helpful - thanks!",0
 "missing d",0
-@arevellfraedom font scaling will automatically be enabled across all the platforms including iOS now!,0
+@github font scaling will automatically be enabled across all the platforms including iOS now!,0
 "Should we not set a background color on any pages then and just let the system handle that?",0
 "My thinking was that the background should be light in light mode, dark in dark mode, and since `BackgroundColor` property is derived from VisualElement, which Page is based on, this is how I handled it. Most of the specific pages themselves (i.e. ContentPage) don't have stylable properties if not for those derived from Page and VisualElement",0
 maybe we can at least have the mainpage code in comments?,0
 "hmm I tested again, but it's the same :/",0
 Could you share an example so that I can understand this better? I'm wondering why it's [`.BeforeDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_BEFORE_DESCENDANTS) instead of [`.AfterDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_AFTER_DESCENDANTS). Is the `nativeview` here the rootView or the contained views?,0
-"@arevellfraedom yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired",0
+"@github yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired",0
 still seeing similar issues where hovering changes the color,0
-"@jsuarezruiz I agree that with this calculator sample specifically, gray might work better with the general color scheme. Unfortunately, the proposed colors aren't accessible so I think it would be best to keep the current colors which have already been tested and validated for accessibility via our templates. Naturally, different colors might look better with different samples and scenarios, and folks can always change these styles as they wish. If you want to use grays for the calculator sample, I recommend a light gray button on black background in dark mode! But again, for the templates, I think keeping the current button style (with regard to colors) is ideal in terms of accessibility.",0
+"@github I agree that with this calculator sample specifically, gray might work better with the general color scheme. Unfortunately, the proposed colors aren't accessible so I think it would be best to keep the current colors which have already been tested and validated for accessibility via our templates. Naturally, different colors might look better with different samples and scenarios, and folks can always change these styles as they wish. If you want to use grays for the calculator sample, I recommend a light gray button on black background in dark mode! But again, for the templates, I think keeping the current button style (with regard to colors) is ideal in terms of accessibility.",0
 Windows SearchBar MaxLength will need some more time https://github.com/dotnet/maui/issues/5669,0
 AFAICT failing tests are unrelated,0
-@jonathanpeppers this is what @mattleibow was asking you for me about! wondering what a better way of doing this might be,0
+@github this is what @github was asking you for me about! wondering what a better way of doing this might be,0
 same feedback applies to all the templates,0
 why is this commented out? Should it be deleted?,0
 Is TextColor not yet expected to work?,0
@@ -567,6 +567,6 @@ Is TextColor not yet expected to work?,0
 "Oo makes sense, thanks!!",0
 Sample and device tests still need to be tested on iOS,0
 "or just ""textField"" as before?",0
-"@mattleibow yeah I did git clean -xfd :/ This is what shows up in the error list: Error	MSB3491	Could not write lines to file ""obj\staticwebassets.pack.sentinel"". The process cannot access the file 'C:\Users\rachelkang\maui1\src\Controls\samples\Controls.Sample\obj\staticwebassets.pack.sentinel' because it is being used by another process.	Maui.Controls.Sample	C:\Program Files\dotnet\sdk\6.0.300-preview.22154.4\Sdks\Microsoft.NET.Sdk.Razor\targets\Microsoft.NET.Sdk.Razor.StaticWebAssets.targets	429	",0
+"@github yeah I did git clean -xfd :/ This is what shows up in the error list: Error	MSB3491	Could not write lines to file ""obj\staticwebassets.pack.sentinel"". The process cannot access the file 'C:\Users\rachelkang\maui1\src\Controls\samples\Controls.Sample\obj\staticwebassets.pack.sentinel' because it is being used by another process.	Maui.Controls.Sample	C:\Program Files\dotnet\sdk\6.0.300-preview.22154.4\Sdks\Microsoft.NET.Sdk.Razor\targets\Microsoft.NET.Sdk.Razor.StaticWebAssets.targets	429	",0
 "nice var name 😂  ""whatDoIDo""",0
 similar feedback applies to all dropdowns,0
