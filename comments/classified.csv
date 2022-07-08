@@ -488,3 +488,18 @@ small formatting,0
 "Sorry, I don't think this one is actually ready for review. I think there are some things in the headers that were not mentioned by xtro that need updating!",0
 small typo,0
 That is a good point.,0
+"BTW these are the two bugs that we will try to patch for .NET 6.x that are preventing JS initializers from working in .NET MAUI",0
+"In theory, the "best" way to make this work is to use Blazor JS module initializers, but unfortunately there is currently a bug that prevents them from working as intended.",0
+"This was an access violation.",0
+"Please remember to address the cancelled task",0
+"There was a fail fast exception",0
+"I missed updating this test",0
+"This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field.",0
+"Also, contrary to the other default includes, add a condition so files are only included if we have a resource prefix (typically "Resources"), otherwise the entire hard drive might be included",0
+"I am seeing unmanaged crashes but I think our fix was just in Preview 13.",0
+"Maybe I should be more verbose, but the comment before was listing 2 brief comments.",0
+"The ListView is displaying incorrectly.",0
+"In order for the the Button to display correctly.",0
+"The point of the ExecutionMode platform specific was to tell WebView on UWP to run out of process.",0
+"Just invoking the Current property causes a crash, so you must be working some magic!",0
+"I was able to replicate the failures locally, and the most likely reason for the failures is the loss of focus by the test form",0
