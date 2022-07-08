@@ -3,7 +3,7 @@
 "tests failed","0"
 "This sucks!","1"
 "Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.","0"
-"@dellis1972 I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597","0"
+"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597","0"
 "Ignore above, it was a `net6.0-android` app.","0"
 "When testing `net7.0-android` apps, Debug builds work","0"
 "You are so terrible","1"
@@ -200,7 +200,7 @@
 "This is obviously wrong","1"
 "Why don't you just skip this step","1"
 "Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.",0
-"@dellis1972 I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0
+"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0
 "Ignore above, it was a `net6.0-android` app. When testing `net7.0-android` apps, Debug builds work.",0
 But a `Release` build logs this and then crashes after:,0
 `ndk-stack` gives:,0
@@ -221,7 +221,7 @@ The issue in https://github.com/xamarin/xamarin-android/pull/5991#issuecomment-8
 I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205.,0
 "I can't find anything sensible to do here, `$([System.Version]::Parse())` or `$([MSBuild]:VersionGreaterThanOrEquals())` throw during evaluation.",0
 "I think adding the test case is fine for now, and you would get the above error from `NuGet.targets`?",0
-"@pjcollins there is something else weird here, but I think it's our test.",0
+"@github there is something else weird here, but I think it's our test.",0
 "The cases where macOS failed, it seems like `usesAssemblyStore=false`. So how would this class know to check if the files exist in that case?",0
 https://github.com/xamarin/xamarin-android/blob/968c4245d3bb24670f402eb207109ca837fdd195/src/Xamarin.Android.Build.Tasks/Tests/Xamarin.Android.Build.Tests/XASdkTests.cs#L634-L638,0
 Let's look into this again if it fails like this later...,0
@@ -284,7 +284,7 @@ Could simplify this line:,0
 /azp run,0
 The quoted stuff was all from:,0
 👍 I'll indent it.,0
-@jonpryor I bet this `UseSharedRuntime ?` check was important...,0
+@github I bet this `UseSharedRuntime ?` check was important...,0
 I need to look at what is in the typemaps in both cases.,0
 "Right so we only should check if `$(TargetPath)` changes, and is newer than a stamp file or something.",0
 Something like (_untested_):,0
@@ -326,7 +326,7 @@ It looks like they moved the submodule? So maybe it's in `external\llvm-project`
 https://github.com/mono/mono/tree/a2f9fb77a3704049ffe5de32362029ece154ee4c/external,0
 "I am building a mono archive based off 2019-10, will give that a try.",0
 We don't have darc in this repo at all yet. Putting the version number in `Configuration.props` follows our current pattern until that is in place.,0
-"@pjcollins will be looking into darc, I think. We can start with getting it to bump the dotnet/sdk version.",0
+"@github will be looking into darc, I think. We can start with getting it to bump the dotnet/sdk version.",0
 I think all these `/t:Restore` should just use `/restore` instead:,0
 "Both will probably work in this case, but I've seen some weird things if you run the `Restore` target first followed with `,Build,Etc`.",0
 "When I last attempted to split up `<GenerateJavaStubs/>`, it hurt performance a bit, I had to move the `DirectoryAssemblyResolver` to be stored in `RegisterTaskObject` so it could be shared across multiple tasks:",0
@@ -346,7 +346,7 @@ Something like:,0
 attempting to extract @(EmbeddedResource)s when an assembly doesn't have any.,0
 Maybe I need to see if this can work without any assembly-level attributes at all.,0
 `.Any()`,0
-"@pjcollins in https://github.com/xamarin/xamarin-android/pull/6539 I remember some LLVM tests failed when I tried, but there are other changes in xamarin-android/main now. Could the LLVM-IR support @grendello added make this work now?",0
+"@github in https://github.com/xamarin/xamarin-android/pull/6539 I remember some LLVM tests failed when I tried, but there are other changes in xamarin-android/main now. Could the LLVM-IR support @github added make this work now?",0
 "If you're testing, and LLVM is working without an NDK let's try it.",0
 /azp run,0
 "Does this need to check `$(HostOS)` and use either: `osx-x64`, `windows-x64`, or `linux-x64`?",0
@@ -357,7 +357,7 @@ This way you can set it to `false`.,0
 I agree with the concern here: https://github.com/xamarin/xamarin-android/pull/6541#issuecomment-985045429,0
 "If this is `sealed`, how do you implement ""ssl pinning"" in an app?",0
 "👍  I haven't seen this syntax yet, seems better than this:",0
-@dellis1972 do you want to try setting `$(XamarinBuildDownloadDir)` to a folder in `bin/TestDebug/temp/{TestName}`?,0
+@github do you want to try setting `$(XamarinBuildDownloadDir)` to a folder in `bin/TestDebug/temp/{TestName}`?,0
 https://github.com/xamarin/XamarinComponents/blob/4f5a57bd567f46f4b67622ab718b50485725463f/Util/Xamarin.Build.Download/source/Xamarin.Build.Download/Xamarin.Build.Download.targets#L9,0
 "Then when it retries, I think it could start with a fresh empty directory.",0
 Should this entire file go in this `DotNet5.md`?,0
@@ -365,10 +365,10 @@ https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/DotN
 Then maybe we don't even need a `README.md` here?,0
 Maybe we should use `InetAccess` instead? Would all `InetAccess` tests fail without crypto?,0
 I'm feeling as the number of MSBuild files start to grow...,0
-@dellis1972 do you think we should start putting a short comment/description at the top of each new MSBuild file to explain what the file is?,0
+@github do you think we should start putting a short comment/description at the top of each new MSBuild file to explain what the file is?,0
 "So we would want just a short sentence explaining the difference between `App.Runtime.proj` and `App.Ref.proj`? `Xamarin.Android.Lite.proj`, too?",0
 "If I made a `Xamarin.Android.BuildOrder.targets` the name is almost self-explanatory, but would probably be helpful to say ""this is where all `$(FooDependsOn)` properties go"".",0
-@dellis1972 it looks like @brendanzagaeski looked at these codes? https://github.com/xamarin/xamarin-android/pull/2258,0
+@github it looks like @github looked at these codes? https://github.com/xamarin/xamarin-android/pull/2258,0
 "They weren't ""actionable""?",0
 "So this appears to only be broken for specifically API 29, because it isn't listed here:",0
 https://github.com/xamarin/xamarin-android-tools/blob/2d3690e428c8523b3779f84e5c804d1fd3c0d6fe/src/Xamarin.Android.Tools.AndroidSdk/AndroidVersions.cs#L139-L176,0
@@ -383,31 +383,31 @@ https://github.com/xamarin/xamarin-android/blob/af7f7f5da475c5cb8d2d725d77082ba7
 Should I create an issue and link that in the binding?,0
 Thanks!,0
 Will merge after issues with main are resolved!,0
-@rolfbjarne  @mandel-macaque Would these need this variable too when we move out of .NET6?,0
+@github  @github Would these need this variable too when we move out of .NET6?,0
 Again in that file here:,0
-"@rolfbjarne  Ah good catch! I didn't realize I was calling the same method... The reason I made this change is that the SetHighlightedItemForProperty (int property, int identifier) is Obsolete and suggests that I use this one - which in this case does not make sense. Should I in fact continue to use the obsoleted one?",0
+"@github  Ah good catch! I didn't realize I was calling the same method... The reason I made this change is that the SetHighlightedItemForProperty (int property, int identifier) is Obsolete and suggests that I use this one - which in this case does not make sense. Should I in fact continue to use the obsoleted one?",0
 Updating to fix unrelated failure: https://github.com/xamarin/maccore/issues/2472,0
 "Thanks for catching these, I followed Sebastian's advice about removing the [Introduced] attribute and removing the messages that don't give us much info in the Enums.cs file but not this one. If the documentation does not give a good method to use instead, would I just clear the entire message for these as well? In this case, there are other functions that can fetch assets using different types of parameters. Should I say something along the lines of ""Use other fetchasset methods""?",0
 "I thought these were better to give us more detailed exceptions, but the compiler does not recognize these `ObjCRuntime.ThrowHelper.ThrowArgumentNullException`s as ending the method so I kept the old one at the end of the method...",0
 Merging since the test failures are unrelated timeouts!,0
-@chamons @mandel-macaque AH okay thank you both for the explanations! I will get right on this :),0
+@github @github AH okay thank you both for the explanations! I will get right on this :),0
 "I can create a LPLinkView with the size 5,5 at dimensions 5,5",0
 I noticed the OneLocBuild task has failing due to the PAT in a different branch while testing this.,0
 Connor was able to fix it!,0
 Turning this into a draft since we will need more discussion on this before moving forward!,0
-"Update: still testing on my end, for some reason @rolfbjarne 's solution isn't working on my end.. Sounds like it is working for others though.",0
+"Update: still testing on my end, for some reason @github 's solution isn't working on my end.. Sounds like it is working for others though.",0
 Working on a test for this now!,0
 "While I realize that I added a good amount of these and that SetData () throws an exception if the value arg is null, I thought it would be better to explicitly add the exceptions here and not use a `!`, but I am open to opinions!",0
-"I will make a comment of this too, but the reasoning is a little confusing to me. I remember I could not build the file and @dalexsoto may remember, but there is a file src/Photos/PHAssetChangeRequest.cs that has an Obsolete attribute in the PHAssetChangeRequest empty constructor and we deemed that is what was causing the build issue. However, now I am confused because this class is PHChangeRequest and not PHAssetChangeRequest. I can talk to Alex about this tomorrow and get back to you with more clarification.",0
+"I will make a comment of this too, but the reasoning is a little confusing to me. I remember I could not build the file and @github may remember, but there is a file src/Photos/PHAssetChangeRequest.cs that has an Obsolete attribute in the PHAssetChangeRequest empty constructor and we deemed that is what was causing the build issue. However, now I am confused because this class is PHChangeRequest and not PHAssetChangeRequest. I can talk to Alex about this tomorrow and get back to you with more clarification.",0
 Does this look okay?,0
-@dalexsoto @stephen-hawley  does `Microsoft.Nnyeah` meet all these criteria? Also could this change be in a separate PR?,0
-@rolfbjarne So I just tried to apply the mac attributes to this one and a few of them below that say they are available for mac as well and they were getting a lot of compile errors.,0
+@github @github  does `Microsoft.Nnyeah` meet all these criteria? Also could this change be in a separate PR?,0
+@github So I just tried to apply the mac attributes to this one and a few of them below that say they are available for mac as well and they were getting a lot of compile errors.,0
 It turns out that these are the questionable interfaces in this src/quicklook.cs,0
 It turns out that they are also in src/quicklookui.cs and are all decorated with mac attributes already.,0
 Do you think this could be leading to the issue?,0
 [Here is the gist](https://gist.github.com/tj-devel709/03492abdf722192da23b84ae921f7e05) with the errors that marking mac for each of these interfaces show,0
 I'll just leave the action in!,0
-"@mandel-macaque There was no MacCatalyst.todo, but most of these interfaces say they support MacCatalyst in the web docs.",0
+"@github There was no MacCatalyst.todo, but most of these interfaces say they support MacCatalyst in the web docs.",0
 I tried including the HomeKit in the MacCatalyst section of the frameworks.source file and I kept getting this error in the build:,0
 Is this something I should do?,0
 "Are enums int by default? If so, is there a reason to declare int?",0
@@ -429,13 +429,13 @@ lol,0
 Looks like extra indentation here,0
 "Oops sorry, actually forgot it haha",0
 Thanks for explaining! :),0
-@rolfbjarne that is a great question... Yeah this is the generated method signature:,0
+@github that is a great question... Yeah this is the generated method signature:,0
 And CategoryToToken says it returns an `NSString?`,0
 Although there are no compiler warnings/errors regarding this..,0
 Should we be replacing this `#if XAMCORE_4_0` with an `#if NET`?,0
-@mandel-macaque maybe just an if statement inside that makes those changes ~ adds watch to the legacy and doesn't go though the platforms for the dotnet_iOS_MacCatalyst?,0
+@github maybe just an if statement inside that makes those changes ~ adds watch to the legacy and doesn't go though the platforms for the dotnet_iOS_MacCatalyst?,0
 Unrelated failing test: https://github.com/xamarin/maccore/issues/2434,0
-"So I actually don't who told me to add the Sealed, perhaps @dalexsoto ?",0
+"So I actually don't who told me to add the Sealed, perhaps @github ?",0
 "But when I remove it, I get these build errors: https://gist.github.com/tj-devel709/d459d9e717a186486deab6479f57c050",0
 Sebastien recommended that we change the ArgumentNullException's as well in these Nullability PRs,0
 It's the first time I remember seeing `|=` cool haha,0
@@ -460,8 +460,8 @@ Closing this PR in favor of: https://github.com/xamarin/xamarin-macios/pull/1439
 "This one was having test failures that I was waiting on, but a new (weekly) version of the localization PRs came out which includes all the changes in this PR and more!",0
 "OK, let's YOLO this 😁",0
 Sounds good 😂,0
-@tj-devel709 changes look good. Interestingly all the ignored enums and functions are in all platforms supported by the framework. There is an option to create a single ignore file that uses common-* as the prefix rather than the platform name. Food for though 😉,0
-@mandel-macaque  Would you recommend that I change it to common? Would it still be okay in common if it doesn't cover watchOS also?,0
+@github changes look good. Interestingly all the ignored enums and functions are in all platforms supported by the framework. There is an option to create a single ignore file that uses common-* as the prefix rather than the platform name. Food for though 😉,0
+@github  Would you recommend that I change it to common? Would it still be okay in common if it doesn't cover watchOS also?,0
 Flagging just in case since lowest supported is 10.14,0
 Flagging this just in case - not supported iOS version in .NET,0
 **Unrelated test failure**,0
@@ -475,11 +475,11 @@ Will do!,0
 Merging since the test failures are unrelated timeouts!,0
 "Oh gosh, I really messed that up ☝️",0
 "Alex helped suggest that name since the comment on xcode is ""/// The handle for the person that will be displayed on the incoming call notification.""",0
-@mandel-macaque hmmm what does the semicolon in this path name do?,0
+@github hmmm what does the semicolon in this path name do?,0
 Perhaps this will give me a clue on how the apidiff directory is being set?,0
-"@tj-devel709 let me know if the json was tool generated, in that case ignore my comments.",0
+"@github let me know if the json was tool generated, in that case ignore my comments.",0
 Yes they were auto generated. The output used spaces instead of tabs though so it is possible that I messed up indentation when trying to use tabs to not show changes in Rolf's existing json,0
-"Awesome, thanks @mandel-macaque !!",0
+"Awesome, thanks @github !!",0
 Do we want to remove these maccatalyst's?,0
 "Sorry, my mistake, both test failures are unrelated:",0
 "Also if I try (IList<string>) as a cast, I get this:",0
