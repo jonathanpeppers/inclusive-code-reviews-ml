@@ -1,16 +1,23 @@
 using System;
+using System.Text.RegularExpressions;
 using InclusiveCodeReviews.Model;
 
 Console.WriteLine("Ctrl+C to exit...");
 Console.WriteLine();
 
+var githubHandleRegex = new Regex(@"@(\w|-|_)+", RegexOptions.Compiled);
+
 while (true)
 {
 	Console.WriteLine("Enter some text:");
 
+	var text = Console.ReadLine();
+	if (string.IsNullOrEmpty(text))
+		continue;
+
 	var sampleData = new ModelInput()
 	{
-		Text = Console.ReadLine()!,
+		Text = githubHandleRegex.Replace(text, "@github"),
 	};
 
 	var result = ConsumeModel.Predict(sampleData);
