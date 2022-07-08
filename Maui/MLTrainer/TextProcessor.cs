@@ -5,7 +5,7 @@ namespace MLTrainer
 {
 	public static class TextProcessor
 	{
-		static readonly Regex _githubHandleRegex = new Regex(@"@(\w|-|_)+", RegexOptions.Compiled);
+		static readonly Regex _githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		static string ReplaceGithubHandles(string text) => _githubHandleRegex.Replace(text, "@github");
 

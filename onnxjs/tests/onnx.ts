@@ -6,7 +6,7 @@ describe('onnx tests', async () => {
     const session = await ort.InferenceSession.create('./model.onnx');
     expect(session).to.be.not.null;
 
-    const githubHandleRegex:RegExp = /@(\w|-|_)+/;
+    const githubHandleRegex:RegExp = /\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi;
 
     async function assertText(text:string, isnegative:string, confidence:number) {
         const replaced = text.replace(githubHandleRegex, '@github');

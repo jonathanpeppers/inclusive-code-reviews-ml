@@ -5,7 +5,7 @@ using InclusiveCodeReviews.Model;
 Console.WriteLine("Ctrl+C to exit...");
 Console.WriteLine();
 
-var githubHandleRegex = new Regex(@"@(\w|-|_)+", RegexOptions.Compiled);
+var githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 while (true)
 {
