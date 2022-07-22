@@ -1,12 +1,67 @@
 # inclusive-code-reviews-ml
 
-Machine learning for code reviews!
+Machine learning for code reviews! This is an MIT-licensed companion
+to our [Inclusive Code Comments browser extension][browser].
 
-Folders:
+The goal of this project is to produce a machine learning model for
+classifying sentences for code reviews.
+
+Some examples:
+
+* "Looks good to me. Ship it!" -> OK!
+* "There are test failures" -> OK!
+* "You are a failure" -> BAD!
+* "This code stinks" -> BAD!
+
+We have the model in two formats, that is free to use in other
+projects:
+
+* `ml.net\InclusiveCodeReviews.Model\MLModel.zip` - model in ML.NET format
+* `onnxjs\model.onnx` - model in ONNX format
+
+See the `InclusiveCodeReviews.ConsoleApp` for a C# sample, general
+usage something like:
+
+```csharp
+var results = ConsumeModel.Predict(new ModelInput
+{
+    Text = "Your text here."
+});
+var result = result.Prediction;
+var score = result.Score[result.Prediction == "1" ? 1 : 0];
+```
+
+See `onnxjs\tests\onnx.ts` for a JavaScript sample, general usage:
+
+```javascript
+const session = await ort.InferenceSession.create('./model.onnx');
+const results = await session.run({
+    text: new ort.Tensor(["Your text here."], [1,1]),
+    isnegative: new ort.Tensor([''], [1,1]),
+});
+const result = results['PredictedLabel.output'].data[0];
+const score = results['Score.output'].data[Number(result)];
+```
+
+Folder structure of this repo:
 
 * `Maui`: desktop app for classifying data
 * `ml.net`: contains C# projects related to ML.NET usage, creating `.zip` or `.onnx` files
 * `onnxjs`: JS test project for the `.onnx` model
+
+[browser]: https://github.com/jonathanpeppers/inclusive-code-comments
+
+## Notes about Inputs
+
+The model is meant to be passed individual sentences. If you need to
+classify paragraphs of text, it is recommended to split the text into
+sentences and match each against the model.
+
+The model is trained with all GitHub handles removed and replaced with
+`@github`, you should apply this same replacement with your own input
+text.
+
+TODO: standardize replacement of punctuation.
 
 ## `mlnet` .NET Global Tool
 
@@ -44,32 +99,3 @@ Open `ml.net\InclusiveCodeReviews.sln` in VS, and run `InclusiveCodeReviews.Conv
 This will update `InclusiveCodeReviews.Model\MLModel.zip` and `onnxjs\model.onnx` in-place.
 
 To test `model.onnx`, run `npm test` in the `onnxjs` directory.
-
-## Code Review Examples
-
-These are just some links to "heated" conversations:
-
-* https://lkml.iu.edu/hypermail/linux/kernel/1510.3/02866.html
-
-## CloudMine
-
-If you would like to access CloudMine, see:
-
-* https://1esdocs.azurewebsites.net/datainsights/cloudmine/access.html?tabs=user
-* https://dataexplorer.azure.com/clusters/1es/databases/GitHub
-* https://dataexplorer.azure.com/clusters/1es/databases/AzureDevOps
-
-An example querying 100 random comments would be:
-
-```kusto
-PullRequestReviewComment
-| where ReviewerLogin == 'rolfbjarne'
-| where RepositoryName == 'xamarin-macios'
-| where strlen(Body) > 10
-| order by rand()
-| limit 100
-| project OrganizationLogin, RepositoryName, ReviewerLogin, HtmlUrl, Body
-```
-
-I would be careful and only grab from a public repository of a MSFT
-employee that gave you permission.
