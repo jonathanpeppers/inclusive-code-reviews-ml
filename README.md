@@ -19,8 +19,8 @@ projects:
 * `ml.net\InclusiveCodeReviews.Model\MLModel.zip` - model in ML.NET format
 * `onnxjs\model.onnx` - model in ONNX format
 
-See the `InclusiveCodeReviews.ConsoleApp` for a C# sample, general
-usage something like:
+See the `InclusiveCodeReviews.ConsoleApp` for a C# example, general
+usage:
 
 ```csharp
 var results = ConsumeModel.Predict(new ModelInput
@@ -31,9 +31,10 @@ var result = result.Prediction;
 var score = result.Score[result.Prediction == "1" ? 1 : 0];
 ```
 
-See `onnxjs\tests\onnx.ts` for a JavaScript sample, general usage:
+See `onnxjs\tests\onnx.ts` for a TypeScript/JavaScript example,
+general usage:
 
-```javascript
+```typescript
 const session = await ort.InferenceSession.create('./model.onnx');
 const results = await session.run({
     text: new ort.Tensor(["Your text here."], [1,1]),
@@ -45,6 +46,7 @@ const score = results['Score.output'].data[Number(result)];
 
 Folder structure of this repo:
 
+* `comments`: several `.csv` files of code review comments
 * `Maui`: desktop app for classifying data
 * `ml.net`: contains C# projects related to ML.NET usage, creating `.zip` or `.onnx` files
 * `onnxjs`: JS test project for the `.onnx` model
