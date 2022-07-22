@@ -60,7 +60,7 @@ namespace MLTrainer
 					continue;
 				}
 
-				if (atStartOfLine && c == '`' && text.Length <= i + 3 && text.Substring(i, 3) == "```")
+				if (atStartOfLine && c == '`' && text.Length >= i + 3 && text.Substring(i, 3) == "```")
 				{
 					inFencedCodeBlock = !inFencedCodeBlock;
 					result += "   ";
@@ -76,7 +76,7 @@ namespace MLTrainer
 					continue;
 				}
 
-				if (atStartOfLine && c == ' ' && text.Length <= i + 4 && text.Substring(i, 4) == "    ")
+				if (atStartOfLine && c == ' ' && text.Length >= i + 4 && text.Substring(i, 4) == "    ")
 				{
 					inIndentedCodeBlock = true;
 					result += "    ";
