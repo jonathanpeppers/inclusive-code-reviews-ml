@@ -42,5 +42,9 @@
     {
         "text": "You stink",
         "isnegative": "1"
+    },
+    {
+        "text": "I don't like this.",
+        "isnegative": "1"
     }
 ]
