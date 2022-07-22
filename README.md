@@ -1,4 +1,4 @@
-# inclusive-code-reviews-ml
+# Inclusive Code Reviews: Machine Learning
 
 Machine learning for code reviews! This is an MIT-licensed companion
 to our [Inclusive Code Comments browser extension][browser].
