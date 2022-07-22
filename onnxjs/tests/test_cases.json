@@ -34,5 +34,13 @@
     {
         "text": "This is great!",
         "isnegative": "0"
+    },
+    {
+        "text": "Looks good to me",
+        "isnegative": "0"
+    },
+    {
+        "text": "You stink",
+        "isnegative": "1"
     }
 ]
