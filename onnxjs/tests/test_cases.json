@@ -46,5 +46,85 @@
     {
         "text": "I don't like this.",
         "isnegative": "1"
+    },
+    {
+        "text": "Is it working yet?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your code is pretty awful",
+        "isnegative": "1"
+    },
+    {
+        "text": "Your code is a nightmare",
+        "isnegative": "1"
+    },
+    {
+        "text": "Why is this so bad",
+        "isnegative": "1"
+    },
+    {
+        "text": "You got this!",
+        "isnegative": "0"
+    },
+    {
+        "text": "This hurts to look at",
+        "isnegative": "1"
+    },
+    {
+        "text": "Keep up the great work!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your way of thinking is corrupted",
+        "isnegative": "1"
+    },
+    {
+        "text": "Don't forget to resolve the memory corruption!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Simple and straightforward, love it",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why are you such a pain?",
+        "isnegative": "1"
+    },
+    {
+        "text": "Thanks for fixing our pain points",
+        "isnegative": "0"
+    },
+    {
+        "text": "This change was necessary",
+        "isnegative": "0"
+    },
+    {
+        "text": "I have no faith in this code",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is a huge improvement",
+        "isnegative": "0"
+    },
+    {
+        "text": "I like this.",
+        "isnegative": "0"
+    },
+    {
+        "text": "There are a couple of accessibility issues to be fixed",
+        "isnegative": "0"
+    },
+    {
+        "text": "You're giving us issues",
+        "isnegative": "1"
+    },
+    {
+        "text": "Thanks for submitting this issue!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Looking forward to seeing those improvements",
+        "isnegative": "0"
     }
 ]
