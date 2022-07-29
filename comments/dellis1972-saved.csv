@@ -141,7 +141,7 @@ nice :) I could have used this in #3938,0
 Is there a reason to not go with `$(AndroidPackageFormats)` (plural)? Is it easier for the IDE to have the two separate properties?,0
 We have many MSBuild Properties which rely on an it being one or the other for example (and this is just a small example).,0
 Also take a look at our current signing system. https://github.com/xamarin/xamarin-android/blob/main/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L2287,0
-"Its pretty messy. and depends on if we are signing with ApkSigner or not. `aab` files MUST use ApkSigner, `apk` MUST not.",1
+"Its pretty messy. and depends on if we are signing with ApkSigner or not. `aab` files MUST use ApkSigner, `apk` MUST not.",0
 "Now I'm not saying that we don't need to rework this because its clear that we do. However, the approach in this PR seemed like the most straight forward given the time constraints for this feature. Tacking on the additional apk generation for this specific case i.e when the user is in release mode and are generating an `aab`.",0
 "As we talked about on the meeting, we could just make `AndroidAdditionalPackageFormats` internal. So not something users would use, but it would be automatic if they are using .net 6 AND `aab` And `Release`.",0
 "I wonder how much larger it would be, though…. Could we make it work with an ""inner build""-like system?",0
