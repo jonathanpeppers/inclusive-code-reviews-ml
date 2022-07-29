@@ -3,6 +3,12 @@
 `npm install` then `npm test` to run the tests. You can also open this
 folder in VS Code.
 
+If you get errors, it's worth trying to update Node.js to latest at:
+
+https://nodejs.org/en/download/current/
+
+We found there might be issues running Node.js older than 17.x.
+
 We should replace `model.onnx` with a working copy of our model to
 verify we can use it from JavaScript.
 
