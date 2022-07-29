@@ -695,3 +695,154 @@ Failing tests are normal for now..,0
 Shouldn't this be MauiCheckBox?,0
 can this be internal also ?,0
 I don't like this,1
+Well we can never fix up the Line numbers without a lot of work. I don't think it's worth the effort.,0
+"While the two error messages was a nice idea , the fact that the IDE's may or may not show them in order is a problem.",0
+I'm now back to the idea of just fixing up the file path and adding a comment to say that the error might not have anything to do with that file and might be caused by other things.,0
+Looking at the code I don't think we need this really. I'll be removing it,0
+`e.Data` can be null :( not sure if that will break anything.,0
+we should ask @github if this is the right thing to do cos I have no idea :D,0
+@github I think we will need this on 16.7 I just did some tests on Windows with accented paths and files like `libraryprojectimports.cache` no longer work correctly. We get the following error,0
+"For some reason it is also missing the xml declaration at the top that might be related, but I'm not sure.",0
+@github I'm not sure why I've had to add this to this particular test. It was failing without it.,0
+@github I tested this branch in VSCode on Mac OS. I can still debug the MSBuild Task tests so this looks good to me :),0
+This might also be useful for customers who want to profile their app I guess.,0
+"But I do wonder if there is a way we can enable this at built time somehow, so generate the java code which adds the Intent .",0
+I think this was done this way so we DONT create a directory if the assembly does not contain any of the embedded resource types.  But I'd have to go back and look at the history to figure out what the original intent was.. its probably a cut and paste thing,0
+@github I think it's working now.,0
+"So we'll have to merge monodroid (it will be broken temporarily), and then come back to this?",0
+Correct.,0
+so we are always adding this jar file? Is that going to impact any project which dont need it?,0
+@github this is testing the old DesignTime build which should still be used on Mac/Linux. So we need to make sure we disable the new stuff. Remember we have to pass in `BuildingInsideVisualStudo` for the unit tests to get round that compiler issue.,0
+Those lock tests are not failing :/,0
+"We have 1 nuget failure `Could not find file ""/Users/runner/.local/share/NuGet/v3-cache/1ca707a4d90792ce8e42453d4e350886a0fdaa4d$ps:_api.nuget.org_v3_index.json/nupkg_xamarin.forms.2.3.4.231.dat"" `",0
+"And the windows build , I can't see why that failed 🤷‍♂",0
+"I would go with `.NET` now that I think about it. Since it will match the case of `Sdk=""Microsoft.NET.Sdk""`.",0
+"@github found a slight hiccup with this, C# bindings often required `/unsafe`. As a result the project won't build by default because `/unsafe` is not set by default. So the question is should we set `/unsafe` automatically (if that is even possible)? Other options are rethink about the default for the `Bind` attribute, or just allow the project to fail and let the user set `/unsafe` manually.",0
+Should we also change this to throw an exception for older API levels?,0
+https://github.com/xamarin/androidtools/blob/b639c1ee85191193453b0bf436e816619737a2d9/Xamarin.AndroidTools/Devices/AndroidDeviceExtensions.cs#L63-L69,0
+"We don't even support anything less than API 19 now. So I'm not sure that fallback is even needed anymore, we should remove it and the `if` statement as well I think.",0
+@github @github are we really pushing this to Nuget? Or is this to an internal pipelines feed?,0
+Should we include the RuntimeIdentifier in the Intermediate Path? Or will that just confuse things ?,0
+I'll see about adding the SmokeTest run of MSBuildDeviceIntegration to the windows smoke test run,0
+Does this file need to be added to `FileWrites` ? It will be deleted on the next build otherwise.,0
+same here,0
+This one is done,0
+https://github.com/dellis1972/xamarin-android/blob/37f5ce86b359324752fc5375e360304c6a545572/src/monodroid/jni/monodroid-glue.c#L655,0
+https://github.com/dellis1972/xamarin-android/blob/37f5ce86b359324752fc5375e360304c6a545572/src/monodroid/jni/monodroid-glue.c#L640,0
+https://github.com/dellis1972/xamarin-android/blob/37f5ce86b359324752fc5375e360304c6a545572/src/monodroid/jni/monodroid-glue.c#L645,0
+"should we care about the order of the `&&` here. C# will have an early out option in `if` statements, so the quickest check should be first in the list. We should probably try to remember that when reviewing code from here on :)",0
+"My guess is the BinarySearch will be faster than the `assembly.GetMetadata` call, correct?",0
+TPN? not sure what that is an acronym for?,0
+Should be fixed in https://github.com/xamarin/monodroid/pull/990,0
+So we have a few options.,0
+"1. a hard break , users need to switch to the new defines for net5. (not desirable I think).",0
+2. define the old `__` prefixed ones in net5..,0
+"3. define the new non prefixed ones in our product now as well as the old, but issue warnings the old are deprecated (if possible) to allow users to migrate. We can then phase our the old style.",0
+Personally I would prefer option 3.,0
+The failing test does not seem to be an issue caused directly by this PR.,0
+Further investigation reviled an existing issue with incremental builds when using `Hybrid` AOT.,0
+Because `Hybrid` AOT calls the `CilStrip` task during the `_BuildApkEmbed` target it updates the assembly. The next build after than WILL cause `_GenerateJavaStubs` to run because the `dlls` are newer than the `stamp` files.,0
+While `_BuildApkEmbed` doesn't run in that scenario (and does with this new code). I believe we should try to alter the code so that `CilStrip` does NOT cause the next build to do work it doesn't not need to. So that should be fixed in a separate PR.,0
+I've changed this over to use `ends_with`,0
+don't use log. here. it will lock up the UI thread (if someone decides to build in the UI).,0
+"You should add a reference to the Xamarin.AsyncTask Nuget, and derive from that. Then use the LogMessage overloaded methods to log any data. It will marshal stuff back to the UI thread correctly",0
+Do we even need this since its not depending on `_BuildProGuard` anymore?,0
+@github we have a typo here,0
+`IsNullorWitespace` vs `IsNullOrWitespace`,0
+I think we need to make this a LogCodedWarning if possible,0
+@github why did we need to change the order? Is the order important?,0
+I spoke with jonp about that. I think we should pick up any directBootAware. That means it will be forward compatible if google decide to add a new one. That said I need to also check the app element itself as well. I'll fix that up today.,0
+LibZipSharp has been setup to use `lib64` see https://github.com/xamarin/LibZipSharp/blob/master/Native.cs#L414,0
+So it has to be in that directory. What other files do we have in x64?,0
+interesting trick :),0
+Should we remove this? What happens if we get an error which we are not expecting? This would then bubble up to MSBuild and give a horrible MSxxxx error. Should we keep a generic error here which asked users to report the issue ?,0
+"I did try, but shared projects do not seem to like the way we include stuff like the Linker code and the pdb stuff etc. It seems they don't like the items where we define a property for the path e.g.`$(MonoSourceFullPath)`.  I will have another go..",0
+"It might be worth splitting those items into a separate .targets file, since we never edit them anyway",0
+It works :D,0
+not tempted to make this an SDK style project :P,0
+erring out with a non actionable error is probably not the best. Let's leave this as it is.,0
+"again, this is based on the customer template. I'll remove this.",0
+"I guess because `aapt` was ok with the old `permissionTree`, but the new `aapt2` is not. It reports them as invalid.",0
+I suspect google changed it at some point. not sure when. The old style does not even appear in the docs,0
+[1] https://developer.android.com/guide/topics/manifest/permission-tree-element,0
+"If we do, we should change all of them.",0
+@github I took care of this on https://github.com/xamarin/xamarin-android/pull/754/files#diff-75caddb49a406bd996417c64cc1c00b1R275,0
+I *think* (and @github can correct me :) ) we tend to prefer that we explicitly define the dependencies in,0
+`src/Xamarin.Android.Build.Tasks/Microsoft.Android.Sdk/targets/Microsoft.Android.Sdk.BuildOrder.targets` for .NET and `src/Xamarin.Android.Build.Tasks/Xamarin.Android.Legacy.targets` for Legacy. We can do this in addition to `DependsOnTargets` but it does help when figuring out the build order if we have it in the other files too.,0
+This is for .NET 7+ only right?,0
+Also it makes it compatible with linux as well as that will look in `lib64` by default (if it exists),0
+is there a way to conditionally import this I wonder. So only if `AndroidLinkTool == dx`.,0
+can we add some inputs and outputs on this :),0
+Order was not important. I just decided to put all the unit test adapters at the bottom.,0
+"@github this code path is only used for `Android.IncludeAndroidResourcesFromAttribute`, `Android.NativeLibraryReferenceAttribute` and `Java.Interop.JavaLibraryReferenceAttribute` entries which are normally included in one of the Support Libraries. So we might have an attribute like",0
+Now I'm not sure if there are any of our support libraries which do use that but if there are and `AndroidNdkDirectory` is blank we might have a problem with the build later. We should probably add a unit test to make sure this works and/or raises a decent error message if `AndroidNdkDirectory` is blank and we hit one of these.,0
+should this value be true?,0
+Do we want to use Linq here? We usually try to avoid it for performance reasons.,0
+"I think we do, because we want to skip the code underneath if we already added a file of the same name.",0
+"@github It takes a while for the latest release to get on to DevOps (assuming you are using the system installed XA on DevOps). As they have to update the image, tests it etc.",0
+Perhaps it might be better to use a tool like [boots](https://github.com/jonathanpeppers/boots) to install the specific version you want?,0
+:+1 for `--banana`,0
+"We already had a concept of `AdditionalResourcePaths` but did't have the same for assets. I figured this would be an easy win, especially if you have large assets (like movie files).",0
+Should we be using the `ManualResetEvent` stuff we have in https://github.com/xamarin/xamarin-android/blob/master/build-tools/Xamarin.Android.Tools.BootstrapTasks/Xamarin.Android.Tools.BootstrapTasks/Adb.cs#L217. Or are we sure we won't get any output after the `WaitForExit` call has completed?,0
+@github is `AppDomain` the right thing we need here?,0
+"Could we introduce an extension method which provides a `LogMessage(this LinkerContext context, string message)` extension. We could then remove a number of these `#if` blocks in the code.",0
+have you sen all the translations use `.NET 5` not `6` ?,0
+We tend to allow users to override the exe name from MSBuild e.g `Aapt2ToolExe` and them combine them in tool tasks like so,0
+"where `ToolName` will be the `OS.IsWindows ? ""aapt2.exe"" : ""aapt2""`. We should probably follow the same pattern here for `aapt2` and `adb`",0
+context see https://github.com/xamarin/xamarin-android/commit/0ca2c216b04c67ca0b1b6cf5d34580a4b26adac2,0
+"It has to do with how this works in XS. At some point the property was being reset even after it was set to 'true' so we could not rely on 'true' instead we needed to check for '' or 'false' . That commit should have included this file as well, but this was overlooked.",0
+actually I'll leave it in. That way our build process will make sure it works :),0
+"If its not actionable by the user, the `LogDebugMessage` might be better. `LogMessage` has a cost since it will emit in any build except quiet. Where the LogDebug* works only for diagnostic builds (and bin logs)",0
+"I don't think so, this takes place after `_CreateBaseApk` and `_GenerateJavaStubs`, if there is a problem with the xml it will have been caught earlier in the build.",0
+"silly question, but does this need to be net6.0? or can it be netstandard2.1?",0
+I think we need input from @github as to what the expected behaviour is in this instance.,0
+Should we mention `AndroidResouce` here? as its specific that that ItemGroup cannot contain those items.,0
+Oh and all the unit tests are going to have to change as well. Most are hardcoded to look for `{proj.PackageName}.apk` most of the time.,0
+Not 100% sure this won't break VS2012 since I'm not sure if that IDE can load v4.5.1 assemblies (afaik VS2012 was released before v4.5.1 was out... I'm happy to be wrong though :) ). It will need testing.,0
+Are we missing this file? I can't see it in the PR,0
+The fix above was merged,0
+does this need to be High? It means we will always how this regardless of the verbosity set.  We should be using Log.LogDebugMessage instead? This would mean it only shows up in diagnostic builds.,0
+"I did this to that it matches what was already there. I can rework this to use `PropertyGroup`. Or perhaps we get this in, and then do a PR to remove ALL `CreateProperty` references?",0
+"`src/java-runtime` will also need MSBuild tests I think and MSBuildDevice. This folder contains the release/debug runtimes. I don't think the apk tests will test debug/fastdev at all, so we might not get good coverage just running those tests.",0
+This was fixed in https://github.com/xamarin/android-sdk-installer/pull/452 so we can close this PR.,0
+So we should emit both then? I'll take a look at doing that.,0
+Hmm errors are,0
+"yes something like `Xamarin.Android.ValidateToolng.targets` or `Xamarin.Android.ResolveTools.targets`. That is was I was envisioned, so its all kinda self contained.",0
+We should probably test this with `AndroidUseManagedDesignTimeResourceGenerator` = `False` as well just to make sure we don't break anything in that mode too. Since some users do disable it.,0
+should this be here or in DeviceTest?,0
+https://github.com/xamarin/xamarin-android/blob/master/src/Xamarin.Android.Build.Tasks/Tests/Xamarin.Android.Build.Tests/Utilities/DeviceTest.cs#L19,0
+Does this need to be conditionally imported?,0
+"can I assume that `r8` doesn't care if you have duplicate entries? What does it do about conflicting ones? Could we get in to a situation where a User ha a custom config, which turns on optimisations, but we then turn it off again?",0
+Ok Strong naming is needs to be added to,0
+`Java.Interop.Tools.Cecil`,0
+`pdb2mdb`,0
+can we name the bool parameter please :) `overwrite: true`,0
+the iOS/Mac tooling does not allow this to be overridable. I suspect this is by design so NetStandard Facades are never included in the output.,0
+Depends on https://github.com/xamarin/xamarin-android/pull/5926,0
+"in the case of ""unknown option"" there will be only one error we are interested in.",0
+otherwise we get an error for each line of the following.,0
+For reference some performance differences https://gist.github.com/dellis1972/f5a9c9475dadea1331c6c62b1a478cd8 for .net 6,0
+I thought part of the problem was that nodes are reused? Won't this stop that from happening?,0
+@github I just realised these tests need a device right?,0
+So they are in the wrong project. The should be in the `MSBuildDeviceIntegration` project in `tests/MSBuildDeviceIntegration` where we have all the device based tests.,0
+It should also make use of the `HasDevices` property and `Ignore` the test if we don't have any devices attached.,0
+For example https://github.com/xamarin/xamarin-android/blob/master/tests/MSBuildDeviceIntegration/Tests/InstallTests.cs#L233,0
+I need to make changes to this anyway to make sure the new targets do not run as part of a DTB.,0
+You can confirm this by looking at the Ids in the Rtxt file contents https://github.com/xamarin/xamarin-android/pull/3025/files#diff-8649defe4caffc0b9f604d92c1ad8808R78. These ids were generated by aapt2 on the same resource structure. I also included a test to make sure we produce the same results from the Rtxt as well.,0
+This seems to work,0
+So we might be able to setup a property which contains `DirectorySeparatorChar` so its not all `/`,0
+nice :) I could have used this in #3938,0
+"The `Install` target only calls build if we are running from the command line. In the IDE is does NOT call `Build`. Our tests run as if they are in the IDE, so a call to Build will be needed.",0
+"Conceptually, `$(AndroidPackageFormat)` + `$(AndroidAdditionalPackageFormats)` feels ""weird"": it's inconsistent with other existing properties, such as `$(TargetFrameworks)`, `$(RuntimeIdentifiers)`.",0
+Is there a reason to not go with `$(AndroidPackageFormats)` (plural)? Is it easier for the IDE to have the two separate properties?,0
+We have many MSBuild Properties which rely on an it being one or the other for example (and this is just a small example).,0
+Also take a look at our current signing system. https://github.com/xamarin/xamarin-android/blob/main/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L2287,0
+"This is pretty messy.",1
+"This depends on if we are signing with ApkSigner or not. `aab` files MUST use ApkSigner, `apk` MUST not.",0
+"Now I'm not saying that we don't need to rework this because its clear that we do. However, the approach in this PR seemed like the most straight forward given the time constraints for this feature. Tacking on the additional apk generation for this specific case i.e when the user is in release mode and are generating an `aab`.",0
+"As we talked about on the meeting, we could just make `AndroidAdditionalPackageFormats` internal. So not something users would use, but it would be automatic if they are using .net 6 AND `aab` And `Release`.",0
+"I wonder how much larger it would be, though…. Could we make it work with an ""inner build""-like system?",0
+"my concern with inner builds are performance, the fact that we (in .net 6) have to do an inner build for each abi already, adding yet another one for packaging/signing, then in the future more for Dynamic Features. I'd rather avoid those if possible. But it might well be our only option.",0
+"So I guess the question really is, how quickly do we want this? Should we do it fast or right?",0
+This looks good so far. I like how we still raise `XA0003` if the value is not an `int`.,0
+@github looks like this bit is using spaces rather than tabs. I think @github likes to keep the formatting similar to the sourounding code.,0
