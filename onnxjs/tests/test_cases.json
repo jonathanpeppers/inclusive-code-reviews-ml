@@ -64,11 +64,11 @@
         "isnegative": "1"
     },
     {
-        "text": "You got this!",
+        "text": "You definitely got this",
         "isnegative": "0"
     },
     {
-        "text": "This hurts to look at",
+        "text": "This hurts me to look at it",
         "isnegative": "1"
     },
     {
@@ -76,7 +76,7 @@
         "isnegative": "0"
     },
     {
-        "text": "Your way of thinking is corrupted",
+        "text": "Your way of thinking is quite corrupted",
         "isnegative": "1"
     },
     {
@@ -120,7 +120,7 @@
         "isnegative": "1"
     },
     {
-        "text": "Thanks for submitting this issue!",
+        "text": "Thank you for submitting that issue!",
         "isnegative": "0"
     },
     {
