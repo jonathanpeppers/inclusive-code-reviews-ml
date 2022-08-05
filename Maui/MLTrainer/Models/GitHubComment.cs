@@ -6,15 +6,19 @@ namespace MLTrainer.Models;
 public class GitHubComment
 {
 	[Name("OrganizationLogin")]
+	[Optional ()]
 	public string OrganizationLogin { get; set; } = string.Empty;
 
 	[Name("RepositoryName")]
+	[Optional ()]
 	public string RepositoryName { get; set; } = string.Empty;
 
 	[Name("ReviewerLogin")]
+	[Optional ()]
 	public string ReviewerLogin { get; set; } = string.Empty;
 
 	[Name("HtmlUrl")]
+	[Optional ()]
 	public string HtmlUrl { get; set; } = string.Empty;
 
 	[Name("Body")]
