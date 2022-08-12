@@ -45,8 +45,8 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
-	  <PackageReference Include="CsvHelper" Version="27.2.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" />
+		<PackageReference Include="CsvHelper" />
 	</ItemGroup>
 	
 </Project>

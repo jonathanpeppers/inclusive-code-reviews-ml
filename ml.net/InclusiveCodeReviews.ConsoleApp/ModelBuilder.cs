@@ -55,6 +55,10 @@ namespace InclusiveCodeReviews.ConsoleApp
             var dataProcessPipeline = mlContext.Transforms.Conversion.MapValueToKey("isnegative", "isnegative")
                                       .Append(mlContext.Transforms.Text.FeaturizeText("text_tf", new TextFeaturizingEstimator.Options
                                       {
+                                          CaseMode = TextNormalizingEstimator.CaseMode.Lower,
+                                          //NOTE: not exportable to ONNX
+                                          //KeepNumbers = false,
+                                          //KeepPunctuations = false,
                                           KeepDiacritics = true,
                                       }, "text"))
                                       .Append(mlContext.Transforms.CopyColumns("Features", "text_tf"))
