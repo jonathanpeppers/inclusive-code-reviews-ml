@@ -1018,3 +1018,56 @@ Test failures are unrelated,0
 * monotouch-test/Mac [dotnet]/Debug (CoreCLR) [dotnet]: https://github.com/xamarin/maccore/issues/2488,0
 * DotNet tests: fixed in #12334.,0
 `extenion` => `extension`.,0
+"kys",1
+"kill yourself",1
+"I'm going to murder you",1
+"I'm going to assassinate you",1
+"I'm going to put an end to you",1
+"I'm going to eliminate you",1
+"I'm going to end you",1
+"I'm going to stop the build",0
+"Stop coding",1
+"Stop it!",1
+"I'm going to get rid of you",1
+"I want to hurt you",1
+"Shoot yourself",1
+"Shoot, I forgot to add that",0
+"Blow up",1
+"I hope you die",1
+"Suicide",1
+"I'm going to come find where you live",1
+"I'll see you soon",0
+"Let's burn this down",1
+"Be afraid",1
+"You should be very afraid",1
+"I'm afraid this won't work",0
+"You are going to pay for this",1
+"This is something we may have to pay for later",0
+"This is your warning",1
+"I see there is a warning",0
+"I see there is an error",0
+"You will be sorry",1
+"I am sorry",0
+"You're a jerk",1
+"You better run and hide",1
+"This code doesn't run",0
+"It seems to be hidden",0
+"I'll put you into the ground",1
+"Let's get this off the ground",0
+"Thanks for putting out this fire",0
+"I'm going to set your house on fire",0
+"Whew, this is smelly",1
+"This is really smelly",1
+"This is stinky",1
+"This stinks",1
+"This smells bad",1
+"This smells good",0
+"This smells",1
+"Whew, this is really stinky",1
+"I really like this code",0
+"I like this code",0
+"I love this approach",0
+"I really love this approach",0
+"You suck at this",1
+"Man, this sucks!",1
+"This still sucks",1
