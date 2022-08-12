@@ -1,0 +1,10 @@
+<Project>
+  <ItemGroup>
+    <!-- ML.NET -->
+    <PackageReference Update="Microsoft.ML" Version="2.0.0-preview.22410.1" />
+    <PackageReference Update="Microsoft.ML.OnnxConverter" Version="0.20.0-preview.22410.1" />
+    <!-- Used by MAUI app -->
+    <PackageReference Update="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
+    <PackageReference Update="CsvHelper" Version="27.2.1" />
+  </ItemGroup>
+</Project>
