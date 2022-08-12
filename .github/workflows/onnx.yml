@@ -1,4 +1,4 @@
-name: onnyx javscript tests
+name: typescript
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3

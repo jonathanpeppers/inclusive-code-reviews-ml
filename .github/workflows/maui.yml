@@ -1,4 +1,4 @@
-name: Build MAUI apps
+name: MLTrainer app
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
         os: [macos-12, windows-2022]
 
     runs-on: ${{ matrix.os }}
-    name: ${{ matrix.os }} Build
+    name: ${{ matrix.os }}
 
     steps:
     - uses: actions/checkout@v3
