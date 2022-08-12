@@ -1071,3 +1071,7 @@ Test failures are unrelated,0
 "You suck at this",1
 "Man, this sucks!",1
 "This still sucks",1
+"Your app has a small `AndroidManifest.xml`",0
+"You should see a message.",0
+"You should see something like:",0
+"This is `macOS-latest`",0
