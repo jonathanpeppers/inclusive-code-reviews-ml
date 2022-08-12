@@ -126,5 +126,33 @@
     {
         "text": "Looking forward to seeing those improvements",
         "isnegative": "0"
+    },
+    {
+        "text": "I'm going to kill you",
+        "isnegative": "1"
+    },
+    {
+        "text": "You should die",
+        "isnegative": "1"
+    },
+    {
+        "text": "I hope you don't wake up",
+        "isnegative": "1"
+    },
+    {
+        "text": "Don't forget to kill yourself.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This code stinks",
+        "isnegative": "1"
+    },
+    {
+        "text": "You stink",
+        "isnegative": "1"
+    },
+    {
+        "text": "This code really sucks.",
+        "isnegative": "1"
     }
 ]
