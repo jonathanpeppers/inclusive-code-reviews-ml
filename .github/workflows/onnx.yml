@@ -1,4 +1,4 @@
-name: onnyx javscript tests
+name: typescript tests
 
 on:
   push:
