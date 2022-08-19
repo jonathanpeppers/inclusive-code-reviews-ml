@@ -170,5 +170,9 @@
     {
         "text": "@jonathanpeppers have you tried rebooting?",
         "isnegative": "0"
+    },
+    {
+        "text": "I love you.",
+        "isnegative": "0"
     }
 ]
