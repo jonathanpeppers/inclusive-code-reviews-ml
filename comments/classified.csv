@@ -1,204 +1,204 @@
-"text","isnegative"
-"ship it!","0"
-"tests failed","0"
-"This sucks!","1"
-"Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.","0"
-"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597","0"
-"Ignore above, it was a `net6.0-android` app.","0"
-"When testing `net7.0-android` apps, Debug builds work","0"
-"You are so terrible","1"
-"This is terrible","1"
-"I have a feeling that NuGet authors will have to use `monoandroid10.0` for their directory names...","0"
-"You are a failure.","1"
-"There are test failures.","0"
-"The test failed with: compiler error on line 12","0"
-"The one performance test that failed, I don't see anything related to this change","0"
-"Did this just get pasted twice?","0"
-"I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205.","0"
-"It seems both the startup & MSBuild perf tests fail to build, which is odd.","0"
-"I vehemently disagree with this","1"
-"Can we do something smarter than this?","1"
-"I don't like this solution.","1"
-"You can do this like this instead.","0"
-"Have you even tested this code before submitting?","1"
-"🤮","1"
-"😠","1"
-"😡","1"
-"This is just sh*t.","1"
-"The conflict I get is due to stupid new gcc header file crap.","1"
-"But what makes me upset is that the crap is for completely bogus reasons.","1"
-"The above code is sh*t, and it generates shit code.","1"
-"It looks bad, and there's no reason for it.","1"
-"Give me *one* reason why it was written in that idiotic way with two different conditionals, and a shiny new nonstandard function that wants particular compiler support to generate even half-way sane code, and even then generates worse code?","1"
-"I love it!","0"
-"So good","0"
-"Amazing","0"
-"Looks good to me","0"
-"LGTM","0"
-"Great Job!","0"
-"Does this work?","0"
-"It looks like a test failed","0"
-"This is not compiling","0"
-"Make sure that you compile before creating the pull request","0"
-"Unrelated test failures","0"
-"/azp run","0"
-"Please add in the labels","0"
-"This does not work","0"
-"There is a bug in the code","0"
-"Please wait to merge this","0"
-"You need to revert this commit","0"
-"THIS IS AWESOME","0"
-"THIS IS PERFECT","0"
-"This is a great improvement","0"
-"Let's see if the tests pass","0"
-"This may fail a test","0"
-"This will help a lot of people","0"
-"I think you should go another route","0"
-"LGTM","0"
-"Don't give up","0"
-"This is much better","0"
-"This is an improvement","0"
-"You are a saint","0"
-"Thank you!","0"
-"This is not exactly what we want","0"
-"This is a slightly better way to do this","0"
-"Removing this","0"
-"You can close this for now","0"
-"Reopening this PR","0"
-"Please ignore this PR","0"
-"DO NOT MERGE","1"
-"Add the DO NOT MERGE label if it's not ready yet!","0"
-"I hate this change","1"
-"Customers will hate this","1"
-"This CI sucks","1"
-"Change this now","1"
-"I will change this now - thank you for the feedback","0"
-"This is below your level","1"
-"Did a child write this?","1"
-"You can't make this any better?","1"
-"This is not what we want","1"
-"Just let me do this","1"
-"You can't do anything right can you?","1"
-"Everything is wrong","1"
-"Stop that","1"
-"Just quit","1"
-"Kill this","1"
-"Close this PR","1"
-"I missed this earlier","0"
-"This is a breaking change","0"
-"There is a version mismatch","0"
-"The thread was aborted","0"
-"The memory is corrupted","0"
-"It's throwing an exception","0"
-"It's about the Invalid IL code","0"
-"There appears to be a stack misalignment","0"
-"The weak reference object will get cleared","0"
-"This code is garbage","1"
-"Did you account for garbage collection?","0"
-"Can't you do better?","1"
-"This is messy","1"
-"I learned something new!","0"
-"I didn't know that","0"
-"This is great test coverage","0"
-"This is pretty gross","1"
-"There's nothing pretty about this","1"
-"This is very pretty code!","0"
-"It isn't working","0"
-"This isn't worth my time","1"
-"It just doesn't make sense","1"
-"It just doesn't make sense to me how awesome this is","0"
-"It will kill a lot of businesses","1"
-"This in particular is a mess","1"
-"I'm not counting on it working","1"
-"At this point, this is absolutely not ready for real-world use","1"
-"We are in a really bad place at the minute","1"
-"it is so frustrating","1"
-"that kills trust","1"
-"adding the bot here would help detecting such major issues","0"
-"that only goes so far","1"
-"it isn't good enough","1"
-"it isn't good enough to just write code, but what you've done here with your comprehensive documentation and test coverage is exemplary","0"
-"what you're proposing will effectively just make things more difficult","1"
-"sometimes nasty bugs can be introduced","1"
-"it's not going to help","1"
-"Damage has been done","1"
-"I will ignore your code","1"
-"Feel free to ignore that platform for now","0"
-"It's going to ignore the scheme","0"
-"Maybe you should get an education","1"
-"You don't know what's going on","1"
-"You should start with a bullet to the brain","1"
-"This is on the blacklist, how could you miss that","1"
-"This is on the block list, it's always a good idea to double-check!","0"
-"They're a blackhat so their code isn't worth it","1"
-"They're an unethical hacker so be cautious about their code","0"
-"Be inclusive of the minority because they need help","1"
-"Be inclusive of marginalized groups because that is the right thing to do","0"
-"good job guys you ruined it","1"
-"good job team keep up the good work","0"
-"let's do a little more housekeeping here it's quite messy","1"
-"let's do a little more cleanup here to improve the formatting further","0"
-"you're so OCD why are you like this","1"
-"you're so organized I'm very impressed","0"
-"the behavior is crazy why are you doing this","1"
-"the behavior is unpredictable","0"
-"accessibility helps a handicapped person but it's otherwise useless","1"
-"accessibility helps a person with disabilities but also everyone else","0"
-"my computer is hanging ugh it's your fault","1"
-"my computer is frozen","0"
-"this is some grandfather code we'll be updating because it's so old and ugly","1"
-"this is some rollover code we'll be updating","0"
-"nice dummy values! but not nice enough","1"
-"nice sample values!","0"
-"this is on my to-do list","0"
-"Don't do a half-ass job","1"
-"We always want to make things better.","0"
-"Maybe it's better to do this in another way?","0"
-"Do this in another way!","1"
-"Your code is completely wrong","1"
-"I don't like this solution.","1"
-"You're not the best developer here","1"
-"After discussion with the team, we came to the conclusion that's better to do it this way.","0"
-"Do it this way, because I know best","1"
-"Every line of code you write is a nail in my coffin","1"
-"This is rubbish","1"
-"This is toy code","1"
-"How long did you spend working on this?","1"
-"What are you doing?","1"
-"You know this doesn't work like that, right?","1"
-"Can you explain what you are trying to accomplish?","0"
-"Can you explain how it works?","0"
-"I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing?","0"
-"This is great!","0"
-"I love this","0"
-"This is a great solution","0"
-"I would never have thought of doing it this way","0"
-"Perfect","0"
-"Lovely","0"
-"I love this idea","0"
-"This Is Wrong","1"
-"You're not good at this","1"
-"Everything you do is bad","1"
-"Everything looks great","0"
-"This code was terrible, I'm so happy you made it better!","0"
-"This code is terrible","1"
-"This code was terrible","0"
-"Good job","0"
-"This caused a test failure","0"
-"You're a failure","1"
-"This made some tests fail","0"
-"You failed","1"
-"This needs some tests","0"
-"You should have added tests","1"
-"This fixes a problem where the mortality rate in the nursery was too high","0"
-"This fixes a problem","0"
-"Sigh","1"
-"This is dead code","0"
-"You're dead","1"
-"This will cause infinite recursion","0"
-"Software engineering is not for you","1"
-"This is obviously wrong","1"
-"Why don't you just skip this step","1"
+text,isnegative
+ship it!,0
+tests failed,0
+This sucks!,1
+"Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.",0
+"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0
+"Ignore above, it was a `net6.0-android` app.",0
+"When testing `net7.0-android` apps, Debug builds work",0
+You are so terrible,1
+This is terrible,1
+I have a feeling that NuGet authors will have to use `monoandroid10.0` for their directory names...,0
+You are a failure.,1
+There are test failures.,0
+The test failed with: compiler error on line 12,0
+"The one performance test that failed, I don't see anything related to this change",0
+Did this just get pasted twice?,0
+I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205.,0
+"It seems both the startup & MSBuild perf tests fail to build, which is odd.",0
+I vehemently disagree with this,1
+Can we do something smarter than this?,1
+I don't like this solution.,1
+You can do this like this instead.,0
+Have you even tested this code before submitting?,1
+🤮,1
+😠,1
+😡,1
+This is just sh*t.,1
+The conflict I get is due to stupid new gcc header file crap.,1
+But what makes me upset is that the crap is for completely bogus reasons.,1
+"The above code is sh*t, and it generates shit code.",1
+"It looks bad, and there's no reason for it.",1
+"Give me *one* reason why it was written in that idiotic way with two different conditionals, and a shiny new nonstandard function that wants particular compiler support to generate even half-way sane code, and even then generates worse code?",1
+I love it!,0
+So good,0
+Amazing,0
+Looks good to me,0
+LGTM,0
+Great Job!,0
+Does this work?,0
+It looks like a test failed,0
+This is not compiling,0
+Make sure that you compile before creating the pull request,0
+Unrelated test failures,0
+/azp run,0
+Please add in the labels,0
+This does not work,0
+There is a bug in the code,0
+Please wait to merge this,0
+You need to revert this commit,0
+THIS IS AWESOME,0
+THIS IS PERFECT,0
+This is a great improvement,0
+Let's see if the tests pass,0
+This may fail a test,0
+This will help a lot of people,0
+I think you should go another route,0
+LGTM,0
+Don't give up,0
+This is much better,0
+This is an improvement,0
+You are a saint,0
+Thank you!,0
+This is not exactly what we want,0
+This is a slightly better way to do this,0
+Removing this,0
+You can close this for now,0
+Reopening this PR,0
+Please ignore this PR,0
+DO NOT MERGE,1
+Add the DO NOT MERGE label if it's not ready yet!,0
+I hate this change,1
+Customers will hate this,1
+This CI sucks,1
+Change this now,1
+I will change this now - thank you for the feedback,0
+This is below your level,1
+Did a child write this?,1
+You can't make this any better?,1
+This is not what we want,1
+Just let me do this,1
+You can't do anything right can you?,1
+Everything is wrong,1
+Stop that,1
+Just quit,1
+Kill this,1
+Close this PR,1
+I missed this earlier,0
+This is a breaking change,0
+There is a version mismatch,0
+The thread was aborted,0
+The memory is corrupted,0
+It's throwing an exception,0
+It's about the Invalid IL code,0
+There appears to be a stack misalignment,0
+The weak reference object will get cleared,0
+This code is garbage,1
+Did you account for garbage collection?,0
+Can't you do better?,1
+This is messy,1
+I learned something new!,0
+I didn't know that,0
+This is great test coverage,0
+This is pretty gross,1
+There's nothing pretty about this,1
+This is very pretty code!,0
+It isn't working,0
+This isn't worth my time,1
+It just doesn't make sense,1
+It just doesn't make sense to me how awesome this is,0
+It will kill a lot of businesses,1
+This in particular is a mess,1
+I'm not counting on it working,1
+"At this point, this is absolutely not ready for real-world use",1
+We are in a really bad place at the minute,1
+it is so frustrating,1
+that kills trust,1
+adding the bot here would help detecting such major issues,0
+that only goes so far,1
+it isn't good enough,1
+"it isn't good enough to just write code, but what you've done here with your comprehensive documentation and test coverage is exemplary",0
+what you're proposing will effectively just make things more difficult,1
+sometimes nasty bugs can be introduced,1
+it's not going to help,1
+Damage has been done,1
+I will ignore your code,1
+Feel free to ignore that platform for now,0
+It's going to ignore the scheme,0
+Maybe you should get an education,1
+You don't know what's going on,1
+You should start with a bullet to the brain,1
+"This is on the blacklist, how could you miss that",1
+"This is on the block list, it's always a good idea to double-check!",0
+They're a blackhat so their code isn't worth it,1
+They're an unethical hacker so be cautious about their code,0
+Be inclusive of the minority because they need help,1
+Be inclusive of marginalized groups because that is the right thing to do,0
+good job guys you ruined it,1
+good job team keep up the good work,0
+let's do a little more housekeeping here it's quite messy,1
+let's do a little more cleanup here to improve the formatting further,0
+you're so OCD why are you like this,1
+you're so organized I'm very impressed,0
+the behavior is crazy why are you doing this,1
+the behavior is unpredictable,0
+accessibility helps a handicapped person but it's otherwise useless,1
+accessibility helps a person with disabilities but also everyone else,0
+my computer is hanging ugh it's your fault,1
+my computer is frozen,0
+this is some grandfather code we'll be updating because it's so old and ugly,1
+this is some rollover code we'll be updating,0
+nice dummy values! but not nice enough,1
+nice sample values!,0
+this is on my to-do list,0
+Don't do a half-ass job,1
+We always want to make things better.,0
+Maybe it's better to do this in another way?,0
+Do this in another way!,1
+Your code is completely wrong,1
+I don't like this solution.,1
+You're not the best developer here,1
+"After discussion with the team, we came to the conclusion that's better to do it this way.",0
+"Do it this way, because I know best",1
+Every line of code you write is a nail in my coffin,1
+This is rubbish,1
+This is toy code,1
+How long did you spend working on this?,1
+What are you doing?,1
+"You know this doesn't work like that, right?",1
+Can you explain what you are trying to accomplish?,0
+Can you explain how it works?,0
+"I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing?",0
+This is great!,0
+I love this,0
+This is a great solution,0
+I would never have thought of doing it this way,0
+Perfect,0
+Lovely,0
+I love this idea,0
+This Is Wrong,1
+You're not good at this,1
+Everything you do is bad,1
+Everything looks great,0
+"This code was terrible, I'm so happy you made it better!",0
+This code is terrible,1
+This code was terrible,0
+Good job,0
+This caused a test failure,0
+You're a failure,1
+This made some tests fail,0
+You failed,1
+This needs some tests,0
+You should have added tests,1
+This fixes a problem where the mortality rate in the nursery was too high,0
+This fixes a problem,0
+Sigh,1
+This is dead code,0
+You're dead,1
+This will cause infinite recursion,0
+Software engineering is not for you,1
+This is obviously wrong,1
+Why don't you just skip this step,1
 "Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.",0
 "@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0
 "Ignore above, it was a `net6.0-android` app. When testing `net7.0-android` apps, Debug builds work.",0
@@ -488,19 +488,19 @@ small formatting,0
 "Sorry, I don't think this one is actually ready for review. I think there are some things in the headers that were not mentioned by xtro that need updating!",0
 small typo,0
 That is a good point.,0
-"BTW these are the two bugs that we will try to patch for .NET 6.x that are preventing JS initializers from working in .NET MAUI",0
+BTW these are the two bugs that we will try to patch for .NET 6.x that are preventing JS initializers from working in .NET MAUI,0
 "In theory, the ""best"" way to make this work is to use Blazor JS module initializers, but unfortunately there is currently a bug that prevents them from working as intended.",0
-"This was an access violation.",0
-"Please remember to address the cancelled task",0
-"There was a fail fast exception",0
-"I missed updating this test",0
-"This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field.",0
+This was an access violation.,0
+Please remember to address the cancelled task,0
+There was a fail fast exception,0
+I missed updating this test,0
+This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field.,0
 "Also, contrary to the other default includes, add a condition so files are only included if we have a resource prefix (typically ""Resources""), otherwise the entire hard drive might be included",0
-"I am seeing unmanaged crashes but I think our fix was just in Preview 13.",0
+I am seeing unmanaged crashes but I think our fix was just in Preview 13.,0
 "Maybe I should be more verbose, but the comment before was listing 2 brief comments.",0
-"The ListView is displaying incorrectly.",0
-"In order for the the Button to display correctly.",0
-"The point of the ExecutionMode platform specific was to tell WebView on UWP to run out of process.",0
+The ListView is displaying incorrectly.,0
+In order for the the Button to display correctly.,0
+The point of the ExecutionMode platform specific was to tell WebView on UWP to run out of process.,0
 "Just invoking the Current property causes a crash, so you must be working some magic!",0
 "I was able to replicate the failures locally, and the most likely reason for the failures is the loss of focus by the test form",0
 "How, if at all, does this relate to AutomationProperties?",0
@@ -508,18 +508,18 @@ That is a good point.,0
 trying again now,0
 "updated, thanks for the feedback!",0
 @github told me blazor already has this type of theming via bootstrap styles,0
-"should this also be MauiComboBox?",0
+should this also be MauiComboBox?,0
 Thanks for the feedback @github! Opened an issue here https://github.com/dotnet/maui/issues/4766 - feel free to add more info,0
 What is the expected updated behavior here?,0
 will do!,0
-"missing d",0
+missing d,0
 "I was told that it's best to use Brushes for Background colors and Colors everywhere else (cc @github) and yep, I added a bunch of colors/brushes that don't get used - exact colors are still a bit tentative, but I'll see what @github thinks for that",0
 failing tests unrelated,0
 The built-in platforms also use color for interactive controls,0
-"nitpick typo fix that's been bothering me",1
+nitpick typo fix that's been bothering me,1
 fixing now - but can you remind me why the null check is sufficient for Android and not iOS?,0
 "Hi, @github - what's ths issue you're seeing on iOS? Is it also the same error regarding `Xamarin.AndroidX.Security.SecurityCrypto` ?",0
-"NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119 Placeholder looks great otherwise",0
+NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119 Placeholder looks great otherwise,0
 "I put this sample code directly in my local version of the control gallery sample: It uses `<GridLayout RowDefinitions=""Auto,*, Auto"">` like the samples in the referenced issues do",0
 See following comment first (I'm assuming this naming is related to `TapGestureRecognizerNeedsDelegate` which doesn't fully make sense to me),0
 "fixed, thank you! 😂",0
@@ -535,7 +535,7 @@ What's happening here? Why is it no longer async and what does the func() do tha
 What is MaxLength=-1 expected to do?,0
 and wherever it's used/referenced,0
 "@github I fixed the ugly rebase! Build is failing now because Shadow is using Color and Size though, so that still needs to be fixed",1
-"Can we use the same vars for consistency?`",0
+Can we use the same vars for consistency?`,0
 "Ok, thanks! Changed it back. I hadn't been sure because I know both brushes and colors can be used for Background, and assumed it might be the same with Backgroundcolor",0
 will do!,0
 @github will try again... did you change the background color though? I wonder if that's related,0
@@ -546,7 +546,7 @@ Maybe we can do something similar to image where it simply can't receive focus a
 nice!,0
 "We woud need to check what the screen reader behavior is - does the TalkBack focus move with the keyboard focus? If it's inconsistent, we need to figure out what the desired behavior is there. If it's consistent, then I think this is an OK solution",0
 I agree! I just wanted to leave them for @github in case there are any we want to comment in before I delete them entirely,0
-"Commented out because the values aren't clear yet and we want your opinions on what the values should be :)",0
+Commented out because the values aren't clear yet and we want your opinions on what the values should be :),0
 "Similarly, for any controls/properties you don't see in this PR that you believe belong, please let me know which ones and which values you might see them with",0
 "I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct""",1
 "ah ok, makes sense! docs for `afterDescendants` was a big confusing and seemed right to me at first, since I was thinking the container should usually not receive any focus. But your explanation of ""consider first as a viable focus target"" helps clarify things",0
@@ -556,19 +556,19 @@ done!,0
 "sorry, I misread which APIs were being used - taking back what I said and seconding Shane here!",0
 gotcha - will fix both here and in XCT soon,0
 @github I tried that but it didn't work for me :/ will try again though,0
-"Is the body correct? Is it related to CursorPosition and not SelectionLength?",0
+Is the body correct? Is it related to CursorPosition and not SelectionLength?,0
 Where did this 50 come from?,0
 Should we maybe set this to ImportantForAccessibility.Auto instead of null?,0
 "yep! We're trying to get the SearchView, and it looks like that TextView is being uesd as the SearchView. The SearchButton stuff we were using before was wrong / not quite relevant",0
 "alpha version was incorporated, and code significantly simplified. security nuget still needs to be added to nuget feed, so waiting on that! in the meantime, if any folks are able to test on android api levels 21/22, that would be super helpful - thanks!",0
-"missing d",0
+missing d,0
 @github font scaling will automatically be enabled across all the platforms including iOS now!,0
-"Should we not set a background color on any pages then and just let the system handle that?",0
+Should we not set a background color on any pages then and just let the system handle that?,0
 "My thinking was that the background should be light in light mode, dark in dark mode, and since `BackgroundColor` property is derived from VisualElement, which Page is based on, this is how I handled it. Most of the specific pages themselves (i.e. ContentPage) don't have stylable properties if not for those derived from Page and VisualElement",0
 maybe we can at least have the mainpage code in comments?,0
 "hmm I tested again, but it's the same :/",0
 Could you share an example so that I can understand this better? I'm wondering why it's [`.BeforeDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_BEFORE_DESCENDANTS) instead of [`.AfterDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_AFTER_DESCENDANTS). Is the `nativeview` here the rootView or the contained views?,0
-"@github yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired",0
+@github yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired,0
 still seeing similar issues where hovering changes the color,0
 "@github I agree that with this calculator sample specifically, gray might work better with the general color scheme. Unfortunately, the proposed colors aren't accessible so I think it would be best to keep the current colors which have already been tested and validated for accessibility via our templates. Naturally, different colors might look better with different samples and scenarios, and folks can always change these styles as they wish. If you want to use grays for the calculator sample, I recommend a light gray button on black background in dark mode! But again, for the templates, I think keeping the current button style (with regard to colors) is ideal in terms of accessibility.",0
 Windows SearchBar MaxLength will need some more time https://github.com/dotnet/maui/issues/5669,0
@@ -578,7 +578,7 @@ same feedback applies to all the templates,0
 why is this commented out? Should it be deleted?,0
 Is TextColor not yet expected to work?,0
 "yes, so shouldn't we be checking here that it's YES instead of AUTO?",0
-"same issue as #741 again NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119",0
+same issue as #741 again NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119,0
 "Oo makes sense, thanks!!",0
 Sample and device tests still need to be tested on iOS,0
 "or just ""textField"" as before?",0
@@ -586,9 +586,9 @@ Sample and device tests still need to be tested on iOS,0
 "nice var name 😂  ""whatDoIDo""",0
 similar feedback applies to all dropdowns,0
 "There are some new test failures, this is terrible.",1
-"This is the worst thing that has ever happened.",1
-"This is such a bad way to do things",1
-"This is crazy good",0
+This is the worst thing that has ever happened.,1
+This is such a bad way to do things,1
+This is crazy good,0
 "i think we should keep the hostingContext, we might in the future add stuff to the hostingcontext, and you can use it to decide what to register.",0
 won't we neeed this mirror on internal feeds? @github  ?,0
 @github  i think we can remove this change right?,0
@@ -837,7 +837,7 @@ nice :) I could have used this in #3938,0
 Is there a reason to not go with `$(AndroidPackageFormats)` (plural)? Is it easier for the IDE to have the two separate properties?,0
 We have many MSBuild Properties which rely on an it being one or the other for example (and this is just a small example).,0
 Also take a look at our current signing system. https://github.com/xamarin/xamarin-android/blob/main/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L2287,0
-"This is pretty messy.",1
+This is pretty messy.,1
 "This depends on if we are signing with ApkSigner or not. `aab` files MUST use ApkSigner, `apk` MUST not.",0
 "Now I'm not saying that we don't need to rework this because its clear that we do. However, the approach in this PR seemed like the most straight forward given the time constraints for this feature. Tacking on the additional apk generation for this specific case i.e when the user is in release mode and are generating an `aab`.",0
 "As we talked about on the meeting, we could just make `AndroidAdditionalPackageFormats` internal. So not something users would use, but it would be automatic if they are using .net 6 AND `aab` And `Release`.",0
@@ -1018,59 +1018,59 @@ Test failures are unrelated,0
 * monotouch-test/Mac [dotnet]/Debug (CoreCLR) [dotnet]: https://github.com/xamarin/maccore/issues/2488,0
 * DotNet tests: fixed in #12334.,0
 `extenion` => `extension`.,0
-"kys",1
-"kill yourself",1
-"I'm going to murder you",1
-"I'm going to assassinate you",1
-"I'm going to put an end to you",1
-"I'm going to eliminate you",1
-"I'm going to end you",1
-"I'm going to stop the build",0
-"Stop coding",1
-"Stop it!",1
-"I'm going to get rid of you",1
-"I want to hurt you",1
-"Shoot yourself",1
+kys,1
+kill yourself,1
+I'm going to murder you,1
+I'm going to assassinate you,1
+I'm going to put an end to you,1
+I'm going to eliminate you,1
+I'm going to end you,1
+I'm going to stop the build,0
+Stop coding,1
+Stop it!,1
+I'm going to get rid of you,1
+I want to hurt you,1
+Shoot yourself,1
 "Shoot, I forgot to add that",0
-"Blow up",1
-"I hope you die",1
-"Suicide",1
-"I'm going to come find where you live",1
-"I'll see you soon",0
-"Let's burn this down",1
-"Be afraid",1
-"You should be very afraid",1
-"I'm afraid this won't work",0
-"You are going to pay for this",1
-"This is something we may have to pay for later",0
-"This is your warning",1
-"I see there is a warning",0
-"I see there is an error",0
-"You will be sorry",1
-"I am sorry",0
-"You're a jerk",1
-"You better run and hide",1
-"This code doesn't run",0
-"It seems to be hidden",0
-"I'll put you into the ground",1
-"Let's get this off the ground",0
-"Thanks for putting out this fire",0
-"I'm going to set your house on fire",0
+Blow up,1
+I hope you die,1
+Suicide,1
+I'm going to come find where you live,1
+I'll see you soon,0
+Let's burn this down,1
+Be afraid,1
+You should be very afraid,1
+I'm afraid this won't work,0
+You are going to pay for this,1
+This is something we may have to pay for later,0
+This is your warning,1
+I see there is a warning,0
+I see there is an error,0
+You will be sorry,1
+I am sorry,0
+You're a jerk,1
+You better run and hide,1
+This code doesn't run,0
+It seems to be hidden,0
+I'll put you into the ground,1
+Let's get this off the ground,0
+Thanks for putting out this fire,0
+I'm going to set your house on fire,0
 "Whew, this is smelly",1
-"This is really smelly",1
-"This is stinky",1
-"This stinks",1
-"This smells bad",1
-"This smells good",0
-"This smells",1
+This is really smelly,1
+This is stinky,1
+This stinks,1
+This smells bad,1
+This smells good,0
+This smells,1
 "Whew, this is really stinky",1
-"I really like this code",0
-"I like this code",0
-"I love this approach",0
-"I really love this approach",0
-"You suck at this",1
+I really like this code,0
+I like this code,0
+I love this approach,0
+I really love this approach,0
+You suck at this,1
 "Man, this sucks!",1
-"This still sucks",1
+This still sucks,1
 Stupid q - how does the implementation know to use the `_logger` instance?,0
 This only reinforces my belief that powershell is the best terrible scripting language we have.,1
 will fix thsi up.  that line looks terrible.  sorry.,1
@@ -1275,7 +1275,7 @@ i am adding this to the list of things to try out in my followup PR :)  but yes.
 "Note: this is a really terrible reason IMO. effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"". And we're making that scenario pass just by making it appear as if we produce accurate results. The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated.",0
 "Fair, some alternatives:",0
 "- Update Apex to call GetAllTags(), wait for it to return (signaling that the parse has completed) and then call the regular GetTags() call. This would still require the extender to implement IAccurateTagger<T>.",0
-- Apex subscribes to TagsChanged or ClassificationsChanged for all open text views immediately and exposes a method for waiting for update _n_ and getting the tags raised. The weakness of this approach is that changes to the event raising pattern would break the test.,0
+#NAME?,0
 "oh, that's interesting. meh. stupid static analyzer can't be taught that COM things don't throw exceptions. Fine, this is fine.",1
 I'm stupid,1
 "stupid question, but why can't this just be `type EscapedNameMap<T> = Map<T, EscapedName>` ?",1
@@ -1491,4 +1491,6 @@ This would make another PR i guess since this API Changed has been approuved alr
 "Perf doesn't care about gross ;) But it was just GYI, I don't think it matters here",0
 "nit: we could use this opportunity to produce distinct failure messages for these two cases.  Specifically ""You_cannot_rename_this_element""is terrible.  It would be better as ""You_cannot_rename_this_element_because_it_is_contained_in_a_read_only_file"" or ""You_cannot_rename_this_element_because_it_is_in_a_location_that_cannot_be_navigated_to"".  (can be done in the future).",0
 "There's unfortunately a lot of tricky params/optional cases that make it a bit tricky to get right,",0
+Your code Is a pain to read,1
 "YEah... overload resolution is just insane (including just thinking about param count).  I really didn't want to go to that level.  We can see if this is overbroad and we can lighten later.  However, i don't mind the restriction for now.",0
+This is a pain in the behind,1
