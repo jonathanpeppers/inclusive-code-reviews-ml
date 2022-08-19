@@ -1,27 +1,4 @@
-﻿<table>
-  <tr>
-    <th align=""left"">Author:</th>
-    <td>kg</td>
-  </tr>
-  <tr>
-    <th align=""left"">Assignees:</th>
-    <td>-</td>
-  </tr>
-  <tr>
-    <th align=""left"">Labels:</th>
-    <td>
-
-`* NO MERGE *`, `arch-wasm`
-
-</td>
-  </tr>
-  <tr>
-    <th align=""left"">Milestone:</th>
-    <td>-</td>
-  </tr>
-</table>
-</details>"
-"> > Worst case I'll need to remove the DIM and manually declare the implementation for all 20 types.
+﻿"> > Worst case I'll need to remove the DIM and manually declare the implementation for all 20 types.
 > 
 > I've done this with [baf69de](https://github.com/dotnet/runtime/pull/69756/commits/baf69de8576f8528125e6ddee518d3dd310e9e9b). You'll want to remember to revert this if trying to repro the failures above
 

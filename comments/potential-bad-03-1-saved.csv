@@ -1,0 +1,86 @@
+text,isnegative
+https://github.com/dotnet/roslyn/pull/26793#discussion_r187782708,0
+note: as per my conversation with @github i think the case that VB is handling is incredibly esoteric. I would be ok with having VB just checking for that case and not offerring invert-if if it helps simplify the rest of the algorithms here. I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it.,1
+This is an unfortunate consequence of having PRs drag on for so long.  We literally forget about the conversations we've had on these very topics. :),1
+@github This local variable will be released in the end of method with the help of garbage collector.,0
+"Again I don't think we need a separate method for this, and ideally conhost would support some version of the ""restore default"" functionality too, but worst case the existing behaviour should remain unchanged. We definitely shouldn't be returning false without doing anything.",1
+This will replace the way I was using `getBranch` in the GHPRI extension to determine the best remote to create a permalink for.,0
+"The old way was to get the world using `getBranch` for a commit then do filtering and sorting based on the ""best"" remotes and branches. For microsoft/vscode, this always takes >10 seconds.",0
+"The new way would be to make the ""best"" patterns (remote+branch combos) then try to `getBranch` for each of these patterns. Best case, the first pattern returns a successful branch, which should only be a few (I think I've seen 2 or 3 seconds max) seconds. Worst case, we test all patterns (likely less than 6).",0
+"Now for a worst-case example, using the _Solarized Dark_ color scheme.",0
+"As with the _Xterm_ scheme you can see some ""glitches"" in the 16-color mappings. Only now even the colors are wrong. For example, it thinks the _Solarized_ dark green is closer to a shade of yellow, and the blue looks more like cyan. But again, I don't think that is such a big deal - it's still mapping to a reasonable color.",0
+"The unexpected ""black"" spots are worse though. That's because those are colors that appear to be a medium shade of gray, and thus get mapped to index 8 (bright black), but in the _Solarized_ scheme, bright black is the darkest color in the palette, darker even than dark black. Without knowing the palette, there's nothing we can do about that.",0
+"And then you've also got the fact that half of the bright colors are just shades of gray. So the bright greens and yellows in the rightmost blocks of the color cube end up getting mapped to various shades of gray. But note that the original algorithm didn't do much better, with those greens and yellows being mapped to red, orange and blue.",0
+"Finally there are the shades of gray at the bottom of the test pattern where the middle section appears darker than the start. But again that's just because _Solarized_ has the black and bright black intensities reversed. The mapping in the old algorithm wasn't perfect either, but the shades of gray are at least in the right order.",0
+"So yeah, this case is a bit of a mess for the new algorithm, but that's not a huge surprise. And if you're using a _Solarized_ color scheme, then you're probably used to things being broken a lot of the time. 😉",0
+"I'm wondering whether we should do something a little more subtle for possible values of Length. As this PR stands, we're breaking some existing scenarios (see example below).",0
+"I'm thinking we could do something like for nullability, whereby if you explicitly test for null on a non-nullable value then we take it seriously expand the value's domain (pure null tests).",0
+"The analog here would be that if you do a test for some negative value of Length, then we expand its value domain to include negative values.",0
+I think that would avoid the breaking change.,0
+This is not blocking this PR. Probably needs more reflection and discussion with LDM.,0
+"I only see one caller to Pump.  Since we'll throw if `input` is null, it shouldn't be declared as null-accepting.  At worst, we're just moving this `!` to the caller where they're asserting it's not null.",0
+"Digging deeper, the `input` parameter can never be null (which is good, or we'd have a pending exception here).",0
+I looked at my usual corpora [1] to see which strategy is best. I started by considering three options:,0
+I found all comments containing `@github` and dumped the list of tags from each comment.,0
+6 projects use the unsupported callback-like typedefs compared to 3 projects that use local typedefs.,0
+"Additionally, I observed plenty of unassociated `@github` comments that were not separated by a newline from the next element, though the median next element was another comment.",0
+"In the future, if we decide to support callback-like typedefs, then (1) would stop incorrectly showing the callback-like typedefs. The code to implement this wouldn't be large, although I think there isn't much demand.",0
+"@github I tried the mono ""HelloWorld' sample (src/mono/samples/HelloWorld) with the interpreter on linux-x64 (`make run MONO_ENV_OPTIONS=--interp` in that directory) in a debug build of mono (`./build.sh mono+libs -c Debug`)",0
+It's dying on this line,0
+"I ran it in GDB and got a ""stack trace"" of the frames:",0
+(And I think we're in the pinvoke wrapper for `Interop.Sys.GetEnv` - going up a few more frames I see us in `GetEnvironmentVariableCore`).,0
+"*Update* actually since it's a `LDIND` that's failing, it's probably not that `buffer` is bad, but something we're doing with `str`",0
+~~So I think we're getting garbage for `buffer` near here:~~,0
+"I'm not sure why that might be, yet",0
+I think the interpreter doesn't like `MemoryMarshal.GetReference` for some reason:,0
+Options I see for this:,0
+1. What I did here (clear dupes of each attribute as it's added) - simple and O(N^2),0
+2. Clear dupes of *all* attributes for an element/component when it's closed - somewhat simple and also O(N^2),0
+"3. Use a HashSet - simple, requires extra data/hashing and still kinda worst-case O(N^2) because removing from an array is O(N)",0
+"Basically I felt like keeping the data in the *always consistent* state was the best thing overall. Without doing dedicated perf work around this specific feature, I don't have a clear insight into which of these are the best. That seems like a good thing to do some other time.",0
+"Seriously though, should we start all our interface summaries with ""Defines an interface""? Seems obvious/redundant. Even just ""An interface"" would be slightly better.",1
+We are seeing the same issue in the 'release/5.0-preview1' branch and need this fix there too.,0
+1. Re-enable this build step everywhere,0
+2. Find some way to run this build step when the site extension may be affected,0
+"- Worst case, could have a separate pipeline developers could execute when they suspect it's needed e.g. for this PR and the mega merge",0
+"This isn't incredibly urgent. But, might be nice to get it into 2.1.28 if ProdCon hasn't reached this repo by the time the changes are approved and validated.",0
+How can we help investigate?,0
+"For clarification, a movzx of 8-bit to 32-bit can sometimes be elided entirely by the processor. In the worst case it's a 1/4 nanosecond latency on modern CPUs.",0
+"A movzx of 16-bit to 32-bit can never be elided by the processor. In the worst case it's a multi-cycle latency, as you have the cost of the operation _and_ the fact that this instruction operates on a dedicated port separate from many other ALU instructions. So that's a potential pipeline stall that affects anybody who will end up reading this value after it's computed.",0
+"Hmm, is this going to work right? If this is reflecting against the compiler's object, but we're linking a copy into our project, is this going to fail the ""is"" check because the types won't unify? note the reflection before wouldn't have cared in the slightest.",1
+The prior reflection not throwing asserts or something if it failed to me is incredibly suspicious too since we could have silently broken this in other ways.,0
+I don't think this loop is critical for performance as it's only executed once and it's very likely that this information is needed later anyway.,0
+In addition `modifiedSourceFiles` is only available in the scope of this function. I would need to move it to an outer scope to access it later. I'd like to avoid that as it increases the likelihood to retain references to old sourcefiles that could otherwise be garbage collected,0
+"Correct, the current implementation does not write all the bytes. The tests were failing without these Clear calls, because the rented arrays had garbage from previous usages.",0
+"The TypeScript generating this was `x = <any> { test: <any></any> };`. Garbage in, garbage out?",1
+"I'm not sure if anyone can confirm that doing a manual GC.Collect() between test runs causes the tests to pass, but that was my experience, so I believe I have found the problem.  It looks like the issue is reference counting on the COM interfaces.  The documentation for Marshal.GetObjectForIUnknown(IntPtr) states:",0
+This method wraps IUnknown in a managed object. This has the effect of incrementing the reference count of the COM component. The reference count will be decremented when the runtime performs garbage collection on the managed object that represents the COM object.,0
+"In SafeHandles.cs, there are three calls to Marshal.GetObjectForIUnknown() that create a local variables that disappear into the ether and never have Marshal.ReleaseComObject() called on them (until garbage collection).  In my tests, adding a Marshal.ReleaseComObject() call to each of these will fix the issue.  For example:",0
+"Like I said, I believe this fixes the issue (presumably, the right way) and should allow this PR to be merged.  Please let me know your thoughts.  It'd be great if we could get this merged soon.  Thanks.",0
+@github,0
+"Worst case, we can always add to the `HttpSysOptions.RequestQueueMode` enum that requires you to configure your queue for delegation ahead of time and avoid opting everyone into the new behavior",0
+What happens if another await is added while the blocking Run is used? Is there any negative side effect?,0
+"I'm assuming that's the ""worst case"" where one extra blocked thread for the lifetime of the application.",0
+"Previously all the root helper methods for parsing paths returned `CommandLineSourceFile`, which is a tuple of `(string Path, bool IsScript)`. I didn't use this type for AnalyzerConfig because they can never be script files. Neither can EmbeddedFiles or AdditionalFiles, by the way, but I think this was a mistake made just because the helper returned CommandLineSourceFile.",0
+"By changing the root helper I prevented the AnalyzerConfigPaths from having to allocate an extra dictionary to do a Select, but I also had to convert paths into CommandLineSourceFiles for all the places that did take them.",0
+"Overall, garbage should be reduced going forward and it should prevent us making mistakes like we did in the past.",0
+"We don't need to lock for the happy case where we have the value cached, the worst that can happen in the other case is that we retrieve/store the same value twice if two threads are racing:",0
+Good catch. I'll tag them so they can take a look. Worst case we can just change the name back.,0
+"This is almost certainly not the right place for this comment, but sorry: It seems like an incredibly small and simple change to review and merge! And it seems like such a no-brainer... most (99%+) programmers write their code starting at the top with the first line, not at the bottom with the last line... so covering up stuff you've just written, above where you're currently writing, seems like the wrong thing (to 99%+ of users).",1
+I'm strongly concerned with the memory safety of this code.,0
+"First of all you forgot to include the 0 byte in your buffer size calculation. I'm not trying to diss you here, rather this simply shows how such things are best abstracted away behind safer container classes. Even if the `buf` was 12 bytes large, it would fail the moment anyone touches the code and the reviewer forgets to re-check the correctness of the buffer size.",1
+"Additionally `Xterm256ToWindowsIndex` can theoretically return values as large as 2^16-1, resulting in a buffer size of 14!",0
+"MSVC's small string optimization (SSO) is unfortunately among the worst of all C++ stdlib implementations. But regardless its 15 byte buffer is plenty enough for both `_SetGraphicsRendition256Color` and `_SetGraphicsRendition16Color`, and allows you to use the regular `fmt::format` function without incurring any allocations.",1
+"I did not misunderstand I was just adding to the possibility, If Windows Terminal is not intended to be integrated with Windows then I'm incredibly sad to hear that. However, the look and feel should still be the same and in line with Microsoft's Fluent Design roadmap to ensure the look and feel is consistent.",0
+"Based on the doc, the helper type only guarantee _instance to be GC ineligible after `Dispose` is called at the end of current method, right? It can still get GC'd before then, unless `Dispose` is inlined",0
+"not related to this PR, but to the code above: we don't need to clear the buffer before passing it to `ReadExactlyAsync` as `ReadExactlyAsync` ensures that it's going to populate its entire content. Even if there is garbage inside it, `ReadExactly` is going to overwrite it with whatever data it reads from the stream.",0
+"@github Thanks for taking a look, appreciate it! 😊",0
+There are mainly two differences I'm seeing in all of them:,0
+"- One less conditional branch in the ""fast"" version",0
+- Slightly smaller codegen (this might in part go away if the method is inlined though),0
+Consider the first example:,0
+"The ""fast"" version has a single branch just for the `null` check, then it simply does a compare with the method table pointer and sets the flag, whereas the other handles each condition separately 🤔",0
+"The worst offender would be the second example though, where the `(T)` checks seem completely redundant, but as mentioned above I guess we'll just have to wait for the runtime to support the `no.` prefix for that (and that seems like a separate issue as well).",1
+"the counter name says ""pause time"", the API says ""GC duration"". for BGCs, these 2 are very different. the time between BGC start and end could be long but only a small portion of it is paused.",0
+"Worst case scenario, your app is in the middle of a deployment and you got the wrong contents, the likely outcome is that your app will crash and the user will have to reload (this problem is orthogonal to what we are trying here).",0
+"If you want to do this validation, then do it over the cached data the first time you load from cache and ""repair"" purge the entry from the dll once you detect that scenario.",0
