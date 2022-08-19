@@ -1494,3 +1494,8 @@ This would make another PR i guess since this API Changed has been approuved alr
 Your code Is a pain to read,1
 "YEah... overload resolution is just insane (including just thinking about param count).  I really didn't want to go to that level.  We can see if this is overbroad and we can lighten later.  However, i don't mind the restriction for now.",0
 This is a pain in the behind,1
+"This still sucks",1
+"Your app has a small `AndroidManifest.xml`",0
+"You should see a message.",0
+"You should see something like:",0
+"This is `macOS-latest`",0
