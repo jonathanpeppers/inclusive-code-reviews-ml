@@ -166,5 +166,9 @@
     {
         "text": "* Your app has a small `AndroidManifest.xml`, not much in it",
         "isnegative": "0"
+    },
+    {
+        "text": "@jonathanpeppers have you tried rebooting?",
+        "isnegative": "0"
     }
 ]
