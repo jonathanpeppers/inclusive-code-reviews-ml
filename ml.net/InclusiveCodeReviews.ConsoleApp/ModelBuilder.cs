@@ -65,8 +65,8 @@ namespace InclusiveCodeReviews.ConsoleApp
 									  .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
 									  .AppendCacheCheckpoint(mlContext);
 			// Set the training algorithm 
-			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 1E-06f, L1Regularization = 1f, ConvergenceTolerance = 0.2f, MaximumNumberOfIterations = 100, Shuffle = false, BiasLearningRate = 0.1f, LabelColumnName = "isnegative", FeatureColumnName = "Features" })
-									  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
+			var trainer = mlContext.MulticlassClassification.Trainers.OneVersusAll(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(new LbfgsLogisticRegressionBinaryTrainer.Options() { L2Regularization = 0.2855957f, L1Regularization = 0.34729505f, OptimizationTolerance = 1E-07f, HistorySize = 50, MaximumNumberOfIterations = 177412301, InitialWeightsDiameter = 0.11343773f, DenseOptimizer = false, LabelColumnName = "isnegative", FeatureColumnName = "Features" }), labelColumnName: "isnegative")
+						  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 
 			var trainingPipeline = dataProcessPipeline.Append(trainer);
 
