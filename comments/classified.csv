@@ -1,204 +1,204 @@
-"text","isnegative"
-"ship it!","0"
-"tests failed","0"
-"This sucks!","1"
-"Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.","0"
-"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597","0"
-"Ignore above, it was a `net6.0-android` app.","0"
-"When testing `net7.0-android` apps, Debug builds work","0"
-"You are so terrible","1"
-"This is terrible","1"
-"I have a feeling that NuGet authors will have to use `monoandroid10.0` for their directory names...","0"
-"You are a failure.","1"
-"There are test failures.","0"
-"The test failed with: compiler error on line 12","0"
-"The one performance test that failed, I don't see anything related to this change","0"
-"Did this just get pasted twice?","0"
-"I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205.","0"
-"It seems both the startup & MSBuild perf tests fail to build, which is odd.","0"
-"I vehemently disagree with this","1"
-"Can we do something smarter than this?","1"
-"I don't like this solution.","1"
-"You can do this like this instead.","0"
-"Have you even tested this code before submitting?","1"
-"🤮","1"
-"😠","1"
-"😡","1"
-"This is just sh*t.","1"
-"The conflict I get is due to stupid new gcc header file crap.","1"
-"But what makes me upset is that the crap is for completely bogus reasons.","1"
-"The above code is sh*t, and it generates shit code.","1"
-"It looks bad, and there's no reason for it.","1"
-"Give me *one* reason why it was written in that idiotic way with two different conditionals, and a shiny new nonstandard function that wants particular compiler support to generate even half-way sane code, and even then generates worse code?","1"
-"I love it!","0"
-"So good","0"
-"Amazing","0"
-"Looks good to me","0"
-"LGTM","0"
-"Great Job!","0"
-"Does this work?","0"
-"It looks like a test failed","0"
-"This is not compiling","0"
-"Make sure that you compile before creating the pull request","0"
-"Unrelated test failures","0"
-"/azp run","0"
-"Please add in the labels","0"
-"This does not work","0"
-"There is a bug in the code","0"
-"Please wait to merge this","0"
-"You need to revert this commit","0"
-"THIS IS AWESOME","0"
-"THIS IS PERFECT","0"
-"This is a great improvement","0"
-"Let's see if the tests pass","0"
-"This may fail a test","0"
-"This will help a lot of people","0"
-"I think you should go another route","0"
-"LGTM","0"
-"Don't give up","0"
-"This is much better","0"
-"This is an improvement","0"
-"You are a saint","0"
-"Thank you!","0"
-"This is not exactly what we want","0"
-"This is a slightly better way to do this","0"
-"Removing this","0"
-"You can close this for now","0"
-"Reopening this PR","0"
-"Please ignore this PR","0"
-"DO NOT MERGE","1"
-"Add the DO NOT MERGE label if it's not ready yet!","0"
-"I hate this change","1"
-"Customers will hate this","1"
-"This CI sucks","1"
-"Change this now","1"
-"I will change this now - thank you for the feedback","0"
-"This is below your level","1"
-"Did a child write this?","1"
-"You can't make this any better?","1"
-"This is not what we want","1"
-"Just let me do this","1"
-"You can't do anything right can you?","1"
-"Everything is wrong","1"
-"Stop that","1"
-"Just quit","1"
-"Kill this","1"
-"Close this PR","1"
-"I missed this earlier","0"
-"This is a breaking change","0"
-"There is a version mismatch","0"
-"The thread was aborted","0"
-"The memory is corrupted","0"
-"It's throwing an exception","0"
-"It's about the Invalid IL code","0"
-"There appears to be a stack misalignment","0"
-"The weak reference object will get cleared","0"
-"This code is garbage","1"
-"Did you account for garbage collection?","0"
-"Can't you do better?","1"
-"This is messy","1"
-"I learned something new!","0"
-"I didn't know that","0"
-"This is great test coverage","0"
-"This is pretty gross","1"
-"There's nothing pretty about this","1"
-"This is very pretty code!","0"
-"It isn't working","0"
-"This isn't worth my time","1"
-"It just doesn't make sense","1"
-"It just doesn't make sense to me how awesome this is","0"
-"It will kill a lot of businesses","1"
-"This in particular is a mess","1"
-"I'm not counting on it working","1"
-"At this point, this is absolutely not ready for real-world use","1"
-"We are in a really bad place at the minute","1"
-"it is so frustrating","1"
-"that kills trust","1"
-"adding the bot here would help detecting such major issues","0"
-"that only goes so far","1"
-"it isn't good enough","1"
-"it isn't good enough to just write code, but what you've done here with your comprehensive documentation and test coverage is exemplary","0"
-"what you're proposing will effectively just make things more difficult","1"
-"sometimes nasty bugs can be introduced","1"
-"it's not going to help","1"
-"Damage has been done","1"
-"I will ignore your code","1"
-"Feel free to ignore that platform for now","0"
-"It's going to ignore the scheme","0"
-"Maybe you should get an education","1"
-"You don't know what's going on","1"
-"You should start with a bullet to the brain","1"
-"This is on the blacklist, how could you miss that","1"
-"This is on the block list, it's always a good idea to double-check!","0"
-"They're a blackhat so their code isn't worth it","1"
-"They're an unethical hacker so be cautious about their code","0"
-"Be inclusive of the minority because they need help","1"
-"Be inclusive of marginalized groups because that is the right thing to do","0"
-"good job guys you ruined it","1"
-"good job team keep up the good work","0"
-"let's do a little more housekeeping here it's quite messy","1"
-"let's do a little more cleanup here to improve the formatting further","0"
-"you're so OCD why are you like this","1"
-"you're so organized I'm very impressed","0"
-"the behavior is crazy why are you doing this","1"
-"the behavior is unpredictable","0"
-"accessibility helps a handicapped person but it's otherwise useless","1"
-"accessibility helps a person with disabilities but also everyone else","0"
-"my computer is hanging ugh it's your fault","1"
-"my computer is frozen","0"
-"this is some grandfather code we'll be updating because it's so old and ugly","1"
-"this is some rollover code we'll be updating","0"
-"nice dummy values! but not nice enough","1"
-"nice sample values!","0"
-"this is on my to-do list","0"
-"Don't do a half-ass job","1"
-"We always want to make things better.","0"
-"Maybe it's better to do this in another way?","0"
-"Do this in another way!","1"
-"Your code is completely wrong","1"
-"I don't like this solution.","1"
-"You're not the best developer here","1"
-"After discussion with the team, we came to the conclusion that's better to do it this way.","0"
-"Do it this way, because I know best","1"
-"Every line of code you write is a nail in my coffin","1"
-"This is rubbish","1"
-"This is toy code","1"
-"How long did you spend working on this?","1"
-"What are you doing?","1"
-"You know this doesn't work like that, right?","1"
-"Can you explain what you are trying to accomplish?","0"
-"Can you explain how it works?","0"
-"I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing?","0"
-"This is great!","0"
-"I love this","0"
-"This is a great solution","0"
-"I would never have thought of doing it this way","0"
-"Perfect","0"
-"Lovely","0"
-"I love this idea","0"
-"This Is Wrong","1"
-"You're not good at this","1"
-"Everything you do is bad","1"
-"Everything looks great","0"
-"This code was terrible, I'm so happy you made it better!","0"
-"This code is terrible","1"
-"This code was terrible","0"
-"Good job","0"
-"This caused a test failure","0"
-"You're a failure","1"
-"This made some tests fail","0"
-"You failed","1"
-"This needs some tests","0"
-"You should have added tests","1"
-"This fixes a problem where the mortality rate in the nursery was too high","0"
-"This fixes a problem","0"
-"Sigh","1"
-"This is dead code","0"
-"You're dead","1"
-"This will cause infinite recursion","0"
-"Software engineering is not for you","1"
-"This is obviously wrong","1"
-"Why don't you just skip this step","1"
+text,isnegative
+ship it!,0
+tests failed,0
+This sucks!,1
+"Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.",0
+"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0
+"Ignore above, it was a `net6.0-android` app.",0
+"When testing `net7.0-android` apps, Debug builds work",0
+You are so terrible,1
+This is terrible,1
+I have a feeling that NuGet authors will have to use `monoandroid10.0` for their directory names...,0
+You are a failure.,1
+There are test failures.,0
+The test failed with: compiler error on line 12,0
+"The one performance test that failed, I don't see anything related to this change",0
+Did this just get pasted twice?,0
+I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205.,0
+"It seems both the startup & MSBuild perf tests fail to build, which is odd.",0
+I vehemently disagree with this,1
+Can we do something smarter than this?,1
+I don't like this solution.,1
+You can do this like this instead.,0
+Have you even tested this code before submitting?,1
+🤮,1
+😠,1
+😡,1
+This is just sh*t.,1
+The conflict I get is due to stupid new gcc header file crap.,1
+But what makes me upset is that the crap is for completely bogus reasons.,1
+"The above code is sh*t, and it generates shit code.",1
+"It looks bad, and there's no reason for it.",1
+"Give me *one* reason why it was written in that idiotic way with two different conditionals, and a shiny new nonstandard function that wants particular compiler support to generate even half-way sane code, and even then generates worse code?",1
+I love it!,0
+So good,0
+Amazing,0
+Looks good to me,0
+LGTM,0
+Great Job!,0
+Does this work?,0
+It looks like a test failed,0
+This is not compiling,0
+Make sure that you compile before creating the pull request,0
+Unrelated test failures,0
+/azp run,0
+Please add in the labels,0
+This does not work,0
+There is a bug in the code,0
+Please wait to merge this,0
+You need to revert this commit,0
+THIS IS AWESOME,0
+THIS IS PERFECT,0
+This is a great improvement,0
+Let's see if the tests pass,0
+This may fail a test,0
+This will help a lot of people,0
+I think you should go another route,0
+LGTM,0
+Don't give up,0
+This is much better,0
+This is an improvement,0
+You are a saint,0
+Thank you!,0
+This is not exactly what we want,0
+This is a slightly better way to do this,0
+Removing this,0
+You can close this for now,0
+Reopening this PR,0
+Please ignore this PR,0
+DO NOT MERGE,1
+Add the DO NOT MERGE label if it's not ready yet!,0
+I hate this change,1
+Customers will hate this,1
+This CI sucks,1
+Change this now,1
+I will change this now - thank you for the feedback,0
+This is below your level,1
+Did a child write this?,1
+You can't make this any better?,1
+This is not what we want,1
+Just let me do this,1
+You can't do anything right can you?,1
+Everything is wrong,1
+Stop that,1
+Just quit,1
+Kill this,1
+Close this PR,1
+I missed this earlier,0
+This is a breaking change,0
+There is a version mismatch,0
+The thread was aborted,0
+The memory is corrupted,0
+It's throwing an exception,0
+It's about the Invalid IL code,0
+There appears to be a stack misalignment,0
+The weak reference object will get cleared,0
+This code is garbage,1
+Did you account for garbage collection?,0
+Can't you do better?,1
+This is messy,1
+I learned something new!,0
+I didn't know that,0
+This is great test coverage,0
+This is pretty gross,1
+There's nothing pretty about this,1
+This is very pretty code!,0
+It isn't working,0
+This isn't worth my time,1
+It just doesn't make sense,1
+It just doesn't make sense to me how awesome this is,0
+It will kill a lot of businesses,1
+This in particular is a mess,1
+I'm not counting on it working,1
+"At this point, this is absolutely not ready for real-world use",1
+We are in a really bad place at the minute,1
+it is so frustrating,1
+that kills trust,1
+adding the bot here would help detecting such major issues,0
+that only goes so far,1
+it isn't good enough,1
+"it isn't good enough to just write code, but what you've done here with your comprehensive documentation and test coverage is exemplary",0
+what you're proposing will effectively just make things more difficult,1
+sometimes nasty bugs can be introduced,1
+it's not going to help,1
+Damage has been done,1
+I will ignore your code,1
+Feel free to ignore that platform for now,0
+It's going to ignore the scheme,0
+Maybe you should get an education,1
+You don't know what's going on,1
+You should start with a bullet to the brain,1
+"This is on the blacklist, how could you miss that",1
+"This is on the block list, it's always a good idea to double-check!",0
+They're a blackhat so their code isn't worth it,1
+They're an unethical hacker so be cautious about their code,0
+Be inclusive of the minority because they need help,1
+Be inclusive of marginalized groups because that is the right thing to do,0
+good job guys you ruined it,1
+good job team keep up the good work,0
+let's do a little more housekeeping here it's quite messy,1
+let's do a little more cleanup here to improve the formatting further,0
+you're so OCD why are you like this,1
+you're so organized I'm very impressed,0
+the behavior is crazy why are you doing this,1
+the behavior is unpredictable,0
+accessibility helps a handicapped person but it's otherwise useless,1
+accessibility helps a person with disabilities but also everyone else,0
+my computer is hanging ugh it's your fault,1
+my computer is frozen,0
+this is some grandfather code we'll be updating because it's so old and ugly,1
+this is some rollover code we'll be updating,0
+nice dummy values! but not nice enough,1
+nice sample values!,0
+this is on my to-do list,0
+Don't do a half-ass job,1
+We always want to make things better.,0
+Maybe it's better to do this in another way?,0
+Do this in another way!,1
+Your code is completely wrong,1
+I don't like this solution.,1
+You're not the best developer here,1
+"After discussion with the team, we came to the conclusion that's better to do it this way.",0
+"Do it this way, because I know best",1
+Every line of code you write is a nail in my coffin,1
+This is rubbish,1
+This is toy code,1
+How long did you spend working on this?,1
+What are you doing?,1
+"You know this doesn't work like that, right?",1
+Can you explain what you are trying to accomplish?,0
+Can you explain how it works?,0
+"I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing?",0
+This is great!,0
+I love this,0
+This is a great solution,0
+I would never have thought of doing it this way,0
+Perfect,0
+Lovely,0
+I love this idea,0
+This Is Wrong,1
+You're not good at this,1
+Everything you do is bad,1
+Everything looks great,0
+"This code was terrible, I'm so happy you made it better!",0
+This code is terrible,1
+This code was terrible,0
+Good job,0
+This caused a test failure,0
+You're a failure,1
+This made some tests fail,0
+You failed,1
+This needs some tests,0
+You should have added tests,1
+This fixes a problem where the mortality rate in the nursery was too high,0
+This fixes a problem,0
+Sigh,1
+This is dead code,0
+You're dead,1
+This will cause infinite recursion,0
+Software engineering is not for you,1
+This is obviously wrong,1
+Why don't you just skip this step,1
 "Ok, `Test MSBuild Mac` and `Test MSBuild for Devices Mac` might be a little better.",0
 "@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0
 "Ignore above, it was a `net6.0-android` app. When testing `net7.0-android` apps, Debug builds work.",0
@@ -488,19 +488,19 @@ small formatting,0
 "Sorry, I don't think this one is actually ready for review. I think there are some things in the headers that were not mentioned by xtro that need updating!",0
 small typo,0
 That is a good point.,0
-"BTW these are the two bugs that we will try to patch for .NET 6.x that are preventing JS initializers from working in .NET MAUI",0
+BTW these are the two bugs that we will try to patch for .NET 6.x that are preventing JS initializers from working in .NET MAUI,0
 "In theory, the ""best"" way to make this work is to use Blazor JS module initializers, but unfortunately there is currently a bug that prevents them from working as intended.",0
-"This was an access violation.",0
-"Please remember to address the cancelled task",0
-"There was a fail fast exception",0
-"I missed updating this test",0
-"This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field.",0
+This was an access violation.,0
+Please remember to address the cancelled task,0
+There was a fail fast exception,0
+I missed updating this test,0
+This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field.,0
 "Also, contrary to the other default includes, add a condition so files are only included if we have a resource prefix (typically ""Resources""), otherwise the entire hard drive might be included",0
-"I am seeing unmanaged crashes but I think our fix was just in Preview 13.",0
+I am seeing unmanaged crashes but I think our fix was just in Preview 13.,0
 "Maybe I should be more verbose, but the comment before was listing 2 brief comments.",0
-"The ListView is displaying incorrectly.",0
-"In order for the the Button to display correctly.",0
-"The point of the ExecutionMode platform specific was to tell WebView on UWP to run out of process.",0
+The ListView is displaying incorrectly.,0
+In order for the the Button to display correctly.,0
+The point of the ExecutionMode platform specific was to tell WebView on UWP to run out of process.,0
 "Just invoking the Current property causes a crash, so you must be working some magic!",0
 "I was able to replicate the failures locally, and the most likely reason for the failures is the loss of focus by the test form",0
 "How, if at all, does this relate to AutomationProperties?",0
@@ -508,18 +508,18 @@ That is a good point.,0
 trying again now,0
 "updated, thanks for the feedback!",0
 @github told me blazor already has this type of theming via bootstrap styles,0
-"should this also be MauiComboBox?",0
+should this also be MauiComboBox?,0
 Thanks for the feedback @github! Opened an issue here https://github.com/dotnet/maui/issues/4766 - feel free to add more info,0
 What is the expected updated behavior here?,0
 will do!,0
-"missing d",0
+missing d,0
 "I was told that it's best to use Brushes for Background colors and Colors everywhere else (cc @github) and yep, I added a bunch of colors/brushes that don't get used - exact colors are still a bit tentative, but I'll see what @github thinks for that",0
 failing tests unrelated,0
 The built-in platforms also use color for interactive controls,0
-"nitpick typo fix that's been bothering me",1
+nitpick typo fix that's been bothering me,1
 fixing now - but can you remind me why the null check is sufficient for Android and not iOS?,0
 "Hi, @github - what's ths issue you're seeing on iOS? Is it also the same error regarding `Xamarin.AndroidX.Security.SecurityCrypto` ?",0
-"NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119 Placeholder looks great otherwise",0
+NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119 Placeholder looks great otherwise,0
 "I put this sample code directly in my local version of the control gallery sample: It uses `<GridLayout RowDefinitions=""Auto,*, Auto"">` like the samples in the referenced issues do",0
 See following comment first (I'm assuming this naming is related to `TapGestureRecognizerNeedsDelegate` which doesn't fully make sense to me),0
 "fixed, thank you! 😂",0
@@ -535,7 +535,7 @@ What's happening here? Why is it no longer async and what does the func() do tha
 What is MaxLength=-1 expected to do?,0
 and wherever it's used/referenced,0
 "@github I fixed the ugly rebase! Build is failing now because Shadow is using Color and Size though, so that still needs to be fixed",1
-"Can we use the same vars for consistency?`",0
+Can we use the same vars for consistency?`,0
 "Ok, thanks! Changed it back. I hadn't been sure because I know both brushes and colors can be used for Background, and assumed it might be the same with Backgroundcolor",0
 will do!,0
 @github will try again... did you change the background color though? I wonder if that's related,0
@@ -546,7 +546,7 @@ Maybe we can do something similar to image where it simply can't receive focus a
 nice!,0
 "We woud need to check what the screen reader behavior is - does the TalkBack focus move with the keyboard focus? If it's inconsistent, we need to figure out what the desired behavior is there. If it's consistent, then I think this is an OK solution",0
 I agree! I just wanted to leave them for @github in case there are any we want to comment in before I delete them entirely,0
-"Commented out because the values aren't clear yet and we want your opinions on what the values should be :)",0
+Commented out because the values aren't clear yet and we want your opinions on what the values should be :),0
 "Similarly, for any controls/properties you don't see in this PR that you believe belong, please let me know which ones and which values you might see them with",0
 "I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct""",1
 "ah ok, makes sense! docs for `afterDescendants` was a big confusing and seemed right to me at first, since I was thinking the container should usually not receive any focus. But your explanation of ""consider first as a viable focus target"" helps clarify things",0
@@ -556,19 +556,19 @@ done!,0
 "sorry, I misread which APIs were being used - taking back what I said and seconding Shane here!",0
 gotcha - will fix both here and in XCT soon,0
 @github I tried that but it didn't work for me :/ will try again though,0
-"Is the body correct? Is it related to CursorPosition and not SelectionLength?",0
+Is the body correct? Is it related to CursorPosition and not SelectionLength?,0
 Where did this 50 come from?,0
 Should we maybe set this to ImportantForAccessibility.Auto instead of null?,0
 "yep! We're trying to get the SearchView, and it looks like that TextView is being uesd as the SearchView. The SearchButton stuff we were using before was wrong / not quite relevant",0
 "alpha version was incorporated, and code significantly simplified. security nuget still needs to be added to nuget feed, so waiting on that! in the meantime, if any folks are able to test on android api levels 21/22, that would be super helpful - thanks!",0
-"missing d",0
+missing d,0
 @github font scaling will automatically be enabled across all the platforms including iOS now!,0
-"Should we not set a background color on any pages then and just let the system handle that?",0
+Should we not set a background color on any pages then and just let the system handle that?,0
 "My thinking was that the background should be light in light mode, dark in dark mode, and since `BackgroundColor` property is derived from VisualElement, which Page is based on, this is how I handled it. Most of the specific pages themselves (i.e. ContentPage) don't have stylable properties if not for those derived from Page and VisualElement",0
 maybe we can at least have the mainpage code in comments?,0
 "hmm I tested again, but it's the same :/",0
 Could you share an example so that I can understand this better? I'm wondering why it's [`.BeforeDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_BEFORE_DESCENDANTS) instead of [`.AfterDescendants`](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_AFTER_DESCENDANTS). Is the `nativeview` here the rootView or the contained views?,0
-"@github yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired",0
+@github yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a `FontAutoScalingEnabled` boolean property that can be set to `false` if so desired,0
 still seeing similar issues where hovering changes the color,0
 "@github I agree that with this calculator sample specifically, gray might work better with the general color scheme. Unfortunately, the proposed colors aren't accessible so I think it would be best to keep the current colors which have already been tested and validated for accessibility via our templates. Naturally, different colors might look better with different samples and scenarios, and folks can always change these styles as they wish. If you want to use grays for the calculator sample, I recommend a light gray button on black background in dark mode! But again, for the templates, I think keeping the current button style (with regard to colors) is ideal in terms of accessibility.",0
 Windows SearchBar MaxLength will need some more time https://github.com/dotnet/maui/issues/5669,0
@@ -578,7 +578,7 @@ same feedback applies to all the templates,0
 why is this commented out? Should it be deleted?,0
 Is TextColor not yet expected to work?,0
 "yes, so shouldn't we be checking here that it's YES instead of AUTO?",0
-"same issue as #741 again NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119",0
+same issue as #741 again NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119,0
 "Oo makes sense, thanks!!",0
 Sample and device tests still need to be tested on iOS,0
 "or just ""textField"" as before?",0
@@ -586,9 +586,9 @@ Sample and device tests still need to be tested on iOS,0
 "nice var name 😂  ""whatDoIDo""",0
 similar feedback applies to all dropdowns,0
 "There are some new test failures, this is terrible.",1
-"This is the worst thing that has ever happened.",1
-"This is such a bad way to do things",1
-"This is crazy good",0
+This is the worst thing that has ever happened.,1
+This is such a bad way to do things,1
+This is crazy good,0
 "i think we should keep the hostingContext, we might in the future add stuff to the hostingcontext, and you can use it to decide what to register.",0
 won't we neeed this mirror on internal feeds? @github  ?,0
 @github  i think we can remove this change right?,0
@@ -837,7 +837,7 @@ nice :) I could have used this in #3938,0
 Is there a reason to not go with `$(AndroidPackageFormats)` (plural)? Is it easier for the IDE to have the two separate properties?,0
 We have many MSBuild Properties which rely on an it being one or the other for example (and this is just a small example).,0
 Also take a look at our current signing system. https://github.com/xamarin/xamarin-android/blob/main/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L2287,0
-"This is pretty messy.",1
+This is pretty messy.,1
 "This depends on if we are signing with ApkSigner or not. `aab` files MUST use ApkSigner, `apk` MUST not.",0
 "Now I'm not saying that we don't need to rework this because its clear that we do. However, the approach in this PR seemed like the most straight forward given the time constraints for this feature. Tacking on the additional apk generation for this specific case i.e when the user is in release mode and are generating an `aab`.",0
 "As we talked about on the meeting, we could just make `AndroidAdditionalPackageFormats` internal. So not something users would use, but it would be automatic if they are using .net 6 AND `aab` And `Release`.",0
@@ -1018,60 +1018,497 @@ Test failures are unrelated,0
 * monotouch-test/Mac [dotnet]/Debug (CoreCLR) [dotnet]: https://github.com/xamarin/maccore/issues/2488,0
 * DotNet tests: fixed in #12334.,0
 `extenion` => `extension`.,0
-"kys",1
-"kill yourself",1
-"I'm going to murder you",1
-"I'm going to assassinate you",1
-"I'm going to put an end to you",1
-"I'm going to eliminate you",1
-"I'm going to end you",1
-"I'm going to stop the build",0
-"Stop coding",1
-"Stop it!",1
-"I'm going to get rid of you",1
-"I want to hurt you",1
-"Shoot yourself",1
+kys,1
+kill yourself,1
+I'm going to murder you,1
+I'm going to assassinate you,1
+I'm going to put an end to you,1
+I'm going to eliminate you,1
+I'm going to end you,1
+I'm going to stop the build,0
+Stop coding,1
+Stop it!,1
+I'm going to get rid of you,1
+I want to hurt you,1
+Shoot yourself,1
 "Shoot, I forgot to add that",0
-"Blow up",1
-"I hope you die",1
-"Suicide",1
-"I'm going to come find where you live",1
-"I'll see you soon",0
-"Let's burn this down",1
-"Be afraid",1
-"You should be very afraid",1
-"I'm afraid this won't work",0
-"You are going to pay for this",1
-"This is something we may have to pay for later",0
-"This is your warning",1
-"I see there is a warning",0
-"I see there is an error",0
-"You will be sorry",1
-"I am sorry",0
-"You're a jerk",1
-"You better run and hide",1
-"This code doesn't run",0
-"It seems to be hidden",0
-"I'll put you into the ground",1
-"Let's get this off the ground",0
-"Thanks for putting out this fire",0
-"I'm going to set your house on fire",0
+Blow up,1
+I hope you die,1
+Suicide,1
+I'm going to come find where you live,1
+I'll see you soon,0
+Let's burn this down,1
+Be afraid,1
+You should be very afraid,1
+I'm afraid this won't work,0
+You are going to pay for this,1
+This is something we may have to pay for later,0
+This is your warning,1
+I see there is a warning,0
+I see there is an error,0
+You will be sorry,1
+I am sorry,0
+You're a jerk,1
+You better run and hide,1
+This code doesn't run,0
+It seems to be hidden,0
+I'll put you into the ground,1
+Let's get this off the ground,0
+Thanks for putting out this fire,0
+I'm going to set your house on fire,0
 "Whew, this is smelly",1
-"This is really smelly",1
-"This is stinky",1
-"This stinks",1
-"This smells bad",1
-"This smells good",0
-"This smells",1
+This is really smelly,1
+This is stinky,1
+This stinks,1
+This smells bad,1
+This smells good,0
+This smells,1
 "Whew, this is really stinky",1
-"I really like this code",0
-"I like this code",0
-"I love this approach",0
-"I really love this approach",0
-"You suck at this",1
+I really like this code,0
+I like this code,0
+I love this approach,0
+I really love this approach,0
+You suck at this,1
 "Man, this sucks!",1
+This still sucks,1
+Stupid q - how does the implementation know to use the `_logger` instance?,0
+This only reinforces my belief that powershell is the best terrible scripting language we have.,1
+will fix thsi up.  that line looks terrible.  sorry.,1
+"Oh interesting. So you've got this implemented as ""in _structural_ order"" navigation. I suppose I imagined this as in ""in _id order_ navigation"".",0
+So for example:,0
+**EXAMPLE A:**,0
+structural order: `[<- 1 <-> 3 <-> 2 <-> 4 ->]`,0
+**EXAMPLE B:**,0
+structural order: `[<- 1 <-> 2 <-> 3 <-> 4 ->]`,0
+"Hmm. Maybe structural makes more sense. Cause in the case where we've got some panes that are opened and closed and opened, the ID order might be insane. Consider example B, close 3&4, then make a new vertical split (5), then close 2, then open a new split off 5 (6), then make a new split off 1 (7)",0
+Now the structural order is: `[<- 1 <-> 7 <-> 5 <-> 6 ->]` which makes way more sense than `[<- 1 <-> 5 <-> 6 <-> 7 ->]`,0
+WTF.  stupid autogenerated files.,1
+"317 lines to 116, so like 33% but its much saner to make changes to now, it was insane how many copies of compiler flags there were before",0
+"Sorry for this stupid mistake, changed",0
+"https://github.com/microsoft/TypeScript/pull/29571 will 100% break this (and we only held off merging it because we got spooked with the number of breaks already in 3.5 IIRC), since this is a terrible hack that makes `T` ""look like any"" even though it's a type parameter and `extends any` should be identical to `extends unknown` or simply no constraint.",1
+"Since the return type is MonoWasmEventPipeSessionID maybe it should be a cast to that. Also, if EventPipeSessionID becomes 64-bit later and the return value is somehow 32-bit, I think this would be a wrapping conversion which could cause a non-zero EventPipeSessionID to become 0? I guess that's what the assert is for but it feels gross to do the assert on something other than the actual return value, I would prefer to assert on the (post-cast) return value instead.",0
+"The symbol is neither from source nor metadata? @github has convinced me this isn't insane, but I'm wondering if this needs to be doc'ed somewhere.",0
+"Please do, this seems insane.",1
+Stupid question: why do we know its not a literal? because it could be dynamic?,0
+"The problem with ""IsMemberAccessExpressionName"" is then you need ""IsMemberAccessExpressionExpression"".  I think that reads terrible.  So instead i have ""IsNameOfMemberAccessExpression"" and ""IsExpressionOfMemberAccessExpression""",0
+"Not sure this clarification helps or makes it worse; I think one of the benefits of generators is that developers do not have to manage generated files (e.g. register them for clean in the build, knowing where to put them, knowing how not fuck with the timestamps etc).",1
+Since its just extension methods that folks aren't going to directly reference it's not a terrible type conflict. I'd just suppress the error for now and file a bug. If folks have a scenario for using the two types and notice the clash we can address it.,0
+Done - #34420,0
+HashCodeCombiner,0
+"What do you suggest? Removing is breaking, we could obsolete it and/or implement on top of System.HashCode?",0
+"My suggestion is to make the breaking change in `5.0` (which I've done in this PR). It was just added in `3.0` (mistakenly since it was a shared source file, and the type is public), and if anyone is using it, they shouldn't be. Also, if they were using it - it would collide with the same type in PlatformAbstractions. So I think we can make this small break, so we don't have to worry about it going forward.",0
+"For me the bug fix in 6.0 was to late, I went life with 5.0 rc1,publishsinglefile  and a simple workaround:",0
+------------------------------------------------------------------------,0
+Convert App.config to myAppname.Settings.json,0
+-------------------------------------------------------------------------,0
+ConfigurationManager (in my opinion) has 2 disadvantages:,0
+1. The rename step of App.config with assembyname.dll.config (lack of transparency),0
+2. The rename step of ConfigurationManager.OpenExeConfiguration didn't help me with this issue.,0
+Keep it simple keep it stupid (KISS) would be to give the (relative or Full) Path of the config file not the path of the exe-file,0
+The main reason for the usage of PublishSingleFile was the saving of filespace.,0
+I wonder why you cant fix it with 5.0.1 or 5.0.2 while 6.0 will arrive in November 2021 ?,0
+A good example for 1) is this code:,0
+. image](ht.,0
+codegen for tier0 is terrible. Two allocations (we box both values) 🙂,1
+"Your example of the final state looks good, but this interim state feels unacceptable. It churns all this code and we'll just have to change it all again later. Is there some way we can stage this without making everything gross in the interim?",1
+"`=` is lazy, `:=` is strict.",0
+"prints ""hi one"" ""hi two""",0
+"prints ""hi "" ""hi "" (empty var).",0
+"The first behavior seems incredibly insane, so having the default for most variable assignments be `:=` is good style.",0
+Note it gets weird with recursive variables (e.g. our use of `MSBUILD_ARGS`):,0
+"makes things get upset (""`Recursive variable 'MSBUILD_ARGS' references itself (eventually).  Stop.`"").",0
+Another `dotnet publish` failure in https://dev.azure.com/dnceng/public/_build/results?buildId=1182397&view=results. The logging is _insane_; is any of that detail useful❔,1
+Relevant bits may be,0
+and,0
+Binary log at https://helixre8s23ayyeko0k025g8.blob.core.windows.net/dotnet-aspnetcore-refs-pull-32889-merge-6a5d0c1edf6647f58f/ProjectTemplates.Tests--net6.0/AspNet.nniqxrj5imm.binlog may help too.,0
+Sorry for my stupid to make this pr happened,1
+`XmlDocument`?! I feel gross. :-/,0
+HHOS?,0
+"Because the compielr supported form is terrible.  `dotnet_diagnostic.IDE0180.severity` means nothing to the user.  Whereas someone can actually go look at something like `csharp_prefer_tuple_swap` and understand what this setting corresponds to.  Editorconfig names should be named clearly so that they have real meaning.  Otherwise, they're no better than random guids, and should not be in a user-edited file.",0
+wtf. this makes me super unhappy.,1
+this looks kinda terrible.,1
+"My terrible coding patterns are no excuse ;-)   But i do take this back.  I missed that right above we checked all the intermediary states, so thsi is fine.  #resolved",1
+"I really wanted it to be GetForCurrentApp().Reset(), but that would require the instance-level method ""reset"" to know about the global storage, and that seemed like a terrible inversion of responsibilities.",0
+"Approving, but I'm stupid and should make the ignoring of parameter base tests on xUnit better.",1
+I'm not sure if this is actually better than `LanguageServiceAdaptorConstructor` (which is kind of terrible on its own).,0
+I'll revert the changes to this file. It's too insane to reason about and my attempts to do so obviously failed.,1
+"We don't want to add view by view and skipping the layout until the end. This will still cause all the math to happen in the background. Plus it will expose a terrible `skipLayout` API. As per comment above, we want a serializable Splitview which can deserialize in a single layout call.",1
+"Crap, somehow my browser didn't refresh everything. Though the code is now much simpler anyway and we're back at the approved api layout.",0
+"@github We actually have two sanitization passes currently, one from marked and one from insane.",0
+"Well, that's the point because with this PR we don't have that anymore and the questions is how we get to that again or why our current 2nd pass sanitizer looks/allows for `iframe`. Where does that come from?",0
+"exactly, turkish has a lot of really nasty localization issues all packed into one terrible locale.",1
+In theory we do. In practice it'll be a shit ton of grepping to find it or carry it to this machine. I tried for hours to run it before giving up and doing this.,1
+The complete absence of cancellation/timeout support in these code paths is terrible. Some streams allow sync operations to be cancelled by Disposing the stream.,1
+"Maybe just in case, the output should be passed through our html sanitizer (`insane`) too",0
+"Holy crap, I just got autocorrected! I meant to type “idle” thoughts. 😬",0
+this assert just wasn't sensical in teh case of symbols that span into metadata (like namespaces).  so i'm just removing it entirely.  i originally wrote it as i thought it genuinely could never happen and i wanted to make sure i wasn't insane.  turns out i am insnae and this is normal.,0
+Not a terrible idea.,0
+"Jared and I have discussed this separately before. There are probably multiple viable ways to go but I think that exposing a compiler-known way to suppress constraint checks on specific APIs would do it. Then, I'm hoping that conversion errors at the use site will prevent the APIs from being used when the type arguments don't permit it.",0
+"This might leave a hole where the attribute could be used on methods which only violate type parameter constraints within the implementation, not in the signature. The user wouldn't be stopped from doing it at compile time but could get a runtime error. That might just be a case of ""play stupid games, win stupid prizes"".",0
+"Tagging @github who had interest in a 'SuppressConstraintChecksAttribute' for a scenario with static interface members, IIRC.",0
+Using SendAsync's cancellation token:,0
+Anyone reading/writing to the stream wrappers should fail. Terrible idea or no? I can add a cancellation unit test.,0
+"Would it be terrible to add a new project called TestUtilities and rename this one to TestUtilities.Common? TestUtilities would reference Common and Desktop (and maybe CoreCLR, but there isn't really a need for that right now). The actual assembly would be empty, I guess.",0
+@github I'm getting a COM exception when invoking this to get the proxy.  Wanted to check that I wasn't doing something obviously insane with regards to the service broker before checking the service impl,0
+"From the stack it looks possible it's having trouble loading the package providing the service, in which case I'll follow up with the owners of this particular service",0
+"Hmm, stupid me, no idea why I didn't do it like that in the first place, perhaps some copy & paste from elsewhere in the file. Thanks for pointing that out!",0
+move focus:,0
+* or switch panes but make that other pane be zoomed in?,0
+holy crap I love that so much,0
+"Changed `ShoudlCauseTimeoutEase` to `FromRemoteLocation`, as a compromise.. and because my original name was truly terrible",0
+"pls consider undo the change unrelated to the fix, or at least have them in a separate commit to keep history clean (although I have to admit we have been doing a terrible job on this ourselves :P)",0
+the old Begin/EndAccept methods support doing an accept and receive in a single operation. Unfortunately the API for this is terrible and forces allocation,1
+"In theory there's a perf benefit possible from the existing accept+receive on Windows, but as we only expose it from an old APM-based API we discourage using, it incurs non-trivial allocation overheads, and it's complicated, non-portable logic, I'm fine seeing it go away.",0
+"Just curious, but why do we change DocComments to RegularComments?",0
+"Primarily because doc comments are terrible to read in code.  They're desigend to be structured, and then rendered nicely by some presenter (i.e. quick-info, or html docs), but they themselves are really unpleasant to look at as the first class source of info.",0
+We convert to just a really simple textual view that puts the content forward and basically hides all the structure tags.,0
+you don't follow because it's hard to follow stupid things...,1
+"I don't need the object, I just need a placeholder variable since the type assertion later",0
+takes care of the rest.  Too many languages doesn't mix with late-night programming.,0
+was noticing you're using the Activator here... for consistency I believe this should be using the DependencyResolver/DependencyService in Xamarin.Forms... also if someone for some insane reason decided to provide their own IEmbeddedFontLoader this would give them the ability to use DI...,0
+This may be a terrible idea...,1
+"(yes, i have made myself sad)",0
+- [x] - `TSFInputControl` needs to account for scaling (migrie: ✔️),0
+<details>,0
+<summary>done</summary>,0
+"- [x] - Dragging between monitors doesn't fully refresh, receives multiple events (migrie: still receives multiple events but ✔️)",0
+"- [x] - 1px cursor types will be very thin as they're not being scaled (_migrie_: wait is this bad? this looks crisp and beautiful IMO, but sure let's scale it)... Not scaling per Mike and Dustin opinion.",0
+- [x] - Scaling font with Ctrl+mouse wheel doesn't work right (migrie: ✔️),0
+"- [x] - Vim is blanked. This is on master too.  (migrie: Not seeing this anymore, so ✔️? This might be the same issue that's fixed by 4a32b33, see below.)",0
+"- [x] - Settings reload doesn't work right for font scaling (migrie: ✔️, with a bug in vim below) (validated as working @github ✅ )",0
+- [x] - `PointerMoved` is having scaling issues (migrie: ✔️ I think; @github ✅ i can't get anything weird to happen ),0
+- [x] - WPF control needs auditing,0
+- [x] - Gutter isn't cleared scaling font with wheel to size that makes fewer lines fit (migrie: ✔️),0
+"- [x] - Also related: Ctrl+mousewheel to increase the font size, then make a selection. Entire display disappears? When selecting a row, it gets repainted correctly. (migrie: ✔️)",0
+- [x] - Can we completely hide all pixel stuff into the renderer for the fake font scaling - Not likely in this PR.,0
+</details>,0
+**migrie todo**,0
+"- [ ] - Check that the #979 hack still works correctly, at the right location",0
+- [x] - Check `snapToGridOnResize: true` (@github ✅ it works even better than before),0
+"- [x] - Check initial sizing for padding, showTabsInTitlebar at 1.0 scaling (@github ✅)",0
+"- [x] - Check initial sizing for padding, showTabsInTitlebar at high-dpi scaling",0
+"- [x] - Open vim.exe in one tab, wsl vim in another. Switch to tab 0. Drag from 125% to 100% display. Switch to tab 1. Vim there seems to reflow real badly. Might be b/c 24eb455",0
+- Needed to use the engine's scaling in the first `SizeChanged`,0
+- [x] - The buffer size changes when we drag across a DPI boundary 😮😮😮,0
+"- I'm _okay_ with this, for now, but it's definitely a regression from 0.10.",0
+"- I'm pretty sure the solution to this is in `WM_DPISCALED` to ask the app how big it wants to be at the new DPI, which then asks the `TerminalPage`, which then asks the tree of panes. Then each leaf `TermControl` could scsale itself correctly by getting the new font dimensions for the new DPI. This also seems _insane_. If we didn't have a TermControl as the leaf in a `Pane`, how would it respond? It wouldn't know about DPI!",0
+- miniksa on 4/20: We're going to leave this for now. It's too crazy to come up with a solution to this right now and it's not that bad of a transition with reflowing.,0
+"- [x] Check if the ""suppress the first resize"" logic works",0
+"- [x] It doesn't actually work most of the time. It was based off the false premise that we got three messages, which I have no idea why I was seeing consistently on Thursday and not Friday, but whatever. I'll yank all that code.",0
+"- [x] Update the comments to make sure they mention that we don't always get 3 messages. Usually we only get two, and _rarely_ we get the useless first one.",0
+"- [x] open WSL vim. Increase font size a bunch. Reload the settings (down to a smaller font size). Buffer seems to get corrupted, and not repainted correctly. (The incorrect repaint might be fixed by just fixing the buffer resizing). The artifact is highly similar to the one that was fixed by 436a05c.",0
+. image](ht.,0
+- seemingly fixed by 4a32b33,0
+"- [x] Open WSL vim. Add a line of text to a file, in the middle of the viewport. Write the file. Whole screen is cleared, except cursor line and the status line.",0
+"- fixed in 4a32b33. That commit message is wrong, but this definitely is the fix for it.",0
+"- [x] Dragging `vim.exe` across the DPI boundary to a 100% scale display corrupts the first line of the buffer -> This is actually in master totally separately, moved to #5428",0
+"@github @github how likely do we think it is that people will implement the IPC protocol without using our DiagnosticClient library? We already know that the OpenTelemetry guys implemented their own, I suspect other profiler vendors might be inclined to write their own library given how we keep adding profiler stuff to it. It may be worth thinking about users of the lower level pipe too.",0
+"That being said, it works how it is and I don't think it's a terrible user experience. I would just like it better if I could open one connection. I don't think it's bad enough to try and make us change it when we've already shipped it.",0
+This is kinda gross. This isn't a hot path either right?,1
+cc @github Some potential API feedback here.,0
+When can WebUtilities.ReasonPhrases.GetReasonPhrase(statusCode) ever be equal to anything other than candidate or string.Empty?,0
+It can't. I added a test to ensure that any status code defined in `WebUtilities.ReasonPhrases` is also defined in here as a possible candidate.,0
+"`WebUtilities.ReasonPhrases.GetReasonPhrase(statusCode)` could be replaced by comparing against the bytes in `candidate`, but the comparrison would be uglier (unless Kestrel has some Ascii byte-char comparrison helper somewhere?)",0
+The fast-path here is `candidate is not null` and `reasonPhrase is null`. We only perform the `Dictionary` lookup if a custom reason phrase is specified.,0
+"If this condition fails, it means there is either no candidate OR the custom status code is not the default one, so we create a new one.",0
+"I don't see how this could regress the perf for the common case, unless cq is somehow terrible for the different switch statement. I'll look at adding a benchmark for it.",0
+"We should definitely add a comment calling out this _insane_ margin, explaining that the icon will always have space reserved and what's going on here.",0
+"Based on [these musings](https://github.com/xamarin/xamarin-android/pull/3525#issuecomment-523270275), I don't think that this method should look for `[Register]` on an interface to determine if the interface type should be preserved.  The 3rd constructor argument is meaningless, and ~anybody can apply `[Register]` on their type.  (Why they would *do* so, ¯\_(ツ)_/¯)",0
+"Instead, I think a *better* indicator would be if `resolvedInterfaceType` implements the `IJavaPeerable` or `IJavaObject` interfaces.  Yes, this can also be done by anyone, but it's also *semantically meaningful*: if the interface implements `IJavaPeerable`/`IJavaObject`, then it can be passed into Java code and gains lots of special abilities (via `Java.Lang.Object` and JCW generation and...):",0
+"Ah, thanks for catching it (stupid leftover from refactoring).",0
+"allow lists as opposed to a general ""allow things that can't run js"" policy.",0
+Fully agree but I couldn't figure out to configure insane that way,0
+"Oh, shit. I don't hate that. @github what do you think?",1
+"I think we'd need to make sure we keep the features alive for the DPI change message, but...",0
+The main risk is that we do eventually use a Renderer function that wants normal UpdateFont().,0
+"Thanks, actually refactored this a bit.  I'm a bash noob so I'm learning quite a bit.  Still testing, but could use another review shortly.",0
+Tagging subscribers to this area: @github,0
+See info in [area-owners.md](https://github.com/dotnet/runtime/blob/main/docs/area-owners.md) if you want to be subscribed.,0
+<details>,0
+This is an experiment to support Brotli compression in method contexts for SPMI collections.,0
+I picked Brotli because we already have the source in the tree so I believe there are no license considerations.,0
+"The main benefit is to reduce the size of collections stored on the disk. I had a hypothesis that for HDDs,",0
+this would also help replay speed because the decompression is faster than reading the full thing. My experiments,0
+"seem to indicate that this is true for parallel runs, but I don't think it's for the reason that I expected.",0
+"Currently the way Brotli is added is pretty unfortunate as I put it in superpmi-shared and then build it in all the superpmi projects that needs `MethodContext`. It would probably be better to build it once and statically link it, but I don't have the necessary cmake knowledge to do that for this experiment. In total, we are building it separately 5 times (6 times if you include System.IO.Compression).",0
+I measured some of the characteristics of compression vs no compression. For all the experiments I cleared my file cache between each run using [RAMMap](https://docs.microsoft.com/en-us/sysinternals/downloads/rammap) (Empty -> Empty Standby List).,0
+The collect command was:,0
+"Note that the time for collect includes the time for the collection itself, merging/cleaning, building the TOC and doing a test SPMI replay. Also the merging/cleaning steps are quite inefficient because they repeatedly decompress and recompress each method context even when it could just be copied directly from the input to the output. I have not bothered optimizing this but it would probably reduce the time taken for collections significantly.",0
+For the replay commands I invoked superpmi.exe directly with a checked JIT. For parallel runs I passed -p. I think the parallel HDD runs are so much faster because the smaller file means the OS keeps it in memory longer. It seems the striding we use with parallel runs is terrible for HDD performance.,0
+"The PR allows method contexts to individually select compression/no compression so even if we don't want it for the smaller collections, we could potentially use it in case we want to have much larger collections in the future.",0
+Are there any comments on whether we want this and what we want for the default (compression or no compression)? And any tips for how to handle the Brotli source files in CMake?,0
+"That link documents the rough structure. But symstore.exe is really the only thing that knows about how any of that actually is. If you were going to try putting it directly in that format, I'd just look at what it takes to shell out to it.",0
+"Some background: the insane glob we have is essentially an input to VSTS's task that calls symstore.exe and creates the Symbols folder with the actual layout (identifiable by the magic 000admin folder inside of it.) Your change at least means we could get rid of the insane glob and point it to this folder. I'm OK with that, it just means we have more copies of more stuff. (and we need some more temporary folder name here to not conflict).",0
+Mostly a question of your pain tolerance.,0
+wtf,1
+Ah crap! the rebase broke stuff :( I'll fix it,0
+"Holy shit, I left a community member out to dry for three months. I'm so sorry.",1
+largely complicated by the fact that a,0
+pane is not a proper control,0
+"(We do want to do this at some point -- there was a refactor in progress to make pane clearer/less clear/make it a control -- we just haven't landed it. If you are interested in _horriffic, terrible upheaval_ and working on such a change . . . I wouldn't call it out-of-scope!)",0
+stupid manuel,1
+"I think that the point is to test out stuff might people write in JSDoc, because people often write terrible stuff in JSDoc because it was terribly specified.",0
+My 1 cent is that all pipelines running the code Bruce is removing should already be on the floor after Manish's change to shut down Crossgen1.,0
+That was my guess.,0
+"Looks like there are some existing CG2 asserts/failures in the test jobs, though... plus arm64/arm32 legs (or machines in Helix) are in terrible shape, causing lots of failures.",0
+"~~Stupid question, can we make HubConnection internal?~~ nvrm, didn't read comments closely enough above.",0
+"Good point. THis needs to be fixed. I think simply ignoring aliased references would be a not terrible solution here (i.e. types from those will not be returned). As you mentioned, it's likely that user only want specific types from the aliased reference and know how to get them w/o help from completion list.",0
+"A stupid mistake, probably had Python or some other language of the brain.",0
+Will change to,0
+"stupid question here, should we validate `ssh-remote+` instead? Not sure if someone will use authority like `ssh-remote-something+blabla`.",0
+I'm so stupid to let `utf8` be `uft8`.....,1
+There is no excuse for this stupid mistake.......,1
+"In this past I've used [dompurify](https://github.com/cure53/DOMPurify) which seems better maintained, more widely used, and has a bug bounty program. It seems like there may be [a vulnerability with insane](https://github.com/bevacqua/insane/issues/19).",0
+"Also, yeah, the `.Min` is gross, but I determined that any code path I had to follow given the types I had at my disposal would be less performant. Fortunately, this code path is only called when the screen readers are on, which I believe kill perf more than an enumerator will.",0
+Is this `IsEmbeddedDSOsEnabled` name terrible? Suggestions welcome.,0
+"Ok wait. So, setting `DeleteProfile` multiple times would _append_  an event handler? That seems really unintuitive... wtf. Good find!",0
+tried to use the Command Script batch language in ways that pushed the limits for what I thought it could do,0
+"holy shit yeah it does. I've never seen a batch script anything like this before, but it's kinda incredible like that. You should probably throw your username at the top of this script in a cooment as the author, because you deserve the credit for whatever witchcraft this is.",0
+"I'm cool accepting this as a tool to our repo, because it would be handy for debugging purposes, likely moreso than `colortool` itself. Lemme double-check that the rest of the team shares that consensus ☺️",0
+This comment seems out of place to me. It feels like either:,0
+"1. The behavior makes sense for this method, and doesn't need further justification, or,",0
+2. Really this is a terrible hack and maybe it shouldn't be here.,1
+"This feels like fixing a bug in int.Parse and then commenting that ""it's needed for JSON parsing"". This is a core bit of code -- it shouldn't be thinking about very specific clients or something seems off.",0
+Also insane?,1
+i am adding this to the list of things to try out in my followup PR :)  but yes.  seems insane.,0
+"There's no async monitoring APIs for taggers in general in Editor, other than the event that is raised. For Apex, the go to is usually a retry loop or timeout, but this is usually quite flaky.",0
+"Note: this is a really terrible reason IMO. effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"". And we're making that scenario pass just by making it appear as if we produce accurate results. The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated.",0
+"Fair, some alternatives:",0
+"- Update Apex to call GetAllTags(), wait for it to return (signaling that the parse has completed) and then call the regular GetTags() call. This would still require the extender to implement IAccurateTagger<T>.",0
+#NAME?,0
+"oh, that's interesting. meh. stupid static analyzer can't be taught that COM things don't throw exceptions. Fine, this is fine.",1
+I'm stupid,1
+"stupid question, but why can't this just be `type EscapedNameMap<T> = Map<T, EscapedName>` ?",1
+return a match expression. Oh wait. Crap.,0
+the diff is terrible.  but new cases were added which github is showing bad diffs with the old tests.,1
+Good catch. Stupid autocomplete 🤦🏼‍♂️,0
+"Thinking about it some more, would it really be a breaking change? I know almost everything can be considered breaking in a mature framework, but this maybe isn't so terrible to just add precision.",0
+I too spent way too much time tracing this down when i was reading time stamps in from a file. I kept scrutinizing my parser for bugs because the behavior of this method is counter-intuitive (at least to me).,0
+"An alternative API would be fine for me too, perhaps `AddTotalMilliseconds` or something.",0
+Do we know the cases where this happens? Did **user code** initiate a background operation? Or do we have a bug that leads to `AddToRenderQueue` being called from outside the sync context?,0
+If this is happening because **we are** running operations outside of the sync context then these are bugs that need to be fixed 😆,0
+If user code did this (let's say you set up a timer) then this could be OK if the **only** thing user code is doing is triggering a render.,0
+"Let's suppose you've got a TODO list, and you're checking a webservice at intervals to update the list. Inside that TODO list you have a dictionary that tracks the TODO items.  If you have a sequence of operations like the following:",0
+1. Update items,0
+2. Trigger a render,0
+You think you're OK because the render happened last right? Well what if a render was happening while you did step 1? This would crash with an unpredicatable error because dictionary is not thread safe. So you need a lock around all property access and rendering.,0
+"It's never safe to access state that's needed during rendering from a BG thread, and it would be gross to use a lock to protect it. The most reasonable thing is to dispatch to the FG thread and let the sync context act-as a zero-overhead lock.",0
+"What's worse is that this *might* succeed. It might work pretty well most of the time, but when it fails the error is total nonsense, or it leads to data loss. In the UI frameworks that protect against this explicitly, you at least get a really clear failure message.",0
+"To be clear the bug is in step 1. You can't update the state of a component from a background thread, which might mean that an explicit dispatching mechanism *is* needed in these scenarios. It's OK to do step 2 (notify the renderer to do work), but that's the only thing that's safe.",0
+"I think I need to know a little more about this, I'm hesitating because I'm still not totally sure why this is needed.",0
+Seems insane.,1
+"overloading these methods by type and having to do the cast is kind of gross and magical, if the statics are essential to the marshaler working let's give them distinct names i.e. MarshalToJs_JSObject or MarshalToJs_Exception",0
+"Note: this is a really terrible reason IMO. effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"". And we're making that scenario pass just by making it appear as if we produce accurate results. The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated.",0
+"Yeah I'm not sure - @github should the Apex APIs be using IAccurateTagger, or something else?  I guess since tags can come in at any point apex has no deterministic API to use other than IAccurateTagger, so it would have to be some arbitrary wait",0
+"Forgive me my stupid question, but how does the `else if` instead of just `if` here helps? If the previous block ends with `return`.",0
+we only use small_vector.hpp and its dependencies,0
+holy shit it's 449 files for one header?! Man boost is giving npm a run for it's money,1
+This is absolutely terrible solution and we need to come up with better one. I'm taking this into account for Listener API.,1
+you're a terrible person,1
+"woah well that's... insane, but I get it. Such is life using C macros :P",1
+"OK this is kinda stupid but it works pretty well. The “gray"" series and ""grey"" series of color are identical. This saves us a lot of space.",1
+@[javiercn](https://github.com/javiercn) would you mind filing an issue first explaining the motivation for the change as well as the impact so that the team can assess whether or not we want to take this change in?,0
+Please forgive me for not having time to reply a few days ago.,0
+"This is not necessary, but just a suggestion for the following reasons.",0
+"1. From Android API 24 to 23, it is not difficult for Android. They are all official.",0
+"2. API 21 app will run on approximately 98.6% of devices, and API 24 app only has 91.7%. The is from Android studio.",0
+3. Using androidx.webkit increases the size of Android installation package a little and the performance loss is almost negligible.,0
+4. It makes the Android device compatibility of Maui Blazor consistent with Maui.,0
+"5. My test method is temporarily modified the namespace of Microsoft.AspNetCore.Components.WebView.Maui.csproj and only compile it with min Android API 21, so that it can be directly added to the Maui blazor app project, and then tested on the real machine of Android 5(API 21). The startup speed is acceptable, which is 40% faster than blazor WebAssembly. This is stupid, but simple and effective.",0
+"Let us forever burn this mistake into our memories. Today will be remembered as """"In No State chANging Equals"" day, or ""INSANE"" for short.",0
+"""null"" means ""task of null""? (no insane @github stuff here? :smile:)",0
+"It's more of a meta gripe than anything. Now that we can annotate reference types with nullability, having a null string here is more akin to an implementation detail of _not_ having an output path.",0
+"The terrible naming aside, the above has a more meaningful call pattern. We either want a path, or we want to make it so the project doesn't have one. Null may be how we rationalize that, but it's just a well known magic value. It doesn't tell you, for example, if that ends up succeeding and having some default value when you pass in null.",0
+"Not worth blocking, for sure, just more of a thought about the meaning of null to represent absence or clearing of a value from an API perspective.",0
+"Argh, I was wondering why the stack overflow would happen there.",0
+I guess that makes [my rather stupid fix obsolete](https://github.com/microsoft/vscode/pull/134188) 😅 - Thank you!,1
+~I wonder why `b` is so large though. The amount of bracket pairs should be limited by the viewport/minimap size. I should investigate why the minimap is requesting these decorations anyway.~,0
+"I think it is not good to request *all* decorations at any point, I'll have to look into that.",0
+Agree with reverting the overloads.,0
+"That gross `object` cast is gross, but it could not be prevented, in order to keep common signature.",1
+"Luckily, this would not be an issue for the roslyn generated code and this dynamic resolution would not be there at all.",0
+One thing you can consider is hacking SPMI to produce a table of functions with the # instructions executed for each context. That might help narrow into if it's expected.,0
+"We already have the # instructions executed on a per-method basis, so it should not be too hard. For example, stupid and simple thing would be to just print `baseMetrics.NumExecutedInstructions` here:",0
+and `diffMetrics.NumExecutedInstructions` here:,0
+and then post process this into something.,0
+"OK, I went and checked again because I recalled that this is expected for Linux:",0
+"There is no posix primitive for us to use here, I think? Same reason abandoned mutex detection isn't possible without coreclr's extremely complex workaround. I'm not aware of any way to stop someone from rm'ing a file I have open. The only thing I could come up with is grepping lsof to find anyone else with the lock open, but the performance implications of that are profound and it's gross (even though the documentation suggests that lsof is meant to be used this way)",0
+".Lock(0, 0) and .Unlock work everywhere, which is why I'm using them, but sadly I can't use those to block deletion - you can still delete a file that has a lock held on it, and then create a new file with the same name in its place.",0
+God.. what a stupid mistake! thx!,1
+"all these names are terrible.  can you use nameof(QualifyMemberAccess), and fix the rest?",1
+This will also fix LSP ddrits flakiness by allowing it to force tag computation (apex APIs rely on IAccurateTagger).,0
+"Note: this is a really terrible reason IMO.  effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"".  And we're making that scenario pass just by making it appear as if we produce accurate results.  The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated.",0
+"I wonder if they've tried just constructing the catalog and graph once, and sharing the resulting ExportProviderFactory for all tests, but each individual test gets its own ExportProvider? That sounds like it would be the best combination of perf and test isolation.",0
+"Roslyn has switched back and forth between sharing the actual ExportProvider and just sharing the catalog around 5 times now. It alternated between ""oh goodness, the perf!"" and ""oh goodness, we're sharing test state!"" that it made me wonder if everybody was suffering from memory loss. :smile: I want to say last time the switch was done was prior to us moving to VS MEF (and might predate VS MEF itself....?), and at the time creating a new composition while reusing the catalog was cheap, but once you have 50,000 tests doing that and it's more expensive than the five lines of actual code being tested, you start to get second thoughts. :smile:",0
+@github I'm OK with this going in. I suspect it's still going to bite us eventually but I think that trap has already been set...,0
+"Awhile back I tried giving a shot at decoupling all the MEF shared state to also be strict about tests that are free-threaded (and can run in parallel) and tests that need a concept of a UI thread and it was a terrible rat hole. We had some tests that'd casually spin up a WPF text view on a random xunit test thread and weren't careful about that, or other sorts of fun. One Day™ I want to get it cleaned up, but you aren't making it any worse.",0
+"As a counterpoint? I saw `start` and wondered ""wtf is he using start for over and over""",1
+"i mean, _this seems insane_.",1
+yeah.  that's just terrible english :D,1
+"Noob question - What does the `MarshalDirective` do here? Does `NativePrefix = ""xamarin_simd__""` mean that this binding has something to do AOT compilation?",0
+"I wholeheartedly agree, and am happy to classify this PR as ""not accepted"". The issue can probably remain as a discussion (and I've relabeled it as such); maybe someone can design something with a set of rules that's not terrible to use, however doubtful that seems given current class field behavior.",0
+"Sorry, I'm a total n00b and I am not good with computers. What does this property do?",0
+wait... we have tests that call directly into this?  ugh...,0
+"Ok, that's terrible.  but you don't have to change.  Just put a comment for now saying `// internal for testing purposes`.  I'll see if i can find time ever to make it so that the tests don't call internal details, but just access the external API of the command-handling system.",0
+Here's the list of attributes that GitHub supports:,0
+"I think at a minimum, `align` should be allowed on many commonly used html elements, such as `div` and `h2`. Check to see if insane lets you configure an allowed attribute for all tags. If not, then let's list off the common tags (preferably have a list of tags and use that to construct the object map instead of repeating tags in the object literal)",0
+"A stupid question: if a tab is not focused, can it be duplicated?",1
+Gross - can you move this call into a local variable instead of in the `if` statement?,1
+"@github Once I have one approval, what's next? I see some build errors , but build was not so stable at this time. Should I somehow retrigger? Also who is merging this PR, me or somebody from the team?",0
+"Sorry for so stupid questions, but this is my first contribution.",0
+Tagging subscribers to this area: @github,0
+"This PR unrolls `Equals`/`StartsWith` for ""half"" constant strings and spans in [0..32] chars length.",0
+"It does pretty much the same job as https://github.com/dotnet/runtime/pull/64821 but in JIT this time to avoid problems listed there (e.g. low inliner's budget and throughput penalty). I decided to create a new PR to keep that as a reference (""what can be done in pure C#"").",0
+This PR handles the following APIs:,0
+"It unrolls & vectorizes them when either s1 or s2 are constants for [0..32] utf16 chars range using SWAR, SSE, AVX or AdvSimd (arm64).",0
+The existing code can be re-used to handle:,0
+- `OrdinalIgnoreCase` for any case this PR already handles for just Ordinal,0
+"- UTF8 string literals or RVA data (e.g. either, hopefully, upcoming Utf8String literals or [ufcpp/StringLiteralGenerator](https://github.com/ufcpp/StringLiteralGenerator)).",0
+"- [unlikely] CurrentCulture case if we add ""IsAscii or fallback"" check",0
+"I've seen quite a few `SequenceEqual` against constant data in high-perf scenarios e.g. ""is input one of the well-known headers?"" or e.g. TechEmpower: https://github.com/TechEmpower/FrameworkBenchmarks/blob/master/frameworks/CSharp/aspnetcore/PlatformBenchmarks/BenchmarkApplication.cs#L98 - mostly on UTF8 inputs (I plan to support those eventually), but UTF16 are also not rare.",0
+"Also, https://github.com/dotnet/runtime/pull/65222 relies on this PR.",0
+There are minor block layout issues but they're unrelated. The algorithm has a pretty simple heuristic (budget) to avoid doing too many unrolls in a single method.,0
+NOTE: `OrdinalIgnoreCase` performance is terrible and if we implement it here we'll get something like this:,1
+PS: Spans aren't enabled in the current commit - there is a small issue with them I am trying to resolve.,0
+TODO: Add more tests,0
+"These null values are needed for my stupid simple injection. If there is no default, it will try and inject the `PropertyMapper`. We probably need to fix this, but somehow didn't cause issues with the MS DI. Might be because it used the other ctor?",0
+"holy crap.  can we just make a SignatureChangeParameters object?  it can have read/write properties on it, allowing the caller to just easily instantiate and set the values they care about.",0
+This and the following calls should perform some error checking.,0
+"`randObj` could be NULL if e.g. the type throws or ""something terrible"" happens.",0
+What should you do if it is null?  Assert & crash is likely fine.,0
+Nothing -- that was a terrible name that I chose at random to give .NET CLI something to use. I'd prefer we forget that package exists.,1
+I just realized swallowing the error is a terrible idea just as I started working on https://github.com/dotnet/aspnetcore/issues/27126.,1
+Unsetting the property on disposing the delegation rule should be the desired behavior. That allow you to add and remove delegation rules (as new delegatee processes come and go) without restarting the delegator process.,0
+I'm now convinced the right behavior is to not swallow the exception,0
+You're undoing all the terrible work I did to undo other terrible things.,1
+This is insane! Keep it up!!,1
+"I was getting the PNSE on .NET Framework x86 CI legs for Utf8String.Experimental, since this file gets compiled into the Utf8String OOB package.",0
+I refactored to use the 2nd approach above. It didn't turn out terrible.,0
+This is jank and it should work for any number of arguments even though 32 is insane. 64?,0
+"Changing the field to `long` would allow 64, I'd prefer not going bigger because then we'll need to allocate/lazy-alloc and have another field.",0
+I have to agree with @github. Something like -xf-visualelement-scale is completely undiscoverable and would limit the APIs use to industry experts. This needs to be stupid simple to figure out. Property names that make sense like -xf-scale achieve that.,0
+wtf yikes 😨,1
+holy shit this works?,1
+@github Yes you'll need to be careful when removing the first sanitization pass because it may have sanitized things the second didn't. This should be unlikely.,0
+"In the case of `iframe`, I think we do strip out iframes. `insane` lets you specify both the allowed tags and the allowed attributes. We do not include `iframe` in the allowed tags",0
+"For this issue though, we could try using [`filter`](https://github.com/bevacqua/insane#filter) on the `style` element. I suspect though that this is both going to be tricky to get right (unless you enforce a super restricted format like that regular expression does) and it opens up feature requests to add more  style properties in the future.",0
+@github It is always better to have multiple layers of protection and limit the potential attack surface where possible.,0
+@github Please open a separate issue for that,0
+"Nnnnn.... normally I agree with you but I did this semi-intentionally because it's not visible outside the class, hopefully... the return type from this is horrendously gross and is like a.... `boost::container::vec_iterator<std::pair<_Ty1, _Ty2>*, false>`.",0
+I have this idea that `boost::container::small_vector` probably isn't the ideal inner-type here either and we'll want to drop in a `std::pmr::vector` as soon as @github works out the kinks in #8787 on how to set up the templates to accept allocators as these are a great place to use a memory pool from my perf traces.,0
+"If this is `auto`, then it'll automatically change correctly to `std::vec_iterator<std::pair<_Ty1, _Ty2>, _Ally>` or whatnot when that one member is flipped out and should propagate through the rest of the template just fine.",0
+there's a lot of changed to the vcxproj files that got committed. Should we pull those out?,0
+"shit absolutely, I didn't realize I was on 16.6 when I committed/pushed this branch 😬",1
+"shit, this looks really good",0
+I think we need to get our shader story in a better place before we take on too many more of these :smile:,0
+"Not sure I have a better idea, but ""grant"" seems odd here. To me the runtime grants the capabilities, and the analyzer requires them.. but `EditAndContinueCapabilitiesRequirer` is a terrible name :)",1
+I do however like the idea of `capabilities.Requires(...)` for the checks. Requests maybe? Not sure. Could also just leave it ¯\\\_(ツ)_/¯,0
+Is there anything stopping this PR from being merged?,0
+Ancient prophecies and curses from the abyss.,0
+"The crystal balls of the TypeScript magicians foretell the coming catastrophe, and no one is spared.",0
+~~What the fuck Am I talking about~~,1
+Introducing a bundling step (which isn't there today),0
+"There _is_ a bundling step today - the TS compiler itself just performs it (stupid concatenation of namespaces, plus a manually added `module.exports = ts` appended to the bottom). I already have a second branch based off that one that reimplements our builds in terms of modules and indeed, it does have a proper bundler to produce the same outputs.",0
+"Part of the reason we want to do this is because we have _massive_ piles of dead code that could be eliminated in many uses. For example, the commandline compiler doesn't need any of the language server bits.",0
+"The whole thing is terrible behavior, but I'm not totally sure about special-casing a no-statements file. What about a `""use strict""` file, or a file with a single function? Going from an empty file to a file with a single statement seems bad and then receiving an error doesn't seem ideal.",1
+"Not setting the handler here doesn't work either. So we either leave it like this (not terrible, move it to use HttpClientFactory, which does the right thing, or add a method that can set the client and returns the handler itself (so that it is an expression and we can make this a lambda))",0
+"~I'm having a hard time getting this to work. It seems that the `SPACE` character doesn't commit the completion item in the test harness, despite it working perfectly in VS.~",0
+~The assert fails because the completion session is still present. Everything works correctly for other commit characters such as `>`. Any suggestions on what I might need to get this working?~,0
+Never mind. It was a stupid mistake on my part.,1
+Noob question - does it work as expected with things like `preventDefault` / `stopPropogation`?,0
+"Possibly a stupid question, but why rewrite this? #Resolved",0
+stupid off by one errors ...,1
+"This looks insane on GitHub, but whatever. :)",1
+Sorry for my stupid fault!,1
+"They are useful **sometimes** :) But not in situations when you're supposed to specify a length of something, a size of something etc - that's where they are *insane* :)",0
+"This feels a little gross to me, happy to change this if someone has a better idea.",1
+"ChaChaPoly1305 does have an authentication tag, but that algorithm forbids a tag length other than 16 bytes. Because of that, ChaChaPoly1305 on Android can use the `IvParameterSpec`.",0
+Just to confirm (because the GH diff here is terrible): No changes were made to this function right?,0
+@github if you're wondering what terrible person would implement an extension method that handles `null` values for `this` ... that was me.  I'm still a bit ashamed.,1
+What is “the original proposal”?,0
+"if the union type contains only array or tuple types, and contains at least one array type.",0
+"This sounds weirdly specific, but not terrible.",0
+"I went through the test failure for `ValidateAggregationWithReferenceTrackerObject`. The issue is that the clean up of the interop sync block was still only under `FEATURE_COMINTEROP`, resulting in the object not being release. I pushed up a [branch](https://github.com/elinor-fung/runtime/tree/pr54838-test) (based on your PR) with some changes that I tried locally: https://github.com/elinor-fung/runtime/commit/77f4608594edb06d5034aa390b3dbeb750bfc4ce",0
+"While doing that, I also realised that the `WeakReferenceTest` is still disabled. I tried enabling it. The part of the test that validates using a local (not globally registered) ComWrappers instance passes (after a fix in the test project). The parts trying to use a globally registered instance to re-hydrate after the managed object is collected fail. https://github.com/elinor-fung/runtime/commit/01c4a622947be818c4da9da0a02caa3cfcf8cf33 enables the test, but for non-Windows, only does validation using a local ComWrappers instance.",0
+Turns out we still have a bunch of functionality around setting/getting COM weak reference info that is just under `FEATURE_COMINTEROP`. I tried for a bit to enable it - it definitely has more layers than the sync block cleanup - will unpeel for a bit longer.,0
+"@github / @github - thoughts on treating the `WeakReference`  as support to be added after this PR (like the global instance for marshalling / Marshal APIs)? You've both dealt with the `WeakReference` side of this more than me - if we did that, would we be leaving a terrible inconsistency / gap that will bite us?",0
+"I figured. This is gross, but catching only the `NotSupportedException` is probably even worse.",0
+yea that's some magic shit that @github wrote IIRC,1
+I've been refraining from asking because it feels like a stupid question... but:,1
+Why do `(*env)` so many times?  Seems like,0
+would save a lot of redundant memory dereferences.,0
+"diff is terrible, but this code is almsot the same. Generally the logic is similar to: if we have an initializer like var = new X() leave it alone (we know the type of it). If we have X x = new() change that to new X(). Otherwise, insert an explicit cast from the expression to the final local type. This ensures the expr keeps the same meaning and affects code the same way in all the places it is inlined to.",0
+Not of terrible importance to switch to a struct perse but you are not correctly understanding how the array is stored. Please read: https://stackoverflow.com/questions/1113819/arrays-heap-and-stack-and-value-types and pay attention at some nice graphics at the bottom of the post.,0
+"I'm apparently an idiot.  I think i moved them to the abstract class, and *removed* the fact attribute, and then (obviously) couldn't have them run from the derived type.   Ugh.  sorry about that.",0
+"Correct, we rely on OS to do DNS caching, which creates terrible perf for platforms that don't do DNS caching.",0
+"Yup it's a stupid copy-paste error, I made changes to one place but forgot it here.",1
+"wait hold up what now? `Profile` is a parent class of `AppearanceConfig`? That seems... backwards. So every `AppearanceConfig` instance has basically an entirely empty `Profile` as well? Including, technically, a null `AppearanceConfig`? That seems like a gross layering violation. Like a Profile should have an appearance, and possibly an unfocused appearance. I suppose the unfocused appearance should be a child of the profile's own appearance object, but the AppearanceConfig itself shouldn't need to know anything about the internals of a Profile.",0
+Oh maybe the regex is a little too forgiving...,0
+Okay I officially don't know wtf the regex is doing:,1
+Tagging subscribers to this area: @github,0
+NativeAOT currently goes through a helper call whenever we need to access static fields. For this simple program:,0
+We generate:,0
+"It's not terrible, but also could be better. As far as I can see, JitInterface cannot express the exact way static fields are accessed in NativeAOT. I had a previous attempt to use the existing JitInterface facilities in https://github.com/dotnet/corert/pull/5131 (misusing the facilities that exist to support RVA static fields), but it didn't generate ""nice"" addressing modes and couldn't support GC statics (see the disassembly there).",0
+"I'm adding a way to do that with ""nice"" addressing modes. After this change, the above program compiles into:",0
+There's room for improvement:,0
+* It would be nice if we could similarly inline these lookups when we're in shared generic code,0
+* I think the addressing mode could be more compact if RyuJIT generated a reloc with a delta on x64.,0
+"* It would be nice if we could do this if there's a static constructor. .NET Native could inline the ""did static constructor already run?"" checks. There was a previous attempt at that in https://github.com/dotnet/coreclr/pull/12420 (and corresponding https://github.com/dotnet/corert/pull/3962).",0
+Gross,1
+"Agreed.  Tihs is the problem with having hte parser be overly restrictive.  All it means is htat when people write totally reasonable code, that we end up with a terrible tree.  We want the parser to avoid contextual parsing as much as possible.",0
+"Oh, crap, didn't realize I hadn't merged this yet 😆. Yes, let's merge master->preview1 first",0
+"I would say that anything, even the most terrible algorithm, is better than obviously buggy code.",1
+"As i mentioned in the other thread, i'm happy to take an algorithm that will work for both cases.  That said, in the interim perioud, this at least lets the user know about the issue.",0
+"Currently using a mask (int) to store indices for service positions in Hub methods which limits hub methods to 32 arguments, I think this is fine though 😄",0
+This is jank and it should work for any number of arguments even though 32 is insane. 64? 😄,0
+I mean we could have the type as -,0
+"1. Impossible to write `showInputBox({ multiline: true, password: true })` for typescript users",0
+1. Terrible typescript inference and error message ergonomics if the options are not literal,0
+"2. We'll need to throw in case of `{ multiline: true, password: true }` because hey there are JS folks too",0
+@github would you consider changing the max zoom level to 8? It was a terrible experience as I mentioned #119890,0
+"Eh, honestly that's what `til::at` is for. It's the ""Audit-safe"" ""I know what I am doing"" indexer.",0
+"🤦‍♂️ Doh! That's what I thought I was using! And looking now, there are a bunch of other places in the code where I've used `gsl::at` which should almost certainly have been `til::at`. I'm an idiot.",0
+"We're looking up another method I expect always to exist in the platform assemblies. If it doesn't, the entire world is insane and I'm fine crashing.",0
+"Users who write longer `<summary>` text, but leave out `<remarks>` because it was never visible to anyone before",0
+"Just wanted to chime in that this is the exact reason I have almost never used the `remarks` tag, even that I have really _wanted_ to - the IDE has <strike>worthless</strike> lousy support for displaying documentation in pop-ups. Compare this with e.g. IntelliJ IDEA to see how I (and most likely the vast majority of developers) would have liked this to work.",0
+TL;DR; Thanks for fixing up old crap.,1
+It will always use a different semantic model instance then the one used by the compiler for method body binding.,0
+That seems... terrible.  Why does it do that?,1
+"If we handle `WM_NCPAINT` at all (by returning anything for a NCPAINT message), then the system assumes that we wanted to paint our nonclient area. Because it assumes we're doing _all_ the work, it does _nothing_. Unfortunately, the kernel is weird, so if the OS is doing nothing, the kernel still treats our window like a Windows xp/vista-like window, and the _kernel_ thinks that we have rounded top corners. The OS also won't paint our window shadow anymore, because it assumes we're doing that.",0
+Basically everything is terrible if we try doing that.,1
+@github Well I made a boo boo.  I had to remove my fork because I was stupid and didnt create a branch on this defect but wanted to work another one.  Was planning on only doing one and well one thing led to another :).,0
+So I did a fetch on 786 and tried to recreate the line with tabs and sure enough my end thinks they are tabs still.  This is a different computer with a new fetch and checkout.  Any ideas on what might be going on?,0
+"Stupid me, forgot it is only in build.",1
+oh shit good catch,1
+"note: i imagine if you hover of this type name, the above looks terrible :)  if you are embedding fixed 'ascii' art explanations, ensure you wrap with something like `<code>` so the xml doc pipeline properly renders.  (this applies to other docs).",1
+"Performance is _terrible_. Like beyond bad. ... If we could make nested context sensitive function calls much more performant to check, it's go a long way towards making merging this feasible.",1
+Is there a tracking issue or something of the sort for that work? I'm trying to get a sense for what would be involved in getting this over the finish line.,0
+"FWIW, the use-case I have for this is to strictly-type XML in accordance with a specific schema.",0
+"quick question, as the API has been approuved, and thinking about the summary, i have a terrible idea....",0
+This would make another PR i guess since this API Changed has been approuved already ?,0
+(i have no idea if it's possible) but does adding this makes sense:,0
+"(pseudo code, i have no idea if it's something good or bad since it's intrusive and also how properly speak english and being both nice and clear to the customer)",0
+"Perf doesn't care about gross ;) But it was just GYI, I don't think it matters here",0
+"nit: we could use this opportunity to produce distinct failure messages for these two cases.  Specifically ""You_cannot_rename_this_element""is terrible.  It would be better as ""You_cannot_rename_this_element_because_it_is_contained_in_a_read_only_file"" or ""You_cannot_rename_this_element_because_it_is_in_a_location_that_cannot_be_navigated_to"".  (can be done in the future).",0
+"There's unfortunately a lot of tricky params/optional cases that make it a bit tricky to get right,",0
+Your code Is a pain to read,1
+"YEah... overload resolution is just insane (including just thinking about param count).  I really didn't want to go to that level.  We can see if this is overbroad and we can lighten later.  However, i don't mind the restriction for now.",0
+This is a pain in the behind,1
 "This still sucks",1
 "Your app has a small `AndroidManifest.xml`",0
 "You should see a message.",0
 "You should see something like:",0
 "This is `macOS-latest`",0
+Did you try rebooting?,0
+I love you for this!,0
+We love you,0
+Why are you such a loser?,1
+How are you measuring the startup time?,0
+You are a twat,1
+You are a idiot,1
+You are a asshole,1
+You are a git,1
+twat,1
+idiot,1
+asshole,1
+git,0
