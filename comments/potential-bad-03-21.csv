@@ -1,0 +1,320 @@
+Body
+"The total regression across the 200K methods is 269 bytes. Looked a few of the worst cases and don't see anything that can easily be addressed.
+
+One somewhat related thing I spotted in `BenchmarksGame.KNucleotide_9:find(System.Byte[],System.Byte[],int,byref):int` is that when we move a non-loop block out of an inner loops, we may also move it out of the enclosing loop that it belongs to, and so we end up with messy layout in the outer loop. Note the ""return; always; return"" flow in the after picture below when we move BB08. Seems like we ought to be willing to put the block into the proper loop scope, even if there's no ""cheap"" placement there (that is, even if we have to add flow to branch around it... presumably one of the blocks has a branch targets outside proper loop, and we can reverse that branch to make room.
+
+cc @github 
+
+(or perhaps the issue is that we don't recognize the full extent of the BB02 loop because it has multiple back edges...)
+
+```
+-----------------------------------------------------------------------------------------------------------------------------------------
+BBnum BBid ref try hnd preds           weight    lp [IL range]     [jump]      [EH region]         [flags]
+-----------------------------------------------------------------------------------------------------------------------------------------
+BB01 [0018]  1                             1       [???..???)                                     keep i internal 
+BB02 [0000]  3       BB01,BB05,BB08        1       [000..004)-> BB06 ( cond )                     i Loop bwd bwd-target 
+BB03 [0001]  1       BB02                  0.50    [004..014)-> BB15 ( cond )                     i idxlen bwd 
+BB04 [0014]  1       BB03                  0.50    [004..005)-> BB14 ( cond )                     i hascall gcsafe idxlen bwd 
+BB05 [0003]  1       BB04                  0.50    [016..025)-> BB02 (always)                     i hascall gcsafe 
+BB06 [0004]  1       BB02                  0.50    [025..02F)-> BB09 (always)                     i idxlen bwd 
+BB07 [0005]  1       BB10                  0.50    [02F..044)-> BB09 ( cond )                     i Loop idxlen bwd bwd-target 
+BB08 [0006]  1       BB07                  0.50    [044..051)-> BB02 (always)                     i hascall 
+BB09 [0007]  2       BB06,BB07             0.50    [051..055)-> BB11 ( cond )                     i bwd 
+BB10 [0008]  1       BB09                  0.50    [055..05A)-> BB07 ( cond )                     i bwd 
+BB11 [0009]  2       BB09,BB10             0.50    [05A..05F)-> BB14 ( cond )                     i 
+BB12 [0011]  1       BB11                  0.50    [061..063)                                     i 
+BB13 [0017]  1       BB12                  0.50    [???..???)        (return)                     keep internal 
+BB14 [0016]  2       BB04,BB11             0.50    [???..???)        (return)                     internal 
+BB15 [0013]  1       BB03                  0       [004..005)        (throw )                     i rare hascall gcsafe bwd 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+*************** In fgDebugCheckBBlist
+*************** In optFindNaturalLoops()
+Recorded loop L00, from BB02 to BB05 (Head=BB01, Entry=BB02, ExitCnt=3)
+Relocated block [BB08..BB08] inserted after BB13
+Recorded loop L01, from BB07 to BB10 (Head=BB06, Entry=BB09, ExitCnt=3)
+
+*************** Before renumbering the basic blocks
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+BBnum BBid ref try hnd preds           weight    lp [IL range]     [jump]      [EH region]         [flags]
+-----------------------------------------------------------------------------------------------------------------------------------------
+BB01 [0018]  1                             1       [???..???)                                     keep i internal 
+BB02 [0000]  3       BB01,BB05,BB08        1       [000..004)-> BB06 ( cond )                     i Loop bwd bwd-target 
+BB03 [0001]  1       BB02                  0.50    [004..014)-> BB15 ( cond )                     i idxlen bwd 
+BB04 [0014]  1       BB03                  0.50    [004..005)-> BB14 ( cond )                     i hascall gcsafe idxlen bwd 
+BB05 [0003]  1       BB04                  0.50    [016..025)-> BB02 (always)                     i hascall gcsafe 
+BB06 [0004]  1       BB02                  0.50    [025..02F)-> BB09 (always)                     i idxlen bwd 
+BB07 [0005]  1       BB10                  0.50    [02F..044)-> BB08 ( cond )                     i Loop idxlen bwd bwd-target 
+BB09 [0007]  2       BB06,BB07             0.50    [051..055)-> BB11 ( cond )                     i bwd 
+BB10 [0008]  1       BB09                  0.50    [055..05A)-> BB07 ( cond )                     i bwd 
+BB11 [0009]  2       BB09,BB10             0.50    [05A..05F)-> BB14 ( cond )                     i 
+BB12 [0011]  1       BB11                  0.50    [061..063)                                     i 
+BB13 [0017]  1       BB12                  0.50    [???..???)        (return)                     keep internal 
+BB08 [0006]  1       BB07                  0.50    [044..051)-> BB02 (always)                     i hascall 
+BB14 [0016]  2       BB04,BB11             0.50    [???..???)        (return)                     internal 
+BB15 [0013]  1       BB03                  0       [004..005)        (throw )                     i rare hascall gcsafe bwd 
+-----------------------------------------------------------------------------------------------------------------------------------------
+```
+The upshot of this is that we create an ""island"" block that is only ever jumped to and from (`IG09`)
+```asm
+G_M28147_IG08:        ; , epilog, nogc, extend
+       add      rsp, 32
+       pop      rbx
+       pop      rbp
+       pop      rsi
+       pop      rdi
+       pop      r14
+       ret      
+						;; bbWeight=0.50 PerfScore 1.88
+G_M28147_IG09:        ; gcVars=0000000000000000 {}, gcrefRegs=00000088 {rbx rdi}, byrefRegs=00000040 {rsi}, gcvars, byref
+       ; gcrRegs +[rbx rdi]
+       xor      eax, eax
+       mov      dword ptr [rsi], eax
+       jmp      G_M28147_IG02
+						;; bbWeight=4    PerfScore 13.00
+G_M28147_IG10:        ; gcrefRegs=00000000 {}, byrefRegs=00000000 {}, byref
+       ; gcrRegs -[rbx rdi]
+       ; byrRegs -[rsi]
+       mov      eax, -1
+						;; bbWeight=0.50 PerfScore 0.12
+G_M28147_IG11:        ; , epilog, nogc, extend
+       add      rsp, 32
+       pop      rbx
+       pop      rbp
+       pop      rsi
+       pop      rdi
+       pop      r14
+       ret
+```"
+"## Benchmark results
+
+Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenchmark/blob/471fa6822a5c5e5fecfc14196e54dbfe82a0f20c/ConsoleAppBenchmark/IndexOfAnyRunner.cs
+
+```cs
+[Benchmark]
+public int SliceInALoop()
+{
+    var haystack = _haystack;
+    _ = haystack.Length; // allow JIT to prove not null
+    ReadOnlySpan<T> haystackSpan = haystack;
+
+    var needles = _needles;
+    _ = needles.Length; // allow JIT to prove not null
+    ReadOnlySpan<T> needlesSpan = needles;
+
+    while (true)
+    {
+        int idx = haystackSpan.IndexOfAny(needlesSpan);
+        if (idx < 0)
+        {
+            return haystackSpan.Length; // length of final slice
+        }
+        haystackSpan = haystackSpan.Slice(idx + 1);
+    }
+}
+```
+
+|       Method | Toolchain | HaystackLength | LastNeedleMatches |            Mean |          Error |       StdDev | Ratio | RatioSD |
+|------------- |---------- |--------------- |------------------ |----------------:|---------------:|-------------:|------:|--------:|
+| SliceInALoop |  idxofany |              4 |             False |        18.33 ns |      28.879 ns |     1.583 ns |  0.64 |    0.06 |
+| SliceInALoop |      main |              4 |             False |        28.79 ns |      21.655 ns |     1.187 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |              4 |              True |        17.12 ns |       4.562 ns |     0.250 ns |  0.38 |    0.01 |
+| SliceInALoop |      main |              4 |              True |        44.52 ns |      12.959 ns |     0.710 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |             16 |             False |        65.40 ns |      16.572 ns |     0.908 ns |  0.68 |    0.02 |
+| SliceInALoop |      main |             16 |             False |        96.56 ns |      21.013 ns |     1.152 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |             16 |              True |        60.07 ns |       9.261 ns |     0.508 ns |  0.46 |    0.00 |
+| SliceInALoop |      main |             16 |              True |       131.59 ns |      10.865 ns |     0.596 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |             64 |             False |       236.47 ns |      38.295 ns |     2.099 ns |  0.63 |    0.03 |
+| SliceInALoop |      main |             64 |             False |       378.68 ns |     309.722 ns |    16.977 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |             64 |              True |       195.13 ns |      24.816 ns |     1.360 ns |  0.22 |    0.00 |
+| SliceInALoop |      main |             64 |              True |       878.64 ns |       9.714 ns |     0.532 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |            256 |             False |       901.88 ns |   1,002.251 ns |    54.937 ns |  0.62 |    0.04 |
+| SliceInALoop |      main |            256 |             False |     1,450.75 ns |      54.688 ns |     2.998 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |            256 |              True |       757.16 ns |      39.841 ns |     2.184 ns |  0.07 |    0.00 |
+| SliceInALoop |      main |            256 |              True |    11,050.08 ns |     419.823 ns |    23.012 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |           1024 |             False |     3,561.17 ns |   4,301.921 ns |   235.803 ns |  0.62 |    0.05 |
+| SliceInALoop |      main |           1024 |             False |     5,781.88 ns |   2,345.776 ns |   128.580 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |           1024 |              True |     2,988.88 ns |      11.492 ns |     0.630 ns |  0.02 |    0.00 |
+| SliceInALoop |      main |           1024 |              True |   167,176.09 ns |  29,612.891 ns | 1,623.182 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |           4096 |             False |    14,217.25 ns |  11,186.894 ns |   613.191 ns |  0.62 |    0.02 |
+| SliceInALoop |      main |           4096 |             False |    22,928.52 ns |   4,179.188 ns |   229.075 ns |  1.00 |    0.00 |
+|              |           |                |                   |                 |                |              |       |         |
+| SliceInALoop |  idxofany |           4096 |              True |    11,919.86 ns |     730.079 ns |    40.018 ns | 0.005 |    0.00 |
+| SliceInALoop |      main |           4096 |              True | 2,495,866.67 ns | 136,852.103 ns | 7,501.326 ns | 1.000 |    0.00 |
+
+## Discussion
+
+This benchmark tests `IndexOfAny` when called in a loop (a typical use case) for various haystack lengths, and it alternates whether the first needle or the last needle is discovered. In particular, this shows how the original `IndexOfAny` logic when called in a loop devolves into an `O(n^2)` operation if the last needle in the collection is the one that keeps being found, and how with the new logic the loop maintains an `O(n)` worst-case performance guarantee.
+
+Don't read too deeply into the benchmark showing that the new `IndexOfAny` logic consistently outperforms the original logic. This is because the benchmark is specifically written to ensure the needles appear very frequently within the haystack, which results in many calls to `IndexOfAny`, and the overhead of setting up the SIMD loop on each entry is showing up as a large constant factor. Ignore this for now, as the really important takeaway is the worst-case algorithmic complexity as discussed in the previous paragraph."
+"@github what are your thoughts about including an app context switch (default to the new behavior)? If there is a customer broken by this, they would still be able to receive the other fixes in the 6.0.2 patch. There is no need for a switch in main/7.0 as that is a voluntary update.
+
+Worst case, nobody uses it (I suspect nobody will)"
+"This seems sensible (conservative/safe to return the worst case state).
+I took a note in [https://github.com/dotnet/csharplang/issues/2201](https://github.com/dotnet/csharplang/issues/2201) to let LDM know.
+
+---
+In reply to: [288212991](https://github.com/dotnet/roslyn/pull/35955#discussion_r288212991) [](ancestors = 288212991)"
+"i'm seriously surprised that we're even getting a bracketed anything from the parser here...
+"
+"> Where can we get a concise description of where TemporaryArray<T> is believed to be better than our traditional builder?
+
+@github it should always be better when the array will have to store 4 or less items.  This is for two reasons:
+
+1. the values are just stored on the stack, and no part of the TempArray will hit the heap.
+2. there is no contention/garbage possibility around pooling.   this is because nothing is pulled (or returned) to a pool until you hit 5 elements.  This avoids those costs, as well as the (real) garbage cost that arises with pooling when concurrent returns happen and one returned item it overwritten by another returned item.
+
+You can practically think about it as if this gives you a small stackalloc'ed scratch area for lots of small-collection scenarios.  Only once you go past that scratch area do you have the same perf costs that you'd have today with normal ArrayBuilder."
+"The [documentation](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.marshal.getfunctionpointerfordelegate) for `GetFunctionPointerForDelegate` says:
+
+> You must manually keep the delegate from being collected by the garbage collector from managed code. The garbage collector does not track references to unmanaged code.
+
+This is a Mono-specific codepath, so do different rules apply?"
+"I think it would be better to have a `Dispose` method on Compilation to break these cycles and allow things to be garbage collected."
+"> Do you mean a conforming libc implementation isn't supposed to change the values in response to these functions, or do you mean these functions aren't recommended for use but if someone uses them the values may be changed?
+
+Sorry for being unclear. The latter.
+
+You can call these functions to change the value. This means you have the capability to change user (e.g. you're `root`).
+
+It's best to call them from apps that are in tight control of their resources to limit security issues due to leaking resources of the privileged user.
+
+I'm not aware of apps that do this besides those specifically meant to change user (like `su`, `sudo`). That is the only thing they do.
+
+That's why I seriously discourage doing this in a .NET app.
+
+We could, if it makes a difference, avoid caching for `root` (`egid = 0`), since that is the most expected privileged user (which can use these calls)."
+"IMO, `Application.Current.Dispatcher` is similar to `Device.BeginInvokeOnMainThread()`: They both assume that the app can only ever have a single window.
+This is fine (and convenient) for the majority of apps, but it is also a trap for the minority of developers who build multi-window apps. The worst scenario is when that developer takes a dependency on a library that uses these APIs.
+
+Based on that, I think that:
+- This API should never be used by libraries (including MAUI itself and the toolkit). An idea would even be to put something like `#if DEBUG`, add the `[Obsolete]` attribute to at least warn MAUI devs.
+- We should move this singleton `Dispatcher` to a place that has a name that says ""Use this only if you are sure that this code will only be used in single window apps"" (something more explicit than a comment in the documentation that most devs will not read)."
+"Won't this double the garbage since we have to make the byte[] then copy it into a new byte[] inside ImmutableArray?  I think we used byte[] (even though it's mutable) to avoid that."
+"> Would it be possible to add target namespace, target folder, and api client class name parameters to the tool?
+
+That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <https://github.com/dotnet/aspnetcore/blob/main/src/Tools/Extensions.ApiDescription.Client/src/build/Microsoft.Extensions.ApiDescription.Client.props>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal.
+
+> Why is the Option for CodeGenerator not using a generic type to pass the enum and leave the parsing to system.command line?
+
+I don't remember the full history. @github made the most recent changes to the tool, @github wrote it, and @github did the VS side of things and designed the service that provides some of the versioning. @github may also have context."
+"@github Seriously dude, Rome wasn't built in a day. We're working on it, one step at a time. We're tracking MRU tab switching over in #973, so please have that discussion in that thread. "
+"> 6.3.1 Country Name
+A value of the countryName attribute type specifies a country. When used as a component of a directory name, it identifies the country in which the named object is physically located or with which it is associated in some other important way.
+An attribute value for country name is a string chosen from ISO 3166-1 alpha-2.
+
+https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 looks like these are always two-letter uppercase pairs.
+
+Should we:
+
+* Reject anything that isn't [A-Z][A-Z]
+* Normalize [a-z] to [A-Z] and reject anything that isn't [A-Za-z][A-Za-z]
+* Garbage in, garbage out: ""12"" is valid as far as we're concerned.
+
+We certainly shouldn't embed the knowledge of ""assigned"" vs ""available"", but it feels like we can be guiding and flexible by rejecting digits and punctuation."
+"I seriously hope this change is just temporary and would be resolved in a better way before we hit general availability. Please check the issue I have logged: https://github.com/dotnet/maui/issues/6183. The change introduces a major inconsistency between the platforms and the new behavior is rather unexpected, breaking dynamic style changes, VisualStateManager etc."
+"Suggest enforcing `/\/backport to release\/\d\.\d(-preview\d)?/` to avoid garbage `\backport to freddy` PRs.
+
+Nit: could just ignore poorly-formed comments i.e. anything that doesn't match the full regular expression."
+"We can add that later perhaps. For now, we probably shouldn't crash the process since the worst outcome of missing a case here is fewer warnings.
+
+---
+In reply to: [210390086](https://github.com/dotnet/roslyn/pull/29317#discussion_r210390086) [](ancestors = 210390086)"
+"The check done on the epoll thread is speculative. The value that is checked is updated under the lock, and since the epoll thread does not take the lock the value read may be incorrect. It is very unlikely to happen because a wait of any sort would typically involve a memory barrier (often even if it does not actually end up waiting), and the value read would be at least as recent as when the epoll wait was released. Even if the wait did not block, it is possible that (if it doesn't involve a memory barrier directly) the call sequence involved would involve a memory barrier of some sort. Nevermind the estimations on memory barriers, the fact is that at worst we are relying on the latency of processor cache consistency here, and how bad that can be depends entirely on the processor. Some old (especially arm) processors don't have any sort of cache consistency and they rely entirely on software to do the right thing. When a processor has cache consistency the whole idea is that it shouldn't take an inordinate amount of time to make caches consistent, otherwise it would defeat the purpose. For example, using `Volatile.Write` to exit a lock relies entirely on processor cache consistency latency for it to work reasonably well. My stance remains that considering that the alternative is not functionally incorrect, this should be good enough for the purpose. That is up for debate though, we can sacrifice some perf to guarantee that sync operations are signaled on the epoll thread."
+"Actually the right thing to do here is to just remove the whole `teardown` section and simply never set `gridview` to `null` and let the garbage collector do its thing."
+"> If you find these without a good workaround, we would like to know.
+
+Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as `.Sort()` any now and then, in the same vein that I thankfully don't have to rewrite `memcpy()` now as I used to. :D
+
+"
+"I think reflection in the tests is fine if you get good benefit and don't have another option. Nobody will break it except us - they'll discover it in CI if they do - then they can fix it or worst case delete the test, which leaves us no worse off."
+"> You could create a draft PR pointing to a build of this package and let the public CI do it's job. That shouldn't be too hard and could instill some confidence prior to merging this change.
+
+As part of this exercise I downloaded the DI package from this PR (postfixed with -ci). But it's not straightforward to test the package against aspnetcore CI since they also need the package to point to a nuget source somewhere the CI can access. 
+
+Testing the DI package against all aspnetcore projects locally is a bit of a hassle too. I'm working with @github on this and perhaps worst case we could merge this, and test off the published package from merge, and if problems occur then revert accordingly."
+"I talked this over with the team and wanted to recommend a different approach. Most of this is going to be pretty obvious, but just bear with me while I think out loud for a minute.
+
+It appears that this hash code is being appended only when working with a default namespace. Which makes sense - keeping assemblies separate for different namespaces. The hash code is meant to be a predictable and persistent way to keep namespaces separated without having to append an entire namespace string in the assembly name which could be ugly at best and could run into more impactful issues at worst.
+
+However, the original implementation fell into the trap of using String.GetHashCode() which was never meant to be persistent. In fact, it is not consistent across .Net Core and .Net 4.8. It isn't even consistent across 32 and 64-bit implementations of 4.8. String.GetHashCode() kind of worked by accident here, but was not really ever appropriate for the function it is performing here.
+
+Another thing to note is that generated assemblies do not really share between 4.8 and .Net Core due to netstandard.dll. So maintaining some resemblance with either 32-bit or 64-bit .Net 4.8 isn't much of a concern here.
+
+So there is a bit of a ""green field"" opportunity to get this right this time. Criteria to note: We want something that produces a repeatable, persistent hash. The hash should be of reasonable length to avoid collision, but it is not required to be exactly 32-bits. Also, since this is not a hot code path where every bit of performance counts, we don't need to worry about being super fast. Finally, we're using this hash for naming purposes, not cryptographic purposes.
+
+GetHashCode() meets all those criteria except for the most important - it's obviously not persistent. But rather than re-inventing an old wheel just because it feels familiar (although, this new wheel will not actually bring compatibility with the old cart)... lets use a tool that is proven and easily accessible. Use a truncated SHA512 hash. You could truncate to 32-bits as done previously. Or maybe use Span/Guid to truncate and get 128-bits with nice formatting?
+
+Perhaps @github has more thoughts?
+
+Regardless, I believe you'll also want to change SGen to match this change as well. https://github.com/dotnet/runtime/blob/master/src/libraries/Microsoft.XmlSerializer.Generator/src/Sgen.cs#L523"
+"> We have a manual tests project for Console as a worst case; would this be caught there?
+
+In theory yes, because after running each test the user is asked to press `y/n` and when pressing `y` the app was printing `121` instead of `y`:
+
+![image](https://user-images.githubusercontent.com/6011991/158595632-47d4ea20-0333-4149-a6cd-8d2d9f2cdffc.png)
+
+But to be 100% sure I've added a new test:
+
+![image](https://user-images.githubusercontent.com/6011991/158595987-55305527-7e5e-4a29-a01f-f0b471384993.png)
+
+> Any way to add a test? 
+
+I currently don't have a better idea than extending the manual tests. I hope that when I get more familiar with `System.Console` I am going to be able to automate it.
+
+
+"
+"@github could you elaborate on why the Arm64 implementation can't basically be a 1-to-1 port of the x86/x64 logic?
+
+There isn't really anything in `Ssse3` that isn't in `AdvSimd` and `Ssse3Decode` is pretty trivial (there is nothing there that isn't a simple translation over - `And` to `And`, `Shuffle` to `TableLookup` just need to double check edge case handling, `MultiplyAddAdjacent` to `Unzip` + `Multiply` + `AddPairwiseWidening` in the worst case).
+
+I do understand using `TBX2/3/4` might be even faster, but it'd be better to start with something that gives us the initial gains then have nothing at all."
+"GCHandle.Alloc is not only keeping the array pinned, it's also keeping it rooted, whereas the GC.Allocate* calls are just creating pinned arrays but not keeping them rooted.  In all of these uses where we've replaced the GCHandle.Alloc calls, have we proved to ourselves sufficiently that the array won't become garbage in the interim?"
+"Any concerns here that if two threads are trying to compute the new SemanticModel that even though one CompareExchange is the ""winner"" and one is the ""loser"" that the loser won't use the winner's semantic model if it's available?"
+"I don't think the behaviour for conhost is right. We should either leave `UserDefault` as an alias for `BlinkingBlock`, which is at least compatible with the DEC standard, or we should try and map it to the actual user preference (which I'm honestly not sure how to do). Worst case we could possibly map it to blinking legacy, which I think is the system default. But as it stands, it looks like you're going to get non-blinking legacy, which is neither one thing nor the other.
+
+Edit: Sorry this is essentially a long-winded dup of DHowett's comment."
+"Would be interesting to profile that -- interpolated strings are *supposed* to be getting lots of perf love.
+
+Fortunately, someone used Benchmark.net: https://blog.ladeak.net/posts/string-interpolation-stringbuilder
+
+String interpolation isn't the worst, but it's not the best.  Using `StringBuilder.Append()` is the 2nd fastest.
+
+For now, I'll add a new method which uses `StringBiulder`.  (Pity `string.Concat()` only takes up to 4 parameters!  5 would have been best.)"
+"This works, but it's pretty fragile: `file_path` is allocated on the stack, but `monovm_runtimeconfig_initialize` will save it away in a global var and it will be used only later in `mono_jit_init_version`.  It will work as long as both of those calls are in this function - but will start pointing to garbage if this is ever refactored.
+
+better to heap allocate `file_path` and free it from `cleanup_runtime_config`"
+"(no action needed) I know it's been like that before but it seems weird to me that lifetime of this namespace is ""until garbage collected"" (unless TryGetTarget gets called before that) - if the gc happens then we loop again until we succeed. Feels to me you should be storing the ref first in the local and then returning that stored result and adding same instance to the dictionary. Not sure why the looping is needed (can't see any state changing except this operation being somewhat random)"
+"Could we just have `enum compSupports(Isa)` and have it return `Unsupported`, `Supported`, or `SupportedWithCheck`? I believe that covers all the considerations and is incredibly simple to use/understand.
+
+Basically, when jitting, the compiler is already doing the right thing, `compSupports` today return effectively just `Unsupported` (`false`) or `Supported` (`true`).
+With the introduction of the AOT scenarios (R2R, Crossgen, etc), we need to consider a third state which can be represented as above:
+* If the instruction set is unsupported, even behind a check, then we return `Unsupported` and we should never go down that path
+* If the instruction is part of the baseline, we get `Supported` and it can be emitted without any considerations, for example `IsSupported` can be constant folded to be `true`
+* If the instruction is part of the baseline encoding but not part of the baseline, we get `SupportedWithCheck`, which indicates you can only use it if behind some kind of `IsSupported` check
+  * For HWIntrinsics, this represents no change in behavior. We just emit the instruction and it will fail at runtime with `#UD` (Undefined Opcode) if the user didn't do the appropriate check
+  * For other code paths, like `Math.Round` this indicates we can't emit this without some corresponding `IsSupported` check being in place (we don't currently support such a check, so we treat it as `Unsupported`"
+"suggestController.ts is entry point of changes
+
+I did not implemented fixed storage for small overtypes since calling ITextModel.getValueInRange() is producing garbage anyway. So, simply storing. Restricted by 1000000 bytes as was suggested.
+Made the retrieval of stored text deferred until needed in the SelectionBasedVariableResolver.
+
+off topic
+I noticed that SuggestWidget.onDidHide gets called constantly when typing, even when SuggestWidget.onDidShow has not been called before and the widget is not active. Perhaps this should be removed for performance."
+"does not `fgReachable` have linear complexity in the worst case?"
+"I think you should seriously consider this -- eg the loop and its clone may have common hoistables."
+"this will cause an extra object allocation for every occurrence. we use this on every hover, and do not want to increase the amount of garbage we create."
+"> So this makes me think that we'll be redoing a lot of inferences - for a given inference set, we'll infer from each of the inner properties to their matching contextual type, then we'll do the outer inference for the object as a whole, which, in so doing, will redo these inferences again
+
+I think ([see my comment here](https://github.com/microsoft/TypeScript/pull/48538#issuecomment-1088157524)) that that's why this is only done when we're about to fix (which are cases that are broken today). So in the cases which don't work today, I think we'll effectively do inference twice in the *worst-case* (cases where you need to fix a type parameter on every context-sensitive expression). Otherwise, it should be the same amount of inference as before, the only new work is collecting the context-sensitive inner expressions)."
