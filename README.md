@@ -44,14 +44,44 @@ const result = results['PredictedLabel.output'].data[0];
 const score = results['Score.output'].data[Number(result)];
 ```
 
+## Repo layout / structure
+
 Folder structure of this repo:
 
 * `comments`: several `.csv` files of code review comments
-* `Maui`: desktop app for classifying data
+* `Maui`: desktop app for classifying data, see [MLTrainer app](#mltrainer-app)
 * `ml.net`: contains C# projects related to ML.NET usage, creating `.zip` or `.onnx` files
 * `onnxjs`: JS test project for the `.onnx` model
 
 [browser]: https://github.com/jonathanpeppers/inclusive-code-comments
+
+## MLTrainer app
+
+If you're here to update [`comments/classified.csv`](comments/classified.csv),
+we have a CI archive of the app, so you don't have to build it from
+source.
+
+Find a commit on GitHub, and click a status for either Windows or Mac:
+
+![GitHub Status](docs\MLTrainer-GH-Status.png)
+
+Click on `Summary`:
+
+![GitHub Summary](docs\MLTrainer-Summary.png)
+
+Scroll to the bottom, and pick either a Windows or Mac build:
+
+![GitHub Artifacts](docs\MLTrainer-Artifacts.png)
+
+The Windows build contains an `MLTrainer.exe` inside, you can unzip
+this somewhere and run it.
+
+The Mac build contains an `MLTrainer-1.0.pkg` inside. You can simply
+install it and run `/Applications/MLTrainer.app` afterward.
+
+Note that you may need to bypass various signing prompts, as this app
+is not digitally signed. Mac you will need to go to `System
+Preferences > Security & Privacy` to run an unsigned `.pkg` installer.
 
 ## Notes about Inputs
 
