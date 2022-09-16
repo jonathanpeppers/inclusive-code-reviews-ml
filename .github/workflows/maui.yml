@@ -41,9 +41,14 @@ jobs:
     - name: Build MAUI App
       run: dotnet build Maui/MLTrainer/MLTrainer.sln -c Release --no-restore
 
-    - name: Archive MLTrainer
+    - name: Archive macOS MAUI App
       uses: actions/upload-artifact@v2
       with:
-        name: MLTrainer
-        path: Maui/MLTrainer/bin/Release
-        if-no-files-found: error
+        name: MLTrainer-macos
+        path: Maui/MLTrainer/bin/Release/net6.0-maccatalyst/MLTrainer.app
+
+    - name: Archive Windows MAUI App
+      uses: actions/upload-artifact@v2
+      with:
+        name: MLTrainer-windows
+        path: Maui/MLTrainer/bin/Release/net6.0-windows10.0.19041.0/win10-x64
