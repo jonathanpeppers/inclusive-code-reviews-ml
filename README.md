@@ -63,15 +63,15 @@ source.
 
 Find a commit on GitHub, and click a status for either Windows or Mac:
 
-![GitHub Status](docs\MLTrainer-GH-Status.png)
+![GitHub Status](docs/MLTrainer-GH-Status.png)
 
 Click on `Summary`:
 
-![GitHub Summary](docs\MLTrainer-Summary.png)
+![GitHub Summary](docs/MLTrainer-Summary.png)
 
 Scroll to the bottom, and pick either a Windows or Mac build:
 
-![GitHub Artifacts](docs\MLTrainer-Artifacts.png)
+![GitHub Artifacts](docs/MLTrainer-Artifacts.png)
 
 The Windows build contains an `MLTrainer.exe` inside, you can unzip
 this somewhere and run it.
