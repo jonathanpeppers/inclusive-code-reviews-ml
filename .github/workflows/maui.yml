@@ -41,3 +41,9 @@ jobs:
     - name: Build MAUI App
       run: dotnet build Maui/MLTrainer/MLTrainer.sln -c Release --no-restore
 
+    - name: Archive MLTrainer
+      uses: actions/upload-artifact@v2
+      with:
+        name: MLTrainer
+        path: Maui/MLTrainer/bin/Release
+        if-no-files-found: error
