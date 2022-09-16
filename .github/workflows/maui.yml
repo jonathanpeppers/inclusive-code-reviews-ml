@@ -35,11 +35,8 @@ jobs:
     - name: Install MAUI Workloads
       run: dotnet workload install maui --ignore-failed-sources
 
-    - name: Restore Dependencies
-      run: dotnet restore Maui/MLTrainer/MLTrainer.sln
-
     - name: Build MAUI App
-      run: dotnet build Maui/MLTrainer/MLTrainer.sln -c Release --no-restore
+      run: dotnet build Maui/MLTrainer/MLTrainer.sln -c Release
 
     - name: Archive macOS MAUI App
       uses: actions/upload-artifact@v2
