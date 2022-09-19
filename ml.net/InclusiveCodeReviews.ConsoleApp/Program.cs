@@ -5,7 +5,8 @@ using InclusiveCodeReviews.Model;
 Console.WriteLine("Ctrl+C to exit...");
 Console.WriteLine();
 
-var githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+var githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.IgnoreCase);
+var backtickRegex = new Regex("`[^`]+`", RegexOptions.IgnoreCase);
 
 while (true)
 {
@@ -15,9 +16,12 @@ while (true)
 	if (string.IsNullOrEmpty(text))
 		continue;
 
+	var replaced = githubHandleRegex.Replace(text, "@github");
+	replaced = backtickRegex.Replace(replaced, "#code");
+
 	var sampleData = new ModelInput()
 	{
-		Text = githubHandleRegex.Replace(text, "@github"),
+		Text = replaced,
 	};
 
 	var result = ConsumeModel.Predict(sampleData);

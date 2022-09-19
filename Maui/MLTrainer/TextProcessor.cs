@@ -6,8 +6,11 @@ namespace MLTrainer
 	public static class TextProcessor
 	{
 		static readonly Regex _githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		static readonly Regex _backtickRegex = new Regex("`[^`]+`", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		static string ReplaceGithubHandles(string text) => _githubHandleRegex.Replace(text, "@github");
+
+		static string ReplaceInlineBackticks(string text) => _backtickRegex.Replace(text, "#code");
 
 		static string RemoveImageTags(string text)
 		{
@@ -97,6 +100,7 @@ namespace MLTrainer
 			var result = RemoveCodeBlocks(text);
 			result = RemoveImageTags(result);
 			result = ReplaceGithubHandles(result);
+			result = ReplaceInlineBackticks(result);
 
 			var extraTrimCharacters = new char[] { ' ', '\t', '\n', '\r', '>' };
 			var sentences = result.
