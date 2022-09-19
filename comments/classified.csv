@@ -1511,4 +1511,309 @@ You are a git,1
 twat,1
 idiot,1
 asshole,1
+FileBufferingReadStream  is pretty terrible for performance. We need to fix the block size problems.,0
+"`Shutdown` is ""shutdown writes, send EOF to peer"".",0
+"`ShutdownWriteCompleted` was ""wait for peer to acknowledge that shutdown"" which we found to be mostly useless so I believe we changed it to mean ""wait for peer to acknowledge that shutdown AND to shutdown their side too"". It has a terrible name. This is what I'd like to see changed to a `Task Completed { get; }`.",1
+"Mel was a bit stupid here, remove 2 of these comments copies.",1
+fuck them alll,1
+"Crap, before this will work we need to update the spa-templates submodule to reference the dotnet7 feed & ingest it. I'll update that repo now.",0
+"This is really gross and is screaming ""IDL"" and/or ""COM"" at me. Maybe `TerminalCore` just needs to become a CppWinRT module and be activated that way?",1
+"Or can we not do that because you're trying to make this work back to Windows 7? In which case, can it just be a classic COM interface definition or something?",0
+This confused the crap out of me until I saw the other code. Again wondering if a base type w/ derived type that doesn't really do anything at least keeps the hack isolated.,0
+"if an option is 0 (All), it will now just be ignored.",0
+Fuck. 😄 I need to learn to read. 😄,1
+"@github I'm stupid, wanted to do this on d16-8, looks like changing the target branch is a bad idea. I'll close and recreate.",0
+Problem is that we don't know what the user will use as a type. Suppose the following situation:,0
+"Of course, this is insane and not code that anyone would write, but it does indicate that the declared type of a field on the closure does not necessarily have to match the runtime type. So `is` seems appropriate to me.",0
+I'm terrible at spelling 😦,0
+stupid me,1
+_holy crap you actually did it_,0
+I'm gonna throw this out here right now - the team is absolutely stoked that you were able to throw together a PR for this feature in _just three days_. That's really impressive.,0
+"I'm going to be the pre-emptive bearer of badish news - we're starting to make harder cuts about what is and isn't making it into the 1.0 release of the Terminal. As _awesome_ as this feature is, I'm going to go with my gut here and guess that this isn't going to make that cut unfortunately. That being said, we're still going to review this now and get feedback to you. Once this gets approved, we'll probably just hold in until we make an official 1.0 release branch, and then we'll get it merged immediately after that.",0
+There is no such thing as a stupid question :),0
+Don't be fooled by the terrible diff - that's in install_mono_toolset(),0
+Holy crap this helper is awesome.,0
+This is why `GetText()` has been acting so stupid.,1
+What the heck is going on here? I'd love to have some inline documentation for when we do insane winrt things like this,0
+I didn't look into this in great detail. Any suggestions on how this could be done without making the new Stream gross?,0
+"Yes. It's just a terrible sentence. Fixed to say ""container"".",0
+"I believe using explicit linked files is actually super terrible to maintain and port future analyzers/fixer/tests. After having attempted this both ways (using the existing add of linked files and then with shared projects), I think using shared projects is way easier for porting more analyzers/fixers as well as viewing the existing ported shared analyzers and fixers. Lets discuss both these approaches in the meeting today, I can open up the solution from this branch.",0
+"Regardless, as mentioned in https://github.com/dotnet/roslyn/issues/38480#issuecomment-578903218, I think neither of these are really good long term solutions and we should eventually just move these analyzers/fixers completely into CodeStyle layer and ship CodeStyle NuGet with the SDK.",0
+"Sorry if I'm being stupid here, but I don't understand why the markdown renderer needs to be modifiered. Can the review widget add the required css / classes instead of having the markdown renderer do it?",0
+"@github We actually have two sanitization passes currently, one from `marked` and one from `insane`. The `insane` is the more complete sanitizer so we probably don't need the marked one.",1
+"What worries me though is that by allowing markdown strings to use `style`, we open up the surface area both in terms of security and presentation. Now an extension can use arbitrary css in hovers, including loading images or positioning content outside of the hover itself.",0
+Github's sanitizer for markdown previews strips out `style` attributes for these reasons (and also I believe because `style` could at one point be used in very old browsers to run scripts and do other super unsafe things),0
+yeah.  wtf.  i'm not sure what i was thinking.  we shoudl handle the disparate forms.,1
+"noob cpp incoming question, it looks like these things are used in debugutil.cpp why are the includes here instead of in debugutil.cpp?",0
+"I do like keeping the main logic in CreateResponseHeaders. I think the current implementations of HasInvalidH2H3Headers and ClearInvalidH2H3Headers() are plenty efficient. You could even argue it creates less branching logic on the set-headers path compared to proactively avoiding setting them. We could microbenchmark, but I'm not too concerned about optimizing the case where invalid headers are being set as long as it isn't terrible.",0
+"Because I'm a terrible person and didn't review this soon enough, language version 8.0 is now the default so you should be able to drop this project reference and also remove the ""Regular8WithNullableAnalysis"" uses, because that doesn't exist anymore...",1
+"that looks insane, does that just set to `initialized` to true the first time it's called then we just check `if(initialized)`",1
+Great! Just idiot thoughts,1
+"Crap, I meant the slash direction. I'll fix that.",1
+I begrudgingly accept this until quirking our APIs becomes widespread enough that we should pass a quirk struct into all of them uniformly so it's less gross.,0
+I'd really really love for this to not be totally insane.,0
+"`IconSource`? idk. When I get more time, I'm gonna set up a simple repro for the WinUI team to tell me exactly wtf is going on here.",1
+"this is the meat of where things changed.  unfortunately, the diff is terrible.  effectively teh logic is pretty simple:",1
+1. determine the expression we want to inline.,0
+2. find the reference locations to inline and inline there.,0
+"3. if we had no conflicts, remove the declaration",0
+4. add warning annotations for things like side-effects or moving code into conditionally compiled methods,0
+hm... `g__EqualsUnrolled_9_to_16` was not inlined and it's terrible if executed without it... 😢,0
+"I'm not sure if MSVC couldn't ""manage"" to recognize and change it to memset, or it chose not to. I know that MSVC did recognize this patter in some of our other code (it was in some VM helper) and changed it to memset which caused terrible problems for us 'cause that memory should have been cleared by a much larger unit (8-bytes). personally I'd really rather compiler not do this kind of ""optimization"" which could totally introduce bugs.",0
+"Okay, so, need help from someone who understands the libraries build a little better here (@github?)",0
+"* The build doesn't really support OS subgroups (i.e. `linux-musl`, `linux-bionic`), it's a gross hack where the system thinks it's actually the OSGroup OS (Linux for musl), some magic autodetection code in a few shell scripts tells it otherwise and causes changes in build behaviour, and the RID gets overridden post-hoc via `/p:OutputRID`. I've removed this assumption in a few places and parsed `/p:RuntimeOS`, because it's not possible to autodetect the difference between Android and linux-bionic based on anything in the rootfs.",0
+"* We still need a TargetOS (`--os`). The `linux-musl` build defaults to `linux`; in our case there's a case to be made for both `linux` and `android`. And we kinda need to be both, in a few places - System.Net.Security and System.Security.Cryptography we need the Linux version NOT the Android version, whereas System.Console we want the Android version. Do we want to add a separate TFM for linux-bionic? Use RuntimeOS conditionals in the relevant csproj? What's the least painful way to do this?",0
+"Sorry I was missing full context on the previous conversation: should this just be GetTextAsync? In theory still instant, but if we're wrong it's less terrible?",0
+(still OK with this more than TryGetText),0
+Removed. This was a sleepy me being stupid last night and just testing a variable named discard.,1
+Is it a terrible bother if I request @github as a reviewer for this one? He probably knows more than we do 😝,0
+@github glad you asked,0
+"well, at least we shouldn't have multiple caches... TypeConversionExtensions.KnownConverters, TCE.KnownConverterFactories, BindableProperty.KnownTypeConverter; and then we have NodeILExtensions.KnonwnCompiledTypeConverters",0
+Type Conversion happens at multiple places:,0
+"- when applying a binding (this includes AppThemeBinding, DynamicResource, ...)",0
+"ColorTypeConverter and ThicknessTypeConverter do _not_ need to be cached in a known list, as they are attributed with a TypeConverterAttribute, they need to be in the KnownCOMPILEDTypeConverter as they're not attributed with the ProvideCompiledAttibute.",0
+"The only converter that can not be retrieved using reflection is UriTypeConverter as System.Uri is NOT attributed on .NET core 6 (even though System provides a UriTypeConverter that we should use now that we replaced our own base TypeConverter type by System.ComponentModel.TypeConverter. Side note, System.Uri is attributed in the net framework profile, go figure). so why do we whitelist ColorTypeConverter and EasingTypeConverter in BindableProperty.cs is something that need clarification.",0
+"I don't recall the details of why FontTypeConverter need to be whitelisted, but I recall that we almost got rid of Font as a property type in most (all?) of our controls (because compound properties are a mess and produce too many propertychange events, and redraw).",0
+We could/should cache the TypeConverters:,0
+"Our own TypeConverters are known beforehand, but I'm not keen on maintaining a list of those (I'd prefer a sourcegen), but there's also the TypeConverters defined in 3rd party assemblies. Oh, and caching type converters isn't a solution for avoiding reflection, as TypeConverterAttributes on properties take priority over the ones defined on Type, but we could cache that too (using the PropertyInfo as key e.g.)",0
+"To summarise this digression on TypeConverters, here's a list of action points:",0
+"- [ ] Investigate the usage of `Font` in Controls. It's probably unused, in that case `FontTypeConverter` and the 2 caches in TypeConversionExtension could go away",0
+"- [ ] Investigate `Font` usage in Core, and the reason it was ported there, and not deprecated",0
+- [ ] Investigate why ColorTypeConverter and EasingTypeConverter are whitelisted,0
+- [ ] Investigate caching TypeConverters for properties and types. I'd recommend going for a sourcegen solution and generate a switch instead of a dictionary to avoid allocation bump,0
+"- [ ] None of our TypeConverters have any side effect, and instances could be reused (we can speak for 3rd party converters, unfortunately...)",0
+LMK if there's a more idiomatic way to do this. i is noob,0
+Ack. That feeling when you realize you're an idiot :D,1
+"That's how I felt on Friday. In my case, I made the reverse mistake: I was correctly adding both C and D to B's transitive references, but forgot to update A too.",0
+Stupid linker. Fixed.,1
+"@github I haven't tried this yet, but I'm wondering what it looks like after I have a new descriptor. Still, I need to destroy the old grid, right? Which will disconnect the whole workbench from the dom and reattach. Is that what you have in mind?",0
+"Also, today, I don't really have call layout on the whole grid when moving things around. The code is a bit gross, but the grid seems to handle calling layout on the appropriate things so there are no issues. However it seems like I would have to call a top-level layout every time a part moves with this approach. Is that not more expensive?",0
+Isn't the solution file at this point known to exist? (Aren't we already loading it?) Can this ever fail?,0
+"(yes, I know this logic was there, but if we're deleting stupid code we mind as well delete more stupid code)",1
+"Ah, crap - you need to build this locally to update all the xlf files and include those changes.",0
+"ProjectIds returns an IReadOnlyCollection<T>, which generally isn't safe for iteration during mutating operations",0
+It shoudl def be safe though as per the roslyn Worspace invariants.  The ProjectIds of a Solution cannot change out from underneath you.  That would be a gross violation of the contract of Solution :),0
+"@github no i don't want it to move down to `IRenderEngine`, either. Check out my edit. I want it to be DX only, which helps all of us.",0
+1 vote new API.,0
+"Oh, shit. I don't hate that. @github what do you think?",1
+2 votes new API.,0
+That said I don't have any strong opinions about it. Code can always be modified. 🙂,0
+"2 votes new API. 1 vote ""whatevs man, it's just code.""",0
+// Create a new `UpdateFont` method with more parameters only in DxEngine.,0
+"_renderEngine->UpdateFone(newDpi, _desiredFont, _actualFont, whatever we want to add);",0
+I like this. Would like to hear from @github before proceeding though,0
+"3 votes new API. 1 vote ""whatevs man, it's just code.""",0
+I'm fine also with adding a DXEngine only method with additional parameters and calling it directly until such later date that @github and @github make their thin-API data-driven renderer dreams come true.,0
+"So I think that's 4 votes new API. 1 vote ""whatevs man, it's just code."" Sold.",0
+"same, I'm an idiot.",1
+It should be. I cherry picked the commit.,0
+👍,0
+I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now?,0
+"We typically prefer work (and pull requests) to be done in forks. It's fine for this PR, but if you could create the d16-7 PR using your fork that would be great! And we've branched d16-8 as well, so this fix needs to go there too.",0
+We found a similar bug in other extensions libraries #33998.  Since its just extension methods that folks aren't going to directly reference it's not a terrible type conflict.  I'd just suppress the error for now and file a bug.  If folks have a scenario for using the two types and notice the clash we can address it.,0
+"What do you suggest?  Removing is breaking, we could obsolete it and/or implement on top of System.HashCode?",0
+"Hey @github, I guess I can answer to that 😄",0
+"There are a couple places where I'm using that API in the MVVM Toolkit, and they're indeed in a performance oriented type.",0
+"They're only being used on values being of private types, coming from private fields, and guaranteed to be correct due to the implementation of the type itself, so the only way this could break is if a dev actually tried to mess up with the internal fields using reflection, which is something that not even types from the BCL guard against, as far as I can tell (eg. `Memory<T>` will break the type safety too in the `Span` property getter if a dev used private reflection to store some arbitrary object there).",0
+"In particular, there's a usage of the `Unsage.As<T>(object)` API in the MVVM Toolkit that just can't be worked around without having to sacrifice quite a fair bit of performance and more memory usage, which is this line [here](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/79127cf6a76ea1b0673c0376e43d41f91b2df509/Microsoft.Toolkit.Mvvm/Messaging/StrongReferenceMessenger.cs#L400-L404):",0
+Basically I have the following situation:,0
+"- I have this delegate type, which is used to register message recipients with the ability to specify both the recipient type (so the input to the lambda expression is already of the right type and they don't need to cast), and the message type:",0
+"- As you can see from the delegate, `TRecipient` is always a reference type",0
+#NAME?,0
+"So doing that unsafe cast basically tricks the runtime into just calling the `Invoke` method of each actual handler just with an input `object` type (as we don't know the type used in each handler here) - we're essentially invoking a contravariant delegate as if it was covariant in that input argument. Again this is always guaranteed to be a valid type cast due to how the messenger itself works - each recipient will always match the original `TRecipient` constraint in each delegate being invoked. This way we get identical codegen to just invoking those handlers directly, even if we lack knowledge on each type in use.",0
+The alternatives I've considered here would've been:,0
+"- Use `Delegate.DynamicInvoke`, which is just terrible for performance/memory usage. We wanted to have the broadcast method have an amortized allocation cost equal to 0, and also to avoid using reflection completely in this implementation.",0
+"- Wrap each input handler in another one with just an `object` parameter. This would've meant to completely defeat the whole point of structuring delegates this way to allow the C# compiler to cache them (as they're static), as we would've had to allocate a new display class capturing the input delegate every single time one was registered. Also each broadcast would've had twice the number of virtual calls, as each handler would've had to go through its proxy one doing the recipient cast first.",0
+"This is something I've actually talked about quite a bit with @github and @github too in the C# Discord server. Given the exact specifications of this type and the way it's implemented, using this trick should be perfectly valid, as all the various constraints and unsafe casts will always be guaranteed to be valid, so there will never be a type violation in doing so. This is really just a workaround for a lack of proper support for basically doing the equivalent of ""try to invoke this delegate with these inputs, and just throw if they are not valid"". With the exception that here we already know the inputs are valid, so we don't even check.",0
+"In an ideal world (as in, with you guys having unlimited time and budget to implement all sorts of proposals even for less requested features), my idea was that `DynamicInvoke` could be implemented as a JIT intrinsic, with the EE engine emitting the code there to just do safe casts of the inputs and throw otherwise - that way all the reflection would be avoided and the resulting codegen would be almost the same as just `Invoke`, with the only difference being the checks for the input parameters and boxing of value type parameters, if any, but that'd be perfectly acceptable. This is just a way to achieve that with the current runtime 🚀",0
+"On the other hand, as a result of this and a number of other (less unsafe) optimizations this new implementation is both much faster than all other competitor types from other common libraries, and using virtually no memory at all for broadcasts:",0
+Hope this helps to clarify why the usage of that arguably very niche API in that library in particular 😊,0
+This mildly concerns me - we've ran into insane bugs in the past where not zero-initializing something has resulted in bugs.,0
+"That first parameter being `thisAgrg` hits me 90% time when I use it, because I forget to pass `null` here and then get stupid behavior a I have args shifted. This helps me a little bit, but I'm ok to revert it or to do something else, if you have an idea.",0
+"Consider a method that does 100 string comparisons against constant strings. Are all these 100 string comparisons going to be optimized, without hitting inliner's budget?",0
+"@github So the budget is common for all the callees for a specific root and it gets eaten very quickly with string.Equals, e.g.:",0
+"Also, it would be interesting to measure JIT time of a method like this (before/after).",0
+"since it can't do 100 Equals I don't see anything terrible and in general I guess there are not so many, I also tested the test I added - no visible effects.",0
+What is nice is that for non-unrollable cases jit ignores those calls as it is able to remove simple dead branches during import.,0
+"Any opinion on this? It feels great to be able to declare rules to unroll stuff in pure C# but yeah, several long equals can eat inliner's budget and we won't be able to inline other stuff in the current root.",0
+"Suggestion: Could we make all these offsets consts into an internal shared class that everybody links so that we can see the ordering in one place? It might sounds stupid, but it's really hard to think about the ordering of the system when it's distributed across classes. I also understand that this is kind of unrelated and a nit.",0
+Wow this is kinda gross 😄,1
+"Noob question, the server and client OS share the same version prefix, so is it possible that windows 10/11 catch up with server? Or are these number incremented verry rarely. Like not on every windows update, but as a product version.",0
+Because I'm terrible at all the WPF stuff and didn't even realize I can do  `IsThreeState = false`? :),0
+Thanks for the remind. This one is about allowing the core markdown renderer to display `checkbox` which is sanitized by `insane`. I'll revert the change for now and see ppl's feedback.,0
+wtf...,1
+## Friday Spec Brownbag Quick Summary,0
+Today we had a meeting about this spec. Here's some quick notes of how the discussion went.,0
+"- Unanimous ""launch inside the tab"", not a new window",0
+### Preview Window in Appearance Page,0
+"- Unanimous yes. Do this. TermControl with a new connection that isn't real, just filled with some dummy sample text like what people might use (emojis, powerline fun, text tables, colors, etc.)",0
+### Editing/Saving,0
+"- Automatic saving: No. We don't want to thrash the JSON file. If we had an in-memory model struct... maybe. Or if we were using a tear-off window, maybe.",0
+"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button. No. Gross. Old. Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no. The preview window should be automagic on changes. The actual JSON should be written on Save button",0
+"- We need a rocket ship icon for ""Launch""",0
+### Keyboard Bindings,0
+(I didn't catch which one Leon was up with),0
+- We don't think we have a readily available grid control,0
+"- Commands with arguments that are already stringable by the command palette (e.g. new tab 1, new tab 2) are offered as drop down items",0
+- Commands with arguments that are complex could be presented with a ... in the grid on the edge that launches a modal with the raw JSON to be edited,0
+"- In the future, can migrate some of the ...s to launch a more robust editor based on the situation of the type of command, but default will allow raw editing if there is no specialty editor",0
+- Concern with how to display/present the commands that people might not know about (easily buried in a dropdown/combo),0
+"OK, so after talking this one out with other ppl on the team, I believe this was a stupid suggestion on my side.",1
+"IDEs ask for errors on files in no specific order. with this in place the error will keep appearing and disappearing randomly. i think we are better off having the error on every use. We already report errors on every use for decorators. so this should just be the same. I think we can just remove this check, and keep the error.",0
+Sorry for the bad suggestion.,0
+"Maybe separately, we should do better on tuples since this is so stupid.",0
+"I deleted the comment because we discussed it offline. To make you look less insane, I was asking why it wasn't called `getReferenceHighlights`.",0
+"Tagging this ""needs design review"" for one concern about whether we want to be overloading go to _definition_ for this particular feature, since I don't think I would imagine this really correlates to a ""definition"" at all. We might be able to make some UI affordances to the user to help out what is going on (change the text of the right click menu to say ""go to control flow destination"" or something to that effect when you're actually on one of these tokens).",0
+Also a few things that might be helpful:,0
+"1. Should invoking on return in a method jump to the invocation of that method if there's one, or show the selection if there's multiple? The local function case at least might be handy.",0
+"2. Should invoking throw jump to a catch block, at least if there's a matching one in the method? (The control flow analysis can of course get insane here but maybe the same-method case could still be useful....?) #Closed",0
+"~The GitHub app is terrible so I can't review properly, but test 5 uses a function type returning `void | undefined`. That's probably a mistake.~",0
+"Yea, you could(should) definitely expose that method on AppKeyBindings. Parsing them again would be insane :P",0
+"I'd rather you do it in this PR, rather than blocking your PR on mine getting in",0
+"Thanks, @github",0
+I've just tried the sequence of [the above GIF](https://github.com/microsoft/terminal/pull/8215#issuecomment-729949956) in a PowerShell:,0
+Then quickly minimized the window and nothing happens. I.e. nothing flashing.,0
+I'm using:,0
+Probably I'm just doing something stupid and/or missing some plain obvious things.,0
+Trying it from a [.NET console application](https://github.com/microsoft/terminal/issues/8713#issuecomment-756181568) with:,0
+also does not flash the task bar icon.,0
+"OK, I think I get it now:",0
+"The [""BellStyle"" setting](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-advanced#bell-notification-style) was not set explicitly, thus resulting in only a sound (which was not hearable since I turned of all system sounds).",0
+After configuring the CMD type to this:,0
+. image](ht.,0
+My C# console application was able to make the task bar flash/be lightened when using this:,0
+Resulting in this effect:,0
+"I'm still unable to do the same for PowerShell and `sleep3;""^G""` but since I do need it for CMD only, not PowerShell, this is sufficient for me.",0
+"After reading [Dustin's reply](https://github.com/microsoft/terminal/pull/8215#issuecomment-1133933312), this one worked correctly in PowerShell:",0
+This is a really gross pattern.  Can we rename this to something like EnsureInitialized and not do the ref to a field thing?,1
+"There is one ***huge*** issue with BigInteger as it stands currently, its default constructors.",0
+"The BigInt Class' constructors are all conversions to other datatypes making it inefficient and limited while BigInt *already* has a method coded in which uses *string* input **and is really what you should use when actually utilizing BigInt** called the `Parse()` method. The issue of the type conversion is *especially* magnetized for BigInt because of how it was intended for and why it was made, as the official microsoft documentation of BigInteger states (https://docs.microsoft.com/en-us/dotnet/api/system.numerics.biginteger?view=netcore-3.1)",0
+The BigInteger type is an immutable type that represents an arbitrarily large integer whose value in theory has no upper or lower bounds.,0
+"which is unlike every other type in the default constructor which means simply writing `System.numerics.BigInteger.new(10000000000000000000000000000);` **will not** work because you aren't explicitly trying to convert the number to the `double` datatype which also still has a max value, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368, but it is large enough to handle most things, however, numbers will not get automatically converted to double type, they need to be explicitly defined with the ""d"" suffix like `10000000000000000000000000000d` but as double still has it's limits, this still goes against the purpose of Bignteger since as soon as you do `179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858369d` the double datatype will stop working. The biggest ""*inexplicitly defined type*"" would be the uLong type which has the highest value of a measly `18446744073709551615`. Since the constructor will always attempt to convert the number to a different type, as it stands it is",0
+1. Inefficient; tries to convert the arguments to another datatype and go through their constructors which also will cause longer computation times and,0
+"2. Has limitations; it will not work when trying to define an actual ""arbitrarily large integer"" like tested  by multiple people in this Stack Overflow question (https://stackoverflow.com/questions/62974138/bigint-inconsistencies-in-powershell-and-c-sharp)",0
+"So these constructors go against how BigInt is supposed to be by design, a datatype for *arbitrarily large integers* and having numbers too big for the base constructor goes against what BigInt is supposed to be. However, BigInt *can* handle these ""arbitrarily large integers"" and *can* handle infinitely large things with the parse method. The `Parse()` method takes string arguments so it is theoretically infinite there and works properly. So why have that as just a method? Why not turn that into a constructor? Isn't that just stupid to not have it as a constructor if it literally satisfies what BigInt is supposed to be when as it currently stands does not? You already have all of the code for the `Parse()` method so why not just use it? Just copy + paste, anyone can do this! If the `Parse()` method *does* work as intended and how BigInt is supposed to be but the constructors can't, why wouldn't you just add the `Parse()` method as a constructor for string overloads?",0
+When can this fix be expected or is there a temporary workaround? Android user experience is terrible without this feature.,0
+"We are now ignoring ""unknown"" errors. There are no tests for this, because these errors are unknown and therefor we don't know how to reproduce it, but we definitely should not be swallowing these.",0
+"Assuming `result.BytesTransferred` is 0 given an unkown error (which seems like a safe bet), then the error will get logged as a FIN which is terrible for debugging.",0
+This doesn't work in the case of refactorings at the start of a fiel :) (which do exist) :),0
+I don't follow.,0
+Can you point to what you mean?,0
+"Imagine [this](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-a2c30b83123c3cb46ac84dae8175bc4bR24) accepts null and we want to pass `null` [here](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR68) (carries info ""didn't register specific TextSpan"") .  The `RegisterRefactoring` [just calls](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fL86) `_registerRefactoring` lambda with given parameters and so if we want to call it with `null` the [lambda](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR30) needs to be of type `Action<CodeAction, TextSpan?>` (has to accept nullable `TextSpan`).",0
+"The lambda, however, isn't an implementation detail. It gets set in [*public* constructor](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR52). And that leaks the information that the registration should somehow work with Nullable `applicableToSpan` 🤷‍♂️.",0
+"It's not terrible, nobody outside probably uses the constructor. But it _just feels weird_. Either have it nullable explicitly in `RegisterRefactoring` (but that communicates wrong idea about it being optional) or have it nowhere.",0
+Note: we [still support](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR45) the original constructor without `TextSpan applicableToSpan` parameter,0
+"There should be no need for shift. Ideally, we could just ""subtract"" the modifier key from the keybinding. But would that be a difficult behavior to explain/understand?",0
+"I'm worried that might not totally work. Think of an insane person, who definitely wants to be able to select text with WASD, and an _interesting_ set of modifiers:",0
+"You can't really ""subtract shift"" from those modifiers 😕",0
+"**edit:** everything is working now, see https://github.com/microsoft/terminal/pull/10972#issuecomment-907345963",0
+"I took a pass at trying to get multi window saving working (didn't start on loading yet, which seems easier all things considered). The initial behavior that I started to implement was to just save the layout of all windows every `x` seconds and/or when the last window closes.",0
+Roughly the architecture/call stack as currently implemented is,0
+monarch app host calls GetAllWindowLayouts -> propagate to monarch -> for each peasant call GetWindowLayout -> peasant triggers GetWindowLayoutRequested -> window manager -> app host handles event -> calls logic/page -> back up to peasant -> monarch returns back down to app host -> call logic to save in ApplicationState.,0
+The WIP commit is https://github.com/microsoft/terminal/commit/fa54b144acd94e224535d671240d37f4bde8564c,0
+"I spend an excessive amount of time trying to get a stupid `hstring` returned up the chain to the peasant, before  finally giving in and making a managed class that just wraps a string.",0
+"Unfortunately, I hit a wall as soon as I got the monarch window working because I needed to make the event async to handle switching to/from the ui thread since peasants on everyone except the monarch have different threads. This comment sums up my current thoughts and tribulations",0
+"It is possible that after having looked at this for the last 8 hours I am getting tunnel vision and missing an easy answer, in which case I would love to hear it. Definitely open to ideas of other approaches.",0
+"ok, I'm stupid, is a key, I can't parse english: 'The **value** of this **key**'. To the value if a double.",1
+It should be. I cherry picked the commit.,0
+I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now?,0
+python3 wtf.,1
+Is there an easy way to run on the same hardware? Also do I need to manually patch bits and run before and after?,0
+"Would like a comment that this is test-only. I can imagine people doing really terrible things with this thinking this is a ""feature"".",0
+(but then I apparently ignored the rest of your comment because I'm stupid),1
+"Yeah if it's a directory, I'd have like",0
+`whitelist\everythingelse.txt`,1
+`whitelist\names.txt`,1
+`whitelist\t.txt`,1
+`whitelist\n.txt`,1
+`whitelist\r.txt`,1
+`whitelist\README.md` <-- to explain WTF the files mean,1
+or whatnot.,0
+"uint options seems correct since a C# int is a C long, so a C# uint is a C unsigned long:",0
+That is only true on Windows (i.e. C `long` is always 32-bits). On non-Windows the `long` is typically 32-bits on a 32-bit CPU and 64-bits on a 64-bit CPU. This is a terrible thing to discover so in .NET 6 we introduced [`CULong`](https://github.com/dotnet/runtime/pull/46401). A big thanks to @github for pushing on it.,0
+The `string path` is correct.,0
+Okay so,0
+1. this is insane,0
+"2. it adds 90 test cases, so that makes me 😄",0
+255 now that I went through all of the positions 😉. AND I still need to add some for word navigation.,0
+"3. I don't really know powershell all that well, but the code seemed easy enough to follow, and was documented well enough that I wouldn't totally hate myself if I needed to add another case",0
+"4. this doesn't run automatically as part of the build, this has to be run manually. That definitely cuts down on some of the complexity, which is good. IMO generating the tests automagically as part of the build just ain't worth it.",0
+"Yeah, and we're not really changing these tests all the time. I did just add a ""nice to have"" where it all goes to a .g.cpp file though. So this process is now so much easier!",0
+"5. I'm not really going to inspect the veracity of the tests themselves. I'm gonna trust that you've done your diligence here. Manually inspecting 90 test cases probably isn't worth the time. Skimming them, they seem like they make sense.",0
+"6. There's a _lot_ of skipped tests, so helpfully we can fix those soon. Presumably, those are the ones that are failing currently. How did we come up with the test cases that are failing currently but shouldn't be? Just logically working out what they _should_ be doing? Was there some sort of reference app that you used to construct these cases? (this is merely a curiosity)",0
+"Updated the README to talk a bit more about this, actually. There's kinda two types of tests that we're skipping for now:",0
+"1. we're wrong: I used MS Word to test what the behavior should be and added them to the CSV file as `skip=false`. Then, when they fail in TAEF, I double check that I translated MS Word correctly.",0
+"2. for #6986: we'll need _a lot_ of tests to make sure this works correctly. The idea here is that anything past the ""document end"" will be treated as a degenerate range at document end. So this is gonna be a really nice transition where I'll just update the CSV appropriately and generate/run the tests.",0
+"Oh, because I ran `git merge` without actually telling it what ref to merge. WTF?",1
+"diff is terrible, but this code is almsot the same.  Generally the logic is similar to: if we have an initializer like `var = new X()` leave it alone (we know the type of it). If we have `X x = new()` change that to `new X()`.  Otherwise, insert an explicit cast from the expression to the final local type.  This ensures the expr keeps the same meaning and affects code the same way in all the places it is inlined to.",0
+"aaaa I've not noticed that it was a `ref` project, sorry for stupid question",0
+"OK, I found the problem -- I'm stupid, I forgot that the pull request that referenced this package hasn't been merged yet.",1
+"@github Comments from @github were only some renaming of tests and spacing, and discussion on certain doc comments. I tried to edit them from mobile, but hit the wrong buttons (it's really quite tricky to delete one line in a file).",0
+"He has some other concerns about the api, but I'd think we shouldn't revisit the api right now. Could you resolve any open stuff please? It's terrible to do from mobile ;).",0
+Shit. I guess I cannot pick this up...,1
+"Ah, crap, I forgot to fix this in the regular job. Will go do that now",0
+"This doesn't seem like a terrible idea, though are you cool if we punt that for the v1 at least? That seems like refactoring we could come back through on a second pass and do 🤔",0
+"Better than what we have now I suppose. Kinda gross to have 4, but it is what it is.",0
+Main's corelib is 9.63 Mb (R2R'd),0
+- `ExtendedDefaultPolicy` without taking PGO into account: 9.83 Mb,0
+- `ExtendedDefaultPolicy` with PGO `JitExtDefaultPolicyProfTrust=10`: 10.10 Mb,0
+- `ExtendedDefaultPolicy` with PGO `JitExtDefaultPolicyProfTrust=0`: 10.17 Mb,0
+`JitExtDefaultPolicyProfTrust=10` means we're fine that inliner won't inline anything in cold blocks (call-sites with real profiles),0
+"`JitExtDefaultPolicyProfTrust=0` means it doesn't affect the BenefitMultiplier anyhow for cold blocks (so we still can inline calls in them). By default, I use `5` as a balance.",0
+Here is the jit-diff (PMI mode) without taking PGO into account: https://gist.github.com/EgorBo/8e44063324ec21ba29c636a79d7e871c,0
+"Most of the size improvements come from ""don't inline anything in BBJ_THROW blocks"", e.g.:",0
+both `ArgumentNullException.ctor` and `get_InvalidArgument` aren't inlined anymore. A good example is  `LowLevelLifoSemaphore:ReleaseCore(int):this` diff: https://www.diffchecker.com/Wlfl2Lde,0
+"There are some interesting examples where inlining leads to smaller size, e.g.",0
+"^ Inliner managed to detect foldable branches in the `GCHandle`'s constructor and inlined it, see [here](https://github.com/dotnet/runtime/blob/fc4a42746d9cf65ad3db4074207069ab9c168bc9/src/libraries/System.Private.CoreLib/src/System/Runtime/InteropServices/GCHandle.cs#L62) and its [ctor](https://github.com/dotnet/runtime/blob/fc4a42746d9cf65ad3db4074207069ab9c168bc9/src/libraries/System.Private.CoreLib/src/System/Runtime/InteropServices/GCHandle.cs#L32-L54).",0
+"Another example - it's now able to inline `string.Equals` when we compare literals, e.g. `if (strArg.Length == 0)` is recognized as a foldable branch due to the fact we can now recognize 'get_Length' call, example:",0
+Diff for `test`: https://www.diffchecker.com/vPVxpDl1,0
+"There are some diffs due to PMI trying to instantiate `Vector<T>` with unsupported T (e.g. char) and inliner helpes here too, e.g. https://www.diffchecker.com/ElRZpnyh",0
+"`GC:AllocateArray(int,bool):ref` is smaller after inlining: https://www.diffchecker.com/AZKH3aiG",0
+"Same for `ASCIIUtility:NarrowUtf16ToAscii(long,long,long):long`: https://www.diffchecker.com/yS7ttpfS",0
+Same for `HillClimbing:GetWaveComponent` https://www.diffchecker.com/iXaeRtBj,0
+"Same for `DiyFp:GetBoundaries(int,byref,byref):this` https://www.diffchecker.com/jkjH7mRo",0
+Same for `Task:GetActiveTaskFromId(int):Task` https://www.diffchecker.com/7o91kyyE,0
+"Misc: https://www.diffchecker.com/olDdSxqM, https://www.diffchecker.com/XddHJSrd, https://www.diffchecker.com/3I81EWAo",0
+"There are cases where ExtendedDefaultPolicy doesn't inline what was inlined by the previous inliner - I tried to avoid it, but there were cases where I'm not sure we should inline, e.g this call https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/IO/Directory.cs#L63 is inlined despite being quite complex: https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/System/IO/FileSystem.Attributes.Windows.cs#L25-L35",0
+"Old inliner detected here ""arg feeds const test"" and added a big multiplier. It did so because IL scan was not quite accurate and had many false positives. However, this method will still be inlined with PGO (and I am sure we have one for this in the static profile we ship). **UPD** I slightly added some boost in https://github.com/dotnet/runtime/pull/52708/commits/05a19e57d879bf9ba9d271a7bfb8efeb2b97c58c.",0
+These are the cases where inlining increases the size but hopefully for better performance.,0
+"InlineTree diff: https://www.diffchecker.com/nEAcbTWc It decided to inline `ArraySortHelper.IntrospectiveSort` here (e.g. because of ""non-generic code calls generic"").",0
+Diff https://www.diffchecker.com/KgWTWBug - it inlined all `HexToChars` calls.,0
+"Overall I don't see anything terribly wrong so far (e.g. terrible spills because of too-many-locals), I spent the whole week on fixing the regressions and now it's more or less fine.",0
+"Performance benefits aren't as good as they used to be with a way more aggressive inliner but I'm going to investigate what exactly led to such improvements and send separate PRs. At least currently I don't see any impact on ""time to first request"", I'll publish the first results once my [script](https://gist.github.com/EgorBo/a1ab453bf41a5369aa54b4c4fba6bea5) finishes.",0
+@github you can pick any method from the jit-diff and I'll explain with the diffs what exactly happened.,0
+gross. Can we think of better ways to organise and name this functionality?,0
+this seems like pretty gross overkill :D,0
+"I would consider keeping this test as `OuterLoop` considering that the test above, `VeryLargeAmountOfEnumsToSerialize`, which uses a similar code minus the insane amount of dictionary instances, is already signaled to run on `OuterLoop`.",0
+Agreed. That sounds good.,0
+"Still, I need to destroy the old grid, right?",0
+"Correct, though all the views' DOM nodes would be reused: they would just be reparented.",0
+"Also, today, I don't really have call layout on the whole grid when moving things around. The code is a bit gross, but the grid seems to handle calling layout on the appropriate things so there are no issues. However it seems like I would have to call a top-level layout every time a part moves with this approach. Is that not more expensive?",0
+No need to call layout when the inside of the grid changes. The contract with layout is: you call it when the size (or position) of the entire grid box changes.,0
+"this was to appease github, which shows a terrible diff otherwise :'(",0
+"Yeah, just the first time. I was mirroring the existing ""Enter outlining mode when files open"", though granted I think thats terrible wording too :)",0
+The first change adds CNS_INT long 0 Fseq[_00] for source field in the field by field assignments even when offset is 0.,0
+"Hmm, I suspect that the ""proper"" way to do this is to add the address to the ""zero offset field map"". But then I happen to think that this kind of side maps are a terrible idea and that the it's best to keep this information in the IR, in special nodes - `PTR_FLD` and `PTR_IDX`. Basically `LEA`s with field sequences but without suffering from `LEA`s unary/binary split personality disorder. `ADD(x, 0)` should do, with some extra special cases. Haven't checked the actual changes yet but I suppose you may want to make such nodes non-CSE, 0-size/execution cost, 0-level in eval order etc.",0
+"Optimize ADD(val, 0) in lower.",0
+Maybe this will also fix 13548?,0
+that's insane.. there should be a warning comment before every single local function?,0
+"Yeah this is a terrible hack. I think I'll open another PR first where I rename `SetDefaultTextBackgroundOpacity` into something like ""UseAlphaForBackground(bool)"" or something. This change is needed, because this only works in `DxEngine` due to random chance and depends on the fact that DxEngine defaults to ClearType, which AtlasEngine can't yet.",1
+"Urgh. Yeah, so there's 2 parts here:",0
+## anchorMode: Toggle,0
+"I think where this spec stands, this is fine? You can just use your `moveSelectionAnchor` keybindings normally.",0
+## anchorMode: Hold,0
+"The main idea behind ConHost CMD Mark Mode is basically that as long as <kbd>shift</kbd> is held, the 'start' endpoint is static/frozen/held.",0
+"I'm worried that might not totally work. Think of an insane person, who definitely wants to be able to select text with WASD, and an _interesting_ set of modifiers:",0
+// Cell Selection,0
+"{ ""keys"": [""shift+w""], ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""up"" } },",0
+"{ ""keys"": [""ctrl+a""],  ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""left"" } },",0
+"{ ""keys"": [""alt+s""],   ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""down"" } },",0
+"{ ""keys"": [""d""],       ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""right"" } },",0
+"You can't really ""subtract shift"" from those modifiers 😕",0
+"So, with the logic above, the scenario above might still be acceptable?",0
+"Alternatively, I feel like the safest option would be to have users specifically define controls in Mark Mode vs keyboard selection. I think that might be the _clearest_ way to fix the problem above, but I feel like there's a lot of repeated keybindings set between mark mode and non-mark mode ones. :/",0
+"We could remove the ""anchorMode: Hold"". But then there's no way to replicate a _similar_ behavior to that of ConHost CMD. :( I also think the concept of ""hold"" is still a good one, but the execution is the tough part ugh",0
+"ditto, stupid manuel",1
+"Sorry, didn't see this. GitHub mobile does a terrible job of notifications :)",0
+"The elastic annotation is added by `SyntaxFactory.Token` which is called from the separated list constructor, so avoiding that by preserving the existing comma tokens solves this, and is much easier to boot.",0
 git,0
