@@ -1,194 +1,242 @@
 [
     {
         "text": "This is terrible",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "You are a failure",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "This code is really bad",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "There are test failures",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "There is a test failure",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "One test failed",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "You suck",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "@jonathanpeppers you suck",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "This is great!",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "Looks good to me",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "You stink",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "I don't like this.",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Is it working yet?",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "Your code is pretty awful",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Your code is a nightmare",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Why is this so bad",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "You definitely got this",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "This hurts me to look at it",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Keep up the great work!",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "Your way of thinking is quite corrupted",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Don't forget to resolve the memory corruption!",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "Simple and straightforward, love it",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "Why are you such a pain?",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Thanks for fixing our pain points",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "This change was necessary",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "I have no faith in this code",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "This is a huge improvement",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "I like this.",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "There are a couple of accessibility issues to be fixed",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "You're giving us issues",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Thank you for submitting that issue!",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "Looking forward to seeing those improvements",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "I'm going to kill you",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "You should die",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "I hope you don't wake up",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "Don't forget to kill yourself.",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "This code stinks",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "You stink",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "This code really sucks.",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "It is `macOS-latest`:",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "You should see a message like ",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "* Your app has a small `AndroidManifest.xml`, not much in it",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "@jonathanpeppers have you tried rebooting?",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "I love you.",
-        "isnegative": "0"
+        "isnegative": "0",
+        "importance": "1"
     },
     {
         "text": "you twat!",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "you twat",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "you asshole!",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     },
     {
         "text": "you asshole",
-        "isnegative": "1"
+        "isnegative": "1",
+        "importance": "1"
     }
 ]
