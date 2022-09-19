@@ -91,7 +91,25 @@ sentences and match each against the model.
 
 The model is trained with all GitHub handles removed and replaced with
 `@github`, you should apply this same replacement with your own input
-text.
+text using the regex:
+
+```TypeScript
+const regex:RegExp = /\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi;
+const replaced = text.replace(regex, '@github');
+```
+
+Additionally, inline code blocks such as:
+
+```markdown
+This is a sentence with a `CodeBlock();`. Nice?
+```
+
+Are replaced via `#code`:
+
+```TypeScript
+const regex:RegExp = /`[^`]+`/gi;
+const replaced = text.replace(regex, '#code');
+```
 
 TODO: standardize replacement of punctuation.
 
