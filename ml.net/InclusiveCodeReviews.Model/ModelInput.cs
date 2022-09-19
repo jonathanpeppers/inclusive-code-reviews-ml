@@ -17,6 +17,9 @@ namespace InclusiveCodeReviews.Model
         [ColumnName("isnegative"), LoadColumn(1)]
         public string Isnegative { get; set; }
 
-        public override string ToString() => Text;
+        [ColumnName("importance"), LoadColumn(2)]
+        public float Importance { get; set; }
+
+		public override string ToString() => Text;
     }
 }
