@@ -1494,11 +1494,11 @@ This would make another PR i guess since this API Changed has been approuved alr
 Your code Is a pain to read,1
 "YEah... overload resolution is just insane (including just thinking about param count).  I really didn't want to go to that level.  We can see if this is overbroad and we can lighten later.  However, i don't mind the restriction for now.",0
 This is a pain in the behind,1
-"This still sucks",1
-"Your app has a small `AndroidManifest.xml`",0
-"You should see a message.",0
-"You should see something like:",0
-"This is `macOS-latest`",0
+This still sucks,1
+Your app has a small `AndroidManifest.xml`,0
+You should see a message.,0
+You should see something like:,0
+This is `macOS-latest`,0
 Did you try rebooting?,0
 I love you for this!,0
 We love you,0
@@ -1817,3 +1817,7 @@ that's insane.. there should be a warning comment before every single local func
 "Sorry, didn't see this. GitHub mobile does a terrible job of notifications :)",0
 "The elastic annotation is added by `SyntaxFactory.Token` which is called from the separated list constructor, so avoiding that by preserving the existing comma tokens solves this, and is much easier to boot.",0
 git,0
+Why are you such a pain to talk to?,1
+You are a pain to me,1
+no faith in this code,1
+no faith of this,1
