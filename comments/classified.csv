@@ -1101,9 +1101,7 @@ HashCodeCombiner,0
 "What do you suggest? Removing is breaking, we could obsolete it and/or implement on top of System.HashCode?",0
 "My suggestion is to make the breaking change in #code (which I've done in this PR). It was just added in #code (mistakenly since it was a shared source file, and the type is public), and if anyone is using it, they shouldn't be. Also, if they were using it - it would collide with the same type in PlatformAbstractions. So I think we can make this small break, so we don't have to worry about it going forward.",0
 "For me the bug fix in 6.0 was to late, I went life with 5.0 rc1,publishsinglefile  and a simple workaround:",0
-------------------------------------------------------------------------,0
 Convert App.config to myAppname.Settings.json,0
--------------------------------------------------------------------------,0
 ConfigurationManager (in my opinion) has 2 disadvantages:,0
 1. The rename step of App.config with assembyname.dll.config (lack of transparency),0
 2. The rename step of ConfigurationManager.OpenExeConfiguration didn't help me with this issue.,0
@@ -1943,7 +1941,6 @@ Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenc
 "Worst case, nobody uses it (I suspect nobody will)",0
 This seems sensible (conservative/safe to return the worst case state).,0
 I took a note in [https://github.com/dotnet/csharplang/issues/2201](https://github.com/dotnet/csharplang/issues/2201) to let LDM know.,0
----,0
 In reply to: [288212991](https://github.com/dotnet/roslyn/pull/35955#discussion_r288212991) [](ancestors = 288212991),0
 Where can we get a concise description of where TemporaryArray<T> is believed to be better than our traditional builder?,0
 @github it should always be better when the array will have to store 4 or less items.  This is for two reasons:,0
@@ -2036,3 +2033,100 @@ I think you should seriously consider this -- eg the loop and its clone may have
 "this will cause an extra object allocation for every occurrence. we use this on every hover, and do not want to increase the amount of garbage we create.",0
 "So this makes me think that we'll be redoing a lot of inferences - for a given inference set, we'll infer from each of the inner properties to their matching contextual type, then we'll do the outer inference for the object as a whole, which, in so doing, will redo these inferences again",0
 "I think ([see my comment here](https://github.com/microsoft/TypeScript/pull/48538#issuecomment-1088157524)) that that's why this is only done when we're about to fix (which are cases that are broken today). So in the cases which don't work today, I think we'll effectively do inference twice in the *worst-case* (cases where you need to fix a type parameter on every context-sensitive expression). Otherwise, it should be the same amount of inference as before, the only new work is collecting the context-sensitive inner expressions).",0
+SignalR gets the headers by calling #code method,0
+"That's the wrong extension point, users should be passing headers via the new option. If they want to do special things in their custom http client then they can do that in send.",1
+will do. I just wanted quick check from you guys whether this is even okay to do.,0
+"is checksum and the embedded blob thing not there okay? I think I am using encoding wrong though. since I am getting TextReader, it should be already normalized to certain encoding, the given encoding should be just passed along like StringText.From(string, encoding), and not actually used anywhere else.",0
+"Am I crazy, or could PipeOptions be shared?",1
+We should link to the issue both places we do the crazy private reflection.,1
+"I have no horse in this race, but the comments as-is are definitely wrong with regard to the code 😄",1
+"It seems wrong to mark these as non-nullable. Any non-internal user of this API will leave these null, right?",0
+@github I have no idea what's wrong with Linux or how to fix it!,0
+It looks like #code could be #code and then we will not enter this conditional.  That seems wrong.,0
+why was the previous code wrong?,0
+"IVariableDeclarationStatement (1 declarations) (OperationKind.VariableDeclarationStatement) (Syntax: 'i = 0') [](start = 6, length = 109)",0
+"It is not clear why did we lose the statement, feels wrong. #Closed",1
+"@github is it ok for this to go into preview8? It's currently targetting the wrong branch. I will take care of doing whatever it needs to get done here, but I'll have to get the change through ask mode to get it in preview8.",0
+Just let me know if this is good for preview8 and I will take care of the rest,0
+"Hmm, I had thought I tried that syntax and it hadn't worked, but I probably just typed something wrong. I'll add a couple of tests for this, and subparts.",0
+In reply to: [144358694](https://github.com/dotnet/roslyn/pull/22630#discussion_r144358694) [](ancestors = 144358694),0
+Same comment: We should be testing to make sure that appropriate exceptions are thrown on wrong-language invocations.,0
+Please open an issue to add this.  #Closed,0
+I got this wrong. Awaits are indeed allowed inside finally. So should async usings.,0
+In reply to: [161408348](https://github.com/dotnet/roslyn/pull/23961#discussion_r161408348) [](ancestors = 161408348),0
+It wasn't wrong before. See http://whatis.techtarget.com/definition/Fibonacci-sequence,0
+"@github, I changed, but now it says:",0
+"Maybe I changed it from right to wrong, or changed the wrong file, I don't know.",0
+"Weird, it looks like everything is getting skipped on the Fedora queue, though maybe I'm reading the tests tab wrong? For fedora I see only successful work items, whereas for for other queues I see work items & individual tests. @github is there a way to grab the testresults.xml files from the successful Fedora work items?",0
+"Honestly, using the callback version should be default and if you don't want to spend any effort, you shouldn't spend effort thinking whether you can afford to *not* use it. I've seen at least 3 different code fix crashes because the wrong overload was used here.",0
+because i'm dumb.  #fixed.,0
+"node.Type [](start = 93, length = 9)",0
+Wouldn't this be a wrong type for the call when ``#code`` is nullable? It feels like we should use method's return type here and then make nullable out of this call if needed. #Resolved,0
+"I made the change in a rush, thinking I was checking the parent of #code. CI proves me wrong.",0
+"VarianceKind.Out [](start = 92, length = 16)",0
+"Variance = Out makes sense for lambda returns, but it feels wrong for implicitly-typed arrays.",0
+"Also, ternary/conditional expressions that are #code might have an issue. #Pending",0
+"I tested the Android changes by rebasing against your branch. CoreCLR build succeeded (native and managed components), no more errors about crossgen2. 👍  Libraries build continues to succeed (native and managed components).",0
+"However, in installer build, it has progressed to fully build native (with correct RID) and managed components (with wrong RID), thereby packaging step fails because of the wrong RID was picked up during the ngen and perfmap generation steps:",0
+Can we do some unification so RID is resolved consistently from a single source of truth for ngen/perfmap steps as well? Maybe not part of this PR but if it is now feasible I think it would smooth things up for new platforms if resolving RID in multiple places is avoided.,0
+"some modifiers cause us to bail out of local function parsing and try member parsing, but generally we reject bad local function modifiers here:",0
+"(edit: I had the wrong line number before, sorry)",0
+https://github.com/dotnet/roslyn/blob/9a88cd45a5493b682c0e7812559f7e07b63ab866/src/Compilers/CSharp/Portable/Parser/LanguageParser.cs#L8455,0
+"IEquatable<IntPtr> [](start = 27, length = 18)",0
+"Given that we have a custom code to match the type, I think we should cover negative cases as well, i.e.",0
+"- The name match, but containing namespace name doesn't",0
+"- Both names match, but System is not in a global namespace.",0
+- IEquatable is a nested type and container's name is and is not System,0
+- IEquatable is directly in a global namespace.,0
+- IEquatable is not generic,0
+- IEquatable has arity 2,0
+"- IEquatable is constructed with a ""wrong"" argument",0
+- IEquatable is constructed with a nint for IntPtr and with nuint for UIntPtr,0
+- IEquatable is constructed with a nuint for IntPtr and with nint for UIntPtr,0
+- Etc. #Closed,0
+That can only occur via misuse of a public API.,0
+"The public API explicitly caters to this, namely the distinction between ""Project.ProjectReferences"" vs. ""Project.AllProjectReferences"". I don't now if this is a useful feature anymore (at one point MSBuildWorkspace used it I think) and sure wish it didn't exist, but I'd say if we're going to change that let's change that specific thing in our 16.7 feature branch just to get that behavior change in early in a cycle so we can get time to find out what we broke. The rest of this PR is at least changing things we didn't _try_ to support. :smile:",0
+"Without this the invariant validation fails, so either the validation is wrong or the _projectIds are wrong.",0
+I dug a bit further: so the assumption in the existing implementation (at least at one point) was that the dependency graph isn't told about project references to non-existent projects. Then during project addition we attempt to fix those up:,0
+https://github.com/dotnet/roslyn/blob/master/src/Workspaces/Core/Portable/Workspace/Solution/SolutionState.cs#L429-L441,0
+"So whatever calls this method the references that go into the ProjectDependencyGraph, since it's fixed up in that AddProject code I linked to above. Note that adding it to the main _projectIds collection can also have other side effects: calls asking for the topologically sorted project IDs would then return them which shouldn't be happening.",0
+Yes. Is something wrong with it? Did I miss something?,0
+Yeah - that's a non minimal edit and fixes another (un-filed) issue where the memory service would also use the wrong editor position.,0
+Is the order of these very important? Will there be trouble if someone inserts one in the wrong spot in the future or reorders them?,0
+The path seems wrong. It should be #code instead of #code.,0
+"@github great catch, if I'm not mistaken, I think pinned composite ids is also the wrong choice, we only care about visible ids when dragging in dropping. looks good?",0
+"This fixes another potential problem where things can wrong in the original code. For example, the original code can get into infinite loop with corrupted data here. We will just exit the loop now.",0
+This is not impossible because we know which extension has triggered the open-command and we can always install the 'extra open args' for a specific extension only.,0
+"That will not help for the case which imho is also the most likely one: you see a tree from 1 extension and interact with it multiple times with multiple items in short time frame. Chances are high that if the opening takes long, the context we set is always wrong.",0
+"This one is technically wrong. It suggests that pressing this chord _right now_ will activate this action, but what we're providing is more informative than actionable.",0
+I think for this one we should _not_ use AcceleratorKey and instead remove the Raw property on the border/textblock that contains the binding.,0
+"The grid/splitview can't modify priority, they only read the value. The views themselves set it. The user of the grid (EditorPart) would coordinate across its views and set their priorities accordingly.",0
+But on second thought maybe that's too crazy. Let's tackle both issues individually and start with https://github.com/microsoft/vscode/issues/70083 first.,0
+"The maximized state isn't preserved across layout calls. If we fix it, we don't want to change the default spltiview behavior, but add/modify an option. What if we have a [different type for #code](https://github.com/microsoft/vscode/blob/7b6c1065c76708d146844154c8a33906f06dce0b/src/vs/base/browser/ui/splitview/splitview.ts/#L167-L173)? Like:",0
+"That way, we can preserve a maximized view's state across #code calls. We can even have tests for this. The problem is what happens when the user resizes the splitview until it reaches the sum of all minimum sizes: at that point no view will be maximized any more. So, growing the splitview from then on would make it grow all views proportionally. This is why using layout priorities would be benefitial here. But we can also live with that behavior.",0
+"As for https://github.com/microsoft/vscode/issues/137865, the grid/splitview already supports sizing options when adding views. The [EditorPart just mostly uses #code](https://github.com/microsoft/vscode/blob/7b6c1065c76708d146844154c8a33906f06dce0b/src/vs/workbench/browser/parts/editor/editorPart.ts/#L529), which causes today's behavior. I would first try to fix the issue by using a different sizing option here.",0
+"@github Sincerely i dont know. The last time i tried to ""play"" with task and Navigation in UWP i gave up, i was getting a lot of random MemoryAccess violation that drove me crazy.... (expecially when navigation fast between pages).",0
+"It would be cool to have Tasks here like in iOS & Android but i'm a bit ""scared"", given my past on the subject.",0
+"Buuut, i'm a beginner in UWP so maybe i'm terribly wrong :)",0
+I suspect it's rather unlikely that #code is true.,0
+So how about we write it as if it was wrong most of the time:,0
+Personally I'd shorten these things to,0
+"The benefits as I personally, subjectivelly perceive them:",0
+* Easier to read.,0
+* It compiles to what GCC/Clang would produce. MSVC always needs a bit of handholding when it comes to booleans.,0
+* And a longer one...,0
+"CPUs appear to be really fast nowadays, but they're actually often just as dumb as they used to be. One of the problems is that the ""predictor"" for branches has a limited size. While an important branch like this has literally 0 performance impact on this code and is absolutely fine, it might displace actually important branches out of the limited branch predictor cache.",0
+"For instance I have a PR open which simply removes #code and improves performance by ~5% on my CPU. This is really weird actually, because if you benchmark #code in a small benchmark project you'll find that it's super fast. And it's only iterated about ~100/sec! Still... it's mere presence has a negative impact, despite being fast itself. CPUs are dumb.",0
+That said I wouldn't mind merging it as is. 😄,0
+"this will not work.  #codes are often language specific.  So most will not be able to process diagnostics from another language.  Worse, they will legit just crash if given the wrong diagnostic language as they all assume they'll only get diagnostics from teh same language.",0
+"Yeah, this is wrong 🤦‍♂️ . I updated the test so it will try every architecture & RID.",0
+"My current stance is that there looks to be some open questions around #code perf, particularly with regards to random inputs: https://github.com/dotnet/runtime/pull/36163#issuecomment-763813901, and so it might be better to just not have #code until we can get some more information as to what's causing this.",0
+"That is, is it due to #code or is it due to bad branch prediction?",0
+"If it's the latter, then what is the ""optimal"" ordering based on expected inputs?",0
+"I think that these can largely be answered in a follow PR given the perf difference, even in the winning cases, is fairly minor.",0
+"When we do get to looking at that, I'd expect that IsPow2 is largely used with validation and with positive inputs for the #code case, in which case doing the ""popcnt"" check before the ""edge case check"" would be better.",0
+"This is because the ""popcnt"" check will cover everything except #code (#code).",0
+"This means that if the assumption about inputs is correct, then the ""expected"" case will be you always do two compares and in the case where it's wrong, the first check results in an early exit in more cases than the ""edge case check"".",0
+"There's a fundamental problem with this idea: while it should be fine for on-device apps, this will break the Designer, as the Designer does not (yet?) create or use typemap files.",0
+"I suspect that's why the [#code test)](https://devdiv.visualstudio.com/DevDiv/_build/results?buildId=4441039&view=ms.vss-test-web.build-test-results-tab&runId=18707974&resultId=100298&paneView=debug) is showing only Java names, not managed names:",0
+And the [#code test](https://devdiv.visualstudio.com/DevDiv/_build/results?buildId=4441039&view=ms.vss-test-web.build-test-results-tab&runId=18707974&resultId=100124&paneView=debug),0
