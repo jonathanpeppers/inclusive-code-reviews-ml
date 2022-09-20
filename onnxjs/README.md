@@ -9,9 +9,6 @@ https://nodejs.org/en/download/current/
 
 We found there might be issues running Node.js older than 17.x.
 
-We should replace `model.onnx` with a working copy of our model to
-verify we can use it from JavaScript.
-
 Links:
 
 * https://onnxruntime.ai/docs/get-started/with-javascript.html

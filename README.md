@@ -16,8 +16,8 @@ Some examples:
 We have the model in two formats, that is free to use in other
 projects:
 
-* `ml.net\InclusiveCodeReviews.Model\MLModel.zip` - model in ML.NET format
-* `onnxjs\model.onnx` - model in ONNX format
+* `MLModel.zip` - model in ML.NET format
+* `model.onnx` - model in ONNX format
 
 See the `InclusiveCodeReviews.ConsoleApp` for a C# example, general
 usage:

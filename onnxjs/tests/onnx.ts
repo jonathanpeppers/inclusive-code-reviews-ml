@@ -3,7 +3,7 @@ import * as ort from 'onnxruntime-node';
 import test_cases from './test_cases.json';
 
 describe('onnx tests', async () => {
-    const session = await ort.InferenceSession.create('./model.onnx');
+    const session = await ort.InferenceSession.create('../bin/model.onnx');
     expect(session).to.be.not.null;
 
     const githubHandleRegex:RegExp = /\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi;
