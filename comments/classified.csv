@@ -2352,3 +2352,5 @@ Sorry again,0,0.5
 "this type seems pretty insane to me.  why not have it point at something like  that 'result' instance, instead of needing to explode all the values inline into it...",1,0.5
 This whole test is the most insane thing I've ever seen but I love it,0,0.5
 "I still think it's not a terrible idea to say ""we reserve all titles beginning with _"" (like a web-browser, even though you violently hated that when Dustin mentioned it being like an href target) just so we can add more things in the future, if necessary, without stomping on existing ones. An escape hatch, if you will.",0,0.5
+"Why are you so bad?",1,0.5
+"Why is this code so bad",1,0.5
