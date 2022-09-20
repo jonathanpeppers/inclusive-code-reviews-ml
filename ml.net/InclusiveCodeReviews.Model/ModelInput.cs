@@ -18,7 +18,7 @@ namespace InclusiveCodeReviews.Model
         public string Isnegative { get; set; }
 
         [ColumnName("importance"), LoadColumn(2)]
-        public float Importance { get; set; }
+        public float Importance { get; set; } = 0.5f;
 
         public override string ToString() => Text;
     }
