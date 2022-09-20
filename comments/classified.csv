@@ -694,6 +694,7 @@ Failing tests are normal for now..,0
 Shouldn't this be MauiCheckBox?,0
 can this be internal also ?,0
 I don't like this,1
+I do not like this,1
 Well we can never fix up the Line numbers without a lot of work. I don't think it's worth the effort.,0
 "While the two error messages was a nice idea , the fact that the IDE's may or may not show them in order is a problem.",0
 I'm now back to the idea of just fixing up the file path and adding a comment to say that the error might not have anything to do with that file and might be caused by other things.,0
