@@ -107,6 +107,7 @@ public partial class ClassificationViewModel : ObservableObject
 			using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
 			csvWriter.Context.RegisterClassMap<MLScoreClassMap>();
 			csvWriter.WriteRecords(_scores);
+			streamWriter.Write(Environment.NewLine); // Trailing newline
 			CleanUp();
 			await DisplayAlert("Success!", $"Saved to: {csvPath}", "OK");
 		}
@@ -143,6 +144,7 @@ public partial class ClassificationViewModel : ObservableObject
 		using var streamWriter = new StreamWriter(stream);
 		using var csvWriter = new CsvWriter(streamWriter, config);
 		csvWriter.WriteRecords(_scores);
+		streamWriter.Write(Environment.NewLine); // Trailing newline
 
 		// TODO Validate that we are saving to a csv file with the correct headers
 		await DisplayAlert("Finished!", $"Changes appended to {file.FullPath}", "OK");
