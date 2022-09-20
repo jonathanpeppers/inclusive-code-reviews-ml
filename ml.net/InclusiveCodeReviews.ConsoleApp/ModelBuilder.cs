@@ -96,12 +96,14 @@ namespace InclusiveCodeReviews.ConsoleApp
 		{
 			// Save/persist the trained model to a .ZIP file
 			Console.WriteLine($"=============== Saving the model  ===============");
+			var outputDirectory = Path.GetFullPath(Path.GetDirectoryName(modelRelativePath));
+			Directory.CreateDirectory(outputDirectory);
 			mlContext.Model.Save(mlModel, modelInputSchema, modelRelativePath);
-			var onnxPath = Path.Combine(Path.GetDirectoryName(modelRelativePath), "..", "..", "onnxjs", "model.onnx");
-			using var fileStream = File.Create(onnxPath);
+			var onnxFile = Path.Combine(outputDirectory, "model.onnx");
+			using var fileStream = File.Create(onnxFile);
 			mlContext.Model.ConvertToOnnx(mlModel, dataView, fileStream);
 			Console.WriteLine("The model is saved to {0}", Path.GetFullPath(modelRelativePath));
-			Console.WriteLine("The model is saved to {0}", Path.GetFullPath(onnxPath));
+			Console.WriteLine("The model is saved to {0}", Path.GetFullPath(onnxFile));
 		}
 
 		public static void PrintMulticlassClassificationMetrics(MulticlassClassificationMetrics metrics)

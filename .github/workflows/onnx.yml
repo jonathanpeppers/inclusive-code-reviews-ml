@@ -1,4 +1,4 @@
-name: typescript
+name: models
 
 on:
   push:
@@ -7,11 +7,29 @@ on:
     branches: [ main ]
 
 jobs:
-  tests:
+  build:
     runs-on: ubuntu-latest
     steps:
+
     - uses: actions/checkout@v3
+
+    - name: install .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.x
+
+    - name: create models
+      run: cd ml.net/InclusiveCodeReviews.Convert && dotnet run
+
     - name: npm install
       run: cd onnxjs && npm install
+
     - name: npm test
       run: cd onnxjs && npm test
+
+    - name: archive models
+      uses: actions/upload-artifact@v2
+      with:
+        name: models
+        path: bin
+        if-no-files-found: error
