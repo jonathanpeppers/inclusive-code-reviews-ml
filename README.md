@@ -16,8 +16,21 @@ Some examples:
 We have the model in two formats, that is free to use in other
 projects:
 
-* `ml.net\InclusiveCodeReviews.Model\MLModel.zip` - model in ML.NET format
-* `onnxjs\model.onnx` - model in ONNX format
+* `MLModel.zip` - model in ML.NET format
+* `model.onnx` - model in ONNX format
+
+You can find these in the `models.zip` artifact on the GitHub status
+of a commit or pull request.
+
+You can create them locally via:
+
+```bash
+dotnet run --project ml.net/InclusiveCodeReviews.Convert/InclusiveCodeReviews.Convert.csproj
+...
+=============== Saving the model  ===============
+The model is saved to inclusive-code-reviews-ml/bin/MLModel.zip
+The model is saved to inclusive-code-reviews-ml/bin/model.onnx
+```
 
 See the `InclusiveCodeReviews.ConsoleApp` for a C# example, general
 usage:

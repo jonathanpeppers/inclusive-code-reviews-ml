@@ -3,12 +3,14 @@ name: MLTrainer app
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - '**/*.md'
-      - '**/*.gitignore'
-      - '**/*.gitattributes'
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - '.github/workflows/onnx.yml'
+      - 'comments/**'
+      - 'docs/**'
+      - 'ml.net/**'
+      - 'onnx.js/**'
 
 env:
   DOTNET_NOLOGO: true                     # Disable the .NET logo
