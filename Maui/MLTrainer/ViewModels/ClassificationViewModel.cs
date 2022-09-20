@@ -191,7 +191,7 @@ public partial class ClassificationViewModel : ObservableObject
 		}
 		catch (Exception ex)
 		{
-			FileName = $"There was an issue loading the file. Please try again.\n{ex.Message}";
+			FileName = $"There was an issue loading the file. Please try again.\n{ex.ToString()}";
 		}
 
 		return null;
