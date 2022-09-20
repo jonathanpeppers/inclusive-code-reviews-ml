@@ -8,12 +8,14 @@ describe('onnx tests', async () => {
 
     const githubHandleRegex:RegExp = /\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi;
     const backtickRegex:RegExp = /`[^`]+`/gi;
+    const punctuationRegex:RegExp = /(\.|!|\?)+$/g;
 
     async function assertText(text:string, isnegative:string, confidence:number) {
         const github_replaced = text.replace(githubHandleRegex, '@github');
         const backtick_replaced = github_replaced.replace(backtickRegex, '#code');
+        const punctuation_replaced = backtick_replaced.replace(punctuationRegex, '');
         const results = await session.run({
-            text: new ort.Tensor([backtick_replaced], [1,1]),
+            text: new ort.Tensor([punctuation_replaced], [1,1]),
             isnegative: new ort.Tensor([''], [1,1]),
         })
         expect(results).to.be.not.null;
