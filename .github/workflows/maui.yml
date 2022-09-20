@@ -10,7 +10,7 @@ on:
       - 'comments/**'
       - 'docs/**'
       - 'ml.net/**'
-      - 'onnx.js/**'
+      - 'onnxjs/**'
       - '**/*.md'
 
 env:
@@ -36,7 +36,7 @@ jobs:
         dotnet-version: 6.x
 
     - name: Install MAUI Workloads
-      run: dotnet workload install maui --ignore-failed-sources
+      run: dotnet workload install maui-desktop --ignore-failed-sources
 
     - name: Build MAUI App
       run: dotnet publish Maui/MLTrainer/MLTrainer.sln -c Release
@@ -45,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MLTrainer-macos
-        path: Maui/MLTrainer/bin/Release/net6.0-maccatalyst/publish
+        path: Maui/MLTrainer/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish
 
     - name: Archive Windows MAUI App
       uses: actions/upload-artifact@v2
