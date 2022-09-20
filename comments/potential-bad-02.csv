@@ -1,13 +1,5 @@
 ﻿"Body"
 ```
-Expected: null
-But was:  <System.NotSupportedException: Internal error finding wrapper class for 'java/lang/Object'. (Where is the Java.Lang.Object wrapper?!) ---> Java.Interop.JavaLocationException: Exception of type 'Java.Interop.JavaLocationException' was thrown.
-Caused by: System.NotSupportedException: Internal error finding wrapper class for 'java/lang/Object'. (Where is the Java.Lang.Object wrapper?!) ---> Java.Interop.JavaLocationException: Exception of type 'Java.Interop.JavaLocationException' was thrown.
---- End of inner exception stack trace ---
-at Java.Interop.TypeManager.CreateInstance (System.IntPtr handle, Android.Runtime.JniHandleOwnership transfer, System.Type targetType) [0x0017f] in /Users/builder/azdo/_work/1/s/xamarin-android/src/Mono.Android/Java.Interop/TypeManager.cs:290
-```
-
-which was [already mentioned](https://github.com/xamarin/xamarin-android/pull/5593#issuecomment-773568173); I should have read it closer, as it has `AndroidDesigner` in the name…"
 "Is this actually needed?
 In base64 the encoded data is stored as big endian like, and here it's written by https://github.com/dotnet/runtime/blob/44595c05ca033d1010397d05a55ab89bf078e56c/src/libraries/System.Memory/src/System/Buffers/Text/Base64Encoder.cs#L95 (Edit: this is wrong ~`reinterpret_cast`) and not as `uint`). So I believe this change flips the order.~"
 "When I re-watched the video and the final decision was to leave it as `Ignored` for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees?"
