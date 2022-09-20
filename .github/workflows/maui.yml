@@ -10,7 +10,7 @@ on:
       - 'comments/**'
       - 'docs/**'
       - 'ml.net/**'
-      - 'onnx.js/**'
+      - 'onnxjs/**'
       - '**/*.md'
 
 env:
