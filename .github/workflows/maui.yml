@@ -45,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MLTrainer-macos
-        path: Maui/MLTrainer/bin/Release/net6.0-maccatalyst/publish
+        path: Maui/MLTrainer/bin/Release/net6.0-maccatalyst/maccatalyst-x64/publish
 
     - name: Archive Windows MAUI App
       uses: actions/upload-artifact@v2
