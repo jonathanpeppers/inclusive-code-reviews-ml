@@ -120,7 +120,7 @@ This is a sentence with a `CodeBlock();`. Nice?
 Are replaced via `#code`:
 
 ```TypeScript
-const regex:RegExp = /`[^`]+`/gi;
+const regex:RegExp = /`+[^`]+`+/gi;
 const replaced = text.replace(regex, '#code');
 ```
 

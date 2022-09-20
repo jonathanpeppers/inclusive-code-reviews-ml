@@ -2063,7 +2063,7 @@ It wasn't wrong before. See http://whatis.techtarget.com/definition/Fibonacci-se
 "Honestly, using the callback version should be default and if you don't want to spend any effort, you shouldn't spend effort thinking whether you can afford to *not* use it. I've seen at least 3 different code fix crashes because the wrong overload was used here.",0
 because i'm dumb.  #fixed.,0
 "node.Type [](start = 93, length = 9)",0
-Wouldn't this be a wrong type for the call when ``#code`` is nullable? It feels like we should use method's return type here and then make nullable out of this call if needed. #Resolved,0
+Wouldn't this be a wrong type for the call when #code is nullable? It feels like we should use method's return type here and then make nullable out of this call if needed. #Resolved,0
 "I made the change in a rush, thinking I was checking the parent of #code. CI proves me wrong.",0
 "VarianceKind.Out [](start = 92, length = 16)",0
 "Variance = Out makes sense for lambda returns, but it feels wrong for implicitly-typed arrays.",0
@@ -2152,7 +2152,7 @@ I am curious though why each test has to call .Initialize()...?,0
 "Additionally, error messages are slightly better because you have a specific literal type to report (i.e. #code instead of #code).",0
 "@github I saw this was done for ObservableItemTemplateCollection for Windows, so I copied that. Mainly just for the dispatcher, but if we pass the view in, then we never have to worry about reaching out into the Application. or Device. worlds.",0
 "Not sure if this is going to do terrible things with lifetime and/or memory. If so, we can change and find another way.",0
-this seems like a terrible idea.  why not just compare to ``#code`` #Resolved,1
+this seems like a terrible idea.  why not just compare to #code #Resolved,1
 Can we unify these codepaths?,0
 "~I tried, but I couldn't come up with a good solution. I tried:~",0
 1. ~Take a SyntaxNode from the method to remove from the candidates~,0
@@ -2307,7 +2307,7 @@ Those aren't terrible ideas at all! :smile:,0
 "wtf.... what on earth is this skip-while for?!  That's just crazy.  I'd much rather remove this code, and fix whatever issue it was trying to work around.",1
 @github could you please explain what you mean by,0
 It's also designed to be (partially) AOT friendly by making the core icall not generic.,0
-"At one point we had an invoke icall with a generic ``#code`#codemono_wasm_invoke_js#codeeval#codeEM_ASM_INT#code`#code`#code`#code`#code`#code``, the overhead of looking up the string literal is nonzero (especially because it's not required to be interned), and not being able to pass arguments requires the caller to do unclean things like shove arguments into globals (which is not a cheap thing to do via the current API... you'd have to do SetObjectProperty per-argument.)",0
+"At one point we had an invoke icall with a generic #code, the overhead of looking up the string literal is nonzero (especially because it's not required to be interned), and not being able to pass arguments requires the caller to do unclean things like shove arguments into globals (which is not a cheap thing to do via the current API... you'd have to do SetObjectProperty per-argument.)",0
 "My endgame for this is that we use source generators to create strongly-typed wrappers for specific methods (JS pinvoke, basically) that correctly and efficiently use this new icall under the hood. Later on those wrappers could transition to using dedicated JS and bypassing the icall machinery if necessary.",0
 "Stupid question, but shouldn't expanding the nav bar block until it's ready anyway?",0
 Async methods can't be conditioned? WTF.,1
