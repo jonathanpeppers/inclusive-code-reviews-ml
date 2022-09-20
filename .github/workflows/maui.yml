@@ -11,6 +11,7 @@ on:
       - 'docs/**'
       - 'ml.net/**'
       - 'onnx.js/**'
+      - '**/*.md'
 
 env:
   DOTNET_NOLOGO: true                     # Disable the .NET logo
