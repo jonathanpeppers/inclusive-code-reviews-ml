@@ -24,7 +24,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 
 		// Create MLContext to be shared across the model creation workflow objects 
 		// Set a random seed for repeatable/deterministic results across multiple trainings.
-		private static MLContext mlContext = new MLContext(seed: 1);
+		private static MLContext mlContext = new MLContext(seed: 209348038);
 
 		public static void CreateModel()
 		{
@@ -65,7 +65,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 									  .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
 									  .AppendCacheCheckpoint(mlContext);
 			// Set the training algorithm 
-			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 1E-06f, L1Regularization = 1f, ConvergenceTolerance = 0.2f, MaximumNumberOfIterations = 100, Shuffle = false, BiasLearningRate = 0.1f, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
+			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 0.001f, L1Regularization = 0f, ConvergenceTolerance = 0.001f, MaximumNumberOfIterations = 10, Shuffle = false, BiasLearningRate = 0f, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
 						  .Append(mlContext.Transforms.Conversion.MapValueToKey("importance", "importance"))
 						  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 

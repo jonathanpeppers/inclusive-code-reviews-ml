@@ -1,7 +1,7 @@
 text,isnegative,importance
 ship it,0,0.5
 tests failed,0,0.5
-This sucks,1,0.5
+This sucks,1,1
 "Ok, #code and #code might be a little better.",0,0.5
 "@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0,0.5
 "Ignore above, it was a #code app.",0,0.5
@@ -168,7 +168,8 @@ What are you doing,1,0.5
 Can you explain what you are trying to accomplish,0,0.5
 Can you explain how it works,0,0.5
 "I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing?",0,0.5
-This is great,0,0.5
+This is great,0,1
+You are so great,0,0.5
 I love this,0,0.5
 This is a great solution,0,0.5
 I would never have thought of doing it this way,0,0.5
@@ -693,7 +694,7 @@ Build is failing,0,0.5
 Failing tests are normal for now,0,0.5
 Shouldn't this be MauiCheckBox,0,0.5
 can this be internal also,0,0.5
-I don't like this,1,0.5
+I don't like this,1,1
 I do not like this,1,0.5
 Well we can never fix up the Line numbers without a lot of work. I don't think it's worth the effort,0,0.5
 "While the two error messages was a nice idea, the fact that the IDE's may or may not show them in order is a problem.",0,0.5
@@ -845,9 +846,17 @@ This is pretty messy,1,0.5
 "So I guess the question really is, how quickly do we want this? Should we do it fast or right?",0,0.5
 This looks good so far. I like how we still raise #code if the value is not an #code,0,0.5
 @github looks like this bit is using spaces rather than tabs. I think @github likes to keep the formatting similar to the sourounding code,0,0.5
-You got this,0,0.5
-You so got this,0,0.5
-You sooooooo got this,0,0.5
+@github you got this,0,1
+You got this,0,1
+You *got* this,0,1
+You so got this,0,1
+You sooooooo got this,0,1
+You definitely got this,0,1
+@github you definitely got this,0,1
+You definitely got this right,0,1
+@github you definitely got this right,0,1
+We definitely have this right,0,1
+You definitely got this my man,0,1
 You sooooo definitely got this my man,0,0.5
 You are definitely great at this,0,0.5
 You are so great at this,0,0.5
@@ -1067,17 +1076,24 @@ I'm going to set your house on fire,0,0.5
 This is really smelly,1,0.5
 This is stinky,1,0.5
 This stinks,1,0.5
+You stink,1,1
+This code completely stinks,1,0.5
 This smells bad,1,0.5
 This smells good,0,0.5
 This smells,1,0.5
 "Whew, this is really stinky",1,0.5
-I really like this code,0,0.5
-I like this code,0,0.5
+@github I like this,0,1
+I really like this code,0,1
+I like this code,0,1
+I like this approach,0,1
 I love this approach,0,0.5
+I definitely love this,0,1
 I really love this approach,0,0.5
 You suck at this,1,0.5
 "Man, this sucks!",1,0.5
 This still sucks,1,0.5
+@github this really sucks,1,0.5
+Your perspective really sucks,1,0.5
 Stupid q - how does the implementation know to use the #code instance,0,0.5
 This only reinforces my belief that powershell is the best terrible scripting language we have,1,0.5
 will fix thsi up.  that line looks terrible.  sorry,1,0.5
@@ -1819,7 +1835,7 @@ Why are you such a pain to talk to,1,0.5
 You are a pain to me,1,0.5
 I have no faith in you,1,0.5
 I have no faith in this code,1,0.5
-"I like the way you code, you got this",0,0.5
+"I like the way you code, you got this",0,1
 I have no faith in this at all,1,0.5
 https://github.com/dotnet/roslyn/pull/26793#discussion_r187782708,0,0.5
 note: as per my conversation with @github i think the case that VB is handling is incredibly esoteric. I would be ok with having VB just checking for that case and not offerring invert-if if it helps simplify the rest of the algorithms here. I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it,1,0.5
@@ -2332,7 +2348,14 @@ That's about our reaction :). Seems like it might be DI flakiness that just hit 
 @github - what a nasty user :blush: I believe that the problem you describe exists in the original code as well,0,0.5
 "From my understanding,  If the user triggers delayed sleep and then starts switching, what will happen right now is that we will still have TabPaletteItem populated in the switcher, but switching to it will have no action (as weak ref is empty). Not perfect, not terrible (or however they said this in Chernobyl). To resolve this we need to have the fully fledged binding that I planned for the next PR (where we do follow the changes in _tabs, _mruTabs that are observable collections).",0,0.5
 yea this looks insane as-is haha,1,0.5
-Holy shit this is legendary. This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
+"Thanks, this has been such a pain point",0,0.5
+Thanks for fixing our pain points,0,0.5
+"This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you",0,0.5
+Holy shit this is legendary,1,0.5
+This is legendary,0,0.5
+You are legendary,0,0.5
+"You are a legend, my friend",0,0.5
+You are an absolute legend,0,0.5
 "I'm stupid, I wanted to do the opposite 🤦‍♂",1,0.5
 Do we trust people not doing 'stupid' things like Static etc,1,0.5
 "Can you fold the previous #code into part of the loop and iterate over 4 times? If it gets too gross, don't worry about it",0,0.5
@@ -2407,7 +2430,7 @@ Another crap article,1,0.5
 Are you fucker mother fucker have nothing to do but block University computers. Go and suck cocks,1,0.5
 HELLO,0,0.5
 Your retarded bot,1,0.5
-You Suck,1,0.5
+You Suck,1,1
 Delete my user-id and all edits you evil Wikipedians,1,0.5
 "You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye!",1,0.5
 A few things to get straight,0,0.5
