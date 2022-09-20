@@ -1,4 +1,4 @@
-name: typescript
+name: models
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  models:
+  build:
     runs-on: ubuntu-latest
     steps:
 
