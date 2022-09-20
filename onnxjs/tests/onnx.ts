@@ -7,7 +7,7 @@ describe('onnx tests', async () => {
     expect(session).to.be.not.null;
 
     const githubHandleRegex:RegExp = /\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))/gi;
-    const backtickRegex:RegExp = /`[^`]+`/gi;
+    const backtickRegex:RegExp = /`+[^`]+`+/gi;
     const punctuationRegex:RegExp = /(\.|!|\?)+$/g;
 
     async function assertText(text:string, isnegative:string, confidence:number) {

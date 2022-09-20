@@ -6,7 +6,7 @@ Console.WriteLine("Ctrl+C to exit...");
 Console.WriteLine();
 
 var githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.IgnoreCase);
-var backtickRegex = new Regex("`[^`]+`", RegexOptions.IgnoreCase);
+var backtickRegex = new Regex("`+[^`]+`+", RegexOptions.IgnoreCase);
 
 while (true)
 {
