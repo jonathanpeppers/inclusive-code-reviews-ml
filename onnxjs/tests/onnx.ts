@@ -17,6 +17,7 @@ describe('onnx tests', async () => {
         const results = await session.run({
             text: new ort.Tensor([punctuation_replaced], [1,1]),
             isnegative: new ort.Tensor([''], [1,1]),
+            importance: new ort.Tensor('float32', [''], [1,1]),
         })
         expect(results).to.be.not.null;
 
