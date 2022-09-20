@@ -125,7 +125,18 @@ const regex:RegExp = /`+[^`]+`+/gi;
 const replaced = text.replace(regex, '#code');
 ```
 
-TODO: standardize replacement of punctuation.
+Trailing punctuation should be replaced such as:
+
+```TypeScript
+const regex:RegExp = /(\.|!|\?|;|:)+$/g;
+const replaced = text.replace(regex, '');
+```
+
+Leading/trailing blank space should also be replaced:
+
+```TypeScript
+const final = text.trim();
+```
 
 ## `mlnet` .NET Global Tool
 
