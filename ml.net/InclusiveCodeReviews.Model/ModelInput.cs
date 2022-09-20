@@ -20,6 +20,6 @@ namespace InclusiveCodeReviews.Model
         [ColumnName("importance"), LoadColumn(2)]
         public float Importance { get; set; }
 
-		public override string ToString() => Text;
+        public override string ToString() => Text;
     }
 }
