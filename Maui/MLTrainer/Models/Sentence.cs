@@ -6,4 +6,6 @@ public class Sentence
 {
 	[Name("Body")]
 	public string Body { get; set; } = string.Empty;
+
+	public bool Processed { get; set; }
 }
