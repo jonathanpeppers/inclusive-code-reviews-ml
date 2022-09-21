@@ -2514,4 +2514,6 @@ stop leaving stupid harping messages for peopel that are nil to do with what you
 "hey fuck you, who the fuck checks this page for vandalism. Get a fucking life you turd bag",1,0.5
 Yo what the fuck is your problem fucking around with my page! leave it the fuck alone,1,0.5
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
+"Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
+@github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
 
