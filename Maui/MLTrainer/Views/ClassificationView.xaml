@@ -6,6 +6,7 @@
     <Grid RowSpacing="30">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -53,19 +54,16 @@
                 FontSize="20"
                 Grid.Row="1" Grid.Column="0"/>
 
-        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
-            <Label
+            <Label Grid.Row="1" Grid.Column="1"
                    LineBreakMode="WordWrap"
                    MaxLines="1"
                    Text="{Binding Status}"
                    FontSize="20"/>
 
-            <Label
-                   LineBreakMode="WordWrap"
-                   MaxLines="20"
-                   Text="{Binding Message}"
+            <Editor Grid.Row="2" Grid.Column="1"
+                   VerticalOptions="FillAndExpand"
+                   Text="{Binding Message, Mode=TwoWay}"
                    FontSize="30"/>
-        </VerticalStackLayout>
 
         <!--<CollectionView ItemsSource="{Binding GitHubComments}" Grid.Row="2" Grid.Column="1">
             <CollectionView.ItemTemplate>
@@ -82,7 +80,7 @@
                 Grid.Row="1" Grid.Column="2"/>
 
 
-        <Button Grid.Row="2" Grid.Column="1"
+        <Button Grid.Row="3" Grid.Column="1"
                 Text="Skip"
                 SemanticProperties.Hint="Skip"
                 Command="{Binding SkipCommentCommand}"
