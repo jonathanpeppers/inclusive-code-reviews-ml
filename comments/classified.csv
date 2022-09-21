@@ -2514,3 +2514,14 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
 
+Is this actually needed,0,0.5
+"In base64 the encoded data is stored as big endian like, and here it's written by https://github.com/dotnet/runtime/blob/44595c05ca033d1010397d05a55ab89bf078e56c/src/libraries/System.Memory/src/System/Buffers/Text/Base64Encoder.cs#L95 (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
+"When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
+"I would have thought component model syncs with the shell version and not editor version, but maybe I'm wrong there",0,0.5
+"Also wrong first apostrophe, it should be before #code not before the (",0,0.5
+Please put #code between apostrophes,0,0.5
+start with either #code or #code so it gets sorted along other important/critical logs,0,0.5
+I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
+I can add the check if you'd like though,0,0.5
+So the major difference here is that we allocate #code aka #code directly in unmanaged memory. While originally we were using pinned managed memory #code,0,0.5
+
