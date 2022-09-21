@@ -1,6 +1,4 @@
-﻿using Microsoft.UI.Xaml;
-
-namespace MLTrainer;
+﻿namespace MLTrainer;
 
 public partial class AppShell : Shell
 {
@@ -14,27 +12,24 @@ public partial class AppShell : Shell
 	protected override void OnNavigated(ShellNavigatedEventArgs args)
 	{
 		base.OnNavigated(args);
-
+#if WINDOWS
 		Window.Activated += AppShellActivated;
 		Window.Deactivated += AppShellDeactivated;
 	}
 
 	void AppShellDeactivated(object? sender, EventArgs e)
 	{
-#if WINDOWS
+
 		MauiWinUIWindow? win = Window.Handler.PlatformView as MauiWinUIWindow;
 		if (win?.Content != null)
 			win.Content.KeyDown -= ContentKeyDown;
-#endif
 	}
 
 	void AppShellActivated(object? sender, EventArgs e)
 	{
-#if WINDOWS
 		MauiWinUIWindow? win = Window.Handler.PlatformView as MauiWinUIWindow;
 		if (win?.Content != null)
 			win.Content.KeyDown += ContentKeyDown;
-#endif
 	}
 
 	void ContentKeyDown(object sender, Microsoft.UI.Xaml.Input.KeyRoutedEventArgs e)
@@ -52,4 +47,7 @@ public partial class AppShell : Shell
 			_classificationViewModel.SkipCommentCommand.Execute(null);
 		}
 	}
+#else
+	}
+#endif
 }
