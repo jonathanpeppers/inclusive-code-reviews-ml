@@ -7,6 +7,8 @@ Console.WriteLine();
 
 var githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", RegexOptions.IgnoreCase);
 var backtickRegex = new Regex("`+[^`]+`+", RegexOptions.IgnoreCase);
+var urlRegex = new Regex(@"\b(https?|ftp|file):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|]", RegexOptions.IgnoreCase);
+var punctuationRegex = new Regex("(\\.|!|\\?|;|:)+$", RegexOptions.IgnoreCase);
 
 while (true)
 {
@@ -18,6 +20,8 @@ while (true)
 
 	var replaced = githubHandleRegex.Replace(text, "@github");
 	replaced = backtickRegex.Replace(replaced, "#code");
+	replaced = urlRegex.Replace(replaced, "#code");
+	replaced = punctuationRegex.Replace(replaced, "#code");
 
 	var sampleData = new ModelInput()
 	{

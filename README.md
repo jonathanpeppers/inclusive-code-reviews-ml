@@ -125,6 +125,13 @@ const regex:RegExp = /`+[^`]+`+/gi;
 const replaced = text.replace(regex, '#code');
 ```
 
+URLs are replaced with `#url`:
+
+```TypeScript
+const regex:RegExp = /\b(https?|ftp|file):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|]/gi;
+const replaced = text.replace(regex, '#url');
+```
+
 Trailing punctuation should be replaced such as:
 
 ```TypeScript
