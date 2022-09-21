@@ -52,7 +52,9 @@
                 BackgroundColor="red"
                 IsEnabled="False"
                 FontSize="20"
-                Grid.Row="1" Grid.Column="0"/>
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.Column="0"/>
 
             <Label Grid.Row="1" Grid.Column="1"
                    LineBreakMode="WordWrap"
@@ -77,7 +79,9 @@
                 Command="{Binding GoodCommentCommand}"
                 BackgroundColor="green"
                 FontSize="20"
-                Grid.Row="1" Grid.Column="2"/>
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.Column="2"/>
 
 
         <Button Grid.Row="3" Grid.Column="1"
