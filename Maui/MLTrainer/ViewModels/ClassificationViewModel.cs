@@ -13,56 +13,56 @@ public partial class ClassificationViewModel : ObservableObject
 	readonly List<MLScore> _scores = new();
 	int _sentenceCount;
 	string _fullPath = string.Empty;
+	FileResult? _initialFile;
+	Dictionary<GitHubComment, List<Sentence>> _comments = new();
 
 	[ObservableProperty]
-	string fileName = String.Empty;
+	string _fileName = String.Empty;
 
 	[ObservableProperty]
-	string message = String.Empty;
+	string _message = String.Empty;
 
 	[ObservableProperty]
-	string status = String.Empty;
+	string _status = String.Empty;
 
 	[ObservableProperty]
-	ObservableCollection<GitHubComment>? gitHubComments;
+	ObservableCollection<GitHubComment>? _gitHubComments;
 
 	[ObservableProperty]
-	ObservableCollection<Sentence> sentences = new ObservableCollection<Sentence>();
+	ObservableCollection<Sentence> _sentences = new();
 
-	Task DisplayAlert(string title, string message, string cancel)
-	{
-		return App.Current!.MainPage!.DisplayAlert(title, message, cancel);
-	}
 
-	Task<bool> DisplayAlert(string title, string message, string ok, string cancel)
-	{
-		return App.Current!.MainPage!.DisplayAlert(title, message, ok, cancel);
-	}
-
-	FileResult? initialFile;
 	[RelayCommand]
 	async Task SelectedFile()
 	{
-		initialFile = await PickAndShow(null);
+		_initialFile = await PickAndShow(null);
 
-		if (initialFile is null)
+		if (_initialFile is null)
 		{
 			await DisplayAlert("Issue", "File was loaded incorrectly. Try again.", "OK");
 			return;
 		}
 
-		if (new FileInfo(initialFile.FullPath).Extension != ".csv")
+		if (new FileInfo(_initialFile.FullPath).Extension != ".csv")
 		{
 			await DisplayAlert("Wrong File Type", "Please select to a .csv file", "OK");
 			return;
 		}
 
-		using var streamReader = new StreamReader(initialFile.FullPath);
+		using var streamReader = new StreamReader(_initialFile.FullPath);
 		using var csvReader = new CsvReader(streamReader, CultureInfo.InvariantCulture);
 
-		var getrecords = csvReader.GetRecords<GitHubComment>();
-		GitHubComments = new ObservableCollection<GitHubComment>(getrecords);
-
+		try
+		{
+			var getrecords = csvReader.GetRecords<GitHubComment>();
+			GitHubComments = new ObservableCollection<GitHubComment>(getrecords);
+		}
+		catch (HeaderValidationException v)
+		{
+			await DisplayAlert("Wrong File configuration", $"Please make sure there is a Header column with 'Body' text. {v.Message}", "OK");
+			return;
+		}
+	
 		// TODO this doesn't seem to properly check for csv files with incorrect headers
 		if (!GitHubComments.Any())
 		{
@@ -71,24 +71,23 @@ public partial class ClassificationViewModel : ObservableObject
 
 		foreach (var comment in GitHubComments)
 		{
-			var githubSentances = new List<Sentence>();
-			foreach (var sentence in TextProcessor.PreprocessText(comment.Body))
+			var githubSentences = new List<Sentence>();
+			var processedSentences = TextProcessor.PreprocessText(comment.Body);
+			foreach (var processedSentence in processedSentences)
 			{
-				var sen = new Sentence { Body = sentence };
-				sentences.Add(sen);
-				githubSentances.Add(sen);
+				var sentence = new Sentence { Body = processedSentence };
+				_sentences.Add(sentence);
+				githubSentences.Add(sentence);
 			}
-			comments.Add(comment, githubSentances);
+			_comments.Add(comment, githubSentences);
 		}
 
-		FileName = initialFile.FileName;
-		_fullPath = initialFile.FullPath;
+		FileName = _initialFile.FileName;
+		_fullPath = _initialFile.FullPath;
 
 		UpdateComment();
 		UpdateButtons();
 	}
-
-	Dictionary<GitHubComment, List<Sentence>> comments = new Dictionary<GitHubComment, List<Sentence>>();
 
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void GoodComment()
@@ -234,21 +233,29 @@ public partial class ClassificationViewModel : ObservableObject
 	async Task RemoveLinesFromInitialFile()
 	{
 		var result = await DisplayAlert("Remove lines", "Do you want to remove classified comments from the initial load file?", "Yes", "No");
-		if (result && initialFile != null)
+		if (result && _initialFile != null)
 		{
-			var commentsToRemove = comments.Where(c => c.Value.Any(c => c.Processed)).ToList();
+			var commentsToRemove = _comments.Where(c => c.Value.Any(c => c.Processed)).ToList();
 
 			foreach (var item in commentsToRemove)
 			{
 				GitHubComments?.Remove(item.Key);
 			}
 
-			using var streamWriter = new StreamWriter(initialFile.FullPath);
+			using var streamWriter = new StreamWriter(_initialFile.FullPath);
 			using var csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture);
 			csvWriter.Context.RegisterClassMap<GitHubCommentClassMap>();
 			csvWriter.WriteRecords(GitHubComments);
 
-			await DisplayAlert("Success!", $"Removed {commentsToRemove.Count} comments from: {initialFile.FileName}", "OK");
+			await DisplayAlert("Success!", $"Removed {commentsToRemove.Count} comments from: {_initialFile.FileName}", "OK");
 		}
 	}
+
+	static Task DisplayAlert(string title, string message, string cancel) =>
+		App.Current!.MainPage!.DisplayAlert(title, message, cancel);
+
+
+	static Task<bool> DisplayAlert(string title, string message, string ok, string cancel) =>
+		App.Current!.MainPage!.DisplayAlert(title, message, ok, cancel);
+
 }
