@@ -182,5 +182,9 @@
     {
         "text": "you asshole",
         "isnegative": "1"
+    },
+    {
+        "text": "There are some new test failures, this is terrible.",
+        "isnegative": "1"
     }
 ]

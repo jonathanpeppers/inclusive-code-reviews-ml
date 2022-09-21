@@ -12,7 +12,6 @@ using Microsoft.ML;
 using Microsoft.ML.Data;
 using InclusiveCodeReviews.Model;
 using Microsoft.ML.Trainers;
-using System.IO.Pipes;
 using Microsoft.ML.Transforms.Text;
 
 namespace InclusiveCodeReviews.ConsoleApp
