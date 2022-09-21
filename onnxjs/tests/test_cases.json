@@ -36,6 +36,10 @@
         "isnegative": "0"
     },
     {
+        "text": "This is so gross",
+        "isnegative": "1"
+    },
+    {
         "text": "Looks good to me",
         "isnegative": "0"
     },
