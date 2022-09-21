@@ -2511,9 +2511,6 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
-,,
-hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
-,,
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
 *Draft release notes*,0,0.5
 "No terrible hurry on this while this PR is still under active revision, but if I understand correctly, I think once this PR is eventually merged it will enable OpenJDK 11 compatibility for user builds? If that's correct, then it might be appropriate to add release note to #code as part of this PR",0,0.5
@@ -2618,7 +2615,6 @@ Makes sense to be worried about #code if it can be used to execute. What about b
 "Hmm, I suspect that the ""proper"" way to do this is to add the address to the ""zero offset field map"". But then I happen to think that this kind of side maps are a terrible idea and that the it's best to keep this information in the IR, in special nodes - PTR_FLD and PTR_IDX",0,0.5
 "I have checked how it works with ""zero offset field map"" and you are right, overall results are better",0,0.5
 "#code has almost all logic that we need, we just not calling it sometimes",0,0.5
-,,
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
 *Draft release notes*,0,0.5
 "No terrible hurry on this while this PR is still under active revision, but if I understand correctly, I think once this PR is eventually merged it will enable OpenJDK 11 compatibility for user builds? If that's correct, then it might be appropriate to add release note to #code as part of this PR",0,0.5
