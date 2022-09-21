@@ -5,7 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MLTrainer"
     Shell.FlyoutBehavior="Disabled">
-
+    <Shell.TitleView>
+        <Label Text="MLTrainer APP " FontSize="Large" Margin="5,0,0,0"/>
+    </Shell.TitleView>
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
