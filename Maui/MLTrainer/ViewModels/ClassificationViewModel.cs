@@ -163,6 +163,8 @@ public partial class ClassificationViewModel : ObservableObject
 
 		// TODO Validate that we are saving to a csv file with the correct headers
 		await DisplayAlert("Finished!", $"Changes appended to {file.FullPath}", "OK");
+
+		await RemoveLinesFromInitialFile();
 	}
 
 	bool DoWeHaveComments() => (Sentences != null) && Sentences.Count > _sentenceCount;
