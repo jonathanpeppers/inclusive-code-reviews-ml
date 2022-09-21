@@ -32,11 +32,7 @@
 	<!-- macOS settings -->
 	<PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">
 		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
-		<!--
-			TODO: seems to fail with:
-			error : Unable to merge the file 'Contents/Resources/Assets.car', it's different between the input app bundles.
-		-->
-		<!-- <RuntimeIdentifiers Condition="'$(Configuration)' == 'Release'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
+		<RuntimeIdentifiers Condition="'$(Configuration)' == 'Release'">maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 
 	<ItemGroup>

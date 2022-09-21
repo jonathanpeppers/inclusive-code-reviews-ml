@@ -28,6 +28,7 @@ jobs:
       run: cd onnxjs && npm test
 
     - name: archive models
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: models
