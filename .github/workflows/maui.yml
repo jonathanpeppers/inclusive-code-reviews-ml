@@ -39,7 +39,14 @@ jobs:
       run: dotnet workload install maui-desktop --ignore-failed-sources
 
     - name: Build MAUI App
-      run: dotnet publish Maui/MLTrainer/MLTrainer.sln -c Release
+      run: dotnet publish Maui/MLTrainer/MLTrainer.sln -c Release -bl:logs/MLTrainer.binlog
+
+    - name: Archive logs
+      uses: actions/upload-artifact@v2
+      with:
+        name: logs
+        path: logs
+        if-no-files-found: error
 
     - name: Archive macOS MAUI App
       uses: actions/upload-artifact@v2
