@@ -42,6 +42,7 @@ jobs:
       run: dotnet publish Maui/MLTrainer/MLTrainer.sln -c Release -bl:logs/MLTrainer.binlog
 
     - name: Archive logs
+      if: always()
       uses: actions/upload-artifact@v2
       with:
         name: logs
