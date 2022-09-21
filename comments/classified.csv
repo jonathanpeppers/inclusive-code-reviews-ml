@@ -1624,8 +1624,9 @@ It shoudl def be safe though as per the roslyn Worspace invariants.  The Project
 "Oh, shit. I don't hate that. @github what do you think",1,0.5
 2 votes new API,0,0.5
 That said I don't have any strong opinions about it. Code can always be modified. 🙂,0,0.5
-"2 votes new API. 1 vote ""whatevs man, it's just code.""",0,0.5
-// Create a new #code method with more parameters only in DxEngine,0,0.5
+2 votes new API. 1 vote,0,0.5
+"whatevs man, it's just code",1,0.5
+Create a new #code method with more parameters only in #code,0,0.5
 "_renderEngine->UpdateFone(newDpi, _desiredFont, _actualFont, whatever we want to add)",0,0.5
 I like this. Would like to hear from @github before proceeding though,0,0.5
 "3 votes new API. 1 vote ""whatevs man, it's just code.""",0,0.5
@@ -1824,11 +1825,6 @@ that's insane.. there should be a warning comment before every single local func
 ## anchorMode: Hold,0,0.5
 "The main idea behind ConHost CMD Mark Mode is basically that as long as <kbd>shift</kbd> is held, the 'start' endpoint is static/frozen/held",0,0.5
 "I'm worried that might not totally work. Think of an insane person, who definitely wants to be able to select text with WASD, and an _interesting_ set of modifiers",0,0.5
-// Cell Selection,0,0.5
-"{ ""keys"": [""shift+w""], ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""up"" } },",0,0.5
-"{ ""keys"": [""ctrl+a""],  ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""left"" } },",0,0.5
-"{ ""keys"": [""alt+s""],   ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""down"" } },",0,0.5
-"{ ""keys"": [""d""],       ""command"": { ""action"": ""moveSelectionPoint"", ""direction"": ""right"" } },",0,0.5
 "You can't really ""subtract shift"" from those modifiers 😕",0,0.5
 "So, with the logic above, the scenario above might still be acceptable",0,0.5
 "Alternatively, I feel like the safest option would be to have users specifically define controls in Mark Mode vs keyboard selection. I think that might be the _clearest_ way to fix the problem above, but I feel like there's a lot of repeated keybindings set between mark mode and non-mark mode ones. :/",0,0.5
@@ -2341,8 +2337,8 @@ okay that's _insane_ but I can deal with it,1,0.5
 "So while I agree the second sounds easier, it also feels like it's fairly significantly increasing the difference between these fundamentally identical code paths. The current codepath is already applying the regex twice, once into #code and once with he #codees",0,0.5
 "Moving the vs/editor/contrib/find logic to vs/base/common might be the best use of time, even if it delays the case ops support. Just IMHO, still very much a noob to this codebase",0,0.5
 An HTML tag can’t begin inside the attributes of another HTML tag,0,0.5
-// We always pass the output through insane after this so that we don't rely on,0,0.5
-// marked for sanitization,0,0.5
+We always pass the output through insane after this so that we don't rely on,0,0.5
+marked for sanitization,0,0.5
 I'm not sure that [^>] is correct. We still want to prevent html tags,0,0.5
 from beginning. [^<>] would probably be the best,0,0.5
 You are receiving this because you authored the thread,0,0.5
@@ -2469,7 +2465,6 @@ Whoever put a notices on my page. I will kill u,1,0.5
 "Get off your high horse, or block me",1,0.5
 "Fuck you faggot, I don't care if i get blocked, as long as everyone knows you are a dumb cunt",1,0.5
 "Hey, you freaking hermaphrodite",1,0.5
-
 "Worried that your cock wont fit in my ass anymore!, OMFK LOLZ HAHA I SAID PEEENIS GORF GORF GORF GORF",1,0.5
 Keep your pathetic winking marks to your antiturkish ass,1,0.5
 What a joker you are,1,0.5
