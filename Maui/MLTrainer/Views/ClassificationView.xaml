@@ -47,7 +47,8 @@
                 VerticalOptions="Center"
                 FontSize="30"/>
 
-        <Button Text="Bad Comment"
+        <Button Text="Bad Comment (left arrow)"
+                
                 Command="{Binding BadCommentCommand}"
                 BackgroundColor="Red"
                 IsEnabled="False"
@@ -75,7 +76,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
 
-        <Button Text="Good Comment"
+        <Button Text="Good Comment (right arrow)"
                 Command="{Binding GoodCommentCommand}"
                 BackgroundColor="Green"
                 FontSize="20"
@@ -85,12 +86,16 @@
 
 
         <Button Grid.Row="3" Grid.Column="1"
-                Text="Skip"
+                Text="Skip (space)"
                 SemanticProperties.Hint="Skip"
                 Command="{Binding SkipCommentCommand}"
                 HorizontalOptions="Center"
                  VerticalOptions="Center"
                 FontSize="30"/>
+
+        <Label Text="You can use your keyboard to classify or skip comments. Left arrow for a bad comment. Right arrow for a good comment and Space to skip the comment"
+               Grid.Row="3" Grid.Column="2"
+               HorizontalOptions="End"/>
 
     </Grid>
 </ContentView>
