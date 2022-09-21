@@ -8,7 +8,9 @@ This sucks,1,1
 "When testing #code apps, Debug builds work",0,0.5
 You are so terrible,1,0.5
 This is terrible,1,0.5
-"There are so many failures, this is terrible.",1,0.5
+"There are so many failures, this is terrible.",1,1
+"There are so code errors, this is terrible.",1,1
+"There are no new tests, this is terrible.",1,1
 I have a feeling that NuGet authors will have to use #code for their directory names,0,0.5
 You are a failure,1,0.5
 There are test failures,0,0.5
