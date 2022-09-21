@@ -1,37 +1,4 @@
-﻿Body
-"Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately.
-"
-"@github I actually search twice per line so I don't miss cases like `foo?.bar.baz!.foo2;` Didn't want to mess with Regexes too much as it's easy to make stupid mistake.
-
-<details>
-<summary>Here is the code I used</summary>
-
-```csharp
-        static readonly Regex s_r1 = new Regex(@""[a-z0-9_]\?\."", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        static readonly Regex s_r2 = new Regex(@""[a-z0-9_]\!\."", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        static bool IsBuggyCompilerCase(string line)
-        {
-            Match m1 = s_r1.Match(line);
-            if (m1.Success)
-            {
-                int start = m1.Index;
-                foreach (Match m2 in s_r2.Matches(line))
-                {
-                    int end = m2.Index;
-                    if (start < end)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-```
-
-and searching in all directories for all .cs files
-
-</details>"
+Body
 "Are there other places where we do this kind of thing? I don't see any other places where we actually make use of the multiple-features thing. I understand how it works, but it feels gross. Can we put semicolons between them or something?"
 "Ah, I've done something really stupid there haven't I?
 😂"
