@@ -64,7 +64,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 									  .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
 									  .AppendCacheCheckpoint(mlContext);
 			// Set the training algorithm 
-			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 0.001f, L1Regularization = 0f, ConvergenceTolerance = 0.001f, MaximumNumberOfIterations = 10, Shuffle = false, BiasLearningRate = 0f, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
+			var trainer = mlContext.MulticlassClassification.Trainers.LightGbm(labelColumnName: "isnegative", featureColumnName: "Features", exampleWeightColumnName: "importance")
 						  .Append(mlContext.Transforms.Conversion.MapValueToKey("importance", "importance"))
 						  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 
