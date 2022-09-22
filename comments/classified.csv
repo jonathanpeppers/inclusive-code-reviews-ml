@@ -848,7 +848,8 @@ You are definitely great at this,0,0.5
 You are so great at this,0,0.5
 You *got* this,0,0.5
 "This code is great, you definitely got this",0,0.5
-This hurts to look at,1,0.5
+This hurts to look at,1,1
+This hurts me to look at,1,1
 This code hurts me to look at it,1,0.5
 Ouch this hurts me,1,0.5
 Your way of thinking is corrupted,1,0.5
@@ -2680,7 +2681,6 @@ I would like to get a better understanding of these issues. Let's sync offline,0
 In reply to: [535501474](https://github.com/dotnet/roslyn/pull/49723#discussion_r535501474) [](ancestors = 535501474),0,0.5
 I've changed it to include the namespace for clarity. ADL is kinda dumb anyways. 😶,0,0.5
 "Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
-=======
 "WHAT THE FUCK?!?!?! I rewrote it so it didnt look like shit, look at my final edit you fucking dumbass",1,0.5
 Hey idiot. I'm simply verifying the TRUTH. Do some fucking research before you remove my shit,1,0.5
 I'm starting to see why so many people hate @github,1,0.5
