@@ -1942,12 +1942,10 @@ Why is the Option for CodeGenerator not using a generic type to pass the enum an
 "A value of the countryName attribute type specifies a country. When used as a component of a directory name, it identifies the country in which the named object is physically located or with which it is associated in some other important way",0,0.5
 An attribute value for country name is a string chosen from ISO 3166-1 alpha-2,0,0.5
 #url looks like these are always two-letter uppercase pairs,0,0.5
-Should we,0,0.5
-* Reject anything that isn't [A-Z][A-Z],0,0.5
+Should we reject anything that isn't [A-Z][A-Z],0,0.5
 * Normalize [a-z] to [A-Z] and reject anything that isn't [A-Za-z][A-Za-z],0,0.5
 "We certainly shouldn't embed the knowledge of ""assigned"" vs ""available"", but it feels like we can be guiding and flexible by rejecting digits and punctuation",0,0.5
 "We can add that later perhaps. For now, we probably shouldn't crash the process since the worst outcome of missing a case here is fewer warnings",0,0.5
----,0,0.5
 In reply to: [210390086](#url) [](ancestors = 210390086),0,0.5
 Actually the right thing to do here is to just remove the whole #code section and simply never set #code to #code and let the garbage collector do its thing,0,0.5
 "If you find these without a good workaround, we would like to know",0,0.5
@@ -2017,11 +2015,9 @@ why was the previous code wrong,0,0.5
 "@github is it ok for this to go into preview8? It's currently targetting the wrong branch. I will take care of doing whatever it needs to get done here, but I'll have to get the change through ask mode to get it in preview8",0,0.5
 Just let me know if this is good for preview8 and I will take care of the rest,0,0.5
 "Hmm, I had thought I tried that syntax and it hadn't worked, but I probably just typed something wrong. I'll add a couple of tests for this, and subparts",0,0.5
-In reply to: [144358694](#url) [](ancestors = 144358694),0,0.5
 Same comment: We should be testing to make sure that appropriate exceptions are thrown on wrong-language invocations,0,0.5
 Please open an issue to add this.  #Closed,0,0.5
 I got this wrong. Awaits are indeed allowed inside finally. So should async usings,0,0.5
-In reply to: [161408348](#url) [](ancestors = 161408348),0,0.5
 It wasn't wrong before. See #url,0,0.5
 "@github, I changed, but now it says",0,0.5
 "Maybe I changed it from right to wrong, or changed the wrong file, I don't know",0,0.5
@@ -2483,7 +2479,6 @@ What's the motivation for the change here? True we don't require code to be expl
 Just add #nullable disable at the top of the test file,0,0.5
 "Sounds overkill,",1,0.5
 "Quite the opposite. In my opinion, using nullable analysis in tests is an overkill. It simply introduces unnecessary overhead on every angle. A test doesn't have to handle every possible scenario. If it doesn't fail, there is nothing to get wrong about nullability, it is focused on a very specific scenario",0,0.5
-In reply to: [1003255889](#url),0,0.5
 "Good point. No matter what testing helper we use, they are being tested by using them in tests. And from efficiency stand point, they are introducing overhead. Out of curiosity, why enable it for test projects in the first place? Anyways, right now the compiler is happy, but I'll disable nullable if it introduce more unnecessary troubles for this file",0,0.5
 "Since Orta's attempt to generate a playground for this failed, I tried testing this branch locally by installing it via #code",0,0.5
 Attempting to compile,0,0.5
@@ -2603,8 +2598,6 @@ This comment seems wrong now? #Resolved,0,0.5
 "Sorry, for the late response. You're right about the check. But I doubt that this command will be invoked without an active editor. Because this command would not be accessible when there is no active editor. Let me know if I'm wrong",0,0.5
 "After closer investigation, I am convinced that we are approaching this in a somewhat wrong way. After debugging the test, I realized that #code is the lambda that is being converted to the delegate, it doesn't really provide a context for the delegate type, the context comes from an enclosing method and enclosing types. In terms of the comment below: ""We cannot reference type parameters from the parent method outside the method"", the #code is not a parent method",0,0.5
 "Even though the check below appears to provide expected value in our scenarios, this is not the question we should be asking. The better (and simpler) question to ask is whether the #code as calculated above refers to any method type parameters (I mean from any method) after the substitution. If that is the case, we cannot use it for a field in any type. I don't think we have a ready to use helper to perform a check like that, but it should be pretty straight forward to add one next to #code used below following the same implementation strategy",0,0.5
----,0,0.5
-In reply to: [447782927](https://github.com/dotnet/roslyn/pull/44939#discussion_r447782927) [](ancestors = 447782927),0,0.5
 "Actually, all tests fail now. Do you have any ideas as I didn't really change anything big just the way events are processed but I can't seem to figure out why it now reports everything regarding tabs wrong. It works when debugging  but when running the script without a debugger attached produces the wrong results. Leads me to believe we won't be able to go ahead with this",0,0.5
 "Well, you're not wrong that leaving it internal would keep custom renderers from being tab stops",0,0.5
 "The current interface name (#code) doesn't express what it does (and why it exists) very well; the classes implementing it actually have several 'native' views. What this is _really_ saying is ""of all the native  views that make up this renderer, here's the one that makes sense as a tab stop""",0,0.5
@@ -2618,8 +2611,6 @@ Thanks for calling this out. I think this is actually wrong. I'll come up with a
 "I'm guessing the ""as"" is no longer necessary here? (and I'm not sure why we'd ever use as since it'll null ref if it's wrong...)",0,0.5
 "Regardless, we update F#/TypeScript for breaking changes like this when we move them directly to the editor APIs, no? This is clearly in the wrong namespace",0,0.5
 Thanks a lot. The logic was definitely wrong,0,0.5
----,0,0.5
-In reply to: [172418520](https://github.com/dotnet/roslyn/pull/25208#discussion_r172418520) [](ancestors = 172418520),0,0.5
 "I think we should fold this logic out into an IsRefStruct method, similar to IsPartialType. Also, I think the check for isRefFollowedByStructOrPartial is wrong: you could have partial be a type, and ref be a part of that type. For instance,",0,0.5
 "In general, I think we should consider being as robust as possible here by just looking ahead until we hit something that will definitely disambiguate: a type name, a struct/class/enum keyword, or a member name",0,0.5
 The same thing should probably be true of partial as well. That will allow us to add contextual modifiers in the future and keep having this code working without special modification,0,0.5
@@ -2628,12 +2619,10 @@ Yeah just moved down with the rest. It was in the wrong place,0,0.5
 "I don't know if this is the right space for that type of granularity. Given (presumably) the flow of <6.0.2xx compiler issues isn't that large, would it be fine to keep as is, and then re-route as necessary in the 6.0.2xx/3.1.xx cases",0,0.5
 "if we don't change it, then i would ask that we please indent things appropriately",0,0.5
 "The indentation is always correct at 4 spaces (the only real exception in C# code is LINQ queries). Others are occasionally acceptable as well, but 4 spaces is never wrong",0,0.5
-"[Fact(Skip = ""https://github.com/dotnet/roslyn/issues/32043"")] [](start = 8, length = 62)",0,0.5
 Does this test fail locally? Could you describe the failure? It is possible that we can quickly figure out what is wrong. #Closed,0,0.5
 "if I were you, I would just point him the existing code and tell him we had existing code and doing the similar thing in this pattern rather than telling him all these things and still not pointing to the code you are referring",0,0.5
 and I am not sure what you meant by it is wrong,0,0.5
 this is existing code,0,0.5
-"http://source.roslyn.io/#Microsoft.CodeAnalysis.CSharp.Workspaces/Extensions/ExpressionSyntaxExtensions.cs,38",0,0.5
 We're boxing in order to do a null check. This is necessary since we could be dealing with a Nullable<T> or a reference type T,0,0.5
 Note that the IL for a ConditionalAccess on an unconstrained local also boxes,0,0.5
 Is this the wrong way to do it,0,0.5
@@ -2652,8 +2641,6 @@ I guess my thought was when you get the workspace then you subscribe to OptionCh
 "I follow what you're saying and it's probably bad that explorer launch is detected as v1. So maybe change fIsV2Console to be the registry state, stop passing it from conhost v2, and key everything off of that one",0,0.5
 The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [https://github.com/dotnet/runtime/issues/38119](https://github.com/dotnet/runtime/issues/38119). The compat council's decision is documented in [https://github.com/dotnet/roslyn/issues/45453](https://github.com/dotnet/roslyn/issues/45453),0,0.5
 "This decision doesn't apply to covariant return case because there is no backward compatibility scenario that involves covariant returns feature, compat council makes decisions about compatibility scenarios. Covariant Returns is a new feature, we never emitted anything like that before, with or without an override. And, I am pretty sure that with suggested changes, we wouldn't emit a MethodImpl for covariant return case in case of the ambiguity if runtime doesn't have the fix. If you disagree, all you have to do to prove me wrong is to provide a concrete test case failing with suggested changes",0,0.5
----,0,0.5
-"In reply to: [446471373](https://github.com/dotnet/roslyn/pull/44025#discussion_r446471373) [](ancestors = 446471373,446463069,446461000,446458615,446453378,446450749,446444174,446418702,446416546,446413877,446358005,446321935)",0,0.5
 Unfortunately the discussion about this was lost when the PR was re-created,0,0.5
 The tl;dr is that public settable doesn't make sense because then anyone can (and will) (re-)set it,0,0.5
 "We, as toolkit owners, can use reflection to set it and/or use any other mechanism which allows it to be set and never unset",0,0.5
@@ -2685,7 +2672,6 @@ This should be inferred. I'm really really surprised you have to add this. I hav
 "We can't use indexed type parameters because (1) they don't have names, and (2) they don't have constraints (so the logic in AreParameterAnnotationsCompatible which simulates an assignment produces wrong values/states in GetParameterState)",0,0.5
 I would like to get a better understanding of these issues. Let's sync offline,0,0.5
 ---,0,0.5
-In reply to: [535501474](https://github.com/dotnet/roslyn/pull/49723#discussion_r535501474) [](ancestors = 535501474),0,0.5
 I've changed it to include the namespace for clarity. ADL is kinda dumb anyways. 😶,0,0.5
 "Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
 "WHAT THE FUCK?!?!?! I rewrote it so it didnt look like shit, look at my final edit you fucking dumbass",1,0.5
@@ -2712,9 +2698,9 @@ well fag... block me,1,0.5
 come off your high horse,1,0.5
 i'll say what i want about you,1,0.5
 if you continue bashing me then i will just quit,1,0.5
-I’m going to a project where they don't allow people (or FREAKS) like you,1,0.5
+I'm going to a project where they don't allow people (or FREAKS) like you,1,0.5
 go ahead,0,0.5
-I can’t give you instructions on how to change your diapers. sorry,1,0.5
+I can't give you instructions on how to change your diapers. sorry,1,0.5
 @github says f**k you motherclucker,1,0.5
 "You must have the lowest IQ of anyone on this project, I can't converse with a fool like you",1,0.5
 just becuz ur pussy 4 lying,1,0.5
