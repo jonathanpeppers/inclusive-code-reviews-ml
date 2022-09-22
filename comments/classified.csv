@@ -932,7 +932,7 @@ Test failures are unrelated,0,0.5
 * monotouch-test/Mac [dotnet]/Debug (static registrar) [dotnet]: #url,0,0.5
 * MTouch tests/NUnit: #13547,0,0.5
 Test failures are unrelated,0,0.5
-* Mono BCL Test group 2: #url
+* Mono BCL Test group 2: #url,,
 * Generator tests/.NET: fixed in #9251,0,0.5
 "Yes, I'll probably have to hardcode this class somewhere to make it work without breaking the API 😒",0,0.5
 /azp run,0,0.5
@@ -1626,7 +1626,6 @@ We found a similar bug in other extensions libraries #33998.  Since its just ext
 Basically I have the following situation,0,0.5
 "- I have this delegate type, which is used to register message recipients with the ability to specify both the recipient type (so the input to the lambda expression is already of the right type and they don't need to cast), and the message type",0,0.5
 "- As you can see from the delegate, #code is always a reference type",0,0.5
-#NAME,0,0.5
 "So doing that unsafe cast basically tricks the runtime into just calling the #code method of each actual handler just with an input #code type (as we don't know the type used in each handler here) - we're essentially invoking a contravariant delegate as if it was covariant in that input argument. Again this is always guaranteed to be a valid type cast due to how the messenger itself works - each recipient will always match the original #code constraint in each delegate being invoked. This way we get identical codegen to just invoking those handlers directly, even if we lack knowledge on each type in use",0,0.5
 The alternatives I've considered here would've been,0,0.5
 "- Use #code, which is just terrible for performance/memory usage. We wanted to have the broadcast method have an amortized allocation cost equal to 0, and also to avoid using reflection completely in this implementation",0,0.5
@@ -1649,17 +1648,14 @@ Wow this is kinda gross 😄,1,0.5
 Because I'm terrible at all the WPF stuff and didn't even realize I can do  #code? :),0,0.5
 Thanks for the remind. This one is about allowing the core markdown renderer to display #code which is sanitized by #code. I'll revert the change for now and see ppl's feedback,0,0.5
 wtf,1,0.5
-## Friday Spec Brownbag Quick Summary,0,0.5
 Today we had a meeting about this spec. Here's some quick notes of how the discussion went,0,0.5
 "- Unanimous ""launch inside the tab"", not a new window",0,0.5
 ### Preview Window in Appearance Page,0,0.5
 "- Unanimous yes. Do this. TermControl with a new connection that isn't real, just filled with some dummy sample text like what people might use (emojis, powerline fun, text tables, colors, etc.)",0,0.5
-### Editing/Saving,0,0.5
 "- Automatic saving: No. We don't want to thrash the JSON file. If we had an in-memory model struct... maybe. Or if we were using a tear-off window, maybe",0,0.5
 "- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button. No. Gross. Old. Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no.",1,0.5
-"The preview window should be automagic on changes. The actual JSON should be written on Save button",0,0.5
+The preview window should be automagic on changes. The actual JSON should be written on Save button,0,0.5
 "- We need a rocket ship icon for ""Launch""",0,0.5
-### Keyboard Bindings,0,0.5
 (I didn't catch which one Leon was up with),0,0.5
 - We don't think we have a readily available grid control,0,0.5
 "- Commands with arguments that are already stringable by the command palette (e.g. new tab 1, new tab 2) are offered as drop down items",0,0.5
@@ -1688,7 +1684,6 @@ also does not flash the task bar icon,0,0.5
 "OK, I think I get it now",0,0.5
 "The [""BellStyle"" setting](#url) was not set explicitly, thus resulting in only a sound (which was not hearable since I turned of all system sounds)",0,0.5
 After configuring the CMD type to this,0,0.5
-. image](ht,0,0.5
 My C# console application was able to make the task bar flash/be lightened when using this,0,0.5
 Resulting in this effect,0,0.5
 "I'm still unable to do the same for PowerShell and #code but since I do need it for CMD only, not PowerShell, this is sufficient for me",0,0.5
@@ -1757,9 +1752,6 @@ Shit. I guess I cannot pick this up,1,0.5
 "Ah, crap, I forgot to fix this in the regular job. Will go do that now",0,0.5
 "This doesn't seem like a terrible idea, though are you cool if we punt that for the v1 at least? That seems like refactoring we could come back through on a second pass and do 🤔",0,0.5
 "Better than what we have now I suppose. Kinda gross to have 4, but it is what it is",0,0.5
-Main's corelib is 9.63 Mb (R2R'd),0,0.5
-- #code without taking PGO into account: 9.83 Mb,0,0.5
-- #code with PGO #code: 10.10 Mb,0,0.5
 #code means we're fine that inliner won't inline anything in cold blocks (call-sites with real profiles),0,0.5
 "#code means it doesn't affect the BenefitMultiplier anyhow for cold blocks (so we still can inline calls in them). By default, I use #code as a balance",0,0.5
 Here is the jit-diff (PMI mode) without taking PGO into account: #url,0,0.5
@@ -1768,14 +1760,8 @@ both #code and #code aren't inlined anymore. A good example is  #code diff: #url
 "There are some interesting examples where inlining leads to smaller size, e.g",0,0.5
 "^ Inliner managed to detect foldable branches in the #code's constructor and inlined it, see [here](#url) and its [ctor](#url)",0,0.5
 "Another example - it's now able to inline #code when we compare literals, e.g. #code is recognized as a foldable branch due to the fact we can now recognize 'get_Length' call, example",0,0.5
-Diff for #code: #url,0,0.5
 "There are some diffs due to PMI trying to instantiate #code with unsupported T (e.g. char) and inliner helpes here too, e.g. #url",0,0.5
 #code is smaller after inlining: #url,0,0.5
-Same for #code: #url,0,0.5
-Same for #code #url,0,0.5
-Same for #code #url,0,0.5
-Same for #code #url,0,0.5
-"Misc: #url, #url, #url",0,0.5
 "There are cases where ExtendedDefaultPolicy doesn't inline what was inlined by the previous inliner - I tried to avoid it, but there were cases where I'm not sure we should inline, e.g this call #url is inlined despite being quite complex: #url",0,0.5
 "Old inliner detected here ""arg feeds const test"" and added a big multiplier. It did so because IL scan was not quite accurate and had many false positives. However, this method will still be inlined with PGO (and I am sure we have one for this in the static profile we ship). **UPD** I slightly added some boost in #url",0,0.5
 These are the cases where inlining increases the size but hopefully for better performance,0,0.5
@@ -1820,7 +1806,6 @@ I have no faith in you,1,0.5
 I have no faith in this code,1,0.5
 "I like the way you code, you got this",0,1
 I have no faith in this at all,1,0.5
-#url,0,0.5
 note: as per my conversation with @github i think the case that VB is handling is incredibly esoteric. I would be ok with having VB just checking for that case and not offerring invert-if if it helps simplify the rest of the algorithms here. I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it,1,0.5
 This is an unfortunate consequence of having PRs drag on for so long.  We literally forget about the conversations we've had on these very topics. :),1,0.5
 @github This local variable will be released in the end of method with the help of garbage collector,0,0.5
@@ -1878,7 +1863,6 @@ In addition #code is only available in the scope of this function. I would need 
 This method wraps IUnknown in a managed object. This has the effect of incrementing the reference count of the COM component. The reference count will be decremented when the runtime performs garbage collection on the managed object that represents the COM object,0,0.5
 "In SafeHandles.cs, there are three calls to Marshal.GetObjectForIUnknown() that create a local variables that disappear into the ether and never have Marshal.ReleaseComObject() called on them (until garbage collection).  In my tests, adding a Marshal.ReleaseComObject() call to each of these will fix the issue.  For example",0,0.5
 "Like I said, I believe this fixes the issue (presumably, the right way) and should allow this PR to be merged.  Please let me know your thoughts.  It'd be great if we could get this merged soon.  Thanks",0,0.5
-@github,0,0.5
 "Worst case, we can always add to the #code enum that requires you to configure your queue for delegation ahead of time and avoid opting everyone into the new behavior",0,0.5
 What happens if another await is added while the blocking Run is used? Is there any negative side effect,0,0.5
 "I'm assuming that's the ""worst case"" where one extra blocked thread for the lifetime of the application",0,0.5
@@ -1898,7 +1882,6 @@ I'm strongly concerned with the memory safety of this code,0,0.5
 "@github Thanks for taking a look, appreciate it! 😊",0,0.5
 There are mainly two differences I'm seeing in all of them,0,0.5
 "- One less conditional branch in the ""fast"" version",0,0.5
-#NAME,0,0.5
 Consider the first example,0,0.5
 "The ""fast"" version has a single branch just for the #code check, then it simply does a compare with the method table pointer and sets the flag, whereas the other handles each condition separately 🤔",0,0.5
 "The worst offender would be the second example though, where the #code checks seem completely redundant, but as mentioned above I guess we'll just have to wait for the runtime to support the #code prefix for that (and that seems like a separate issue as well)",1,0.5
@@ -1909,35 +1892,6 @@ The total regression across the 200K methods is 269 bytes. Looked a few of the w
 "One somewhat related thing I spotted in #code is that when we move a non-loop block out of an inner loops, we may also move it out of the enclosing loop that it belongs to, and so we end up with messy layout in the outer loop. Note the ""return; always; return"" flow in the after picture below when we move BB08. Seems like we ought to be willing to put the block into the proper loop scope, even if there's no ""cheap"" placement there (that is, even if we have to add flow to branch around it... presumably one of the blocks has a branch targets outside proper loop, and we can reverse that branch to make room",0,0.5
 (or perhaps the issue is that we don't recognize the full extent of the BB02 loop because it has multiple back edges...),0,0.5
 "The upshot of this is that we create an ""island"" block that is only ever jumped to and from (#code)",0,0.5
-Full benchmark app: #url,0,0.5
-|       Method | Toolchain | HaystackLength | LastNeedleMatches |            Mean |          Error |       StdDev | Ratio | RatioSD |,0,0.5
-|------------- |---------- |--------------- |------------------ |----------------:|---------------:|-------------:|------:|--------:|,0,0.5
-| SliceInALoop |  idxofany |              4 |             False |        18.33 ns |      28.879 ns |     1.583 ns |  0.64 |    0.06 |,0,0.5
-| SliceInALoop |      main |              4 |             False |        28.79 ns |      21.655 ns |     1.187 ns |  1.00 |    0.00 |,0,0.5
-|              |           |                |                   |                 |                |              |       |         |,0,0.5
-| SliceInALoop |  idxofany |              4 |              True |        17.12 ns |       4.562 ns |     0.250 ns |  0.38 |    0.01 |,0,0.5
-| SliceInALoop |      main |              4 |              True |        44.52 ns |      12.959 ns |     0.710 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             16 |             False |        65.40 ns |      16.572 ns |     0.908 ns |  0.68 |    0.02 |,0,0.5
-| SliceInALoop |      main |             16 |             False |        96.56 ns |      21.013 ns |     1.152 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             16 |              True |        60.07 ns |       9.261 ns |     0.508 ns |  0.46 |    0.00 |,0,0.5
-| SliceInALoop |      main |             16 |              True |       131.59 ns |      10.865 ns |     0.596 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             64 |             False |       236.47 ns |      38.295 ns |     2.099 ns |  0.63 |    0.03 |,0,0.5
-| SliceInALoop |      main |             64 |             False |       378.68 ns |     309.722 ns |    16.977 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             64 |              True |       195.13 ns |      24.816 ns |     1.360 ns |  0.22 |    0.00 |,0,0.5
-| SliceInALoop |      main |             64 |              True |       878.64 ns |       9.714 ns |     0.532 ns |  1.00 |    0.00 |,0,0.5
-"| SliceInALoop |  idxofany |            256 |             False |       901.88 ns |   1,002.251 ns |    54.937 ns |  0.62 |    0.04 |",0,0.5
-"| SliceInALoop |      main |            256 |             False |     1,450.75 ns |      54.688 ns |     2.998 ns |  1.00 |    0.00 |",0,0.5
-| SliceInALoop |  idxofany |            256 |              True |       757.16 ns |      39.841 ns |     2.184 ns |  0.07 |    0.00 |,0,0.5
-"| SliceInALoop |      main |            256 |              True |    11,050.08 ns |     419.823 ns |    23.012 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           1024 |             False |     3,561.17 ns |   4,301.921 ns |   235.803 ns |  0.62 |    0.05 |",0,0.5
-"| SliceInALoop |      main |           1024 |             False |     5,781.88 ns |   2,345.776 ns |   128.580 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           1024 |              True |     2,988.88 ns |      11.492 ns |     0.630 ns |  0.02 |    0.00 |",0,0.5
-"| SliceInALoop |      main |           1024 |              True |   167,176.09 ns |  29,612.891 ns | 1,623.182 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           4096 |             False |    14,217.25 ns |  11,186.894 ns |   613.191 ns |  0.62 |    0.02 |",0,0.5
-"| SliceInALoop |      main |           4096 |             False |    22,928.52 ns |   4,179.188 ns |   229.075 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           4096 |              True |    11,919.86 ns |     730.079 ns |    40.018 ns | 0.005 |    0.00 |",0,0.5
-"| SliceInALoop |      main |           4096 |              True | 2,495,866.67 ns | 136,852.103 ns | 7,501.326 ns | 1.000 |    0.00 |",0,0.5
-## Discussion,0,0.5
 "This benchmark tests #code when called in a loop (a typical use case) for various haystack lengths, and it alternates whether the first needle or the last needle is discovered. In particular, this shows how the original #code logic when called in a loop devolves into an #code operation if the last needle in the collection is the one that keeps being found, and how with the new logic the loop maintains an #code worst-case performance guarantee",0,0.5
 "Don't read too deeply into the benchmark showing that the new #code logic consistently outperforms the original logic. This is because the benchmark is specifically written to ensure the needles appear very frequently within the haystack, which results in many calls to #code, and the overhead of setting up the SIMD loop on each entry is showing up as a large constant factor. Ignore this for now, as the really important takeaway is the worst-case algorithmic complexity as discussed in the previous paragraph",0,0.5
 "@github what are your thoughts about including an app context switch (default to the new behavior)? If there is a customer broken by this, they would still be able to receive the other fixes in the 6.0.2 patch. There is no need for a switch in main/7.0 as that is a voluntary update",0,0.5
@@ -1977,12 +1931,8 @@ Why is the Option for CodeGenerator not using a generic type to pass the enum an
 An attribute value for country name is a string chosen from ISO 3166-1 alpha-2,0,0.5
 #url looks like these are always two-letter uppercase pairs,0,0.5
 Should we,0,0.5
-* Reject anything that isn't [A-Z][A-Z],0,0.5
-* Normalize [a-z] to [A-Z] and reject anything that isn't [A-Za-z][A-Za-z],0,0.5
 "We certainly shouldn't embed the knowledge of ""assigned"" vs ""available"", but it feels like we can be guiding and flexible by rejecting digits and punctuation",0,0.5
 "We can add that later perhaps. For now, we probably shouldn't crash the process since the worst outcome of missing a case here is fewer warnings",0,0.5
----,0,0.5
-In reply to: [210390086](#url) [](ancestors = 210390086),0,0.5
 Actually the right thing to do here is to just remove the whole #code section and simply never set #code to #code and let the garbage collector do its thing,0,0.5
 "If you find these without a good workaround, we would like to know",0,0.5
 "Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as #code any now and then, in the same vein that I thankfully don't have to rewrite #code now as I used to. :D",0,0.5
@@ -2000,7 +1950,6 @@ Perhaps @github has more thoughts,0,0.5
 "Regardless, I believe you'll also want to change SGen to match this change as well. #url",0,0.5
 We have a manual tests project for Console as a worst case; would this be caught there,0,0.5
 "In theory yes, because after running each test the user is asked to press #code and when pressing #code the app was printing #code instead of #code",0,0.5
-. image](ht,0,0.5
 But to be 100% sure I've added a new test,0,0.5
 Any way to add a test,0,0.5
 I currently don't have a better idea than extending the manual tests. I hope that when I get more familiar with #code I am going to be able to automate it,0,0.5
@@ -2074,18 +2023,8 @@ Wouldn't this be a wrong type for the call when ``#code`` is nullable? It feels 
 Can we do some unification so RID is resolved consistently from a single source of truth for ngen/perfmap steps as well? Maybe not part of this PR but if it is now feasible I think it would smooth things up for new platforms if resolving RID in multiple places is avoided,0,0.5
 "some modifiers cause us to bail out of local function parsing and try member parsing, but generally we reject bad local function modifiers here",0,0.5
 "(edit: I had the wrong line number before, sorry)",0,0.5
-"IEquatable<IntPtr> [](start = 27, length = 18)",0,0.5
 "Given that we have a custom code to match the type, I think we should cover negative cases as well, i.e",0,0.5
 "- The name match, but containing namespace name doesn't",0,0.5
-#NAME,0,0.5
-- IEquatable is a nested type and container's name is and is not System,0,0.5
-#NAME,0,0.5
-#NAME,0,0.5
-- IEquatable has arity 2,0,0.5
-"- IEquatable is constructed with a ""wrong"" argument",0,0.5
-#NAME,0,0.5
-#NAME,0,0.5
-- Etc. #Closed,0,0.5
 That can only occur via misuse of a public API,0,0.5
 "The public API explicitly caters to this, namely the distinction between ""Project.ProjectReferences"" vs. ""Project.AllProjectReferences"". I don't now if this is a useful feature anymore (at one point MSBuildWorkspace used it I think) and sure wish it didn't exist, but I'd say if we're going to change that let's change that specific thing in our 16.7 feature branch just to get that behavior change in early in a cycle so we can get time to find out what we broke. The rest of this PR is at least changing things we didn't _try_ to support. :smile",0,0.5
 "Without this the invariant validation fails, so either the validation is wrong or the _projectIds are wrong",0,0.5
@@ -2178,15 +2117,6 @@ Time running after adding this new test,0,0.5
 "@github I would consider keeping this test as #code considering that the test above, #code, which uses a similar code minus the insane amount of dictionary instances, is",0,0.5
 already signaled to run on #code,0,0.5
 "holy crap, this is what does the LRU magic",0,0.5
-* [ ] How are we lanning on dealing with the numerous TabView quirks in v2? Just ship it as-is and fix in post? Or manually adjust the styling now,0,0.5
-* [ ] EX the close button hover is weirdly wide,0,0.5
-* [ ] the tab text is bold,0,0.5
-"* [x] Icons throughout the app are still on the Segoe MDL2, not Segoe Fluent",0,0.5
-* [x] Tab color picker looks fine,0,0.5
-* [x] Tab renamer looks fine (if maybe needs a little padding...),0,0.5
-* [x] Window Renamer / ID toast looks fine,0,0.5
-"* [x] About looks... Fine? The links aren't underlined anymore, but that might just be how WinUI works these days",0,0.5
-* [x] #codes look totally ~~insane~~ transparent,0,0.5
 "I'm stupid, that should have been and #endif but is better with the NoXYZ attrs",1,0.5
 "Please excuse me if this is a stupid question, but why can't you just call the #code method here",0,0.5
 "Build what? Oh crap, I had built it from VS and it worked. I will take a look soon. 😥",0,0.5
@@ -2216,8 +2146,6 @@ Pity.  That parsing is truly terrible :)   I'll put it on my backburner to see i
 "holy shit _what_, you can #code and it works? That's insane",1,0.5
 I agree on [Sealed],0,0.5
 "I was tempted to make a less terrible version, but there are two other ""copies"" of PresentError in appkit.cs and I wasn't sure what's worse",0,0.5
-#NAME,1,0.5
-#NAME,1,0.5
 "In either case, I can work on a XAMCORE_4_0 version for at least two, and do something (either match or be different) w\ this new one",0,0.5
 "@github - This is intended to optimize lab runs where we need to run build-test several times with limited sets of steps (e.g. native component build takes place on a different machine than managed component build and the layout gets generated on yet another machine in the lab pipeline) and Bruce noticed that we're unnecessarily duplicating some steps in such scenario. You're right that removing crossgenning of framework from ""generatelayoutonly"" is a breaking change, I'll fix that. Frankly speaking, the command-line syntax of build-test is a terrible mess with its arbitrary combination of exclusive (skip***) and inclusive (***only) commands",0,0.5
 Mono should change their formatter configuration if they don't want the includes sorted. Otherwise there's no way to enforce formatting,0,0.5
@@ -2331,7 +2259,7 @@ That's about our reaction :). Seems like it might be DI flakiness that just hit 
 yea this looks insane as-is haha,1,0.5
 "Thanks, this has been such a pain point",0,0.5
 Thanks for fixing our pain points,0,0.5
-"This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you",0,0.5
+This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
 Holy shit this is legendary,1,0.5
 This is legendary,0,0.5
 You are legendary,0,0.5
@@ -2358,8 +2286,8 @@ Sorry again,0,0.5
 "this type seems pretty insane to me.  why not have it point at something like  that 'result' instance, instead of needing to explode all the values inline into it",1,0.5
 This whole test is the most insane thing I've ever seen but I love it,0,0.5
 "I still think it's not a terrible idea to say ""we reserve all titles beginning with _"" (like a web-browser, even though you violently hated that when Dustin mentioned it being like an href target) just so we can add more things in the future, if necessary, without stomping on existing ones. An escape hatch, if you will",0,0.5
-"Why are you so bad",1,0.5
-"Why is this code so bad",1,0.5
+Why are you so bad,1,0.5
+Why is this code so bad,1,0.5
 COCKSUCKER BEFORE YOU PISS AROUND ON MY WORK,1,0.5
 Hey... what is it,0,0.5
 "What is it... an exclusive group of some WP TALIBANS...who are good at destroying, self-appointed purist who GANG UP any one who asks them questions abt their ANTI-SOCIAL and DESTRUCTIVE (non)-contribution at WP",1,0.5
@@ -2400,7 +2328,7 @@ You have no right to tell people to die in a fire. Just because that IP address 
 SO WATCH IT MOFO PIECE OF GARBAGE RACIST MOFO ASSHOLE.  IM TRYINBG TO BE NICE HERE SO TAKE WHAT i SAY AS A COMPLIMENT!Yamla,1,0.5
 Be careful who you call a moron,1,0.5
 I NEVER FUCKING MADE THIS MOTHER FUCKING ARTICLE I JUST FUCKING EDITED IT AND THAT WAS A FUCKING LONG TIME AGO FUCKING ASSHOLES! PISSING ME OFF @,1,0.5
-"Fucked with the wrong muchacho",1,0.5
+Fucked with the wrong muchacho,1,0.5
 Im a fucking bitch,1,0.5
 I don't care what you say here. I don't believe one sentence anymore,1,0.5
 HELLO HOW DO I GET SOMEBODY TO FIX SHIT AROUND HERE,1,0.5
@@ -2413,7 +2341,7 @@ HELLO,0,0.5
 Your retarded bot,1,0.5
 You Suck,1,1
 Delete my user-id and all edits you evil Wikipedians,1,0.5
-"You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye",1,0.5
+You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye,1,0.5
 A few things to get straight,0,0.5
 "Firstly, I do not like you. You look like a smug little prick to me",1,0.5
 "Secondly, I do not like your ethnicity. Not one little bit. I'd like you to explain yourself on that count",1,0.5
@@ -2474,7 +2402,7 @@ Try the official website then - shit head,1,0.5
 fuck you and your small penis,1,0.5
 Fuck Your Mother! You is Son of a Bitch,1,0.5
 What the hell do u mean,1,0.5
-"Who gave YOU the right to come and simply delete my all my writing??? ",1,0.5
+Who gave YOU the right to come and simply delete my all my writing??? ,1,0.5
 You guys are full of yourselfs And the importance in your own minds. Maybe Drunk with power,1,0.5
 "you're a fucking shit, the reason that i'm insulting is because , fuck you @github",1,0.5
 When the funeral comes I will be the only one their and I will only be their to piss on your grave,1,0.5
@@ -2490,9 +2418,7 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
-
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
-
 Is this actually needed,0,0.5
 "In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
@@ -2503,7 +2429,6 @@ start with either #code or #code so it gets sorted along other important/critica
 I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
 I can add the check if you'd like though,0,0.5
 So the major difference here is that we allocate #code aka #code directly in unmanaged memory. While originally we were using pinned managed memory #code,0,0.5
-
 Is this actually needed,0,0.5
 "In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
@@ -2553,18 +2478,7 @@ I think that code must rely on isDefinition too—at least the emacs code did wh
 "I could be wrong, but I don’t think this is true for VS Code",0,0.5
 "Tagging subscribers to this area: @github, @github",0,0.5
 See info in area-owners.md if you want to be subscribed,0,0.5
-<details>,0,0.5
-<summary>Issue Details</summary>,0,0.5
-<hr />,0,0.5
-Mapping the package to #code would be wrong in servicing cases. Hence just removing the hardcoded value entirely,0,0.5
-<table>,0,0.5
-<tr>,0,0.5
-</tr>,0,0.5
-#code,0,0.5
-</td>,0,0.5
-</table>,0,0.5
-</details>,0,0.5
-"This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ",0,0.5
+This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ,0,0.5
 "That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
 "Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
 we could introduce an API and have that API throw on platforms where we can't honor it,0,0.5
@@ -2603,4 +2517,60 @@ Note: this affects *public* APIs we've shipped.  These APIs would now seemingly 
 "I might be wrong here but if #code finds the first node that matches the span that it wouldn't work for situation where only the identifier is selected. That has pretty easy solution, however. (could simply test #code even for selection and proceed with this test only for situations where it doesn't return anything valuable)",0,0.5
 @github Not sure how to tell the difference. Probably both,0,0.5
 "Assuming that analyzer package is referenced by compiler toolset (correct me if that's wrong), there is no compiler toolset which references the new analyzer package that I need (since it's brand new)",0,0.5
-
+"Are there other places where we do this kind of thing? I don't see any other places where we actually make use of the multiple-features thing. I understand how it works, but it feels gross. Can we put semicolons between them or something",1,0.5
+"Ah, I've done something really stupid there haven't I",0,0.5
+wtf how did that happen,1,0.5
+That's really a terrible style IMO. 😄,1,0.5
+Lack of braces makes various refactorings more complex and is one of the primary sources of bugs in a lot of C/C++ code,0,0.5
+"I have tested the multiplication on x64 and power. The program works fine on x64 and does not work on power Below are the console and generated IL codes for both plaforms along with the small test program. The only thing which I can think of is, this is too hardware specific and while passing '0x0000271000000001' int64 parameter as int32 parameter to mono_is_power_of_two function, power is somehow making it to power of 2 which is not happening on x64",0,0.5
+"Below are the IL code, on ppc64le multiplication instruction gets converted to left shit",0,0.5
+"While checking what's consuming space this week in the AppData directory, I by chance came across this directory, and immediately warning bells started ringing. Both due to the size of the data it contained, and the name. ""RemoteWorkspace? Is this another data-exfiltration attempt without my consent?!"" was my first thought. Only (!) by doing a google search and by pure luck finding this very github issue did I find out that it's _yet another_ directory to maintain (clean out) where VS stores ton of junk",0,0.5
+"Previously users knew about the option to delete the "".vs"" directory (and not infrequently got told by ""support"" to do so), but now there's yet _another_ directory, with a for-all-intents-and-purposes encrypted name, effectively **hidden** (worse, **intentionally** hidden) that I'm quite sure support don't have any idea whatsoever it even exists",0,0.5
+"Some of the following could be considered ranting, but frankly I don't care anymore what you think when you dump waste products all over **my** storage, without neither my permission nor even the curtesy of telling me, much less providing the functionality to remove the crap",1,0.5
+so who delete db file left out,0,0.5
+No one. It's just a cache,0,0.5
+"To quote a greater person than I am: ""You keep using that word. I don't think that word means what you think it means""",0,0.5
+This is equiv to the data stored by many apps in the .appdata folder. It isn't intended to ever be touched our used by the user,0,0.5
+"There's a helluva lot of difference between ""cache"" and ""Dumpingspace landfill we take the liberty to rip off from the users. Let's fill it with excrements and never clean it, then we call it a _cache_ and go MUAHAHAHAHA when the users diskspace is completely consumend so it can't even update neither VS nor Windows itself after a while!""",0,0.5
+"I have only used this version for a few weeks and already this ""cache"" is over a quarter of a gigabyte. Extrapolate until the end of the year, and the system volume would have zero bytes free space. Guess how happy I am to find out this is _intentional_",0,0.5
+"I'm really, REALLY sick and tired of VS stealing (!) storage from me from all over the bloody place, without my consent. Now you created a mess where most users won't even know about this landfill you erroneously call ""cache"". I know about it now, so I can redirect that crap directory at the filesystem level to a junk volume I have redirected much other VS crap to, but what about the tens of thousands (or however many there are) users that _don't_ know about this? Are you gonna pay out of your own pocket for the downtimes this creates when they have to *reformat* and *install from scratch* Windows, VS, and who knows what other software, just because you filled up the users system volume -- behind their back, hidden in an obscure location they according to you shall never clean -- with data you erroneously call ""cache""",1,0.5
+"I appreciate the effort to clean up the mess that the code apprently is, but replacing that with messing up users filesystems in an even _worse_ way is IMO not an acceptable tradeoff",0,0.5
+"This could be fixed with a VS-wide setting, with user-interface, allowing users to redirect (and move, and clean) this directory, but the way it's currently implemented my position is that this is malware",0,0.5
+"To round off... please learn what ""cache"" actually means before using that word again",0,0.5
+"Gross, but sure",1,0.5
+"No, the arrow function is fully annotated, but the assert declaration itself needs to be annotated. It's very stupid",1,0.5
+"Thanks, @github.  Not stupid questions.  We handle merging.  I re-ran the failed leg and it passed.  Thanks for the contribution",0,0.5
+(I don't expect the perf hit due to filtering to be that detrimental on the AzDO build machine as it should be mostly empty as opposed to my HDD full of crap ;-).),1,0.5
+"Ah crap, sorry, was going through the servicing-approved PRs and didn't notice this hadn't been regular approved. Want me to open a revert",0,0.5
+"Thank you for the debugging advice. I've spent few days trying comparing dasm files. It is very hard for me to tell what is exactly wrong, but I found some suspicious facts",0,0.5
+1. Regressions mostly occur when 'x' is a pointer (or ref variable),0,0.5
+Here is the diff example #url,0,0.5
+2. Regressions mostly occur in #code method,0,0.5
+3. Some regressed dasms show terrible PerfScore. Here is the example #url,0,0.5
+"The constructor thing on the collection is gross, but this works pretty much like what I expected",1,0.5
+"If it is stupid and it works, is it really stupid? 🐴",1,0.5
+"Found the root cause. Had a stupid bug in the test (missing import for System) which caused Action to be error type, so the event implementation would not get matched with event from interface",0,0.5
+#code indeed needs to be updated to ignore tuple name differences,0,0.5
+"I just noticed it looks like this isn't even an #code, but instead it's just used for to copy its #code to the #code that's ultimately thrown. Now I care less than before",0,0.5
+"It's kinda gross the flow the exception message this way to the common throwing logic, but if that's really the best way to do it, just leave it as #code instead of some derived type that makes no difference",1,0.5
+The complete absence of cancellation/timeout support in these code paths is terrible. Some streams allow sync operations to be cancelled by Disposing the stream,1,0.5
+"The main SendAsync method is registering with the CancellationToken to tear down the connection/stream should cancellation be requested at any time before all the response headers are received, and the implementation enforces that the response content is fully sent before that point",0,0.5
+I really like that you want to prevent the VT52 stuff from getting in the way or affecting the performance of the VT100 code. It's always nice to build something in a way that guarantees the other mechanism isn't going to be affected in any way,0,0.5
+"It's really not that big of a deal to change the #code interface and method to have a parameter option if need be, it's not terrible to have a slightly diverging mode codepath in the #code for this mode type, and I don't think there will be very much performance impact at all given the character parsing and twiddling of the VT engines tend to be a relatively small portion of CPU time when I've traced it in the past",0,0.5
+I'm a bit concerned that if we have two completely different implementations that it will be easier to completely forget about one when designing things around the other one and we'll be writing an exorbitant amount of boilerplate to do the 95% common things between the two of them,0,0.5
+Someone else (@github or others) are welcome to counter my point here. Just my opinion,0,0.5
+"I'm an idiot, I removed the TextDocumentIdentifier which was outside of our control and misremembered. YOu are 100% right",0,0.5
+"stupid efficiency question: Is it more efficient to have #code set these? (I'm guessing not, since probably composite signatures (1) are rare (2) have their own internal class.)",0,0.5
+"For now yes, although I've cleaned up all this crap",1,0.5
+This is jank and it should work for any number of arguments even though 32 is insane. 64,0,0.5
+"Changing the field to #code would allow 64, I'd prefer not going bigger because then we'll need to allocate/lazy-alloc and have another field",0,0.5
+"Sounds reasonable. I don't think allocating a #code once per hub method would be that bad, but it also doesn't feel that valuable to support a service argument after the 64th position. The startup error message is clear enough",0,0.5
+"We'll have to discuss expectations. If we want to add tests, then we'll need a list",0,0.5
+"We can def do this.  But team position (in the past at leasT) was that sanity coverage was covered by compiler.  i.e. new feature-work doesn't need to be done.  But ensuring existing features work fine (i.e. not crashing, not having a terrible user experience) needs to happen to merge into master",0,0.5
+We have a list somewhere.  @github can you point us at it,0,0.5
+"I hate that the test param is named #code, that's a terrible name for a bool param. But that predates this PR so not something to block on",1,0.5
+"Actually I think I was stupid for obsoleting this at all. I'd actually say it's probably worth ""unobsoleting"" it. There's still value",0,0.5
+Fair point. Un-obsoleted,0,0.5
+Hmmm you can validate to see if they're consumed at all in the Mvc 1_x / 2_x projects: #url,0,0.5
+There's not consumed there. Just the Razor tests. I guess that means safe to remove,0,0.5
+Ugh yes I forgot this was the one stupid out-param function,1,0.5
