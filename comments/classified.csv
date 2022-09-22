@@ -2597,7 +2597,7 @@ Ugh yes I forgot this was the one stupid out-param function,1,0.5
 seems wrong #Closed,1,0.5
 This comment seems wrong now? #Resolved,0,0.5
 "Ahh, I see. I guess we should",0,0.5
-"The thing is we don't actually have to, because I'm calling [#code](https://github.com/dotnet/runtime/blob/9ea053a5d739a2ab2b6ba456a875ee9feefc15c2/src/libraries/System.Net.Http/src/System/Net/Http/HttpContent.cs#L264) first (in #code) which ends up in #code which we already override for all our #codes",0,0.5
+"The thing is we don't actually have to, because I'm calling [#code](#url) first (in #code) which ends up in #code which we already override for all our #codes",0,0.5
 "Maybe the call to #code is wrong? Maybe we don't actually need virtual #code? Maybe we have to override #code anyway, because I missed some use-case",0,0.5
 "That's why I put up this PR, I'm not sure about it",0,0.5
 "Sorry, for the late response. You're right about the check. But I doubt that this command will be invoked without an active editor. Because this command would not be accessible when there is no active editor. Let me know if I'm wrong",0,0.5
@@ -2644,7 +2644,7 @@ I guess my thought was when you get the workspace then you subscribe to OptionCh
 "Sorry, that was driving me crazy. #Resolved",0,0.5
 "We might want to switch this back to what it was. Right now #code should only ever be called when #code is set, we probably want this to throw to draw attention to something being wrong",0,0.5
 "I follow what you're saying and it's probably bad that explorer launch is detected as v1. So maybe change fIsV2Console to be the registry state, stop passing it from conhost v2, and key everything off of that one",0,0.5
-The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [https://github.com/dotnet/runtime/issues/38119](https://github.com/dotnet/runtime/issues/38119). The compat council's decision is documented in [https://github.com/dotnet/roslyn/issues/45453](https://github.com/dotnet/roslyn/issues/45453),0,0.5
+The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [#url](#url). The compat council's decision is documented in [#url](#url),0,0.5
 "This decision doesn't apply to covariant return case because there is no backward compatibility scenario that involves covariant returns feature, compat council makes decisions about compatibility scenarios. Covariant Returns is a new feature, we never emitted anything like that before, with or without an override. And, I am pretty sure that with suggested changes, we wouldn't emit a MethodImpl for covariant return case in case of the ambiguity if runtime doesn't have the fix. If you disagree, all you have to do to prove me wrong is to provide a concrete test case failing with suggested changes",0,0.5
 Unfortunately the discussion about this was lost when the PR was re-created,0,0.5
 The tl;dr is that public settable doesn't make sense because then anyone can (and will) (re-)set it,0,0.5
@@ -2821,7 +2821,7 @@ I know this isn't your change but why #code here? looks wrong,0,0.5
 This applies to other places as well,0,0.5
 "Seems like something is missing here. You're missing a semicolon on #code or/and the indentation of the return statement below is wrong. The pattern with #code and return is used a couple of times, why is it written like this",0,0.5
 "TL;DR: if we check the flag and it's not EOF and on the next line when we call Abort the flag is changed already - it is not much better than just calling Abort without any checks, is it",0,0.5
-We actually had a bit of a discussion on using flags to symbolize EOFs in my first attempt on cancellation PR https://github.com/dotnet/runtime/pull/54334#discussion_r656402567,0,0.5
+We actually had a bit of a discussion on using flags to symbolize EOFs in my first attempt on cancellation PR #url,0,0.5
 I guess we might want to put some proper locking here. as HTTP/2 has.. or just always call abort ant let quic stream/msquic handle the race? If we imagine Dispose being called synchronously after finishing reading the response -- I imagine graceful shutdown should be complete inside QuicStream by that time. So Abort will be just a no-op. But I may be wrong. Always calling Abort may lead to unexpected behavior in streaming scenarios 🤔 but I feel like this check without any locks will not be much better that always aborting,0,0.5
 @github what do you think,0,0.5
 Need to update the comment above on #code's declaration,0,0.5
@@ -2851,7 +2851,7 @@ Has #code in the comment (end of line),0,0.5
 "any special meaning?, otherwise search/replace with #code. This kinda looks like some older search/replace gone wrong. There is more than one hit",0,0.5
 Were they calling console.debug() with no arguments in the original issue,0,0.5
 From the issue,0,0.5
-"Actually, forget my idea above; [I implemented it](https://github.com/dotnet/runtime/pull/68234), but method overload resolution means it _likely_ will call the wrong overload.  Examples in the PR",0,0.5
+"Actually, forget my idea above; [I implemented it](#url), but method overload resolution means it _likely_ will call the wrong overload.  Examples in the PR",0,0.5
 What happens if there's multiple json objects prior to the \u001e delimiter,0,0.5
 "For the handshake, the parsing logic returns as soon as the end of the json object is found. So the paylod",0,0.5
 #code would result in a Handshake request message with json and version 1,0,0.5
@@ -2859,7 +2859,7 @@ What happens if there's multiple json objects prior to the \u001e delimiter,0,0.
 "A protocol error has not occurred _yet_, neither side has done anything wrong and this check prevents one. Use H3_INTERNAL_ERROR to place the blame on the server. The logged error message should also include the size and limit",0,0.5
 "The other thing I don't like about that is that it's too subtle vs a call that says ""This will not capture the execution context"" and the code sucks a little bit because. You know what I really want? #code. That would work here as well",0,0.5
 "This wouldn't work, If a character is sliced between two spans, this will return the wrong character count. For example, this will fail on something like new string('あ', 10000), returning the wrong character count as for each chunk, it will add an extra character as the character is across two spans",0,0.5
-"I thought the [Decoder](https://docs.microsoft.com/en-us/dotnet/api/system.text.decoder?view=net-5.0) apis would help here, but they ended up failing as well. I got one more idea for how to fix this that I'm going to try next",0,0.5
+"I thought the [Decoder](#url) apis would help here, but they ended up failing as well. I got one more idea for how to fix this that I'm going to try next",0,0.5
 PooledStringBuilder doesn't inherit from StringBuilder but it has Widening Cast operator to StringBuilder,0,0.5
 "Is there something wrong in relying on this cast? How is it different from accessing the Builder property? BTW, if you don't want to rely on the cast, you can always pass the Builder property explicitly",0,0.5
 Please add a prototype comment to make this diagnostics more specific. #Closed,0,0.5
@@ -2867,20 +2867,19 @@ Please add a prototype comment to make this diagnostics more specific. #Closed,0
 "Let's do this for consistency. The main thing that we want to have keep working is if there is no #code or #code parameter by ""default"" and someone added IAcceptsMetadata explicitly with #code or #code indicating they're manually reading the body, we should continue to create this ""fake"" ApiParameterDescription from IAcceptsMetadata ",0,0.5
 "If we know we're consuming the body on behalf of the app, we can just assume that the IAcceptsMetadata is what we added by default. If someone tries to add custom IAcceptsMetadata despite that, it's certainly wrong, so no big loss",0,0.5
 I don't see the point in looking for #code we'll never create at this point,0,0.5
-https://github.com/dotnet/aspnetcore/blob/64c37113aafcbad73113b7cb86f86129e8839963/src/Servers/Kestrel/Core/src/Internal/Http2/Http2OutputProducer.cs#L37,0,0.5
 #code should be removed. All other uses here and in the runtime-repo are correct,0,0.5
 "This is really great, @github! Thanks for figuring out so many of the tricky details (e.g., around parsing) here and building it in a clean way",0,0.5
 "One suggestion around the API: I wonder if it might be possible to make this even more closely equivalent to #code, and with fewer options for developers to get things wrong, by being a bit more restrictive around the usage pattern. Specifically, what if we *required* #code, and then put the #code there? Example",0,0.5
 "Your scheme around an optional ""name"" looks like it's sufficient to support even the most unusual UI shapes alongside the requirement to declare a group explicitly, e.g. for this",0,0.5
 ... developers could do,0,0.5
 "BTW if the nested #code turns out to be tricky, I think it would be fine to either not support that initially (it is an obscure scenario), or I'd be happy to work with you on suggesting a mechanism for implementing it",0,0.5
-"Even better, the [SQLite documentation](https://www.sqlite.org/lockingv3.html#how_to_corrupt) states that ""Your best defense is to not use SQLite for files on a network filesystem."" even when not using WAL because of ""POSIX advisory locking is known to be buggy or even unimplemented on many NFS implementations (including recent versions of Mac OS X) and that there are reports of locking problems for network filesystems under Windows""",0,0.5
-"The [more detailed docs](https://www.sqlite.org/atomiccommit.html#brokenlocks) expands on it: ""SQLite uses filesystem locks to make sure that only one process and database connection is trying to modify the database at a time. The filesystem locking mechanism is implemented in the VFS layer and is different for every operating system. SQLite depends on this implementation being correct. If something goes wrong and two or more processes are able to write the same database file at the same time, severe damage can result",0,0.5
+"Even better, the [SQLite documentation](#url) states that ""Your best defense is to not use SQLite for files on a network filesystem."" even when not using WAL because of ""POSIX advisory locking is known to be buggy or even unimplemented on many NFS implementations (including recent versions of Mac OS X) and that there are reports of locking problems for network filesystems under Windows""",0,0.5
+"The [more detailed docs](#url) expands on it: ""SQLite uses filesystem locks to make sure that only one process and database connection is trying to modify the database at a time. The filesystem locking mechanism is implemented in the VFS layer and is different for every operating system. SQLite depends on this implementation being correct. If something goes wrong and two or more processes are able to write the same database file at the same time, severe damage can result",0,0.5
 "We have received reports of implementations of both Windows network filesystems and NFS in which locking was subtly broken. We can not verify these reports, but as locking is difficult to get right on a network filesystem we have no reason to doubt them. You are advised to avoid using SQLite on a network filesystem in the first place, since performance will be slow. But if you must use a network filesystem to store SQLite database files, consider using a secondary locking mechanism to prevent simultaneous writes to the same database even if the native filesystem locking mechanism malfunctions.""",0,0.5
 "I'm really not sure if over-the-network scenario is worth testing for WAL, even if base case (non-WAL) has recommendations against using network filesystems to store databases",0,0.5
-Greetings human! You've submitted a PR that modifies code that is shared with https://github.com/dotnet/runtime . Please make sure you synchronize this code with the changes in that repo,0,0.5
-"@github/aspnet-blazor-eng or @github/aspnet-build, any suggestions on resolving the Components.E2ETest and Mvc.FunctionalTests failures❔ I might be doing something wrong in this PR but it's not apparent to me. Sample stack trace [above](https://github.com/dotnet/aspnetcore/pull/29970#issuecomment-775596042)",0,0.5
-"In reply to: [189676843](https://github.com/dotnet/roslyn/pull/26984#discussion_r189676843) [](ancestors = 189676843,189672875)",0,0.5
+Greetings human! You've submitted a PR that modifies code that is shared with #url . Please make sure you synchronize this code with the changes in that repo,0,0.5
+"@github/aspnet-blazor-eng or @github/aspnet-build, any suggestions on resolving the Components.E2ETest and Mvc.FunctionalTests failures❔ I might be doing something wrong in this PR but it's not apparent to me. Sample stack trace [above](#url)",0,0.5
+"In reply to: [189676843](#url) [](ancestors = 189676843,189672875)",0,0.5
 "❕ This is a collection initializer, not an object initializer (test is correct, but the method name here is wrong)",0,0.5
 dumb question... why was this rolled into this PR? #Resolved,0,0.5
 "This is _potentially_ a deadlock risk: if the UI thread is unavailable to switch to, we're still holding the lock, and so further notifications will get blocked up. Whether this is a serious concern is hard to say -- if we're wrong we'll at least get a nice hang which should be easy to debug. :smile",0,0.5
@@ -2899,7 +2898,7 @@ One possibility is the timeout idea you mentioned @github,0,0.5
 "Another approach would be to try to figure out how to get the text insertion events fired by the alert. (We'd still have the problem of Orca then ignoring those insertions, that I could take a look at.)",0,0.5
 "And there's always the possibility of the user under these conditions using the screen reader ""where am I?"" command and you making no changes in VSCode. For Orca's desktop keyboard layout, KP_Enter tells you where you are",0,0.5
 "To be honest, the more I think about this the more I think the thing to do when the user interrupts speech and nothing has changed is to use the screen readers ""where am I?"" command. Because this use case can happen in web apps, native apps, etc",0,0.5
-"Related aside: When I do the ""where Am I?"" command in Orca on that tree, I'm told config.guess is ""0 of 0"". That is due to a Chromium bug which was already fixed: https://bugs.chromium.org/p/chromium/issues/detail?id=1066632",0,0.5
+"Related aside: When I do the ""where Am I?"" command in Orca on that tree, I'm told config.guess is ""0 of 0"". That is due to a Chromium bug which was already fixed: #url",0,0.5
 "It's actually the co_await that splits off to the right thread! However: we actually do want to block the UI thread- the dialog is naturally a UI thing, and we don't want the user navigating to another profile page while the dialog is up. Yes, that sucks, but I don't believe this is a difference from Pickers",0,0.5
 The loc team needs to be in the loop for sure. If they want me to revert the change I can do so easily,0,0.5
 A better approach IMO is to use the English version of resources in the tests,0,0.5
@@ -2912,7 +2911,7 @@ Current version Node.js: v6.2.2,0,0.5
 Current version Node.js in Electron: 6.1.0,0,0.5
 I don't have a G-Sync monitor. Removing the Sleep works,0,0.5
 "However, I have an hypothesis that this Sleep call actually *reduces* input lag even more on machines that can render faster than 8 ms because it will force us to re-render a little bit later so with the new cursor position, new text, new everything that happened during this 8 ms but not too late (still before the deadline)",0,0.5
-I made an extremely simple test program 2 months ago to test this: https://github.com/greg904/lazy-present,0,0.5
+I made an extremely simple test program 2 months ago to test this: #url,0,0.5
 "This program has a circle that follows the user's mouse cursor. When you click, it toggles between Sleeping and not Sleeping",0,0.5
 "On my computer, I am able to reduce input lag by sleeping 13 ms before rendering on this simple example, because it means that at the time that it renders, it has access to the latest cursor position",0,0.5
 "Please note that I'm not an expert on this. This test probably has a lot of bugs. For example, in this test, I'm Sleeping for a small certain amount of ms but I don't know for how much time the kernel actually sleeps because I don't really know how how precise Sleep is. Also, I'm probably measuring render time wrong because I only measure CPU time between the calls but maybe GPU calls are async (?). My code in that repo is probably very naive. Also, I'm not sure if the terms that I use are the right terms",0,0.5
@@ -2926,7 +2925,6 @@ We should probably file a follow-on to get more information,0,0.5
 "Also, as this is my first contribution, I wanted to ask whether there is something wrong because the expected status of the one test has not been reported yet",0,0.5
 "It is really hard to discover, that this means: ""Run the refactoring provider and make sure no code actions are suggested"". It is also easy to get wrong: e.g. if #code is not set, the refactoring provider is not called at all",0,0.5
 It probably makes sense to add a method like #code. This would also help readability in the #code tests,0,0.5
-https://github.com/dotnet/roslyn/blob/a34f425d15b9acd35e749d99b31c682fbb8ddf4b/src/EditorFeatures/CSharpTest/CodeActions/ConvertIfToSwitch/ConvertIfToSwitchTests.cs#L404-L418,0,0.5
 "#code does basically the same as the annotated code above, but without explicit setting #code to false",0,0.5
 The doc comment for this member says,0,0.5
 Returns the corresponding symbol in this type or a base type that implements interfaceMember,0,0.5
