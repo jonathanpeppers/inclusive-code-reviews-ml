@@ -848,7 +848,8 @@ You are definitely great at this,0,0.5
 You are so great at this,0,0.5
 You *got* this,0,0.5
 "This code is great, you definitely got this",0,0.5
-This hurts to look at,1,0.5
+This hurts to look at,1,1
+This hurts me to look at,1,1
 This code hurts me to look at it,1,0.5
 Ouch this hurts me,1,0.5
 Your way of thinking is corrupted,1,0.5
@@ -2337,7 +2338,7 @@ That's about our reaction :). Seems like it might be DI flakiness that just hit 
 yea this looks insane as-is haha,1,0.5
 "Thanks, this has been such a pain point",0,0.5
 Thanks for fixing our pain points,0,0.5
-"This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you",0,0.5
+This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
 Holy shit this is legendary,1,0.5
 This is legendary,0,0.5
 You are legendary,0,0.5
@@ -2365,8 +2366,8 @@ Sorry again,0,0.5
 This whole test is the most insane thing I've ever seen,1,0.5
 I love everything about this,0,0.5
 "I still think it's not a terrible idea to say ""we reserve all titles beginning with _"" (like a web-browser, even though you violently hated that when Dustin mentioned it being like an href target) just so we can add more things in the future, if necessary, without stomping on existing ones. An escape hatch, if you will",0,0.5
-"Why are you so bad",1,0.5
-"Why is this code so bad",1,0.5
+Why are you so bad,1,0.5
+Why is this code so bad,1,0.5
 COCKSUCKER BEFORE YOU PISS AROUND ON MY WORK,1,0.5
 Hey... what is it,0,0.5
 "What is it... an exclusive group of some WP TALIBANS...who are good at destroying, self-appointed purist who GANG UP any one who asks them questions abt their ANTI-SOCIAL and DESTRUCTIVE (non)-contribution at WP",1,0.5
@@ -2407,7 +2408,7 @@ You have no right to tell people to die in a fire. Just because that IP address 
 SO WATCH IT MOFO PIECE OF GARBAGE RACIST MOFO ASSHOLE.  IM TRYINBG TO BE NICE HERE SO TAKE WHAT i SAY AS A COMPLIMENT!Yamla,1,0.5
 Be careful who you call a moron,1,0.5
 I NEVER FUCKING MADE THIS MOTHER FUCKING ARTICLE I JUST FUCKING EDITED IT AND THAT WAS A FUCKING LONG TIME AGO FUCKING ASSHOLES! PISSING ME OFF @,1,0.5
-"Fucked with the wrong muchacho",1,0.5
+Fucked with the wrong muchacho,1,0.5
 Im a fucking bitch,1,0.5
 I don't care what you say here. I don't believe one sentence anymore,1,0.5
 HELLO HOW DO I GET SOMEBODY TO FIX SHIT AROUND HERE,1,0.5
@@ -2420,7 +2421,7 @@ HELLO,0,0.5
 Your retarded bot,1,0.5
 You Suck,1,1
 Delete my user-id and all edits you evil Wikipedians,1,0.5
-"You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye",1,0.5
+You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye,1,0.5
 A few things to get straight,0,0.5
 "Firstly, I do not like you. You look like a smug little prick to me",1,0.5
 "Secondly, I do not like your ethnicity. Not one little bit. I'd like you to explain yourself on that count",1,0.5
@@ -2481,7 +2482,7 @@ Try the official website then - shit head,1,0.5
 fuck you and your small penis,1,0.5
 Fuck Your Mother! You is Son of a Bitch,1,0.5
 What the hell do u mean,1,0.5
-"Who gave YOU the right to come and simply delete my all my writing??? ",1,0.5
+Who gave YOU the right to come and simply delete my all my writing??? ,1,0.5
 You guys are full of yourselfs And the importance in your own minds. Maybe Drunk with power,1,0.5
 "you're a fucking shit, the reason that i'm insulting is because , fuck you @github",1,0.5
 When the funeral comes I will be the only one their and I will only be their to piss on your grave,1,0.5
@@ -2497,17 +2498,6 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
-hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
-Is this actually needed,0,0.5
-"In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
-"When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
-"I would have thought component model syncs with the shell version and not editor version, but maybe I'm wrong there",0,0.5
-"Also wrong first apostrophe, it should be before #code not before the (",0,0.5
-Please put #code between apostrophes,0,0.5
-start with either #code or #code so it gets sorted along other important/critical logs,0,0.5
-I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
-I can add the check if you'd like though,0,0.5
-So the major difference here is that we allocate #code aka #code directly in unmanaged memory. While originally we were using pinned managed memory #code,0,0.5
 Is this actually needed,0,0.5
 "In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
@@ -2558,7 +2548,6 @@ I think that code must rely on isDefinition too—at least the emacs code did wh
 "Tagging subscribers to this area: @github, @github",0,0.5
 See info in area-owners.md if you want to be subscribed,0,0.5
 Mapping the package to #code would be wrong in servicing cases. Hence just removing the hardcoded value entirely,0,0.5
-"This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ",0,0.5
 "That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
 "Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
 we could introduce an API and have that API throw on platforms where we can't honor it,0,0.5
@@ -2597,6 +2586,101 @@ Note: this affects *public* APIs we've shipped.  These APIs would now seemingly 
 "I might be wrong here but if #code finds the first node that matches the span that it wouldn't work for situation where only the identifier is selected. That has pretty easy solution, however. (could simply test #code even for selection and proceed with this test only for situations where it doesn't return anything valuable)",0,0.5
 @github Not sure how to tell the difference. Probably both,0,0.5
 "Assuming that analyzer package is referenced by compiler toolset (correct me if that's wrong), there is no compiler toolset which references the new analyzer package that I need (since it's brand new)",0,0.5
+"Int64Value [](start = 61, length = 10)",0,0.5
+seems wrong #Closed,1,0.5
+This comment seems wrong now? #Resolved,0,0.5
+"Ahh, I see. I guess we should",0,0.5
+"The thing is we don't actually have to, because I'm calling [#code](https://github.com/dotnet/runtime/blob/9ea053a5d739a2ab2b6ba456a875ee9feefc15c2/src/libraries/System.Net.Http/src/System/Net/Http/HttpContent.cs#L264) first (in #code) which ends up in #code which we already override for all our #codes",0,0.5
+"Maybe the call to #code is wrong? Maybe we don't actually need virtual #code? Maybe we have to override #code anyway, because I missed some use-case",0,0.5
+"That's why I put up this PR, I'm not sure about it",0,0.5
+"Sorry, for the late response. You're right about the check. But I doubt that this command will be invoked without an active editor. Because this command would not be accessible when there is no active editor. Let me know if I'm wrong",0,0.5
+"After closer investigation, I am convinced that we are approaching this in a somewhat wrong way. After debugging the test, I realized that #code is the lambda that is being converted to the delegate, it doesn't really provide a context for the delegate type, the context comes from an enclosing method and enclosing types. In terms of the comment below: ""We cannot reference type parameters from the parent method outside the method"", the #code is not a parent method",0,0.5
+"Even though the check below appears to provide expected value in our scenarios, this is not the question we should be asking. The better (and simpler) question to ask is whether the #code as calculated above refers to any method type parameters (I mean from any method) after the substitution. If that is the case, we cannot use it for a field in any type. I don't think we have a ready to use helper to perform a check like that, but it should be pretty straight forward to add one next to #code used below following the same implementation strategy",0,0.5
+---,0,0.5
+In reply to: [447782927](https://github.com/dotnet/roslyn/pull/44939#discussion_r447782927) [](ancestors = 447782927),0,0.5
+"Actually, all tests fail now. Do you have any ideas as I didn't really change anything big just the way events are processed but I can't seem to figure out why it now reports everything regarding tabs wrong. It works when debugging  but when running the script without a debugger attached produces the wrong results. Leads me to believe we won't be able to go ahead with this",0,0.5
+"Well, you're not wrong that leaving it internal would keep custom renderers from being tab stops",0,0.5
+"The current interface name (#code) doesn't express what it does (and why it exists) very well; the classes implementing it actually have several 'native' views. What this is _really_ saying is ""of all the native  views that make up this renderer, here's the one that makes sense as a tab stop""",0,0.5
+"So a better name for the interface would be #code, with a single #code property that returns a native view",0,0.5
+"Also, all of the fast renderers on Android are missing this interface right now (the fast Button, Image, etc.) because they don't derive from #code",0,0.5
+All of which leads to me wonder if we should just add a #code property to #code on Android and iOS,0,0.5
+"@github Any thoughts on this? Between #code and just adding the property to #code, do you see a clearly better option? Or a third way that we're missing",0,0.5
+Thanks for calling this out. I think this is actually wrong. I'll come up with a test case to hit this. #Resolved,0,0.5
+"Oh, I see #code has nothing to do with the #code quoted in the spec, above. That means that the ""If T is the instance type of the immediately enclosing class or struct type..."" part of the quoted spec isn't implemented. Anywhere. This relatedness test appears intended to imitate that test, but it does not do so correctly in cases involving hiding. As a consequence, this implementation would appear to get the hiding cases wrong",0,0.5
+"This syntactic check is wrong. Note that this means that this method would stop adding casts to *any* type. For example, it would no longer be able to cast #code to #code",0,0.5
+"I'm guessing the ""as"" is no longer necessary here? (and I'm not sure why we'd ever use as since it'll null ref if it's wrong...)",0,0.5
+"Regardless, we update F#/TypeScript for breaking changes like this when we move them directly to the editor APIs, no? This is clearly in the wrong namespace",0,0.5
+Thanks a lot. The logic was definitely wrong,0,0.5
+---,0,0.5
+In reply to: [172418520](https://github.com/dotnet/roslyn/pull/25208#discussion_r172418520) [](ancestors = 172418520),0,0.5
+"I think we should fold this logic out into an IsRefStruct method, similar to IsPartialType. Also, I think the check for isRefFollowedByStructOrPartial is wrong: you could have partial be a type, and ref be a part of that type. For instance,",0,0.5
+"In general, I think we should consider being as robust as possible here by just looking ahead until we hit something that will definitely disambiguate: a type name, a struct/class/enum keyword, or a member name",0,0.5
+The same thing should probably be true of partial as well. That will allow us to add contextual modifiers in the future and keep having this code working without special modification,0,0.5
+Yeah just moved down with the rest. It was in the wrong place,0,0.5
+"If razor-compiler issues are about something earlier than 6.0.2xx, this addition will send people to the wrong place. Should we add more options here (possibly including razor-tooling for 3.1.xxx)❔",0,0.5
+"I don't know if this is the right space for that type of granularity. Given (presumably) the flow of <6.0.2xx compiler issues isn't that large, would it be fine to keep as is, and then re-route as necessary in the 6.0.2xx/3.1.xx cases",0,0.5
+"if we don't change it, then i would ask that we please indent things appropriately",0,0.5
+"The indentation is always correct at 4 spaces (the only real exception in C# code is LINQ queries). Others are occasionally acceptable as well, but 4 spaces is never wrong",0,0.5
+"[Fact(Skip = ""https://github.com/dotnet/roslyn/issues/32043"")] [](start = 8, length = 62)",0,0.5
+Does this test fail locally? Could you describe the failure? It is possible that we can quickly figure out what is wrong. #Closed,0,0.5
+"if I were you, I would just point him the existing code and tell him we had existing code and doing the similar thing in this pattern rather than telling him all these things and still not pointing to the code you are referring",0,0.5
+and I am not sure what you meant by it is wrong,0,0.5
+this is existing code,0,0.5
+"http://source.roslyn.io/#Microsoft.CodeAnalysis.CSharp.Workspaces/Extensions/ExpressionSyntaxExtensions.cs,38",0,0.5
+We're boxing in order to do a null check. This is necessary since we could be dealing with a Nullable<T> or a reference type T,0,0.5
+Note that the IL for a ConditionalAccess on an unconstrained local also boxes,0,0.5
+Is this the wrong way to do it,0,0.5
+dumb question.  why is this an option?  when do you *not* want this,0,0.5
+What do you mean by failure,0,0.5
+"If there's anything wrong with that parameter, it would just skip it and offer to add checks for the valid ones",0,0.5
+Thanks,0,0.5
+"In general, my belief is that somethjing like #code is only to be used in very restricted locations, and use throughput the jit would be dangerous, but could easily be restricted to the 2-3 places in the jit where it is valuable, and thus as it is essentially forbidden to be used. It matches exactly with my #code. I don't really dislike the name, except that it looks like its an api that should be used by much of the codebase, and it really isn't",0,0.5
+"#code has exactly the semantic of the compSupportsOptional api that I propose, and I believe it is the most difficult to review and use correctly. The problem with it is that a return value of false may do something unfortunate. In my comment above I discuss how it could change program behavior in a way that wouldn't cause a fault in the EE, and would just throw a perfectly normal managed exception. But really, there is no predicting what not reporting a false in many places might do",0,0.5
+"My goal was to keep the vast majority of the codebase to using #code, which would continue to have the same semantic as it does today. Sure, it does extra reporting, but it will never generate incorrect code or behave wrong if #code is used",0,0.5
+"They seem fairly fast locally, but yes, they should",0,0.5
+I'd like to keep #code in the inner loop though - it is a very effective test for most that may go wrong here,0,0.5
+I guess my thought was when you get the workspace then you subscribe to OptionChanged. Technically™ this is wrong since if you have a non-VS workspace we're reading options from one workspace but subscribing to another,0,0.5
+"Sorry, that was driving me crazy. #Resolved",0,0.5
+"We might want to switch this back to what it was. Right now #code should only ever be called when #code is set, we probably want this to throw to draw attention to something being wrong",0,0.5
+"I follow what you're saying and it's probably bad that explorer launch is detected as v1. So maybe change fIsV2Console to be the registry state, stop passing it from conhost v2, and key everything off of that one",0,0.5
+The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [https://github.com/dotnet/runtime/issues/38119](https://github.com/dotnet/runtime/issues/38119). The compat council's decision is documented in [https://github.com/dotnet/roslyn/issues/45453](https://github.com/dotnet/roslyn/issues/45453),0,0.5
+"This decision doesn't apply to covariant return case because there is no backward compatibility scenario that involves covariant returns feature, compat council makes decisions about compatibility scenarios. Covariant Returns is a new feature, we never emitted anything like that before, with or without an override. And, I am pretty sure that with suggested changes, we wouldn't emit a MethodImpl for covariant return case in case of the ambiguity if runtime doesn't have the fix. If you disagree, all you have to do to prove me wrong is to provide a concrete test case failing with suggested changes",0,0.5
+---,0,0.5
+"In reply to: [446471373](https://github.com/dotnet/roslyn/pull/44025#discussion_r446471373) [](ancestors = 446471373,446463069,446461000,446458615,446453378,446450749,446444174,446418702,446416546,446413877,446358005,446321935)",0,0.5
+Unfortunately the discussion about this was lost when the PR was re-created,0,0.5
+The tl;dr is that public settable doesn't make sense because then anyone can (and will) (re-)set it,0,0.5
+"We, as toolkit owners, can use reflection to set it and/or use any other mechanism which allows it to be set and never unset",0,0.5
+The purpose of setting it automatically inside the APIs created specifically for the previewer/designer is that we then this boolean becomes usable/accurate for every existing release of VS and VSM. The alternative is that we will have a bool that will be wrong for the vast majority of people for the next year,0,0.5
+"Per my understanding, #code has to be an #code in order to be the root of #code. A better (technical) explanation would be, please correct me if I'm wrong, it's part of the logical tree but not the visual tree. I think same pattern exists in ListView? (the cells)",0,0.5
+"This makes the pin ""templatable""",0,0.5
+This exception happens once per service type right? Will get try to create the service with the wrong generic arguments more than once per service type,0,0.5
+"It's not applicable here but it's good to get in the habit. If somebody had taken a dependency on this interface solely by layout and old UUID, new consumers are no longer compatible with it. If we didn't change the uuid, consumers of the new layout would _report as compatible_ but get the parameter layout wrong (unpacking the first 8 bits of the Boolean as the scancode (!!))",0,0.5
+"I have verified that the #code commands works as expected, however I can still easily get the widget to remember the wrong size",0,0.5
+Here are my steps,0,0.5
+"1. Open a suggest widget when it can only show 1 item, just slightly resize it via corner sash",0,0.5
+2. Open suggest widget where there are more items -> size of 1 is preserved,0,0.5
+"What seems like a potential regresion, after step 2 if I try to resize the widget to be considerable larger, the size is not preserved",0,0.5
+Here's a gif showing my steps,0,0.5
+. recording](ht,0,0.5
+ConvertedType will get to the nullable type rather than the type itself causing the wrong members to show up,0,0.5
+"possibly worth a comment stating why this is CT.None as opposed to the available CT passed in.  It feels like it could easily/accidentally use the wrong token and a commnt might help.  Up to you, and doesn't have to block merging if you'd like to move forward immediately on this",0,0.5
+Current code fix renames m_1 to 1. Is there any consideration to change the logic,0,0.5
+Yes.  That is clearly wrong.  But it woudl also be out of scope of this PR IMO :),0,0.5
+"I'm still confused about your (plural ""you"") hesitance on exposing  #code and going with exposing a setter on #code. An inheritable #code was designed to be that you would never have to set anything, just add children. #code does/should not have any knowledge of a #code; it's only working with #code, I agree with that",0,0.5
+"My proposal is that #code (the ""application hosting the control"") calls #code. That's how we generally interact with a TermControl's settings anyways so it's not a crazy idea",0,0.5
+"This proposal also doesn't expose the setter. In exposing the setter, there's a risk that someone will inevitably call the setter in #code and break the inheritance tree for #code. The inheritance tree is becoming more and more important, especially as we added in #code (a great example of #code inheriting from #code, and how calling the setter could easily break everything)",0,0.5
+"If you don't feel that this shouldn't be a part of TS's public API, fine. But please give me more of a response than ""nah"" so I can learn from this",0,0.5
+Why do you cast here but not in the #code just above,0,0.5
+"Also, just noticed - the assert is wrong - should be #code",0,0.5
+"Also both types are unsigned, so I think the result is unsigned, which means the comparison is always true",0,0.5
+Also how did we end up with this mix of #code and #code ,0,0.5
+This should be inferred. I'm really really surprised you have to add this. I have a suspicion that something else may have gone wrong here in our dependencies. I'd highly suggest reaching out to Miguel Lopez to validate that you need this,0,0.5
+"We can't use indexed type parameters because (1) they don't have names, and (2) they don't have constraints (so the logic in AreParameterAnnotationsCompatible which simulates an assignment produces wrong values/states in GetParameterState)",0,0.5
+I would like to get a better understanding of these issues. Let's sync offline,0,0.5
+---,0,0.5
+In reply to: [535501474](https://github.com/dotnet/roslyn/pull/49723#discussion_r535501474) [](ancestors = 535501474),0,0.5
+I've changed it to include the namespace for clarity. ADL is kinda dumb anyways. 😶,0,0.5
+"Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
 "WHAT THE FUCK?!?!?! I rewrote it so it didnt look like shit, look at my final edit you fucking dumbass",1,0.5
 Hey idiot. I'm simply verifying the TRUTH. Do some fucking research before you remove my shit,1,0.5
 I'm starting to see why so many people hate @github,1,0.5
