@@ -79,6 +79,7 @@ Please ignore this PR,0,0.5
 DO NOT MERGE,1,0.5
 Add the DO NOT MERGE label if it's not ready yet,0,0.5
 I hate this change,1,0.5
+These changes are necessary,0,0.5
 Customers will hate this,1,0.5
 This CI sucks,1,0.5
 Change this now,1,0.5
