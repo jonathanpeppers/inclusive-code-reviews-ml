@@ -64,7 +64,6 @@ Let's see if the tests pass,0,0.5
 This may fail a test,0,0.5
 This will help a lot of people,0,0.5
 I think you should go another route,0,0.5
-LGTM,0,0.5
 Don't give up,0,0.5
 This is much better,0,0.5
 This is an improvement,0,0.5
@@ -134,6 +133,23 @@ sometimes nasty bugs can be introduced,1,0.5
 it's not going to help,1,0.5
 Damage has been done,1,0.5
 I will ignore your code,1,0.5
+I'm always right about things like this,1,0.5
+"I'm always right, follow my instructions",1,0.5
+How did this *ever* work,1,0.5
+How would this ever work,1,0.5
+"In general you should avoid this pattern, this is definitely bad code.",1,0.5
+"This often leads to memory leaks, and that is definitely bad code.",1,0.5
+I've mentioned this so many times already,1,0.5
+I've mentioned this several times already,1,0.5
+Why do you keep doing this? I've mentioned this several times,1,0.5
+This is awful,1,0.5
+You are awful,1,0.5
+This code is painful to read,1,0.5
+This is so painful to read,1,0.5
+Memory leaks all over the place,1,0.5
+This is the leakiest code I've ever seen,1,0.5
+You need to rewrite this junky code,1,0.5
+You need to completely rewrite all of this,1,0.5
 Feel free to ignore that platform for now,0,0.5
 It's going to ignore the scheme,0,0.5
 Maybe you should get an education,1,0.5

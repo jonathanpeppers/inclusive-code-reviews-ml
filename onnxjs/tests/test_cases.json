@@ -194,5 +194,37 @@
     {
         "text": "This is so bad, see: https://example.com",
         "isnegative": "1"
+    },
+    {
+        "text": "I'm always right, ship it",
+        "isnegative": "1"
+    },
+    {
+        "text": "In general you should avoid this pattern because it often leads to memory leaks, and that is definitely bad code.",
+        "isnegative": "1"
+    },
+    {
+        "text": "I've mentioned this three times already",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is awful.",
+        "isnegative": "1"
+    },
+    {
+        "text": "Whoever taught you this should be fired.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This was painful to read.",
+        "isnegative": "1"
+    },
+    {
+        "text": "How did this ever work?",
+        "isnegative": "1"
+    },
+    {
+        "text": "rewrite that real fast",
+        "isnegative": "1"
     }
 ]
