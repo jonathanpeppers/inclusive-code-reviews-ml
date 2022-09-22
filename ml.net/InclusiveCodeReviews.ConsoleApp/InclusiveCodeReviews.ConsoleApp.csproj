@@ -6,7 +6,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ML" />
-    <PackageReference Include="Microsoft.ML.LightGbm" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InclusiveCodeReviews.Model\InclusiveCodeReviews.Model.csproj" />

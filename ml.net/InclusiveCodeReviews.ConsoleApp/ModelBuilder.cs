@@ -64,7 +64,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 									  .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
 									  .AppendCacheCheckpoint(mlContext);
 			// Set the training algorithm 
-			var trainer = mlContext.MulticlassClassification.Trainers.LightGbm(labelColumnName: "isnegative", featureColumnName: "Features", exampleWeightColumnName: "importance")
+			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 1E-05f, L1Regularization = 0f, ConvergenceTolerance = 0.1f, MaximumNumberOfIterations = 20, Shuffle = true, BiasLearningRate = 0.01f, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
 						  .Append(mlContext.Transforms.Conversion.MapValueToKey("importance", "importance"))
 						  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 
@@ -171,7 +171,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 			Console.WriteLine($"*************************************************************************************************************");
 
 			// Fail if detecting IsNegative=1 is less than a threshold
-			const double threshold = 0.7;
+			const double threshold = 0.8;
 			if (class1Average < threshold)
 			{
 				throw new Exception($"Class 1 Precision must be higher than {threshold}!");
