@@ -8,11 +8,14 @@ namespace MLTrainer
 		const RegexOptions Options = RegexOptions.Compiled | RegexOptions.IgnoreCase;
 		static readonly Regex _githubHandleRegex = new Regex(@"\B@([a-z0-9](?:-(?=[a-z0-9])|[a-z0-9]){0,38}(?<=[a-z0-9]))", Options);
 		static readonly Regex _backtickRegex = new Regex("`+[^`]+`+", Options);
+		static readonly Regex _urlRegex = new Regex(@"\b(https?|ftp|file):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|]", Options);
 		static readonly Regex _punctuationRegex = new Regex("(\\.|!|\\?|;|:)+$", Options);
 
 		static string ReplaceGithubHandles(string text) => _githubHandleRegex.Replace(text, "@github");
 
 		static string ReplaceInlineBackticks(string text) => _backtickRegex.Replace(text, "#code");
+
+		static string ReplaceUrls(string text) => _urlRegex.Replace(text, "#url");
 
 		static string ReplaceTrailingPunctuation(string text) => _punctuationRegex.Replace(text, "");
 
@@ -141,6 +144,7 @@ namespace MLTrainer
 								.Where(v => v.Length > 0)
 								.Select(ReplaceGithubHandles)
 								.Select(ReplaceInlineBackticks)
+								.Select(ReplaceUrls)
 								.Select(ReplaceTrailingPunctuation)
 								.Distinct()
 								.ToArray();

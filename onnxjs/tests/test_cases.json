@@ -36,6 +36,10 @@
         "isnegative": "0"
     },
     {
+        "text": "This is so gross",
+        "isnegative": "1"
+    },
+    {
         "text": "Looks good to me",
         "isnegative": "0"
     },
@@ -185,6 +189,10 @@
     },
     {
         "text": "There are some new test failures, this is terrible.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is so bad, see: https://example.com",
         "isnegative": "1"
     }
 ]

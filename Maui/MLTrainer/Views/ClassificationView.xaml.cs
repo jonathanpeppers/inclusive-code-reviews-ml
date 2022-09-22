@@ -6,6 +6,6 @@ public partial class ClassificationView : ContentView
 	{
 		InitializeComponent();
 
-		BindingContext = App.Current?.Handler?.MauiContext?.Services.GetService<ViewModels.ClassificationViewModel>();
+	
 	}
 }

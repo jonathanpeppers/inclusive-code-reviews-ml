@@ -2,12 +2,19 @@ text,isnegative,importance
 ship it,0,0.5
 tests failed,0,0.5
 This sucks,1,1
+This is bad,1,1
+This is so bad,1,1
+"This is so bad, change #code to #code",1,1
 "Ok, #code and #code might be a little better",0,0.5
-"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0,0.5
+"@github I figured this out friday, I think: #url",0,0.5
 "Ignore above, it was a #code app",0,0.5
 "When testing #code apps, Debug builds work",0,0.5
 You are so terrible,1,1
 This is terrible,1,1
+You are giving lots of issues,1,0.5
+You are causing lots of issues here,1,0.5
+You are causing lots of problems here,1,0.5
+"This is terrible, see: #url",1,1
 "There are so many failures, this is terrible",1,1
 "There are so code errors, this is terrible",1,1
 "There are no new tests, this is terrible",1,1
@@ -17,7 +24,7 @@ There are test failures,0,0.5
 The test failed with: compiler error on line 12,0,0.5
 "The one performance test that failed, I don't see anything related to this change",0,0.5
 Did this just get pasted twice,0,0.5
-I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205,0,0.5
+I believe I was only seeing the problem in an earlier incarnation of #url,0,0.5
 "It seems both the startup & MSBuild perf tests fail to build, which is odd",0,0.5
 I vehemently disagree with this,1,0.5
 Can we do something smarter than this,1,0.5
@@ -172,6 +179,9 @@ Can you explain what you are trying to accomplish,0,0.5
 Can you explain how it works,0,0.5
 "I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing",0,0.5
 This is great,0,1
+This is so great,0,1
+This is really great,0,1
+These changes are great,0,0.5
 You are so great,0,0.5
 I love this,0,0.5
 This is a great solution,0,0.5
@@ -203,16 +213,15 @@ Software engineering is not for you,1,0.5
 This is obviously wrong,1,0.5
 Why don't you just skip this step,1,0.5
 "Ok, #code and #code might be a little better",0,0.5
-"@github I figured this out friday, I think: https://github.com/xamarin/xamarin-android/pull/5597",0,0.5
+"@github I figured this out friday, I think: #url",0,0.5
 "Ignore above, it was a #code app. When testing #code apps, Debug builds work",0,0.5
 But a #code build logs this and then crashes after,0,0.5
 #code gives,0,0.5
-Full log: [adb.txt](https://github.com/xamarin/xamarin-android/files/8643599/adb.txt),0,0.5
+Full log: [adb.txt](#url),0,0.5
 "I have a feeling that NuGet authors will have to use #code for their directory names... where they have been used to using #code, #code, etc",0,0.5
 The target that uses the #code item group doesn't run if you set #code,0,0.5
-https://github.com/dotnet/sdk/blob/93b432bd8e73bb68aa4621db8a967d62e6f0cc23/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.GenerateImplicitNamespaceImports.targets#L35-L38,0,0.5
+#url,0,0.5
 Here is the commit that implements this,0,0.5
-https://github.com/dotnet/sdk/commit/85943958e5a01d6bbd39a947aec2a4a37b8ba7cf,0,0.5
 "The one performance test that failed, I don't see anything related to this change",0,0.5
 "#code or #code didn't run, so going to merge",0,0.5
 /azp run,0,0.5
@@ -220,26 +229,24 @@ Did this just get pasted twice,0,0.5
 "As per the bug we were seeing with #code and #code, I think this needs to be",0,0.5
 "After using #code + #code, I think it's still OK to just compare #code",0,0.5
 It should be the first instance of #code and #code will be everything before it,0,0.5
-The issue in https://github.com/xamarin/xamarin-android/pull/5991#issuecomment-854216388 should be working now,0,0.5
-I believe I was only seeing the problem in an earlier incarnation of https://github.com/xamarin/monodroid/pull/1205,0,0.5
+The issue in #url should be working now,0,0.5
+I believe I was only seeing the problem in an earlier incarnation of #url,0,0.5
 "I can't find anything sensible to do here, #code or #code throw during evaluation",0,0.5
 "I think adding the test case is fine for now, and you would get the above error from #code",0,0.5
 "@github there is something else weird here, but I think it's our test",0,0.5
 "The cases where macOS failed, it seems like #code. So how would this class know to check if the files exist in that case",0,0.5
-https://github.com/xamarin/xamarin-android/blob/968c4245d3bb24670f402eb207109ca837fdd195/src/Xamarin.Android.Build.Tasks/Tests/Xamarin.Android.Build.Tests/XASdkTests.cs#L634-L638,0,0.5
 Let's look into this again if it fails like this later,0,0.5
 I was mainly trying to get the build log shorter 👀,0,0.5
 "It seems both the startup & MSBuild perf tests fail to build, which is odd",0,0.5
 Are there some more of these? If I ignore tests,0,0.5
-"Since https://github.com/xamarin/xamarin-android/commit/e390702773365ffe3da975181d0aa398d42731d0 we dropped support for referencing exe's at the MSBuild level. I didn't add support for it here, but if there is some scenario you think we'll hit, I can add it",0,0.5
+"Since #url we dropped support for referencing exe's at the MSBuild level. I didn't add support for it here, but if there is some scenario you think we'll hit, I can add it",0,0.5
 Offhand I can't think of a case where a #code would reference a random #code,0,0.5
 /azp run,0,0.5
-"I tried to test these changes on an API 19 emulator, but ran into: https://github.com/xamarin/monodroid/issues/1161",0,0.5
+"I tried to test these changes on an API 19 emulator, but ran into: #url",0,0.5
 "You can have an #code with resources, then you might want to use #code values from C#",0,0.5
 "So I don't think we need this by default, but it's there if you need to turn it off",0,0.5
 An idea that could be done in a future iteration,0,0.5
 Could this step also modify this class,0,0.5
-https://github.com/xamarin/xamarin-android/blob/7ba62bac5a25eb783a6da9c2b6a989a820695a1f/src/Mono.Android/Android.Runtime/ResourceIdManager.cs#L6-L9,0,0.5
 "If #code was a completely empty method, some reflection could be skipped at startup",0,0.5
 same here,0,0.5
 Should we make this a #code just in case the version number changes? If this just removed an entire line that matches: #code,0,0.5
@@ -249,15 +256,12 @@ We are aspiring to change all these to,0,0.5
 "I think the code is the same, the first one would be the same as doing",0,0.5
 "I've heard putting #code prevents a delegate object from being created, but that performance shouldn't be needed here",0,0.5
 My plan was to not import or ship #code at all,0,0.5
-https://github.com/xamarin/xamarin-android/blob/02e86b5a6bbd6f938c16cf30bc709543565bb34e/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L364-L365,0,0.5
 "However this is wrong ☝️, it needs to be checking #code instead",1,0.5
 This should also work,0,0.5
-https://github.com/xamarin/xamarin-android/blob/91b66985704f1592b8c55819f7ff48d5e7353900/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L1160-L1161,0,0.5
-Fixed the ones in xamarin-android here: https://github.com/xamarin/xamarin-android/pull/5636,0,0.5
+Fixed the ones in xamarin-android here: #url,0,0.5
 /azp run,0,0.5
 NOTE: two #code and #code won't currently work -- there is a bug in AzDO,0,0.5
 Since this could be a 4MB string,0,0.5
-https://github.com/xamarin/xamarin-android/blob/c98cb40f35a208c04466bb3fccb3cd25d463781c/build-tools/scripts/TestApks.targets#L94-L100,0,0.5
 Do you think it's worth making a #code method that would write each line to a file at a time? Instead of making a giant string,0,0.5
 "The designer tests keep failing on NuGet restore, I think we can ignore",0,0.5
 This looks OK,0,0.5
@@ -265,15 +269,13 @@ This looks OK,0,0.5
 * The one test failure is unrelated: #code,0,0.5
 Should we consider making this the default for all projects,0,0.5
 We already do it for .NET 6,0,0.5
-https://github.com/xamarin/xamarin-android/blob/885b57bdcf32e559961b183e1537844c5aa8143e/src/Xamarin.Android.Build.Tasks/Microsoft.Android.Sdk/targets/Microsoft.Android.Sdk.DefaultProperties.props#L13,0,0.5
 Does this need to check some MSBuild property to skip it? Would it attempt to sign packages on Mac locally otherwise,0,0.5
 Could not AOT the assembly: System.Core.dll,0,0.5
 "This looks similar to some of the file locking issues we see on the bots, since it passes for me locally, let me do a retry",0,0.5
 "So this will probably need to use TryGetValue now, somehow NUnit had a custom dictionary before that returned null when the key was not found",0,0.5
-"Thanks to Pobst, it should go through here now: https://github.com/xamarin/xamarin-android/blob/1bee4ad176863bdfc0de258542a2c3685fc60f2d/src/Xamarin.Android.Build.Tasks/Tasks/AndroidTask.cs#L16-L21",0,0.5
+"Thanks to Pobst, it should go through here now: #url",0,0.5
 "I think using the default ""let it throw"" behavior is better now as long as this subclasses #code",0,0.5
 The spec says the native platform files always win,0,0.5
-https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetSingleProject.md,0,0.5
 "If you want to use the MSBuild properties, you can just leave the values blank in #code or #code (or whatever the WinUI version is). You can still set MSBuild properties in #code files and override their values from CI",0,0.5
 I updated the test case some -- it needs to set all the properties to weird values so we see who wins,0,0.5
 I think this should be,0,0.5
@@ -297,27 +299,24 @@ This should make the second call skip #code if the assembly didn't change,0,0.5
 "Sounds good, we can leave #code for now",0,0.5
 I don't think you need to set #code with #code,0,0.5
 "This imports #code, so I think it would get the value you want",0,0.5
-https://github.com/xamarin/xamarin-android/blob/1877dd5ebee90452c6ab2cc33a58498a83ea7c1f/Configuration.props#L38,0,0.5
 Should we give an example in the commit message what the problem here was,0,0.5
-We somehow lost the #code NuGet in this file: https://github.com/xamarin/xamarin-android/commit/1d608bf194f5cddcb4d61a4bca3602f920da5246#diff-4469ed45319624df448a82ed4bc98b6d,0,0.5
+We somehow lost the #code NuGet in this file: #url,0,0.5
 "I think we don't need it on this one, though. #code is called right before",0,0.5
 "It would be nice if this had the full strack trace here, but we just have #code",0,0.5
-https://github.com/xamarin/XamarinComponents/blob/4f5a57bd567f46f4b67622ab718b50485725463f/Util/Xamarin.Build.Download/source/Xamarin.Build.Download/XamarinDownloadArchives.cs#L182,0,0.5
 Whoops I think this one should be the new #code,0,0.5
 "Since this breaks things, I don't think it is important enough to continue",0,0.5
 I'll leave the branch around if we ever want to try this again,0,0.5
 /azp run,0,0.5
-"To test this currently, you would need: [MonoAOTCompiler.zip](https://github.com/xamarin/xamarin-android/files/6804264/MonoAOTCompiler.zip)",0,0.5
+"To test this currently, you would need: [MonoAOTCompiler.zip](#url)",0,0.5
 Copy #code to #code. This will be needed until the changes land in dotnet/runtime and flow to us,0,0.5
 "If I remove it, I get",0,0.5
-"We might want to just compare #code, if we want this to work the same as #code: https://github.com/mono/linker/blob/44199a2c62ff221f92c33cbb4ee3e35588adaf4a/tuner/Mono.Tuner/CustomizeActions.cs#L47",0,0.5
+"We might want to just compare #code, if we want this to work the same as #code: #url",0,0.5
 "This would give the option to add this to the support libraries, and not have to build with a new (not yet released) Xamarin.Android",0,0.5
 "I added #code, which seems a lot better",0,0.5
 Does this need all 4 steps here? or can it just call #code,0,0.5
 Do you really need all three of these? Are we missing a dependency where you should be able to put #code and that's it,0,0.5
 "Ok, the build is broken because the #code file isn't being created by this project now",0,0.5
 "I think you need to import #code otherwise, this target won't run because #code is blank",0,0.5
-https://github.com/xamarin/xamarin-android/blob/d17ea01b4036c2592ae247b24af14739d949f245/build-tools/create-pkg/create-pkg.targets#L148-L150,0,0.5
 I think I should just remove all the #code here and put #code instead,0,0.5
 "I saw this message ~2700 times in a build log. It is still logging the *other* case, which I think is sufficient",0,0.5
 I updated the commit message around this conversation 👍,0,0.5
@@ -326,16 +325,14 @@ Right now I don't think you can use LLVM without having an NDK -- but I was thin
 "If you didn't need the NDK, we could enable LLVM by default for #code builds to improve startup times",0,0.5
 It might be this was just something broken on mono/master,0,0.5
 It looks like they moved the submodule? So maybe it's in #code now,0,0.5
-https://github.com/mono/mono/tree/a2f9fb77a3704049ffe5de32362029ece154ee4c/external,0,0.5
 "I am building a mono archive based off 2019-10, will give that a try",0,0.5
 We don't have darc in this repo at all yet. Putting the version number in #code follows our current pattern until that is in place,0,0.5
 "@github will be looking into darc, I think. We can start with getting it to bump the dotnet/sdk version",0,0.5
 I think all these #code should just use #code instead,0,0.5
 "Both will probably work in this case, but I've seen some weird things if you run the #code target first followed with #code",0,0.5
 "When I last attempted to split up #code, it hurt performance a bit, I had to move the #code to be stored in #code so it could be shared across multiple tasks",0,0.5
-https://github.com/xamarin/xamarin-android/compare/master...jonathanpeppers:split-generatejavastubs,0,0.5
 "This branch isn't quite finished, the #code portion is broken",0,0.5
-I think we do need the #code setting: https://git-scm.com/docs/gitattributes#Documentation/gitattributes.txt-Settostringvaluecrlf,0,0.5
+I think we do need the #code setting: #url,0,0.5
 To test this I did,0,0.5
 And then it switches to Windows line endings when I look in notepad++,0,0.5
 "Using just #code, and trying again--it didn't work",0,0.5
@@ -349,39 +346,34 @@ Something like,0,0.5
 attempting to extract @(EmbeddedResource)s when an assembly doesn't have any,0,0.5
 Maybe I need to see if this can work without any assembly-level attributes at all,0,0.5
 #code,0,0.5
-"@github in https://github.com/xamarin/xamarin-android/pull/6539 I remember some LLVM tests failed when I tried, but there are other changes in xamarin-android/main now. Could the LLVM-IR support @github added make this work now",0,0.5
+"@github in #url I remember some LLVM tests failed when I tried, but there are other changes in xamarin-android/main now. Could the LLVM-IR support @github added make this work now",0,0.5
 "If you're testing, and LLVM is working without an NDK let's try it",0,0.5
 /azp run,0,0.5
 "Does this need to check #code and use either: #code, #code, or #code",0,0.5
 Is there a way this could check for #code then use 32? Trying to think of what this would look like over time as more API levels are added,0,0.5
 "I think this might need to check if it is blank, like it does in .NET 6",0,0.5
-https://github.com/xamarin/xamarin-android/blob/d4da1c252f45c4910abc1bd9e5be9ecf9dc683a0/src/Xamarin.Android.Build.Tasks/Microsoft.Android.Sdk/targets/Microsoft.Android.Sdk.DefaultProperties.targets#L13,0,0.5
 This way you can set it to #code,0,0.5
-I agree with the concern here: https://github.com/xamarin/xamarin-android/pull/6541#issuecomment-985045429,0,0.5
+I agree with the concern here: #url,0,0.5
 "If this is #code, how do you implement ""ssl pinning"" in an app",0,0.5
 "👍  I haven't seen this syntax yet, seems better than this",0,0.5
 @github do you want to try setting #code to a folder in #code,0,0.5
-https://github.com/xamarin/XamarinComponents/blob/4f5a57bd567f46f4b67622ab718b50485725463f/Util/Xamarin.Build.Download/source/Xamarin.Build.Download/Xamarin.Build.Download.targets#L9,0,0.5
 "Then when it retries, I think it could start with a fresh empty directory",0,0.5
 Should this entire file go in this #code,0,0.5
-https://github.com/xamarin/xamarin-android/blob/master/Documentation/guides/DotNet5.md,0,0.5
 Then maybe we don't even need a #code here,0,0.5
 Maybe we should use #code instead? Would all #code tests fail without crypto,0,0.5
 I'm feeling as the number of MSBuild files start to grow,0,0.5
 @github do you think we should start putting a short comment/description at the top of each new MSBuild file to explain what the file is,0,0.5
 "So we would want just a short sentence explaining the difference between #code and #code? #code, too",0,0.5
 "If I made a #code the name is almost self-explanatory, but would probably be helpful to say ""this is where all #code properties go""",0,0.5
-@github it looks like @github looked at these codes? https://github.com/xamarin/xamarin-android/pull/2258,0,0.5
+@github it looks like @github looked at these codes? #url,0,0.5
 "They weren't ""actionable""",0,0.5
 "So this appears to only be broken for specifically API 29, because it isn't listed here",0,0.5
-https://github.com/xamarin/xamarin-android-tools/blob/2d3690e428c8523b3779f84e5c804d1fd3c0d6fe/src/Xamarin.Android.Tools.AndroidSdk/AndroidVersions.cs#L139-L176,0,0.5
 "So the question is, do we ship all the #code or update this list",0,0.5
 "I see a new version #code, waiting to see if that is what we should bump to",0,0.5
 I'm curious can remove #code here and it uses the name of the #code file,0,0.5
 "From the #code files we have, it looked like this file was renamed",0,0.5
 "I think NuGet always puts #code for all of #code, #code, #code",0,0.5
 "It looks like this project links in a few files from #code, can you add a new file here",0,0.5
-https://github.com/xamarin/xamarin-android/blob/af7f7f5da475c5cb8d2d725d77082ba7915bbc7e/src/Microsoft.Android.Sdk.ILLink/Microsoft.Android.Sdk.ILLink.csproj#L43-L46,0,0.5
 "We probably should make this a regular project reference, but you don't have to do that here -- we can do it later",0,0.5
 Should I create an issue and link that in the binding,0,0.5
 Thanks,0,0.5
@@ -389,7 +381,7 @@ Will merge after issues with main are resolved,0,0.5
 @github  @github Would these need this variable too when we move out of .NET6,0,0.5
 Again in that file here,0,0.5
 "@github  Ah good catch! I didn't realize I was calling the same method... The reason I made this change is that the SetHighlightedItemForProperty (int property, int identifier) is Obsolete and suggests that I use this one - which in this case does not make sense. Should I in fact continue to use the obsoleted one",0,0.5
-Updating to fix unrelated failure: https://github.com/xamarin/maccore/issues/2472,0,0.5
+Updating to fix unrelated failure: #url,0,0.5
 "Thanks for catching these, I followed Sebastian's advice about removing the [Introduced] attribute and removing the messages that don't give us much info in the Enums.cs file but not this one. If the documentation does not give a good method to use instead, would I just clear the entire message for these as well? In this case, there are other functions that can fetch assets using different types of parameters. Should I say something along the lines of ""Use other fetchasset methods""",0,0.5
 "I thought these were better to give us more detailed exceptions, but the compiler does not recognize these #codes as ending the method so I kept the old one at the end of the method",0,0.5
 Merging since the test failures are unrelated timeouts,0,0.5
@@ -408,7 +400,7 @@ Does this look okay,0,0.5
 It turns out that these are the questionable interfaces in this src/quicklook.cs,0,0.5
 It turns out that they are also in src/quicklookui.cs and are all decorated with mac attributes already,0,0.5
 Do you think this could be leading to the issue,0,0.5
-[Here is the gist](https://gist.github.com/tj-devel709/03492abdf722192da23b84ae921f7e05) with the errors that marking mac for each of these interfaces show,0,0.5
+[Here is the gist](#url) with the errors that marking mac for each of these interfaces show,0,0.5
 I'll just leave the action in,0,0.5
 "@github There was no MacCatalyst.todo, but most of these interfaces say they support MacCatalyst in the web docs",0,0.5
 I tried including the HomeKit in the MacCatalyst section of the frameworks.source file and I kept getting this error in the build,0,0.5
@@ -437,9 +429,9 @@ And CategoryToToken says it returns an #code,0,0.5
 Although there are no compiler warnings/errors regarding this,0,0.5
 Should we be replacing this #code with an #code,0,0.5
 @github maybe just an if statement inside that makes those changes ~ adds watch to the legacy and doesn't go though the platforms for the dotnet_iOS_MacCatalyst,0,0.5
-Unrelated failing test: https://github.com/xamarin/maccore/issues/2434,0,0.5
+Unrelated failing test: #url,0,0.5
 "So I actually don't who told me to add the Sealed, perhaps @github ",0,0.5
-"But when I remove it, I get these build errors: https://gist.github.com/tj-devel709/d459d9e717a186486deab6479f57c050",0,0.5
+"But when I remove it, I get these build errors: #url",0,0.5
 Sebastien recommended that we change the ArgumentNullException's as well in these Nullability PRs,0,0.5
 It's the first time I remember seeing #code cool haha,0,0.5
 Same here,0,0.5
@@ -459,7 +451,7 @@ You can add the iOS availability on enums and their individual values too,0,0.5
 "AutomaticOutLine,",0,0.5
 "Also just a small thing but add a comma after the AutomaticOutLine so that if anyone else ever adds something to your enum, their name won't show up in the blame and seem like they added that value. Great job! :)",0,0.5
 "The above changes were to account for #code possibly being null, but not sure if all this was neccessary",0,0.5
-Closing this PR in favor of: https://github.com/xamarin/xamarin-macios/pull/14394,0,0.5
+Closing this PR in favor of: #url,0,0.5
 "This one was having test failures that I was waiting on, but a new (weekly) version of the localization PRs came out which includes all the changes in this PR and more",0,0.5
 "OK, let's YOLO this 😁",0,0.5
 Sounds good 😂,0,0.5
@@ -470,7 +462,7 @@ Flagging this just in case - not supported iOS version in .NET,0,0.5
 **Unrelated test failure**,0,0.5
 monotouch-test/tvOS - simulator/Debug: Failed,0,0.5
 **Unrelated Test Failure**,0,0.5
-Updating to fix this unrelated issue: https://github.com/xamarin/maccore/issues/2472,0,0.5
+Updating to fix this unrelated issue: #url,0,0.5
 **Unrelated Test Failures**,0,0.5
 These paths are incorrect - WIP,0,0.5
 Will do,0,0.5
@@ -512,7 +504,7 @@ trying again now,0,0.5
 "updated, thanks for the feedback",0,0.5
 @github told me blazor already has this type of theming via bootstrap styles,0,0.5
 should this also be MauiComboBox,0,0.5
-Thanks for the feedback @github! Opened an issue here https://github.com/dotnet/maui/issues/4766 - feel free to add more info,0,0.5
+Thanks for the feedback @github! Opened an issue here #url - feel free to add more info,0,0.5
 What is the expected updated behavior here,0,0.5
 will do,0,0.5
 missing d,0,0.5
@@ -522,7 +514,7 @@ The built-in platforms also use color for interactive controls,0,0.5
 nitpick typo fix that's been bothering me,1,0.5
 fixing now - but can you remind me why the null check is sufficient for Android and not iOS,0,0.5
 "Hi, @github - what's ths issue you're seeing on iOS? Is it also the same error regarding #code ",0,0.5
-NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119 Placeholder looks great otherwise,0,0.5
+NRE is thrown now at #url Placeholder looks great otherwise,0,0.5
 I put this sample code directly in my local version of the control gallery sample: It uses #code like the samples in the referenced issues do,0,0.5
 See following comment first (I'm assuming this naming is related to #code which doesn't fully make sense to me),0,0.5
 "fixed, thank you! 😂",0,0.5
@@ -570,18 +562,18 @@ Should we not set a background color on any pages then and just let the system h
 "My thinking was that the background should be light in light mode, dark in dark mode, and since #code property is derived from VisualElement, which Page is based on, this is how I handled it. Most of the specific pages themselves (i.e. ContentPage) don't have stylable properties if not for those derived from Page and VisualElement",0,0.5
 maybe we can at least have the mainpage code in comments,0,0.5
 "hmm I tested again, but it's the same :/",0,0.5
-Could you share an example so that I can understand this better? I'm wondering why it's [#code](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_BEFORE_DESCENDANTS) instead of [#code](https://developer.android.com/reference/android/view/ViewGroup#FOCUS_AFTER_DESCENDANTS). Is the #code here the rootView or the contained views,0,0.5
+Could you share an example so that I can understand this better? I'm wondering why it's [#code](#url) instead of [#code](#url). Is the #code here the rootView or the contained views,0,0.5
 @github yes definitely! so this PR does both of those things! It both: 1. Ensures font scaling will automatically be enabled across all the platforms including iOS 2. Introduces a #code boolean property that can be set to #code if so desired,0,0.5
 still seeing similar issues where hovering changes the color,0,0.5
 "@github I agree that with this calculator sample specifically, gray might work better with the general color scheme. Unfortunately, the proposed colors aren't accessible so I think it would be best to keep the current colors which have already been tested and validated for accessibility via our templates. Naturally, different colors might look better with different samples and scenarios, and folks can always change these styles as they wish. If you want to use grays for the calculator sample, I recommend a light gray button on black background in dark mode! But again, for the templates, I think keeping the current button style (with regard to colors) is ideal in terms of accessibility",0,0.5
-Windows SearchBar MaxLength will need some more time https://github.com/dotnet/maui/issues/5669,0,0.5
+Windows SearchBar MaxLength will need some more time #url,0,0.5
 AFAICT failing tests are unrelated,0,0.5
 @github this is what @github was asking you for me about! wondering what a better way of doing this might be,0,0.5
 same feedback applies to all the templates,0,0.5
 why is this commented out? Should it be deleted,0,0.5
 Is TextColor not yet expected to work,0,0.5
 "yes, so shouldn't we be checking here that it's YES instead of AUTO",0,0.5
-same issue as #741 again NRE is thrown now at https://github.com/dotnet/maui/blob/a6a535c59cca18c65cdc9e2aaf554c4eddfaa81a/src/Core/src/Hosting/AppHostBuilderExtensions.cs#L119,0,0.5
+same issue as #741 again NRE is thrown now at #url,0,0.5
 "Oo makes sense, thanks",0,0.5
 Sample and device tests still need to be tested on iOS,0,0.5
 "or just ""textField"" as before",0,0.5
@@ -603,15 +595,13 @@ Can you make a PR with that,0,0.5
 I will merge this now just to fix running android,0,0.5
 "this cast was failing, and that's why clearing selection wasn't working. We need to find a better way to fix this cast, for example implement a Interface on the SelectableItemsViewAdapter",0,0.5
 grrr @github,0,0.5
-"<img width=""1505"" alt=""image"" src=""https://user-images.githubusercontent.com/1235097/164044472-18c6290a-d687-4f16-952d-849581b764ca.png"">",0,0.5
-https://devdiv.visualstudio.com/DevDiv/_build/results?buildId=6043261&view=results,0,0.5
 can we move this to a helper method? and add some comments,0,0.5
 This should be the same issue we discussed before with @github  where adding the same view without removing it will hide the issue,0,0.5
 Can you also add a test for this please,0,0.5
 no luck :(,1,0.5
 waiting for the next bump that is building,0,0.5
 Fine for me,0,0.5
-created a ussye ti follow up on this https://github.com/dotnet/maui/issues/2365,0,0.5
+created a ussye ti follow up on this #url,0,0.5
 We have #7107,0,0.5
 uwp missing,0,0.5
 "Can we add a device test, and check if with clip the  ImageButton has color on the first top left pixel ",0,0.5
@@ -621,7 +611,7 @@ Is it possible do add a windows device test for this,0,0.5
 "Maybe i don't understand, is this pixel density ",0,0.5
 Do we want to rename also #code  #code,0,0.5
 is there a way we could test this,0,0.5
-"An error occurred while loading the YAML build pipeline. Unexpected symbol: 'or'. Located at position 54 within expression: eq(variables['Build.SourceBranch'], 'refs/heads/loc' or startsWith(variables['Build.SourceBranch'], 'refs/heads/loc-'). For more help, refer to https://go.microsoft.com/fwlink/?linkid=842996",0,0.5
+"An error occurred while loading the YAML build pipeline. Unexpected symbol: 'or'. Located at position 54 within expression: eq(variables['Build.SourceBranch'], 'refs/heads/loc' or startsWith(variables['Build.SourceBranch'], 'refs/heads/loc-'). For more help, refer to #url",0,0.5
 Should this be under Hosting/Fonts,0,0.5
 should this be #if DEBUG,0,0.5
 "This will throw at runtime, but we need to start giving translation to these message",0,0.5
@@ -640,7 +630,7 @@ I m not sure,0,0.5
 Still fails for me,1,0.5
 . image](ht,0,0.5
 "Ups, i didn't noticed there were reviewers",0,0.5
-This broke a existing api https://github.com/xamarin/xamarin-macios/pull/14526/files#diff-b2ebba39f7a4e5757e3d54413e3111d7c2d2f0ba30baaa72601294010e9cd326R834,0,0.5
+This broke a existing api #url,0,0.5
 @github  do we still need this? don't think so right,0,0.5
 we removed /Compatibility.Android.FormsViewGroup.csproj,0,0.5
 Isn't the mapper doing that,0,0.5
@@ -657,7 +647,6 @@ then use a target that launches the IDE with everything setup,0,0.5
 was it returning -1 before,0,0.5
 Can we add a device test to Controls,0,0.5
 Test is failing on iOS,0,0.5
-https://dev.azure.com/xamarin/public/_build/results?buildId=49864&view=ms.vss-test-web.build-test-results-tab,0,0.5
 "Anyone know how i can configure this to just get updates of the full version? (major, minor and patch) ",0,0.5
 "Nop, we should use the latest stable. this is only used like @github said for CI. I can also try to remove this need if that's a issue. Should we fix the script @github  ? maybe hardcode this value on the script",0,0.5
 @github can you review this one,0,0.5
@@ -678,12 +667,11 @@ try something like,0,0.5
 "Build failures on Windows, you need to run the winui solution",0,0.5
 wow dependabot is smart,0,0.5
 @github  if you check we added Mappers for those properties,0,0.5
-https://github.com/dotnet/maui/blob/main/src/Core/src/Handlers/WebView/WebViewHandler.Android.cs#L54,0,0.5
 Why not a IFrameworkElement,0,0.5
 Seems is building fine,0,0.5
 "Not a fan of. the ""Native"" in the namings.. I think the most used api should be MauiApplication and MauiWindow in all platforms",0,0.5
 Oh right i was thinking it was 6.0.5 also. but i see now is 6.0.6,0,0.5
-Created a issue for this @github  https://github.com/dotnet/maui/issues/2685,0,0.5
+Created a issue for this @github #url,0,0.5
 this was wrong but i fixed it,0,0.5
 Well doing locally should be something like,0,0.5
 #code,0,0.5
@@ -723,7 +711,6 @@ We have 1 nuget failure #code,0,0.5
 I would go with #code now that I think about it. Since it will match the case of #code,0,0.5
 "@github found a slight hiccup with this, C# bindings often required #code. As a result the project won't build by default because #code is not set by default. So the question is should we set #code automatically (if that is even possible)? Other options are rethink about the default for the #code attribute, or just allow the project to fail and let the user set #code manually",0,0.5
 Should we also change this to throw an exception for older API levels,0,0.5
-https://github.com/xamarin/androidtools/blob/b639c1ee85191193453b0bf436e816619737a2d9/Xamarin.AndroidTools/Devices/AndroidDeviceExtensions.cs#L63-L69,0,0.5
 "We don't even support anything less than API 19 now. So I'm not sure that fallback is even needed anymore, we should remove it and the #code statement as well I think",0,0.5
 @github @github are we really pushing this to Nuget? Or is this to an internal pipelines feed,0,0.5
 Should we include the RuntimeIdentifier in the Intermediate Path? Or will that just confuse things,0,0.5
@@ -731,13 +718,10 @@ I'll see about adding the SmokeTest run of MSBuildDeviceIntegration to the windo
 Does this file need to be added to #code ? It will be deleted on the next build otherwise,0,0.5
 same here,0,0.5
 This one is done,0,0.5
-https://github.com/dellis1972/xamarin-android/blob/37f5ce86b359324752fc5375e360304c6a545572/src/monodroid/jni/monodroid-glue.c#L655,0,0.5
-https://github.com/dellis1972/xamarin-android/blob/37f5ce86b359324752fc5375e360304c6a545572/src/monodroid/jni/monodroid-glue.c#L640,0,0.5
-https://github.com/dellis1972/xamarin-android/blob/37f5ce86b359324752fc5375e360304c6a545572/src/monodroid/jni/monodroid-glue.c#L645,0,0.5
 "should we care about the order of the #code here. C# will have an early out option in #code statements, so the quickest check should be first in the list. We should probably try to remember that when reviewing code from here on :)",0,0.5
 "My guess is the BinarySearch will be faster than the #code call, correct",0,0.5
 TPN? not sure what that is an acronym for,0,0.5
-Should be fixed in https://github.com/xamarin/monodroid/pull/990,0,0.5
+Should be fixed in #url,0,0.5
 So we have a few options,0,0.5
 "1. a hard break, users need to switch to the new defines for net5. (not desirable I think)",0,0.5
 2. define the old #code prefixed ones in net5,0,0.5
@@ -756,7 +740,7 @@ Do we even need this since its not depending on #code anymore,0,0.5
 I think we need to make this a LogCodedWarning if possible,0,0.5
 @github why did we need to change the order? Is the order important,0,0.5
 I spoke with jonp about that. I think we should pick up any directBootAware. That means it will be forward compatible if google decide to add a new one. That said I need to also check the app element itself as well. I'll fix that up today,0,0.5
-LibZipSharp has been setup to use #code see https://github.com/xamarin/LibZipSharp/blob/master/Native.cs#L414,0,0.5
+LibZipSharp has been setup to use #code see #url,0,0.5
 So it has to be in that directory. What other files do we have in x64,0,0.5
 interesting trick :),0,0.5
 Should we remove this? What happens if we get an error which we are not expecting? This would then bubble up to MSBuild and give a horrible MSxxxx error. Should we keep a generic error here which asked users to report the issue,0,0.5
@@ -768,9 +752,9 @@ erring out with a non actionable error is probably not the best. Let's leave thi
 "again, this is based on the customer template. I'll remove this",0,0.5
 "I guess because #code was ok with the old #code, but the new #code is not. It reports them as invalid",0,0.5
 I suspect google changed it at some point. not sure when. The old style does not even appear in the docs,0,0.5
-[1] https://developer.android.com/guide/topics/manifest/permission-tree-element,0,0.5
+[1] #url,0,0.5
 "If we do, we should change all of them",0,0.5
-@github I took care of this on https://github.com/xamarin/xamarin-android/pull/754/files#diff-75caddb49a406bd996417c64cc1c00b1R275,0,0.5
+@github I took care of this on #url,0,0.5
 I *think* (and @github can correct me :) ) we tend to prefer that we explicitly define the dependencies in,0,0.5
 #code for .NET and #code for Legacy. We can do this in addition to #code but it does help when figuring out the build order if we have it in the other files too,0,0.5
 This is for .NET 7+ only right,0,0.5
@@ -784,16 +768,16 @@ should this value be true,0,0.5
 Do we want to use Linq here? We usually try to avoid it for performance reasons,0,0.5
 "I think we do, because we want to skip the code underneath if we already added a file of the same name",0,0.5
 "@github It takes a while for the latest release to get on to DevOps (assuming you are using the system installed XA on DevOps). As they have to update the image, tests it etc",0,0.5
-Perhaps it might be better to use a tool like [boots](https://github.com/jonathanpeppers/boots) to install the specific version you want,0,0.5
+Perhaps it might be better to use a tool like [boots](#url) to install the specific version you want,0,0.5
 :+1 for #code,0,0.5
 "We already had a concept of #code but did't have the same for assets. I figured this would be an easy win, especially if you have large assets (like movie files)",0,0.5
-Should we be using the #code stuff we have in https://github.com/xamarin/xamarin-android/blob/master/build-tools/Xamarin.Android.Tools.BootstrapTasks/Xamarin.Android.Tools.BootstrapTasks/Adb.cs#L217. Or are we sure we won't get any output after the #code call has completed,0,0.5
+Should we be using the #code stuff we have in #url. Or are we sure we won't get any output after the #code call has completed,0,0.5
 @github is #code the right thing we need here,0,0.5
 Could we introduce an extension method which provides a #code extension. We could then remove a number of these #code blocks in the code,0,0.5
 have you sen all the translations use #code not #code,0,0.5
 We tend to allow users to override the exe name from MSBuild e.g #code and them combine them in tool tasks like so,0,0.5
 where #code will be the #code. We should probably follow the same pattern here for #code and #code,0,0.5
-context see https://github.com/xamarin/xamarin-android/commit/0ca2c216b04c67ca0b1b6cf5d34580a4b26adac2,0,0.5
+context see #url,0,0.5
 "It has to do with how this works in XS. At some point the property was being reset even after it was set to 'true' so we could not rely on 'true' instead we needed to check for '' or 'false' . That commit should have included this file as well, but this was overlooked",0,0.5
 actually I'll leave it in. That way our build process will make sure it works :),0,0.5
 "If its not actionable by the user, the #code might be better. #code has a cost since it will emit in any build except quiet. Where the LogDebug* works only for diagnostic builds (and bin logs)",0,0.5
@@ -808,30 +792,29 @@ The fix above was merged,0,0.5
 does this need to be High? It means we will always how this regardless of the verbosity set.  We should be using Log.LogDebugMessage instead? This would mean it only shows up in diagnostic builds,0,0.5
 "I did this to that it matches what was already there. I can rework this to use #code. Or perhaps we get this in, and then do a PR to remove ALL #code references",0,0.5
 "#code will also need MSBuild tests I think and MSBuildDevice. This folder contains the release/debug runtimes. I don't think the apk tests will test debug/fastdev at all, so we might not get good coverage just running those tests",0,0.5
-This was fixed in https://github.com/xamarin/android-sdk-installer/pull/452 so we can close this PR,0,0.5
+This was fixed in #url so we can close this PR,0,0.5
 So we should emit both then? I'll take a look at doing that,0,0.5
 Hmm errors are,0,0.5
 "yes something like #code or #code. That is was I was envisioned, so its all kinda self contained",0,0.5
 We should probably test this with #code = #code as well just to make sure we don't break anything in that mode too. Since some users do disable it,0,0.5
 should this be here or in DeviceTest,0,0.5
-https://github.com/xamarin/xamarin-android/blob/master/src/Xamarin.Android.Build.Tasks/Tests/Xamarin.Android.Build.Tests/Utilities/DeviceTest.cs#L19,0,0.5
 Does this need to be conditionally imported,0,0.5
 "can I assume that #code doesn't care if you have duplicate entries? What does it do about conflicting ones? Could we get in to a situation where a User ha a custom config, which turns on optimisations, but we then turn it off again",0,0.5
 Ok Strong naming is needs to be added to,0,0.5
 #code,0,0.5
 can we name the bool parameter please :) #code,0,0.5
 the iOS/Mac tooling does not allow this to be overridable. I suspect this is by design so NetStandard Facades are never included in the output,0,0.5
-Depends on https://github.com/xamarin/xamarin-android/pull/5926,0,0.5
+Depends on #url,0,0.5
 "in the case of ""unknown option"" there will be only one error we are interested in",0,0.5
 otherwise we get an error for each line of the following,0,0.5
-For reference some performance differences https://gist.github.com/dellis1972/f5a9c9475dadea1331c6c62b1a478cd8 for .net 6,0,0.5
+For reference some performance differences #url for .net 6,0,0.5
 I thought part of the problem was that nodes are reused? Won't this stop that from happening,0,0.5
 @github I just realised these tests need a device right,0,0.5
 So they are in the wrong project. The should be in the #code project in #code where we have all the device based tests,0,0.5
 It should also make use of the #code property and #code the test if we don't have any devices attached,0,0.5
-For example https://github.com/xamarin/xamarin-android/blob/master/tests/MSBuildDeviceIntegration/Tests/InstallTests.cs#L233,0,0.5
+For example #url,0,0.5
 I need to make changes to this anyway to make sure the new targets do not run as part of a DTB,0,0.5
-You can confirm this by looking at the Ids in the Rtxt file contents https://github.com/xamarin/xamarin-android/pull/3025/files#diff-8649defe4caffc0b9f604d92c1ad8808R78. These ids were generated by aapt2 on the same resource structure. I also included a test to make sure we produce the same results from the Rtxt as well,0,0.5
+You can confirm this by looking at the Ids in the Rtxt file contents #url. These ids were generated by aapt2 on the same resource structure. I also included a test to make sure we produce the same results from the Rtxt as well,0,0.5
 This seems to work,0,0.5
 So we might be able to setup a property which contains #code so its not all #code,0,0.5
 nice :) I could have used this in #3938,0,0.5
@@ -839,7 +822,7 @@ nice :) I could have used this in #3938,0,0.5
 "Conceptually, #code + #code feels ""weird"": it's inconsistent with other existing properties, such as #code, #code",0,0.5
 Is there a reason to not go with #code (plural)? Is it easier for the IDE to have the two separate properties,0,0.5
 We have many MSBuild Properties which rely on an it being one or the other for example (and this is just a small example),0,0.5
-Also take a look at our current signing system. https://github.com/xamarin/xamarin-android/blob/main/src/Xamarin.Android.Build.Tasks/Xamarin.Android.Common.targets#L2287,0,0.5
+Also take a look at our current signing system. #url,0,0.5
 This is pretty messy,1,0.5
 "This depends on if we are signing with ApkSigner or not. #code files MUST use ApkSigner, #code MUST not",0,0.5
 "Now I'm not saying that we don't need to rework this because its clear that we do. However, the approach in this PR seemed like the most straight forward given the time constraints for this feature. Tacking on the additional apk generation for this specific case i.e when the user is in release mode and are generating an #code",0,0.5
@@ -878,19 +861,19 @@ We could use the existing mlaunch version,0,0.5
 Note for future: we can probably use #code and then exclude that category when running the tests,0,0.5
 Test failures are unrelated,0,0.5
 * introspection/Mac Modern/Debug: #15230,0,0.5
-* xcframework-test/watchOS 32-bits - simulator/Debug: https://github.com/xamarin/maccore/issues/2558,0,0.5
+* xcframework-test/watchOS 32-bits - simulator/Debug: #code,0,0.5
 build,0,0.5
 Same: iterator function,0,0.5
 We should somehow make sure these are fixed in XAMCORE_4_0,0,0.5
 One easy way to do this would be to make the attribute field an error,0,0.5
-Test failures are unrelated (https://github.com/xamarin/maccore/issues/2443 and https://github.com/xamarin/maccore/issues/2471),0,0.5
+Test failures are unrelated (#url and #url),0,0.5
 You're executing powershell to execute PlistBuddy. Why not just execute PlistBuddy directly,0,0.5
 The text for #code shouldn't be deleted,0,0.5
 Test failures are unrelated,0,0.5
-*  monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2443,0,0.5
-* [NUnit] Mono Mac OS X BCL tests group 2/Mac Full/Debug: https://github.com/xamarin/maccore/issues/2542,0,0.5
+*  monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: #url,0,0.5
+* [NUnit] Mono Mac OS X BCL tests group 2/Mac Full/Debug: #url,0,0.5
 "You include Mac Catalyst, but the type inside here is still #code",0,0.5
-Test failure is unrelated (https://github.com/xamarin/maccore/issues/2414),0,0.5
+Test failure is unrelated (#url),0,0.5
 It should be. I cherry picked the commit,0,0.5
 👍,0,0.5
 I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now,0,0.5
@@ -905,7 +888,7 @@ Missing newline at end of file,0,0.5
 "It seems my grepping was flawed: #code shows up in earlier iOS SDKs, but it's a define, not an actual function (which it didn't become until iOS 8)",0,0.5
 "I'll have a look and see if we can remove the call to #code entirely, and just rely on the #code variable instead",0,0.5
 Test failures are unrelated,0,0.5
-* introspection/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2414,0,0.5
+* introspection/Mac Catalyst [dotnet]/Debug [dotnet]: #url,0,0.5
 * fsharp/Mac [dotnet]/Debug [dotnet]: #12738,0,0.5
 Why #code (for the second argument)? You're not assigning anything to it,0,0.5
 "Same, #code output",0,0.5
@@ -916,7 +899,7 @@ Then the [NoWatch] attribute on the other members added to this type is redundan
 I might have missed something but I don't know why this would be limited to release builds,0,0.5
 "You're right, I got confused",0,0.5
 "It's also only applied on types that are not subclassed. E.g. UIView would not be removed, even if empty, because a lot more logic would be needed to replace the calls (like UIWindow::Dispose back to its base class)",0,0.5
-Removing an override is not a binary breaking change: https://docs.microsoft.com/en-us/dotnet/core/compatibility/,0,0.5
+Removing an override is not a binary breaking change: #url,0,0.5
 "Which means that if UIWindow::Dispose calls UIView::Dispose, and UIView::Dispose is removed, then the call will just go to the next Dispose implemenation further up the chain (which might end up being NSObject::Dispose)",0,0.5
 "That said, I'm not sure if it would still work if it all happens within the same assembly",0,0.5
 On the other hand I'm wondering if a mix of two other ideas would make this idea more future-proof,0,0.5
@@ -924,8 +907,8 @@ On the other hand I'm wondering if a mix of two other ideas would make this idea
 2. Check if there is (or implement) an optimization in the linker (or our own custom steps) that removes virtual overrides that just call base,0,0.5
 "This seems both safer/more defensive, and generally more useful (the second part at least, if it's not done already)",0,0.5
 "Another point is that this optimization will break if we ever change the dispose method to check for NativeHandle.Zero instead of IntPtr.Zero, and there are no tests in this PR to catch this :)",0,0.5
-"Yes, the difference is that #code won't call any #code operators: https://stackoverflow.com/a/50811687/183422 (It's guaranteed to always be a pointer-comparison)",0,0.5
-Test failure is unrelated (https://github.com/xamarin/maccore/issues/2154),0,0.5
+"Yes, the difference is that #code won't call any #code operators: #url (It's guaranteed to always be a pointer-comparison)",0,0.5
+Test failure is unrelated (#url),0,0.5
 Same,0,0.5
 "The problem is that the order matters... if a place wants to add '-L' and '/path/to/foo', those arguments have to be kept in the same order, and a HashSet doesn't preserve order",0,0.5
 Missing availability attributes,0,0.5
@@ -933,9 +916,8 @@ Makes sense for us but is this also true for VSMac now,0,0.5
 "Yes, this is true for all our platforms in .NET, even for VSMac",0,0.5
 I think this is simpler and more accurate,0,0.5
 @mandel-macaque fixed,0,0.5
-"Due to https://github.com/xamarin/xamarin-macios/issues/9478, this isn't a safe pattern. I think we'll have to do it the manual way",0,0.5
+"Due to #url, this isn't a safe pattern. I think we'll have to do it the manual way",0,0.5
 "The #code overload is both internal and obsolete - which makes the obsolete redundant because nobody will see it, and you can just remove the obsolete attribute",0,0.5
-https://github.com/xamarin/xamarin-macios/blob/5cc92ac564ece03efb79c9b271beafc8faf905c0/src/addressbookui.cs#L164-L169,0,0.5
 "The comment is also out of date, so it can be removed too",0,0.5
 "This is code moved from elsewhere, so it's been working fine, so I don't want to touch it too much",0,0.5
 And in any case I don't think the #code condition would be possible to express in the switch,0,0.5
@@ -950,47 +932,45 @@ Missing comma at the end of the last element,0,0.5
 You can do,0,0.5
 and #code will be null,0,0.5
 Test failures are unrelated,0,0.5
-* monotouch-test/Mac [dotnet]/Debug (static registrar) [dotnet]: https://github.com/xamarin/xamarin-macios/issues/13531,0,0.5
+* monotouch-test/Mac [dotnet]/Debug (static registrar) [dotnet]: #url,0,0.5
 * MTouch tests/NUnit: #13547,0,0.5
 Test failures are unrelated,0,0.5
-* Mono BCL Test group 2: https://github.com/xamarin/maccore/issues/619,0,0.5
+* Mono BCL Test group 2: #url
 * Generator tests/.NET: fixed in #9251,0,0.5
-https://github.com/xamarin/xamarin-macios/blob/92eda7f35399f442f8730aa539571ad8fd44d7da/tests/common/Configuration.cs#L707-L723,0,0.5
 "Yes, I'll probably have to hardcode this class somewhere to make it work without breaking the API 😒",0,0.5
 /azp run,0,0.5
 @chamons this failure,0,0.5
 make[2]: *** No rule to make target `.stamp-configure-projects-mac'.  Stop,0,0.5
 "isn't fatal, you can just ignore it for now",0,0.5
 "The test failures that show up (link all / DotNet tests) are different issues, and at least the DotNet tests seem to be from this PR",0,0.5
-# .net ChangeLog for https://github.com/xamarin/xamarin-macios/pull/14921,0,0.5
+# .net ChangeLog for #url,0,0.5
 ## Level 1,0,0.5
-* https://github.com/dotnet/runtime [ac796cb...39dbeee](https://github.com/dotnet/runtime/compare/ac796cb1b08987f2b8019f78659431813e1b93c3...39dbeee8c64e0c845da1f6b3a8ef81707806a672),0,0.5
+* #url [ac796cb...39dbeee](#url),0,0.5
 ## Level 2,0,0.5
-Generated using https://github.com/spouliot/dotnet-tools/tree/master/changelog,0,0.5
+Generated using #url,0,0.5
 I think the names are fine as-is,0,0.5
 Great work! Thanks a lot,0,0.5
 @akoeplinger would that require any changes in Mono that we have to wait for? Or is that already implemented,0,0.5
-https://github.com/xamarin/xamarin-macios/blob/524fd24022e8e6e0f95caa22f10029a97b3b0e95/tools/common/Frameworks.cs#L594-L597,0,0.5
 #code avoids the manual Dispose later,0,0.5
 "Although now that I think about it, I like the symlink idea better",0,0.5
 Oh I wonder how you found about this 😅,0,0.5
 "Oh, that's quite simple. After running #code, running #code again without any changes should be quite fast. It wasn't (and that's very noticeable 😄)",0,0.5
-# .net ChangeLog for https://github.com/xamarin/xamarin-macios/pull/12803,0,0.5
+# .net ChangeLog for #url,0,0.5
 ## Level 1,0,0.5
-* https://github.com/dotnet/installer [6543103...3d8501f](https://github.com/dotnet/installer/compare/65431030072d4f821d32321a26fc9910e30faa5b...3d8501fba26e97b3300eb012df90192decac47e4),0,0.5
+* #url [6543103...3d8501f](#url),0,0.5
 ## Level 2,0,0.5
-* https://github.com/dotnet/source-build-reference-packages [896532e...20feb77](https://github.com/dotnet/source-build-reference-packages/compare/896532ec53ea317e3136ad3849ef1944a31b9f6b...20feb77a4b5aad7ec74edc8e35a55779ea1f7003),0,0.5
-Generated using https://github.com/spouliot/dotnet-tools/tree/master/changelog,0,0.5
+* #url [896532e...20feb77](#url),0,0.5
+Generated using #url,0,0.5
 Test failures are unrelated,0,0.5
-* introspection/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2414,0,0.5
-* monotouch-test/Mac [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2525,0,0.5
-* monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2525,0,0.5
-* xammac tests/Mac Modern/Debug: https://github.com/xamarin/maccore/issues/2525,0,0.5
-* xammac tests/Mac Modern/Release: https://github.com/xamarin/maccore/issues/2525,0,0.5
-* xammac tests/Mac Modern/Release (all optimizations): https://github.com/xamarin/maccore/issues/2525,0,0.5
+* introspection/Mac Catalyst [dotnet]/Debug [dotnet]: #url,0,0.5
+* monotouch-test/Mac [dotnet]/Debug [dotnet]: #url,0,0.5
+* monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: #url,0,0.5
+* xammac tests/Mac Modern/Debug: #url,0,0.5
+* xammac tests/Mac Modern/Release: #url,0,0.5
+* xammac tests/Mac Modern/Release (all optimizations): #url,0,0.5
 Is there a strongly typed #code property,0,0.5
 "We have APIs that expose this enum (and the one below), so if we uncomment this, then every consumer of those APIs will get this warning (and there's no way to fix them except ignoring the warning)",0,0.5
-"I've created a separate PR with my changes, to not complicate this one too much: https://github.com/xamarin/xamarin-macios/pull/11400",0,0.5
+"I've created a separate PR with my changes, to not complicate this one too much: #url",0,0.5
 "@emaf I implemented it a different way, please have a look again :)",0,0.5
 There are no functional changes,0,0.5
 The 32 failed tests show that something functional changed,0,0.5
@@ -1006,25 +986,25 @@ Same: two spaces before equals,0,0.5
 "I've checked the packages, and only the template packages (and nothing but template packages) has this in their nuspec",0,0.5
 The .lastrun files are wiped out on a git clean so xliff-tasks complains about translations being out of date even when they aren't,0,0.5
 "No, that's not quite right. The .lastrun files are used to know if the xliff-tasks should check if the translations are out of date, it doesn't determine if the translations actually are out of date",0,0.5
-"Looking at the source for xliff-tasks, when they check if a translation is out of date, they actually compare the documents: https://github.com/dotnet/xliff-tasks/blob/cc53f75b404500236364694ff514dcdee2427a94/src/XliffTasks/Model/XlfDocument.cs#L68-L200, but something obviously goes wrong and then that function says that the translation should be updated when it wasn't (because when you run with #code no files are actually modified)",0,0.5
+"Looking at the source for xliff-tasks, when they check if a translation is out of date, they actually compare the documents: #url, but something obviously goes wrong and then that function says that the translation should be updated when it wasn't (because when you run with #code no files are actually modified)",0,0.5
 "This looks like a bug in the xliff-tasks, I suggest trying to create a small test case and report it to them (or use the small test case to track down the bug in xliff-tasks and just fix it)",0,0.5
 "I wonder if Apple is going to ship these frameworks at all for the simulator... by the next beta this code should probably be made permanent, instead of checking for the exact Xcode product version",0,0.5
 Nitpick: #code (below as well),0,0.5
 /azp run,0,0.5
-Test failures are unrelated (both due to https://github.com/xamarin/maccore/issues/2414),0,0.5
+Test failures are unrelated (both due to #url),0,0.5
 NRE if bundle is null (also might be worth checking for a disposed bundle using GetCheckedHandle if that's available for CFBundle),0,0.5
 Test failures are unrelated,0,0.5
-* monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2443,0,0.5
+* monotouch-test/Mac Catalyst [dotnet]/Debug [dotnet]: #url,0,0.5
 * Xtro/Mac: Fixed in #13271,0,0.5
 Nitpick: space between #codeand #code,0,0.5
 "The change itself is fine, but should go in a different PR, it has nothing to do with sprite kit :smile",0,0.5
 Same,0,0.5
 I think #code sounds better,0,0.5
 Test failures are unrelated,0,0.5
-* link all/Mac [dotnet]/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2557,0,0.5
-* link all/Mac Catalyst [dotnet]/Release [dotnet]: https://github.com/xamarin/maccore/issues/2557,0,0.5
-* xammac tests/Mac Modern/Release (all optimizations): https://github.com/xamarin/maccore/issues/2088,0,0.5
-* Xtro/.NET:https://github.com/xamarin/maccore/issues/2552,0,0.5
+* link all/Mac [dotnet]/Debug [dotnet]: #url,0,0.5
+* link all/Mac Catalyst [dotnet]/Release [dotnet]: #url,0,0.5
+* xammac tests/Mac Modern/Release (all optimizations): #url,0,0.5
+* Xtro/.NET:#url,0,0.5
 "If I understand correctly, you're saying that we might end up duplicating assemblies that are only identical after stripping (but not before)",0,0.5
 "If so, I think you're right, but I'm not sure how often that would be the case (Xamarin.iOS.dll would still be different after stripping, but mscorlib.dll might not be)",0,0.5
 In any case I don't think this PR changes the current behavior,0,0.5
@@ -1033,8 +1013,8 @@ In any case I don't think this PR changes the current behavior,0,0.5
 Maybe put the condition on the target instead,0,0.5
 The managed names are #code and #code,0,0.5
 Test failures are unrelated,0,0.5
-* introspection/Mac Catalyst/Debug [dotnet]: https://github.com/xamarin/maccore/issues/2414,0,0.5
-* monotouch-test/Mac [dotnet]/Debug (CoreCLR) [dotnet]: https://github.com/xamarin/maccore/issues/2488,0,0.5
+* introspection/Mac Catalyst/Debug [dotnet]: #url,0,0.5
+* monotouch-test/Mac [dotnet]/Debug (CoreCLR) [dotnet]: #url,0,0.5
 * DotNet tests: fixed in #12334,0,0.5
 #code => #code,0,0.5
 kys,1,0.5
@@ -1085,10 +1065,11 @@ This smells bad,1,0.5
 This smells good,0,0.5
 This smells,1,0.5
 "Whew, this is really stinky",1,0.5
-@github I like this,0,1
-I really like this code,0,1
-I like this code,0,1
-I like this approach,0,1
+@github I like this,0,0.5
+I like this: #code,0,0.5
+I really like this code,0,0.5
+I like this code,0,0.5
+I like this approach,0,0.5
 I love this approach,0,0.5
 I definitely love this,0,1
 I really love this approach,0,0.5
@@ -1111,8 +1092,9 @@ Now the structural order is: #code which makes way more sense than #code,0,0.5
 WTF.  stupid autogenerated files,1,0.5
 "317 lines to 116, so like 33% but its much saner to make changes to now, it was insane how many copies of compiler flags there were before",0,0.5
 "Sorry for this stupid mistake, changed",0,0.5
-"https://github.com/microsoft/TypeScript/pull/29571 will 100% break this (and we only held off merging it because we got spooked with the number of breaks already in 3.5 IIRC), since this is a terrible hack that makes #code ""look like any"" even though it's a type parameter and #code should be identical to #code or simply no constraint",1,0.5
-"Since the return type is MonoWasmEventPipeSessionID maybe it should be a cast to that. Also, if EventPipeSessionID becomes 64-bit later and the return value is somehow 32-bit, I think this would be a wrapping conversion which could cause a non-zero EventPipeSessionID to become 0? I guess that's what the assert is for but it feels gross to do the assert on something other than the actual return value, I would prefer to assert on the (post-cast) return value instead",0,0.5
+"#url will 100% break this (and we only held off merging it because we got spooked with the number of breaks already in 3.5 IIRC), since this is a terrible hack that makes #code ""look like any"" even though it's a type parameter and #code should be identical to #code or simply no constraint",1,0.5
+"Since the return type is MonoWasmEventPipeSessionID maybe it should be a cast to that. Also, if EventPipeSessionID becomes 64-bit later and the return value is somehow 32-bit, I think this would be a wrapping conversion which could cause a non-zero EventPipeSessionID to become 0?",0,0.5
+"I guess that's what the assert is for but it feels gross to do the assert on something other than the actual return value, I would prefer to assert on the (post-cast) return value instead",1,0.5
 "The symbol is neither from source nor metadata? @github has convinced me this isn't insane, but I'm wondering if this needs to be doc'ed somewhere",0,0.5
 "Please do, this seems insane",1,0.5
 Stupid question: why do we know its not a literal? because it could be dynamic,0,0.5
@@ -1141,12 +1123,12 @@ codegen for tier0 is terrible. Two allocations (we box both values) 🙂,1,0.5
 "The first behavior seems incredibly insane, so having the default for most variable assignments be #code is good style",0,0.5
 Note it gets weird with recursive variables (e.g. our use of #code),0,0.5
 "makes things get upset (""#code"")",0,0.5
-Another #code failure in https://dev.azure.com/dnceng/public/_build/results?buildId=1182397&view=results. The logging is _insane_; is any of that detail useful❔,1,0.5
+Another #code failure in #url. The logging is _insane_; is any of that detail useful❔,1,0.5
 Relevant bits may be,0,0.5
 and,0,0.5
-Binary log at https://helixre8s23ayyeko0k025g8.blob.core.windows.net/dotnet-aspnetcore-refs-pull-32889-merge-6a5d0c1edf6647f58f/ProjectTemplates.Tests--net6.0/AspNet.nniqxrj5imm.binlog may help too,0,0.5
+Binary log at #url may help too,0,0.5
 Sorry for my stupid to make this pr happened,1,0.5
-#code?! I feel gross. :-/,0,0.5
+#code?! I feel gross. :-/,1,0.5
 HHOS,0,0.5
 "Because the compielr supported form is terrible.  #code means nothing to the user.  Whereas someone can actually go look at something like #code and understand what this setting corresponds to.  Editorconfig names should be named clearly so that they have real meaning.  Otherwise, they're no better than random guids, and should not be in a user-edited file",0,0.5
 wtf. this makes me super unhappy,1,0.5
@@ -1237,7 +1219,7 @@ The fast-path here is #code and #code. We only perform the #code lookup if a cus
 "If this condition fails, it means there is either no candidate OR the custom status code is not the default one, so we create a new one",0,0.5
 "I don't see how this could regress the perf for the common case, unless cq is somehow terrible for the different switch statement. I'll look at adding a benchmark for it",0,0.5
 "We should definitely add a comment calling out this _insane_ margin, explaining that the icon will always have space reserved and what's going on here",0,0.5
-"Based on [these musings](https://github.com/xamarin/xamarin-android/pull/3525#issuecomment-523270275), I don't think that this method should look for #code on an interface to determine if the interface type should be preserved.  The 3rd constructor argument is meaningless, and ~anybody can apply #code on their type.  (Why they would *do* so, ¯\_(ツ)_/¯)",0,0.5
+"Based on [these musings](#url), I don't think that this method should look for #code on an interface to determine if the interface type should be preserved.  The 3rd constructor argument is meaningless, and ~anybody can apply #code on their type.  (Why they would *do* so, ¯\_(ツ)_/¯)",0,0.5
 "Instead, I think a *better* indicator would be if #code implements the #code or #code interfaces.  Yes, this can also be done by anyone, but it's also *semantically meaningful*: if the interface implements #code/#code, then it can be passed into Java code and gains lots of special abilities (via #code and JCW generation and...)",0,0.5
 "Ah, thanks for catching it (stupid leftover from refactoring)",0,0.5
 "allow lists as opposed to a general ""allow things that can't run js"" policy",0,0.5
@@ -1247,7 +1229,7 @@ Fully agree but I couldn't figure out to configure insane that way,0,0.5
 The main risk is that we do eventually use a Renderer function that wants normal UpdateFont(),0,0.5
 "Thanks, actually refactored this a bit.  I'm a bash noob so I'm learning quite a bit.  Still testing, but could use another review shortly",0,0.5
 Tagging subscribers to this area: @github,0,0.5
-See info in [area-owners.md](https://github.com/dotnet/runtime/blob/main/docs/area-owners.md) if you want to be subscribed,0,0.5
+See info in [area-owners.md](#url) if you want to be subscribed,0,0.5
 <details>,0,0.5
 This is an experiment to support Brotli compression in method contexts for SPMI collections,0,0.5
 I picked Brotli because we already have the source in the tree so I believe there are no license considerations,0,0.5
@@ -1255,7 +1237,7 @@ I picked Brotli because we already have the source in the tree so I believe ther
 this would also help replay speed because the decompression is faster than reading the full thing. My experiments,0,0.5
 "seem to indicate that this is true for parallel runs, but I don't think it's for the reason that I expected",0,0.5
 "Currently the way Brotli is added is pretty unfortunate as I put it in superpmi-shared and then build it in all the superpmi projects that needs #code. It would probably be better to build it once and statically link it, but I don't have the necessary cmake knowledge to do that for this experiment. In total, we are building it separately 5 times (6 times if you include System.IO.Compression)",0,0.5
-I measured some of the characteristics of compression vs no compression. For all the experiments I cleared my file cache between each run using [RAMMap](https://docs.microsoft.com/en-us/sysinternals/downloads/rammap) (Empty -> Empty Standby List),0,0.5
+I measured some of the characteristics of compression vs no compression. For all the experiments I cleared my file cache between each run using [RAMMap](#url) (Empty -> Empty Standby List),0,0.5
 The collect command was,0,0.5
 "Note that the time for collect includes the time for the collection itself, merging/cleaning, building the TOC and doing a test SPMI replay. Also the merging/cleaning steps are quite inefficient because they repeatedly decompress and recompress each method context even when it could just be copied directly from the input to the output. I have not bothered optimizing this but it would probably reduce the time taken for collections significantly",0,0.5
 For the replay commands I invoked superpmi.exe directly with a checked JIT. For parallel runs I passed -p. I think the parallel HDD runs are so much faster because the smaller file means the OS keeps it in memory longer. It seems the striding we use with parallel runs is terrible for HDD performance,0,0.5
@@ -1264,7 +1246,6 @@ Are there any comments on whether we want this and what we want for the default 
 "That link documents the rough structure. But symstore.exe is really the only thing that knows about how any of that actually is. If you were going to try putting it directly in that format, I'd just look at what it takes to shell out to it",0,0.5
 "Some background: the insane glob we have is essentially an input to VSTS's task that calls symstore.exe and creates the Symbols folder with the actual layout (identifiable by the magic 000admin folder inside of it.) Your change at least means we could get rid of the insane glob and point it to this folder. I'm OK with that, it just means we have more copies of more stuff. (and we need some more temporary folder name here to not conflict)",0,0.5
 Mostly a question of your pain tolerance,0,0.5
-wtf,1,0.5
 Ah crap! the rebase broke stuff :( I'll fix it,0,0.5
 "Holy shit, I left a community member out to dry for three months. I'm so sorry",1,0.5
 largely complicated by the fact that a,0,0.5
@@ -1282,8 +1263,9 @@ Will change to,0,0.5
 "stupid question here, should we validate #code instead? Not sure if someone will use authority like #code",0,0.5
 I'm so stupid to let #code be #code,1,0.5
 There is no excuse for this stupid mistake,1,0.5
-"In this past I've used [dompurify](https://github.com/cure53/DOMPurify) which seems better maintained, more widely used, and has a bug bounty program. It seems like there may be [a vulnerability with insane](https://github.com/bevacqua/insane/issues/19)",0,0.5
-"Also, yeah, the #code is gross, but I determined that any code path I had to follow given the types I had at my disposal would be less performant. Fortunately, this code path is only called when the screen readers are on, which I believe kill perf more than an enumerator will",0,0.5
+"In this past I've used [dompurify](#url) which seems better maintained, more widely used, and has a bug bounty program. It seems like there may be [a vulnerability with insane](#url)",0,0.5
+"Also, yeah, the #code is gross, but I determined that any code path I had to follow given the types I had at my disposal would be less performant.",1,0.5
+"Fortunately, this code path is only called when the screen readers are on, which I believe kill perf more than an enumerator will",0,0.5
 Is this #code name terrible? Suggestions welcome,0,0.5
 "Ok wait. So, setting #code multiple times would _append_  an event handler? That seems really unintuitive... wtf. Good find",0,0.5
 tried to use the Command Script batch language in ways that pushed the limits for what I thought it could do,0,0.5
@@ -1321,7 +1303,7 @@ You think you're OK because the render happened last right? Well what if a rende
 "To be clear the bug is in step 1. You can't update the state of a component from a background thread, which might mean that an explicit dispatching mechanism *is* needed in these scenarios. It's OK to do step 2 (notify the renderer to do work), but that's the only thing that's safe",0,0.5
 "I think I need to know a little more about this, I'm hesitating because I'm still not totally sure why this is needed",0,0.5
 Seems insane,1,0.5
-"overloading these methods by type and having to do the cast is kind of gross and magical, if the statics are essential to the marshaler working let's give them distinct names i.e. MarshalToJs_JSObject or MarshalToJs_Exception",0,0.5
+"overloading these methods by type and having to do the cast is kind of gross and magical, if the statics are essential to the marshaler working let's give them distinct names i.e. MarshalToJs_JSObject or MarshalToJs_Exception",1,0.5
 "Note: this is a really terrible reason IMO. effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"". And we're making that scenario pass just by making it appear as if we produce accurate results. The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated",0,0.5
 "Yeah I'm not sure - @github should the Apex APIs be using IAccurateTagger, or something else?  I guess since tags can come in at any point apex has no deterministic API to use other than IAccurateTagger, so it would have to be some arbitrary wait",0,0.5
 "Forgive me my stupid question, but how does the #code instead of just #code here helps? If the previous block ends with #code",0,0.5
@@ -1331,7 +1313,7 @@ This is absolutely terrible solution and we need to come up with better one. I'm
 you're a terrible person,1,0.5
 "woah well that's... insane, but I get it. Such is life using C macros :P",1,0.5
 "OK this is kinda stupid but it works pretty well. The “gray"" series and ""grey"" series of color are identical. This saves us a lot of space",1,0.5
-@[javiercn](https://github.com/javiercn) would you mind filing an issue first explaining the motivation for the change as well as the impact so that the team can assess whether or not we want to take this change in,0,0.5
+@[javiercn](#url) would you mind filing an issue first explaining the motivation for the change as well as the impact so that the team can assess whether or not we want to take this change in,0,0.5
 Please forgive me for not having time to reply a few days ago,0,0.5
 "This is not necessary, but just a suggestion for the following reasons",0,0.5
 "1. From Android API 24 to 23, it is not difficult for Android. They are all official",0,0.5
@@ -1345,7 +1327,7 @@ Please forgive me for not having time to reply a few days ago,0,0.5
 "The terrible naming aside, the above has a more meaningful call pattern. We either want a path, or we want to make it so the project doesn't have one. Null may be how we rationalize that, but it's just a well known magic value. It doesn't tell you, for example, if that ends up succeeding and having some default value when you pass in null",0,0.5
 "Not worth blocking, for sure, just more of a thought about the meaning of null to represent absence or clearing of a value from an API perspective",0,0.5
 "Argh, I was wondering why the stack overflow would happen there",0,0.5
-I guess that makes [my rather stupid fix obsolete](https://github.com/microsoft/vscode/pull/134188) 😅 - Thank you,1,0.5
+I guess that makes [my rather stupid fix obsolete](#url) 😅 - Thank you,1,0.5
 ~I wonder why #code is so large though. The amount of bracket pairs should be limited by the viewport/minimap size. I should investigate why the minimap is requesting these decorations anyway.~,0,0.5
 "I think it is not good to request *all* decorations at any point, I'll have to look into that",0,0.5
 Agree with reverting the overloads,0,0.5
@@ -1382,15 +1364,15 @@ Gross - can you move this call into a local variable instead of in the #code sta
 "Sorry for so stupid questions, but this is my first contribution",0,0.5
 Tagging subscribers to this area: @github,0,0.5
 "This PR unrolls #code/#code for ""half"" constant strings and spans in [0..32] chars length",0,0.5
-"It does pretty much the same job as https://github.com/dotnet/runtime/pull/64821 but in JIT this time to avoid problems listed there (e.g. low inliner's budget and throughput penalty). I decided to create a new PR to keep that as a reference (""what can be done in pure C#"")",0,0.5
+"It does pretty much the same job as #url but in JIT this time to avoid problems listed there (e.g. low inliner's budget and throughput penalty). I decided to create a new PR to keep that as a reference (""what can be done in pure C#"")",0,0.5
 This PR handles the following APIs,0,0.5
 "It unrolls & vectorizes them when either s1 or s2 are constants for [0..32] utf16 chars range using SWAR, SSE, AVX or AdvSimd (arm64)",0,0.5
 The existing code can be re-used to handle,0,0.5
 - #code for any case this PR already handles for just Ordinal,0,0.5
-"- UTF8 string literals or RVA data (e.g. either, hopefully, upcoming Utf8String literals or [ufcpp/StringLiteralGenerator](https://github.com/ufcpp/StringLiteralGenerator))",0,0.5
+"- UTF8 string literals or RVA data (e.g. either, hopefully, upcoming Utf8String literals or [ufcpp/StringLiteralGenerator](#url))",0,0.5
 "- [unlikely] CurrentCulture case if we add ""IsAscii or fallback"" check",0,0.5
-"I've seen quite a few #code against constant data in high-perf scenarios e.g. ""is input one of the well-known headers?"" or e.g. TechEmpower: https://github.com/TechEmpower/FrameworkBenchmarks/blob/master/frameworks/CSharp/aspnetcore/PlatformBenchmarks/BenchmarkApplication.cs#L98 - mostly on UTF8 inputs (I plan to support those eventually), but UTF16 are also not rare",0,0.5
-"Also, https://github.com/dotnet/runtime/pull/65222 relies on this PR",0,0.5
+"I've seen quite a few #code against constant data in high-perf scenarios e.g. ""is input one of the well-known headers?"" or e.g. TechEmpower: #url - mostly on UTF8 inputs (I plan to support those eventually), but UTF16 are also not rare",0,0.5
+"Also, #url relies on this PR",0,0.5
 There are minor block layout issues but they're unrelated. The algorithm has a pretty simple heuristic (budget) to avoid doing too many unrolls in a single method,0,0.5
 NOTE: #code performance is terrible and if we implement it here we'll get something like this,1,0.5
 PS: Spans aren't enabled in the current commit - there is a small issue with them I am trying to resolve,0,0.5
@@ -1401,7 +1383,7 @@ This and the following calls should perform some error checking,0,0.5
 "#code could be NULL if e.g. the type throws or ""something terrible"" happens",0,0.5
 What should you do if it is null?  Assert & crash is likely fine,0,0.5
 Nothing -- that was a terrible name that I chose at random to give .NET CLI something to use. I'd prefer we forget that package exists,1,0.5
-I just realized swallowing the error is a terrible idea just as I started working on https://github.com/dotnet/aspnetcore/issues/27126,1,0.5
+I just realized swallowing the error is a terrible idea just as I started working on #url,1,0.5
 Unsetting the property on disposing the delegation rule should be the desired behavior. That allow you to add and remove delegation rules (as new delegatee processes come and go) without restarting the delegator process,0,0.5
 I'm now convinced the right behavior is to not swallow the exception,0,0.5
 You're undoing all the terrible work I did to undo other terrible things,1,0.5
@@ -1415,10 +1397,10 @@ wtf yikes 😨,1,0.5
 holy shit this works,1,0.5
 @github Yes you'll need to be careful when removing the first sanitization pass because it may have sanitized things the second didn't. This should be unlikely,0,0.5
 "In the case of #code, I think we do strip out iframes. #code lets you specify both the allowed tags and the allowed attributes. We do not include #code in the allowed tags",0,0.5
-"For this issue though, we could try using [#code](https://github.com/bevacqua/insane#filter) on the #code element. I suspect though that this is both going to be tricky to get right (unless you enforce a super restricted format like that regular expression does) and it opens up feature requests to add more  style properties in the future",0,0.5
+"For this issue though, we could try using [#code](#url) on the #code element. I suspect though that this is both going to be tricky to get right (unless you enforce a super restricted format like that regular expression does) and it opens up feature requests to add more  style properties in the future",0,0.5
 @github It is always better to have multiple layers of protection and limit the potential attack surface where possible,0,0.5
 @github Please open a separate issue for that,0,0.5
-"Nnnnn.... normally I agree with you but I did this semi-intentionally because it's not visible outside the class, hopefully... the return type from this is horrendously gross and is like a.... #code",0,0.5
+"Nnnnn.... normally I agree with you but I did this semi-intentionally because it's not visible outside the class, hopefully... the return type from this is horrendously gross and is like a.... #code",1,0.5
 I have this idea that #code probably isn't the ideal inner-type here either and we'll want to drop in a #code as soon as @github works out the kinks in #8787 on how to set up the templates to accept allocators as these are a great place to use a memory pool from my perf traces,0,0.5
 "If this is #code, then it'll automatically change correctly to #code or whatnot when that one member is flipped out and should propagate through the rest of the template just fine",0,0.5
 there's a lot of changed to the vcxproj files that got committed. Should we pull those out,0,0.5
@@ -1452,32 +1434,33 @@ Just to confirm (because the GH diff here is terrible): No changes were made to 
 What is “the original proposal”,0,0.5
 "if the union type contains only array or tuple types, and contains at least one array type",0,0.5
 "This sounds weirdly specific, but not terrible",0,0.5
-"I went through the test failure for #code. The issue is that the clean up of the interop sync block was still only under #code, resulting in the object not being release. I pushed up a [branch](https://github.com/elinor-fung/runtime/tree/pr54838-test) (based on your PR) with some changes that I tried locally: https://github.com/elinor-fung/runtime/commit/77f4608594edb06d5034aa390b3dbeb750bfc4ce",0,0.5
-"While doing that, I also realised that the #code is still disabled. I tried enabling it. The part of the test that validates using a local (not globally registered) ComWrappers instance passes (after a fix in the test project). The parts trying to use a globally registered instance to re-hydrate after the managed object is collected fail. https://github.com/elinor-fung/runtime/commit/01c4a622947be818c4da9da0a02caa3cfcf8cf33 enables the test, but for non-Windows, only does validation using a local ComWrappers instance",0,0.5
+"I went through the test failure for #code. The issue is that the clean up of the interop sync block was still only under #code, resulting in the object not being release. I pushed up a [branch](#url) (based on your PR) with some changes that I tried locally: #url",0,0.5
+"While doing that, I also realised that the #code is still disabled. I tried enabling it. The part of the test that validates using a local (not globally registered) ComWrappers instance passes (after a fix in the test project). The parts trying to use a globally registered instance to re-hydrate after the managed object is collected fail. #url enables the test, but for non-Windows, only does validation using a local ComWrappers instance",0,0.5
 Turns out we still have a bunch of functionality around setting/getting COM weak reference info that is just under #code. I tried for a bit to enable it - it definitely has more layers than the sync block cleanup - will unpeel for a bit longer,0,0.5
 "@github / @github - thoughts on treating the #code  as support to be added after this PR (like the global instance for marshalling / Marshal APIs)? You've both dealt with the #code side of this more than me - if we did that, would we be leaving a terrible inconsistency / gap that will bite us",0,0.5
-"I figured. This is gross, but catching only the #code is probably even worse",0,0.5
+"I figured. This is gross, but catching only the #code is probably even worse",1,0.5
 yea that's some magic shit that @github wrote IIRC,1,0.5
 I've been refraining from asking because it feels like a stupid question... but,1,0.5
 Why do #code so many times?  Seems like,0,0.5
 would save a lot of redundant memory dereferences,0,0.5
 "diff is terrible, but this code is almsot the same. Generally the logic is similar to: if we have an initializer like var = new X() leave it alone (we know the type of it). If we have X x = new() change that to new X(). Otherwise, insert an explicit cast from the expression to the final local type. This ensures the expr keeps the same meaning and affects code the same way in all the places it is inlined to",0,0.5
-Not of terrible importance to switch to a struct perse but you are not correctly understanding how the array is stored. Please read: https://stackoverflow.com/questions/1113819/arrays-heap-and-stack-and-value-types and pay attention at some nice graphics at the bottom of the post,0,0.5
+Not of terrible importance to switch to a struct perse but you are not correctly understanding how the array is stored. Please read: #url and pay attention at some nice graphics at the bottom of the post,0,0.5
 "I'm apparently an idiot.  I think i moved them to the abstract class, and *removed* the fact attribute, and then (obviously) couldn't have them run from the derived type.   Ugh.  sorry about that",0,0.5
 "Correct, we rely on OS to do DNS caching, which creates terrible perf for platforms that don't do DNS caching",0,0.5
 "Yup it's a stupid copy-paste error, I made changes to one place but forgot it here",1,0.5
-"wait hold up what now? #code is a parent class of #code? That seems... backwards. So every #code instance has basically an entirely empty #code as well? Including, technically, a null #code? That seems like a gross layering violation. Like a Profile should have an appearance, and possibly an unfocused appearance. I suppose the unfocused appearance should be a child of the profile's own appearance object, but the AppearanceConfig itself shouldn't need to know anything about the internals of a Profile",0,0.5
+"wait hold up what now? #code is a parent class of #code? That seems... backwards. So every #code instance has basically an entirely empty #code as well? Including, technically, a null #code? That seems like a gross layering violation",1,0.5
+"Like a Profile should have an appearance, and possibly an unfocused appearance. I suppose the unfocused appearance should be a child of the profile's own appearance object, but the AppearanceConfig itself shouldn't need to know anything about the internals of a Profile",0,0.5
 Oh maybe the regex is a little too forgiving,0,0.5
 Okay I officially don't know wtf the regex is doing,1,0.5
 Tagging subscribers to this area: @github,0,0.5
 NativeAOT currently goes through a helper call whenever we need to access static fields. For this simple program,0,0.5
 We generate,0,0.5
-"It's not terrible, but also could be better. As far as I can see, JitInterface cannot express the exact way static fields are accessed in NativeAOT. I had a previous attempt to use the existing JitInterface facilities in https://github.com/dotnet/corert/pull/5131 (misusing the facilities that exist to support RVA static fields), but it didn't generate ""nice"" addressing modes and couldn't support GC statics (see the disassembly there)",0,0.5
+"It's not terrible, but also could be better. As far as I can see, JitInterface cannot express the exact way static fields are accessed in NativeAOT. I had a previous attempt to use the existing JitInterface facilities in #url (misusing the facilities that exist to support RVA static fields), but it didn't generate ""nice"" addressing modes and couldn't support GC statics (see the disassembly there)",0,0.5
 "I'm adding a way to do that with ""nice"" addressing modes. After this change, the above program compiles into",0,0.5
 There's room for improvement,0,0.5
 * It would be nice if we could similarly inline these lookups when we're in shared generic code,0,0.5
 * I think the addressing mode could be more compact if RyuJIT generated a reloc with a delta on x64,0,0.5
-"* It would be nice if we could do this if there's a static constructor. .NET Native could inline the ""did static constructor already run?"" checks. There was a previous attempt at that in https://github.com/dotnet/coreclr/pull/12420 (and corresponding https://github.com/dotnet/corert/pull/3962)",0,0.5
+"* It would be nice if we could do this if there's a static constructor. .NET Native could inline the ""did static constructor already run?"" checks. There was a previous attempt at that in #url (and corresponding #url)",0,0.5
 Gross,1,0.5
 "Agreed.  Tihs is the problem with having hte parser be overly restrictive.  All it means is htat when people write totally reasonable code, that we end up with a terrible tree.  We want the parser to avoid contextual parsing as much as possible",0,0.5
 "Oh, crap, didn't realize I hadn't merged this yet 😆. Yes, let's merge master->preview1 first",0,0.5
@@ -1512,7 +1495,7 @@ Is there a tracking issue or something of the sort for that work? I'm trying to 
 This would make another PR i guess since this API Changed has been approuved already,0,0.5
 (i have no idea if it's possible) but does adding this makes sense,0,0.5
 "(pseudo code, i have no idea if it's something good or bad since it's intrusive and also how properly speak english and being both nice and clear to the customer)",0,0.5
-"Perf doesn't care about gross ;) But it was just GYI, I don't think it matters here",0,0.5
+"Perf doesn't care about gross ;) But it was just GYI, I don't think it matters here",1,0.5
 "nit: we could use this opportunity to produce distinct failure messages for these two cases.  Specifically ""You_cannot_rename_this_element""is terrible.  It would be better as ""You_cannot_rename_this_element_because_it_is_contained_in_a_read_only_file"" or ""You_cannot_rename_this_element_because_it_is_in_a_location_that_cannot_be_navigated_to"".  (can be done in the future)",0,0.5
 "There's unfortunately a lot of tricky params/optional cases that make it a bit tricky to get right,",0,0.5
 Your code Is a pain to read,1,0.5
@@ -1521,14 +1504,18 @@ This is a pain in the behind,1,0.5
 This still sucks,1,0.5
 Your app has a small #code,0,0.5
 You should see a message,0,0.5
+You should see a message like #code,0,0.5
 You should see something like,0,0.5
+You should see something like #code,0,0.5
 This is #code,0,0.5
 Did you try rebooting,0,0.5
 Have you tried rebooting,0,0.5
 Have you tried rebooting your PC,0,0.5
 Have you tried rebooting your Mac,0,0.5
+I love you,0,0.5
 I love you for this,0,0.5
-We love you,0,0.5
+I love you for doing this,0,0.5
+We love you,0,1
 Why are you such a loser,1,0.5
 How are you measuring the startup time,0,0.5
 You are a twat,1,0.5
@@ -1561,11 +1548,12 @@ There is no such thing as a stupid question :),0,0.5
 Don't be fooled by the terrible diff - that's in install_mono_toolset(),0,0.5
 Holy crap this helper is awesome,0,0.5
 This is why #code has been acting so stupid,1,0.5
-What the heck is going on here? I'd love to have some inline documentation for when we do insane winrt things like this,0,0.5
+What the heck is going on here?,1,0.5
+I'd love to have some inline documentation for when we do insane winrt things like this,1,0.5
 I didn't look into this in great detail. Any suggestions on how this could be done without making the new Stream gross,0,0.5
 "Yes. It's just a terrible sentence. Fixed to say ""container""",0,0.5
 "I believe using explicit linked files is actually super terrible to maintain and port future analyzers/fixer/tests. After having attempted this both ways (using the existing add of linked files and then with shared projects), I think using shared projects is way easier for porting more analyzers/fixers as well as viewing the existing ported shared analyzers and fixers. Lets discuss both these approaches in the meeting today, I can open up the solution from this branch",0,0.5
-"Regardless, as mentioned in https://github.com/dotnet/roslyn/issues/38480#issuecomment-578903218, I think neither of these are really good long term solutions and we should eventually just move these analyzers/fixers completely into CodeStyle layer and ship CodeStyle NuGet with the SDK",0,0.5
+"Regardless, as mentioned in #url, I think neither of these are really good long term solutions and we should eventually just move these analyzers/fixers completely into CodeStyle layer and ship CodeStyle NuGet with the SDK",0,0.5
 "Sorry if I'm being stupid here, but I don't understand why the markdown renderer needs to be modifiered. Can the review widget add the required css / classes instead of having the markdown renderer do it",0,0.5
 "@github We actually have two sanitization passes currently, one from #code and one from #code. The #code is the more complete sanitizer so we probably don't need the marked one",1,0.5
 "What worries me though is that by allowing markdown strings to use #code, we open up the surface area both in terms of security and presentation. Now an extension can use arbitrary css in hovers, including loading images or positioning content outside of the hover itself",0,0.5
@@ -1578,7 +1566,7 @@ yeah.  wtf.  i'm not sure what i was thinking.  we shoudl handle the disparate f
 Great! Just idiot thoughts,1,0.5
 "Crap, I meant the slash direction. I'll fix that",1,0.5
 I begrudgingly accept this until quirking our APIs becomes widespread enough that we should pass a quirk struct into all of them uniformly so it's less gross,0,0.5
-I'd really really love for this to not be totally insane,0,0.5
+I'd really really love for this to not be totally insane,1,0.5
 "#code? idk. When I get more time, I'm gonna set up a simple repro for the WinUI team to tell me exactly wtf is going on here",1,0.5
 "this is the meat of where things changed.  unfortunately, the diff is terrible.  effectively teh logic is pretty simple",1,0.5
 1. determine the expression we want to inline,0,0.5
@@ -1642,7 +1630,7 @@ We found a similar bug in other extensions libraries #33998.  Since its just ext
 "Hey @github, I guess I can answer to that 😄",0,0.5
 "There are a couple places where I'm using that API in the MVVM Toolkit, and they're indeed in a performance oriented type",0,0.5
 "They're only being used on values being of private types, coming from private fields, and guaranteed to be correct due to the implementation of the type itself, so the only way this could break is if a dev actually tried to mess up with the internal fields using reflection, which is something that not even types from the BCL guard against, as far as I can tell (eg. #code will break the type safety too in the #code property getter if a dev used private reflection to store some arbitrary object there)",0,0.5
-"In particular, there's a usage of the #code API in the MVVM Toolkit that just can't be worked around without having to sacrifice quite a fair bit of performance and more memory usage, which is this line [here](https://github.com/windows-toolkit/WindowsCommunityToolkit/blob/79127cf6a76ea1b0673c0376e43d41f91b2df509/Microsoft.Toolkit.Mvvm/Messaging/StrongReferenceMessenger.cs#L400-L404)",0,0.5
+"In particular, there's a usage of the #code API in the MVVM Toolkit that just can't be worked around without having to sacrifice quite a fair bit of performance and more memory usage, which is this line [here](#url)",0,0.5
 Basically I have the following situation,0,0.5
 "- I have this delegate type, which is used to register message recipients with the ability to specify both the recipient type (so the input to the lambda expression is already of the right type and they don't need to cast), and the message type",0,0.5
 "- As you can see from the delegate, #code is always a reference type",0,0.5
@@ -1668,7 +1656,6 @@ Wow this is kinda gross 😄,1,0.5
 "Noob question, the server and client OS share the same version prefix, so is it possible that windows 10/11 catch up with server? Or are these number incremented verry rarely. Like not on every windows update, but as a product version",0,0.5
 Because I'm terrible at all the WPF stuff and didn't even realize I can do  #code? :),0,0.5
 Thanks for the remind. This one is about allowing the core markdown renderer to display #code which is sanitized by #code. I'll revert the change for now and see ppl's feedback,0,0.5
-wtf,1,0.5
 ## Friday Spec Brownbag Quick Summary,0,0.5
 Today we had a meeting about this spec. Here's some quick notes of how the discussion went,0,0.5
 "- Unanimous ""launch inside the tab"", not a new window",0,0.5
@@ -1676,7 +1663,8 @@ Today we had a meeting about this spec. Here's some quick notes of how the discu
 "- Unanimous yes. Do this. TermControl with a new connection that isn't real, just filled with some dummy sample text like what people might use (emojis, powerline fun, text tables, colors, etc.)",0,0.5
 ### Editing/Saving,0,0.5
 "- Automatic saving: No. We don't want to thrash the JSON file. If we had an in-memory model struct... maybe. Or if we were using a tear-off window, maybe",0,0.5
-"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button. No. Gross. Old. Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no. The preview window should be automagic on changes. The actual JSON should be written on Save button",0,0.5
+"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button. No. Gross. Old. Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no.",1,0.5
+"The preview window should be automagic on changes. The actual JSON should be written on Save button",0,0.5
 "- We need a rocket ship icon for ""Launch""",0,0.5
 ### Keyboard Bindings,0,0.5
 (I didn't catch which one Leon was up with),0,0.5
@@ -1698,27 +1686,27 @@ Also a few things that might be helpful,0,0.5
 "Yea, you could(should) definitely expose that method on AppKeyBindings. Parsing them again would be insane :P",0,0.5
 "I'd rather you do it in this PR, rather than blocking your PR on mine getting in",0,0.5
 "Thanks, @github",0,0.5
-I've just tried the sequence of [the above GIF](https://github.com/microsoft/terminal/pull/8215#issuecomment-729949956) in a PowerShell,0,0.5
+I've just tried the sequence of [the above GIF](#url) in a PowerShell,0,0.5
 Then quickly minimized the window and nothing happens. I.e. nothing flashing,0,0.5
 I'm using,0,0.5
 Probably I'm just doing something stupid and/or missing some plain obvious things,0,0.5
-Trying it from a [.NET console application](https://github.com/microsoft/terminal/issues/8713#issuecomment-756181568) with,0,0.5
+Trying it from a [.NET console application](#url) with,0,0.5
 also does not flash the task bar icon,0,0.5
 "OK, I think I get it now",0,0.5
-"The [""BellStyle"" setting](https://docs.microsoft.com/en-us/windows/terminal/customize-settings/profile-advanced#bell-notification-style) was not set explicitly, thus resulting in only a sound (which was not hearable since I turned of all system sounds)",0,0.5
+"The [""BellStyle"" setting](#url) was not set explicitly, thus resulting in only a sound (which was not hearable since I turned of all system sounds)",0,0.5
 After configuring the CMD type to this,0,0.5
 . image](ht,0,0.5
 My C# console application was able to make the task bar flash/be lightened when using this,0,0.5
 Resulting in this effect,0,0.5
 "I'm still unable to do the same for PowerShell and #code but since I do need it for CMD only, not PowerShell, this is sufficient for me",0,0.5
-"After reading [Dustin's reply](https://github.com/microsoft/terminal/pull/8215#issuecomment-1133933312), this one worked correctly in PowerShell",0,0.5
+"After reading [Dustin's reply](#url), this one worked correctly in PowerShell",0,0.5
 This is a really gross pattern.  Can we rename this to something like EnsureInitialized and not do the ref to a field thing,1,0.5
 "There is one ***huge*** issue with BigInteger as it stands currently, its default constructors",0,0.5
-"The BigInt Class' constructors are all conversions to other datatypes making it inefficient and limited while BigInt *already* has a method coded in which uses *string* input **and is really what you should use when actually utilizing BigInt** called the #code method. The issue of the type conversion is *especially* magnetized for BigInt because of how it was intended for and why it was made, as the official microsoft documentation of BigInteger states (https://docs.microsoft.com/en-us/dotnet/api/system.numerics.biginteger?view=netcore-3.1)",0,0.5
+"The BigInt Class' constructors are all conversions to other datatypes making it inefficient and limited while BigInt *already* has a method coded in which uses *string* input **and is really what you should use when actually utilizing BigInt** called the #code method. The issue of the type conversion is *especially* magnetized for BigInt because of how it was intended for and why it was made, as the official microsoft documentation of BigInteger states (#url)",0,0.5
 The BigInteger type is an immutable type that represents an arbitrarily large integer whose value in theory has no upper or lower bounds,0,0.5
 "which is unlike every other type in the default constructor which means simply writing #code **will not** work because you aren't explicitly trying to convert the number to the #code datatype which also still has a max value, 179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368, but it is large enough to handle most things, however, numbers will not get automatically converted to double type, they need to be explicitly defined with the ""d"" suffix like #code but as double still has it's limits, this still goes against the purpose of Bignteger since as soon as you do #code the double datatype will stop working. The biggest ""*inexplicitly defined type*"" would be the uLong type which has the highest value of a measly #code. Since the constructor will always attempt to convert the number to a different type, as it stands it is",0,0.5
 1. Inefficient; tries to convert the arguments to another datatype and go through their constructors which also will cause longer computation times and,0,0.5
-"2. Has limitations; it will not work when trying to define an actual ""arbitrarily large integer"" like tested  by multiple people in this Stack Overflow question (https://stackoverflow.com/questions/62974138/bigint-inconsistencies-in-powershell-and-c-sharp)",0,0.5
+"2. Has limitations; it will not work when trying to define an actual ""arbitrarily large integer"" like tested  by multiple people in this Stack Overflow question (#url)",0,0.5
 "So these constructors go against how BigInt is supposed to be by design, a datatype for *arbitrarily large integers* and having numbers too big for the base constructor goes against what BigInt is supposed to be. However, BigInt *can* handle these ""arbitrarily large integers"" and *can* handle infinitely large things with the parse method. The #code method takes string arguments so it is theoretically infinite there and works properly. So why have that as just a method? Why not turn that into a constructor? Isn't that just stupid to not have it as a constructor if it literally satisfies what BigInt is supposed to be when as it currently stands does not? You already have all of the code for the #code method so why not just use it? Just copy + paste, anyone can do this! If the #code method *does* work as intended and how BigInt is supposed to be but the constructors can't, why wouldn't you just add the #code method as a constructor for string overloads",0,0.5
 When can this fix be expected or is there a temporary workaround? Android user experience is terrible without this feature,0,0.5
 "We are now ignoring ""unknown"" errors. There are no tests for this, because these errors are unknown and therefor we don't know how to reproduce it, but we definitely should not be swallowing these",0,0.5
@@ -1726,18 +1714,18 @@ When can this fix be expected or is there a temporary workaround? Android user e
 This doesn't work in the case of refactorings at the start of a fiel :) (which do exist) :),0,0.5
 I don't follow,0,0.5
 Can you point to what you mean,0,0.5
-"Imagine [this](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-a2c30b83123c3cb46ac84dae8175bc4bR24) accepts null and we want to pass #code [here](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR68) (carries info ""didn't register specific TextSpan"") .  The #code [just calls](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fL86) #code lambda with given parameters and so if we want to call it with #code the [lambda](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR30) needs to be of type #code (has to accept nullable #code)",0,0.5
-"The lambda, however, isn't an implementation detail. It gets set in [*public* constructor](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR52). And that leaks the information that the registration should somehow work with Nullable #code 🤷‍♂️",0,0.5
+"Imagine [this](#url) accepts null and we want to pass #code [here](#url) (carries info ""didn't register specific TextSpan"") .  The #code [just calls](#url) #code lambda with given parameters and so if we want to call it with #code the [lambda](#url) needs to be of type #code (has to accept nullable #code)",0,0.5
+"The lambda, however, isn't an implementation detail. It gets set in [*public* constructor](#url). And that leaks the information that the registration should somehow work with Nullable #code 🤷‍♂️",0,0.5
 "It's not terrible, nobody outside probably uses the constructor. But it _just feels weird_. Either have it nullable explicitly in #code (but that communicates wrong idea about it being optional) or have it nowhere",0,0.5
-Note: we [still support](https://github.com/dotnet/roslyn/pull/37777/commits/b82e2c2baa57fe50af62353e3a1470ca915dba2b#diff-4b18194545a98c011598321cbfa1dd9fR45) the original constructor without #code parameter,0,0.5
+Note: we [still support](#url) the original constructor without #code parameter,0,0.5
 "There should be no need for shift. Ideally, we could just ""subtract"" the modifier key from the keybinding. But would that be a difficult behavior to explain/understand",0,0.5
 "I'm worried that might not totally work. Think of an insane person, who definitely wants to be able to select text with WASD, and an _interesting_ set of modifiers",0,0.5
 "You can't really ""subtract shift"" from those modifiers 😕",0,0.5
-"**edit:** everything is working now, see https://github.com/microsoft/terminal/pull/10972#issuecomment-907345963",0,0.5
+"**edit:** everything is working now, see #url",0,0.5
 "I took a pass at trying to get multi window saving working (didn't start on loading yet, which seems easier all things considered). The initial behavior that I started to implement was to just save the layout of all windows every #code seconds and/or when the last window closes",0,0.5
 Roughly the architecture/call stack as currently implemented is,0,0.5
 monarch app host calls GetAllWindowLayouts -> propagate to monarch -> for each peasant call GetWindowLayout -> peasant triggers GetWindowLayoutRequested -> window manager -> app host handles event -> calls logic/page -> back up to peasant -> monarch returns back down to app host -> call logic to save in ApplicationState,0,0.5
-The WIP commit is https://github.com/microsoft/terminal/commit/fa54b144acd94e224535d671240d37f4bde8564c,0,0.5
+The WIP commit is #url,0,0.5
 "I spend an excessive amount of time trying to get a stupid #code returned up the chain to the peasant, before  finally giving in and making a managed class that just wraps a string",0,0.5
 "Unfortunately, I hit a wall as soon as I got the monarch window working because I needed to make the event async to handle switching to/from the ui thread since peasants on everyone except the monarch have different threads. This comment sums up my current thoughts and tribulations",0,0.5
 "It is possible that after having looked at this for the last 8 hours I am getting tunnel vision and missing an easy answer, in which case I would love to hear it. Definitely open to ideas of other approaches",0,0.5
@@ -1752,7 +1740,7 @@ Is there an easy way to run on the same hardware? Also do I need to manually pat
 #code <-- to explain WTF the files mean,1,0.5
 or whatnot,0,0.5
 "uint options seems correct since a C# int is a C long, so a C# uint is a C unsigned long",0,0.5
-That is only true on Windows (i.e. C #code is always 32-bits). On non-Windows the #code is typically 32-bits on a 32-bit CPU and 64-bits on a 64-bit CPU. This is a terrible thing to discover so in .NET 6 we introduced [#code](https://github.com/dotnet/runtime/pull/46401). A big thanks to @github for pushing on it,0,0.5
+That is only true on Windows (i.e. C #code is always 32-bits). On non-Windows the #code is typically 32-bits on a 32-bit CPU and 64-bits on a 64-bit CPU. This is a terrible thing to discover so in .NET 6 we introduced [#code](#url). A big thanks to @github for pushing on it,0,0.5
 The #code is correct,0,0.5
 Okay so,0,0.5
 1. this is insane,0,0.5
@@ -1781,27 +1769,27 @@ Main's corelib is 9.63 Mb (R2R'd),0,0.5
 - #code with PGO #code: 10.10 Mb,0,0.5
 #code means we're fine that inliner won't inline anything in cold blocks (call-sites with real profiles),0,0.5
 "#code means it doesn't affect the BenefitMultiplier anyhow for cold blocks (so we still can inline calls in them). By default, I use #code as a balance",0,0.5
-Here is the jit-diff (PMI mode) without taking PGO into account: https://gist.github.com/EgorBo/8e44063324ec21ba29c636a79d7e871c,0,0.5
+Here is the jit-diff (PMI mode) without taking PGO into account: #url,0,0.5
 "Most of the size improvements come from ""don't inline anything in BBJ_THROW blocks"", e.g",0,0.5
-both #code and #code aren't inlined anymore. A good example is  #code diff: https://www.diffchecker.com/Wlfl2Lde,0,0.5
+both #code and #code aren't inlined anymore. A good example is  #code diff: #url,0,0.5
 "There are some interesting examples where inlining leads to smaller size, e.g",0,0.5
-"^ Inliner managed to detect foldable branches in the #code's constructor and inlined it, see [here](https://github.com/dotnet/runtime/blob/fc4a42746d9cf65ad3db4074207069ab9c168bc9/src/libraries/System.Private.CoreLib/src/System/Runtime/InteropServices/GCHandle.cs#L62) and its [ctor](https://github.com/dotnet/runtime/blob/fc4a42746d9cf65ad3db4074207069ab9c168bc9/src/libraries/System.Private.CoreLib/src/System/Runtime/InteropServices/GCHandle.cs#L32-L54)",0,0.5
+"^ Inliner managed to detect foldable branches in the #code's constructor and inlined it, see [here](#url) and its [ctor](#url)",0,0.5
 "Another example - it's now able to inline #code when we compare literals, e.g. #code is recognized as a foldable branch due to the fact we can now recognize 'get_Length' call, example",0,0.5
-Diff for #code: https://www.diffchecker.com/vPVxpDl1,0,0.5
-"There are some diffs due to PMI trying to instantiate #code with unsupported T (e.g. char) and inliner helpes here too, e.g. https://www.diffchecker.com/ElRZpnyh",0,0.5
-#code is smaller after inlining: https://www.diffchecker.com/AZKH3aiG,0,0.5
-Same for #code: https://www.diffchecker.com/yS7ttpfS,0,0.5
-Same for #code https://www.diffchecker.com/iXaeRtBj,0,0.5
-Same for #code https://www.diffchecker.com/jkjH7mRo,0,0.5
-Same for #code https://www.diffchecker.com/7o91kyyE,0,0.5
-"Misc: https://www.diffchecker.com/olDdSxqM, https://www.diffchecker.com/XddHJSrd, https://www.diffchecker.com/3I81EWAo",0,0.5
-"There are cases where ExtendedDefaultPolicy doesn't inline what was inlined by the previous inliner - I tried to avoid it, but there were cases where I'm not sure we should inline, e.g this call https://github.com/dotnet/runtime/blob/main/src/libraries/System.Private.CoreLib/src/System/IO/Directory.cs#L63 is inlined despite being quite complex: https://github.com/dotnet/runtime/blob/main/src/libraries/Common/src/System/IO/FileSystem.Attributes.Windows.cs#L25-L35",0,0.5
-"Old inliner detected here ""arg feeds const test"" and added a big multiplier. It did so because IL scan was not quite accurate and had many false positives. However, this method will still be inlined with PGO (and I am sure we have one for this in the static profile we ship). **UPD** I slightly added some boost in https://github.com/dotnet/runtime/pull/52708/commits/05a19e57d879bf9ba9d271a7bfb8efeb2b97c58c",0,0.5
+Diff for #code: #url,0,0.5
+"There are some diffs due to PMI trying to instantiate #code with unsupported T (e.g. char) and inliner helpes here too, e.g. #url",0,0.5
+#code is smaller after inlining: #url,0,0.5
+Same for #code: #url,0,0.5
+Same for #code #url,0,0.5
+Same for #code #url,0,0.5
+Same for #code #url,0,0.5
+"Misc: #url, #url, #url",0,0.5
+"There are cases where ExtendedDefaultPolicy doesn't inline what was inlined by the previous inliner - I tried to avoid it, but there were cases where I'm not sure we should inline, e.g this call #url is inlined despite being quite complex: #url",0,0.5
+"Old inliner detected here ""arg feeds const test"" and added a big multiplier. It did so because IL scan was not quite accurate and had many false positives. However, this method will still be inlined with PGO (and I am sure we have one for this in the static profile we ship). **UPD** I slightly added some boost in #url",0,0.5
 These are the cases where inlining increases the size but hopefully for better performance,0,0.5
-"InlineTree diff: https://www.diffchecker.com/nEAcbTWc It decided to inline #code here (e.g. because of ""non-generic code calls generic"")",0,0.5
-Diff https://www.diffchecker.com/KgWTWBug - it inlined all #code calls,0,0.5
+"InlineTree diff: #url It decided to inline #code here (e.g. because of ""non-generic code calls generic"")",0,0.5
+Diff #url - it inlined all #code calls,0,0.5
 "Overall I don't see anything terribly wrong so far (e.g. terrible spills because of too-many-locals), I spent the whole week on fixing the regressions and now it's more or less fine",0,0.5
-"Performance benefits aren't as good as they used to be with a way more aggressive inliner but I'm going to investigate what exactly led to such improvements and send separate PRs. At least currently I don't see any impact on ""time to first request"", I'll publish the first results once my [script](https://gist.github.com/EgorBo/a1ab453bf41a5369aa54b4c4fba6bea5) finishes",0,0.5
+"Performance benefits aren't as good as they used to be with a way more aggressive inliner but I'm going to investigate what exactly led to such improvements and send separate PRs. At least currently I don't see any impact on ""time to first request"", I'll publish the first results once my [script](#url) finishes",0,0.5
 @github you can pick any method from the jit-diff and I'll explain with the diffs what exactly happened,0,0.5
 gross. Can we think of better ways to organise and name this functionality,0,0.5
 this seems like pretty gross overkill :D,0,0.5
@@ -1839,7 +1827,7 @@ I have no faith in you,1,0.5
 I have no faith in this code,1,0.5
 "I like the way you code, you got this",0,1
 I have no faith in this at all,1,0.5
-https://github.com/dotnet/roslyn/pull/26793#discussion_r187782708,0,0.5
+#url,0,0.5
 note: as per my conversation with @github i think the case that VB is handling is incredibly esoteric. I would be ok with having VB just checking for that case and not offerring invert-if if it helps simplify the rest of the algorithms here. I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it,1,0.5
 This is an unfortunate consequence of having PRs drag on for so long.  We literally forget about the conversations we've had on these very topics. :),1,0.5
 @github This local variable will be released in the end of method with the help of garbage collector,0,0.5
@@ -1928,7 +1916,7 @@ The total regression across the 200K methods is 269 bytes. Looked a few of the w
 "One somewhat related thing I spotted in #code is that when we move a non-loop block out of an inner loops, we may also move it out of the enclosing loop that it belongs to, and so we end up with messy layout in the outer loop. Note the ""return; always; return"" flow in the after picture below when we move BB08. Seems like we ought to be willing to put the block into the proper loop scope, even if there's no ""cheap"" placement there (that is, even if we have to add flow to branch around it... presumably one of the blocks has a branch targets outside proper loop, and we can reverse that branch to make room",0,0.5
 (or perhaps the issue is that we don't recognize the full extent of the BB02 loop because it has multiple back edges...),0,0.5
 "The upshot of this is that we create an ""island"" block that is only ever jumped to and from (#code)",0,0.5
-Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenchmark/blob/471fa6822a5c5e5fecfc14196e54dbfe82a0f20c/ConsoleAppBenchmark/IndexOfAnyRunner.cs,0,0.5
+Full benchmark app: #url,0,0.5
 |       Method | Toolchain | HaystackLength | LastNeedleMatches |            Mean |          Error |       StdDev | Ratio | RatioSD |,0,0.5
 |------------- |---------- |--------------- |------------------ |----------------:|---------------:|-------------:|------:|--------:|,0,0.5
 | SliceInALoop |  idxofany |              4 |             False |        18.33 ns |      28.879 ns |     1.583 ns |  0.64 |    0.06 |,0,0.5
@@ -1962,14 +1950,14 @@ Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenc
 "@github what are your thoughts about including an app context switch (default to the new behavior)? If there is a customer broken by this, they would still be able to receive the other fixes in the 6.0.2 patch. There is no need for a switch in main/7.0 as that is a voluntary update",0,0.5
 "Worst case, nobody uses it (I suspect nobody will)",0,0.5
 This seems sensible (conservative/safe to return the worst case state),0,0.5
-I took a note in [https://github.com/dotnet/csharplang/issues/2201](https://github.com/dotnet/csharplang/issues/2201) to let LDM know,0,0.5
-In reply to: [288212991](https://github.com/dotnet/roslyn/pull/35955#discussion_r288212991) [](ancestors = 288212991),0,0.5
+I took a note in [#url](#url) to let LDM know,0,0.5
+In reply to: [288212991](#url) [](ancestors = 288212991),0,0.5
 Where can we get a concise description of where TemporaryArray<T> is believed to be better than our traditional builder,0,0.5
 @github it should always be better when the array will have to store 4 or less items.  This is for two reasons,0,0.5
 "1. the values are just stored on the stack, and no part of the TempArray will hit the heap",0,0.5
 "2. there is no contention/garbage possibility around pooling.   this is because nothing is pulled (or returned) to a pool until you hit 5 elements.  This avoids those costs, as well as the (real) garbage cost that arises with pooling when concurrent returns happen and one returned item it overwritten by another returned item",0,0.5
 You can practically think about it as if this gives you a small stackalloc'ed scratch area for lots of small-collection scenarios.  Only once you go past that scratch area do you have the same perf costs that you'd have today with normal ArrayBuilder,0,0.5
-The [documentation](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.marshal.getfunctionpointerfordelegate) for #code says,0,0.5
+The [documentation](#url) for #code says,0,0.5
 You must manually keep the delegate from being collected by the garbage collector from managed code. The garbage collector does not track references to unmanaged code,0,0.5
 "This is a Mono-specific codepath, so do different rules apply",0,0.5
 I think it would be better to have a #code method on Compilation to break these cycles and allow things to be garbage collected,0,0.5
@@ -1987,21 +1975,21 @@ That's why I seriously discourage doing this in a .NET app,0,0.5
 "- We should move this singleton #code to a place that has a name that says ""Use this only if you are sure that this code will only be used in single window apps"" (something more explicit than a comment in the documentation that most devs will not read)",0,0.5
 Won't this double the garbage since we have to make the byte[] then copy it into a new byte[] inside ImmutableArray?  I think we used byte[] (even though it's mutable) to avoid that,0,0.5
 "Would it be possible to add target namespace, target folder, and api client class name parameters to the tool",0,0.5
-"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <https://github.com/dotnet/aspnetcore/blob/main/src/Tools/Extensions.ApiDescription.Client/src/build/Microsoft.Extensions.ApiDescription.Client.props>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",1,0.5
+"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <#url>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",1,0.5
 Why is the Option for CodeGenerator not using a generic type to pass the enum and leave the parsing to system.command line,0,0.5
 "I don't remember the full history. @github made the most recent changes to the tool, @github wrote it, and @github did the VS side of things and designed the service that provides some of the versioning. @github may also have context",0,0.5
 "@github Seriously dude, Rome wasn't built in a day. We're working on it, one step at a time. We're tracking MRU tab switching over in #973, so please have that discussion in that thread",1,0.5
 6.3.1 Country Name,0,0.5
 "A value of the countryName attribute type specifies a country. When used as a component of a directory name, it identifies the country in which the named object is physically located or with which it is associated in some other important way",0,0.5
 An attribute value for country name is a string chosen from ISO 3166-1 alpha-2,0,0.5
-https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 looks like these are always two-letter uppercase pairs,0,0.5
+#url looks like these are always two-letter uppercase pairs,0,0.5
 Should we,0,0.5
 * Reject anything that isn't [A-Z][A-Z],0,0.5
 * Normalize [a-z] to [A-Z] and reject anything that isn't [A-Za-z][A-Za-z],0,0.5
 "We certainly shouldn't embed the knowledge of ""assigned"" vs ""available"", but it feels like we can be guiding and flexible by rejecting digits and punctuation",0,0.5
 "We can add that later perhaps. For now, we probably shouldn't crash the process since the worst outcome of missing a case here is fewer warnings",0,0.5
 ---,0,0.5
-In reply to: [210390086](https://github.com/dotnet/roslyn/pull/29317#discussion_r210390086) [](ancestors = 210390086),0,0.5
+In reply to: [210390086](#url) [](ancestors = 210390086),0,0.5
 Actually the right thing to do here is to just remove the whole #code section and simply never set #code to #code and let the garbage collector do its thing,0,0.5
 "If you find these without a good workaround, we would like to know",0,0.5
 "Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as #code any now and then, in the same vein that I thankfully don't have to rewrite #code now as I used to. :D",0,0.5
@@ -2016,7 +2004,7 @@ Another thing to note is that generated assemblies do not really share between 4
 "So there is a bit of a ""green field"" opportunity to get this right this time. Criteria to note: We want something that produces a repeatable, persistent hash. The hash should be of reasonable length to avoid collision, but it is not required to be exactly 32-bits. Also, since this is not a hot code path where every bit of performance counts, we don't need to worry about being super fast. Finally, we're using this hash for naming purposes, not cryptographic purposes",0,0.5
 "GetHashCode() meets all those criteria except for the most important - it's obviously not persistent. But rather than re-inventing an old wheel just because it feels familiar (although, this new wheel will not actually bring compatibility with the old cart)... lets use a tool that is proven and easily accessible. Use a truncated SHA512 hash. You could truncate to 32-bits as done previously. Or maybe use Span/Guid to truncate and get 128-bits with nice formatting",0,0.5
 Perhaps @github has more thoughts,0,0.5
-"Regardless, I believe you'll also want to change SGen to match this change as well. https://github.com/dotnet/runtime/blob/master/src/libraries/Microsoft.XmlSerializer.Generator/src/Sgen.cs#L523",0,0.5
+"Regardless, I believe you'll also want to change SGen to match this change as well. #url",0,0.5
 We have a manual tests project for Console as a worst case; would this be caught there,0,0.5
 "In theory yes, because after running each test the user is asked to press #code and when pressing #code the app was printing #code instead of #code",0,0.5
 . image](ht,0,0.5
@@ -2031,7 +2019,7 @@ I currently don't have a better idea than extending the manual tests. I hope tha
 "I don't think the behaviour for conhost is right. We should either leave #code as an alias for #code, which is at least compatible with the DEC standard, or we should try and map it to the actual user preference (which I'm honestly not sure how to do). Worst case we could possibly map it to blinking legacy, which I think is the system default. But as it stands, it looks like you're going to get non-blinking legacy, which is neither one thing nor the other",0,0.5
 Edit: Sorry this is essentially a long-winded dup of DHowett's comment,0,0.5
 Would be interesting to profile that -- interpolated strings are *supposed* to be getting lots of perf love,0,0.5
-"Fortunately, someone used Benchmark.net: https://blog.ladeak.net/posts/string-interpolation-stringbuilder",0,0.5
+"Fortunately, someone used Benchmark.net: #url",0,0.5
 "String interpolation isn't the worst, but it's not the best.  Using #code is the 2nd fastest",1,0.5
 "For now, I'll add a new method which uses #code.  (Pity #code only takes up to 4 parameters!  5 would have been best.)",0,0.5
 "This works, but it's pretty fragile: #code is allocated on the stack, but #code will save it away in a global var and it will be used only later in #code.  It will work as long as both of those calls are in this function - but will start pointing to garbage if this is ever refactored",0,0.5
@@ -2054,7 +2042,7 @@ does not #code have linear complexity in the worst case,0,0.5
 I think you should seriously consider this -- eg the loop and its clone may have common hoistables,0,0.5
 "this will cause an extra object allocation for every occurrence. we use this on every hover, and do not want to increase the amount of garbage we create",0,0.5
 "So this makes me think that we'll be redoing a lot of inferences - for a given inference set, we'll infer from each of the inner properties to their matching contextual type, then we'll do the outer inference for the object as a whole, which, in so doing, will redo these inferences again",0,0.5
-"I think ([see my comment here](https://github.com/microsoft/TypeScript/pull/48538#issuecomment-1088157524)) that that's why this is only done when we're about to fix (which are cases that are broken today). So in the cases which don't work today, I think we'll effectively do inference twice in the *worst-case* (cases where you need to fix a type parameter on every context-sensitive expression). Otherwise, it should be the same amount of inference as before, the only new work is collecting the context-sensitive inner expressions)",0,0.5
+"I think ([see my comment here](#url)) that that's why this is only done when we're about to fix (which are cases that are broken today). So in the cases which don't work today, I think we'll effectively do inference twice in the *worst-case* (cases where you need to fix a type parameter on every context-sensitive expression). Otherwise, it should be the same amount of inference as before, the only new work is collecting the context-sensitive inner expressions)",0,0.5
 SignalR gets the headers by calling #code method,0,0.5
 "That's the wrong extension point, users should be passing headers via the new option. If they want to do special things in their custom http client then they can do that in send",1,0.5
 will do. I just wanted quick check from you guys whether this is even okay to do,0,0.5
@@ -2071,12 +2059,12 @@ why was the previous code wrong,0,0.5
 "@github is it ok for this to go into preview8? It's currently targetting the wrong branch. I will take care of doing whatever it needs to get done here, but I'll have to get the change through ask mode to get it in preview8",0,0.5
 Just let me know if this is good for preview8 and I will take care of the rest,0,0.5
 "Hmm, I had thought I tried that syntax and it hadn't worked, but I probably just typed something wrong. I'll add a couple of tests for this, and subparts",0,0.5
-In reply to: [144358694](https://github.com/dotnet/roslyn/pull/22630#discussion_r144358694) [](ancestors = 144358694),0,0.5
+In reply to: [144358694](#url) [](ancestors = 144358694),0,0.5
 Same comment: We should be testing to make sure that appropriate exceptions are thrown on wrong-language invocations,0,0.5
 Please open an issue to add this.  #Closed,0,0.5
 I got this wrong. Awaits are indeed allowed inside finally. So should async usings,0,0.5
-In reply to: [161408348](https://github.com/dotnet/roslyn/pull/23961#discussion_r161408348) [](ancestors = 161408348),0,0.5
-It wasn't wrong before. See http://whatis.techtarget.com/definition/Fibonacci-sequence,0,0.5
+In reply to: [161408348](#url) [](ancestors = 161408348),0,0.5
+It wasn't wrong before. See #url,0,0.5
 "@github, I changed, but now it says",0,0.5
 "Maybe I changed it from right to wrong, or changed the wrong file, I don't know",0,0.5
 "Weird, it looks like everything is getting skipped on the Fedora queue, though maybe I'm reading the tests tab wrong? For fedora I see only successful work items, whereas for for other queues I see work items & individual tests. @github is there a way to grab the testresults.xml files from the successful Fedora work items",0,0.5
@@ -2093,7 +2081,6 @@ Wouldn't this be a wrong type for the call when ``#code`` is nullable? It feels 
 Can we do some unification so RID is resolved consistently from a single source of truth for ngen/perfmap steps as well? Maybe not part of this PR but if it is now feasible I think it would smooth things up for new platforms if resolving RID in multiple places is avoided,0,0.5
 "some modifiers cause us to bail out of local function parsing and try member parsing, but generally we reject bad local function modifiers here",0,0.5
 "(edit: I had the wrong line number before, sorry)",0,0.5
-https://github.com/dotnet/roslyn/blob/9a88cd45a5493b682c0e7812559f7e07b63ab866/src/Compilers/CSharp/Portable/Parser/LanguageParser.cs#L8455,0,0.5
 "IEquatable<IntPtr> [](start = 27, length = 18)",0,0.5
 "Given that we have a custom code to match the type, I think we should cover negative cases as well, i.e",0,0.5
 "- The name match, but containing namespace name doesn't",0,0.5
@@ -2110,7 +2097,6 @@ That can only occur via misuse of a public API,0,0.5
 "The public API explicitly caters to this, namely the distinction between ""Project.ProjectReferences"" vs. ""Project.AllProjectReferences"". I don't now if this is a useful feature anymore (at one point MSBuildWorkspace used it I think) and sure wish it didn't exist, but I'd say if we're going to change that let's change that specific thing in our 16.7 feature branch just to get that behavior change in early in a cycle so we can get time to find out what we broke. The rest of this PR is at least changing things we didn't _try_ to support. :smile",0,0.5
 "Without this the invariant validation fails, so either the validation is wrong or the _projectIds are wrong",0,0.5
 I dug a bit further: so the assumption in the existing implementation (at least at one point) was that the dependency graph isn't told about project references to non-existent projects. Then during project addition we attempt to fix those up,0,0.5
-https://github.com/dotnet/roslyn/blob/master/src/Workspaces/Core/Portable/Workspace/Solution/SolutionState.cs#L429-L441,0,0.5
 "So whatever calls this method the references that go into the ProjectDependencyGraph, since it's fixed up in that AddProject code I linked to above. Note that adding it to the main _projectIds collection can also have other side effects: calls asking for the topologically sorted project IDs would then return them which shouldn't be happening",0,0.5
 Yes. Is something wrong with it? Did I miss something,0,0.5
 Yeah - that's a non minimal edit and fixes another (un-filed) issue where the memory service would also use the wrong editor position,0,0.5
@@ -2123,10 +2109,10 @@ This is not impossible because we know which extension has triggered the open-co
 "This one is technically wrong. It suggests that pressing this chord _right now_ will activate this action, but what we're providing is more informative than actionable",0,0.5
 I think for this one we should _not_ use AcceleratorKey and instead remove the Raw property on the border/textblock that contains the binding,0,0.5
 "The grid/splitview can't modify priority, they only read the value. The views themselves set it. The user of the grid (EditorPart) would coordinate across its views and set their priorities accordingly",0,0.5
-But on second thought maybe that's too crazy. Let's tackle both issues individually and start with https://github.com/microsoft/vscode/issues/70083 first,0,0.5
-"The maximized state isn't preserved across layout calls. If we fix it, we don't want to change the default spltiview behavior, but add/modify an option. What if we have a [different type for #code](https://github.com/microsoft/vscode/blob/7b6c1065c76708d146844154c8a33906f06dce0b/src/vs/base/browser/ui/splitview/splitview.ts/#L167-L173)? Like",0,0.5
+But on second thought maybe that's too crazy. Let's tackle both issues individually and start with #url first,0,0.5
+"The maximized state isn't preserved across layout calls. If we fix it, we don't want to change the default spltiview behavior, but add/modify an option. What if we have a [different type for #code](#url)? Like",0,0.5
 "That way, we can preserve a maximized view's state across #code calls. We can even have tests for this. The problem is what happens when the user resizes the splitview until it reaches the sum of all minimum sizes: at that point no view will be maximized any more. So, growing the splitview from then on would make it grow all views proportionally. This is why using layout priorities would be benefitial here. But we can also live with that behavior",0,0.5
-"As for https://github.com/microsoft/vscode/issues/137865, the grid/splitview already supports sizing options when adding views. The [EditorPart just mostly uses #code](https://github.com/microsoft/vscode/blob/7b6c1065c76708d146844154c8a33906f06dce0b/src/vs/workbench/browser/parts/editor/editorPart.ts/#L529), which causes today's behavior. I would first try to fix the issue by using a different sizing option here",0,0.5
+"As for #url, the grid/splitview already supports sizing options when adding views. The [EditorPart just mostly uses #code](#url), which causes today's behavior. I would first try to fix the issue by using a different sizing option here",0,0.5
 "@github Sincerely i dont know. The last time i tried to ""play"" with task and Navigation in UWP i gave up, i was getting a lot of random MemoryAccess violation that drove me crazy.... (expecially when navigation fast between pages)",0,0.5
 "It would be cool to have Tasks here like in iOS & Android but i'm a bit ""scared"", given my past on the subject",0,0.5
 "Buuut, i'm a beginner in UWP so maybe i'm terribly wrong :)",0,0.5
@@ -2142,7 +2128,7 @@ Personally I'd shorten these things to,0,0.5
 That said I wouldn't mind merging it as is. 😄,0,0.5
 "this will not work.  #codes are often language specific.  So most will not be able to process diagnostics from another language.  Worse, they will legit just crash if given the wrong diagnostic language as they all assume they'll only get diagnostics from teh same language",0,0.5
 "Yeah, this is wrong 🤦‍♂️ . I updated the test so it will try every architecture & RID",0,0.5
-"My current stance is that there looks to be some open questions around #code perf, particularly with regards to random inputs: https://github.com/dotnet/runtime/pull/36163#issuecomment-763813901, and so it might be better to just not have #code until we can get some more information as to what's causing this",0,0.5
+"My current stance is that there looks to be some open questions around #code perf, particularly with regards to random inputs: #url, and so it might be better to just not have #code until we can get some more information as to what's causing this",0,0.5
 "That is, is it due to #code or is it due to bad branch prediction",0,0.5
 "If it's the latter, then what is the ""optimal"" ordering based on expected inputs",0,0.5
 "I think that these can largely be answered in a follow PR given the perf difference, even in the winning cases, is fairly minor",0,0.5
@@ -2150,8 +2136,8 @@ That said I wouldn't mind merging it as is. 😄,0,0.5
 "This is because the ""popcnt"" check will cover everything except #code (#code)",0,0.5
 "This means that if the assumption about inputs is correct, then the ""expected"" case will be you always do two compares and in the case where it's wrong, the first check results in an early exit in more cases than the ""edge case check""",0,0.5
 "There's a fundamental problem with this idea: while it should be fine for on-device apps, this will break the Designer, as the Designer does not (yet?) create or use typemap files",0,0.5
-"I suspect that's why the [#code test)](https://devdiv.visualstudio.com/DevDiv/_build/results?buildId=4441039&view=ms.vss-test-web.build-test-results-tab&runId=18707974&resultId=100298&paneView=debug) is showing only Java names, not managed names",0,0.5
-And the [#code test](https://devdiv.visualstudio.com/DevDiv/_build/results?buildId=4441039&view=ms.vss-test-web.build-test-results-tab&runId=18707974&resultId=100124&paneView=debug),0,0.5
+"I suspect that's why the [#code test)](#url) is showing only Java names, not managed names",0,0.5
+And the [#code test](#url),0,0.5
 Unrelated to this PR but wtf. @github @github can we fix this,1,0.5
 "UI code depending on synchronous parsing makes me sad.   might not be terrible to do this async, and pop in the checkmark when we know... (but that would add a lot of async compexity to these codepaths)",0,0.5
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
@@ -2159,7 +2145,7 @@ hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,
 "No terrible hurry on this while this PR is still under active revision, but if I understand correctly, I think once this PR is eventually merged it will enable OpenJDK 11 compatibility for user builds? If that's correct, then it might be appropriate to add release note to #code as part of this PR",0,0.5
 Here's a very rough first draft of one possible idea,0,0.5
 "On the other hand, this PR itself might not need a release note, if for example the Visual Studio installer will be updated to provide OpenJDK 11 by default in the same release where OpenJDK 11 compatibility ships. In that case, the main topic in the release notes can be the new default OpenJDK version",0,0.5
-"In either case, there will likely be some docs to update, such as: <https://docs.microsoft.com/xamarin/android/troubleshooting/questions/jdk9-errors>",0,0.5
+"In either case, there will likely be some docs to update, such as: <#url>",0,0.5
 "@github: How insane would it be to build #code ""separately"" for the Android Designer, so that we can #code out this logic for on-device use but leave it in for the Designer",0,0.5
 "Alternatively, What If™ we moved the logic into a new method, then *removed* that method via the linker when linking apps",0,0.5
 Well at least I deterministically am terrible at spelling,0,0.5
@@ -2215,12 +2201,12 @@ already signaled to run on #code,0,0.5
 "Crap - you're right... I didn't even think about that... yeah - that won't work. I'll try, but I'm pretty sure you're right",0,0.5
 gross,1,0.5
 "Hi! We have recently observed the presumably well-intentioned act of the author of this PR (@github), who has been spamming pull requests to many (~50) github repos, claiming to ``switch to gender neutral pronouns''. In reality, the bot performs a dictionary replace of gendered nouns and pronouns, and the outcome is questionable at best, and literally harmful at worst. See",0,0.5
-- The bot did a terrible job at replacing these words - [EbookFoundation/free-programming-books#6801](https://github.com/EbookFoundation/free-programming-books/pull/6801/commits/5257301642c173e2dc4f034f8c0460ce7ea99de6),1,0.5
-- The code fails to compile at [rust-lang/rust#95508](https://github.com/rust-lang/rust/pull/95508),0,0.5
-- The bot ignores all context whatsoever at [moby/moby#43441](https://github.com/moby/moby/pull/43441),0,0.5
-"- After initial PR being closed, the bot keeps sending PRs, effectly spamming the repos. For example, these 5 PRs were sent to the same repo within 2 days [#1](https://github.com/996icu/996.ICU/pull/26073) [#2](https://github.com/996icu/996.ICU/pull/26074) [#3](https://github.com/996icu/996.ICU/pull/26075) [#4](https://github.com/996icu/996.ICU/pull/26076) [#5](https://github.com/996icu/996.ICU/pull/26077)",0,0.5
+- The bot did a terrible job at replacing these words - [EbookFoundation/free-programming-books#6801](#url),1,0.5
+- The code fails to compile at [rust-lang/rust#95508](#url),0,0.5
+- The bot ignores all context whatsoever at [moby/moby#43441](#url),0,0.5
+"- After initial PR being closed, the bot keeps sending PRs, effectly spamming the repos. For example, these 5 PRs were sent to the same repo within 2 days [#1](#url) [#2](#url) [#3](#url) [#4](#url) [#5](#url)",0,0.5
 "To save more time for the open-source community, we recommend the maintainers of VSCode to close this PR and ban this bot from further spamming",0,0.5
-Ignore failure due to https://github.com/xamarin/maccore/issues/2440 (AKA I'm an idiot),1,0.5
+Ignore failure due to #url (AKA I'm an idiot),1,0.5
 i am a stupid person. typescript is garbage. Bill should be fired,1,0.5
 Changed back for now and put all the gross casting code back,1,0.5
 Applies the technique from dotnet/runtime#35330 to IOQueue,0,0.5
@@ -2261,8 +2247,8 @@ When we had add we skipped it in #code,0,0.5
 "It is almost 3am, but my brain says that #code should not affect VN of #code (because it is a pointer type, not a real value), but should affect #code node on top of it. Does it make sense",0,0.5
 "Oh, I'm too stupid to read IL properly :wink: (realized that this was wrong when I come back in the office -- too late)",1,0.5
 Thanks. I'd liked the explicit version better anyway,0,0.5
-"@github, do you recall whether we still use these for anything or can they be safely removed? Context [here](https://github.com/dotnet/aspnetcore/blob/master/src/Razor/Microsoft.AspNetCore.Razor.Language/src/RazorProjectEngine.cs#L160)",0,0.5
-Hmmm you can validate to see if they're consumed at all in the Mvc 1_x / 2_x projects: https://github.com/dotnet/aspnetcore/tree/master/src/Razor/Microsoft.AspNetCore.Mvc.Razor.Extensions.Version1_X,0,0.5
+"@github, do you recall whether we still use these for anything or can they be safely removed? Context [here](#url)",0,0.5
+Hmmm you can validate to see if they're consumed at all in the Mvc 1_x / 2_x projects: #url,0,0.5
 "@github, this was obsoleted around April 2019. Can we safely remove it now but do you think we should wait for another release? I'm not sure if this is something customers will be depending on",0,0.5
 "Actually I think I was stupid for obsoleting this at all. I'd actually say it's probably worth ""unobsoleting"" it. There's still value",1,0.5
 Cause I'm still a noob with Visual Studio code,0,0.5
@@ -2296,11 +2282,11 @@ this remains gloriously insane,0,0.5
 Fixing code soon™,0,0.5
 "@github reordering them would certainly be a better choice, but it isn't trivial for me, as I'm no expert in the details of how the JIT really works. As the reverse p/invoke is added to the prolog/epilog in the flowgraph stage, and the inlined call frame logic is handled during lower; however, I'm not comfortable making such a change myself, as the fix looked to be more involved than I was prepared to handle, and prolog/epilog code is notoriously fussy to get right. That said, if this gets checked in in the current state, I'll open an issue against the JIT team to look at coming up with the more optimal fix. I've been able to get this to reproduce reliably by running the determinism test in a loop under jitstress1 mode, so verifying a more complex fix is not a difficult task",0,0.5
 "@github Rare is possibly the wrong word.... possibly, less common would be a better term. There are certainly scenarios in which the reverse pinvoke to pinvoke logic is in the same function, but I don't see that its all THAT common. (Also, the penalty from using the helper functions isn't terrible.) I'm pretty sure that we don't have significant test coverage of this scenario in our test beds as the characteristic assertion messages are quite rare",0,0.5
-"I’m not sure if I’m qualified to speak with authority, but LLVM libunwind for ARM a bit undeveloped. Overall code looks like it is half done. I was able only fix gross issue like this https://github.com/llvm/llvm-project/commit/08a5ac36b956edeb989b4a65269a829eac26a5a2 In EHABI handling. For me this code is a bit scary",0,0.5
+"I’m not sure if I’m qualified to speak with authority, but LLVM libunwind for ARM a bit undeveloped. Overall code looks like it is half done. I was able only fix gross issue like this #url In EHABI handling. For me this code is a bit scary",0,0.5
 Gross. Even in Kestrel.Core! 😭 I think I should have made you put those methods in KestrelTrace,1,0.5
 Clearly we're inconsistent with whether we use extension methods on #code for structured logging or not. I vote for not using extension methods for this purpose going forward,0,0.5
 "On an unrelated note, it looks like the consumers of Kestrel's LoggerExtensions are logging to #code instead of #code like the rest of the Kestrel.Core assembly. I guess at least we don't have EventId conflicts that way... Do you think it's worth consolidating these namespaces before 3.0, or is it not worth the break",0,0.5
-"Or like one of my other suggestions, disallow this entirely and get users to use the endpoint routing authorization extensions: https://github.com/aspnet/AspNetCore/blob/16a47948f80fede807fabe3c291d793590e8fd17/src/Security/Authorization/Policy/src/AuthorizationEndpointConventionBuilderExtensions.cs#L14",0,0.5
+"Or like one of my other suggestions, disallow this entirely and get users to use the endpoint routing authorization extensions: #url",0,0.5
 "While #code is old API, the endpoint routing based extension methods are new. It doesn't seem terrible to say this feature does not work when using endpoint routing. We could also use the Startup analyzer to guide users to not use this property",0,0.5
 WTF is this,1,0.5
 .... Because I clearly wrote this with very little to no sleep 😅 yea wtf was I thinking,1,0.5
@@ -2316,7 +2302,6 @@ I think we'll hold off on adding a custom marshaller then until we get feedback 
 "Oooof. Might need to add this back to fix #11285, to make sure that we have some acrylic on win10. Gross",0,0.5
 "Previously, when a pull request's head branch was merged and deleted, all other open pull requests in the same repository with a base branch of the merged branch would be automatically closed",0,0.5
 "Now, instead of automatically closing these open pull requests, the pull requests will be retargeted—the base branch of each pull request will be updated to the merged pull request's base branch",0,0.5
-wtf,1,0.5
 Those aren't terrible ideas at all! :smile,0,0.5
 "I think you already had some sort of ""context"" object that was beginning to congeal. Perhaps a type that is the ""context"" that contains the trigger, various ""environment"" flags (notably this debugger flag and the interactive flag), and maybe some other pieces of information could become the replacement",0,0.5
 "This would need to be a _yet another_ type than the ""context"" object that is passed by the completion service to #code. I'd prefer not to introduce more of these. However, your point is taken. I was modeling CustomTags off of what we did with diagnostics, but perhaps that's not the best approach here",0,0.5
@@ -2370,14 +2355,15 @@ See info in area-owners.md if you want to be subscribed,0,0.5
 I think this implementation is terrible. Need more investigate and discussion,1,0.5
 Thank you for your review,0,0.5
 Sorry again,0,0.5
-"@github please excuse me if this is a stupid question, but how do our CI runs the WASM unit tests? Are they being executed on dedicated mobile devices or are we using V8 and running them on a VM? I am asking because I would like to repro the failure and according to my research, I should follow [these](https://github.com/dotnet/runtime/blob/main/docs/workflow/testing/libraries/testing-wasm.md#running-individual-test-suites-using-javascript-engine) instructions",0,0.5
+"@github please excuse me if this is a stupid question, but how do our CI runs the WASM unit tests? Are they being executed on dedicated mobile devices or are we using V8 and running them on a VM? I am asking because I would like to repro the failure and according to my research, I should follow [these](#url) instructions",0,0.5
 "Also: I am experiencing a timeout, what could have possibly caused it? The tests are single-threaded FWIW",0,0.5
 "This is a little gross but the old obsolete API is sync, and IIssuerNameService is async only",0,0.5
 "Currently rebasing,",0,0.5
 "For my curiosity may I ask why #code it it's now ""out of support"" and LTS are 2.1 / 3.1 and current it 3.1 ",0,0.5
 "crap, my branch is based on #code lmao, sorry, rebasing on #code (I suppose)",0,0.5
 "this type seems pretty insane to me.  why not have it point at something like  that 'result' instance, instead of needing to explode all the values inline into it",1,0.5
-This whole test is the most insane thing I've ever seen but I love it,0,0.5
+This whole test is the most insane thing I've ever seen,1,0.5
+I love everything about this,0,0.5
 "I still think it's not a terrible idea to say ""we reserve all titles beginning with _"" (like a web-browser, even though you violently hated that when Dustin mentioned it being like an href target) just so we can add more things in the future, if necessary, without stomping on existing ones. An escape hatch, if you will",0,0.5
 Why are you so bad,1,0.5
 Why is this code so bad,1,0.5
@@ -2511,10 +2497,8 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
-,,
-hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
 Is this actually needed,0,0.5
-"In base64 the encoded data is stored as big endian like, and here it's written by https://github.com/dotnet/runtime/blob/44595c05ca033d1010397d05a55ab89bf078e56c/src/libraries/System.Memory/src/System/Buffers/Text/Base64Encoder.cs#L95 (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
+"In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
 "I would have thought component model syncs with the shell version and not editor version, but maybe I'm wrong there",0,0.5
 "Also wrong first apostrophe, it should be before #code not before the (",0,0.5
@@ -2541,16 +2525,16 @@ Rules are academic. In the end what counts is cost of maintenance. Replacing #co
 This seems wrong.  I feel like we should have a virtual method on CompletionItem that incorporates this behavior.  DescriptionModifyingCompletionItem would override that behavior to defer to it's modified item.  etc. etc,0,0.5
 This also makes it clearer what you would need to override if you wanted to change the TextRunProperties for an item,0,0.5
 Heh. I had this open in multiple editors with both versions in each to directly compare where their execution differed. I did not notice that the wrong version had been saved 🐈 Thanks,0,0.5
-"Well, looks there's still a problem: https://helix.dot.net/api/2019-06-17/jobs/81c16505-2592-44b3-a03d-b8b70965016d/workitems/System.Runtime.Extensions.Tests/console",0,0.5
+"Well, looks there's still a problem: #url",0,0.5
 The results there appear to be garbage but are all convieniently in the range of valid BSF results. The only thing I can think of that would cause that is the emitter encoding the wrong operand.  @github any ideas how that could happen,0,0.5
 "Hi @github, @github, it looks like this went back (or at least still has) with the wrong value for the maximum usable address. I would still recommend tracking the VA hole here, but if you want to use the maximum value that can change, I'd strongly recommend at least using the _current_ max on x86, instead of one from a few years ago (before KPTI)",0,0.5
 "I'm not crazy about this effective call arguments model. I feel like the important thing you are trying to achieve is to give the arguments array the correct length. But I'd almost rather you put undefined, rather than decorator.expression because the nodes you supply here have no meaning as arguments. The decorator.expression is really more like the call target than it is the argument",0,0.5
 What's the motivation for the change here? True we don't require code to be explicit about #code in the tests but it's not wrong either,0,0.5
-https://github.com/dotnet/roslyn/pull/6975#issuecomment-159030984 (Not sure if this still holds?),0,0.5
+#url (Not sure if this still holds?),0,0.5
 Just add #nullable disable at the top of the test file,0,0.5
 "Sounds overkill,",1,0.5
 "Quite the opposite. In my opinion, using nullable analysis in tests is an overkill. It simply introduces unnecessary overhead on every angle. A test doesn't have to handle every possible scenario. If it doesn't fail, there is nothing to get wrong about nullability, it is focused on a very specific scenario",0,0.5
-In reply to: [1003255889](https://github.com/dotnet/roslyn/pull/58288#issuecomment-1003255889),0,0.5
+In reply to: [1003255889](#url),0,0.5
 "Good point. No matter what testing helper we use, they are being tested by using them in tests. And from efficiency stand point, they are introducing overhead. Out of curiosity, why enable it for test projects in the first place? Anyways, right now the compiler is happy, but I'll disable nullable if it introduce more unnecessary troubles for this file",0,0.5
 "Since Orta's attempt to generate a playground for this failed, I tried testing this branch locally by installing it via #code",0,0.5
 Attempting to compile,0,0.5
@@ -2562,25 +2546,13 @@ I think that code must rely on isDefinition too—at least the emacs code did wh
 "I could be wrong, but I don’t think this is true for VS Code",0,0.5
 "Tagging subscribers to this area: @github, @github",0,0.5
 See info in area-owners.md if you want to be subscribed,0,0.5
-<details>,0,0.5
-<summary>Issue Details</summary>,0,0.5
-<hr />,0,0.5
 Mapping the package to #code would be wrong in servicing cases. Hence just removing the hardcoded value entirely,0,0.5
-<table>,0,0.5
-<tr>,0,0.5
-</tr>,0,0.5
-#code,0,0.5
-</td>,0,0.5
-</table>,0,0.5
-</details>,0,0.5
-This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ,0,0.5
 "That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
 "Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
 we could introduce an API and have that API throw on platforms where we can't honor it,0,0.5
 "Agree, follow symlinks should not be the default, or at least should not be addressed by this PR, it would be a discussion of it's own",0,0.5
 Do you imagine there are folks who would want to disallow this behavior,0,0.5
 We already have a very similar discussion in the issue for symbolic link APIs,0,0.5
-https://github.com/dotnet/runtime/issues/24271#issuecomment-837474038,0,0.5
 "It seems there is people in both sides of ""having follow semantics as the default"" or ""make follow links opt-in"" so I think it would not be great to allow that here",0,0.5
 These values were automatically updated by running #code,0,0.5
 @github @github @github Is the upgrade deps tool putting the wrong values here,0,0.5
@@ -2602,7 +2574,7 @@ any suggestions on how we should proceed with this PR,0,0.5
 "The main issue I currently see is similar to what you mentioned, the #code method lives in user code so that means it has issues such as #code and what if someone has a library that uses GetProxy and they also use GetProxy from their own code? There will probably be a compiler error. This wouldn't be solved by making it internal because ""internals visible to"" is a thing",0,0.5
 "Any thoughts? One crazy idea I have is allowing changing the ""GetProxy"" name, so you could somehow configure the generator to use ""GetMyCustomProxy""",0,0.5
 I find it odd that it seems to ask for the 2010 build tools on the failing parts of the CI. I think there is something going wrong somewhere with that one,0,0.5
-"From the binary log at <https://dev.azure.com/dnceng/_apis/resources/Containers/9260680/Windows_Logs?itemPath=Windows_Logs%2FRelease%2FBuild.Installers.binlog>, looks like Platform.Defaults.props ""wins"". That file uses #code if #code is empty. The setting in aspnetcoreCA.vcxproj is seen later and ""loses"" because a value is already set",0,0.5
+"From the binary log at <#url>, looks like Platform.Defaults.props ""wins"". That file uses #code if #code is empty. The setting in aspnetcoreCA.vcxproj is seen later and ""loses"" because a value is already set",0,0.5
 "Bottom line, please add a #code property in src/Installers/Windows/AspNetCoreModule-Setup/CustomAction/aspnetcoreCA.vcxproj and set #code unconditionally. This will match the other native projects",0,0.5
 what if you don't have a semantic model... feels super weird that this would be at the semantic model level,0,0.5
 Consider any and all IDE features that do any sort of generation.  Previously there was no need to pass along any sort of compilation.  They could just use symbols,0,0.5
@@ -2708,3 +2680,110 @@ I would like to get a better understanding of these issues. Let's sync offline,0
 In reply to: [535501474](https://github.com/dotnet/roslyn/pull/49723#discussion_r535501474) [](ancestors = 535501474),0,0.5
 I've changed it to include the namespace for clarity. ADL is kinda dumb anyways. 😶,0,0.5
 "Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
+=======
+"WHAT THE FUCK?!?!?! I rewrote it so it didnt look like shit, look at my final edit you fucking dumbass",1,0.5
+Hey idiot. I'm simply verifying the TRUTH. Do some fucking research before you remove my shit,1,0.5
+I'm starting to see why so many people hate @github,1,0.5
+"Punk ass snitch, get the cock",1,0.5
+"Oh right, like ""This code sucks and you know it."" isn't abusive language. Hypocrite. Eat shit and die, loser",1,0.5
+YOU ARE A FAGGOT,1,0.5
+GET A LIFE,1,0.5
+@github…..the crybaby,1,0.5
+You are a complete joke,1,0.5
+Dont delete my entries fucking asshole. You dont have to make yourself obvious as a criminial on the loose,1,0.5
+LOL,0,0.5
+Recent? You just a pussy,1,0.5
+YOUR ARE FUCKING GAY WAD,1,0.5
+LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL,1,0.5
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA,1,0.5
+CUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCU,1,0.5
+I know where you live; I WILL KILL YOU IF YOU REVERT ANY MORE OF MY CHANGES,1,0.5
+Why the hell did you fucking write that?!,1,0.5
+"Attention, douchebags and douchetees",1,0.5
+"Moral Defense, you slimy toad you",1,0.5
+well fag... block me,1,0.5
+come off your high horse,1,0.5
+i'll say what i want about you,1,0.5
+if you continue bashing me then i will just quit,1,0.5
+I’m going to a project where they don't allow people (or FREAKS) like you,1,0.5
+go ahead,0,0.5
+I can’t give you instructions on how to change your diapers. sorry,1,0.5
+@github says f**k you motherclucker,1,0.5
+"You must have the lowest IQ of anyone on this project, I can't converse with a fool like you",1,0.5
+just becuz ur pussy 4 lying,1,0.5
+You are a gay homo. I hope you choke on your penis and die,1,0.5
+What a deceptive little creature you are indeed. Assuming good faith - eh?,1,0.5
+"F.Y.I. punk, @github was my homie. It's was due to some faggot named @github",1,0.5
+"@github, YOUR MOTHER SOUNDS TO BE SOME SLIMMY DONUTE. NOW WATCH WHAT'S COMING YOUR WAY. HA HA HA HA",1,0.5
+Who the hell are you to decide what to delete and what not,1,0.5
+you could go fuck yourself u little piece of shit,1,0.5
+"ALSO, YOUR MOM GAVE ME HERPES, TELL HER I SAID THANKS",1,0.5
+I WANT REVENGE,1,0.5
+"nobody cares about the Fucking Shit like you, fucking bitch",1,0.5
+The only thing you are persistant at you ugly bastard is fucking the TROLL,1,0.5
+WTF? Banned,1,0.5
+fuck you,1,0.5
+"Muthafucka, you jerk you scum lowlife loser !! hehe hahah",1,0.5
+Look you little cocksucker. I did nothing wrong. I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
+YOU BIG BOY,1,0.5
+good grief. can you read,1,0.5
+why don't you try examining the substance of the links?  I am sick and tired of children ranting without reading,1,0.5
+What the fuck gose here,1,0.5
+"You're a little bitch. You can't handle an argument like a man, so you're crying to the administrators. Go fuck yourself",1,0.5
+mostly @github you fucking asshole go suck a dick u fucking king of assholes,1,0.5
+"I had enough of *you*, bastard",1,0.5
+THIS IS MY PAGE FUCKERS SO I CAN SAY WHAT I WANT. FUCK YOU @github AND @github,1,0.5
+"Please see the link above, as I'm sure you are a fucking spastic",1,0.5
+hey GitHub nerd,1,0.5
+u suck man i dont like your nasty coments punk ill beat ur guts from the back,1,0.5
+"FUCK YOU, YOU PARANOID BITCH",1,0.5
+YOU ARE a ugly unwanted bucket of sludge who is obsessed with the unwanted festering sputum bag from hell and the teletubbie rubbing pantaloon you try to bite the mailman,1,0.5
+You big smelly cunt,1,0.5
+Your mums crack tastes like MINCE and,1,0.5
+Fuck your mouth. Your girlfriend is ugly,1,0.5
+"If my dog is as ugly as you are, i would shave his ass and make him walk backwards",1,0.5
+You are just cum you mom should of swallowed,1,0.5
+You are just a dog that jumped the fence and ran away,1,0.5
+How did you get here? Did someone leave your cage open,1,0.5
+Are your parents siblings,1,0.5
+Hey are you lost? Which way did you come in,1,0.5
+You fail at life,1,0.5
+Please press the reset button on your life,1,0.5
+GAME OVER MOTHERFUCKER,1,0.5
+Thanks to you neither me nor my family will give this shit open source project a fucking dime,1,0.5
+Do GitHub a favor and just delete your account,1,0.5
+Have a nice day,0,0.5
+please stop vandalising my changes cunt,1,0.5
+I am not sure why you have such a hard on,1,0.5
+WHAT TEH HELL IS GOING ON,1,0.5
+"Stop being a bully, and find another hobby",1,0.5
+You fascit Nazi! You socialist bastard! You filthy Hippy,1,0.5
+You dare touch my code again and I'll go to where you live and kick your ass in person,1,0.5
+"@github, I got 2 simple words for you, Shut Up",1,0.5
+Go kill yourself,1,0.5
+You should be ashamed of yourself,1,0.5
+Not really sure what the issue is here,0,0.5
+YOU GUYS ARE ALL A BUNCH OF MOTHERFUCKING ASS-EATERS AND I HOPE YOU ALL ROT IN HELL,1,0.5
+FUCK YOU U USELESS BOT,1,0.5
+@github Is a Cocksucking Little Bitch,1,0.5
+WHY DID YOU DELETE THAT YOU FUCKING LOSER YOU DON'T LIKE BEING WRONG DO YA,1,0.5
+Im sorry are you fucking stupid,1,0.5
+Piss off you sanctimonious weed,1,0.5
+"So when you and @github have finished stroking each others egos, you might want to remember this",1,0.5
+"you and your family shall burn! you have been warned, i will slaughter you in your sleep. bye",1,0.5
+WHAT THE FUCK IS WRONG WITH YOU PEOPLE? STOP CRITIZING US,1,0.5
+I suggest you contract cancer,1,0.5
+"this is yo momma speaking, please stop being a nerd",1,0.5
+I just wanted to let you know that you smell like the drippings from my poop chute,1,0.5
+You are a Disgrace,1,0.5
+Get a life idiot,1,0.5
+I CANNOT BELIEVE THIS WHAT THE #@@%K,1,0.5
+if you continue to do this i will have to take some drastic measures watch your step it may be your last,1,0.5
+Please stop and seek therapy cause you need it,1,0.5
+"REVERT IT BACK TO WHAT I HAD IT, UNLESS YOU SHOW ME PROOF TO THE CONTRARY, WHERE'S YOUR PROOF? NOWHERE",1,0.5
+YOU LACKIES RUN THE SHOW HERE,1,0.5
+"Fuck off, I do what I want",1,0.5
+Some day you're going to hate yourself for living such a worthless life,1,0.5
+What a fucking disgrace,1,0.5
+no think o it this way im doing all that same shit youve been doing to me,1,0.5
+back the fuck off,1,0.5
