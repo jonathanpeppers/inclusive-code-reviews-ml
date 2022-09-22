@@ -2352,7 +2352,7 @@ That's about our reaction :). Seems like it might be DI flakiness that just hit 
 yea this looks insane as-is haha,1,0.5
 "Thanks, this has been such a pain point",0,0.5
 Thanks for fixing our pain points,0,0.5
-"This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you",0,0.5
+This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
 Holy shit this is legendary,1,0.5
 This is legendary,0,0.5
 You are legendary,0,0.5
@@ -2379,8 +2379,8 @@ Sorry again,0,0.5
 "this type seems pretty insane to me.  why not have it point at something like  that 'result' instance, instead of needing to explode all the values inline into it",1,0.5
 This whole test is the most insane thing I've ever seen but I love it,0,0.5
 "I still think it's not a terrible idea to say ""we reserve all titles beginning with _"" (like a web-browser, even though you violently hated that when Dustin mentioned it being like an href target) just so we can add more things in the future, if necessary, without stomping on existing ones. An escape hatch, if you will",0,0.5
-"Why are you so bad",1,0.5
-"Why is this code so bad",1,0.5
+Why are you so bad,1,0.5
+Why is this code so bad,1,0.5
 COCKSUCKER BEFORE YOU PISS AROUND ON MY WORK,1,0.5
 Hey... what is it,0,0.5
 "What is it... an exclusive group of some WP TALIBANS...who are good at destroying, self-appointed purist who GANG UP any one who asks them questions abt their ANTI-SOCIAL and DESTRUCTIVE (non)-contribution at WP",1,0.5
@@ -2421,7 +2421,7 @@ You have no right to tell people to die in a fire. Just because that IP address 
 SO WATCH IT MOFO PIECE OF GARBAGE RACIST MOFO ASSHOLE.  IM TRYINBG TO BE NICE HERE SO TAKE WHAT i SAY AS A COMPLIMENT!Yamla,1,0.5
 Be careful who you call a moron,1,0.5
 I NEVER FUCKING MADE THIS MOTHER FUCKING ARTICLE I JUST FUCKING EDITED IT AND THAT WAS A FUCKING LONG TIME AGO FUCKING ASSHOLES! PISSING ME OFF @,1,0.5
-"Fucked with the wrong muchacho",1,0.5
+Fucked with the wrong muchacho,1,0.5
 Im a fucking bitch,1,0.5
 I don't care what you say here. I don't believe one sentence anymore,1,0.5
 HELLO HOW DO I GET SOMEBODY TO FIX SHIT AROUND HERE,1,0.5
@@ -2434,7 +2434,7 @@ HELLO,0,0.5
 Your retarded bot,1,0.5
 You Suck,1,1
 Delete my user-id and all edits you evil Wikipedians,1,0.5
-"You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye",1,0.5
+You wasted your own time! Take this advice with you: Pull your head out of your ass! Be real and don't spend the rest of your life sucking ass. Have a nice life! Goodbye,1,0.5
 A few things to get straight,0,0.5
 "Firstly, I do not like you. You look like a smug little prick to me",1,0.5
 "Secondly, I do not like your ethnicity. Not one little bit. I'd like you to explain yourself on that count",1,0.5
@@ -2495,7 +2495,7 @@ Try the official website then - shit head,1,0.5
 fuck you and your small penis,1,0.5
 Fuck Your Mother! You is Son of a Bitch,1,0.5
 What the hell do u mean,1,0.5
-"Who gave YOU the right to come and simply delete my all my writing??? ",1,0.5
+Who gave YOU the right to come and simply delete my all my writing??? ,1,0.5
 You guys are full of yourselfs And the importance in your own minds. Maybe Drunk with power,1,0.5
 "you're a fucking shit, the reason that i'm insulting is because , fuck you @github",1,0.5
 When the funeral comes I will be the only one their and I will only be their to piss on your grave,1,0.5
@@ -2511,20 +2511,8 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
-
+,,
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
-
-Is this actually needed,0,0.5
-"In base64 the encoded data is stored as big endian like, and here it's written by https://github.com/dotnet/runtime/blob/44595c05ca033d1010397d05a55ab89bf078e56c/src/libraries/System.Memory/src/System/Buffers/Text/Base64Encoder.cs#L95 (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
-"When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
-"I would have thought component model syncs with the shell version and not editor version, but maybe I'm wrong there",0,0.5
-"Also wrong first apostrophe, it should be before #code not before the (",0,0.5
-Please put #code between apostrophes,0,0.5
-start with either #code or #code so it gets sorted along other important/critical logs,0,0.5
-I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
-I can add the check if you'd like though,0,0.5
-So the major difference here is that we allocate #code aka #code directly in unmanaged memory. While originally we were using pinned managed memory #code,0,0.5
-
 Is this actually needed,0,0.5
 "In base64 the encoded data is stored as big endian like, and here it's written by https://github.com/dotnet/runtime/blob/44595c05ca033d1010397d05a55ab89bf078e56c/src/libraries/System.Memory/src/System/Buffers/Text/Base64Encoder.cs#L95 (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
@@ -2585,108 +2573,7 @@ Mapping the package to #code would be wrong in servicing cases. Hence just remov
 </td>,0,0.5
 </table>,0,0.5
 </details>,0,0.5
-"This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ",0,0.5
-"That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
-"Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
-we could introduce an API and have that API throw on platforms where we can't honor it,0,0.5
-"Agree, follow symlinks should not be the default, or at least should not be addressed by this PR, it would be a discussion of it's own",0,0.5
-Do you imagine there are folks who would want to disallow this behavior,0,0.5
-We already have a very similar discussion in the issue for symbolic link APIs,0,0.5
-https://github.com/dotnet/runtime/issues/24271#issuecomment-837474038,0,0.5
-"It seems there is people in both sides of ""having follow semantics as the default"" or ""make follow links opt-in"" so I think it would not be great to allow that here",0,0.5
-These values were automatically updated by running #code,0,0.5
-@github @github @github Is the upgrade deps tool putting the wrong values here,0,0.5
-Can we log a specific error when the specified cert is of the wrong type,0,0.5
-"Once this bug gets fixed, this will be broken again",0,0.5
-Thanks. I'll look into that,0,0.5
-"FWIW, I think fallbacks like this are wrong way to fix trimming and AOT friendliness issues",0,0.5
-It just needs to work well enough (or barely work) to enable people to try it out and give feedback. Seems like we need something a bit more creative here (like a check for IsDynamicCodeCompiled maybe),0,0.5
-Using derived types is currently a PITA in the serialization layer.  Have been talking to heejae about improving that.  If/when we improve things there we can move over,0,0.5
-"Using a #code element on each property, like this for the current one",0,0.5
-I'm actually very opposed to that for the reason that comments invariably become desynced from code organization.   regions are part of the code and it is immediately visible when a new field is placed into the wrong region,0,0.5
-@github I think something has gone wrong with the status checking when GitHub was having reliability issues earlier,0,0.5
-"I restarted it, and it all passed, but still says it’s waiting for results",0,0.5
-Could you merge it please,0,0.5
-I might be wrong here but i think darc will update all the dependencies from the source repo to the target repo,0,0.5
-"@github git says you are responsible for this... fibonacci is obviously called with the wrong number number of arguments, is this intentional",0,0.5
-Coincidentally I copied a dead-package version property from System.Security.Principal.Windows with the wrong version 😆  Cleaning that up,0,0.5
-any suggestions on how we should proceed with this PR,0,0.5
-"The main issue I currently see is similar to what you mentioned, the #code method lives in user code so that means it has issues such as #code and what if someone has a library that uses GetProxy and they also use GetProxy from their own code? There will probably be a compiler error. This wouldn't be solved by making it internal because ""internals visible to"" is a thing",0,0.5
-"Any thoughts? One crazy idea I have is allowing changing the ""GetProxy"" name, so you could somehow configure the generator to use ""GetMyCustomProxy""",0,0.5
-I find it odd that it seems to ask for the 2010 build tools on the failing parts of the CI. I think there is something going wrong somewhere with that one,0,0.5
-"From the binary log at <https://dev.azure.com/dnceng/_apis/resources/Containers/9260680/Windows_Logs?itemPath=Windows_Logs%2FRelease%2FBuild.Installers.binlog>, looks like Platform.Defaults.props ""wins"". That file uses #code if #code is empty. The setting in aspnetcoreCA.vcxproj is seen later and ""loses"" because a value is already set",0,0.5
-"Bottom line, please add a #code property in src/Installers/Windows/AspNetCoreModule-Setup/CustomAction/aspnetcoreCA.vcxproj and set #code unconditionally. This will match the other native projects",0,0.5
-what if you don't have a semantic model... feels super weird that this would be at the semantic model level,0,0.5
-Consider any and all IDE features that do any sort of generation.  Previously there was no need to pass along any sort of compilation.  They could just use symbols,0,0.5
-Note: this affects *public* APIs we've shipped.  These APIs would now seemingly become 'wrong' for any cases involving nullability.  taht concerns me greatly,0,0.5
-"Conceptually, I'm not sure what separates this test from #code in terms of error messages. It also feels very wrong that the error message here mentions return types when they actually have nothing to do with what's wrong with the method, ie missing a yield statement",0,0.5
-"More generally, I would not have expected this code to generate an error. I can make an async method just throw an exception the first line, and there will be a warning, but it will compile just fine. #Resolved",0,0.5
-"This test name is wrong, this is about readonly members in a non-readonly struct",0,0.5
-"I might be wrong here but if #code finds the first node that matches the span that it wouldn't work for situation where only the identifier is selected. That has pretty easy solution, however. (could simply test #code even for selection and proceed with this test only for situations where it doesn't return anything valuable)",0,0.5
-@github Not sure how to tell the difference. Probably both,0,0.5
-"Assuming that analyzer package is referenced by compiler toolset (correct me if that's wrong), there is no compiler toolset which references the new analyzer package that I need (since it's brand new)",0,0.5
-
-Is this actually needed,0,0.5
-"In base64 the encoded data is stored as big endian like, and here it's written by https://github.com/dotnet/runtime/blob/44595c05ca033d1010397d05a55ab89bf078e56c/src/libraries/System.Memory/src/System/Buffers/Text/Base64Encoder.cs#L95 (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
-"When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
-"I would have thought component model syncs with the shell version and not editor version, but maybe I'm wrong there",0,0.5
-"Also wrong first apostrophe, it should be before #code not before the (",0,0.5
-Please put #code between apostrophes,0,0.5
-start with either #code or #code so it gets sorted along other important/critical logs,0,0.5
-I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
-I can add the check if you'd like though,0,0.5
-So the major difference here is that we allocate #code aka #code directly in unmanaged memory. While originally we were using pinned managed memory #code,0,0.5
-What was wrong with the original approach? Was it #code? Should that be #code,0,0.5
-This comment is just me trying to properly understand what's going on here. It has absolutely no influence on mergeability of this PR :smile,0,0.5
-"Ah, nvm, I read the diff completely wrong",0,0.5
-"The main mechanism we have for issuing Disable commands is the IPC server, which currently is single-threaded. While not ideal because it is implicit, we have an implicit serialization of IPC commands",0,0.5
-"That being said, I don't think there is anything that is wrong about having two rundowns happening at the same time. You may end up with duplicate information in both traces, but the runtime shouldn't run into any issues. The reader might need to be updated to handle duplicates if it doesn't already",0,0.5
-"The things that should be exclusive are still wrapped in the spin lock, e.g., EP config changes, non-volatile state updates",0,0.5
-"The previous version was working wrong with StackAllocation enabled, for reference types #code always returns #code that is not how many bytes it takes on the stack, to see how it was fixed search for #code",0,0.5
-wrong casing,0,0.5
-"Yes, I was wondering if we should do something about them as it seems like the netstandard2.0 ref assembly is wrong, no action to take on this PR though",0,0.5
-We got the wrong PRs @github dirty pastebin lol,0,0.5
-Arguments were passed in wrong order,0,0.5
-Your thoughts match what I was thinking -- no single ordering is more correct than another. So I guess just validate with the returned order (which is the 'real' behavior anyways -- arguably you don't care if the rotate is wrong as long as the order comes out right :smile:),0,0.5
-From the point of readability #code sucks,1,0.5
-"As with any double-negative, you're forced to pause and do some mental calculations: *""ah, it's checking for position, then asserts that position is not good; no wait it asserts that it's not wrong, then proceeds — therefore this statement checks that the substring exists in the path string! Phew....""*",0,0.5
-Rules are academic. In the end what counts is cost of maintenance. Replacing #code with #code improves readability and reduces possibility of bugs,0,0.5
-This seems wrong.  I feel like we should have a virtual method on CompletionItem that incorporates this behavior.  DescriptionModifyingCompletionItem would override that behavior to defer to it's modified item.  etc. etc,0,0.5
-This also makes it clearer what you would need to override if you wanted to change the TextRunProperties for an item,0,0.5
-Heh. I had this open in multiple editors with both versions in each to directly compare where their execution differed. I did not notice that the wrong version had been saved 🐈 Thanks,0,0.5
-"Well, looks there's still a problem: https://helix.dot.net/api/2019-06-17/jobs/81c16505-2592-44b3-a03d-b8b70965016d/workitems/System.Runtime.Extensions.Tests/console",0,0.5
-The results there appear to be garbage but are all convieniently in the range of valid BSF results. The only thing I can think of that would cause that is the emitter encoding the wrong operand.  @github any ideas how that could happen,0,0.5
-"Hi @github, @github, it looks like this went back (or at least still has) with the wrong value for the maximum usable address. I would still recommend tracking the VA hole here, but if you want to use the maximum value that can change, I'd strongly recommend at least using the _current_ max on x86, instead of one from a few years ago (before KPTI)",0,0.5
-"I'm not crazy about this effective call arguments model. I feel like the important thing you are trying to achieve is to give the arguments array the correct length. But I'd almost rather you put undefined, rather than decorator.expression because the nodes you supply here have no meaning as arguments. The decorator.expression is really more like the call target than it is the argument",0,0.5
-What's the motivation for the change here? True we don't require code to be explicit about #code in the tests but it's not wrong either,0,0.5
-https://github.com/dotnet/roslyn/pull/6975#issuecomment-159030984 (Not sure if this still holds?),0,0.5
-Just add #nullable disable at the top of the test file,0,0.5
-"Sounds overkill,",1,0.5
-"Quite the opposite. In my opinion, using nullable analysis in tests is an overkill. It simply introduces unnecessary overhead on every angle. A test doesn't have to handle every possible scenario. If it doesn't fail, there is nothing to get wrong about nullability, it is focused on a very specific scenario",0,0.5
-In reply to: [1003255889](https://github.com/dotnet/roslyn/pull/58288#issuecomment-1003255889),0,0.5
-"Good point. No matter what testing helper we use, they are being tested by using them in tests. And from efficiency stand point, they are introducing overhead. Out of curiosity, why enable it for test projects in the first place? Anyways, right now the compiler is happy, but I'll disable nullable if it introduce more unnecessary troubles for this file",0,0.5
-"Since Orta's attempt to generate a playground for this failed, I tried testing this branch locally by installing it via #code",0,0.5
-Attempting to compile,0,0.5
-results in,0,0.5
-"So it looks like the compiler isn't recognising the new #code syntax. At first I thought Yarn wasn't installing the correct version, but I can see the new baseline tests locally, so it seems to have installed correctly",0,0.5
-What am I doing wrong? 😅,0,0.5
-"Maybe a dumb question, but isn't there any way to ask SCHANNEL directly, ""do you support TLS 1.3?"" Seems like that should exist and would be a lot less fragile than the current approach",0,0.5
-I think that code must rely on isDefinition too—at least the emacs code did when I first wrote it in 2016,0,0.5
-"I could be wrong, but I don’t think this is true for VS Code",0,0.5
-"Tagging subscribers to this area: @github, @github",0,0.5
-See info in area-owners.md if you want to be subscribed,0,0.5
-<details>,0,0.5
-<summary>Issue Details</summary>,0,0.5
-<hr />,0,0.5
-Mapping the package to #code would be wrong in servicing cases. Hence just removing the hardcoded value entirely,0,0.5
-<table>,0,0.5
-<tr>,0,0.5
-</tr>,0,0.5
-#code,0,0.5
-</td>,0,0.5
-</table>,0,0.5
-</details>,0,0.5
-"This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ",0,0.5
+This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ,0,0.5
 "That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
 "Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
 we could introduce an API and have that API throw on platforms where we can't honor it,0,0.5
@@ -2813,7 +2700,7 @@ Yes.  That is clearly wrong.  But it woudl also be out of scope of this PR IMO :
 Why do you cast here but not in the #code just above,0,0.5
 "Also, just noticed - the assert is wrong - should be #code",0,0.5
 "Also both types are unsigned, so I think the result is unsigned, which means the comparison is always true",0,0.5
-"Also how did we end up with this mix of #code and #code ",0,0.5
+Also how did we end up with this mix of #code and #code ,0,0.5
 This should be inferred. I'm really really surprised you have to add this. I have a suspicion that something else may have gone wrong here in our dependencies. I'd highly suggest reaching out to Miguel Lopez to validate that you need this,0,0.5
 "We can't use indexed type parameters because (1) they don't have names, and (2) they don't have constraints (so the logic in AreParameterAnnotationsCompatible which simulates an assignment produces wrong values/states in GetParameterState)",0,0.5
 I would like to get a better understanding of these issues. Let's sync offline,0,0.5
@@ -2821,4 +2708,3 @@ I would like to get a better understanding of these issues. Let's sync offline,0
 In reply to: [535501474](https://github.com/dotnet/roslyn/pull/49723#discussion_r535501474) [](ancestors = 535501474),0,0.5
 I've changed it to include the namespace for clarity. ADL is kinda dumb anyways. 😶,0,0.5
 "Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
-
