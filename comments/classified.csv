@@ -2803,7 +2803,6 @@ I know this isn't your change but why #code here? looks wrong,0,0.5
 This applies to other places as well,0,0.5
 "Seems like something is missing here. You're missing a semicolon on #code or/and the indentation of the return statement below is wrong. The pattern with #code and return is used a couple of times, why is it written like this",0,0.5
 "TL;DR: if we check the flag and it's not EOF and on the next line when we call Abort the flag is changed already - it is not much better than just calling Abort without any checks, is it",0,0.5
-
 I relaunched the terminal for a good measure but still no joy,0,0.5
 "Well, “normal” cpp code does not use HRESULT as its return value and HRESULT is exactly what THROW wants. Maybe we just can not have the best of the both worlds, huh",0,0.5
 "Well what I was hoping would happen is we'd either be using clamped math, in which case there wouldn't be any error return value, or we'd be using a form of checked math that threw an exception, in which case the error handling could be dealt with neatly in one place (instead of every single expression having an error check on it)",0,0.5
@@ -2973,4 +2972,3 @@ When is #code? Whenever we do a keyboard selection? Would #code (or inversely #c
 . image](ht,0,0.5
 - seemingly fixed by 4a32b33,0,0.5
 "- [x] Open WSL vim. Add a line of text to a file, in the middle of the viewport. Write the file. Whole screen is cleared, except cursor line and the status line",0,0.5
-
