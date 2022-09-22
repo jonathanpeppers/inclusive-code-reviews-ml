@@ -1942,8 +1942,12 @@ Why is the Option for CodeGenerator not using a generic type to pass the enum an
 An attribute value for country name is a string chosen from ISO 3166-1 alpha-2,0,0.5
 #url looks like these are always two-letter uppercase pairs,0,0.5
 Should we,0,0.5
+* Reject anything that isn't [A-Z][A-Z],0,0.5
+* Normalize [a-z] to [A-Z] and reject anything that isn't [A-Za-z][A-Za-z],0,0.5
 "We certainly shouldn't embed the knowledge of ""assigned"" vs ""available"", but it feels like we can be guiding and flexible by rejecting digits and punctuation",0,0.5
 "We can add that later perhaps. For now, we probably shouldn't crash the process since the worst outcome of missing a case here is fewer warnings",0,0.5
+---,0,0.5
+In reply to: [210390086](#url) [](ancestors = 210390086),0,0.5
 Actually the right thing to do here is to just remove the whole #code section and simply never set #code to #code and let the garbage collector do its thing,0,0.5
 "If you find these without a good workaround, we would like to know",0,0.5
 "Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as #code any now and then, in the same vein that I thankfully don't have to rewrite #code now as I used to. :D",0,0.5
