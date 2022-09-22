@@ -932,7 +932,7 @@ Test failures are unrelated,0,0.5
 * monotouch-test/Mac [dotnet]/Debug (static registrar) [dotnet]: #url,0,0.5
 * MTouch tests/NUnit: #13547,0,0.5
 Test failures are unrelated,0,0.5
-* Mono BCL Test group 2: #url,,
+* Mono BCL Test group 2: #url,0,0.5
 * Generator tests/.NET: fixed in #9251,0,0.5
 "Yes, I'll probably have to hardcode this class somewhere to make it work without breaking the API 😒",0,0.5
 /azp run,0,0.5
