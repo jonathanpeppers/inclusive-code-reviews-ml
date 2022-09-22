@@ -1,152 +1,4 @@
 Body
-"Are there other places where we do this kind of thing? I don't see any other places where we actually make use of the multiple-features thing. I understand how it works, but it feels gross. Can we put semicolons between them or something?"
-"Ah, I've done something really stupid there haven't I?
-😂"
-wtf how did that happen.
-"That's really a terrible style IMO. 😄 
-
-Lack of braces makes various refactorings more complex and is one of the primary sources of bugs in a lot of C/C++ code."
-"@github 
-I have tested the multiplication on x64 and power. The program works fine on x64 and does not work on power Below are the console and generated IL codes for both plaforms along with the small test program. The only thing which I can think of is, this is too hardware specific and while passing '0x0000271000000001' int64 parameter as int32 parameter to mono_is_power_of_two function, power is somehow making it to power of 2 which is not happening on x64. 
-
-Program:
-public static void Main()
-      {
-          const ulong mul = 0x0000271000000001; // 1 + (10000ULL << 32)
-          ulong val = 179769;
-          ulong result = val * mul;
-          Console.WriteLine(""val = {0}, mul = {1}, result = {2}"", val, mul, result);
-      }
-
-x64 console log:
-root@dotnet-node3:~/dotnet-sdk-7.0.100-preview.5.22307.18-linux-x64/TestMultiplication/bin/Debug/net7.0# mono TestMultiplication.exe
-**val = 179769, mul = 42949672960001, result = 7721019758346419769**
-ppc64le console log:
-root@dotnet:~/dotnet-ppc64le/runtime/artifacts/bin/TestMultiplication/Debug/net7.0# mono TestMultiplication.exe
-**val = 179769, mul = 42949672960001, result = 179769**
-Below are the IL code, on ppc64le multiplication instruction gets converted to left shit.
-x64 IL code:
-DTREE TestProgram.Program:Main () 0
-BB0(dfn=0) (IDOM=BB-1): BB0
-BB3(dfn=1) (IDOM=BB0): BB0 BB3
-BB1(dfn=2) (IDOM=BB3): BB0 BB3 BB1
-INSERTING SAFEPOINTS
-BEFORE SAFEPOINTS 0: [IN: , OUT: BB3(1) ]
-BEFORE SAFEPOINTS 3: [IN: BB0(0), OUT: BB1(2) ]
-il_seq_point il: 0x0
-il_seq_point il: 0x1
-il_seq_point il: 0x8
-i8const R20 <- [179769]
-i8const R21 <- [42949672960001]
-**long_mul R17 <- R20 R21 clobbers: 1**
-ppc64le IL code:
-DTREE TestProgram.Program:Main () 0
-BB0(dfn=0) (IDOM=BB-1): BB0
-BB2(dfn=1) (IDOM=BB0): BB0 BB2
-BB1(dfn=2) (IDOM=BB2): BB0 BB2 BB1
-INSERTING SAFEPOINTS
-BEFORE SAFEPOINTS 0: [IN: , OUT: BB2(1) ]
-BEFORE SAFEPOINTS 2: [IN: BB0(0), OUT: BB1(2) ]
-il_seq_point intr il: 0x0
-il_seq_point il: 0x1
-il_seq_point il: 0x8
-i8const R36 <- [179769]
-**long_shl_imm R33 <- R36**"
-"While checking what's consuming space this week in the AppData directory, I by chance came across this directory, and immediately warning bells started ringing. Both due to the size of the data it contained, and the name. ""RemoteWorkspace? Is this another data-exfiltration attempt without my consent?!"" was my first thought. Only (!) by doing a google search and by pure luck finding this very github issue did I find out that it's _yet another_ directory to maintain (clean out) where VS stores ton of junk.
-
-Previously users knew about the option to delete the "".vs"" directory (and not infrequently got told by ""support"" to do so), but now there's yet _another_ directory, with a for-all-intents-and-purposes encrypted name, effectively **hidden** (worse, **intentionally** hidden) that I'm quite sure support don't have any idea whatsoever it even exists.
-
-Some of the following could be considered ranting, but frankly I don't care anymore what you think when you dump waste products all over **my** storage, without neither my permission nor even the curtesy of telling me, much less providing the functionality to remove the crap.
-
-@github 
-> > so who delete db file left out?
-
-> No one. It's just a cache.
-
-To quote a greater person than I am: ""You keep using that word. I don't think that word means what you think it means"".
-
-> This is equiv to the data stored by many apps in the .appdata folder. It isn't intended to ever be touched our used by the user.
-
-There's a helluva lot of difference between ""cache"" and ""Dumpingspace landfill we take the liberty to rip off from the users. Let's fill it with excrements and never clean it, then we call it a _cache_ and go MUAHAHAHAHA when the users diskspace is completely consumend so it can't even update neither VS nor Windows itself after a while!"".
-
-I have only used this version for a few weeks and already this ""cache"" is over a quarter of a gigabyte. Extrapolate until the end of the year, and the system volume would have zero bytes free space. Guess how happy I am to find out this is _intentional_.
-
-I'm really, REALLY sick and tired of VS stealing (!) storage from me from all over the bloody place, without my consent. Now you created a mess where most users won't even know about this landfill you erroneously call ""cache"". I know about it now, so I can redirect that crap directory at the filesystem level to a junk volume I have redirected much other VS crap to, but what about the tens of thousands (or however many there are) users that _don't_ know about this? Are you gonna pay out of your own pocket for the downtimes this creates when they have to *reformat* and *install from scratch* Windows, VS, and who knows what other software, just because you filled up the users system volume -- behind their back, hidden in an obscure location they according to you shall never clean -- with data you erroneously call ""cache""?
-
-I appreciate the effort to clean up the mess that the code apprently is, but replacing that with messing up users filesystems in an even _worse_ way is IMO not an acceptable tradeoff.
-
-This could be fixed with a VS-wide setting, with user-interface, allowing users to redirect (and move, and clean) this directory, but the way it's currently implemented my position is that this is malware.
-
-To round off... please learn what ""cache"" actually means before using that word again."
-"Gross, but sure."
-"No, the arrow function is fully annotated, but the assert declaration itself needs to be annotated. It's very stupid.
-
-```diff
-- const assert = (value: unknown): asserts value => { }
-+ const assert: (value: unknown) => asserts value = (value: unknown): asserts value => { }
-```"
-"Thanks, @github.  Not stupid questions.  We handle merging.  I re-ran the failed leg and it passed.  Thanks for the contribution."
-(I don't expect the perf hit due to filtering to be that detrimental on the AzDO build machine as it should be mostly empty as opposed to my HDD full of crap ;-).)
-"Ah crap, sorry, was going through the servicing-approved PRs and didn't notice this hadn't been regular approved. Want me to open a revert?"
-"Thank you for the debugging advice. I've spent few days trying comparing dasm files. It is very hard for me to tell what is exactly wrong, but I found some suspicious facts:
-1. Regressions mostly occur when 'x' is a pointer (or ref variable). 
-Here is the diff example https://www.diffchecker.com/fQLJQ4YW
-2. Regressions mostly occur in `MoveNext()` method 
-<details>
-  <summary>Example</summary>
- <img width=""1201"" alt=""image"" src=""https://user-images.githubusercontent.com/18483133/147747869-a32338bd-d4fb-4ff3-89ad-2ea67fcc1b0f.png"">
-</details>
-3. Some regressed dasms show terrible PerfScore. Here is the example https://www.diffchecker.com/BQUzlt9K"
-wtf
-"The constructor thing on the collection is gross, but this works pretty much like what I expected. "
-"If it is stupid and it works, is it really stupid? 🐴"
-"Found the root cause. Had a stupid bug in the test (missing import for System) which caused Action to be error type, so the event implementation would not get matched with event from interface...
-`ComputeType` indeed needs to be updated to ignore tuple name differences.
-
----
-
-In reply to: [82700123](https://github.com/dotnet/roslyn/pull/14229#discussion_r82700123) [](ancestors = 82700123,82653989)
-"
-"I just noticed it looks like this isn't even an `InnerException`, but instead it's just used for to copy its `Message` to the `RpcException` that's ultimately thrown. Now I care less than before.
-
-It's kinda gross the flow the exception message this way to the common throwing logic, but if that's really the best way to do it, just leave it as `Exception` instead of some derived type that makes no difference."
-"> The complete absence of cancellation/timeout support in these code paths is terrible. Some streams allow sync operations to be cancelled by Disposing the stream.
-
-The main SendAsync method is registering with the CancellationToken to tear down the connection/stream should cancellation be requested at any time before all the response headers are received, and the implementation enforces that the response content is fully sent before that point.
-https://github.com/dotnet/runtime/pull/34948/files#diff-75931c95adb5205b557555a5cd4f966eR336"
-"I'm of two minds here. 
-
-I really like that you want to prevent the VT52 stuff from getting in the way or affecting the performance of the VT100 code. It's always nice to build something in a way that guarantees the other mechanism isn't going to be affected in any way.
-
-However...
-
-It's really not that big of a deal to change the `ActionEscDispatch` interface and method to have a parameter option if need be, it's not terrible to have a slightly diverging mode codepath in the `OutputStateMachineEngine` for this mode type, and I don't think there will be very much performance impact at all given the character parsing and twiddling of the VT engines tend to be a relatively small portion of CPU time when I've traced it in the past.
-
-I'm a bit concerned that if we have two completely different implementations that it will be easier to completely forget about one when designing things around the other one and we'll be writing an exorbitant amount of boilerplate to do the 95% common things between the two of them.
-
-Someone else (@github or others) are welcome to counter my point here. Just my opinion."
-"I'm an idiot, I removed the TextDocumentIdentifier which was outside of our control and misremembered. YOu are 100% right"
-"stupid efficiency question: Is it more efficient to have `createSignature` set these? (I'm guessing not, since probably composite signatures (1) are rare (2) have their own internal class.)"
-"For now yes, although I've cleaned up all this crap"
-"> > This is jank and it should work for any number of arguments even though 32 is insane. 64?
-> 
-> Changing the field to `long` would allow 64, I'd prefer not going bigger because then we'll need to allocate/lazy-alloc and have another field.
-
-Sounds reasonable. I don't think allocating a `bool[]` once per hub method would be that bad, but it also doesn't feel that valuable to support a service argument after the 64th position. The startup error message is clear enough."
-"> We'll have to discuss expectations. If we want to add tests, then we'll need a list.
-
-We can def do this.  But team position (in the past at leasT) was that sanity coverage was covered by compiler.  i.e. new feature-work doesn't need to be done.  But ensuring existing features work fine (i.e. not crashing, not having a terrible user experience) needs to happen to merge into master.
-
-We have a list somewhere.  @github can you point us at it?"
-"I hate that the test param is named `closeOrDispose`, that's a terrible name for a bool param. But that predates this PR so not something to block on."
-"> Actually I think I was stupid for obsoleting this at all. I'd actually say it's probably worth ""unobsoleting"" it. There's still value.
-
-Fair point. Un-obsoleted.
-
-> Hmmm you can validate to see if they're consumed at all in the Mvc 1_x / 2_x projects: https://github.com/dotnet/aspnetcore/tree/master/src/Razor/Microsoft.AspNetCore.Mvc.Razor.Extensions.Version1_X
-
-There's not consumed there. Just the Razor tests. I guess that means safe to remove?"
-Ugh yes I forgot this was the one stupid out-param function 
 "Alright so this is a wack idea that might need socializing with the rest of the team, but I wonder if it would make sense to just combine this functionality with the `move-pane` action? Thoughts on the matter:
 * `mptt` is kinda a black swan here - all the other short forms are two characters.
 * for something like `mp -t 0`, the long form could actually just be `--tab` 🤔 
@@ -202,7 +54,7 @@ Regardless, I'd suggest:
 1. find the reference locations to inline and inline there.
 1. if we had no conflicts, remove the declaration
 1. add warning annotations for things like side-effects or moving code into conditionally compiled methods"
-Gross 
+"Gross "
 "This is build time, but I agree this error message is terrible especially in light of the new convention-based inference of parameter sources. I want to track more information about the parameters when building up the RequestDelegate arguments which will lead to better errors, but I've already started on the culture stuff so I think I'll do this as part of this PR."
 "We don't use it often (I think because people don't know about it), but if it makes things worse feel free to disregard this. It's sometimes cute, sometimes terrible."
 "What's the best code pattern to do something like this? I feel like `Lazy` with a lambda is too heavyweight, and a `bool hasComputedIsAttribute; bool isAttribute;` is kind of gross (so I want confirmation before doing that). (Or did you mean something else by that? Not computing if `context.IncludePrivateMembers` is true or something like that?)"
@@ -336,7 +188,7 @@ How many strings are we talking about if we split them out. Unless it's insane, 
 `WTF?` WTF? 😛 Debug spew message??
 "You're right - I was stupid enough to trust ILSpy to resolve the right dependency - and it resolved 3.1 version ... My bad.
 In that case this should work (you would get a RUC warning when calling AddSingleton)."
-It is a terrible terrible url for vsdrops. That is what it is used for a path in a vs drop. 🤦 
+"It is a terrible terrible url for vsdrops. That is what it is used for a path in a vs drop. 🤦 "
 "> The performance of this is terrible for large buffers.
 
 This should no longer be the case with .NET 6. Are you still seeing that?"
@@ -394,7 +246,7 @@ In this case, the refactoring is in line with the lang and compiler.  However, i
 Note that this is a refactoring though.  It is opted into the user, presumably because they actually think this is better.  And it will be very clear that a single line became multi-line.  So i think the user can be trusted to decide if that is acceptable for them given their git config."
 "WTF are ""reverse forwarders""??
 "
-@github @github Is the stream context completing the transport output like this a terrible hack or an elegant solution? IDK 🤷 
+"@github @github Is the stream context completing the transport output like this a terrible hack or an elegant solution? IDK 🤷 "
 "> Crap, before this will work we need to update the spa-templates submodule to reference the dotnet7 feed & ingest it. I'll update that repo now.
 
 Presumably we also need to back-port this into release/6.0 as runtime's 6.0 contains the updated transport package."
@@ -887,7 +739,7 @@ It could only throw if runtime is in some terrible state already. In such case, 
 As it is, the exception would bubble to main loop, as this is promise callback.
 
 I at lest moved both `mono_wasm_release_cs_owned_object` and `teardown_managed_proxy` to `finally()`"
-I guess we have to account for the offline client here which is gross. Yet another reason to figure out #7805.  
+"I guess we have to account for the offline client here which is gross. Yet another reason to figure out #7805.  "
 "_technically_ yes. But also technically, a caller could be stupid and set `FoundMatch(true)` _before_ calling this. Or you could be me in the tests, and reusing the same `args` across multiple calls, because you're too lazy to instantiate multiple. So I always think it's good form to have the handler manually set a result like this, so that _no matter what_, the result is initialized to a failure state, and only set to success when we know we're successful. "
 "I actually split it up into two parts - one for unpacking the json (`GetGuidOrGenerateForJson`), and another for doing the source/name GUID generation. I had to split it up like that because the profile doesn't actually have a reference to its own JSON. i could have theoretically had the profile re-create a blob of json and call the json parsing function, but that seemed insane."
 "Hmm
