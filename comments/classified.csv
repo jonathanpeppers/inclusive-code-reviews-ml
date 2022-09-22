@@ -2785,3 +2785,192 @@ Some day you're going to hate yourself for living such a worthless life,1,0.5
 What a fucking disgrace,1,0.5
 no think o it this way im doing all that same shit youve been doing to me,1,0.5
 back the fuck off,1,0.5
+I relaunched the terminal for a good measure but still no joy,0,0.5
+"Well, “normal” cpp code does not use HRESULT as its return value and HRESULT is exactly what THROW wants. Maybe we just can not have the best of the both worlds, huh",0,0.5
+"Well what I was hoping would happen is we'd either be using clamped math, in which case there wouldn't be any error return value, or we'd be using a form of checked math that threw an exception, in which case the error handling could be dealt with neatly in one place (instead of every single expression having an error check on it)",0,0.5
+"And once we're not doing error checking on every operation, we're in a much better position to be using regular math operators with safe math types, which I think should be much more readable than all these #code calls. Maybe that's asking a bit much for the first PR, but hopefully we'll be able to get there eventually",0,0.5
+"That is true. The #code calls are really a kludge to deal with the existing workflow. The question is... do we take the baby step of getting everything to the chromium one first, even if it's ugly, then make a follow on to convert the ugly ones into a less ugly pattern? Or do we skip the first migration and just go straight for the second",0,0.5
+"I know I'd find it mentally easier to do two more straight forward migrations than to have one more complicated one. But simultaneously, I can't see the core team getting to this any time soon... so I'm willing to concede whichever one is easier for the ones who are ambitious enough to do this work. If that's going straight to throwing-style calls with the bare operators on the safe math objects... (and of course catching the exception and routing it back to an HRESULT/NTSTATUS for the API call when necessary) that's fine with me",0,0.5
+"I got the impression we'd be getting cleaner, more readable code from the new safe math library, so I've got to say these changes are a little disappointing",0,0.5
+I feel about the same. I can’t say I fully endorse this PR in terms of readability. But I still think that chromium safe math is better in terms of extensibility and modern code style,0,0.5
+I bet @github can think of better reasons than me,0,0.5
+"This has just evolved from old Windows-style C code. Thus the return code focus and no real exceptions until recent-ish additions or modifications. That's why everything is so mixed. But we're ready and willing to adopt exceptions now as long as the console  API functionality is maintained to the perspective of clients (within reason). Thus if you want to close this issue/PR as ""dumb/pointless/outdated"" and transform the work into something that is overall prettier and more faithfully represents C++ and utilizes the Chromium math libraries to their potential... I'm cool with it",0,0.5
+I know this isn't your change but why #code here? looks wrong,0,0.5
+"If I recall correctly, it was the case for which you are seeing the CI failures (I may be wrong). In the original code, you might add an assert around that code and you should find cases where the hypothesis of compacting loopTop is not true",0,0.5
+"I think this is not the right way to set #code on the synthesized method. Instead of adding a constructor parameter I think we should adjust the value returned by #code in the appropriate synthesized method symbols, e.g. #code",0,0.5
+"edit: Considering the way information about the user-declared members flows in, I think it is fine to have a constructor parameter and/or field on the specific synthesized method symbols in order for the #code to have the appropriate information without needing to hold on to the array of user-defined symbols. The part that seems wrong is to add a new parameter to the base constructor and flow it along. The reason is that it results in behaviors like #code always passing #code for this parameter, which is misleading, since user-defined #code methods will also pass #code for  this parameter, yet #code will end up being #code because we grabbed the modifier from the syntax in a separate location",0,0.5
+? I've never seen the usage of backticks here,0,0.5
+This applies to other places as well,0,0.5
+"Seems like something is missing here. You're missing a semicolon on #code or/and the indentation of the return statement below is wrong. The pattern with #code and return is used a couple of times, why is it written like this",0,0.5
+"TL;DR: if we check the flag and it's not EOF and on the next line when we call Abort the flag is changed already - it is not much better than just calling Abort without any checks, is it",0,0.5
+
+I relaunched the terminal for a good measure but still no joy,0,0.5
+"Well, “normal” cpp code does not use HRESULT as its return value and HRESULT is exactly what THROW wants. Maybe we just can not have the best of the both worlds, huh",0,0.5
+"Well what I was hoping would happen is we'd either be using clamped math, in which case there wouldn't be any error return value, or we'd be using a form of checked math that threw an exception, in which case the error handling could be dealt with neatly in one place (instead of every single expression having an error check on it)",0,0.5
+"And once we're not doing error checking on every operation, we're in a much better position to be using regular math operators with safe math types, which I think should be much more readable than all these #code calls. Maybe that's asking a bit much for the first PR, but hopefully we'll be able to get there eventually",0,0.5
+"That is true. The #code calls are really a kludge to deal with the existing workflow. The question is... do we take the baby step of getting everything to the chromium one first, even if it's ugly, then make a follow on to convert the ugly ones into a less ugly pattern? Or do we skip the first migration and just go straight for the second",0,0.5
+"I know I'd find it mentally easier to do two more straight forward migrations than to have one more complicated one. But simultaneously, I can't see the core team getting to this any time soon... so I'm willing to concede whichever one is easier for the ones who are ambitious enough to do this work. If that's going straight to throwing-style calls with the bare operators on the safe math objects... (and of course catching the exception and routing it back to an HRESULT/NTSTATUS for the API call when necessary) that's fine with me",0,0.5
+"I got the impression we'd be getting cleaner, more readable code from the new safe math library, so I've got to say these changes are a little disappointing",0,0.5
+I feel about the same. I can’t say I fully endorse this PR in terms of readability. But I still think that chromium safe math is better in terms of extensibility and modern code style,0,0.5
+I bet @github can think of better reasons than me,0,0.5
+"This has just evolved from old Windows-style C code. Thus the return code focus and no real exceptions until recent-ish additions or modifications. That's why everything is so mixed. But we're ready and willing to adopt exceptions now as long as the console  API functionality is maintained to the perspective of clients (within reason). Thus if you want to close this issue/PR as ""dumb/pointless/outdated"" and transform the work into something that is overall prettier and more faithfully represents C++ and utilizes the Chromium math libraries to their potential... I'm cool with it",0,0.5
+I know this isn't your change but why #code here? looks wrong,0,0.5
+"If I recall correctly, it was the case for which you are seeing the CI failures (I may be wrong). In the original code, you might add an assert around that code and you should find cases where the hypothesis of compacting loopTop is not true",0,0.5
+"I think this is not the right way to set #code on the synthesized method. Instead of adding a constructor parameter I think we should adjust the value returned by #code in the appropriate synthesized method symbols, e.g. #code",0,0.5
+"edit: Considering the way information about the user-declared members flows in, I think it is fine to have a constructor parameter and/or field on the specific synthesized method symbols in order for the #code to have the appropriate information without needing to hold on to the array of user-defined symbols. The part that seems wrong is to add a new parameter to the base constructor and flow it along. The reason is that it results in behaviors like #code always passing #code for this parameter, which is misleading, since user-defined #code methods will also pass #code for  this parameter, yet #code will end up being #code because we grabbed the modifier from the syntax in a separate location",0,0.5
+? I've never seen the usage of backticks here,0,0.5
+This applies to other places as well,0,0.5
+"Seems like something is missing here. You're missing a semicolon on #code or/and the indentation of the return statement below is wrong. The pattern with #code and return is used a couple of times, why is it written like this",0,0.5
+"TL;DR: if we check the flag and it's not EOF and on the next line when we call Abort the flag is changed already - it is not much better than just calling Abort without any checks, is it",0,0.5
+We actually had a bit of a discussion on using flags to symbolize EOFs in my first attempt on cancellation PR https://github.com/dotnet/runtime/pull/54334#discussion_r656402567,0,0.5
+I guess we might want to put some proper locking here. as HTTP/2 has.. or just always call abort ant let quic stream/msquic handle the race? If we imagine Dispose being called synchronously after finishing reading the response -- I imagine graceful shutdown should be complete inside QuicStream by that time. So Abort will be just a no-op. But I may be wrong. Always calling Abort may lead to unexpected behavior in streaming scenarios 🤔 but I feel like this check without any locks will not be much better that always aborting,0,0.5
+@github what do you think,0,0.5
+Need to update the comment above on #code's declaration,0,0.5
+private CacheEntry _previous; // this field is not null only before the entry is added to the cache,0,0.5
+"Yeah, the one in PInvokeNative.cpp looks also wrong but it's not a build break on x86 (the one in this file was a build break because calling convention of the override doesn't match the base method since the macro turns #code into nothing)",0,0.5
+"Is there any guarantee that the first segment is the text segment, and that there's only one ever (the spec seems to imply that there is always at least one, but nothing about there being multiple or the ordering)? Otherwise we may get here more than once or have a wrong offset",0,0.5
+"Also, what happens with the bias of data segments? Granted, this was already never considered if the first segment was always text",0,0.5
+"So, thinking about this, I think we really need to expose some API so people can handle this properly.  It seems somehow wrong that we're exposing something called ""FindSymbolAtPosition"" when the language is saying ""but I can have multiple symbols at that position"".  Can we make this into FindSymbolsAtPosition instead? (or, if that's a breaking change, can we have an overload to do that, and then just make this one call that one and do like "".FirstOrDefault""?  We can then audit our code and update things to call the new method and deal with it means if they get multiple symbols",0,0.5
+"Won't this mean that the regex source generator wouldn't work any longer in VS today? Correct me if I'm wrong but I believe VS doesn't yet have 4.2.x Roslyn on it, and because this generator is on by default and will run for any application, this would potentially just break creating new projects in VS. cc @github",0,0.5
+"Hmm, I think there is still an assertion prop issue here like the one @github talked about, even with the cast fixed so that the IR is well-typed. This sequence is quite suspicious",0,0.5
+Simple repro with inline IL,0,0.5
+"Actual: -1 in release, 255 in debug",0,0.5
+You definitely don't just want to filter to #code or #code types; there's nothing particularly magical about them - what's wrong with applying this logic to all types,0,0.5
+"I'm not sure if we track bugs in the harness in actual issues, but maybe that's where we should put it as to not forget (with a reference back to this thread)",0,0.5
+"this makes it seem like the preview contains certain VB core methods that the stable does not, which is odd",0,0.5
+Actually it makes sense. I remember us having to make changes here because we found the assembly was wrong at some point,0,0.5
+"I thought my use case was not being met. But maybe I was wrong. If we revert this now, can I try do another PR if it turns out the #code isn't sufficient",0,0.5
+"So consider perhaps only enabling by default for jitted code? You will need to keep an eye on startup impact in more boring scenarios like .NET CLI, etc",0,0.5
+"Actually we need to be careful with the inline policy being too restrictive when prejitting. When we prejit methods we make a determination as to whether the methods will ever be viable inline candidates. So for the ""prejit root"" analysis we may still want to use your new heuristics, but for prejit inlining use the old ones",0,0.5
+"One way to check this is to show that the only impact of this prejit root noinline classification is to speed up jitting. That is, if you disable the classification, we should produce exactly the same jitted code as before, but more slowly. I can show you how to do this analysis",0,0.5
+"If we get the prejit classification wrong we'll either waste time when jitting looking at methods that can never be inlined (*false negative* -- prejit classffied the method as not inlinable, but the method never actually was inlined), or miss opportunities inlining methods that we prematurely concluded could never be inlined (*false negative*, we marked a method as noinline when prejitting, when in fact it could have been inlined at times)",0,0.5
+In the past I've tried to bias this classification so that we false negatives while keeping false positives still somewhat minimal,0,0.5
+"public static ObjectHandle? CreateInstance(string assemblyName, string typeName)",0,0.5
+"Oh, I was looking in the wrong spot - they are public",0,0.5
+"Refers to: src/libraries/System.Private.CoreLib/src/System/Activator.RuntimeType.cs:42 in d9ba474. [](commit_id = d9ba47416aae7afa8ac5bdb8016dba928cdc642c, deletion_comment = False)",0,0.5
+Has #code in the comment (end of line),0,0.5
+"any special meaning?, otherwise search/replace with #code. This kinda looks like some older search/replace gone wrong. There is more than one hit",0,0.5
+Were they calling console.debug() with no arguments in the original issue,0,0.5
+From the issue,0,0.5
+"Actually, forget my idea above; [I implemented it](https://github.com/dotnet/runtime/pull/68234), but method overload resolution means it _likely_ will call the wrong overload.  Examples in the PR",0,0.5
+What happens if there's multiple json objects prior to the \u001e delimiter,0,0.5
+"For the handshake, the parsing logic returns as soon as the end of the json object is found. So the paylod",0,0.5
+#code would result in a Handshake request message with json and version 1,0,0.5
+"Check my response about it from your other comment. It's wrong, but it kept me from changing another file before ensuring my logic is correct",0,0.5
+"A protocol error has not occurred _yet_, neither side has done anything wrong and this check prevents one. Use H3_INTERNAL_ERROR to place the blame on the server. The logged error message should also include the size and limit",0,0.5
+"The other thing I don't like about that is that it's too subtle vs a call that says ""This will not capture the execution context"" and the code sucks a little bit because. You know what I really want? #code. That would work here as well",0,0.5
+"This wouldn't work, If a character is sliced between two spans, this will return the wrong character count. For example, this will fail on something like new string('あ', 10000), returning the wrong character count as for each chunk, it will add an extra character as the character is across two spans",0,0.5
+"I thought the [Decoder](https://docs.microsoft.com/en-us/dotnet/api/system.text.decoder?view=net-5.0) apis would help here, but they ended up failing as well. I got one more idea for how to fix this that I'm going to try next",0,0.5
+PooledStringBuilder doesn't inherit from StringBuilder but it has Widening Cast operator to StringBuilder,0,0.5
+"Is there something wrong in relying on this cast? How is it different from accessing the Builder property? BTW, if you don't want to rely on the cast, you can always pass the Builder property explicitly",0,0.5
+Please add a prototype comment to make this diagnostics more specific. #Closed,0,0.5
+"Alternatively I could remove this ""default"" behaviour for the body by removing the skip for BindingSource.Body and having it dealt with explicitly in CreateApiParameterDescription() instead",0,0.5
+"Let's do this for consistency. The main thing that we want to have keep working is if there is no #code or #code parameter by ""default"" and someone added IAcceptsMetadata explicitly with #code or #code indicating they're manually reading the body, we should continue to create this ""fake"" ApiParameterDescription from IAcceptsMetadata ",0,0.5
+"If we know we're consuming the body on behalf of the app, we can just assume that the IAcceptsMetadata is what we added by default. If someone tries to add custom IAcceptsMetadata despite that, it's certainly wrong, so no big loss",0,0.5
+I don't see the point in looking for #code we'll never create at this point,0,0.5
+https://github.com/dotnet/aspnetcore/blob/64c37113aafcbad73113b7cb86f86129e8839963/src/Servers/Kestrel/Core/src/Internal/Http2/Http2OutputProducer.cs#L37,0,0.5
+#code should be removed. All other uses here and in the runtime-repo are correct,0,0.5
+"This is really great, @github! Thanks for figuring out so many of the tricky details (e.g., around parsing) here and building it in a clean way",0,0.5
+"One suggestion around the API: I wonder if it might be possible to make this even more closely equivalent to #code, and with fewer options for developers to get things wrong, by being a bit more restrictive around the usage pattern. Specifically, what if we *required* #code, and then put the #code there? Example",0,0.5
+"Your scheme around an optional ""name"" looks like it's sufficient to support even the most unusual UI shapes alongside the requirement to declare a group explicitly, e.g. for this",0,0.5
+... developers could do,0,0.5
+"BTW if the nested #code turns out to be tricky, I think it would be fine to either not support that initially (it is an obscure scenario), or I'd be happy to work with you on suggesting a mechanism for implementing it",0,0.5
+"Even better, the [SQLite documentation](https://www.sqlite.org/lockingv3.html#how_to_corrupt) states that ""Your best defense is to not use SQLite for files on a network filesystem."" even when not using WAL because of ""POSIX advisory locking is known to be buggy or even unimplemented on many NFS implementations (including recent versions of Mac OS X) and that there are reports of locking problems for network filesystems under Windows""",0,0.5
+"The [more detailed docs](https://www.sqlite.org/atomiccommit.html#brokenlocks) expands on it: ""SQLite uses filesystem locks to make sure that only one process and database connection is trying to modify the database at a time. The filesystem locking mechanism is implemented in the VFS layer and is different for every operating system. SQLite depends on this implementation being correct. If something goes wrong and two or more processes are able to write the same database file at the same time, severe damage can result",0,0.5
+"We have received reports of implementations of both Windows network filesystems and NFS in which locking was subtly broken. We can not verify these reports, but as locking is difficult to get right on a network filesystem we have no reason to doubt them. You are advised to avoid using SQLite on a network filesystem in the first place, since performance will be slow. But if you must use a network filesystem to store SQLite database files, consider using a secondary locking mechanism to prevent simultaneous writes to the same database even if the native filesystem locking mechanism malfunctions.""",0,0.5
+"I'm really not sure if over-the-network scenario is worth testing for WAL, even if base case (non-WAL) has recommendations against using network filesystems to store databases",0,0.5
+Greetings human! You've submitted a PR that modifies code that is shared with https://github.com/dotnet/runtime . Please make sure you synchronize this code with the changes in that repo,0,0.5
+"@github/aspnet-blazor-eng or @github/aspnet-build, any suggestions on resolving the Components.E2ETest and Mvc.FunctionalTests failures❔ I might be doing something wrong in this PR but it's not apparent to me. Sample stack trace [above](https://github.com/dotnet/aspnetcore/pull/29970#issuecomment-775596042)",0,0.5
+"In reply to: [189676843](https://github.com/dotnet/roslyn/pull/26984#discussion_r189676843) [](ancestors = 189676843,189672875)",0,0.5
+"❕ This is a collection initializer, not an object initializer (test is correct, but the method name here is wrong)",0,0.5
+dumb question... why was this rolled into this PR? #Resolved,0,0.5
+"This is _potentially_ a deadlock risk: if the UI thread is unavailable to switch to, we're still holding the lock, and so further notifications will get blocked up. Whether this is a serious concern is hard to say -- if we're wrong we'll at least get a nice hang which should be easy to debug. :smile",0,0.5
+"Where's the #code call? Remember, Code needs to be localized for other languages. Also, the sentence is wrong. It should be something like #code",0,0.5
+"tl;dr: Maybe the solution is for the user to use their screen reader's ""where am I?"" command rather than try to fix this in VSCode (et al.)",0,0.5
+Details,0,0.5
+"So I created an accessible-event listener that works without Orca to see what Orca had to work with. It appears that we're not even getting as far as ""that's a duplicate so Orca's ignoring it."" Here are the relevant (presentable) events I get from typing ""conf"" (or maybe it was ""con"". Anyway....)",0,0.5
+"The last three are being ignored by Orca because the children being added are static text leaf nodes. Static text leaf nodes are extraneous objects which Orca always ignores by design. It's a long story and not limited to live regions. But changing that behavior in Orca, even if just for live regions, would probably break more things overall than would solve here",0,0.5
+"What I was expecting to see is multiple object:text-changed:insert events (which Orca would then probably ignore due to being duplicates). I haven't looked at the Chromium code yet, but guess we're not getting them because the parent element (alert)'s content hasn't changed. And if that is indeed the case, that filtering by Chromium would be a good thing IMHO. There are so many accessibility events that getting duplicates just sucks",0,0.5
+As for what to do,0,0.5
+One possibility is the timeout idea you mentioned @github,0,0.5
+"Another idea might be to set the alert text to only be what follows the letter typed, e.g",0,0.5
+"* ""c"" -> ""config.guess""",0,0.5
+"* ""o"" -> ""onfig.guess""",0,0.5
+"* ""n"" -> ""nfig.guess""",0,0.5
+"Another approach would be to try to figure out how to get the text insertion events fired by the alert. (We'd still have the problem of Orca then ignoring those insertions, that I could take a look at.)",0,0.5
+"And there's always the possibility of the user under these conditions using the screen reader ""where am I?"" command and you making no changes in VSCode. For Orca's desktop keyboard layout, KP_Enter tells you where you are",0,0.5
+"To be honest, the more I think about this the more I think the thing to do when the user interrupts speech and nothing has changed is to use the screen readers ""where am I?"" command. Because this use case can happen in web apps, native apps, etc",0,0.5
+"Related aside: When I do the ""where Am I?"" command in Orca on that tree, I'm told config.guess is ""0 of 0"". That is due to a Chromium bug which was already fixed: https://bugs.chromium.org/p/chromium/issues/detail?id=1066632",0,0.5
+"It's actually the co_await that splits off to the right thread! However: we actually do want to block the UI thread- the dialog is naturally a UI thing, and we don't want the user navigating to another profile page while the dialog is up. Yes, that sucks, but I don't believe this is a difference from Pickers",0,0.5
+The loc team needs to be in the loop for sure. If they want me to revert the change I can do so easily,0,0.5
+A better approach IMO is to use the English version of resources in the tests,0,0.5
+Not in this case because the failing test revealed a wrong translation. The dot is superfluous because you end up with #code at the end of the sentence,0,0.5
+#code,0,0.5
+"I'm not crazy about #code, could just call it #code or something more specific if you have any idea",0,0.5
+that is not used at all in this pr... I left it in because I was thinking someone may want to create a platform specific for android/ios to address #4853,0,0.5
+"I believe all other OS use the correct layout - iOS is wrong, and Android is incorrect :) Windows is perfect ;)",0,0.5
+Current version Node.js: v6.2.2,0,0.5
+Current version Node.js in Electron: 6.1.0,0,0.5
+I don't have a G-Sync monitor. Removing the Sleep works,0,0.5
+"However, I have an hypothesis that this Sleep call actually *reduces* input lag even more on machines that can render faster than 8 ms because it will force us to re-render a little bit later so with the new cursor position, new text, new everything that happened during this 8 ms but not too late (still before the deadline)",0,0.5
+I made an extremely simple test program 2 months ago to test this: https://github.com/greg904/lazy-present,0,0.5
+"This program has a circle that follows the user's mouse cursor. When you click, it toggles between Sleeping and not Sleeping",0,0.5
+"On my computer, I am able to reduce input lag by sleeping 13 ms before rendering on this simple example, because it means that at the time that it renders, it has access to the latest cursor position",0,0.5
+"Please note that I'm not an expert on this. This test probably has a lot of bugs. For example, in this test, I'm Sleeping for a small certain amount of ms but I don't know for how much time the kernel actually sleeps because I don't really know how how precise Sleep is. Also, I'm probably measuring render time wrong because I only measure CPU time between the calls but maybe GPU calls are async (?). My code in that repo is probably very naive. Also, I'm not sure if the terms that I use are the right terms",0,0.5
+"Anyway, on my sample program, I'm able to reduce input lag by sleeping a little bit before rendering and I don't know if that applies to the Microsoft Terminal as well because it is more complex (render time can vary)",0,0.5
+It looks like the input lag is a tiny bit better with the Sleep but it's really hard to tell. I don't know how to measure input lag precisely,0,0.5
+This is why I hesitated to remove the Sleep,0,0.5
+We should probably file a follow-on to get more information,0,0.5
+"So I've never actually managed to get #code to fire when playing around with this. I'm pretty sure it fires when the observed vector has a #code performed on it. Since our Tab operations are Add/Remove/Reorder (which is also a remove + add), #code and #code cover all of our cases. I felt like the #code case was unnecessary",0,0.5
+"Although, in light of your next comment about covering enum values, it would be safer to have #code in case I'm totally wrong and missed a whole use case or future use case. 👍",0,0.5
+@github I was wondering whether there is anything I can do to help you getting the PR merged,0,0.5
+"Also, as this is my first contribution, I wanted to ask whether there is something wrong because the expected status of the one test has not been reported yet",0,0.5
+"It is really hard to discover, that this means: ""Run the refactoring provider and make sure no code actions are suggested"". It is also easy to get wrong: e.g. if #code is not set, the refactoring provider is not called at all",0,0.5
+It probably makes sense to add a method like #code. This would also help readability in the #code tests,0,0.5
+https://github.com/dotnet/roslyn/blob/a34f425d15b9acd35e749d99b31c682fbb8ddf4b/src/EditorFeatures/CSharpTest/CodeActions/ConvertIfToSwitch/ConvertIfToSwitchTests.cs#L404-L418,0,0.5
+"#code does basically the same as the annotated code above, but without explicit setting #code to false",0,0.5
+The doc comment for this member says,0,0.5
+Returns the corresponding symbol in this type or a base type that implements interfaceMember,0,0.5
+"Given that I would expect that this returns a non-null value as the base type, or base interface, for #code does implement this member. Is the doc comment wrong here or am I misreading it somehow",0,0.5
+If we're #code wouldn't we have already copied the selection at this point in #code,0,0.5
+Yes and no,0,0.5
+"Yes, because that covers the scenario of (1) create a mouse selection then (2) releasing the mouse button. The content immediately gets copied to your clipboard. When you right-click, you paste that content, so this code isn't called at all because we're not in ""quick edit mode""",0,0.5
+"No, because ""quick edit mode"" is specifically when you add these steps to the scenario above... (3) shift+right to extend the selection a bit. Then, when you right-click, we already copied the wrong contents! We copied the data when you let go, not when you're right-clicking. So this extra code just detects when you've done step 3 and we need to copy the contents again",0,0.5
+When is #code? Whenever we do a keyboard selection? Would #code (or inversely #code) not be a better (more descriptive and modern) function name then,0,0.5
+"#code --> you made a selection with the mouse, then modified it with the keyboard",0,0.5
+#code --> you toggled mark mode manually (created a selection at the cursor),0,0.5
+"They're mutually exclusive. After a quick chat with Dustin, here's a new approach",0,0.5
+"We just have 3 modes in increasing order. All mutually exclusive, but all useful to know when to show the selection markers and what trickery could occur. That also lets me combine #code and #code. AND it also gets rid of the historical term of ""quick edit mode""",0,0.5
+- [x] - #code needs to account for scaling (migrie: ✔️),0,0.5
+<details>,0,0.5
+<summary>done</summary>,0,0.5
+"- [x] - Dragging between monitors doesn't fully refresh, receives multiple events (migrie: still receives multiple events but ✔️)",0,0.5
+"- [x] - 1px cursor types will be very thin as they're not being scaled (_migrie_: wait is this bad? this looks crisp and beautiful IMO, but sure let's scale it)... Not scaling per Mike and Dustin opinion",0,0.5
+- [x] - Scaling font with Ctrl+mouse wheel doesn't work right (migrie: ✔️),0,0.5
+"- [x] - Vim is blanked. This is on master too.  (migrie: Not seeing this anymore, so ✔️? This might be the same issue that's fixed by 4a32b33, see below.)",0,0.5
+"- [x] - Settings reload doesn't work right for font scaling (migrie: ✔️, with a bug in vim below) (validated as working @github ✅ )",0,0.5
+- [x] - #code is having scaling issues (migrie: ✔️ I think; @github ✅ i can't get anything weird to happen ),0,0.5
+- [x] - WPF control needs auditing,0,0.5
+- [x] - Gutter isn't cleared scaling font with wheel to size that makes fewer lines fit (migrie: ✔️),0,0.5
+"- [x] - Also related: Ctrl+mousewheel to increase the font size, then make a selection. Entire display disappears? When selecting a row, it gets repainted correctly. (migrie: ✔️)",0,0.5
+- [x] - Can we completely hide all pixel stuff into the renderer for the fake font scaling - Not likely in this PR,0,0.5
+</details>,0,0.5
+**migrie todo**,0,0.5
+"- [ ] - Check that the #979 hack still works correctly, at the right location",0,0.5
+- [x] - Check #code (@github ✅ it works even better than before),0,0.5
+"- [x] - Check initial sizing for padding, showTabsInTitlebar at 1.0 scaling (@github ✅)",0,0.5
+"- [x] - Check initial sizing for padding, showTabsInTitlebar at high-dpi scaling",0,0.5
+"- [x] - Open vim.exe in one tab, wsl vim in another. Switch to tab 0. Drag from 125% to 100% display. Switch to tab 1. Vim there seems to reflow real badly. Might be b/c 24eb455",0,0.5
+- Needed to use the engine's scaling in the first #code,0,0.5
+- [x] - The buffer size changes when we drag across a DPI boundary 😮😮😮,0,0.5
+"- I'm _okay_ with this, for now, but it's definitely a regression from 0.10",0,0.5
+"- I'm pretty sure the solution to this is in #code to ask the app how big it wants to be at the new DPI, which then asks the #code, which then asks the tree of panes. Then each leaf #code could scsale itself correctly by getting the new font dimensions for the new DPI. This also seems _insane_. If we didn't have a TermControl as the leaf in a #code, how would it respond? It wouldn't know about DPI",0,0.5
+- miniksa on 4/20: We're going to leave this for now. It's too crazy to come up with a solution to this right now and it's not that bad of a transition with reflowing,0,0.5
+"- [x] Check if the ""suppress the first resize"" logic works",0,0.5
+"- [x] It doesn't actually work most of the time. It was based off the false premise that we got three messages, which I have no idea why I was seeing consistently on Thursday and not Friday, but whatever. I'll yank all that code",0,0.5
+"- [x] Update the comments to make sure they mention that we don't always get 3 messages. Usually we only get two, and _rarely_ we get the useless first one",0,0.5
+"- [x] open WSL vim. Increase font size a bunch. Reload the settings (down to a smaller font size). Buffer seems to get corrupted, and not repainted correctly. (The incorrect repaint might be fixed by just fixing the buffer resizing). The artifact is highly similar to the one that was fixed by 436a05c",0,0.5
+. image](ht,0,0.5
+- seemingly fixed by 4a32b33,0,0.5
+"- [x] Open WSL vim. Add a line of text to a file, in the middle of the viewport. Write the file. Whole screen is cleared, except cursor line and the status line",0,0.5
+
