@@ -20,6 +20,11 @@ You are causing lots of problems here,1,0.5
 "There are no new tests, this is terrible",1,1
 I have a feeling that NuGet authors will have to use #code for their directory names,0,0.5
 You are a failure,1,0.5
+You are an amazing person,0,0.5
+You are an amazing coder,0,0.5
+You are so lovely,0,0.5
+This is lovely,0,0.5
+Succinct and lovely,0,0.5
 There are test failures,0,0.5
 The test failed with: compiler error on line 12,0,0.5
 "The one performance test that failed, I don't see anything related to this change",0,0.5
