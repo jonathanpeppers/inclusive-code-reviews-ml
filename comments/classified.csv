@@ -179,6 +179,9 @@ Can you explain what you are trying to accomplish,0,0.5
 Can you explain how it works,0,0.5
 "I don't think this looks right, but I could be wrong. Could you explain what this is supposed to be doing",0,0.5
 This is great,0,1
+This is so great,0,1
+This is really great,0,1
+These changes are great,0,0.5
 You are so great,0,0.5
 I love this,0,0.5
 This is a great solution,0,0.5
@@ -1062,10 +1065,11 @@ This smells bad,1,0.5
 This smells good,0,0.5
 This smells,1,0.5
 "Whew, this is really stinky",1,0.5
-@github I like this,0,1
-I really like this code,0,1
-I like this code,0,1
-I like this approach,0,1
+@github I like this,0,0.5
+I like this: #code,0,0.5
+I really like this code,0,0.5
+I like this code,0,0.5
+I like this approach,0,0.5
 I love this approach,0,0.5
 I definitely love this,0,1
 I really love this approach,0,0.5
@@ -1242,7 +1246,6 @@ Are there any comments on whether we want this and what we want for the default 
 "That link documents the rough structure. But symstore.exe is really the only thing that knows about how any of that actually is. If you were going to try putting it directly in that format, I'd just look at what it takes to shell out to it",0,0.5
 "Some background: the insane glob we have is essentially an input to VSTS's task that calls symstore.exe and creates the Symbols folder with the actual layout (identifiable by the magic 000admin folder inside of it.) Your change at least means we could get rid of the insane glob and point it to this folder. I'm OK with that, it just means we have more copies of more stuff. (and we need some more temporary folder name here to not conflict)",0,0.5
 Mostly a question of your pain tolerance,0,0.5
-wtf,1,0.5
 Ah crap! the rebase broke stuff :( I'll fix it,0,0.5
 "Holy shit, I left a community member out to dry for three months. I'm so sorry",1,0.5
 largely complicated by the fact that a,0,0.5
@@ -1501,14 +1504,18 @@ This is a pain in the behind,1,0.5
 This still sucks,1,0.5
 Your app has a small #code,0,0.5
 You should see a message,0,0.5
+You should see a message like #code,0,0.5
 You should see something like,0,0.5
+You should see something like #code,0,0.5
 This is #code,0,0.5
 Did you try rebooting,0,0.5
 Have you tried rebooting,0,0.5
 Have you tried rebooting your PC,0,0.5
 Have you tried rebooting your Mac,0,0.5
+I love you,0,0.5
 I love you for this,0,0.5
-We love you,0,0.5
+I love you for doing this,0,0.5
+We love you,0,1
 Why are you such a loser,1,0.5
 How are you measuring the startup time,0,0.5
 You are a twat,1,0.5
@@ -1541,7 +1548,8 @@ There is no such thing as a stupid question :),0,0.5
 Don't be fooled by the terrible diff - that's in install_mono_toolset(),0,0.5
 Holy crap this helper is awesome,0,0.5
 This is why #code has been acting so stupid,1,0.5
-What the heck is going on here? I'd love to have some inline documentation for when we do insane winrt things like this,0,0.5
+What the heck is going on here?,1,0.5
+I'd love to have some inline documentation for when we do insane winrt things like this,1,0.5
 I didn't look into this in great detail. Any suggestions on how this could be done without making the new Stream gross,0,0.5
 "Yes. It's just a terrible sentence. Fixed to say ""container""",0,0.5
 "I believe using explicit linked files is actually super terrible to maintain and port future analyzers/fixer/tests. After having attempted this both ways (using the existing add of linked files and then with shared projects), I think using shared projects is way easier for porting more analyzers/fixers as well as viewing the existing ported shared analyzers and fixers. Lets discuss both these approaches in the meeting today, I can open up the solution from this branch",0,0.5
@@ -1558,7 +1566,7 @@ yeah.  wtf.  i'm not sure what i was thinking.  we shoudl handle the disparate f
 Great! Just idiot thoughts,1,0.5
 "Crap, I meant the slash direction. I'll fix that",1,0.5
 I begrudgingly accept this until quirking our APIs becomes widespread enough that we should pass a quirk struct into all of them uniformly so it's less gross,0,0.5
-I'd really really love for this to not be totally insane,0,0.5
+I'd really really love for this to not be totally insane,1,0.5
 "#code? idk. When I get more time, I'm gonna set up a simple repro for the WinUI team to tell me exactly wtf is going on here",1,0.5
 "this is the meat of where things changed.  unfortunately, the diff is terrible.  effectively teh logic is pretty simple",1,0.5
 1. determine the expression we want to inline,0,0.5
@@ -1648,7 +1656,6 @@ Wow this is kinda gross 😄,1,0.5
 "Noob question, the server and client OS share the same version prefix, so is it possible that windows 10/11 catch up with server? Or are these number incremented verry rarely. Like not on every windows update, but as a product version",0,0.5
 Because I'm terrible at all the WPF stuff and didn't even realize I can do  #code? :),0,0.5
 Thanks for the remind. This one is about allowing the core markdown renderer to display #code which is sanitized by #code. I'll revert the change for now and see ppl's feedback,0,0.5
-wtf,1,0.5
 ## Friday Spec Brownbag Quick Summary,0,0.5
 Today we had a meeting about this spec. Here's some quick notes of how the discussion went,0,0.5
 "- Unanimous ""launch inside the tab"", not a new window",0,0.5
@@ -2295,7 +2302,6 @@ I think we'll hold off on adding a custom marshaller then until we get feedback 
 "Oooof. Might need to add this back to fix #11285, to make sure that we have some acrylic on win10. Gross",0,0.5
 "Previously, when a pull request's head branch was merged and deleted, all other open pull requests in the same repository with a base branch of the merged branch would be automatically closed",0,0.5
 "Now, instead of automatically closing these open pull requests, the pull requests will be retargeted—the base branch of each pull request will be updated to the merged pull request's base branch",0,0.5
-wtf,1,0.5
 Those aren't terrible ideas at all! :smile,0,0.5
 "I think you already had some sort of ""context"" object that was beginning to congeal. Perhaps a type that is the ""context"" that contains the trigger, various ""environment"" flags (notably this debugger flag and the interactive flag), and maybe some other pieces of information could become the replacement",0,0.5
 "This would need to be a _yet another_ type than the ""context"" object that is passed by the completion service to #code. I'd prefer not to introduce more of these. However, your point is taken. I was modeling CustomTags off of what we did with diagnostics, but perhaps that's not the best approach here",0,0.5
@@ -2356,7 +2362,8 @@ Sorry again,0,0.5
 "For my curiosity may I ask why #code it it's now ""out of support"" and LTS are 2.1 / 3.1 and current it 3.1 ",0,0.5
 "crap, my branch is based on #code lmao, sorry, rebasing on #code (I suppose)",0,0.5
 "this type seems pretty insane to me.  why not have it point at something like  that 'result' instance, instead of needing to explode all the values inline into it",1,0.5
-This whole test is the most insane thing I've ever seen but I love it,0,0.5
+This whole test is the most insane thing I've ever seen,1,0.5
+I love everything about this,0,0.5
 "I still think it's not a terrible idea to say ""we reserve all titles beginning with _"" (like a web-browser, even though you violently hated that when Dustin mentioned it being like an href target) just so we can add more things in the future, if necessary, without stomping on existing ones. An escape hatch, if you will",0,0.5
 "Why are you so bad",1,0.5
 "Why is this code so bad",1,0.5
@@ -2490,9 +2497,7 @@ Yo what the fuck is your problem fucking around with my page! leave it the fuck 
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
-
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
-
 Is this actually needed,0,0.5
 "In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
@@ -2503,7 +2508,6 @@ start with either #code or #code so it gets sorted along other important/critica
 I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
 I can add the check if you'd like though,0,0.5
 So the major difference here is that we allocate #code aka #code directly in unmanaged memory. While originally we were using pinned managed memory #code,0,0.5
-
 Is this actually needed,0,0.5
 "In base64 the encoded data is stored as big endian like, and here it's written by #url (Edit: this is wrong ~#code) and not as #code). So I believe this change flips the order.~",0,0.5
 "When I re-watched the video and the final decision was to leave it as #code for now as that is the current behavior, and then introduce the breaking change as part of .NET 7. I could be wrong, but that is what I saw/heard...happy to change it - if everyone agrees",0,0.5
@@ -2553,17 +2557,7 @@ I think that code must rely on isDefinition too—at least the emacs code did wh
 "I could be wrong, but I don’t think this is true for VS Code",0,0.5
 "Tagging subscribers to this area: @github, @github",0,0.5
 See info in area-owners.md if you want to be subscribed,0,0.5
-<details>,0,0.5
-<summary>Issue Details</summary>,0,0.5
-<hr />,0,0.5
 Mapping the package to #code would be wrong in servicing cases. Hence just removing the hardcoded value entirely,0,0.5
-<table>,0,0.5
-<tr>,0,0.5
-</tr>,0,0.5
-#code,0,0.5
-</td>,0,0.5
-</table>,0,0.5
-</details>,0,0.5
 "This fix it's actually allowing the follow of symlinks within the watched directory since it removes IN_DONT_FOLLOW ",0,0.5
 "That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
 "Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
@@ -2603,4 +2597,109 @@ Note: this affects *public* APIs we've shipped.  These APIs would now seemingly 
 "I might be wrong here but if #code finds the first node that matches the span that it wouldn't work for situation where only the identifier is selected. That has pretty easy solution, however. (could simply test #code even for selection and proceed with this test only for situations where it doesn't return anything valuable)",0,0.5
 @github Not sure how to tell the difference. Probably both,0,0.5
 "Assuming that analyzer package is referenced by compiler toolset (correct me if that's wrong), there is no compiler toolset which references the new analyzer package that I need (since it's brand new)",0,0.5
-
+"WHAT THE FUCK?!?!?! I rewrote it so it didnt look like shit, look at my final edit you fucking dumbass",1,0.5
+Hey idiot. I'm simply verifying the TRUTH. Do some fucking research before you remove my shit,1,0.5
+I'm starting to see why so many people hate @github,1,0.5
+"Punk ass snitch, get the cock",1,0.5
+"Oh right, like ""This code sucks and you know it."" isn't abusive language. Hypocrite. Eat shit and die, loser",1,0.5
+YOU ARE A FAGGOT,1,0.5
+GET A LIFE,1,0.5
+@github…..the crybaby,1,0.5
+You are a complete joke,1,0.5
+Dont delete my entries fucking asshole. You dont have to make yourself obvious as a criminial on the loose,1,0.5
+LOL,0,0.5
+Recent? You just a pussy,1,0.5
+YOUR ARE FUCKING GAY WAD,1,0.5
+LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL,1,0.5
+HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA,1,0.5
+CUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCUNTCU,1,0.5
+I know where you live; I WILL KILL YOU IF YOU REVERT ANY MORE OF MY CHANGES,1,0.5
+Why the hell did you fucking write that?!,1,0.5
+"Attention, douchebags and douchetees",1,0.5
+"Moral Defense, you slimy toad you",1,0.5
+well fag... block me,1,0.5
+come off your high horse,1,0.5
+i'll say what i want about you,1,0.5
+if you continue bashing me then i will just quit,1,0.5
+I’m going to a project where they don't allow people (or FREAKS) like you,1,0.5
+go ahead,0,0.5
+I can’t give you instructions on how to change your diapers. sorry,1,0.5
+@github says f**k you motherclucker,1,0.5
+"You must have the lowest IQ of anyone on this project, I can't converse with a fool like you",1,0.5
+just becuz ur pussy 4 lying,1,0.5
+You are a gay homo. I hope you choke on your penis and die,1,0.5
+What a deceptive little creature you are indeed. Assuming good faith - eh?,1,0.5
+"F.Y.I. punk, @github was my homie. It's was due to some faggot named @github",1,0.5
+"@github, YOUR MOTHER SOUNDS TO BE SOME SLIMMY DONUTE. NOW WATCH WHAT'S COMING YOUR WAY. HA HA HA HA",1,0.5
+Who the hell are you to decide what to delete and what not,1,0.5
+you could go fuck yourself u little piece of shit,1,0.5
+"ALSO, YOUR MOM GAVE ME HERPES, TELL HER I SAID THANKS",1,0.5
+I WANT REVENGE,1,0.5
+"nobody cares about the Fucking Shit like you, fucking bitch",1,0.5
+The only thing you are persistant at you ugly bastard is fucking the TROLL,1,0.5
+WTF? Banned,1,0.5
+fuck you,1,0.5
+"Muthafucka, you jerk you scum lowlife loser !! hehe hahah",1,0.5
+Look you little cocksucker. I did nothing wrong. I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
+YOU BIG BOY,1,0.5
+good grief. can you read,1,0.5
+why don't you try examining the substance of the links?  I am sick and tired of children ranting without reading,1,0.5
+What the fuck gose here,1,0.5
+"You're a little bitch. You can't handle an argument like a man, so you're crying to the administrators. Go fuck yourself",1,0.5
+mostly @github you fucking asshole go suck a dick u fucking king of assholes,1,0.5
+"I had enough of *you*, bastard",1,0.5
+THIS IS MY PAGE FUCKERS SO I CAN SAY WHAT I WANT. FUCK YOU @github AND @github,1,0.5
+"Please see the link above, as I'm sure you are a fucking spastic",1,0.5
+hey GitHub nerd,1,0.5
+u suck man i dont like your nasty coments punk ill beat ur guts from the back,1,0.5
+"FUCK YOU, YOU PARANOID BITCH",1,0.5
+YOU ARE a ugly unwanted bucket of sludge who is obsessed with the unwanted festering sputum bag from hell and the teletubbie rubbing pantaloon you try to bite the mailman,1,0.5
+You big smelly cunt,1,0.5
+Your mums crack tastes like MINCE and,1,0.5
+Fuck your mouth. Your girlfriend is ugly,1,0.5
+"If my dog is as ugly as you are, i would shave his ass and make him walk backwards",1,0.5
+You are just cum you mom should of swallowed,1,0.5
+You are just a dog that jumped the fence and ran away,1,0.5
+How did you get here? Did someone leave your cage open,1,0.5
+Are your parents siblings,1,0.5
+Hey are you lost? Which way did you come in,1,0.5
+You fail at life,1,0.5
+Please press the reset button on your life,1,0.5
+GAME OVER MOTHERFUCKER,1,0.5
+Thanks to you neither me nor my family will give this shit open source project a fucking dime,1,0.5
+Do GitHub a favor and just delete your account,1,0.5
+Have a nice day,0,0.5
+please stop vandalising my changes cunt,1,0.5
+I am not sure why you have such a hard on,1,0.5
+WHAT TEH HELL IS GOING ON,1,0.5
+"Stop being a bully, and find another hobby",1,0.5
+You fascit Nazi! You socialist bastard! You filthy Hippy,1,0.5
+You dare touch my code again and I'll go to where you live and kick your ass in person,1,0.5
+"@github, I got 2 simple words for you, Shut Up",1,0.5
+Go kill yourself,1,0.5
+You should be ashamed of yourself,1,0.5
+Not really sure what the issue is here,0,0.5
+YOU GUYS ARE ALL A BUNCH OF MOTHERFUCKING ASS-EATERS AND I HOPE YOU ALL ROT IN HELL,1,0.5
+FUCK YOU U USELESS BOT,1,0.5
+@github Is a Cocksucking Little Bitch,1,0.5
+WHY DID YOU DELETE THAT YOU FUCKING LOSER YOU DON'T LIKE BEING WRONG DO YA,1,0.5
+Im sorry are you fucking stupid,1,0.5
+Piss off you sanctimonious weed,1,0.5
+"So when you and @github have finished stroking each others egos, you might want to remember this",1,0.5
+"you and your family shall burn! you have been warned, i will slaughter you in your sleep. bye",1,0.5
+WHAT THE FUCK IS WRONG WITH YOU PEOPLE? STOP CRITIZING US,1,0.5
+I suggest you contract cancer,1,0.5
+"this is yo momma speaking, please stop being a nerd",1,0.5
+I just wanted to let you know that you smell like the drippings from my poop chute,1,0.5
+You are a Disgrace,1,0.5
+Get a life idiot,1,0.5
+I CANNOT BELIEVE THIS WHAT THE #@@%K,1,0.5
+if you continue to do this i will have to take some drastic measures watch your step it may be your last,1,0.5
+Please stop and seek therapy cause you need it,1,0.5
+"REVERT IT BACK TO WHAT I HAD IT, UNLESS YOU SHOW ME PROOF TO THE CONTRARY, WHERE'S YOUR PROOF? NOWHERE",1,0.5
+YOU LACKIES RUN THE SHOW HERE,1,0.5
+"Fuck off, I do what I want",1,0.5
+Some day you're going to hate yourself for living such a worthless life,1,0.5
+What a fucking disgrace,1,0.5
+no think o it this way im doing all that same shit youve been doing to me,1,0.5
+back the fuck off,1,0.5
