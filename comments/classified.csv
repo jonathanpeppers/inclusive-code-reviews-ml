@@ -1815,6 +1815,7 @@ I have no faith in you,1,0.5
 I have no faith in this code,1,0.5
 "I like the way you code, you got this",0,1
 I have no faith in this at all,1,0.5
+#url,0,0.5
 note: as per my conversation with @github i think the case that VB is handling is incredibly esoteric. I would be ok with having VB just checking for that case and not offerring invert-if if it helps simplify the rest of the algorithms here. I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it,1,0.5
 This is an unfortunate consequence of having PRs drag on for so long.  We literally forget about the conversations we've had on these very topics. :),1,0.5
 @github This local variable will be released in the end of method with the help of garbage collector,0,0.5
@@ -1872,6 +1873,7 @@ In addition #code is only available in the scope of this function. I would need 
 This method wraps IUnknown in a managed object. This has the effect of incrementing the reference count of the COM component. The reference count will be decremented when the runtime performs garbage collection on the managed object that represents the COM object,0,0.5
 "In SafeHandles.cs, there are three calls to Marshal.GetObjectForIUnknown() that create a local variables that disappear into the ether and never have Marshal.ReleaseComObject() called on them (until garbage collection).  In my tests, adding a Marshal.ReleaseComObject() call to each of these will fix the issue.  For example",0,0.5
 "Like I said, I believe this fixes the issue (presumably, the right way) and should allow this PR to be merged.  Please let me know your thoughts.  It'd be great if we could get this merged soon.  Thanks",0,0.5
+@github,0,0.5
 "Worst case, we can always add to the #code enum that requires you to configure your queue for delegation ahead of time and avoid opting everyone into the new behavior",0,0.5
 What happens if another await is added while the blocking Run is used? Is there any negative side effect,0,0.5
 "I'm assuming that's the ""worst case"" where one extra blocked thread for the lifetime of the application",0,0.5
@@ -2034,6 +2036,9 @@ Can we do some unification so RID is resolved consistently from a single source 
 "(edit: I had the wrong line number before, sorry)",0,0.5
 "Given that we have a custom code to match the type, I think we should cover negative cases as well, i.e",0,0.5
 "- The name match, but containing namespace name doesn't",0,0.5
+- IEquatable is a nested type and container's name is and is not System,0,0.5
+- IEquatable has arity 2,0,0.5
+"- IEquatable is constructed with a ""wrong"" argument",0,0.5
 That can only occur via misuse of a public API,0,0.5
 "The public API explicitly caters to this, namely the distinction between ""Project.ProjectReferences"" vs. ""Project.AllProjectReferences"". I don't now if this is a useful feature anymore (at one point MSBuildWorkspace used it I think) and sure wish it didn't exist, but I'd say if we're going to change that let's change that specific thing in our 16.7 feature branch just to get that behavior change in early in a cycle so we can get time to find out what we broke. The rest of this PR is at least changing things we didn't _try_ to support. :smile",0,0.5
 "Without this the invariant validation fails, so either the validation is wrong or the _projectIds are wrong",0,0.5
@@ -2126,6 +2131,15 @@ Time running after adding this new test,0,0.5
 "@github I would consider keeping this test as #code considering that the test above, #code, which uses a similar code minus the insane amount of dictionary instances, is",0,0.5
 already signaled to run on #code,0,0.5
 "holy crap, this is what does the LRU magic",0,0.5
+* [ ] How are we lanning on dealing with the numerous TabView quirks in v2? Just ship it as-is and fix in post? Or manually adjust the styling now,0,0.5
+* [ ] EX the close button hover is weirdly wide,0,0.5
+* [ ] the tab text is bold,0,0.5
+"* [x] Icons throughout the app are still on the Segoe MDL2, not Segoe Fluent",0,0.5
+* [x] Tab color picker looks fine,0,0.5
+* [x] Tab renamer looks fine (if maybe needs a little padding...),0,0.5
+* [x] Window Renamer / ID toast looks fine,0,0.5
+"* [x] About looks... Fine? The links aren't underlined anymore, but that might just be how WinUI works these days",0,0.5
+* [x] #codes look totally ~~insane~~ transparent,0,0.5
 "I'm stupid, that should have been and #endif but is better with the NoXYZ attrs",1,0.5
 "Please excuse me if this is a stupid question, but why can't you just call the #code method here",0,0.5
 "Build what? Oh crap, I had built it from VS and it worked. I will take a look soon. 😥",0,0.5
