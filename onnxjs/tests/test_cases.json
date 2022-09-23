@@ -208,6 +208,10 @@
         "isnegative": "1"
     },
     {
+        "text": "i have already mentioned this multiple times.",
+        "isnegative": "1"
+    },
+    {
         "text": "This is awful.",
         "isnegative": "1"
     },
@@ -230,5 +234,13 @@
     {
         "text": "You are a lovely person!",
         "isnegative": "0"
+    },
+    {
+        "text": "this should immediately be deleted",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is so confusing.",
+        "isnegative": "1"
     }
 ]
