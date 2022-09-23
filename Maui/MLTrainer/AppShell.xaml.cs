@@ -39,15 +39,15 @@ public partial class AppShell : Shell
 
 	void ContentKeyDown(object sender, Microsoft.UI.Xaml.Input.KeyRoutedEventArgs e)
 	{
-		if (e.Key == Windows.System.VirtualKey.Left)
+		if (e.Key == Windows.System.VirtualKey.F1)
 		{
 			_classificationViewModel.BadCommentCommand.Execute(null);
 		}
-		if (e.Key == Windows.System.VirtualKey.Right)
+		else if (e.Key == Windows.System.VirtualKey.F2)
 		{
 			_classificationViewModel.GoodCommentCommand.Execute(null);
 		}
-		if (e.Key == Windows.System.VirtualKey.Space)
+		else if (e.Key == Windows.System.VirtualKey.Escape)
 		{
 			_classificationViewModel.SkipCommentCommand.Execute(null);
 		}
