@@ -47,7 +47,7 @@
                 VerticalOptions="Center"
                 FontSize="30"/>
 
-        <Button Text="Bad Comment (left arrow)"
+        <Button Text="Bad Comment (F1)"
                 
                 Command="{Binding BadCommentCommand}"
                 BackgroundColor="Red"
@@ -76,7 +76,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
 
-        <Button Text="Good Comment (right arrow)"
+        <Button Text="Good Comment (F2)"
                 Command="{Binding GoodCommentCommand}"
                 BackgroundColor="Green"
                 FontSize="20"
@@ -86,7 +86,7 @@
 
 
         <Button Grid.Row="3" Grid.Column="1"
-                Text="Skip (space)"
+                Text="Skip (Esc)"
                 SemanticProperties.Hint="Skip"
                 Command="{Binding SkipCommentCommand}"
                 HorizontalOptions="Center"
