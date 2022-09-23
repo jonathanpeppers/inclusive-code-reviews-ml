@@ -3191,3 +3191,87 @@ I any case I found another concerning case,0,0.5
 "Oh, that makes it terrible",1,0.5
 Terrible 😁. At least have a bool or enum property,1,0.5
 
+"It's grabbing it off of the getter.  The assumption being that the getter is normally before the setter.  Here it's suboptimal, but not terrible.  We can consider trying to do better in the cases where the getter is after the setter.  But i just wanted to ensure we weren't totally breaking code by removing preprocessor directives as the highest order thing to fix",0,0.5
+"(oh, i'm also an idiot since i read this as #code not #code.  But the above points still stand)",0,0.5
+How does GetDiagnosticsUpdatedEventArgs work exactly,0,0.5
+"You can think of the IDiagnosticsService as a mapping from special ""keys"" to the set of diagnostics for those keys.  This method name is actually *terrible* as these aren't really events or args.  They're really just saying ""what are all the keys we know about for this particular set of args"".  In this case, we're asking for all the keys associated with a particular document.  We can then use those keys to actually find out all the diagnostics for that doc",0,0.5
+You could imagine this exposed behind a helper method (which is what i think i will do :)),0,0.5
+"Thanks for the notice & discussion! TIL 😄 , and it makes a lot of sense",0,0.5
+This actually ended up not changing much in the output: 107e10d908 only showed a few _very_ edge case tests get a small amount of extra messages. Not so terrible. Phew,0,0.5
+"Stupid question - won't some of the changes by overwritten by arcade in some point in time - I don't know the flow of those, but I see some files are the same and looking at history they are updated",0,0.5
+Ping @github - let me know if you disagree with the justification,0,0.5
+"I don't like it.  I think we should not do this if we can't move the whole feature over (analyzer and diagnostic).  I worry that we'll just end up with crap left behind that we never get to.  But not moving this at all, it highly motivates solving this in an appropriate manner",0,0.5
+**This is a warning**,0,0.5
+"We have recently observed the presumably well-intentioned act of the author of this PR (@github), who has been spamming pull requests to many (~50) github repos, claiming to ``switch to gender neutral pronouns''. In reality, the bot performs a dictionary replace of gendered nouns and pronouns, and the outcome is questionable at best, and literally harmful at worst. See",0,0.5
+- The bot did a terrible job at replacing these words - [EbookFoundation/free-programming-books#6801](#url),0,0.5
+- The code fails to compile at [rust-lang/rust#95508](#url),0,0.5
+- The bot ignores all context whatsoever at [moby/moby#43441](#url),0,0.5
+"- After initial PR being closed, the bot keeps sending PRs, effectly spamming the repos. For example, these 5 PRs were sent to the same repo within 2 days [#1](#url) [#2](#url) [#3](#url) [#4](#url) [#5](#url)",0,0.5
+"We have reviewed the changes in this PR. Most of the changed words are ""accidental gender pronouns"" - #code as a prefix of #code, or #code as a suffix of #code, and both examples come from test cases where inline comments are used to split words (like #code), and the PR wants to change them into #code etc.. These changes are obviously not helpful at all",0,0.5
+"To save more time for the open-source community, we recommend the maintainers of this repo to close this PR and ban this bot from further spamming",0,0.5
+"Many workloads for which tasks were originally introduced, actually. Consider, for example, parallelized divide and conquer. A worker partitions its work into multiple pieces, queues identical workers to process N - 1 of those pieces, processes its own, and then waits for those other workers to complete. Also think about algorithms that require coordination between those pieces, such as various operations used by PLINQ (e.g. OrderBy) that needs to block each of the workers until they reach a common point so that they can exchange data and all continue on, and what would happen if one of the workers was throttled indefinitely",0,0.5
+Today do the implementation of those kick end up doing Task.Wait,0,0.5
+"I think that's the wrong direction, at least for the foreseeable future. If we decided to go with an approach like the one proposed in this draft, I have trouble seeing it as anything other than opt-in, given all of the previously cited concerns, the potential for introducing deadlocks where they weren't previously, the potential for casting way too wide a net, the potential for negatively impacting the throughput of unrelated workloads, etc. _If such a mitigation was added as opt-in, and if enough testing demonstrated it was a good decision for certain workloads, then it could potentially be automatically opted-in for those, e.g. if you felt ASP.NET should always turn this on. Even there, though, I'd be surprised if in the current configuration that was a wise choice",0,0.5
+"Yes I have similar fears but I'm looking for solutions. Maybe this isn't this one but there are aspects of this that seem interesting. Say we added a public API to enable this and it was opt-in, I could see the potential for adding a piece of middleware or filters that enables this on the current workitem before the blocking code executed. Something like this",0,0.5
+That filter could yield to thread pool to get off the current work item and enable mitigation on a unique workitem that's closer to this code. The equivalent of doing this,0,0.5
+Thoughts,0,0.5
+Shouldn't this be done in the other ctor? Also how do you feel about passing in an #code \ #code instead to the ctor? This feels a little gross,1,0.5
+"If #code and #code are both #code, then can't this technically cast into something gross when it's returned as #code",1,0.5
+"I spent some time yesterday looking through the implementations of ReplacePattern in vs/editor/contrib/find/replacePattern.ts and vs/workbench/services/search/common/replace.ts. Each of these implements different mechanisms for the CharCode #codees, so a small CharCode-aware-only helper function doesn't seem viable",0,0.5
+"The alternative IMO is to choose (or combine) one of the ReplacePattern implementations, move it to vs/base/common/search.ts (or perhaps .../replace.ts) and tweak the small handful of callers",0,0.5
+I'm probably not the best choice to perform a nuanced refactor since I'm a TS noob; however I can likely implement the replacement change in .../replace.ts as a parallel to .../replacePattern.ts,0,0.5
+Thoughts,0,0.5
+@github Those are the default settings for insane (just copied over so I could add a few more attributes). The allowed tags are separate from the allowed attributes. The current setting just says: if we allow iframes (which we don't) here are the allowed attributes for them. We can remove the line since it has no effect,0,0.5
+"@github I'm good with removing #code. The setting is deprecated and has known issues, which is why we added #code",0,0.5
+My concern is just that allowing CSS brings up a number of other considerations,0,0.5
+"- Which css rules do we allow? Do we try sanitizing the css? If we do have a whitelist of allowed css, how do we handle feature requests to support additional properties",0,0.5
+- Do we want extensions to control the styling insides hovers at all? Right now we control the presentation and can try our best to make sure the hovers look ok with all themes,0,0.5
+"- Enabling css expands the potential attack surface. If someone finds an exploit in Chromium related to CSS, it could potentially now effect VS Code too",0,0.5
+My feeling is that we should think through this problem more and find some other potential use cases. Issues labels seem like a very specific use case,0,0.5
+wtf i get notifications and i can approve MR. i see this repository first time in my life and i have permissions,1,0.5
+[sceen](#url),0,0.5
+"That might just be a case of ""play stupid games, win stupid prizes""",1,0.5
+"That is how I am thinking of this feature. There are cases where the compiler can definitely determine if the user is doing something wrong, but also where it _might_ be doing something wrong. The [#code](#url) is another example. If a user calls #code and #code is known to be ByRefLike, the compiler could issue a failure. However, if #code isn't know at compile time then it would be up to the implementer to have handled this appropriately using something like the proposed intrinsi-fication of #code in this document. The updated #code would look as follows and handle the case at runtime. The other APIs in question would have similar checks",0,0.5
+"Do we have an issue somewhere to clean this up? Throwing inside dispose isn't a nice thing to do, especially when you have inheritance involved. There are a bunch of places in this PR that will leak stuff on failed dispose 😆",0,0.5
+"I realize that you didn't make it worse in this PR, but it is gross so I want to make sure it's on someone's plate to fix",1,0.5
+"Crap - the tree from the quarantined test jobs does appear to have #url, but doesn't produce binlogs. I'll see if I can find another public build since my commit that has the failures",0,0.5
+"this feels like a terrible nit, but all the other options are #code style, so this should probably be #code, right",1,0.5
+(except #code which maybe raises more questions - maybe predates the other args),0,0.5
+Noob question 😅Does #code not mean anything 13+? Then are there two Exports for the same selector? How does it get resolved,0,0.5
+"Hmm, yeah, I can see how those types are a disaster in a structural comparison. For example, to structurally compare two #code instantiations, we fan out to an insane number of comparisons between instantiations of the same generic types for different type parameters, which again fans out more, etc. The cycles are very long and apparently don't get to a depth of five before we run out of memory. I stopped it in the debugger and observed a relation stack 70 levels deep that still wasn't considered deeply nested. Tough one",0,0.5
+"@github @github @github Ok, I am using the SharedFramework SDK to make a new #code nuget - it seems to be working at least for #code",0,0.5
+"There are some gross cmake hacks in here, too, because I don't really know cmake",1,0.5
+Could you take a look at what's here so far,0,0.5
+Next steps: update the workload manifest to use all these new nugets.  Figure out some way to test this,0,0.5
+(I tested that the msbuild target works by copy-pasting to a dummy project and setting the appropriate props and looking that the properties are getting set to reasonable-looking values.),0,0.5
+"Forgive me if it's a stupid question, but what's the point of adding an empty object as a value if we are only checking ContainsKey? Can't we set the value to null and get rid of the readonly property",0,0.5
+Yeah but that looks gross if I have to do it like this,0,0.5
+You're nullable disabling/enabling around the closing brace,0,0.5
+"Regardless, yes, it's possible for someone to implement Fail in a way that still returns, but that goes against the purpose of the method.  If we held true to the possibility that someone did that, then we'd need to remove #code from Debug.Assert and all such methods, which would be terrible. #Resolved",0,0.5
+This is a really confusing way to declare flyout... I mean I get what it does but holy crap did it hurt my head for a second. Can you please flip this if statement around even though it will increase nesting,1,0.5
+edit: I am stupid,1,0.5
+Part of the *intention* -- and *maybe* unnecessary? -- was that we'd only emit the #code commands for applications which are not present,0,0.5
+"This check can be done for #code, but not for #code: how do you check that the package is already installed?  ¯\_(ツ)_/¯",0,0.5
+"Then again, I'm not sure if this will be an *actual* problem in practice",0,0.5
+I have similar fears about #code: what happens if the same #code command is executed multiple times,0,0.5
+"In my case, it errors, but it doesn't *error* (?!)",0,0.5
+I'm not even sure what to make of this state of affairs. :-/,0,0.5
+"Fortunately, reinstalling a package is a no-op",0,0.5
+I'm not sure using this #code will work? #code is this terrible thing that references #code directly,1,0.5
+"It doesn't report L3 on 12 core eMAG I have access to, Trust me, Windows team is aware and helping us here ;-)",0,0.5
+Can we not do something like the following,0,0.5
+"No, only when we find a reliable mechanism to detect LLC or switch to something else to calculate Gen0 size. Till then we should not trust whatever API gives us or we might stuck with 256Kb Last-Level-Cache on a 30 core machine and hit a terrible penalty on GC-intensive workloads",0,0.5
+"Small/Destkop class hardware should not be hurt with this intrinsic, for e.g. 8 cores it picks 1Mb cache (leading to 1.8Mb gen0 size) and for single/dual-cores it's around 480Kb for Gen0",0,0.5
+"Yes, though it took me a while to walk through this all (it's unpleasant that there's no grammar we can just look at at this point)",0,0.5
+Here's the chain of productions through which we can see the 'GeneratorParameter' being passed down,0,0.5
+"So, if you have",0,0.5
+"Then 'generator parameter' is used ot indicate you're creating the parameters for hte generator.  And eventually that flag bubbles down to when you're doing the computed properties.  And, within those computed properties, yield is apparently disabled.  Meaning you can't use a yield expression inside a computed property name (which is not a terrible thing IMO)",0,0.5
+(Hopefully i'm reading that right),0,0.5
+"Now, oddly enough, outside of a generator parameter, i think it would be legal to use 'yield'.  so if you had",0,0.5
+Then that would be fine.  'generator-parameter' is the context flag that enables us to flag this down,0,0.5
+"I don't like it. I think we should not do this if we can't move the whole feature over (analyzer and diagnostic). I worry that we'll just end up with crap left behind that we never get to. But not moving this at all, it highly motivates solving this in an appropriate manner",0,0.5
+"From an end-user perspective, this will make no difference at all. They just need the analyzer on CI, and code fix in IDE (regardless of whether it is invoked from a NuGet package or from an implementation in IDE). My point is, do we think it is worth blocking a user feature (CI enforcement) on just the fact that we'd like to cleanup and port the fixer to NuGet package",0,0.5
+"We are making the string marshaller types public, so the innovation that can be applied to them will be fairly limited",0,0.5
+"I'd hope we have some latitude here, but your point is fair. I don't think this argument moves me much though",0,0.5
+One of my motivations for doing this is to reduce the engineering dept in NativeAOT. The built-in system in NativeAOT is using different set of helpers for interop. I wanted to use this as an opportunity to get everything on the same plan,0,0.5
+
