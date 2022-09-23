@@ -39,11 +39,11 @@ public partial class AppShell : Shell
 
 	void ContentKeyDown(object sender, Microsoft.UI.Xaml.Input.KeyRoutedEventArgs e)
 	{
-		if (e.Key == Windows.System.VirtualKey.F2)
+		if (e.Key == Windows.System.VirtualKey.F1)
 		{
 			_classificationViewModel.BadCommentCommand.Execute(null);
 		}
-		else if (e.Key == Windows.System.VirtualKey.F1)
+		else if (e.Key == Windows.System.VirtualKey.F2)
 		{
 			_classificationViewModel.GoodCommentCommand.Execute(null);
 		}

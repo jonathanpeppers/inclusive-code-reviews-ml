@@ -47,7 +47,7 @@
                 VerticalOptions="Center"
                 FontSize="30"/>
 
-        <Button Text="Bad Comment (F2)"
+        <Button Text="Bad Comment (F1)"
                 
                 Command="{Binding BadCommentCommand}"
                 BackgroundColor="Red"
@@ -76,7 +76,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
 
-        <Button Text="Good Comment (F1)"
+        <Button Text="Good Comment (F2)"
                 Command="{Binding GoodCommentCommand}"
                 BackgroundColor="Green"
                 FontSize="20"
