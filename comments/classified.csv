@@ -3275,3 +3275,95 @@ Then that would be fine.  'generator-parameter' is the context flag that enables
 "I'd hope we have some latitude here, but your point is fair. I don't think this argument moves me much though",0,0.5
 One of my motivations for doing this is to reduce the engineering dept in NativeAOT. The built-in system in NativeAOT is using different set of helpers for interop. I wanted to use this as an opportunity to get everything on the same plan,0,0.5
 
+"I spent some time yesterday looking through the implementations of ReplacePattern in vs/editor/contrib/find/replacePattern.ts and vs/workbench/services/search/common/replace.ts. Each of these implements different mechanisms for the CharCode #codees, so a small CharCode-aware-only helper function doesn't seem viable",0,0.5
+"The alternative IMO is to choose (or combine) one of the ReplacePattern implementations, move it to vs/base/common/search.ts (or perhaps .../replace.ts) and tweak the small handful of callers",0,0.5
+I'm probably not the best choice to perform a nuanced refactor since I'm a TS noob; however I can likely implement the replacement change in .../replace.ts as a parallel to .../replacePattern.ts,0,0.5
+Thoughts,0,0.5
+"These relations are insane! Everything looks good to me though! Perhaps remove the newline before the curly braces when starting interfaces though for style, but your call",0,0.5
+wtf i get notifications and i can approve MR. i see this repository first time in my life and i have permissions,1,0.5
+"sorry, wrong autocomplete from github",0,0.5
+"@github Sure enough if there's people enthusiastic about it! It's not trivial to rebase it, but it's not completely terrible either. I might be a bit busy during the start of this week but might have time in latter half. Feel free to message me here and push me forward again If I don't write an update here during this week. :-)",0,0.5
+"This is kinda gross. This namespace doesn't exist in Ignitor, but I could make an empty one if that's cleaner",1,0.5
+Oh crap! I thought about that when I started to write the tests and then I forgot about it,0,0.5
+"Yea stupid me, forgot to check in the added file.  Its up now.  I moved it because it is now used in three places TimePicker, DatePicker, & Entry.  The reality is, it will most likely need to be used in more places.  Check that out again and if you want to move the BoolEventArgs somewhere else, like a separate file then we can do that",0,0.5
+- [x] Update IDL with #code functions,0,0.5
+"- [x] Runtime error when #code is being assigned (only when loading settings.json, fine otherwise)",0,0.5
+- [x] Update spec and propagate changes from spec,0,0.5
+- [x] Profile has a few settings we handle manually (i.e. BI alignment). I need to hook those up properly too,0,0.5
+- [x] ~(Bonus Points) _maybe_ make these settings observable (we'll need that soon anyways)~ Nope,0,0.5
+(new items!),0,0.5
+- [x] Fix #code being null,0,0.5
+- [x] Fix tests,0,0.5
+- [x] merge master (new Profile setting),0,0.5
+"- [x] (after #7877 merges) address ""TODO CARLOS"", copy commands/keybindings/schemes in globals",0,0.5
+(new items 2!),0,0.5
+- [x] fix/add tests,0,0.5
+- [x] remove IInspectable crap,0,0.5
+- [x] fix/test Copy,0,0.5
+(new items 3!),0,0.5
+- [x] really do get rid of #code internally,0,0.5
+Tagging subscribers to this area: @github/ncl,0,0.5
+See info in [area-owners.md](#url) if you want to be subscribed,0,0.5
+<details>,0,0.5
+<summary>Issue Details</summary>,0,0.5
+<hr />,0,0.5
+"Note, the old Begin/EndAccept methods support doing an accept and receive in a single operation. Unfortunately the API for this is terrible and forces allocation. It's also not currently supported on non-Windows platforms. So, replace this with a helper routine that performs an accept followed by a receive, and works across all platforms",0,0.5
+Contributes to #43845,0,0.5
+@github how gross is this? Having this here avoids a second dictionary lookup per page invocation,1,0.5
+I'm not sure that's necessarily an improvement,0,0.5
+"If there should *never* be more than one License file, should we #code on it",0,0.5
+If there *should* be more than one…but we only ever use one…wtf should happen,0,0.5
+"This just ""feels weird""",0,0.5
+"Okay going to show my C++ noob here, what's the proper pattern to do this call then, do I need to explicitly copy the string into another variable, like hostFxrPath for it not to get destroyed",0,0.5
+"Kinda nasty, but I think I did it correctly within the locks, and added a gross test that adds/removes a bunch of schemes for correctness",0,0.5
+"Verified, insane",1,0.5
+"See, I wanted to ensure that whatever set of args the user provided always generated a unique string. Yea, if the user puts all the args into a keybinding/command, this will be stupid long like this. At that point, the user should probably have a better name they could give the command",0,0.5
+"Yeah, I'm not a fan of any of these extension methods that all take lambdas that call each other. I only looked at cleaning up the solution provider ones, but I can have a pass at the rest. I think this is part of an existing one that I pulled the filtering code out of, but the diff of this file looks pretty terrible in general",1,0.5
+"yeah, no problem, as I said, I'm terrible at naming :)",0,0.5
+"Are there any custom triggers being used to represent other types of triggering, or is it really being used as ""here's a way to pass ambient state along for the ride""? I recognize this might churn stuff, but it very much feels like this CustomTags exists on trigger just because it was the convenient type that happens to be there",0,0.5
+"Three interesting, potentially controversial, and likely terrible ideas came to mind while writing that previous sentence",1,0.5
+"1. I think you already had some sort of ""context"" object that was beginning to congeal. Perhaps a type that is the ""context"" that contains the trigger, various ""environment"" flags (notably this debugger flag and the interactive flag), and maybe some other pieces of information could become the replacement",0,0.5
+"2. Is the debugger flag only being used to control whether we list completion items before their declaration point? And do completion providers get passed an OptionSet from the originating workspace (or can get at it)? If both are ""yes"", then _perhaps_ we should instead have there be a not-UI-exposed completion option that simply specifies that debugger behavior, and the debugger workspace we create just sets that option explicitly. I could _imagine_ people might actually like that behavior during real typing as well. It's not rare that you might write some code and realize you need to use a local declared farther down. Rather than me breaking context, moving the local up, and then writing the code again, that it's perhaps OK to actually complete it anyways. It's I am _not_ saying we should expose it in a UI (at least not until customers come with pitchforks asking for it :smile:), but if they did come along and ask for that we'd implement that with an option. Given that _also_ might fix this problem too, I can't help but notice the coincidence",0,0.5
+"3. Rather than having some additional way to shuttle info, this could just be checking the workspace kind. It's still comparing magic strings, but at least without the baggage of extra types",0,0.5
+"If we allow #code to continue, the relevant symbol still ends up marked referenced via #code -> #code -> #code -> #code. In other words, it's not only #code that will end up marking it referenced",0,0.5
+"So I think it's possible to alter #code instead of #code, though it may be a bit more awkward since #code takes a couple different kinds of nodes",0,0.5
+"And then we do still need to handle the other code path too. For that, nothing stands out as a great option. It feels like an #code ancestor check is possible, and similar to other checks that #code does already for example (#code), but depending on where we try to check, it could be an arbitrarily long ancestor walk",0,0.5
+"I guess the choice I'm leaning towards for this other code path would be a check in #code for the #code being a type only export declaration. This would be similar to the check for a property access expression and would go around the call to #code. Feels a bit gross, but we can know the exact ancestor to try to check from here",0,0.5
+"No, the feature is only set if an activity is created. (also there really should be comments about these different sections, maybe vs. sometimes, wtf?)",0,0.5
+"I don't think this is a terrible idea, but maybe one we do in another PR",0,0.5
+"Downloaded the branch and tested it. Yeah, this works fine. And scenarios like ""opening the search box while the tab switcher is open"" would probably fall under the ""play stupid games"" category. Fixing this is probably more effort than it's worth right now, so good enough for me",0,0.5
+#code does not propagate user's exception from whoever is awaiting the task,0,0.5
+"It could only throw if runtime is in some terrible state already. In such case, I'm not sure what is the correct recovery",0,0.5
+"As it is, the exception would bubble to main loop, as this is promise callback",0,0.5
+I at lest moved both #code and #code to #code,0,0.5
+I guess we have to account for the offline client here which is gross. Yet another reason to figure out #7805,0,0.5
+"_technically_ yes. But also technically, a caller could be stupid and set #code _before_ calling this. Or you could be me in the tests, and reusing the same #code across multiple calls, because you're too lazy to instantiate multiple. So I always think it's good form to have the handler manually set a result like this, so that _no matter what_, the result is initialized to a failure state, and only set to success when we know we're successful",0,0.5
+"I actually split it up into two parts - one for unpacking the json (#code), and another for doing the source/name GUID generation. I had to split it up like that because the profile doesn't actually have a reference to its own JSON. i could have theoretically had the profile re-create a blob of json and call the json parsing function, but that seemed insane",0,0.5
+Hmm,0,0.5
+Would it make sense having _stream on Connection as private protected? (probably a terrible idea),0,0.5
+Or have you considered a different name here or the base type? _streamWrapper on the base type,0,0.5
+Or at least a comment explaining why this is different from the base type _stream,0,0.5
+Same for new Pipe below,0,0.5
+That shouldn't be the case ... o_O the title should never be empty because it was getting set by #code,0,0.5
+oh crap i just realized i made you make a bad/annoying change,0,0.5
+"Ugh gross. OK, maybe don't put it in by default and let people override it for now and file a follow-on to make #code smarter",0,0.5
+"\<aside> Yea, this ""Capabilities"" section I've always hated. I think if you're outside MSFT, then you don't have any idea what to put here, and ""capabilities"" is a _terrible_ heading for it",0,0.5
+This PR fixes #127365,0,0.5
+"The added code follows the #code method recommended by [Windows Blog](#url), which is the minimal code necessary to implement this feature, and has _not been integrated into the Inno Setup script_. I hope that these codes can be used as an inspiration, and the VS Code developers would find out a sensible way to achieve this feature",0,0.5
+. Screenshot 2021-12-22 230721](ht,0,0.5
+. Screenshot 2021-12-22 230859](ht,0,0.5
+"The added codes are located at #code, including an action handler, a minimal sparse package manifest, build script and setup script",0,0.5
+"Because these are not integrated into Inno Setup, a manual build process is needed",0,0.5
+"Assume that VS2019 with desktop development workload is installed in the working environment. #code can make the sparse package and #code library file for handling menu actions, which are needed by Windows. It also self-issues a test certificate to sign the sparse package. (This maybe needs to be implemented in a more formal way.)",0,0.5
+"By executing #code 3 files will be put in the #code directory, namely #code, #code and #code. The certificate issuance and signature process will prompt to enter a password for 3 times, just enter the same password",0,0.5
+"Copy these 3 files with #code to anywhere inside an VS Code installation, and execute #code with administrator privileges. After restarting explorer.exe, you can see the option of ""Open by Code"" in context menus of files and directories",0,0.5
+"The menu action is handled by C++ code implementing the COM interface, while currently for older versions of Windows this is achieved by the installer to directly write into registry. So the COM implemention directly reads the keys from registry to present the icon and determine the executable file path, to keep it simple and stupid. Perhaps this approach needs further improvement",0,0.5
+"Localization has not been implemented yet, but by reading the registry, it should be easy",0,0.5
+Can you record short video,0,0.5
+Just me being stupid... :-P,0,0.5
+"One option is to pass the string and a variable number of arguments, and only smash them together in a string if we're called to walk the stack",0,0.5
+"I discarded it due to complexity for now. I could write up a performance benchmark and see how much it helps, but went with the simple and stupid thing for a RFC PR",0,0.5
+"Is a result task, it would allocate a #code",0,0.5
+Thought about adding an extension method called #code; but that seemed a terrible name,0,0.5
+wtf,1,0.5
+
