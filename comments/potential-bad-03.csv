@@ -1,498 +1,9 @@
-﻿Body
-"Hmm. Since pinned objects do not move, alignment would be fairly simple to arrange internally.  (compacting would be tricky but that is not an issue)
-
-I could just get objSize + 4096 bytes from the heap and then format that as 2 or 3 objects, with one being the actual result with aligned payload, which I would return, and others immediately becoming garbage, up for reuse."
-because now you're creating garbage.
-"> The problem is that the AppleCertificatePal.Dispose is likely not guaranteed to be called (ie. no finalizer on AppleCertificatePal and/or X509Certificate) which is pre-existing problem.
-
-Well, it's not normally a problem.  The SafeHandle itself is finalizable, so if the AppleCertificatePal gets garbage collected then the keychain handle can get GCd and then the finalizer runs, drops the refcount again, and everything's happy.
-
-But it looks like I used a Dictionary instead of a ConditionalWeakTable in the current tracker, so there's always a strong reference, so the current code never finalizes.  Whoops."
-It's `null` annotated but at this layer in the compiler it's hard to confirm that everyone who implemented has enabled nullable. That's why I was suggesting an `Assert` and nothing more. Simple check on return. Don't feel incredibly strong about it.
-"One part I'm having trouble deciding on is the comments for the failures. There are effectively three reasons that we have failures:
-
-1. Legitimate failures: consider there are several cases where we run verification with less than the full assembly set. For example missing corelib. Verification fails there essentially by design. 
-2. Bugs or limitations in PEVerify: due to the servicing nature of PEVerify these will never be fixed
-3. Bugs or limitations in ILVerify: these can be prioritize and fixed
-
-Can't decide if having comments tracking all three cases is worth it. For some reason it just stands out when I'm reviewing the change. Possible that is because this is calling out the ~100 or so times this happens out of the hundreds of thousands of tests that we have hence I'm just looking at the worst case. Means I won't notice in the typical flow of PRs through the repo. 
-
-Don't feel strongly about this but wanted to hear your thoughts a bit. #Resolved"
-"I have spent days trying to work out what is causing the 'BundleRelativePath' duplicate error - would be incredibly helpful to have the actual offending files in the output.  Anything I can do to encourage this.  I'm desperate enough to contemplate pulling the source, applying some version of this patch and running it."
-"While I can (and am) moving the extension count outside the block, since this is all really backed by JS, it's wholly possible for the members on the imported classes to change as they are executing. I seriously hope nobody ever does that, but considering the possibility makes this code more defensive.
-"
-"@github I think musl libc is an incredibly small niche, but I can try to set up a VM if you're concerned.
-
-I didn't use the official perf run to measure the performance - that was just a sanity check.  The actual measurements were from a harness driving tsserver and tracked the updateOpen time across 9 or so runs.  I tested on both Windows and Linux.  I can try to dig up the original numbers, if you're interested.  Anecdotally, when I was profiling midgard yesterday, I saw that realpathSync took 20% of total updateOpen time, whereas realpathSync.native took only 10% (on windows)."
-It's not incredibly relevant I think - maybe we'd use that for 🅱️lectron - but.... We'll probably get rid of this code next week 🤣 
-"I don't think matching on the query string would have offered a good behavior before. Query strings are not ordered, so the chances of matching on the query string would have been incredibly narrow.
-
-I think we can just make the change and make an announcement about it if we deeply care about it."
-"Will update the comment.
-
-What I meant was something like:
-
-CLR allows unsafe conversion from (O) to native int/uint. 
-The conversion does not change the representation of the value, but the value will not be reported to subsequent garbage-collection operations (and therefore will not be updated by such operations)
-
----
-In reply to: [125134566](https://github.com/dotnet/roslyn/pull/20548#discussion_r125134566) [](ancestors = 125134566)"
-Looks like there's the same issue here.  The finally block could end up seeing garbage data in each GCHandle that wasn't yet initialized if there's a failure in setting up the handles.
-"In the changes I'm making for SocketsHttpHandler (not this PR), I make the assumption that converting UTF16 code units (chars) to UTF8 bytes is guaranteed to be at most 3 bytes per code unit (to avoid calling into GetByteCount every time). @github Does that assumption hold? (as in worst-case every char is a 3-byte replacement character)
-
-The bounds (128 => 512) can be tightened further here in that case. I will extract these to consts."
+Body
 "```suggestion
         /// <remarks>The <see cref=""System.IO.Compression.DeflateStream.DisposeAsync()"" /> method enables you to perform a resource-intensive dispose operation without blocking the main thread. This performance consideration is particularly important in a Windows 8.x Store app or desktop app where a time-consuming stream operation can block the UI thread and make your app appear as if it is not working. The async methods are used in conjunction with the <see langword=""async"" /> and <see langword=""await"" /> keywords in Visual Basic and C#.
         /// This method disposes the Deflate stream by writing any changes to the backing store and closing the stream to release resources.
         /// Calling <see cref=""System.IO.Compression.DeflateStream.DisposeAsync()"" /> allows the resources used by the <see cref=""System.IO.Compression.DeflateStream"" /> to be reallocated for other purposes. For more information, see [Cleaning Up Unmanaged Resources](/dotnet/standard/garbage-collection/unmanaged).</remarks>
 ```"
-"I seems that when this condition is false, we'll have done the first visit (based on when-not-null state) for nothing. 
-I suspect we can re-organize the code to do the second visit (based on worst-case state) first, then decide if we need to do the first visit (based on when-not-null state). #Closed"
-"> Open to suggestions for a better way to do this.
-
-I'm not sure if it's ""better""... how about User-Agent sniffing ;-)
-
----
-
-But more seriously: why does the host platform leak into how the app behaves?  Is something host-platform specific leaking through our tooling?
-"
-"> is Date the worst built-in in Javascript?
-
-Looks like the answer is Yes."
-"Giving random names would add unnecessary garbage to emitted code. Since import order does not matter for AMD modules, reordering would make most sense.
-
-Changing order is a bit intrusive to original code, but amd-dependency comment is not a language feature, just a utility. Its also not documented in official materials, so I think violating some project principles is justifiable. 
-"
-"Seems like all the failures are in legs where we have heap verification enabled. These happen in my baseline build too, which is at 5d8f92435ebfeab67b41aba0bce12e1e8af3187e
-
-@github can you look over the failures in https://dev.azure.com/dnceng/public/_build/results?buildId=532465&view=ms.vss-test-web.build-test-results-tab and see if anything comes to mind?
-
-badbox1 at above commit, with GCStress=C, HeapVerify=1, on Linux arm32:
-```
-#0  0xf7074766 in DBG_DebugBreak () from /home/andya/artifacts/tests/coreclr/Linux.arm.Checked/Tests/Core_Root/libcoreclr.so
-#1  0xf7016d1e in DebugBreak () at /home/andy/repos/runtime1/src/coreclr/src/pal/src/debug/debug.cpp:405
-#2  0xf6f18d0a in WKS::FATAL_GC_ERROR () at /home/andy/repos/runtime1/src/coreclr/src/gc/gcpriv.h:37
-#3  WKS::gc_heap::verify_heap (begin_gc_p=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:35974
-#4  0xf6f1a8e4 in WKS::gc_heap::garbage_collect (n=0) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:18232
-#5  0xf6f0e35a in WKS::GCHeap::GarbageCollectGeneration (this=<optimized out>, gen=<optimized out>, reason=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:38297
-#6  0xf6f1055a in WKS::gc_heap::try_allocate_more_space (acontext=<optimized out>, size=<optimized out>, flags=<optimized out>, gen_number=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:14151
-#7  0xf6f2e55e in WKS::gc_heap::allocate_more_space (acontext=<optimized out>, size=<optimized out>, flags=0, alloc_generation_number=0) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:14587
-#8  WKS::gc_heap::allocate (jsize=<optimized out>, acontext=0x4636e0, flags=0) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:14618
-#9  WKS::GCHeap::StressHeap (this=0x429c70, context=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/gc/gc.cpp:37065
-#10 0xf6cda322 in _GCStress::StressGcTriggerPolicy::Trigger () at /home/andy/repos/runtime1/src/coreclr/src/vm/gcstress.h:293
-#11 _GCStress::GCSBase<(gcs_trigger_points)0, _GCStress::EeconfigFastGcSPolicy, _GCStress::CoopGcModePolicy, mpl::null_type>::MaybeTrigger (minFastGc=0) at /home/andy/repos/runtime1/src/coreclr/src/vm/gcstress.h:400
-#12 MethodDesc::DoPrestub (this=0xf599a438, pDispatchingMT=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/vm/prestub.cpp:1998
-#13 0xf6cd9e34 in PreStubWorker (pTransitionBlock=<optimized out>, pMD=0xf599a438) at /home/andy/repos/runtime1/src/coreclr/src/vm/prestub.cpp:1864
-#14 0xf6e27b24 in ThePreStub () at /home/andy/repos/runtime1/src/coreclr/src/vm/arm/asmhelpers.S:408
-#15 0xf6e27986 in CallDescrWorkerInternal () at /home/andy/repos/runtime1/src/coreclr/src/vm/arm/asmhelpers.S:79
-#16 0xf6d34e0e in CallDescrWorker (pCallDescrData=0xfffef200) at /home/andy/repos/runtime1/src/coreclr/src/vm/callhelpers.cpp:126
-#17 0xf6d34cc8 in CallDescrWorkerWithHandler (pCallDescrData=0xfffef200, fCriticalCall=0) at /home/andy/repos/runtime1/src/coreclr/src/vm/callhelpers.cpp:70
-#18 0xf6d353d6 in MethodDescCallSite::CallTargetWorker (this=<optimized out>, pArguments=0xfffef348, pReturnValue=<optimized out>, cbReturnValue=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/vm/callhelpers.cpp:546
-#19 0xf6c6b174 in MethodDescCallSite::Call (this=0xfffef2d4, pArguments=0xfffef348) at /home/andy/repos/runtime1/src/coreclr/src/vm/callhelpers.h:459
-#20 CorHost2::_CreateAppDomain (this=0x425f30, wszFriendlyName=0x425dd0 u""unixcorerun"", dwFlags=<optimized out>, wszAppDomainManagerAssemblyName=<optimized out>, wszAppDomainManagerTypeName=<optimized out>, nProperties=6,
-    pPropertyNames=0x423680, pPropertyValues=0x423848, pAppDomainID=0xfffef424) at /home/andy/repos/runtime1/src/coreclr/src/vm/corhost.cpp:703
-#21 0xf6c43344 in coreclr_initialize (exePath=<optimized out>, appDomainFriendlyName=<optimized out>, propertyCount=6, propertyKeys=<optimized out>, propertyValues=0xfffef440, hostHandle=0xfffef428, domainId=0xfffef424)
-    at /home/andy/repos/runtime1/src/coreclr/src/dlls/mscoree/unixinterface.cpp:215
-#22 0x00401f96 in ExecuteManagedAssembly (currentExeAbsolutePath=<optimized out>, clrFilesAbsolutePath=<optimized out>, managedAssemblyAbsolutePath=<optimized out>, managedAssemblyArgc=0, managedAssemblyArgv=0x0)
-    at /home/andy/repos/runtime1/src/coreclr/src/hosts/unixcoreruncommon/coreruncommon.cpp:450
-#23 0x00401400 in main (argc=<optimized out>, argv=<optimized out>) at /home/andy/repos/runtime1/src/coreclr/src/hosts/unixcorerun/corerun.cpp:149
-```"
-"Oh I see - `LayoutKind.Sequential` is the problem.
-
-I think using `LayoutKind.Explicit` is going to be incredibly error-prone.  And we will need separate definitions for 32-bit and 64-bit platforms due to IntPtr size, and padding/alignment requirements.  It's going to be impossible to maintain.
-If we can tell the linker to do substitutions on the types of the `RuntimeLayout` structs somehow, I think that would be better.
-"
-"Yeah, unfortunately I needed to close this. I realized that the change would actually alter the exposed semantics. With my change, code calling GetSpan would not get a span filled with default(T) and would instead get whatever garbage was there before. Although I think this should have been the semantics used when the type was introduced, I think it would be unwise to change that behavior after the fact.
-
-You folks may consider adding a new method, say Reset, which only resets the index into the array and doesn't clear the array to 0. This would give the perf without changing existing semantics.
-
-Thanks for checking."
-"here's the scenario I'm thinking about - when we are in a NoGC region, we could trigger a GC, the special thing we do is we adjust the budget after we've done the logic to decide whether we want to gradual commit or not. in `gc1` we decide whether we set `gradual_decommit_in_progress_p` to TRUE or not and at that point we haven't adjusted the budget for NoGC yet. tehn we return to `garbage_collect` and adjust the budget (to the big budget for NoGC). so we can come out of that GC with `gradual_decommit_in_progress_p` as TRUE and `decommit_step` can run."
-"At the same time, the worst case for the baseline algorithm is when it has to stop every character:
-![image](https://user-images.githubusercontent.com/523221/148045346-08fed119-fe20-406d-b912-1d6497e675c8.png)
-
-(the new one is 20x faster)"
-Yeah... at this point i think it's fine to offer in all argument cases.  It's unlikely anyone would notice.  And the worst impact is they type something that the compiler then tells you is not valid.
-"@github  I agree that the worst case looks bad -- but it is extremely unlikely. 
-The long wait time can only happen if the rename succeeds close to the 500th iteration for each file. That is, when there is a real failure with EACCESS - the extraction aborts after the first file (after 50s). 
-
-The case when recovery is triggered is rare, and is not a path to be optimized.  If the AV blocks for a long time after writing each file, then the recovery will need to wait for it. Still, it is not expected to take the full minute after each file is written. 
-
-While the wait time could be used to write other files that need to be recovered, the time gained is rather negligible, since the time to write these files is a few milliseconds, compared to the minute spent waiting for the AV.
-
-I actually tried out writing the change you suggested. Please take a look [at this diff](https://github.com/swaroop-sridhar/runtime/compare/1fcheck...swaroop-sridhar:2fcheck?expand=1). But I'm not sure it is work to take in that complexity in a servicing fix, given that this case is unlikely, and that such a case is hard to test. If you still think we need to take the change, I can add it on to the PR."
-"The heuristic is ""using a non-thread-safe instance concurrently is allowed to corrupt that instance, but nothing else"" (there's a little bit of fuzziness there, e.g. abusing MemoryStream over a provided buffer is going to corrupt the underlying buffer, but that's OK, you told it to).
-
-If there's concurrent access to this value, what's the worse that happens?
-
-* Inconsistent data? Don't do concurrent operations.
-* Weird exceptions? Don't do concurrent operations.
-* Double-return to an array pool, causing two future instances to have accidental concurrency problems? We should guard against that, since it was shared state corruption.
-* Double-rent from an array pool, leading to the pooled array being garbage collected? Don't do concurrent operations."
-@github https://github.com/egorbo/disasmo is the tool I use. It is incredibly useful in validating these little things.
-Converting 60.nnn into 59.nnn sounds like the worst possible option (others being 59.999 or 59.9999999). From the original code structure it looked like an oversight not an intentional decision?
-"Hey @github. I'm really sorry that we've frustrated you like this. You put together some amazing PRs, and so consistently, and you deserve better than that. I could try and give excuses for taking so long (SUI sprint, baby not sleeping, attempted overthrow of democracy), but at the end of the day, this is on **me**. I dropped the ball by not prioritizing reivews fast enough, and I'm sorry for that. 
-
-Trying to clear out the PR backlog has been a personal quest of mine for a while. Since coming back from the holidays, I've been more distracted and just haven't given it the time it needs. I'll do better. I wanted to get the team to give me a second qualitative opinion on this particular PR during our team sync this week, but that got cancelled, (and now that I think on it, next week's needs to be moved too, @github). I'll summon the rest of the team this morning to see if they can give some feedback (when they wake up). Broader though, I'll try and be better about tapping other members of the team in on community PRs, and faster, so in the future you're not blocked on just mine and Dustin's time.
-
-As far as PR scope goes, just keep doing what you're doing honestly. Big ones like this, like the startup actions, like some of the cmdpal work, they're all really impressive and end up moving the needle in big jumps. The small fixes are still great too! The selection dismissing for example - that's a great example of something quick that just needed someone's eyes to find the right place to fix it. 
-
-In my (very specific) opinion, the best thing you can do to get more timely reviews is _find someway to make my baby sleep_ 😆. Seriously though, there's a _lot_ of work to in the search dialog, and this PR is a great example of making that experience a lot better.  Now it's on **us** to make sure that your experience as a contributor is better.
-
-Thanks for sharing. We'll do better 😊"
-"I didn't follow for `is not true`: `true` is `(true, true, false)`, which the `not` negates into `(false, false, true)`.
-
-For `is false or null`, what is there to learn? Seems we'd get the worst case in both branches, no?
-
-Yes, examples would help. Thanks"
-"Off the top of my head, in top-of-my-head best-to-worst
-
-* `if (EVP_CIPHER_get_nid(type) == NID_rc2)`
-* Leave it here at the P/Invoke, and pass key.Length (RC2) or 0 (everything else).
-* This?
-* Make a separate P/Invoke for creating an RC2 cipher"
-"If we have a tree changed one, this would be another place it technically shoud be used. Or worst case, also update to listen to parse options changed and we'll clean it up when we get rid of that.
-"
-"Two problems here. First, this appears to be crossing abstraction boundaries. AnalyzerDriver is logically in a separate API layer built over the compiler. Second, a consequence of this change would be to cause garbage to be retained unnecessarily long. The creation of a fresh semantic model was intentional.
-
-If this was not intended for review, sorry.
-"
-"more unique name is good idea, maybe `mono_assert` ?
-With that, the worst could happen is that it would not be matched and not inlined. 
-We could add another dummier search for `mono_assert` as last step, if it can find some, it means the inlining didn't work for some reason and we could error on it."
-This will be incredibly useful for using inline types with the data object literal in Vue. Looking forward to this!
-"I'm not sure there's a security concern here, there's a limit to the number of operations you can force and its not controlled by the end user. If we want to make the implementation more ""scalable"" that's fine, but I don't think we should do anything in the name of security.
-
-There's only an issue when you can cause the work performed by the server to grow without growing your own work. (For example, if you have an input where you enter a number and the server calculates the factorial or fibonacci of that number as an example), but in general it's ok if you have to do more work to cause the server to do more work, even if the scale is different. At that point, its up to the server to establish the appropriate limits of what it considers acceptable.
-
-In this case, even if this can be 57K string comparisons in the worst case, I think it'll be fast enough that it won't matter. It might even be the case, that this way is even faster than doing a hash and a lookup on a Dictionary."
-"That's a good question as this routine would now produce a unique key. I think the ""worst"" that would happen in that case is we end up with a duplicate test, rather than the worst case now, being tests that should be unique, aren't, and the tests fail with somewhat obscure errors."
-"@github : Compared with Asp.net Core that deliberately has no `IStartup` for some reasons, do you have any reason to define `IStartup` for Xamarin.Forms?
-
-Seriously, I love your idea.  I really want your work above to be one of  Xamarin.Forms project templates in .net core SDK. 
-
-I also made a request [How to implement DI in Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples/issues/526)."
-"Suggestion?  Should the lock file contain the pid of the first process to create the file?  That way the message could print which process id started the build and what the current process id is.
-
-However, as we believe that this is largely for intra-IDE scenarios, that might not actually be incredibly useful..."
-I don't think it makes sense to optimize - in the worst case it will just create a useless instance.
-"> sorry 🤦
-
-Haha, don't worry about it. This is just one of the absolute worst bits of spaghetti code in the entire Terminal.
-
-> Do we have a task for UT coverage? I volunteer to do it (the moment I get a week with more than 5 minutes to write code).
-
-I actually caught this because I'm currently working on unittests over in #6842. The whole `TermControl` is getting split into 3 pieces, with the bottom two being fully unit testable. An unfortunate side effect is that I'll absolutely be blowing up any in-flight PRs that touch that area of the code, so maybe it's best to hold off for a bit. 
-
-Hopefully, I haven't regressed things too bad. I'll definitely be adding the list here to my ""to check"" list, but my initial PR will probably have tests for only a few of them. I'll add the rest to #7001  I'm hoping to get that submitted for review at the start of 1.9 and spend the entire cycle reviewing and iterating on anything that might have regressed. 
-"
-Note: shame for the non deprecated name that is worst.
-"@github why not? my opinion is consistency is good. but worst is it silently failing and do nothing only because it couldn't keep consistency. as bad as we crashing VS, because outlining couldn't figure out a region.
-"
-"These intersections do make the intellisense popups uglier, but they're required for correctness. 
-
-Could the solution to that ugliness be for the compiler to do some work simplifying intersections (and unions)? E.g., `'a' & string` could just be simplified to to `'a'` (or, more generally, `type & subType` could just be simplified to `subType`). Any efforts in that direction could also help with the bug I brought up in #11426. Would this be that hard? I'd kind of expect simplifying logical formulations to be a somewhat solved problem with theorem provers etc, though I haven't looked into it, so maybe that's incredibly naive. Or maybe it's way too slow to apply here in the general case. Still, specific simplification rules might be a good idea.
-"
-"Here's the worst case that I could come up with. Both `/*1*/` and `/*2*/` will jump to the same definition, I think.
-
-1. I made meaningful names.
-2. I split usages across multiple modules.
-3. I made two 'different' types that are structurally identical.
-
-(3) is the least realistic here, but this is confusing even if the types are the same. At scale, I think that this is a bug, but maybe not one worth fixing. I guess it boils down to how much excluding arguments hurts performance in our tests?
-
-
-```ts
-// @Filename: functional.ts
-export function id<T>(t: T): T { return t; }
-
-// @Filename: people.ts
-import { id } from './functional'
-export let bob = id({ name: 'Bob', age: 30 });
-// @Filename: usage1.ts
-import { bob } from './people'
-bob.name/*2*/
-
-// @Filename: cars.ts
-export let mazda = id({ name: 'cx-5', age: 2 });
-// @Filename: usage2.ts
-import { mazda } from './cars'
-
-mazda.name/*1*/
-```"
-"I would be incredibly confused if this happened to me.  Without having tried it, my guess would be that I'd expect the existing span to be uncommented."
-">I am wondering why we had the NakedThrowHelper in the first place.
-
-I can't remember for this specific handler but a lot of these weird helpers that do not seem useful are here because older versions of Windows did not do the right thing when you ran into combinations of behavior that only CLR did.
-
-(This is just historical info, not anything to do with this PR:  For example we definitely had issues where one thread raises an exception while another thread attempted to GetThreadContext/SetThreadContext.  The GetThreadContext/SetThreadContext would not happen atomicly and we could read half-torn contexts.  A lot of these weird helpers were working around those kinds of problems.  One implication of our old desktop code is that being in something like ""NakedThrowHelper"" would prevent us from redirecting that code because it's in this assembly helper and not in managed code and not having created a Frame...which would quietly work around a lot of issues because it simply stopped CLR from redirecting at problematic places...)
-
-In any case, I'm all for modernizing our old exception handling and redirection code.  Most of the issues in thread redirection were fixed in Win8.  The only danger here is that these kinds of failures would only happen under stress conditions and were incredibly hard to reproduce and even harder to debug.  The code tended to work 99.99% of the time so a simple test always looked clean, but under stress loads you would see crashes after 50 hours for example.  (And even though that's relatively rare, it's not rare for a platform...that's a bad reliability issue.)
-
-In any case, I don't see anything in this changeset that I'd be worried about, this is more of a blanket ""please be careful"" message.
-
-> Can this cleanup affect debugging or post-mortem diagnostic (Watson)?
-
-Post-Mortem:  I don't see anything I'd be concerned about here, but MDBG tests are good and I'd defer to Noah.
-Watson:  If post-mortem debugging works then watson should be fine."
-"It's OK to acknowledge that StringValues will rarely contain null array entries and not take the situation too seriously. I'm more concerned about the implementation having misleading `!` overrides in it. The `!` conveys that we've verified this value can't be null but the tooling isn't smart enough to follow our logic. This can be problematic for people maintaining the code starting from false assumptions.
-
-I'd rather convey our decision that ""it could be null but that's uncommon enough that we don't want to add special logic for it"" more literally in the code, such as changing:
-```
-var value = values[i]!;
-```
-To:
-```
-var value = values[i] ?? string.Empty;
-```
-
-This isn't a lot of extra effort and more closely conveys the semantics of the situation. It has the added benefit of failing more gracefully if there ever are nulls in the array."
-"> I think IndexOf will never return -1. 
-
-I don't trust things that much.  I would assume the worst and have the code check for that.
-
-Note: i don't think you need any of this if we use the GetWordSpan approach suggested above.  That would be my preference on how we code up this solution."
-I was seriously just thinking about that. I'm not positive I'm skilled enough in template-fu but I'll give it a shot
-"If the OS returns bogus buffer size, there is a high chance that something went horribly wrong and the buffer is filled with uninitialized data or there is a bad buffer overrun. Letting this method work on buffer with uninitialized data is the worst thing you can imagine.
-
-> Diagnostics would be difficult especially in term getting a reliable repro for the issue.
-
-You will be at least able to get a crash dump that captures the state of the process. If you ignore the problem, you will likely see some kind of corrupted data later and will have much harder time tracking it back to the root cause. "
-"> Seriously, on every branch the feature tests fail? Is there a problem with the CI and running from forks or something?
-
-We recently moved to new build agents, and unfortunately some of our tests are timing-sensitive. I'll book some work for us to shore them up. Sorry about that 😄 "
-"In the worst-case, this *can* force `checked` to reallocate or bulk-move all the elements a lot. Do we believe that won't be an issue?"
-"These tests use extended unicode escapes, which we only even parse when `target` is es6 or above. So we parse this test as garbage and emit corresponding garbage."
-"We seed the documentation for new APIs with XML comments.  Can you add XML comments for the new enum?  You can fill in the other comments while you're at it, e.g.
-```C#
-/// <summary>Specifies the behavior for a forced garbage collection.</summary>
-public enum GCCollectionMode
-{
-    /// <summary>The default setting for this enumeration, which is currently <see cref=""GCCollectionMode.Forced"" />.</summary>
-    Default = 0,
-
-    /// <summary>Forces the garbage collection to occur immediately.</summary>
-    Forced = 1,
-
-    /// <summary>Allows the garbage collector to determine whether the current time is optimal to reclaim objects.</summary>
-    Optimized = 2,
-
-    /// <summary>NEW DESCRIPTION GOES HERE</summary>
-    Aggressive = 3,
-}
-```"
-"@github I don't think we're opposed to it, but let's see what the change looks like; it's hard to get a feel of it without seeing the end result. Worst-case scenario, we'll just revert the commits
-"
-"The total regression across the 200K methods is 269 bytes. Looked a few of the worst cases and don't see anything that can easily be addressed.
-
-One somewhat related thing I spotted in `BenchmarksGame.KNucleotide_9:find(System.Byte[],System.Byte[],int,byref):int` is that when we move a non-loop block out of an inner loops, we may also move it out of the enclosing loop that it belongs to, and so we end up with messy layout in the outer loop. Note the ""return; always; return"" flow in the after picture below when we move BB08. Seems like we ought to be willing to put the block into the proper loop scope, even if there's no ""cheap"" placement there (that is, even if we have to add flow to branch around it... presumably one of the blocks has a branch targets outside proper loop, and we can reverse that branch to make room.
-
-cc @github 
-
-(or perhaps the issue is that we don't recognize the full extent of the BB02 loop because it has multiple back edges...)
-
-```
------------------------------------------------------------------------------------------------------------------------------------------
-BBnum BBid ref try hnd preds           weight    lp [IL range]     [jump]      [EH region]         [flags]
------------------------------------------------------------------------------------------------------------------------------------------
-BB01 [0018]  1                             1       [???..???)                                     keep i internal 
-BB02 [0000]  3       BB01,BB05,BB08        1       [000..004)-> BB06 ( cond )                     i Loop bwd bwd-target 
-BB03 [0001]  1       BB02                  0.50    [004..014)-> BB15 ( cond )                     i idxlen bwd 
-BB04 [0014]  1       BB03                  0.50    [004..005)-> BB14 ( cond )                     i hascall gcsafe idxlen bwd 
-BB05 [0003]  1       BB04                  0.50    [016..025)-> BB02 (always)                     i hascall gcsafe 
-BB06 [0004]  1       BB02                  0.50    [025..02F)-> BB09 (always)                     i idxlen bwd 
-BB07 [0005]  1       BB10                  0.50    [02F..044)-> BB09 ( cond )                     i Loop idxlen bwd bwd-target 
-BB08 [0006]  1       BB07                  0.50    [044..051)-> BB02 (always)                     i hascall 
-BB09 [0007]  2       BB06,BB07             0.50    [051..055)-> BB11 ( cond )                     i bwd 
-BB10 [0008]  1       BB09                  0.50    [055..05A)-> BB07 ( cond )                     i bwd 
-BB11 [0009]  2       BB09,BB10             0.50    [05A..05F)-> BB14 ( cond )                     i 
-BB12 [0011]  1       BB11                  0.50    [061..063)                                     i 
-BB13 [0017]  1       BB12                  0.50    [???..???)        (return)                     keep internal 
-BB14 [0016]  2       BB04,BB11             0.50    [???..???)        (return)                     internal 
-BB15 [0013]  1       BB03                  0       [004..005)        (throw )                     i rare hascall gcsafe bwd 
------------------------------------------------------------------------------------------------------------------------------------------
-
-*************** In fgDebugCheckBBlist
-*************** In optFindNaturalLoops()
-Recorded loop L00, from BB02 to BB05 (Head=BB01, Entry=BB02, ExitCnt=3)
-Relocated block [BB08..BB08] inserted after BB13
-Recorded loop L01, from BB07 to BB10 (Head=BB06, Entry=BB09, ExitCnt=3)
-
-*************** Before renumbering the basic blocks
-
------------------------------------------------------------------------------------------------------------------------------------------
-BBnum BBid ref try hnd preds           weight    lp [IL range]     [jump]      [EH region]         [flags]
------------------------------------------------------------------------------------------------------------------------------------------
-BB01 [0018]  1                             1       [???..???)                                     keep i internal 
-BB02 [0000]  3       BB01,BB05,BB08        1       [000..004)-> BB06 ( cond )                     i Loop bwd bwd-target 
-BB03 [0001]  1       BB02                  0.50    [004..014)-> BB15 ( cond )                     i idxlen bwd 
-BB04 [0014]  1       BB03                  0.50    [004..005)-> BB14 ( cond )                     i hascall gcsafe idxlen bwd 
-BB05 [0003]  1       BB04                  0.50    [016..025)-> BB02 (always)                     i hascall gcsafe 
-BB06 [0004]  1       BB02                  0.50    [025..02F)-> BB09 (always)                     i idxlen bwd 
-BB07 [0005]  1       BB10                  0.50    [02F..044)-> BB08 ( cond )                     i Loop idxlen bwd bwd-target 
-BB09 [0007]  2       BB06,BB07             0.50    [051..055)-> BB11 ( cond )                     i bwd 
-BB10 [0008]  1       BB09                  0.50    [055..05A)-> BB07 ( cond )                     i bwd 
-BB11 [0009]  2       BB09,BB10             0.50    [05A..05F)-> BB14 ( cond )                     i 
-BB12 [0011]  1       BB11                  0.50    [061..063)                                     i 
-BB13 [0017]  1       BB12                  0.50    [???..???)        (return)                     keep internal 
-BB08 [0006]  1       BB07                  0.50    [044..051)-> BB02 (always)                     i hascall 
-BB14 [0016]  2       BB04,BB11             0.50    [???..???)        (return)                     internal 
-BB15 [0013]  1       BB03                  0       [004..005)        (throw )                     i rare hascall gcsafe bwd 
------------------------------------------------------------------------------------------------------------------------------------------
-```
-The upshot of this is that we create an ""island"" block that is only ever jumped to and from (`IG09`)
-```asm
-G_M28147_IG08:        ; , epilog, nogc, extend
-       add      rsp, 32
-       pop      rbx
-       pop      rbp
-       pop      rsi
-       pop      rdi
-       pop      r14
-       ret      
-						;; bbWeight=0.50 PerfScore 1.88
-G_M28147_IG09:        ; gcVars=0000000000000000 {}, gcrefRegs=00000088 {rbx rdi}, byrefRegs=00000040 {rsi}, gcvars, byref
-       ; gcrRegs +[rbx rdi]
-       xor      eax, eax
-       mov      dword ptr [rsi], eax
-       jmp      G_M28147_IG02
-						;; bbWeight=4    PerfScore 13.00
-G_M28147_IG10:        ; gcrefRegs=00000000 {}, byrefRegs=00000000 {}, byref
-       ; gcrRegs -[rbx rdi]
-       ; byrRegs -[rsi]
-       mov      eax, -1
-						;; bbWeight=0.50 PerfScore 0.12
-G_M28147_IG11:        ; , epilog, nogc, extend
-       add      rsp, 32
-       pop      rbx
-       pop      rbp
-       pop      rsi
-       pop      rdi
-       pop      r14
-       ret
-```"
-"## Benchmark results
-
-Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenchmark/blob/471fa6822a5c5e5fecfc14196e54dbfe82a0f20c/ConsoleAppBenchmark/IndexOfAnyRunner.cs
-
-```cs
-[Benchmark]
-public int SliceInALoop()
-{
-    var haystack = _haystack;
-    _ = haystack.Length; // allow JIT to prove not null
-    ReadOnlySpan<T> haystackSpan = haystack;
-
-    var needles = _needles;
-    _ = needles.Length; // allow JIT to prove not null
-    ReadOnlySpan<T> needlesSpan = needles;
-
-    while (true)
-    {
-        int idx = haystackSpan.IndexOfAny(needlesSpan);
-        if (idx < 0)
-        {
-            return haystackSpan.Length; // length of final slice
-        }
-        haystackSpan = haystackSpan.Slice(idx + 1);
-    }
-}
-```
-
-|       Method | Toolchain | HaystackLength | LastNeedleMatches |            Mean |          Error |       StdDev | Ratio | RatioSD |
-|------------- |---------- |--------------- |------------------ |----------------:|---------------:|-------------:|------:|--------:|
-| SliceInALoop |  idxofany |              4 |             False |        18.33 ns |      28.879 ns |     1.583 ns |  0.64 |    0.06 |
-| SliceInALoop |      main |              4 |             False |        28.79 ns |      21.655 ns |     1.187 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |              4 |              True |        17.12 ns |       4.562 ns |     0.250 ns |  0.38 |    0.01 |
-| SliceInALoop |      main |              4 |              True |        44.52 ns |      12.959 ns |     0.710 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |             16 |             False |        65.40 ns |      16.572 ns |     0.908 ns |  0.68 |    0.02 |
-| SliceInALoop |      main |             16 |             False |        96.56 ns |      21.013 ns |     1.152 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |             16 |              True |        60.07 ns |       9.261 ns |     0.508 ns |  0.46 |    0.00 |
-| SliceInALoop |      main |             16 |              True |       131.59 ns |      10.865 ns |     0.596 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |             64 |             False |       236.47 ns |      38.295 ns |     2.099 ns |  0.63 |    0.03 |
-| SliceInALoop |      main |             64 |             False |       378.68 ns |     309.722 ns |    16.977 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |             64 |              True |       195.13 ns |      24.816 ns |     1.360 ns |  0.22 |    0.00 |
-| SliceInALoop |      main |             64 |              True |       878.64 ns |       9.714 ns |     0.532 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |            256 |             False |       901.88 ns |   1,002.251 ns |    54.937 ns |  0.62 |    0.04 |
-| SliceInALoop |      main |            256 |             False |     1,450.75 ns |      54.688 ns |     2.998 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |            256 |              True |       757.16 ns |      39.841 ns |     2.184 ns |  0.07 |    0.00 |
-| SliceInALoop |      main |            256 |              True |    11,050.08 ns |     419.823 ns |    23.012 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |           1024 |             False |     3,561.17 ns |   4,301.921 ns |   235.803 ns |  0.62 |    0.05 |
-| SliceInALoop |      main |           1024 |             False |     5,781.88 ns |   2,345.776 ns |   128.580 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |           1024 |              True |     2,988.88 ns |      11.492 ns |     0.630 ns |  0.02 |    0.00 |
-| SliceInALoop |      main |           1024 |              True |   167,176.09 ns |  29,612.891 ns | 1,623.182 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |           4096 |             False |    14,217.25 ns |  11,186.894 ns |   613.191 ns |  0.62 |    0.02 |
-| SliceInALoop |      main |           4096 |             False |    22,928.52 ns |   4,179.188 ns |   229.075 ns |  1.00 |    0.00 |
-|              |           |                |                   |                 |                |              |       |         |
-| SliceInALoop |  idxofany |           4096 |              True |    11,919.86 ns |     730.079 ns |    40.018 ns | 0.005 |    0.00 |
-| SliceInALoop |      main |           4096 |              True | 2,495,866.67 ns | 136,852.103 ns | 7,501.326 ns | 1.000 |    0.00 |
-
-## Discussion
-
-This benchmark tests `IndexOfAny` when called in a loop (a typical use case) for various haystack lengths, and it alternates whether the first needle or the last needle is discovered. In particular, this shows how the original `IndexOfAny` logic when called in a loop devolves into an `O(n^2)` operation if the last needle in the collection is the one that keeps being found, and how with the new logic the loop maintains an `O(n)` worst-case performance guarantee.
-
-Don't read too deeply into the benchmark showing that the new `IndexOfAny` logic consistently outperforms the original logic. This is because the benchmark is specifically written to ensure the needles appear very frequently within the haystack, which results in many calls to `IndexOfAny`, and the overhead of setting up the SIMD loop on each entry is showing up as a large constant factor. Ignore this for now, as the really important takeaway is the worst-case algorithmic complexity as discussed in the previous paragraph."
-"@github what are your thoughts about including an app context switch (default to the new behavior)? If there is a customer broken by this, they would still be able to receive the other fixes in the 6.0.2 patch. There is no need for a switch in main/7.0 as that is a voluntary update.
-
-Worst case, nobody uses it (I suspect nobody will)"
-"This seems sensible (conservative/safe to return the worst case state).
-I took a note in [https://github.com/dotnet/csharplang/issues/2201](https://github.com/dotnet/csharplang/issues/2201) to let LDM know.
-
----
-In reply to: [288212991](https://github.com/dotnet/roslyn/pull/35955#discussion_r288212991) [](ancestors = 288212991)"
-"i'm seriously surprised that we're even getting a bracketed anything from the parser here...
-"
-"> Where can we get a concise description of where TemporaryArray<T> is believed to be better than our traditional builder?
-
-@github it should always be better when the array will have to store 4 or less items.  This is for two reasons:
-
-1. the values are just stored on the stack, and no part of the TempArray will hit the heap.
-2. there is no contention/garbage possibility around pooling.   this is because nothing is pulled (or returned) to a pool until you hit 5 elements.  This avoids those costs, as well as the (real) garbage cost that arises with pooling when concurrent returns happen and one returned item it overwritten by another returned item.
-
-You can practically think about it as if this gives you a small stackalloc'ed scratch area for lots of small-collection scenarios.  Only once you go past that scratch area do you have the same perf costs that you'd have today with normal ArrayBuilder."
-"The [documentation](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.marshal.getfunctionpointerfordelegate) for `GetFunctionPointerForDelegate` says:
-
-> You must manually keep the delegate from being collected by the garbage collector from managed code. The garbage collector does not track references to unmanaged code.
-
-This is a Mono-specific codepath, so do different rules apply?"
-I think it would be better to have a `Dispose` method on Compilation to break these cycles and allow things to be garbage collected.
-"> Do you mean a conforming libc implementation isn't supposed to change the values in response to these functions, or do you mean these functions aren't recommended for use but if someone uses them the values may be changed?
-
-Sorry for being unclear. The latter.
-
-You can call these functions to change the value. This means you have the capability to change user (e.g. you're `root`).
-
-It's best to call them from apps that are in tight control of their resources to limit security issues due to leaking resources of the privileged user.
-
-I'm not aware of apps that do this besides those specifically meant to change user (like `su`, `sudo`). That is the only thing they do.
-
-That's why I seriously discourage doing this in a .NET app.
-
-We could, if it makes a difference, avoid caching for `root` (`egid = 0`), since that is the most expected privileged user (which can use these calls)."
-"IMO, `Application.Current.Dispatcher` is similar to `Device.BeginInvokeOnMainThread()`: They both assume that the app can only ever have a single window.
-This is fine (and convenient) for the majority of apps, but it is also a trap for the minority of developers who build multi-window apps. The worst scenario is when that developer takes a dependency on a library that uses these APIs.
-
-Based on that, I think that:
-- This API should never be used by libraries (including MAUI itself and the toolkit). An idea would even be to put something like `#if DEBUG`, add the `[Obsolete]` attribute to at least warn MAUI devs.
-- We should move this singleton `Dispatcher` to a place that has a name that says ""Use this only if you are sure that this code will only be used in single window apps"" (something more explicit than a comment in the documentation that most devs will not read)."
-Won't this double the garbage since we have to make the byte[] then copy it into a new byte[] inside ImmutableArray?  I think we used byte[] (even though it's mutable) to avoid that.
-"> Would it be possible to add target namespace, target folder, and api client class name parameters to the tool?
-
-That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <https://github.com/dotnet/aspnetcore/blob/main/src/Tools/Extensions.ApiDescription.Client/src/build/Microsoft.Extensions.ApiDescription.Client.props>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal.
-
-> Why is the Option for CodeGenerator not using a generic type to pass the enum and leave the parsing to system.command line?
-
-I don't remember the full history. @github made the most recent changes to the tool, @github wrote it, and @github did the VS side of things and designed the service that provides some of the versioning. @github may also have context."
 "@github Seriously dude, Rome wasn't built in a day. We're working on it, one step at a time. We're tracking MRU tab switching over in #973, so please have that discussion in that thread. "
 "> 6.3.1 Country Name
 A value of the countryName attribute type specifies a country. When used as a component of a directory name, it identifies the country in which the named object is physically located or with which it is associated in some other important way.
@@ -937,7 +448,7 @@ So for a longer summary:
 - The 3x commit issue is solved
 - My implementation had a couple of bugs, but they are fixed by now."
 "It makes the full queue benchmark slightly slower, and the one-at-a-time benchmark slightly faster. The effective change is that garbage collection happens as the queue empties, rather than as it fills back up. This shifts work earlier, and into times where the server has more capacity. Good change."
-The semantics of clone have been a garbage fire since .NET Framework 1.0 😄 
+"The semantics of clone have been a garbage fire since .NET Framework 1.0 😄 "
 "this is very costly.  each `+=` will generate a new string (and the previous one will be garbage).
 
 1. see if we have a helper that produces one string out of `classifiedText.Runs` elsewhere.
@@ -1391,7 +902,6 @@ Also in this PR:
   </tr>
 </table>
 </details>"
-
 "```suggestion
                 var lowNibbles = Ssse3.Shuffle(Vector128.CreateScalarUnsafe(tupleNumber).AsByte(), s_shuffleMask);
 ```
@@ -1455,7 +965,7 @@ Hrmm... i took a look, and CTS doesn't even have a finalizer afaict... So i'm no
 Second, the pattern `buffer[scan++]` forces the runtime to dereference _scan_ into a temp, perform the bounds check, increment the temp value, write the temp value back to the _scan_ reference, and finally dereference _buffer_, __all in that order__. This is because the runtime cannot disprove that _scan_ and _buffer_ don't actually reference the same memory address, so operations cannot be reordered. (Search ""C++ pointer aliasing"" for more info.)
 
 By reordering operations so that the dereference from _buffer_ occurs before the write back to the _scan_ reference, this allows data access to be pipelined and makes more efficient use of the CPU."
-"I'm seriously not changing these explicitly; why is the autoformatter renaming these?"
+I'm seriously not changing these explicitly; why is the autoformatter renaming these?
 "If there's an exception while setting up the buffers, it looks like iovCount will be maxBuffers.  Previously the finally block would see the array of handles initialized to null, but now with it stackallocated it could contain garbage.  Maybe that's related to the CI failures you're seeing."
 "Downclocking can be pretty severe on 14nm parts right now:
 From Anandtech's article [Sizing Up Servers: Intel's Skylake-SP Xeon versus AMD's EPYC 7000 - The Server CPU Battle of the Decade?](https://www.anandtech.com/show/11544/intel-skylake-ep-vs-amd-epyc-7000-cpu-battle-of-the-decade/8)
@@ -1600,7 +1110,7 @@ I get these numbers:
 
 So, the non-generic case and the value type case stay basically the same, maybe a smidgen better.  The generic case regresses by 15%.  But that is a super extreme.  While it's unfortunate the lack of inlining contributes such overhead here, I'm tempted to say it's acceptable. (Though it'd be wonderful of course if JIT improvements could remove it in the future.)"
 "The native implementation you added currently doesn't write to the status info on error, which means a caller could see statusInfo containing garbage. This function should respect the `out` and guarantee that statusInfo is initialized, either ensuring that the P/Invoke always does so or here default initializing it (`statusInfo = default;`) before calling into the native code."
-"actually I don't set these in gc1 'cause the code that sets it in gc1 is only defined for regions but I still wanted to be able to assert that they are not garbage values so I init-ed them in init_gc_heap."
+actually I don't set these in gc1 'cause the code that sets it in gc1 is only defined for regions but I still wanted to be able to assert that they are not garbage values so I init-ed them in init_gc_heap.
 "> So this means we're registering one per language
 
 You can re-register an editor factory as many times as you want. because its keyed off of the guid it will still only create one and have one registered. So worst case scenario we register it twice, if there are both C# and VB projects. But we get the advantage of only taking over editorconfig files if a package loads for a programming language we understand"
@@ -1639,7 +1149,7 @@ Basically, the method being modified `GetCGroupMemoryUsage` is only called (thro
 "@github are you manually updating these logger messages? I used a code-fix to do this in the past because it's far too easy to introduce errors / typos with such a large number of messages and it's incredibly difficult to review these in a PR. https://github.com/pranavkm/LoggerConvert has a version of the codefix, perhaps you want to give that a go (in a separate branch so you don't lose these changes)?"
 "Actually, for the ArgIterator, it is worse, as we create an instance for every function call to generate GCRefMap. So we would repeat the classification over and over and also possibly create a lot of memory garbage unless we can somehow get the current thread's CorInfoImpl (or propagate the current CorInfoImpl down to the place where we create the ArgIterator instance). I'm not sure how reasonable that would be."
 "FWIW, getting a builder is pooled, so if you're using `null` just to avoid allocations or overhead, getting an ArrayBuilder instance is incredibly cheap. #ByDesign"
-"amazing! (seriously).  awesome job!"
+amazing! (seriously).  awesome job!
 "Thanks for pointing out the leak!
 
 > Is this to capture the listener from onCancellationRequested?
@@ -1650,7 +1160,7 @@ Yes.
 
 You are right, it does not need to be disposed here as the disposables inside of `CancellationTokenSource` are not tracked.
 It is very important to always dispose the event subscription though, otherwise the tooling introduced by this PR will recognize that as leak (even though garbage collection does take care of it)."
-"Can the `Uri` constructor throw (like if you pass in a garbage URI)?"
+Can the `Uri` constructor throw (like if you pass in a garbage URI)?
 "> if value doesn't have a null terminator?
 
 This is all interop. If you give it garbage native data, that's on you, and behavior is undefined, just like with strlen.  Most likely it'll crash.
@@ -1732,7 +1242,7 @@ So for a longer summary:
 
 1. see if we have a helper that produces one string out of `classifiedText.Runs` elsewhere.
 2. if not, then use a PooledStringBuilder so you can do this without garbage."
-"I'll try it out. Hopefully it works because `PrimaryWorkspace` was the worst part of this."
+I'll try it out. Hopefully it works because `PrimaryWorkspace` was the worst part of this.
 "I can't tell what you're advocating for; your comments contradict each other.
 
 The pattern you're citing from MSDN is exactly what's already happening in that current code, except that their version sets the `disposed` flag to true after executing the `if(disposing)` block instead of before. (Whether it's better to set that flag before or after is a separate discussion, but I believe that ""before"" is the safer option.)
@@ -1793,7 +1303,6 @@ We also decided that there’s not a great reason to limit this to `jsx: preserv
 We also need to make sure that we gracefully error on `<Capitalized:component />` and hopefully not emit total garbage with `--jsx=react`, since this doesn’t make any sense.
 
 Thanks for your patience! I’ll be keeping an eye out to make sure this is ready for 4.2 and to help with whatever you need."
-
 "> I am simply curious why we need to keep the usage of DiagnosticSource with Activity?
 
 While I wouldn't encourage most users to do it, there are still some scenarios that can't be accomplished any other way. We also haven't yet replicated every relevant piece of useful guidance onto the official docs for the people who aren't using DiagnosticSource with Activity. I am making a bet (and perhaps it is a bad bet) that the people who find this doc and choose to keep reading it after seeing the obsoletion warning at best will learn something useful and at worst they'll decide it was a waste of their time to read and forget what they read in it."
@@ -1842,7 +1351,7 @@ This just seems much simpler and saner for me.  it feels like right now we're tr
 
 
 "
-"note: as per my conversation with @github  i think the case that VB is handling is incredibly esoteric.  I would be ok with having VB just checking for that case and *not* offerring invert-if if it helps simplify the rest of the algorithms here.  I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it."
+note: as per my conversation with @github  i think the case that VB is handling is incredibly esoteric.  I would be ok with having VB just checking for that case and *not* offerring invert-if if it helps simplify the rest of the algorithms here.  I think it's a practically irrelevant case in practice and i would be fine with no invert-if for it.
 "> typically from Program Files
 
 Wait, seriously? I thought it was supposed to be using the one restored in the repo under `<repoRoot>\.dotnet`. Seems like a bug in our test infrastructure / something we should file an issue for if we are expecting / using the system's global install."
@@ -1878,15 +1387,15 @@ It recommends not taking any lock, but only because it can stop other finalizers
 "Yes, the typical case for this is that something is wrong in the setup and either the process doesn't get created at all or the command executed but fails instantly. The worst outcome of this is a potential missing warning, if we wanted to be more accurate we can attach to the exit event handler and do it there, but I don't think its worth the additional complexity"
 "Setting the length to zero clears the file, so you could end up with garbage at the end of the file if the new file is shorter than the old one."
 "We are, but I have been mostly focusing on C#, as a reultVB side might not be well thought out and needs more work. Given this is an experimental feature, it's probably OK worst case we just disable it for VB for now."
-"I also don't like it but I wasn't aware it's considered legacy now. There is nothing in the docs that says so: https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose"
-"Is this seriously the only way to do `isMember` with a `string_view`?"
+I also don't like it but I wasn't aware it's considered legacy now. There is nothing in the docs that says so: https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
+Is this seriously the only way to do `isMember` with a `string_view`?
 "But what if we have 10,000 preprocessor keywords? :smile:
 
 More seriously, not sure if easier to just make the sortText be ""_0"" + name; that way they stay together due to the common prefix but are otherwise sorted in whatever way they should be sorted."
 "This is going to be ""expensive"" for production code. I think we can just insert `null` at the first correct position.
 
 We already have what could be considered ""garbage"" data in the rest of the span due to `SkipLocalsInit` and so we rely on `\0` correctly marking the end."
-"This follows the disposing pattern - https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose"
+This follows the disposing pattern - https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
 "![image](https://user-images.githubusercontent.com/16246502/142055246-88902307-b8b9-4a9b-8b60-48bd2e472045.png)
 
 More seriously though, should we just expose this / state in general?"
@@ -1923,7 +1432,7 @@ I've implemented what I think is roughly the correct fix, but I want to add some
 If i go to option and turn on decompilaiton .i should get a prompt.  that prompt should be remembered forever.  Best case is that it's associated with my account and roamed.  Worst case it's remembered on the local machine.  But i can't understand any sort of design that ties this to somethinglike the solution or to navigation.  That makes no sense on any level, and does not give the user any sort of expected experience around decompilation that is sensible.
 
 The fallout of that is the types of experiences i've been running into :-/"
-"use ArrayBuilder to make a temp buffer to copy the values into that we can then report (then free the temp buffer).  This way we're not just producing lots of garbage here."
+use ArrayBuilder to make a temp buffer to copy the values into that we can then report (then free the temp buffer).  This way we're not just producing lots of garbage here.
 "I found this code in particular so incredibly hard to understand that I changed it into simple C code.
 In order to understand the existing code you have to understand that:
 * `til::point` has a constructor for `COORD` (`options.coordCursor`)
@@ -1980,7 +1489,7 @@ So no, that's not a scenario I've ever seen nor would expect to ever see and we 
 ```
 
 That I expect to perform *much* better, since the long queue length setup before this method runs would only be ""flipped"" occasionally instead of on every single dequeue operation."
-"@github that's what I'd recommend given it's incredibly easy to verify it's correct and you presumably want to merge today. But I've no objection to this (if perhaps someone else reviews)"
+@github that's what I'd recommend given it's incredibly easy to verify it's correct and you presumably want to merge today. But I've no objection to this (if perhaps someone else reviews)
 "`workload install` is installing `6.0.2-mauipre.1.22102.15` version for the packs, which it gets from the mono.toolchain manifest for `6.0.300` .
 ```
   ** workload install **
@@ -2079,8 +1588,8 @@ internal static class MySpanExtensions
 ```
 </details>"
 "What's keeping this rooted?  You're probably going to need to add this Timer as a field to TimeoutState, such that the Timer ends up rooting itself.  Otherwise, it looks like if garbage collection kicks in during the operation, the timer could get collected and never fire.  We should ensure we have a test for that."
-"can you make these all `{ get; } =`.  there's no point allocating this garbage over and over again."
-"I'm wondering if we should just do the work to find the `MasterDetailPage` again here inside this `if` statement. I don't like the idea of holding a reference to a child page inside of a `NavigationPage`. Seems like we might get a memory leak at best and an `ObjectDisposedException` at worst if the hierarchy changes and that reference doesn't get updated soon enough."
+can you make these all `{ get; } =`.  there's no point allocating this garbage over and over again.
+I'm wondering if we should just do the work to find the `MasterDetailPage` again here inside this `if` statement. I don't like the idea of holding a reference to a child page inside of a `NavigationPage`. Seems like we might get a memory leak at best and an `ObjectDisposedException` at worst if the hierarchy changes and that reference doesn't get updated soon enough.
 "Oh. Yikes. When it was broken in the debugger, it looked like the string was full of random memory. I guess I assumed that the view was empty, but secretly actually filled with garbage."
 "> Can you clarify this? Can the new service return a different type of info that the feature layer can decide what to do with? the LSP versoin can dump them, the VS version can use them.
 
@@ -2202,7 +1711,7 @@ How does that sound?
 @github @github can you take a look at https://github.com/dotnet/runtime/pull/72051#issuecomment-1195587152 and confirm whether you really want the serialization support removed?"
 "Max message size is the worst case scenario, we can do way better than that, limiting the amount of rendered components to those generated as part of an HTTP response by the app. Which will be a way lower number, more predictable and app dependent, so the app decides on a per request basis how many components are acceptable to render. with MAX message size being the only limitation in the worst case scenario."
 "Unless someone objects, I'm going to assume the worst case here would be silently compiling against 5.0.x (newer) versions of these packages when servicing. Will file an issue about testing that `%(RTMVersion)` metadata is respected. That test will likely be a bit painful since we won't be building our targeting pack when servicing and checks will require looking at all references in our implementation assemblies for the relevant assemblies then checking their `[AssemblyInformationalVersion()]` attributes against the expected package version."
-"I seriously do not know why these keep changing."
+I seriously do not know why these keep changing.
 "At this point we are O(n^2) in every case, not just the worst case. "
 "I think it was a pretty common issue in tests which were hijacking threads to do garbage collection.
 
@@ -2512,7 +2021,7 @@ Though TBH I didn't have a clue what I was doing and it's entirely possible that
 the problem is not only in paddings (which might contain garbage values) but also with e.g. floats - `RuntimeHelpers.Equals(float.NaN, float.NaN)` currently returns `true` which is not correct. It also, I guess, compares gc refs by pointers. Not sure anyone actually uses this method and it probably can be just deprecated (the docs don't mention the pit falls)
 
 "
-"I added a commit to do something minimal that I think solves the problem in the worst case. Please review and let me know if I missed something about the existing code."
+I added a commit to do something minimal that I think solves the problem in the worst case. Please review and let me know if I missed something about the existing code.
 "this needs documentation, or a better name.  It reads really weird to have a ResettableDelay.CompletedDelay.  Specifically, you are exposing a ResettableDelay that can't actually be reset and which will not ever call a timer.  So it's both not something to reset, and it's not a delay.  So the name itself is incredibly strange and indicates something wonky."
 "don't allocate or add to this list unless ArrangeNativeChildren == true, otherwise we generate unneeded garbage
 "
@@ -3549,7 +3058,7 @@ If this becomes an issue in the future, I suspect we might need to introduce som
 1. Enter is being sent through as typing '\n'.
 2. Commit is being sent through as typing \0
  #Pending"
-"Can we have this merged? It's incredibly frustrating"
+Can we have this merged? It's incredibly frustrating
 "Similarly, if `androidRuntime` is null, something is *seriously* FUBAR. I'd rather have the NRE from something ""impossible"" happening."
 "Changing this to draft for now because I just discovered a very strange bug:
 
@@ -3642,7 +3151,7 @@ Allowing this change in behavior would make existing methods dumb wrappers aroun
 // Pretty much the whole call stack gets inlined into the caller at this point.
 public bool Equals(StringSegment other) => this.AsSpan().SequenceEquals(other.AsSpan());
 ```"
-"Seems like this regressed our worst cast TLS scenario that closes the connection every request. Looking into it."
+Seems like this regressed our worst cast TLS scenario that closes the connection every request. Looking into it.
 "> @github, what do you think about adding {M}IBC to glossary. To my understanding:
 > 
 > ```diff
@@ -3690,7 +3199,7 @@ The nullability annotations for the type say that `null` isn't supported in cont
 FWIW it's unfortunately more complicated than that; `tsc`/`tsserver` make use of a number of different watching methods for different types of files and directories (which makes it difficult to consider switching to something else with different tradeoffs), and adding a third party watcher would introduce a dependency to the typescript package (currently, it has none).
 
 Also of interest may be #43790 (and its linked issues), and that VS Code is actually removing all of its watchers in favor of `@parcel/watcher`."
-"@github draft of the struct layout idea that we talked about.  I'm not sure why `System.Threading.Thread` is being preserved.  Even if I add garbage fields they are kept for some reason.  (`Mono.MonoDomain` is different - garbage fields there got trimmed)"
+@github draft of the struct layout idea that we talked about.  I'm not sure why `System.Threading.Thread` is being preserved.  Even if I add garbage fields they are kept for some reason.  (`Mono.MonoDomain` is different - garbage fields there got trimmed)
 "I'm looking at the impl of `GetSegmentCount` and maybe I'm missing something but I don't understand how this can work for regions -
 
 ```
@@ -3713,7 +3222,7 @@ Also of interest may be #43790 (and its linked issues), and that VS Code is actu
 for regions you can no longer enumerate all SOH segments by starting from gen2's start seg - you'd need to go into gen0/1's segments separately. also for regions it's not inconceivable at all that the count could be more than 4096. "
 "This seems incredibly specific, what's the reasoning behind it?"
 "Maybe.... this isn't incredibly common to do. All of our guidance for static files is to put it ahead of routing/mvc. This would only come up in a very specialized use case like this. "
-"Nit: But just have it be a regular (get / set) property on the base type. This pattern isn't incredibly useful and I've been changing it in other places I've come across it."
+Nit: But just have it be a regular (get / set) property on the base type. This pattern isn't incredibly useful and I've been changing it in other places I've come across it.
 ">it is context and scope.context.
 
 That is exactly what i said.  If i saw: 
@@ -3781,12 +3290,12 @@ Sure this PR makes it easier to raise multi item changes on a commonly used coll
 "This have made me think that this code might not be 100% correct, since I'm not 100% sure I should mock with the `_spaProcess` instance when running in the context of the finalizer. That said, I don't think that matters since this object is managed by the DI container and will always be disposed, and the worst case scenario is an that an exception is thrown and caught within the finalizer, which I think it's fine.
 
 I'm not going to change it since that would require me to retest all the templates across OSs again."
-"This may be the most useful comment ever (seriously)."
+This may be the most useful comment ever (seriously).
 "> The 3.1 [submodule update](https://github.com/dotnet/aspnetcore/pull/39903) already got merged, will that be an issue?
 
 Probably not. Worst case is the change will result in an official build that flows old versions into dotnet/sdk. Even that doesn't seem like a big deal. Agreed @github❔"
 "note: in the external process we do like spinning them all off at once.  It's good core utilization.  Whereas in the VS process we don't like that as the amount of garbage it can produce can impede things.  In other words, the VS process is optimized for latency, the server process for throughput.  GC's really impact the former by causing spikes. "
-"Actually the right thing to do here is to just remove the whole `teardown` section and simply never set `container` to `null` and let the garbage collector do its thing."
+Actually the right thing to do here is to just remove the whole `teardown` section and simply never set `container` to `null` and let the garbage collector do its thing.
 "My figuring was that the read around the Sleep would not need any barriers or volatility because the Sleep would have to imply a barrier if necessary, and for the write the only reason for volatile is to make sure it happens after the clock read, which I don't think is actually necessary, but doesn't hurt at all in this case, and the write is immediately followed by a wait that would imply a barrier where necessary. Even in the worst-case situation, it seems like the order of operations demanded by the code would be ensured by cache consistency at least. Is there a theoretical case where the intended behavior would not work on ARM?"
 "> Its a tad bit weird to use ""visual"" navigation when all you see is one pane, but presumably the person knows what their layout under the zoomed pane looks like.
 
@@ -3799,7 +3308,7 @@ In fact, worst case (when the first char is non-ASCII), this code reduces to the
 "
 "I thought I left a comment, but looks like it was deleted or I forgot to submit it...
 Yeah, in the worst case, `getTypeAtLocation` will return an `errorType` with no call signatures and the code action will fail to be reported (and won't delete code or anything of that nature)."
-"the new array+member approach feels like it creates unnecessary garbage in a path that may happen a lot."
+the new array+member approach feels like it creates unnecessary garbage in a path that may happen a lot.
 "Worst case scenario using `CopyTo` for a small number of bytes can result in a 20-30% regression. I'm sure `CopyTo` already does unrolling of its own, but I would guess that both `Slice` and `CopyTo` waste a few CPU cycles in bounds checking etc. that makes it relatively inefficient for short byte sequences."
 "> Would you be able to share the actual telemetry data and/or the source of this data?
 
@@ -3858,7 +3367,7 @@ StringText.cs is currently 103 lines (without this PR). And as I mentioned, this
 >  I don't believe we do this elsewhere.
 
 That doesn't mean it's complex though. 😳"
-"There is an almost 10% difference between the best and worst check times in compiler-with-unions. I'm going to run the perf tests again to see if that persists."
+There is an almost 10% difference between the best and worst check times in compiler-with-unions. I'm going to run the perf tests again to see if that persists.
 "> > We might need to make some changes to VB though - since we can't link GeneratedNameParser.vb to C# code. Perhaps the best would be if both of these parsers were moved to Microsoft.CodeAnalysis and written in C#.
 > 
 > Yea. Worst case we end up exposing something with MEF and link appropriately to each. It seems doable though, and I'm glad we have `GeneratedNameParser` to handle this
@@ -3872,7 +3381,7 @@ This would be my preferred approach. expose a service and export it for both lan
 I understand the ambition behind this proof of concept, but I don't think now is the right time. Things have been incredibly busy getting releases out the door this month as-is, and large changes have introduced issues (such as the issue fixed in #66176) that have been time-consuming to investigate and address while trying to hit release dates. We're not in a position to take in large changes like this unless there's a pressing need that justifies it and the acceptance criteria of the change are very clear.
 
 @github / @github is there a pressing need here, or could this wait for reconsideration after Preview 4?"
-"@github please look into the incredibly high number of warnings in your internal build. What gives?"
+@github please look into the incredibly high number of warnings in your internal build. What gives?
 "seriously minor nit: consider ordering from ""widest to narrowest scope"".  so CompilationUnit, NamespaceDecl, TyepDecl. "
 "This is the rejection sampling loop which produces a uniform distributiion in the interval [0, maxValue) with no bias whatsoever. Whereas the previous approach relied on floating point multiplication, and therefore I think probably exhibited some bias; certainly I would say that use of floating point arithmetic makes it harder to reason about whether it is biased or not.
 
@@ -4073,7 +3582,7 @@ ensure that `java-source-utils.jar` isn't corrupted, and our CI
 builds become more reliable.
 ```"
 "seriously, i tried so hard not to p off the spell bot"
-"Do we care that hash won't be disposed in the (rare) case of CryptoPool.Rent throwing?  Presumably the worst case is it just gets finalized?"
+Do we care that hash won't be disposed in the (rare) case of CryptoPool.Rent throwing?  Presumably the worst case is it just gets finalized?
 "Good day! I hope you all and your families are safe? The Covid-19 situation is really getting worst all over the globe, we all pray to almighty god to strength us, so that we can stay alive to testify, I brought good news that everyone can benefit from and also help the privilege, if you are a good kindest person, that also want to make the world a better place to live, now the freemasonry society are selecting the kindest people that are interested to join the society, and the good part is that freemasonry society they don't involved their self into evil things, they are not like the illuminati society, freemasonry society believe in god, they are grouped of people that come together to evaluate people and others original condition, once you become a member of the society they have sitting amount of benefit that we be given to you as the new member, and you should use 10% of the benefit to assist the privilege, and summit the credential to the lordship, I urge you if you have interest, find the official contact address below, you can be one of the lucky random, everyone has inside them a piece of good news, the good news is you don’t know how great you can be! How much you can love! What you can accomplish! And what your potential is, stay strong, stand up, have a voice.
 
 WhatsApp; +31 687329133
@@ -4109,7 +3618,7 @@ But that does not seems right as the format seems to be slightly different.
 "<insert appropriate meme here for @github asking crazy questions>
 
 More seriously, when generators are ran the IDE needs to compare results from one run to the next. I naively used == to compare the instances, so..."
-"thios feels incredibly confusing.  why would we need to know things like isGeneratedRazorDocument.  Having Razor leak into the diagnostic engine *in any way* feels... really really bad.  @github ?"
+thios feels incredibly confusing.  why would we need to know things like isGeneratedRazorDocument.  Having Razor leak into the diagnostic engine *in any way* feels... really really bad.  @github ?
 "But srsly, why have a garbage path? 
 "
 "> Are there scenarios where somebody might subclass these types and set MetadataToken to a garbage value? 
@@ -4183,7 +3692,7 @@ cc @github @github @github"
 "Hmm... yes, the api is the worst. (but it does ... work... blech.) It represents the hierarchy of parsing the signature, and it actually allows for substitution inside of the signature without breaking stuff (which I must say is somewhat miraculous).
 
 However, the goal was to require the modopt for these to be at the very beginning of the modifier stream before any non mod opts. Fortunately, that will result in the index following a consistent pattern. I need to do some research to understand the actual pattern you need to actually work with. I hope I can get back to you today."
-"This should be stronger than an Assert. Since we're guarding against Windows giving us garbage we should guard against this being invalid as well. We should take min of numBytes and buffer.Length below."
+This should be stronger than an Assert. Since we're guarding against Windows giving us garbage we should guard against this being invalid as well. We should take min of numBytes and buffer.Length below.
 "```suggestion
         _fontFaceMap.emplace(_ToMapKey(weight, style, stretch), std::move(fontFace));
 ```
@@ -4196,7 +3705,7 @@ I think it is technically allowed to publish complete garbage, as long as it is 
 "> Worst case we end up exposing something with MEF and link appropriately to each
 
 Good idea, I think that would work fine."
-"@github I'm ok with making any experimentation if you can see large perf potential benefit. Make sure to write some reasonable benchmarks covering all common scenarios. Technically such TextWriter doesn't really need any changes to the current code as you can technically use it in your own code so perhaps even if this finds useful for very narrow scenarios it might be more of a blog post rather than change and people mind find it useful. I'd suggest start with opening an issue explaining more the idea and if you got some time for experimentation go ahead and share your code and benchmarks used (ideally open an issue once you got some results). Worst case scenario we will not find any benefit and not change anything and close the issue."
+@github I'm ok with making any experimentation if you can see large perf potential benefit. Make sure to write some reasonable benchmarks covering all common scenarios. Technically such TextWriter doesn't really need any changes to the current code as you can technically use it in your own code so perhaps even if this finds useful for very narrow scenarios it might be more of a blog post rather than change and people mind find it useful. I'd suggest start with opening an issue explaining more the idea and if you got some time for experimentation go ahead and share your code and benchmarks used (ideally open an issue once you got some results). Worst case scenario we will not find any benefit and not change anything and close the issue.
 "An update: I tested this change with other benchmarks in the lab (plaintext, json, fortunes) and, as in the websocket case, observed no throughput or latency impact when running them.
 
 To summarize where we are, we've seen some allocation reduction with this change (based on the data above), but no signs of any other impact--positive or negative--on the benchmarks that have been run. We'll get more coverage once this is merged and gets picked up by all the automated benchmarking runs. If we see any regressions at that point, we could back out the change. How does that sound?
@@ -4452,7 +3961,7 @@ After:
 | Latency 90th (ms)      | 3.50      |
 | Latency 99th (ms)      | 13.70     |
 ```"
-"wait... do we seriously have no VB tests for thsi feature?  @github ??"
+wait... do we seriously have no VB tests for thsi feature?  @github ??
 "> It passed the tests, but due to my experiment on HasTopLevelNullabilityImplicitConversion, I now think this alternative is likely incorrect. More on that in next comment.
 
 Yes, the proposed alternative fails to distinguish T? from T. When T is replaced with a non-nullable type, we are dealing with types of different nullability. The ValueCanBeNull helper assumes the ""worst"" case and ignores the fact that T could actually be not nullable. These functions should consider both scenarios.   
@@ -4485,7 +3994,7 @@ You can use the MONO_LOG_LEVEL and MONO_LOG_MASK environment variables to get ve
 
 Interesting.  Does it just end up returning some garbage register value or something?"
 "This should be changed to slice the char span to the exact used length,  and then not also pass in a count.  Otherwise,  you might be looking at garbage in the helper call,  e.g. with the LastIndexOf."
-"I'd rather inline this function than generate garbage for each call."
+I'd rather inline this function than generate garbage for each call.
 "> We should remove (or at least seriously consider removing) the special cases for Razor as a prerequisite pull request
 
 @github This work is out of scope of this PR, and I don't believe it complicates this change - we just pass an additional flag to method that tries to fetch cached document diagnostics."
@@ -4511,8 +4020,8 @@ If I do this to every icall, then I can add a `private IntPtr garbage` field to 
 
 "
 "if 3rd party converters are stageful, it's garbage in, garbage out. works for me"
-"TL;DR: **No observable change** in perf for the identified worst case with this change."
-"called once and cached?  or called multple times?  we may want to consider hte former to prevent excess garbage.   #Resolved"
+TL;DR: **No observable change** in perf for the identified worst case with this change.
+called once and cached?  or called multple times?  we may want to consider hte former to prevent excess garbage.   #Resolved
 "I think this comment can sound very misleading - we definitely want to take large pause time very seriously 😄 I think you meant to say the amount of decommit we want to do is kind of proportional to the elapsed time inbetween GCs, as in, if there's only a little time elapsed we wouldn't want to spend a lot of paused doing decommit. perhaps say that instead."
 "We are seriously hitting the point of saying, ""wow, that's a lot of parameters!""
 
@@ -4528,7 +4037,7 @@ We should not do this. This will make it incredibly expensive.  Effectively, the
 "`delete this.text` would be the worst you could do. V8 will deoptimize the whole object and your optimization becomes a deoptimization.
 
 If you really need to optimize here (I doubt that), you can use `Object.definePropery` to override the getter with the computed value"
-"I would have had to duplicate the infrastructure in the other server project. These tests weren't supposed to be here in the first place. There's a workitem to clean them up. And @github will be incredibly happy about it."
+I would have had to duplicate the infrastructure in the other server project. These tests weren't supposed to be here in the first place. There's a workitem to clean them up. And @github will be incredibly happy about it.
 "Again,
 > This isn't incredibly urgent. But, might be nice to get it into ~~2.1.28 if ProdCon~~ _3.1.15 if dependency flow_ hasn't reached this repo by the time the changes are approved and validated.
 > /fyi @github 
@@ -4543,7 +4052,7 @@ In reply to: [486774228](https://github.com/dotnet/roslyn/pull/47567#discussion_
 https://github.com/dotnet/roslyn/blob/28b4508467cdc2ad2af7cb2f52c74cc73515a7e8/src/Workspaces/Core/Portable/Workspace/Host/Status/IWorkspaceStatusService.cs#L46
 
 This minimizes the impact of telemetry collection to a worst-case scenario of slower solution opening, while allowing us to expand the collection in the future if we both 1) demonstrate that it is not expensive and 2) demonstrate that analysis is in place such that the additional data is likely to directly result in a better future product."
-"yay you used my fun template garbage"
+yay you used my fun template garbage
 "I converted the test but...
 
 > Another advantage is that the test would be executed on all our platforms without any other work.
@@ -4640,7 +4149,7 @@ This is already behind the FEATURE_HW_INTRINSICS flag and so it's not something 
 Once a new platform is adding SIMD support, however, it's nicer (IMO) for all the places they should be touching up and handling to get flagged so they can iteratively work through them and ensure the quality is consistent with what everything else supports.
 
 Worst case, they change this to an explicit `// TODO-TheirArch` so they can explicitly track it to be handled later. Without the check it's something that may easily get missed or forgotten about since"
-"Just following the [standard pattern](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-disposeasync) on this."
+Just following the [standard pattern](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-disposeasync) on this.
 "It's not clear to me why `64-bit tzcnt` is limited to 64-bit platforms.
 
 On 32-bit this will ""at worst"" be a single compare against zero and a `bsf` which I'd expect should be faster than two `AllBytesInUInt32AreAscii` checks?"
@@ -4661,7 +4170,7 @@ The runner in this case should be incredibly simple. It would load library on `C
 Consider visiting the site at the same moment that a new version is being deployed. Half the assemblies are the old versions, then the second half comes from the new versions. This likely means a broken app, or at least undefined behaviour. Without the hash check this combination of files would get cached and that user would be stuck with the errors. With the hash check, the initial load fails which is good as it prevents the undefined behaviour, then on the next visit the user gets and caches a working state. 
 
 Same general situation if you have multiple front end servers and no client affinity. If you’re incrementally rolling out updates, we want to detect the case where you load an inconsistent set of resources because the requests were handled by an incompatible collection of servers. "
-"The settings in the release/5.0 branch include all target branches. We're probably fine there because doc-only updates during servicing are incredibly rare."
+The settings in the release/5.0 branch include all target branches. We're probably fine there because doc-only updates during servicing are incredibly rare.
 "this causes GC pressure as Builder  becomes garbage that the GC has to reclaim.  "
 "@github so I see 3 options to solve this
 
@@ -4747,7 +4256,7 @@ During the last status sync it was indicated that things should be generally wor
 > I'm looking into it. Does this need to go in Preview 5?
 
 The plan was for this to be in P5 yes. Worst case I'll need to remove the DIM and manually declare the implementation for all 20 types."
-"Nit: Test names like this are the worst - `TestMissingForObjectCreation` would be much better."
+Nit: Test names like this are the worst - `TestMissingForObjectCreation` would be much better.
 "> What I'd prefer is for a revert of dotnet/runtime#69404 or a follow-up change that includes HostFactoryResolver.cs in the .Sources package.
 
 My bad. Should have said ""HostAbortedException.cs"".
@@ -4757,7 +4266,7 @@ My bad. Should have said ""HostAbortedException.cs"".
 I'm not sure that would help in the GetDocument.Insider project. That intentionally has very old and very few dependencies and targets `netcoreapp2.1` and `net462`. The point of using Microsoft.Extensions.HostFactoryResolver.Sources is to keep those dependencies lean and leave the ""inside man"" lib compatible w/ a very broad swath of ASP.NET Core web sites.
 
 Please place `HostAbortedException` in the .Sources package instead. Worst case, use `#if` to decide between an exception in the Abstractions library and something in the .Sources package (maybe an optionally-defined inner `class`)."
-"Yeah.  let me see if i can find a better way to do this that produces less garbage."
+Yeah.  let me see if i can find a better way to do this that produces less garbage.
 "That would only be possible if a user callback takes a vastly inordinate amount of time to run. `TickCount` overflow would not impact the check done here, the check done here is on the difference between current tick count and start tick count, that signed value would take a lot more to overflow, enough so that IMO it would already be incredibly unreasonable for user code to cause such a thing to happen for it to be worth considering here."
 "If we lose link  on ```ContentPage43941``` then Garbage collector can invoke finalizer of ```ContentPage43941``` at any time. Therefore test behaviour can be different each run. Sometimes counter can be zero after test ```for``` loop.
 
@@ -4896,8 +4405,8 @@ So its quite bad whatever it is..."
 </tbody>
 </table>
 "
-"@github thanks for testing with w32tm tool. I think at least we have confirmed the expected behavior and what would be the worst-case scenario which still be acceptable considering these are rare scenarios. We should be good to go."
-"Did I seriously forget a semicolon?"
+@github thanks for testing with w32tm tool. I think at least we have confirmed the expected behavior and what would be the worst-case scenario which still be acceptable considering these are rare scenarios. We should be good to go.
+Did I seriously forget a semicolon?
 "Coming back to this, I think the pattern should be something like this, based on:
 * [implement-both-dispose-and-async-dispose-patterns](https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-disposeasync#implement-both-dispose-and-async-dispose-patterns)
 * [Utf8JsonWriter](https://github.com/dotnet/runtime/blob/035b729d829368c2790d825bd02db14f0c0fd2ea/src/libraries/System.Text.Json/src/System/Text/Json/Writer/Utf8JsonWriter.cs#L297-L345)
@@ -5215,7 +4724,7 @@ d8 00007f7b`ea89d840 00000000`00000000     ld_musl_x86_64_so!pthread_exit+0x277
 </details>
 
 The segfault is due to the `MethodTable*` being null when inspecting an object during a GC, so I'm inclined to agree with @github that we've found a GC Hole."
-"How did you update this? Can you try and get the private members of the components that we ship to show up? That breaks the current E2E test in ProjectTemplates. It would be incredibly dope if we updated and enable that."
+How did you update this? Can you try and get the private members of the components that we ship to show up? That breaks the current E2E test in ProjectTemplates. It would be incredibly dope if we updated and enable that.
 "Is it possible to add a blanket exclusion for decimal -> `enum` name pseudo-changes? Worst case would be a central list of cases to ignore, probably all involving `[AttributeUsage]` and `[EditorBrowsable]`."
 ">the connection could theoretically be restarted and stopped by the time this is run causing this to resolve a subsequent call to stop() incorrectly.
 
@@ -5274,7 +4783,7 @@ Returns, in a specified time-out period, the status of a registered notification
 "Yeah. It would require surgical changes to the workhorse method on `AsciiUtility` to do the early exit here. It's definitely feasible, but I'm not confident I could get those changes through code review. Especially since the current implementation is good enough and does only a tiny amount of extra work.
 
 Related: `Utf8Utility`'s transcoding workhorse routines perform bounds checking on the write buffer all over the place. Those checks show up in profiles. We could eliminate those checks entirely if we knew ahead of time the write buffer was large enough to hold the worst case output."
-"seriously on the fence about asking for some named structs."
+seriously on the fence about asking for some named structs.
 "ok.  i see that now (wasn't showing in the diff since that read already exists).  However, i think we need a *lot* more comments here.  Your comment is accurate.  We capture... but don't catch the exception.  But taht simply explains what is happening, and not at all 'why'.  I say this honestly, but i have no idea why it's not right to propagate teh exception.  If we're reading... and it fails with an exception... why not propagate it?  
 
 I view this code as being as critical as AsyncLazy.  In other words, it's incredibly subtle, but utterly paramount to get right.  Because of htat subtlety, i think these pieces need a *huge* amount of explanation as to what's going on.
@@ -5346,7 +4855,7 @@ It's perfectly ok if we say something like ""this is a reasonable guess for a wo
 "> If these are running stably for you, I think we should just unskip all these. At worst we have to disable them again
 
 Yep, thats what I did yesterday. They failed, and in the non-streaming case: https://dev.azure.com/dnceng/public/_build/results?buildId=858041&view=ms.vss-test-web.build-test-results-tab&runId=27467314&paneView=debug&resultId=165225"
-"this is consing up a bunch of garbage. Might be an OK place for mutating the array instead?"
+this is consing up a bunch of garbage. Might be an OK place for mutating the array instead?
 "> Does it affect the merge duplicate phase? Would two methods compiled under different modules be different now?
 
 I was worried about that, but this won't contribute to determining if a function is ""unique"". The only thing used is the ""method identity"", which is (1) the IL code, (2) the method signature + calling convention + CorInfoOptions + hot/cold region + jit flags + ISA flags.
@@ -5433,7 +4942,7 @@ BTW, I'd argue that 0-RTT is extremely important, as it's a primary feature of Q
 "I feel inclined to forgo the blocking here and propagate the exception only if the task has already finished. Kind of best-effort, but not worth the complications. In the worst case scenario, the content exception will only get logged.
 @github, @github any input on this?"
 "I've never been a fan of updating TFMs in libraries for the sake of updating TFMs. We should only update at the point where we have a clear benefit coming from the new version that we can't easily have otherwise, and at that point we should seriously consider multi-targeting."
-"Unrelated to this PR: it looks like current logic for x64 might end up allocating just 128Mb for the initial memory in the worst case"
+Unrelated to this PR: it looks like current logic for x64 might end up allocating just 128Mb for the initial memory in the worst case
 "Ah, I missed that parameter 🤦‍♂️ 
 
 It might actually be nice to allow all extensions here in the future, since we can no longer seriously claim to believe we’re in a world where people only import things we know how to analyze. This doesn’t even account for `declare module ""*.css""` pattern ambient module declarations. But that’s for another day. Thanks!"
@@ -5466,8 +4975,8 @@ Tomas"
 
 I think the potential downside here isn't too great, since the strings already need to be in the C# intern table for that to happen. So the worst possible scenario is every C# interned string ends up copied into the JS heap, but it's somewhat unlikely. AFAIK the only way that could occur is if they call String.Intern, so they can just Ctrl+F their codebase for that."
 "@github Our plan was to do this in early 7.0 previews, but after we were sure 6.0 was stabilized and on its path toward GA. If we merge this eagerly, then any changes/fixes to the file stream strategy work might have conflicts between `main` and the `release/6.0` branch(es). But I'll leave it to your discretion whether or not there's any risk in that. Worst case, we'd have to make a fix directly into `release/6.0` that doesn't land in `main` first."
-"Please do not parse error message strings.  It's incredibly brittle and sets a very bad precedent.  If you need important compiler information then the best way to get it is for the compiler to just expose an API that provides it.   #Resolved"
-"That's the only settings page that there is not a `ms-settings` link for. Seriously. I checked. I wanted to put it in our documentation. :smile:"
+Please do not parse error message strings.  It's incredibly brittle and sets a very bad precedent.  If you need important compiler information then the best way to get it is for the compiler to just expose an API that provides it.   #Resolved
+That's the only settings page that there is not a `ms-settings` link for. Seriously. I checked. I wanted to put it in our documentation. :smile:
 "I was just looking at the numbers in CI and compared it with other builds. In most cases I see  improvements but based on the hitting the network the numbers vary slightly accross builds. That said, this should provide confidence that the regression introduced in the previous attempt is now addressed. 
 
 Thoughts on the numbers:
@@ -5570,7 +5079,7 @@ Note that we have had feedback here in the past for other features.  I'm fairly 
 
 No... :)   To be clear, it's specific to the user experience.  This is a feature (and i don't care how it's implemented), and it's one taht could have a poor experience for the user *regardless* of fix vs fix-all.  That's because instead of leniently assuming the worst when we have errors, we conservatively assume the best.  i.e. we assume we can just ignore the error information if the compiler doesn't exactly know what's going on.  Now, that's happens to be because this impl decided to sit on top of IOp.  But tha'ts an implementation detail.  The critique would hold if you'd written this the same way on SemanticModel :)
  #Resolved"
-"The lack of member tracking in arrays was particularly problematic for this change. Then again this code is essentially paassing around large arrays of mutable `struct` values. It's the worst possible case for nullability. This doesn't make me want to push for array index tracking (that's really expensive) but it does make me think that if we were doing this again we would've chosen a different approach. Possibly wrapping this array in a simple `struct` wrapper that could've handled many of these assertions."
+The lack of member tracking in arrays was particularly problematic for this change. Then again this code is essentially paassing around large arrays of mutable `struct` values. It's the worst possible case for nullability. This doesn't make me want to push for array index tracking (that's really expensive) but it does make me think that if we were doing this again we would've chosen a different approach. Possibly wrapping this array in a simple `struct` wrapper that could've handled many of these assertions.
 "Shouldn't the `Log` property be set to `log`?
 
 Relatedly, do we actually want `log` to be a `TaskLoggingHelper` and not an `Action<TraceLevel, string>`, as is done elsewhere?  That way if `log` is null, we can default it to `Console.WriteLine()`s as a ""worst case we need to log *something*"" scenario."
@@ -5582,7 +5091,7 @@ I would remove it in that case : )
 > I think the broader question here is whether we should be relying on implementation details like this in libraries
 
 I would evaluate these on a case-by-case basis. If they are important optimizations I don't mind commiting to them but DiagnosticSource has the extra challenge that users can upgrade their dependency to any future version of it via the out-of-band NuGet package. So any dependency this code takes on its implementation becomes a requirement that every future version of the DiagnosticSource library must maintain."
-"same comment about garbage"
+same comment about garbage
 "It's not thread-safe, I just assumed in the worst case scenario the FCall would be repeated, but no harm done? From what I can see, other caching mechanisms for `RuntimeType` also do the same, with the cache potentially being initialized multiple times in case there's a race condition. I assume that that QCall is just returning the fixed address of the right JIT allocation helper, so there's no allocations involved and no concerns in case the call is made multiple times? 🤔"
 "> Library uses asserts internally to validate state and conditions. This is a debug/checked build assert that should be excluded in release builds
 
@@ -5592,12 +5101,12 @@ Why exclude them in release builds? If the state and conditions being valid is i
 
 I think it's better to add the API without nullable annotations. They would get covered once the entire assembly is annotated. It could make it harder to review later otherwise."
 "I think that's ok.  Ideally we could get the error=>string mapping into a near-term 16.xx release, but even if we couldn't, I'd rather have a better experience here for the longer term.  After all, one of the primary purposes of having this block in place is to provide a better user experience that's explanatory of the situation than what would happen if you could successfully attach but find yourself unable to meaningfully debug and not know why.  And if it is ""Unable to attach. Unknown error: 0x8xxxxxxxx"", worst case that 0x8xxxxxxxx becomes searchable and we can ensure the right information is exposed in docs about what that message means."
-"Remove this function? Not incredibly useful now."
-"this is incredibly confusing :)"
+Remove this function? Not incredibly useful now.
+this is incredibly confusing :)
 "I feel like this comment needs a bunch of expansion. The ""the hash codes are the same"" check here I guess is only mattering if _while_ we're building this list the entries are already being garbage collected, and having one garbage collected entry with the same hash code means just as little as two, so mind as well go with the more efficient one. (Ideally we'd trim it back down to none but that's harder.) But this can't ever be hit once we're doing the contains checks, since that would always be using the strong variant.
 
 ...right?"
-"Worst case: this results in 26.5 KB of static cached data that never gets cleaned up during the lifetime of the application. Is this acceptable? Is it worth pointing out as a comment?"
+Worst case: this results in 26.5 KB of static cached data that never gets cleaned up during the lifetime of the application. Is this acceptable? Is it worth pointing out as a comment?
 "> What's the crossover point where cost of these operations is more expensive with the list?
 
 Depends on the header names. Assuming a reasonable distribution of names (`string.Equals` can exit early), comparing `main` vs this `pr`, `main` is about equal at ~128 headers and faster after ~150. (Time to add all the headers and do one NonValidated enumeration)
@@ -5801,12 +5310,12 @@ Yea which is why in one version of the conversation I'd almost recommend that we
 
 
 Are there scenarios where deterministic dispose doesn't get called and dispose is only going to be called by the finalizer?"
-"Maybe code got garbage-collected?"
+Maybe code got garbage-collected?
 "this unfortunatley isn't enough.  There are other constant locations (like attribute arguments).  Until C# has constant interpolated strings, this wouldn't work there.
 
 *That said*.  This is a refactoring, so the worst that will happen is the user will be offered something non-viable.  THat's not the end of the world.   We do have a helper though that can be useful here called IsConstantExpressionContext.  You could use this to make sure this feature isn't offered in those places."
 "you have to initialize this, otherwise it's filled with garbage"
-"This is seriously BODGY too."
+This is seriously BODGY too.
 "I don’t actually know if there’s a way to disable the event completely on the receiver side. We already have throttle_func as sort of “disabling” it, but that’s not good enough. The WinRt event is just so expensive that we can’t afford. 
 
 I think @github’s idea is actually how UI framework usually works, for example that’s basically how “Runloop” in iOS works. The problem here is that we have two independent “framework” here, one being the DxRenderer and related, the other being XAML. And the main way for them to communicate was through WinRT events. I see this as another consequence of tight-coupling of renderer.cpp (where the render thread lives) and DxEngine. After #10615 (seriously guys, take a look and you can see how effective that PR is) and future PR lands, we should be able to use the “hooking into the render thread” way to do something interesting. Of course the UI thread limitation in XAML still need to be taken into consideration. "
@@ -5896,7 +5405,7 @@ Worst case, we might need a runtime update containing dotnet/runtime#40950. I tr
 "No. Mocks are challenging for maintainability because they do not show up as implementations of classes and interfaces, so they are prone to unintended deviations from adherence to API post-conditions. Loose mocks are the worst case scenario because they also don't show up as _references_ to the API which changed.
 
 Stubs are preferred to mocks because they are true implementations of the API, but one step at a time..."
-"This should be good. If there are rules that don't match anything. The worst I think that can happen is that it will be a warning - but I don't think that reaches the user..."
+This should be good. If there are rules that don't match anything. The worst I think that can happen is that it will be a warning - but I don't think that reaches the user...
 "ah. Yes. Like lambda but v2 hahaha. But seriously though, can you give this one a more descriptive name too?"
 "1. Is anybody currently creating an array of this type?  It doesn't appear to be the case.
 2. Do we need to support incredibly suspicious behavior for something we're not using?
@@ -5910,12 +5419,12 @@ auto oops = buf;
 ```
 
 If we don't need it, we should remove it.  If we do need it, it needs to be designed appropriately.  What we have isn't designed, and will break badly when accidentally misused."
-"My guess here is GC is garbage collection. Looks was referring the passed `pBuffer` is not managed memory anyway. but of course I am not sure. I think we can just delete this line."
+My guess here is GC is garbage collection. Looks was referring the passed `pBuffer` is not managed memory anyway. but of course I am not sure. I think we can just delete this line.
 "Well, this was an interesting experiment, but after finishing the sort code, I found the best performance test is our type baselines. I just ran `time gulp runtests-parallel` and looked at the amount of CPU time spent. It's 10% slower even skipping the less-important-to-sort types. So I don't think this is a viable approach. Probably the only thing that would work is to sort during union creation.
 
 Note that the type baselines are a worst-case test of performance. Lots of projects wouldn't slow down that much, but really big ones with a lot of types generated across modules would resemble the type baselines. "
 "That would be reasonable. There's no need to finish parsing, the rest is garbage anyway."
-"it is seriously weird to try to figure out ```default(SyntaxTokenList) : null as SyntaxTokenList?```.  Is this just:   ```v.Parent is ForStatementSyntax ? default(SyntaxTokenList) : default(SyntaxTokenList?)```?"
+it is seriously weird to try to figure out ```default(SyntaxTokenList) : null as SyntaxTokenList?```.  Is this just:   ```v.Parent is ForStatementSyntax ? default(SyntaxTokenList) : default(SyntaxTokenList?)```?
 "But we know from experience that these sort of UI blocking things *do* seriously impact the experience.  That's why we worked so hard in so many components to make them non-blocking.  
 
 Can you point to any discussions where we *both* decided we wanted to go JTF *and* we now decided it was ok to do UI thread work in these cases?
@@ -6357,11 +5866,11 @@ Then we will go with just a `source` property.
 Also you might have missed my comment here https://github.com/microsoft/vscode/pull/119075/files#r595427028
 
 @github I am looking into potential firing of mutliple events for each notification shown when the hide notification action is exectued [here](https://github.com/microsoft/vscode/blob/isidorn/notificationsTelemetry/src/vs/workbench/browser/parts/notifications/notificationsCommands.ts#L162). The problem I hit is that the NotificationsController is unaware of current notifications shown. Which I need in order to compute notification ids and fire mulitple events."
-"otherwise it gets initialized as from pointer+length pair every iteration of the loop (worst case)"
+otherwise it gets initialized as from pointer+length pair every iteration of the loop (worst case)
 "> Otherwise, the resources it is using will not be freed until the garbage collector calls the CancellationTokenSource object's Finalize method.
 
 Honestly, if this is the case, I'd be 100% ok not disposing then at all. It just adds complexity to lots of scenarios that we could avoid if we know the GC will just handle this for us"
-"I would add a test that verifies this is the behavior on AOT platforms (ie it doesn't throw and doesn't return garbage values)"
+I would add a test that verifies this is the behavior on AOT platforms (ie it doesn't throw and doesn't return garbage values)
 "> ... but only include its results if it's completed by the time task (1) is completed ...
 
 @github Is there a way to turn this off? The IDE keeps adding ""features"" to reduce the accuracy of IntelliSense lists and they are the absolute worst.
@@ -6381,8 +5890,8 @@ Honestly, if this is the case, I'd be 100% ok not disposing then at all. It just
                information.
 
 With weak ZipCrytpo encryption, the compressed data is encrypted as well, but our underlying implementation is not checking that and it results in essentially extracting garbage data. One could argue that this inconsistent behavior is a bug and that attempting to extract weak encrypted entries should also throw. I expect we'll reevaluate those behaviors if/when #1545 is addressed."
-"Incredibly hot path.  And the common case is to be ascii.  this avoids one check+branch in char where it checks if is latin first."
-"FWIW: this is a very important scenario.  I've included notes on this topic in the linked issue.  But this can seriously affect partner teams.  And i'm also concerned about how it will make things feel for C#/VB #Resolved"
+Incredibly hot path.  And the common case is to be ascii.  this avoids one check+branch in char where it checks if is latin first.
+FWIW: this is a very important scenario.  I've included notes on this topic in the linked issue.  But this can seriously affect partner teams.  And i'm also concerned about how it will make things feel for C#/VB #Resolved
 "> What happen when calling ICU API which ends up failing because of OOM and then calling it again (or calling other ICU API)? does ICU will retry to load the data or it just fails all the way?
 
 I believe it depends on the API. Though, from testing, I found that for most APIs the ICU will try again to load the data again and if success, then it will continue fine.
@@ -6653,7 +6162,7 @@ My gripe is having to having to ask users to reference the VS threading package 
 
 I think it is important to have predictable performance. I do not think it is ok for one context switch in a bad spot to affecting performance characteristics for the duration of the process. Getting 5 or 10 consecutive context in bad spots - I can live with that affecting performance characteristics."
 "In UTF-8, 1 char worst-case expands to 3 bytes. 1 byte does not expand to 3 chars."
-"... and then we will be freeing garbage here."
+... and then we will be freeing garbage here.
 "Nit: This (and the two following asserts) are only valid if the input was originally a string. If the input could ever be a `ROS<char>`, this code must be audited to be resilient to the fact that the ROS contents could mutate while the method is executing. Here, ""audited"" means that the code would be allowed to produce garbage output given mutated input, but it shouldn't buffer overrun or go into an infinite loop or anything like that.
 
 I don't think this is a problem right now since all the callers appear to work only with string instances, but this assumption should be called out somewhere as a code comment."
@@ -6730,7 +6239,7 @@ Every single item stored into the list has the exact same value in each item, bu
 
 (It's not a _good_ philosophy. But it's the one we have.)"
 "if this fails, GUID is filled with garbage memory. initialize it?"
-"Can we write this without a lamdba expression? This is incredibly difficult to follow."
+Can we write this without a lamdba expression? This is incredibly difficult to follow.
 "This is an interesting solution! I agree it's good to let the `IsFixed` parameter stay but instead cause the child subtree to reinitialize if the context changes.
 
 However, could I suggest that instead of using the region with the hashcode sequence number, we eliminate the region and put a `key` on the `CascadingValue<InputRadioContext>` instead? For example, by calling `builder.SetKey(_context);` just before or after its attributes are set.
@@ -6759,7 +6268,7 @@ Overall it's a substantive improvement over the default batch fixer.  In measure
 Note: the default batch fixer is still great as a quick/dirty way to get batch fixing, esp. when your edits are far apart.  But it's not a great choice for C#/VB syntax-based changes that might touch tons of locations in lots of files.
 "
 "So, no matter what the allocation of hte large list is happening.  It's not like these are actually lazy.  And i don't really want IEnumerables because it can lead to accidents, and it is more difficult for conusmers to deal with.  i.e. everyone has to assume the worst and convert back to different forms and whatnot.  "
-"Ooh. I am seriously curious how much it will cost to just copy this and break the lock... (versus sending the ref)"
+Ooh. I am seriously curious how much it will cost to just copy this and break the lock... (versus sending the ref)
 "I think we do, because when we get the region from the region allocator, the memory will be committed, but if it's already committed, any garbage values from previous objects would just stay there."
 "Regardless, because of this, we still have incredibly difficult issues to track down.  The feature is _conditionally_ optional.  Optional parameters should only be used when the value is truly optional and will cause no problems if the caller forgets to pass them.
 "
@@ -6908,7 +6417,7 @@ We're also just gonna get rid of the ""Lint Code Base"" step, because it is incr
 "The `Main` part of the filename should match afaik, but the `~ipad` portion could be `~iPad` sometimes (I'm not sure what causes that but that was a bug I recently fixed that lead to this refactoring).
 
 That said, since the ""prefix"" of the filenames is what matters for sorting, we might be able to safely use `Ordinal` or at worst, `OrdinalIgnoreCase`?"
-"We are leaving CallKit out from mac os x until we get our feedback ticket reply. The bindings are there for iOS and worst case we remove the constants."
+We are leaving CallKit out from mac os x until we get our feedback ticket reply. The bindings are there for iOS and worst case we remove the constants.
 "I think the difference is that far more people want logging by default than will want `MemoryCache.GetCurrentStatistics()` by default. On the other hand as @github said in API review, this benchmark is pretty much the worst-case overhead.
 
 I think defaulting to not tracking makes sense, but I'm not super opinionated."
@@ -6971,7 +6480,7 @@ Note: as i mentioned above, i would be willing to offer this before the 'for' ke
 "Without the double cast, It would fail to compile with `error CS0030: Cannot convert type 'System.IntPtr' to 'nuint'` or `Cannot implicitly convert type 'nint' to 'nuint'. An explicit conversion exists (are you missing a cast?)`.
 
 It has to do with the fact that `IntPtr` is weird type with unnaturally defined operations. The double casts are not worst. The worst is when the code does not do what you want without any compiler warnings, like what happened in https://github.com/dotnet/runtime/pull/41198"
-"These packages were actually broken for UAP in last release (and maybe even previous) because the netstandard ref was versioned while UAP still got a placeholder (and thus would provide the older version inbox assembly).  The use of place holders is a relic of the old pre-conflict-resolution way of dealing with assemblies that were part of the framework.  We can remove that placeholder and simplify these cases while fixing the netstandard consumption case.  Worst case that happens here is that the implementation provided by the package is somehow worse than an old UAP configuration that was in the meta-package itself.  That's actually no worse than the type of breaks we already made when removing all the UAP package configurations from the repo."
+These packages were actually broken for UAP in last release (and maybe even previous) because the netstandard ref was versioned while UAP still got a placeholder (and thus would provide the older version inbox assembly).  The use of place holders is a relic of the old pre-conflict-resolution way of dealing with assemblies that were part of the framework.  We can remove that placeholder and simplify these cases while fixing the netstandard consumption case.  Worst case that happens here is that the implementation provided by the package is somehow worse than an old UAP configuration that was in the meta-package itself.  That's actually no worse than the type of breaks we already made when removing all the UAP package configurations from the repo.
 ">If build-in COM support is disabled such attributes should not be even read by the runtime and if someone would request explicit COM support I'd expect it will get PNSE well before it hits any COM code path.
 
 I think this is a general issue with not built with `FEATURE_COMINTEROP` vs having the feature flag for Com interop set to false. The type loader sets many flags that fundamentally change some behavior &ndash; @github's example is spot on.
@@ -7053,13 +6562,13 @@ I am asking for a test that would get us here with an invocation of a delegate t
 
 ---
 In reply to: [405803545](https://github.com/dotnet/roslyn/pull/42972#discussion_r405803545) [](ancestors = 405803545,405762952,405756878)"
-"No need to map or assign because revive changes objects in-place (for the sake of avoiding garbage). Same on line 80"
+No need to map or assign because revive changes objects in-place (for the sake of avoiding garbage). Same on line 80
 "I'd suggest to consider using an associative [MaxHeap](https://en.wikipedia.org/wiki/Binary_heap) (i.e. MaxHeap combined with Dictionary to access elements for O(1)) where each node stores open connection count for a single HttpConnectionPool.
 
 On connection open or close, the pool will increase or decrease the respective counter. Since each pool will change only their own counter, it can be easily done thread safely. When the polling counter `_maxHttp11ConnectionsPerPoolCounter ` triggers, it will call Heapify method to rebuild the heap and get the max counter on the top. Heapify runs in O(logn) in the worst case so it seems fast enough.
 
 There is one more issue though, that is to ensure Heapify can run concurrently with heap nodes changes. To solve that, I'd suggest to guard Heapify call with `lock`, but allow concurrent changes to counters on heap as explained above."
-"Will this run during a design time build? It's probably not the worst thing to be doing as there's far greater sins..."
+Will this run during a design time build? It's probably not the worst thing to be doing as there's far greater sins...
 "> the worst that can happen is that we compute the same thing twice.
 
 Typically, it is proportional to degree of parallelism.
@@ -7140,11 +6649,11 @@ There are a set of ILLink related files that traditionally have been in the root
 
 In the worst case, we have almost 10 ILLinker files for one library - https://github.com/dotnet/runtime/tree/master/src/libraries/System.Private.CoreLib/src/ILLink"
 "This could just be `Add`, worst case it's called more than once, but only on first concurrent requests."
-"More seriously I'm sure @github can give you samples of creating the certs during runtime for tests so you don't need the test files any more"
+More seriously I'm sure @github can give you samples of creating the certs during runtime for tests so you don't need the test files any more
 "Refactored. It duplicates a bit of other code but yeah it's better: https://github.com/dotnet/roslyn/compare/5205913227e97cb0fcf276b0371a5d23f35af45d..736d3f6a7c00819ee8e2a697ae7b3044922433b4
 
 Helper method won't be done since some of the code there is calling local functions which captures state, and I don't think that's remotely the worst sin happening in that code at this point."
-"I'm seriously considering using it for my PR."
+I'm seriously considering using it for my PR.
 "> Sorry about my debt item #127313 being incorrect. I believe the current complexity is O(N + NlogM) where N is the number of changed lines and M is the number of injected texts in all the lines, not O(NlogM) as stated in #127313.
 
 `O(N + NlogM)` = `O(NlogM)`, since `NlogM` grows at least as fast as `N`, but if `M` depends on `N` even faster.
@@ -7958,7 +7467,7 @@ It means that the actual code size regressed by about 15% (the R2R binary has mo
 
 Have you looked at asm diffs and examined several different methods with the worst size regressions?"
 "@github You never thought it would get this complicated when you volunteered... :smile: Seriously though, well done and thanks!"
-"We were getting around concatenating these before in a seriously ugly way. I can explain if needed. This is much better and actually sets the automation name to the full thing (whereas before we were just tricking Narrator into reading the right thing instead of setting the automation name correctly)."
+We were getting around concatenating these before in a seriously ugly way. I can explain if needed. This is much better and actually sets the automation name to the full thing (whereas before we were just tricking Narrator into reading the right thing instead of setting the automation name correctly).
 "> I find it highly questionable that people would write code that needs culture sensitive results in en-us. And even if they did, i'm ok with that scenario regressing given the gain here.
 
 I do not disagree with this. However, I am still generally concerned with any code that singles out en-US. It's a bad precedent that puts us in to a ""works on my machine"" state when interpreting feedback.  I checked the VS app domain manager code that sets CurrentUICulture based on configured VS language and, AFAICT, it leaves CurrentCulture alone. This means that this optimization (as currently written) will miss a lot of English VS users outside the US. We could tweak it to detect if the VS language is English, but then we'd still miss a not uncommon case of non-English VS with ASCII-only patterns and data.
@@ -7982,7 +7491,7 @@ I'd like to discuss other ways to achieve this optimization for a greater number
 "> what (if any) scenarios worked before this PR, that do not work after
 
 About the only things that change at all are scenarios involving switches between branches for which all needed runtimes are already in .dotnet/. In those cases, it's better to use `./build.* -projects {path}` instead of or `./build.* -noBuildManaged -noBuildNative` before `dotnet build`. But, the worst case would be using a different Microsoft.NETCore.App and that can only occur if the two branches began at different 'master' commits with dependency updates between."
-"The compiler no longer ships to the LTS SDK by default: only to `netcoreapp3.1` and forward. Any changes we `netcoreapp2.1` would be a servicing event but it's incredibly unlikely the compiler will meet the servicing bar. Instead we'd fix in current SDK and tell customers to use new SDK to build for `netcoreapp2.1` (this is not special to Roslyn but instead just how our SDK layer works)"
+The compiler no longer ships to the LTS SDK by default: only to `netcoreapp3.1` and forward. Any changes we `netcoreapp2.1` would be a servicing event but it's incredibly unlikely the compiler will meet the servicing bar. Instead we'd fix in current SDK and tell customers to use new SDK to build for `netcoreapp2.1` (this is not special to Roslyn but instead just how our SDK layer works)
 "This pattern is done because the containing method is typically marked with `AggressiveInlining`.
 
 The codegen for the accelerated case is generally 1-2 instructions and so it is something we want to always inline and the codegen for all the paths + the fallback typically makes the method to big for that to happen naturally. The codegen for the fallback case, however, is often of unknown size or is used in scenarios where inlining might not be beneficial and so we want the JIT to make the inlining decision on its own.
@@ -8007,8 +7516,8 @@ return result;
 ```"
 "when IsComplete is false, it means we have no idea whether we got all references or not. so, we should assume worst which is we didn't get all references.
 "
-"in the worst case it does 8 probes (decreasing 1Gb by 128Mb each iteration and increasing startAddress by 8mb) and bails out"
-"i am a stupid person. typescript is garbage. Bill should be fired."
+in the worst case it does 8 probes (decreasing 1Gb by 128Mb each iteration and increasing startAddress by 8mb) and bails out
+i am a stupid person. typescript is garbage. Bill should be fired.
 "Overall points:
 
 1. the general design seems reasonable to me.
@@ -8087,7 +7596,7 @@ So, in the case where the downstream project *does* reference the name that we'r
 i.e. if i'm searching for a public symbol from MS.CodeAnalysis, then wasting all this computation to determine if we have IVT is irrelevant and wasteful.  *And*, if i'm searching for an internal symbol, then precomputing the compilation for all downstream projects prior to even determining if there's a potential match in them is also wasteful.  
 
 Currently, getting the compilation is the most expensive part of FAR.  Anything that pushes that off until absolutely necessary is seriously beneficial."
-"This should be stronger than an Assert.  Since we're guarding against Windows giving us garbage we should guard against this being invalid as well.  We should take min of numBytes and buffer.Length below."
+This should be stronger than an Assert.  Since we're guarding against Windows giving us garbage we should guard against this being invalid as well.  We should take min of numBytes and buffer.Length below.
 "are we seriously adding another converter
 for the life of me
 come on"
@@ -8692,7 +8201,7 @@ It could likely be improved by changing to a single branch, such as the followin
 In this scenario, the branch predictor has less to worry about and we still aren't doing any extra work.
 
 An even better approach, especially since the inputs will likely always be fairly unpredictable would be to use `cmov` and avoid branching altogether. This is what GCC, Clang, and MSVC do; as an example (but is namely only beneficial for inputs that can't be accurately predicted). However, I don't believe the JIT has support for this today."
-"Incredibly nit-picky: There are extra spaces at the end of this line."
+Incredibly nit-picky: There are extra spaces at the end of this line.
 "I feel like there are a lot of places in this PR where we call `load_dso_from_override_dirs()` then `load_dso_from_app_lib_dirs()` if `load_dso_from_override_dirs()` fails.
 
 Perhaps we should have a helper which does that?  `load_dso()`, perhaps?  (Which admittedly *already* exists, but I'm seriously getting confused trying to keep all these new functions straight.)"
@@ -8701,7 +8210,7 @@ Perhaps we should have a helper which does that?  `load_dso()`, perhaps?  (Which
 That way you could give a better error than later when you try to read garbage."
 "❔ How is this first invoked? Can we make sure that one call to this occurs immediately after a document is opened and/or `roles` changes? It's really frustrating how completion for unimported types/members never works the first time it's used in a document, and the worst thing possible here would be extending that behavior to all completion operations."
 "This isn't ideal... worst case it could be O(N^2).  Instead, you can do something like `signalRegistrations[i] = null`, and then after the loop, do `signalRegistrations.RemoveAll(item => item is null);`, or something like that."
-"why not just create OutliningSpans for every region when we are building them instead of creating the extra object. less garbage to collect later."
+why not just create OutliningSpans for every region when we are building them instead of creating the extra object. less garbage to collect later.
 "The ""problem"" is that material-ui has some types that are large unions ~700 types, and at least some have ~100 optional types. `discriminateTypeByDiscriminableItems` has complexity `O(number of types in union x number of discriminators)` and they way I naively implemented this extension required checking all of them. This new version only adds member names that discriminate against different sets of types in the union. This trick doesn't change the worst case complexity of this change, but it should prevent common / degenerate cases like material-ui.
 
 It's not clear to me that the performance could be improved any more, so if it's still bad somehow, or is deemed too complex for the handful of edge cases it helps, I'm cool with abandoning in.
@@ -8711,7 +8220,7 @@ As an implementation side note, I needed a way to hash subsets of the union type
 "i'm virtually certain that this can't happen. Indeed, all we're doing is checking for System_Nullable_T.  If you look at the compiler, for example, they assume all over the place that this means you certainly can safely get that type arg back.
 
 The main reason i'm complaining here is that this means we now have this weird null/tri-state pattern for this method.  I'd rather us not have to have that.  Worst case, even if we're paranoid and we see this, we just default to assuming it's mutable (or immutable) or something.  It's basically fine to have this be a boolean and not a tristate."
-"that's probably the worst decision we ever agreed on"
+that's probably the worst decision we ever agreed on
 "> I prefer to not surface this as a NullReference exception
 
 That's fine, but we're seriously busted at this point, right? Should we consider throwing an unreachable or something?
@@ -8724,7 +8233,7 @@ In reply to: [616239428](https://github.com/dotnet/roslyn/pull/52685#discussion_
 "I do not think that this improvement is worth this hack. These hacks tend to live their own life, cause pain, and it is hard to get rid of them.
 
 Wasm in .NET 5 is going to be incredibly slow for anything compute intensive. This hack is not going to change what kind of wasm-targeting applications are feasible in .NET 5."
-"it's seriously the most mundane things we end up missing.."
+it's seriously the most mundane things we end up missing..
 "> after we drag the ""debug arrow"" back to sumcheck() after Console.ReadLine() we might end up with a garbage in ecx
 
 Do we know if the impact will be visible to the user? In your example, I don't think that would be the case."
@@ -8852,8 +8361,8 @@ But in the worst case (where we can't reconcile the two), we can add a keyboard 
 "I seriously appreciate that. Thank you.
 
 PNGs for 256x256 and BMPs for everything else is totally fine with me."
-"I seriously love how nice this feels."
-"I seriously think the text should not be localizable. I don't want to ship with it localizable and then have to back that out. :smile:"
+I seriously love how nice this feels.
+I seriously think the text should not be localizable. I don't want to ship with it localizable and then have to back that out. :smile:
 "@github @github @github @github finally the PR should be ready and I already reviewed it myself. I summarized the changes in the top post with a list of the commits. I already merged some related changes into master and arcade in the last weeks. The remaining changes in this PR weren't easy to encapsulate further.
 
 I highly recommend to review per commit. Will share out perf numbers with best and worst case build times later after CI has completed."
@@ -8890,9 +8399,9 @@ So what do we do?"
 
 Note: while this adds a small amount of memory to compilation, the incremental gain produces vastly less garbage for the LS scenario.  this is quite important as garbage leads to GCs which lead to pauses, which pushes the latency for typing above our high water mark.
 "
-"I think I prefer calculating the drain timeout this way vs deriving the worst-case from `MaxResponseBufferSize` like we do for HTTP/1.x and HTTP/2. Can we do the same thing in `Http1Connection` and `Http2Connection` for consistency?"
-"Good question - this is also an area I'm not super familiar with!  I guess it looks like I should be using the Dispose() pattern?  https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose"
-"This is going to create lots of garbage as this lambda cannot be cached. #Closed"
+I think I prefer calculating the drain timeout this way vs deriving the worst-case from `MaxResponseBufferSize` like we do for HTTP/1.x and HTTP/2. Can we do the same thing in `Http1Connection` and `Http2Connection` for consistency?
+Good question - this is also an area I'm not super familiar with!  I guess it looks like I should be using the Dispose() pattern?  https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/implementing-dispose
+This is going to create lots of garbage as this lambda cannot be cached. #Closed
 "How big do we expect these lists to be?  And more importantly, what's the worst case?  N calls to AddIfNotExist results in O(N^2) work here."
 "I know that a lot of the changes here are to telemetry calls, which presumably will impact a database somewhere.
 I'd argue that changing to the correct spelling and at worst adding a shim/collator for the backend is the right thing to do.
@@ -8967,7 +8476,7 @@ https://github.com/dotnet/runtime/blob/06bb200673f0a4ac37ea49a4aaf6c16be4441a10/
 So I took the approach we used in Xamarin.Android, which is to include an `internal` copy of these attributes for target frameworks that don't have them:
 
 https://github.com/xamarin/xamarin-android/tree/main/src-ThirdParty/System.Diagnostics.CodeAnalysis"
-"I don't think I follow. How could there be garbage here? If the encoded bytes had an extra invalid byte at the end?"
+I don't think I follow. How could there be garbage here? If the encoded bytes had an extra invalid byte at the end?
 "@github zombies 🧟 are not to be trifled with.
 
 > I get the hanging tests on master branch too on my Mac.
@@ -8975,7 +8484,7 @@ https://github.com/xamarin/xamarin-android/tree/main/src-ThirdParty/System.Diagn
 More seriously, what is your Mac doing exactly when the timeouts occur❔
 
 And, because we're not seeing similar problems in the rolling builds of our 'master' branch, I wonder about scorched Earth approaches like clearing your NuGet caches and rebooting."
-"wat...  seriously.  wtf :)"
+wat...  seriously.  wtf :)
 "Would it make sense for this method to write zero to the array if it is not a constant? That way, when/if we support creating with a partial constant, we can avoid initializing it to garbage."
 "Fine if it works for you, but normally I'm super pessimistic about timeouts as I've seen stuff be incredibly slow occasionally. Eg., 30 secs"
 "> How often is this codepath hit? How much memory could we possibly leak?
@@ -9007,7 +8516,7 @@ Note: this is how our regular code fixes operate.  And ones that do not are inte
 "It's in the fine print of the EULA tagging me in a review: I'm entitled to change my opinion for any reason, or for no reason whatsoever.
 
 More seriously: if you want to expose this I guess we'll use it in that one spot. If you don't want to expose it...we'll be fine. #Resolved"
-"Are you on the Xamarin Chat slack? Or have some other way to reach you? Or worst case can you reach out to gerald.versluis@microsoft.com? Let's see if we can get it to work and from there I'll create a little writeup to make sure this doesn't happen to other people"
+Are you on the Xamarin Chat slack? Or have some other way to reach you? Or worst case can you reach out to gerald.versluis@microsoft.com? Let's see if we can get it to work and from there I'll create a little writeup to make sure this doesn't happen to other people
 "I had a hard time choosing a good number. 256 was a tiny bit faster for shorter lines, 1024 was optimally fast for longer lines (no improvements beyond 1024) and 512 was basically the worst of both worlds.
 The performance improvements with a buffer size of 1024 are more noticable if accessibility events are enabled. In that case conhost is up to 20% faster after this change."
 "@github sorry for the delay, didn't notice your comment.
@@ -9088,7 +8597,7 @@ I'm curious as to general thoughts on these different approaches. I realize this
  | NGen | Native Image Generator. |
  | NYI | Not Yet Implemented. |
 ```"
-"This is visual studio autonamespace complete thingy that leaves garbage all over the place. I'll remove."
+This is visual studio autonamespace complete thingy that leaves garbage all over the place. I'll remove.
 "The binder doesn't know it binds types from the signature.
 
 As I see it we have three options:
