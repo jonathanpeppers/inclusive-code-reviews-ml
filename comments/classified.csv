@@ -3092,3 +3092,102 @@ i feel stupid,1,0.5
 "3. tehy then communicate with server, but server doesn't have text/project that matches what client has.  server passes requests onto roslyn, which crashes because invariant is broken",0,0.5
 "Now, given this is such a simple scenario, and you're likkely not crashing.  You have presumably solved this in some manner.  For example, some sort of syncing.  Or perhaps validating that the request can even be asked on the other end.  However, those designs and invariants are not clear here, and as such it makes it *very* hard to tell if the code here is correct",0,0.5
 
+"As I briefly mentioned in chat before the holidays - this _can_ be localized, but it will _hyperexplode_ the unittets. In my opinion, we should probably not hyperexplode the unittests. The solution to the unittests problem appears to be ""rewrite the entire thing"", but I need to do a bunch more investigation of WTF is going on there. I think the right path here is to do this non-localized for now, and file a follow up for adding localization to them. That way, we won't need to include a massive ""rewrite the unittests"" change as a part of this already hefty PR. Thoughts",0,0.5
+"Okay, the Terrible solution I have is to have a #code, and include it manually in each of TSE and #code. That'll get the resources added to the correct libraries, so #code will still work, regardless of which dll it's being called from",1,0.5
+@github Will that still work for localization,0,0.5
+Oh crap. I think I messed up the commits. Well this is indeed a lengthy thread. In fact I think this is most commented PR I've ever made on Github. I'll force push later,0,0.5
+"@github any specific preference to the preferred sort, or just sort via StringComparer.Ordinal or something",0,0.5
+"Oddly the current comparer for the hashset-based comparer is PathComparer, which does a bunch of extra comparisons around relative pathing and such to attempt to ""normalize"" the path. I was going to just switch this over to an ImmutableSortedSet but PathComparer doesn't implement that (since it would seem insane to do so)",0,0.5
+"So this is a good point.  For clarity, whatever newline sequence you wrote, we will embed into your converted string.  This means from the language/compiler perspective, on that machine, the literal has the exact meaning as before (no semantics change)",0,0.5
+Where it gets subtle though is the absolutely insane behavior of git where it may take a file and just change newlines *even that are language relevant* when sent to *another* machine,0,0.5
+"In this case, the refactoring is in line with the lang and compiler.  However, it is *git* that ends up causing issues here as it thinks it is sensible to touch programming lines that relate to content",0,0.5
+"Note that this is a refactoring though.  It is opted into the user, presumably because they actually think this is better.  And it will be very clear that a single line became multi-line.  So i think the user can be trusted to decide if that is acceptable for them given their git config",0,0.5
+"WTF are ""reverse forwarders""",1,0.5
+@github @github Is the stream context completing the transport output like this a terrible hack or an elegant solution? IDK 🤷,1,0.5
+"Crap, before this will work we need to update the spa-templates submodule to reference the dotnet7 feed & ingest it. I'll update that repo now",0,0.5
+Presumably we also need to back-port this into release/6.0 as runtime's 6.0 contains the updated transport package,0,0.5
+"➡️ In the total absence of enforcement to date, we did a terrible job making sure tests clean up after themselves. I fixed enough cases in #25558 to make sure this change is viable, but I expect to see this condition hit in practice. Earlier portions of the cleanup code guarantee that all synchronous and immediately-queued cancellation requests are processed before reaching this condition. **All cases where this is hit are a bug.** However, the condition relaxes the overall acceptance criteria for this large change and allows us to pay off the debt over time",0,0.5
+"What happens when you have two text editors open to settings.json? Best case scenario, one tells you ""this file changed. want to reload it?""",0,0.5
+"This is a case of ""play stupid games, win stupid prizes""",1,0.5
+"Not nearly as bad as enabling NRT for the first time. The #code constraint is the only place I had trouble. We desperately need a code fix for this particular error or we're going to be fielding a ton of ""WTF"" questions",0,0.5
+"I concur - almost seems like we should have #code that allows for reverting to the parent, but only for settings in profiles",0,0.5
+"All this is terrible, but let's not pretend our settings model was designed for a GUI",1,0.5
+Ohhhhhhhhhh.  I'm an idiot.  we can use the return value to figure this out.  tnx,0,0.5
+these diffs are terrible.  I'm not srue why it threw it off so much to indent.  working on this,0,0.5
+"@github Can you add a comment stating the intent then? I could totally imagine somebody coming by, saying ""heh, that's stupid it's not sorted"", and adding in the exact thing you're removing",0,0.5
+(bonus points for having some sort of visible grouping so it's clear to users too.),0,0.5
+"Possibly a stupid question, but why rewrite this",0,0.5
+"Short-circuiting binary operators imply a control flow. For example, if #code in #code is true, we jump over evaluation of #code. This should be explicitly reflected in the graph through links. See LogicalOrFlow_01 unit-test in IOperationTests_IBinaryOperatorExpression.cs",0,0.5
+"I was going to suggest using #code to avoid the long declaration of #code then I realized #code has side-effects. Maybe just call it something like #code to make it more clear what it actually does? Sorry, I'm terrible at naming things, but I'm sure you know I'm saying :)",0,0.5
+"We use it to let the solution crawler back off. We have logic to back of if we are editing our files (to avoid us causing lots of GC for example), but if say you're editing a Readme file or something else we don't want to be making that terrible",0,0.5
+"In order to diagnose it, I used hardcoded DebugBreak() since even ImageFileExecutionOptions didn't like running against conhost - is there are better way to debug and test these cases without being so invasive on the system",0,0.5
+"Not really, no. #code is gross to debug",1,0.5
+the #code which is embeded in the native ALC - and yes - that name is TERRIBLE and has to go,1,0.5
+The #code which also contains an #code which is a subclass of  #code! So much context,0,0.5
+This may be out of scope for this but the old (and new) behavior seem. wrong to me,0,0.5
+Let say the kernel was built without IPv6 support (or v4 in distant future). The file would be missing and we would always throw even if there is nothing wrong,0,0.5
+In many cases like this it feels it would be better to return empty collection. Since the networking grabs massive amount of information had several cases in the past when we thrown on stupid things even if the caller really does not care,0,0.5
+"Holy crap, I saw this issue weeks ago and didn't expect this one to ever get fixed",0,0.5
+"""Wouldn't be surprised if other components in the ecosystem exhibited the same problem.""",0,0.5
+"I agree this is very likely not the only one, it's just one that keeps popping up quite often. It's been a pain point for years (first on WPF, then on UWP, now on both MAUI and WinUI 3, etc.), and something that has received countless feature requests for. The solution many have come up with is to just roll their own collection types with support for ""range operations"", with the big drawback being though that since no UI framework among these actually supports the API, they're just forced to either iterate over items one by one (which is just terrible for performance), or just reset the collection and reinitialize it (which is also bad for performance, maybe just a little bit less, and also completely breaks all animations). It's just a very unfortunate situation where customers get frustrated, and they often have to both do extra work to build these helpers, and then still end up with a suboptimal experience. I mean, we have the same exact custom collection type in the Microsoft Store too, and it has the same exact issues (and I hate it). It's just a really common issue, and I'm saying I'd love for us to find the time to coordinate with the right folks and maybe try to finally get this resolved at least for .NET 8 🙂",0,0.5
+"I've also received multiple requests to add such a custom collection type in the .NET Community Toolkit, and I've had to reject them for the reasons mentioned above (it still results in a very bad experience, and I'd much rather just fix this properly in the BCL). The net result though is that at least for now, the API is not there and plenty of folks are frustrated",0,0.5
+"""but my recollection is that it broke in a substantial way as soon as runtime merged this change originally.""",0,0.5
+"I find that surprising and I'd love to learn more about that. Even with the new APIs, as long as nobody actually calls them, there should be no functional differences in the way the currently existing APIs work at all. So I'm not sure I understand what broke. Are you sure it wasn't just folks trying out the _new_ APIs, and then reporting WPF crashing/breaking in that scenario? 🤔",0,0.5
+"""Would doing that be a less disruptive way for newer frameworks to get range support?""",0,0.5
+"I personally don't think that'd be the correct solution for this issue, for a number of reasons",0,0.5
+"- The core issue is that right now, the various UI frameworks don't support multiple collection updates. Where they come from is not what's causing the issue. That is, even with a new collection type, you'd get the same exact crashes until the frameworks were updated to handle the args. And if they were updated, then there would be no reason to have a separate collection type in the first place, as it'd just be the same exact one but with two new APIs. Those should just be added on what we have",0,0.5
+"- It'd make updating codebases much more tedious, as now you'd have to swap the whole collection type in all locations rather than just being able to opt-in into a range update whenever necessary",0,0.5
+"- I'd argue it'd be an abstraction leak. You want an observable collection, the fact that some callsites would need to perform range operations on that is just an implementation detail of your viewmodels. You shouldn't need to use a completely different collection type just to support this",0,0.5
+"I would really love for us to just manage to coordinate across the various teams and officially add support for this in a future release, not sooner than .NET 8 at this point. We could both update all underlying frameworks to support this (which I realize is non trivial work, especially since eg. WinUI 3 would likely need some new WinRT APIs and projections for this), and then provide the necessary migration docs, if needed. I believe this would be the best long term solution for this issue 🙂",0,0.5
+"I initially went along with this, but when usability testing it locally I remembered why I had done it this way in the first place",0,0.5
+"Basically I'm using exceptions to show the users their error messages, so it really ought to be more user friendly then your actual problem being buried in amongst an Aggregate exception format and a bunch of stack-trace stuff. This all stems from me using exceptions to bail out of functions early when we find argument problems (url is null, doesn't exist) so I don't have to make every method return #code where Result could have an error that should cause us to bail early or the value we actually asked for. If you can think of a better paradigm than using exceptions of that gross Result<T> stuff I'm on board, because I agree that using exceptions this way isn't great, it's just the best I could come up with",0,0.5
+oh right. Stupid API doesn't do what I want. :grumble,1,0.5
+"I was just testing the cmd defaults and one was enough there, but if there are shells that need 2 or 3 then maybe this is a good idea.  It's a trade-off of size for every scenario vs. speed for some scenarios",0,0.5
+"With my change, each TextAttributeRun is 20 bytes, so given there are 9001 of these created in the default cmd scenario, each increase by 1 in this small_vector costs ~176KB, which seems like enough we should think carefully about what to tune for, but not so much that bumping to 2 or 3 is terrible",0,0.5
+Is there any data on how often different shells are used so we could try to tune for the most common ones,0,0.5
+"I have a terrible workaround for the symlinking issue, which (unlike the compression option) is consistent with our symbol publishing :)",0,0.5
+"Technically, iOS-style unversioned frameworks are valid on macOS, so... flatten the framework post-creation. That should fix the Catalyst build",0,0.5
+the previously display text was just terrible,1,0.5
+"As a sentinel, if we decide that #code is globally stupid for making the caller maintain the walk-count... (which it is... in my opinion...) we can globally change it at some point by finding all affected areas",0,0.5
+"I know I don't need to convince you any more, just giving more clarity on my thoughts",0,0.5
+"Sorry for the noob question: does #code and #code stand for ""Type"" and ""Value"" respectively? I'm trying to understand a little bit of the code by checking some PR's (yours is pretty cool!)",0,0.5
+"For this we could switch to an immutable wrapper around Dictionary<TKey, TValue>, similar to how we use ImmutableArray<T> instead of ImmutableList<T>",0,0.5
+"My gut tells me this should be a slam dunk win.  The vast majority (probably nearly all) of cases where we use ImmutableDict, it's not to benefit from what ID is decent at, but just to ensure it will not be mutated post creation.  For that purpose it's actually a pretty terrible choice and adds a tremendous amount of overhead for functionality that we're not needing in those scenarios",0,0.5
+cref? This might also be a nice place to use the list syntax @github was doing since this will format like crap in Quick Info otherwise,0,0.5
+Should the test that the value shouldn't change just live in the compiler,0,0.5
+"If nothing, I wonder if this deserves a good comment in the code. If I saw this I'd go ""WTF"" and just delete it without a second thought",1,0.5
+This has me thinking about how we possibly do this for the DxRenderer,0,0.5
+I imagine that we will either have to,0,0.5
+1. Form all this data into an alternate stream that looks like a TTF/OTF font instead of this old Windows Font format that GDI seems to understand on #code and then feed it into [IDWriteInMemoryFontFileLoader::CreateInMemoryFontFileReference](#url) per the documentation at [Custom Font Sets](#url),0,0.5
+2. Make the DxRenderer load this HFONT into a GDI HDC and then call [IDWriteGdiInterop::CreateFontFaceFromHdc](#url) and use the resulting #code normally,0,0.5
+"I bet the second one is easier but is a little gross for using GDI inside the DX renderer. The first one is probably difficult because I think TTF/OTF always specifies fonts as vector outlines, so I'm not sure how we'd live-specify these. Probably a lot more math",0,0.5
+Just ideas,0,0.5
+"I agree with Dustin on this one. I'd reckon that most [questions](#url) actually start out as ""bug report""s that stem from a misunderstanding or generally not reading the docs",0,0.5
+It's not a terrible lot of work to swap out the tags. I know that I personally reserve the Bug tag for when I'm fairly confident something actually is a bug and either needs more investigation or is generally on the backlog somewhere. I suppose that's really #code's job,0,0.5
+yes.  that name was terrible. changed to #code,0,0.5
+Performance at the full solution goes from,0,0.5
+You'll get at least 60 seconds gain my moving from MSBuildWorkspace to direct creation of compilations from csc invocations in the binlog. MSBuildWorkspace is extremely terrible for end-to-end performance because there is no parallelism in the MSBuild evaluation,0,0.5
+csc invocations have a secondary benefit of improved accuracy,0,0.5
+"note: IDE pattern is to name these MyCodeAction in almost all cases.  That said, that name is pretty terrible.  So if you want to keep the name like this, i'm ok with that",0,0.5
+"I tend to agree that these are truly special cases—since the relationship between #code/#code and #code/#code comes from the mapping between HTML attributes and DOM element property names, the spelling similarity is not a coincidence, but it’s not a given either. You can imagine a world where the DOM spec decided to map the #code HTML attribute onto #code, or the #code HTML attribute onto #code. Both of these would be terrible APIs, but my point is that despite the fairly small string distance between these substitutions, the string distance is not the reason they should be offered. So I’m unconvinced that they merit a change to the string distance algorithm",0,0.5
+"Sorry, the part that I originally found ""gross"" was that this call was ever in the #code in the first place, not your changes; now that you've moved the parameter out though, it's at least a lot cleaner",0,0.5
+#code does an IEnumerable-based comparison. The performance of this is terrible for large buffers. So terrible that it was dominating the total time of test runs in the stream conformance tests,1,0.5
+"#code does a span-based comparison, which is much much faster. Like 20x or more",0,0.5
+"#code also has some logic around reporting differences that's kind of nice, but that's secondary to the performance issue",0,0.5
+We should always use #code for comparing buffers. #code is fine for non-buffers,0,0.5
+"@github oh my you're right, I feel so stupid! Thanks",0,0.5
+"To my knowledge the spec is not generated when you add the packages we add, so I think @github is right that we should reduce the timeout. I made it 5 seconds, which is still probably more than is needed, but not by an insane amount if you account for slow machines",0,0.5
+"This is stupid, everyone knows what whitelist means, and ignorableAssemblyList means nothing on the first read",1,0.5
+"This is very clever, and I like it. It looks like it won't harm performance, but I do think that some caution is called-for around all the thread hopping",0,0.5
+@github: thanks for always cutting through our layers of crap (both organizationally and code-wise) and _getting good shit done_ 😄,0,0.5
+Thanks! I want to be super cautious here - as the potential damage is... nice -  and  I am absolutely not in hurry to commit this one before we are fully confident! Just want to make sure we keep working on it - as it gets bigger and I am quite senile :blush,0,0.5
+I any case I found another concerning case,0,0.5
+"* Assume we search backwards for some word, such that the matches are in lines 10, 20, 30",0,0.5
+* In this case we find the match at line 30,0,0.5
+"* Then assume the user scrolls up and selects a text in line 15. Then the user clicks ""search previous""",0,0.5
+"* We  will select the match at line 20 (because our state suggests to move from #code to #code), though probably the user expected to get the match in line 10 (at least VSCode in this case selects line 10 and puts the state at #code)",0,0.5
+"Yeah it's not fun to hook this up. Not terrible, but not fun",0,0.5
+"Please add a comment here explaining this type lives in the VS side of things and exists to be the proxy. It makes sense to me since we have chatted about it, but @github can attest to having to debug through other frameworks where there was no documentation on what lived in what process and it drove him insane",0,0.5
+"Oh, that makes it terrible",1,0.5
+Terrible 😁. At least have a bool or enum property,1,0.5
+
