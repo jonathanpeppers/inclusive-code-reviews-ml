@@ -2991,3 +2991,104 @@ When is #code? Whenever we do a keyboard selection? Would #code (or inversely #c
 . image](ht,0,0.5
 - seemingly fixed by 4a32b33,0,0.5
 "- [x] Open WSL vim. Add a line of text to a file, in the middle of the viewport. Write the file. Whole screen is cleared, except cursor line and the status line",0,0.5
+"Alright so this is a wack idea that might need socializing with the rest of the team, but I wonder if it would make sense to just combine this functionality with the #code action? Thoughts on the matter",0,0.5
+* #code is kinda a black swan here - all the other short forms are two characters,0,0.5
+"* for something like #code, the long form could actually just be #code 🤔",0,0.5
+"* #code now is a little weird, ""move the pane to tab 0 (to the left???)"" That doesn't make sense. The two options (#code and #code) would have to be exclusive",0,0.5
+* It's probably not _that_ insane to have two actions (#code and #code) that are exposed through a single commandline interface,0,0.5
+* (as a follow up idea:) we could do something like #code which would move the pane to be a sibling of pane 4 in tab 0,0,0.5
+"(high horse) and *here* is where negative numeric types are handy!  *IF* (lol?) there were #code environment variables, this would become an infinite loop, as we'd loop from #code to 0 without nary a blip",0,0.5
+"(Granted, that would require having a lib with #code environment variables, which is *insane*...but kinda/sorts shows the utility of negative numbers. :-)",0,0.5
+I'm stupid. PatternSyntax check already excludes a parenthesized designation. I'll adjust the comment,0,0.5
+"It has the base type of DocumentationProvider, not XmlDocumentationProvider. (I agree the names are terrible.)",0,0.5
+wtf,1,0.5
+"Well, so this _works_, but it has 2 problems",0,0.5
+"1. Most consumers do not expect the very specific type the jsx factory function actually returns. Usually, this manifests in reassignments, where",0,0.5
+"ends up being an error because rather than both being #code, the first assignment makes #code a #code, while the second line is a #code. This is, unfortunately, a breaking change we'd force on people. It's not hard to fix (annotate #code with the more vague #code yourself), but could be frustrating. That break reduces the appetite to take this change a bit",0,0.5
+"2. Performance is _terrible_. Like beyond bad. This makes _every_ jsx tag tree in your program into a series of nested generic context sensitive function calls (and _most_ jsx apps have a _lot_ of nested tags!). That's just about the worst-case scenario for the type checker. If we could make nested context sensitive function calls much more performant to check, it's go a long way towards making merging this feasible",0,0.5
+This looks insane to me,1,0.5
+"Basically, it's not terrible if we offer keywords even when not always applicable.  That's still much better than *not* offering it.  Then, we could just make this cod really simple.  Basically: ""offer these things if it's in a parameter list"", even if that allows some things when not applicable",0,0.5
+Wohoo. Five minutes after loading the PR and I can finally comment here,0,0.5
+"Oh crap I pressed Enter, another five second delay",0,0.5
+Anyways yes this will fail if the file is missing,0,0.5
+Wtf I know I changed that,1,0.5
+"Yea I can concur with that. I'd make sure that this is clear in the doc comment for this function, because it's definitely _not_ clear just reading the code wtf is happening here",1,0.5
+@github I think you meant to mention @github,0,0.5
+haha crap sorry,0,0.5
+"I checked OS set to light and OS set to dark with the app following. If you switch it while it is open, it looks terrible. But if you close and reopen the page it's fine. I wasn't going to cry over that",0,0.5
+I can check and cross-reference the other bug I guess,0,0.5
+"This should be a more ""context free"" error message.  We certainly *don't* want the stack trace dumped to the ""error"" output, as this is user hostile (wtf are they supposed to do with it?), though that said, what are they supposed to do when this task fails, *period*? :-/",0,0.5
+"Regardless, I'd suggest",0,0.5
+"Loed, I'm stupid. Sorry for that",0,0.5
+"this is the meat of where things changed. unfortunately, the diff is terrible. effectively teh logic is pretty simple",0,0.5
+1. determine the expression we want to inline,0,0.5
+1. find the reference locations to inline and inline there,0,0.5
+"1. if we had no conflicts, remove the declaration",0,0.5
+1. add warning annotations for things like side-effects or moving code into conditionally compiled methods,0,0.5
+Gross,1,0.5
+"This is build time, but I agree this error message is terrible especially in light of the new convention-based inference of parameter sources. I want to track more information about the parameters when building up the RequestDelegate arguments which will lead to better errors, but I've already started on the culture stuff so I think I'll do this as part of this PR",0,0.5
+"We don't use it often (I think because people don't know about it), but if it makes things worse feel free to disregard this. It's sometimes cute, sometimes terrible",0,0.5
+"What's the best code pattern to do something like this? I feel like #code with a lambda is too heavyweight, and a #code is kind of gross (so I want confirmation before doing that). (Or did you mean something else by that? Not computing if #code is true or something like that?)",0,0.5
+"this seems inconspicuous, but also, wtf is it doing? A comment (below, outside the macro) might help enlighten as to why that's needed",1,0.5
+Does it need to be Roslyn specific,0,0.5
+"Long term I think that terrapin will end up encompassing all of the tools in our build that contribute to how our DLL files are written. So there are some obvious examples that go past Roslyn: single file writer, F#, etc ... Hence I do think long term we will need a manifest file that encompasses the artifacts needed be the totality of these tools",0,0.5
+At the same time I tried to write this section to be more general but had trouble doing so as we don't know the exact requirements of the tools. Given that the next six months is largely Terrapin focused I kept this doc fairly Roslyn specific to keep it concrete,0,0.5
+I should add a section at the end though clarifying that the intent here is for this to envolve though,0,0.5
+"So, I think we can have dotnet-build-dependencies tool that works with all managed binaries using a common set of entries that express dependencies",0,0.5
+"As the end of the doc states, I'm terrible at naming. I'm fine with whatever name others agree on. @github do u have any opinions here",0,0.5
+HOLY SHIT that totally fixes it,1,0.5
+"wait uh, I don't think we need this. Win+down will minimize a window",0,0.5
+Ah crap I didn't even know about this shortcut 😅,0,0.5
+"Ok so with this shortcut, the user can minimize to tray with the keyboard as long as #code",0,0.5
+" Stupid context specific diff, did not notice",1,0.5
+all while continuing not to have evidence that this is actually a hot path for real-world apps,0,0.5
+Signals Rosyln would move away from ImmuntableDictionary for a fast Dictionary clone method #url,0,0.5
+"Yes, ImmutableDictionary is really bad. We just haven't had cases yet that fell into the patterns for which we have production-ready alternatives. The main scenario that we have the ability to improve today is collections with the following characteristics",0,0.5
+"* The dictionary is built up from empty, as opposed to built by transforming a previous collection through add/remove operations",0,0.5
+"* The collection has more than a few elements, but less than ~10K elements",0,0.5
+"For this we could switch to an immutable wrapper around #code, similar to how we use #code instead of #code",0,0.5
+"My gut tells me this should be a slam dunk win. The vast majority (probably nearly all) of cases where we use ImmutableDict, it's not to benefit from what ID is decent at, but just to ensure it will not be mutated post creation. For that purpose it's actually a pretty terrible choice and adds a tremendous amount of overhead for functionality that we're not needing in those scenarios",0,0.5
+"Also for lockless read Dictionary, with very infrequent updates (where reallocating the entire dictionary is more lightweight than taking a lock on every read, or using #code) e.g",0,0.5
+"Since we're having to update what is installed with VS too, can we just fix this for good? This was a terrible hack that's caused other problems in the past",0,0.5
+"Technically, 'an' is correct since MS is pronounced ""em ess"", and that leads with a vowel sound... :smile",0,0.5
+(English is a terrible language.),0,0.5
+Typo: overflow ar runtime,0,0.5
+"You basically say ""We are only able to provide an algorithm that fails at non deterministic occasions at runtime until you remove a safety net ( which many developers are not allowed to remove). Good luck with that."". I would say that anything, even the most terrible algorithm, is better than obviously buggy code",0,0.5
+"If #code, terrible things will happen below, so we might as well assume that and consider the Body check redundant",0,0.5
+I believe InstantiateSignature is going to be a no-op if the constrained type has an instantiation because that part is already instantiated,0,0.5
+"Ideally we'd probably also check if #code just to be sure, but I don't think we'll do something stupid like #code anywhere, so it's likely safe to assume it's a #code",1,0.5
+"@github Thanks. That makes sense. But in that case, it seems like its not really ok to be conservative about when to do the transformation? eg right now it would reject",0,0.5
+even though it *is* distributive wrt K,0,0.5
+"[edit: never mind about the last part, it is a bug, and it's fixed in the nightly. Sorry should have checked that first]. Can you explain what's going on with f3's parameter type? We know that #code and that #code, so the nested conditional *should* evaluate to #code, but it doesn't seem to. Is that a bug? Or am I doing something stupid here? The really weird thing is that if I change it to #code, then f3 doesn't accept #code, #code *or* #code as its parameter",0,0.5
+I see and understand the risk now,0,0.5
+"I don't speak enough languages to demonstrate a counter-example, but I would not be surprised to see one. I think the only thing that is ""right"" in the sense that it can't go wrong in this way is to just have separate resources for each of the ""several strings we show user here""",0,0.5
+"How many strings are we talking about if we split them out. Unless it's insane, I'd recommend doing that and eliminating even having to worry about this",0,0.5
+@github What do you think,0,0.5
+"Probably unrelated, but this is a terrible error message. We should say _what_ the inconsistencies are. #Resolved",0,0.5
+"Crap I broke something in the merge, I think the automationPeer is getting torn down in the wrong order. It's crashing on close again. 💩",0,0.5
+#code WTF? 😛 Debug spew message,1,0.5
+You're right - I was stupid enough to trust ILSpy to resolve the right dependency - and it resolved 3.1 version ... My bad,0,0.5
+In that case this should work (you would get a RUC warning when calling AddSingleton),0,0.5
+It is a terrible terrible url for vsdrops. That is what it is used for a path in a vs drop. 🤦,1,0.5
+The performance of this is terrible for large buffers,1,0.5
+This should no longer be the case with .NET 6. Are you still seeing that,0,0.5
+wat...  seriously.  wtf :),1,0.5
+"@github Thank you, that's the kind of response I was hoping for",0,0.5
+So is this a inherent design flaw of the original monaco editor (You are the expert on original Monaco),0,0.5
+"If so, do you have some ideas how we can mitigate this stupid design flaw? (Global solution to a local problem does not seem to work, (no surprise))",0,0.5
+(In other words) What can be done,0,0.5
+"Yes, but I was thinking, is this ever going to be """" ever? That might seem strange for the API user, and I did not want us doing something wrong, returning """" and end up with issues. (mainly, ""I don't want me changing this ever to do something stupid"" ;) )",0,0.5
+Oops. Stupid tab/spaces settings,1,0.5
+This name is terrible.  Maybe #code,1,0.5
+"If you're going to make this less terrible, we probably should remove the . after this so it's grammatically correct",0,0.5
+prototype assignments jump from the assignment location to the location of the constructor function and continues walking up the tree looking for type parameters. It does *not* fork and continue looking from the site of the assignment,0,0.5
+"In a [hilarious tweet](#url), I provided some code where this  difference could be observed, but it was clearly insane. I think this is a good solution, because it makes prototype assignments act as if they are effectively nested inside the constructor function, in the same way that methods are nested inside classes in modern JS",0,0.5
+"sorry about that delay I did not check the base branch, In fact I'm surprised I managed to apply a diff on master while it was fixed in #code :D",0,0.5
+i feel stupid,1,0.5
+"@github Are there any docs on the low level design of liveshare?  specifically, i'm looking to understand how it works from a client/server perspective.  Where is information expected to live?  Who is responsible for ""source of truth"".  How clients and servers synchronize and ask questions in a way that is consistent, etc. etc",0,0.5
+"For example, here's an easy sort of problem i can envision, which i'd like an undertanding of how it is handled",0,0.5
+"1. on the client (without roslyn), user makes some edits.  this increases the length of the file",0,0.5
+2. client then wants to classify the text at the end of the file,0,0.5
+"3. tehy then communicate with server, but server doesn't have text/project that matches what client has.  server passes requests onto roslyn, which crashes because invariant is broken",0,0.5
+"Now, given this is such a simple scenario, and you're likkely not crashing.  You have presumably solved this in some manner.  For example, some sort of syncing.  Or perhaps validating that the request can even be asked on the other end.  However, those designs and invariants are not clear here, and as such it makes it *very* hard to tell if the code here is correct",0,0.5
+
