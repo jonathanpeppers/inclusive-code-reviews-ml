@@ -247,7 +247,6 @@ The target that uses the #code item group doesn't run if you set #code,0,0.5
 Here is the commit that implements this,0,0.5
 "The one performance test that failed, I don't see anything related to this change",0,0.5
 "#code or #code didn't run, so going to merge",0,0.5
-/azp run,0,0.5
 Did this just get pasted twice,0,0.5
 "As per the bug we were seeing with #code and #code, I think this needs to be",0,0.5
 "After using #code + #code, I think it's still OK to just compare #code",0,0.5
@@ -264,7 +263,6 @@ I was mainly trying to get the build log shorter 👀,0,0.5
 Are there some more of these? If I ignore tests,0,0.5
 "Since #url we dropped support for referencing exe's at the MSBuild level. I didn't add support for it here, but if there is some scenario you think we'll hit, I can add it",0,0.5
 Offhand I can't think of a case where a #code would reference a random #code,0,0.5
-/azp run,0,0.5
 "I tried to test these changes on an API 19 emulator, but ran into: #url",0,0.5
 "You can have an #code with resources, then you might want to use #code values from C#",0,0.5
 "So I don't think we need this by default, but it's there if you need to turn it off",0,0.5
@@ -275,14 +273,12 @@ same here,0,0.5
 Should we make this a #code just in case the version number changes? If this just removed an entire line that matches: #code,0,0.5
 I'll list #code,0,0.5
 We are aspiring to change all these to,0,0.5
-/azp run,0,0.5
 "I think the code is the same, the first one would be the same as doing",0,0.5
 "I've heard putting #code prevents a delegate object from being created, but that performance shouldn't be needed here",0,0.5
 My plan was to not import or ship #code at all,0,0.5
 "However this is wrong ☝️, it needs to be checking #code instead",1,0.5
 This should also work,0,0.5
 Fixed the ones in xamarin-android here: #url,0,0.5
-/azp run,0,0.5
 NOTE: two #code and #code won't currently work -- there is a bug in AzDO,0,0.5
 Since this could be a 4MB string,0,0.5
 Do you think it's worth making a #code method that would write each line to a file at a time? Instead of making a giant string,0,0.5
@@ -309,7 +305,6 @@ maybe this would be cleaner as,0,0.5
 I just didn't think it was worth rewriting all this code--but if we were going to change the file drastically or something it might be worth it,0,0.5
 #code should be imported here already,0,0.5
 Could simplify this line,0,0.5
-/azp run,0,0.5
 The quoted stuff was all from,0,0.5
 👍 I'll indent it,0,0.5
 @github I bet this #code check was important,0,0.5
@@ -318,7 +313,6 @@ I need to look at what is in the typemaps in both cases,0,0.5
 Something like (_untested_),0,0.5
 This should make the second call skip #code if the assembly didn't change,0,0.5
 "When I build #code, I rarely change #code when working on MSBuild-related stuff. This should save ~3 seconds from my dev-loop",0,0.5
-/azp run,0,0.5
 "Sounds good, we can leave #code for now",0,0.5
 I don't think you need to set #code with #code,0,0.5
 "This imports #code, so I think it would get the value you want",0,0.5
@@ -329,7 +323,6 @@ We somehow lost the #code NuGet in this file: #url,0,0.5
 Whoops I think this one should be the new #code,0,0.5
 "Since this breaks things, I don't think it is important enough to continue",0,0.5
 I'll leave the branch around if we ever want to try this again,0,0.5
-/azp run,0,0.5
 "To test this currently, you would need: [MonoAOTCompiler.zip](#url)",0,0.5
 Copy #code to #code. This will be needed until the changes land in dotnet/runtime and flow to us,0,0.5
 "If I remove it, I get",0,0.5
@@ -343,7 +336,6 @@ Do you really need all three of these? Are we missing a dependency where you sho
 I think I should just remove all the #code here and put #code instead,0,0.5
 "I saw this message ~2700 times in a build log. It is still logging the *other* case, which I think is sufficient",0,0.5
 I updated the commit message around this conversation 👍,0,0.5
-/azp run,0,0.5
 Right now I don't think you can use LLVM without having an NDK -- but I was thinking we could fix that? Like it should be possible to work,0,0.5
 "If you didn't need the NDK, we could enable LLVM by default for #code builds to improve startup times",0,0.5
 It might be this was just something broken on mono/master,0,0.5
@@ -371,7 +363,6 @@ Maybe I need to see if this can work without any assembly-level attributes at al
 #code,0,0.5
 "@github in #url I remember some LLVM tests failed when I tried, but there are other changes in xamarin-android/main now. Could the LLVM-IR support @github added make this work now",0,0.5
 "If you're testing, and LLVM is working without an NDK let's try it",0,0.5
-/azp run,0,0.5
 "Does this need to check #code and use either: #code, #code, or #code",0,0.5
 Is there a way this could check for #code then use 32? Trying to think of what this would look like over time as more API levels are added,0,0.5
 "I think this might need to check if it is blank, like it does in .NET 6",0,0.5
@@ -568,7 +559,6 @@ Commented out because the values aren't clear yet and we want your opinions on w
 "Similarly, for any controls/properties you don't see in this PR that you believe belong, please let me know which ones and which values you might see them with",0,0.5
 "I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct""",1,0.5
 "ah ok, makes sense! docs for #code was a big confusing and seemed right to me at first, since I was thinking the container should usually not receive any focus. But your explanation of ""consider first as a viable focus target"" helps clarify things",0,0.5
-/azp run,0,0.5
 typo fix that's been bothering me,1,0.5
 done,0,0.5
 "sorry, I misread which APIs were being used - taking back what I said and seconding Shane here",0,0.5
@@ -881,7 +871,7 @@ Why not use #code,0,0.5
 I think we should come up with a better version than 1.0.0,0,0.5
 We could use the existing mlaunch version,0,0.5
 "or we could come up with something else (Xcode version? Something completely different that's calculated in maccore and doesn't take xamarin-macios into account? Go with ""0.0.1"" and decide something later?)",0,0.5
-@spouliot / @dalexsoto what do you think? I lean towards the mlaunch version (although the downside here is that there can be multiple mlaunch versions for the same maccore hash),0,0.5
+@github / @github what do you think? I lean towards the mlaunch version (although the downside here is that there can be multiple mlaunch versions for the same maccore hash),0,0.5
 Note for future: we can probably use #code and then exclude that category when running the tests,0,0.5
 Test failures are unrelated,0,0.5
 * introspection/Mac Modern/Debug: #15230,0,0.5
@@ -902,7 +892,6 @@ It should be. I cherry picked the commit,0,0.5
 👍,0,0.5
 I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now,0,0.5
 "We typically prefer work (and pull requests) to be done in forks. It's fine for this PR, but if you could create the d16-7 PR using your fork that would be great! And we've branched d16-8 as well, so this fix needs to go there too",0,0.5
-/azp run,0,0.5
 """normal"" AOT aka",0,0.5
 "Right now people can use Debug mode and it works, except that you can't debug. My concern is that if someone runs into a bug in the interpreter, they should be able to stop using the interpreter somehow so that the app runs correctly on the watch, even though debugging doesn't work (they could at least use Console.WriteLines)",0,0.5
 "I think #code sounds better (mostly because #code is a verb, and this is a property, not a method)",0,0.5
@@ -939,7 +928,7 @@ Missing availability attributes,0,0.5
 Makes sense for us but is this also true for VSMac now,0,0.5
 "Yes, this is true for all our platforms in .NET, even for VSMac",0,0.5
 I think this is simpler and more accurate,0,0.5
-@mandel-macaque fixed,0,0.5
+@github fixed,0,0.5
 "Due to #url, this isn't a safe pattern. I think we'll have to do it the manual way",0,0.5
 "The #code overload is both internal and obsolete - which makes the obsolete redundant because nobody will see it, and you can just remove the obsolete attribute",0,0.5
 "The comment is also out of date, so it can be removed too",0,0.5
@@ -962,8 +951,7 @@ Test failures are unrelated,0,0.5
 * Mono BCL Test group 2: #url,0,0.5
 * Generator tests/.NET: fixed in #9251,0,0.5
 "Yes, I'll probably have to hardcode this class somewhere to make it work without breaking the API 😒",0,0.5
-/azp run,0,0.5
-@chamons this failure,0,0.5
+@github this failure,0,0.5
 make[2]: *** No rule to make target `.stamp-configure-projects-mac'.  Stop,0,0.5
 "isn't fatal, you can just ignore it for now",0,0.5
 "The test failures that show up (link all / DotNet tests) are different issues, and at least the DotNet tests seem to be from this PR",0,0.5
@@ -974,7 +962,7 @@ make[2]: *** No rule to make target `.stamp-configure-projects-mac'.  Stop,0,0.5
 Generated using #url,0,0.5
 I think the names are fine as-is,0,0.5
 Great work! Thanks a lot,0,0.5
-@akoeplinger would that require any changes in Mono that we have to wait for? Or is that already implemented,0,0.5
+@github would that require any changes in Mono that we have to wait for? Or is that already implemented,0,0.5
 #code avoids the manual Dispose later,0,0.5
 "Although now that I think about it, I like the symlink idea better",0,0.5
 Oh I wonder how you found about this 😅,0,0.5
@@ -995,7 +983,7 @@ Test failures are unrelated,0,0.5
 Is there a strongly typed #code property,0,0.5
 "We have APIs that expose this enum (and the one below), so if we uncomment this, then every consumer of those APIs will get this warning (and there's no way to fix them except ignoring the warning)",0,0.5
 "I've created a separate PR with my changes, to not complicate this one too much: #url",0,0.5
-"@emaf I implemented it a different way, please have a look again :)",0,0.5
+"@github I implemented it a different way, please have a look again :)",0,0.5
 There are no functional changes,0,0.5
 The 32 failed tests show that something functional changed,0,0.5
 "but if you really feel strong about this, I can revert the contents",0,0.5
@@ -1005,7 +993,6 @@ Just that it's never going to be refactored after this,0,0.5
 It's always much easier to review two (or more!) small PRs than a single big one,0,0.5
 "You're right, I didn't notice that the properties were required and the methods optional",0,0.5
 #code -> #code to match all the other API,0,0.5
-/azp run,0,0.5
 Same: two spaces before equals,0,0.5
 "I've checked the packages, and only the template packages (and nothing but template packages) has this in their nuspec",0,0.5
 The .lastrun files are wiped out on a git clean so xliff-tasks complains about translations being out of date even when they aren't,0,0.5
@@ -1014,7 +1001,6 @@ The .lastrun files are wiped out on a git clean so xliff-tasks complains about t
 "This looks like a bug in the xliff-tasks, I suggest trying to create a small test case and report it to them (or use the small test case to track down the bug in xliff-tasks and just fix it)",0,0.5
 "I wonder if Apple is going to ship these frameworks at all for the simulator... by the next beta this code should probably be made permanent, instead of checking for the exact Xcode product version",0,0.5
 Nitpick: #code (below as well),0,0.5
-/azp run,0,0.5
 Test failures are unrelated (both due to #url),0,0.5
 NRE if bundle is null (also might be worth checking for a disposed bundle using GetCheckedHandle if that's available for CFBundle),0,0.5
 Test failures are unrelated,0,0.5
@@ -1252,9 +1238,7 @@ Fully agree but I couldn't figure out to configure insane that way,0,0.5
 "I think we'd need to make sure we keep the features alive for the DPI change message, but",0,0.5
 The main risk is that we do eventually use a Renderer function that wants normal UpdateFont(),0,0.5
 "Thanks, actually refactored this a bit.  I'm a bash noob so I'm learning quite a bit.  Still testing, but could use another review shortly",0,0.5
-Tagging subscribers to this area: @github,0,0.5
 See info in [area-owners.md](#url) if you want to be subscribed,0,0.5
-<details>,0,0.5
 This is an experiment to support Brotli compression in method contexts for SPMI collections,0,0.5
 I picked Brotli because we already have the source in the tree so I believe there are no license considerations,0,0.5
 "The main benefit is to reduce the size of collections stored on the disk. I had a hypothesis that for HDDs,",0,0.5
@@ -1386,7 +1370,6 @@ Here's the list of attributes that GitHub supports,0,0.5
 Gross - can you move this call into a local variable instead of in the #code statement,1,0.5
 "@github Once I have one approval, what's next? I see some build errors, but build was not so stable at this time. Should I somehow retrigger? Also who is merging this PR, me or somebody from the team",0,0.5
 "Sorry for so stupid questions, but this is my first contribution",0,0.5
-Tagging subscribers to this area: @github,0,0.5
 "This PR unrolls #code/#code for ""half"" constant strings and spans in [0..32] chars length",0,0.5
 "It does pretty much the same job as #url but in JIT this time to avoid problems listed there (e.g. low inliner's budget and throughput penalty). I decided to create a new PR to keep that as a reference (""what can be done in pure C#"")",0,0.5
 This PR handles the following APIs,0,0.5
@@ -1934,7 +1917,6 @@ Full benchmark app: #url,0,0.5
 "Worst case, nobody uses it (I suspect nobody will)",0,0.5
 This seems sensible (conservative/safe to return the worst case state),0,0.5
 I took a note in [#url](#url) to let LDM know,0,0.5
-In reply to: [288212991](#url) [](ancestors = 288212991),0,0.5
 Where can we get a concise description of where TemporaryArray<T> is believed to be better than our traditional builder,0,0.5
 @github it should always be better when the array will have to store 4 or less items.  This is for two reasons,0,0.5
 "1. the values are just stored on the stack, and no part of the TempArray will hit the heap",0,0.5
@@ -1970,7 +1952,6 @@ Should we reject anything that isn't [A-Z][A-Z],0,0.5
 * Normalize [a-z] to [A-Z] and reject anything that isn't [A-Za-z][A-Za-z],0,0.5
 "We certainly shouldn't embed the knowledge of ""assigned"" vs ""available"", but it feels like we can be guiding and flexible by rejecting digits and punctuation",0,0.5
 "We can add that later perhaps. For now, we probably shouldn't crash the process since the worst outcome of missing a case here is fewer warnings",0,0.5
-In reply to: [210390086](#url) [](ancestors = 210390086),0,0.5
 Actually the right thing to do here is to just remove the whole #code section and simply never set #code to #code and let the garbage collector do its thing,0,0.5
 "If you find these without a good workaround, we would like to know",0,0.5
 "Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as #code any now and then, in the same vein that I thankfully don't have to rewrite #code now as I used to. :D",0,0.5
@@ -2316,7 +2297,6 @@ You are an absolute legend,0,0.5
 Do we trust people not doing 'stupid' things like Static etc,1,0.5
 "Can you fold the previous #code into part of the loop and iterate over 4 times? If it gets too gross, don't worry about it",0,0.5
 stupid question: why isn't #code instead of #code,0,0.5
-Tagging subscribers to 'arch-wasm': @github,0,0.5
 See info in area-owners.md if you want to be subscribed,0,0.5
 "To get good behavior in typescript, your enums need to be 'const enum', otherwise it generates some really gross JS with runtime overhead. I didn't know this (thanks to @github for the tip)",0,0.5
 "Just to check, there's some terrible reason why the newer tools don't work against Preview 5? And if that file that it cant find is new since Preview 5, I think we just spotted your version check. ;-)",0,0.5
@@ -2900,8 +2880,7 @@ I don't see the point in looking for #code we'll never create at this point,0,0.
 "We have received reports of implementations of both Windows network filesystems and NFS in which locking was subtly broken. We can not verify these reports, but as locking is difficult to get right on a network filesystem we have no reason to doubt them. You are advised to avoid using SQLite on a network filesystem in the first place, since performance will be slow. But if you must use a network filesystem to store SQLite database files, consider using a secondary locking mechanism to prevent simultaneous writes to the same database even if the native filesystem locking mechanism malfunctions.""",0,0.5
 "I'm really not sure if over-the-network scenario is worth testing for WAL, even if base case (non-WAL) has recommendations against using network filesystems to store databases",0,0.5
 Greetings human! You've submitted a PR that modifies code that is shared with #url . Please make sure you synchronize this code with the changes in that repo,0,0.5
-"@github/aspnet-blazor-eng or @github/aspnet-build, any suggestions on resolving the Components.E2ETest and Mvc.FunctionalTests failures❔ I might be doing something wrong in this PR but it's not apparent to me. Sample stack trace [above](#url)",0,0.5
-"In reply to: [189676843](#url) [](ancestors = 189676843,189672875)",0,0.5
+"@github or @github, any suggestions on resolving the Components.E2ETest and Mvc.FunctionalTests failures❔ I might be doing something wrong in this PR but it's not apparent to me. Sample stack trace [above](#url)",0,0.5
 "❕ This is a collection initializer, not an object initializer (test is correct, but the method name here is wrong)",0,0.5
 dumb question... why was this rolled into this PR? #Resolved,0,0.5
 "This is _potentially_ a deadlock risk: if the UI thread is unavailable to switch to, we're still holding the lock, and so further notifications will get blocked up. Whether this is a serious concern is hard to say -- if we're wrong we'll at least get a nice hang which should be easy to debug. :smile",0,0.5
@@ -3303,20 +3282,16 @@ Oh crap! I thought about that when I started to write the tests and then I forgo
 - [x] fix/test Copy,0,0.5
 (new items 3!),0,0.5
 - [x] really do get rid of #code internally,0,0.5
-Tagging subscribers to this area: @github/ncl,0,0.5
 See info in [area-owners.md](#url) if you want to be subscribed,0,0.5
-<details>,0,0.5
-<summary>Issue Details</summary>,0,0.5
-<hr />,0,0.5
 "Note, the old Begin/EndAccept methods support doing an accept and receive in a single operation. Unfortunately the API for this is terrible and forces allocation. It's also not currently supported on non-Windows platforms. So, replace this with a helper routine that performs an accept followed by a receive, and works across all platforms",0,0.5
 Contributes to #43845,0,0.5
 @github how gross is this? Having this here avoids a second dictionary lookup per page invocation,1,0.5
 I'm not sure that's necessarily an improvement,0,0.5
 "If there should *never* be more than one License file, should we #code on it",0,0.5
 If there *should* be more than one…but we only ever use one…wtf should happen,0,0.5
-"This just ""feels weird""",0,0.5
+"This just ""feels weird""",1,0.5
 "Okay going to show my C++ noob here, what's the proper pattern to do this call then, do I need to explicitly copy the string into another variable, like hostFxrPath for it not to get destroyed",0,0.5
-"Kinda nasty, but I think I did it correctly within the locks, and added a gross test that adds/removes a bunch of schemes for correctness",0,0.5
+"Kinda nasty, but I think I did it correctly within the locks, and added a gross test that adds/removes a bunch of schemes for correctness",1,0.5
 "Verified, insane",1,0.5
 "See, I wanted to ensure that whatever set of args the user provided always generated a unique string. Yea, if the user puts all the args into a keybinding/command, this will be stupid long like this. At that point, the user should probably have a better name they could give the command",0,0.5
 "Yeah, I'm not a fan of any of these extension methods that all take lambdas that call each other. I only looked at cleaning up the solution provider ones, but I can have a pass at the rest. I think this is part of an existing one that I pulled the filtering code out of, but the diff of this file looks pretty terrible in general",1,0.5
@@ -3338,7 +3313,10 @@ If there *should* be more than one…but we only ever use one…wtf should happe
 "As it is, the exception would bubble to main loop, as this is promise callback",0,0.5
 I at lest moved both #code and #code to #code,0,0.5
 I guess we have to account for the offline client here which is gross. Yet another reason to figure out #7805,0,0.5
-"_technically_ yes. But also technically, a caller could be stupid and set #code _before_ calling this. Or you could be me in the tests, and reusing the same #code across multiple calls, because you're too lazy to instantiate multiple. So I always think it's good form to have the handler manually set a result like this, so that _no matter what_, the result is initialized to a failure state, and only set to success when we know we're successful",0,0.5
+_technically_ yes.,0,0.5
+"But also technically, a caller could be stupid and set #code _before_ calling this",1,0.5
+"Or you could be me in the tests, and reusing the same #code across multiple calls, because you're too lazy to instantiate multiple.",1,0.5
+"So I always think it's good form to have the handler manually set a result like this, so that _no matter what_, the result is initialized to a failure state, and only set to success when we know we're successful",0,0.5
 "I actually split it up into two parts - one for unpacking the json (#code), and another for doing the source/name GUID generation. I had to split it up like that because the profile doesn't actually have a reference to its own JSON. i could have theoretically had the profile re-create a blob of json and call the json parsing function, but that seemed insane",0,0.5
 Hmm,0,0.5
 Would it make sense having _stream on Connection as private protected? (probably a terrible idea),0,0.5
@@ -3346,13 +3324,13 @@ Or have you considered a different name here or the base type? _streamWrapper on
 Or at least a comment explaining why this is different from the base type _stream,0,0.5
 Same for new Pipe below,0,0.5
 That shouldn't be the case ... o_O the title should never be empty because it was getting set by #code,0,0.5
-oh crap i just realized i made you make a bad/annoying change,0,0.5
-"Ugh gross. OK, maybe don't put it in by default and let people override it for now and file a follow-on to make #code smarter",0,0.5
-"\<aside> Yea, this ""Capabilities"" section I've always hated. I think if you're outside MSFT, then you don't have any idea what to put here, and ""capabilities"" is a _terrible_ heading for it",0,0.5
+oh crap i just realized i made you make a bad/annoying change,1,0.5
+Ugh gross,1,0.5
+"OK, maybe don't put it in by default and let people override it for now and file a follow-on to make #code smarter",0,0.5
+"Yea, this ""Capabilities"" section I've always hated.",1,0.5
+"I think if you're outside MSFT, then you don't have any idea what to put here, and ""capabilities"" is a _terrible_ heading for it",1,0.5
 This PR fixes #127365,0,0.5
 "The added code follows the #code method recommended by [Windows Blog](#url), which is the minimal code necessary to implement this feature, and has _not been integrated into the Inno Setup script_. I hope that these codes can be used as an inspiration, and the VS Code developers would find out a sensible way to achieve this feature",0,0.5
-. Screenshot 2021-12-22 230721](ht,0,0.5
-. Screenshot 2021-12-22 230859](ht,0,0.5
 "The added codes are located at #code, including an action handler, a minimal sparse package manifest, build script and setup script",0,0.5
 "Because these are not integrated into Inno Setup, a manual build process is needed",0,0.5
 "Assume that VS2019 with desktop development workload is installed in the working environment. #code can make the sparse package and #code library file for handling menu actions, which are needed by Windows. It also self-issues a test certificate to sign the sparse package. (This maybe needs to be implemented in a more formal way.)",0,0.5
@@ -3367,7 +3345,6 @@ Just me being stupid... :-P,0,0.5
 "Is a result task, it would allocate a #code",0,0.5
 Thought about adding an extension method called #code; but that seemed a terrible name,0,0.5
 wtf,1,0.5
-
 "I guess if it was OK for BindableLayout, it should be OK for Map too",0,0.5
 "Either that, or we made a terrible mistake merging 5582. That implementation of Replace in #code is very suspect",0,0.5
 "It looks like Map.Pins is an #code, so while I don't like this implementation of #code, it should be fine for this purpose. It looks like the implementation of #code only uses #code for a single item being set. So at least for this specific application, it shouldn't cause any immediate problems",0,0.5
@@ -3392,7 +3369,7 @@ Gross. OK,1,0.5
 @github could this be something as stupid as not giving mlaunch enough time to finish,1,0.5
 Here's a good run,0,0.5
 That took 22 seconds to return any results,0,0.5
-Here's a bad one,0,0.5
+Here's a bad one,1,0.5
 Timeout is 30 seconds,0,0.5
 How close to the wire is it getting,0,0.5
 python3 wtf,1,0.5
@@ -3518,31 +3495,28 @@ Don't feel strongly about this but wanted to hear your thoughts a bit. #Resolved
 "While I can (and am) moving the extension count outside the block, since this is all really backed by JS, it's wholly possible for the members on the imported classes to change as they are executing. I seriously hope nobody ever does that, but considering the possibility makes this code more defensive",0,0.5
 "@github I think musl libc is an incredibly small niche, but I can try to set up a VM if you're concerned",0,0.5
 "I didn't use the official perf run to measure the performance - that was just a sanity check.  The actual measurements were from a harness driving tsserver and tracked the updateOpen time across 9 or so runs.  I tested on both Windows and Linux.  I can try to dig up the original numbers, if you're interested.  Anecdotally, when I was profiling midgard yesterday, I saw that realpathSync took 20% of total updateOpen time, whereas realpathSync.native took only 10% (on windows)",0,0.5
-It's not incredibly relevant I think - maybe we'd use that for 🅱️lectron - but.... We'll probably get rid of this code next week 🤣,0,0.5
+It's not incredibly relevant I think - maybe we'd use that for electron - but.... We'll probably get rid of this code next week 🤣,0,0.5
 "I don't think matching on the query string would have offered a good behavior before. Query strings are not ordered, so the chances of matching on the query string would have been incredibly narrow",0,0.5
 I think we can just make the change and make an announcement about it if we deeply care about it,0,0.5
 Will update the comment,0,0.5
 What I meant was something like,0,0.5
 CLR allows unsafe conversion from (O) to native int/uint,0,0.5
 "The conversion does not change the representation of the value, but the value will not be reported to subsequent garbage-collection operations (and therefore will not be updated by such operations)",0,0.5
----,0,0.5
-In reply to: [125134566](https://github.com/dotnet/roslyn/pull/20548#discussion_r125134566) [](ancestors = 125134566),0,0.5
 Looks like there's the same issue here.  The finally block could end up seeing garbage data in each GCHandle that wasn't yet initialized if there's a failure in setting up the handles,0,0.5
 "In the changes I'm making for SocketsHttpHandler (not this PR), I make the assumption that converting UTF16 code units (chars) to UTF8 bytes is guaranteed to be at most 3 bytes per code unit (to avoid calling into GetByteCount every time). @github Does that assumption hold? (as in worst-case every char is a 3-byte replacement character)",0,0.5
 The bounds (128 => 512) can be tightened further here in that case. I will extract these to consts,0,0.5
 "I seems that when this condition is false, we'll have done the first visit (based on when-not-null state) for nothing",0,0.5
 "I suspect we can re-organize the code to do the second visit (based on worst-case state) first, then decide if we need to do the first visit (based on when-not-null state). #Closed",0,0.5
 Open to suggestions for a better way to do this,0,0.5
-"I'm not sure if it's ""better""... how about User-Agent sniffing ;-)",1,0.5
----,0,0.5
+"I'm not sure if it's ""better""... how about User-Agent sniffing ;-)",0,0.5
 But more seriously: why does the host platform leak into how the app behaves?  Is something host-platform specific leaking through our tooling,0,0.5
 is Date the worst built-in in Javascript,0,0.5
 Looks like the answer is Yes,0,0.5
 "Giving random names would add unnecessary garbage to emitted code. Since import order does not matter for AMD modules, reordering would make most sense",0,0.5
 "Changing order is a bit intrusive to original code, but amd-dependency comment is not a language feature, just a utility. Its also not documented in official materials, so I think violating some project principles is justifiable",0,0.5
 "Seems like all the failures are in legs where we have heap verification enabled. These happen in my baseline build too, which is at 5d8f92435ebfeab67b41aba0bce12e1e8af3187e",0,0.5
-@github can you look over the failures in https://dev.azure.com/dnceng/public/_build/results?buildId=532465&view=ms.vss-test-web.build-test-results-tab and see if anything comes to mind,0,0.5
-"badbox1 at above commit, with GCStress=C, HeapVerify=1, on Linux arm32",0,0.5
+@github can you look over the failures in #url and see if anything comes to mind,0,0.5
+"@github at above commit, with GCStress=C, HeapVerify=1, on Linux arm32",0,0.5
 Oh I see - #code is the problem,0,0.5
 "I think using #code is going to be incredibly error-prone.  And we will need separate definitions for 32-bit and 64-bit platforms due to IntPtr size, and padding/alignment requirements.  It's going to be impossible to maintain",0,0.5
 "If we can tell the linker to do substitutions on the types of the #code structs somehow, I think that would be better",0,0.5
@@ -3551,21 +3525,20 @@ Oh I see - #code is the problem,0,0.5
 Thanks for checking,0,0.5
 "here's the scenario I'm thinking about - when we are in a NoGC region, we could trigger a GC, the special thing we do is we adjust the budget after we've done the logic to decide whether we want to gradual commit or not. in #code we decide whether we set #code to TRUE or not and at that point we haven't adjusted the budget for NoGC yet. tehn we return to #code and adjust the budget (to the big budget for NoGC). so we can come out of that GC with #code as TRUE and #code can run",0,0.5
 "At the same time, the worst case for the baseline algorithm is when it has to stop every character",0,0.5
-. image](ht,0,0.5
 (the new one is 20x faster),0,0.5
 Yeah... at this point i think it's fine to offer in all argument cases.  It's unlikely anyone would notice.  And the worst impact is they type something that the compiler then tells you is not valid,0,0.5
 @github  I agree that the worst case looks bad -- but it is extremely unlikely,1,0.5
 "The long wait time can only happen if the rename succeeds close to the 500th iteration for each file. That is, when there is a real failure with EACCESS - the extraction aborts after the first file (after 50s)",0,0.5
 "The case when recovery is triggered is rare, and is not a path to be optimized.  If the AV blocks for a long time after writing each file, then the recovery will need to wait for it. Still, it is not expected to take the full minute after each file is written",0,0.5
 "While the wait time could be used to write other files that need to be recovered, the time gained is rather negligible, since the time to write these files is a few milliseconds, compared to the minute spent waiting for the AV",0,0.5
-"I actually tried out writing the change you suggested. Please take a look [at this diff](https://github.com/swaroop-sridhar/runtime/compare/1fcheck...swaroop-sridhar:2fcheck?expand=1). But I'm not sure it is work to take in that complexity in a servicing fix, given that this case is unlikely, and that such a case is hard to test. If you still think we need to take the change, I can add it on to the PR",0,0.5
+"I actually tried out writing the change you suggested. Please take a look [at this diff](#url). But I'm not sure it is work to take in that complexity in a servicing fix, given that this case is unlikely, and that such a case is hard to test. If you still think we need to take the change, I can add it on to the PR",0,0.5
 "The heuristic is ""using a non-thread-safe instance concurrently is allowed to corrupt that instance, but nothing else"" (there's a little bit of fuzziness there, e.g. abusing MemoryStream over a provided buffer is going to corrupt the underlying buffer, but that's OK, you told it to)",0,0.5
 "If there's concurrent access to this value, what's the worse that happens",0,0.5
 * Inconsistent data? Don't do concurrent operations,1,0.5
 * Weird exceptions? Don't do concurrent operations,1,0.5
 "* Double-return to an array pool, causing two future instances to have accidental concurrency problems? We should guard against that, since it was shared state corruption",0,0.5
 "* Double-rent from an array pool, leading to the pooled array being garbage collected? Don't do concurrent operations",0,0.5
-@github https://github.com/egorbo/disasmo is the tool I use. It is incredibly useful in validating these little things,0,0.5
+@github #url is the tool I use. It is incredibly useful in validating these little things,0,0.5
 Converting 60.nnn into 59.nnn sounds like the worst possible option (others being 59.999 or 59.9999999). From the original code structure it looked like an oversight not an intentional decision,0,0.5
 "Hey @github. I'm really sorry that we've frustrated you like this. You put together some amazing PRs, and so consistently, and you deserve better than that. I could try and give excuses for taking so long (SUI sprint, baby not sleeping, attempted overthrow of democracy), but at the end of the day, this is on **me**. I dropped the ball by not prioritizing reivews fast enough, and I'm sorry for that",1,0.5
 "Trying to clear out the PR backlog has been a personal quest of mine for a while. Since coming back from the holidays, I've been more distracted and just haven't given it the time it needs. I'll do better. I wanted to get the team to give me a second qualitative opinion on this particular PR during our team sync this week, but that got cancelled, (and now that I think on it, next week's needs to be moved too, @github). I'll summon the rest of the team this morning to see if they can give some feedback (when they wake up). Broader though, I'll try and be better about tapping other members of the team in on community PRs, and faster, so in the future you're not blocked on just mine and Dustin's time",0,0.5
@@ -3576,13 +3549,11 @@ Thanks for sharing. We'll do better 😊,0,0.5
 "For #code, what is there to learn? Seems we'd get the worst case in both branches, no",0,0.5
 "Yes, examples would help. Thanks",0,0.5
 "Off the top of my head, in top-of-my-head best-to-worst",0,0.5
-* #code,0,0.5
 "* Leave it here at the P/Invoke, and pass key.Length (RC2) or 0 (everything else)",0,0.5
-* This,0,0.5
 * Make a separate P/Invoke for creating an RC2 cipher,0,0.5
 "If we have a tree changed one, this would be another place it technically shoud be used. Or worst case, also update to listen to parse options changed and we'll clean it up when we get rid of that",0,0.5
 "Two problems here. First, this appears to be crossing abstraction boundaries. AnalyzerDriver is logically in a separate API layer built over the compiler. Second, a consequence of this change would be to cause garbage to be retained unnecessarily long. The creation of a fresh semantic model was intentional",0,0.5
-"If this was not intended for review, sorry",1,0.5
+"If this was not intended for review, sorry",0,0.5
 "more unique name is good idea, maybe #code ",0,0.5
 "With that, the worst could happen is that it would not be matched and not inlined",0,0.5
 "We could add another dummier search for #code as last step, if it can find some, it means the inlining didn't work for some reason and we could error on it",0,0.5
@@ -3593,10 +3564,11 @@ This will be incredibly useful for using inline types with the data object liter
 "That's a good question as this routine would now produce a unique key. I think the ""worst"" that would happen in that case is we end up with a duplicate test, rather than the worst case now, being tests that should be unique, aren't, and the tests fail with somewhat obscure errors",0,0.5
 "@github : Compared with Asp.net Core that deliberately has no #code for some reasons, do you have any reason to define #code for Xamarin.Forms",0,0.5
 "Seriously, I love your idea.  I really want your work above to be one of  Xamarin.Forms project templates in .net core SDK",0,0.5
-I also made a request [How to implement DI in Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples/issues/526),0,0.5
+I also made a request [How to implement DI in Xamarin.Forms](#url),0,0.5
 Suggestion?  Should the lock file contain the pid of the first process to create the file?  That way the message could print which process id started the build and what the current process id is,0,0.5
 "However, as we believe that this is largely for intra-IDE scenarios, that might not actually be incredibly useful",0,0.5
-I don't think it makes sense to optimize - in the worst case it will just create a useless instance,1,0.5
+I don't think it makes sense to optimize,0,0.5
+in the worst case it will just create a useless instance,1,0.5
 sorry 🤦,0,0.5
 "Haha, don't worry about it. This is just one of the absolute worst bits of spaghetti code in the entire Terminal",1,0.5
 Do we have a task for UT coverage? I volunteer to do it (the moment I get a week with more than 5 minutes to write code),0,0.5
@@ -3622,7 +3594,6 @@ Can this cleanup affect debugging or post-mortem diagnostic (Watson),0,0.5
 Watson:  If post-mortem debugging works then watson should be fine,0,0.5
 It's OK to acknowledge that StringValues will rarely contain null array entries and not take the situation too seriously. I'm more concerned about the implementation having misleading #code overrides in it. The #code conveys that we've verified this value can't be null but the tooling isn't smart enough to follow our logic. This can be problematic for people maintaining the code starting from false assumptions,1,0.5
 "I'd rather convey our decision that ""it could be null but that's uncommon enough that we don't want to add special logic for it"" more literally in the code, such as changing",0,0.5
-To,0,0.5
 This isn't a lot of extra effort and more closely conveys the semantics of the situation. It has the added benefit of failing more gracefully if there ever are nulls in the array,0,0.5
 I think IndexOf will never return -1,0,0.5
 I don't trust things that much.  I would assume the worst and have the code check for that,0,0.5
@@ -3643,50 +3614,20 @@ cc @github,0,0.5
 (or perhaps the issue is that we don't recognize the full extent of the BB02 loop because it has multiple back edges...),0,0.5
 "The upshot of this is that we create an ""island"" block that is only ever jumped to and from (#code)",0,0.5
 ## Benchmark results,0,0.5
-Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenchmark/blob/471fa6822a5c5e5fecfc14196e54dbfe82a0f20c/ConsoleAppBenchmark/IndexOfAnyRunner.cs,0,0.5
-|       Method | Toolchain | HaystackLength | LastNeedleMatches |            Mean |          Error |       StdDev | Ratio | RatioSD |,0,0.5
-|------------- |---------- |--------------- |------------------ |----------------:|---------------:|-------------:|------:|--------:|,0,0.5
-| SliceInALoop |  idxofany |              4 |             False |        18.33 ns |      28.879 ns |     1.583 ns |  0.64 |    0.06 |,0,0.5
-| SliceInALoop |      main |              4 |             False |        28.79 ns |      21.655 ns |     1.187 ns |  1.00 |    0.00 |,0,0.5
-|              |           |                |                   |                 |                |              |       |         |,0,0.5
-| SliceInALoop |  idxofany |              4 |              True |        17.12 ns |       4.562 ns |     0.250 ns |  0.38 |    0.01 |,0,0.5
-| SliceInALoop |      main |              4 |              True |        44.52 ns |      12.959 ns |     0.710 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             16 |             False |        65.40 ns |      16.572 ns |     0.908 ns |  0.68 |    0.02 |,0,0.5
-| SliceInALoop |      main |             16 |             False |        96.56 ns |      21.013 ns |     1.152 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             16 |              True |        60.07 ns |       9.261 ns |     0.508 ns |  0.46 |    0.00 |,0,0.5
-| SliceInALoop |      main |             16 |              True |       131.59 ns |      10.865 ns |     0.596 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             64 |             False |       236.47 ns |      38.295 ns |     2.099 ns |  0.63 |    0.03 |,0,0.5
-| SliceInALoop |      main |             64 |             False |       378.68 ns |     309.722 ns |    16.977 ns |  1.00 |    0.00 |,0,0.5
-| SliceInALoop |  idxofany |             64 |              True |       195.13 ns |      24.816 ns |     1.360 ns |  0.22 |    0.00 |,0,0.5
-| SliceInALoop |      main |             64 |              True |       878.64 ns |       9.714 ns |     0.532 ns |  1.00 |    0.00 |,0,0.5
-"| SliceInALoop |  idxofany |            256 |             False |       901.88 ns |   1,002.251 ns |    54.937 ns |  0.62 |    0.04 |",0,0.5
-"| SliceInALoop |      main |            256 |             False |     1,450.75 ns |      54.688 ns |     2.998 ns |  1.00 |    0.00 |",0,0.5
-| SliceInALoop |  idxofany |            256 |              True |       757.16 ns |      39.841 ns |     2.184 ns |  0.07 |    0.00 |,0,0.5
-"| SliceInALoop |      main |            256 |              True |    11,050.08 ns |     419.823 ns |    23.012 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           1024 |             False |     3,561.17 ns |   4,301.921 ns |   235.803 ns |  0.62 |    0.05 |",0,0.5
-"| SliceInALoop |      main |           1024 |             False |     5,781.88 ns |   2,345.776 ns |   128.580 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           1024 |              True |     2,988.88 ns |      11.492 ns |     0.630 ns |  0.02 |    0.00 |",0,0.5
-"| SliceInALoop |      main |           1024 |              True |   167,176.09 ns |  29,612.891 ns | 1,623.182 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           4096 |             False |    14,217.25 ns |  11,186.894 ns |   613.191 ns |  0.62 |    0.02 |",0,0.5
-"| SliceInALoop |      main |           4096 |             False |    22,928.52 ns |   4,179.188 ns |   229.075 ns |  1.00 |    0.00 |",0,0.5
-"| SliceInALoop |  idxofany |           4096 |              True |    11,919.86 ns |     730.079 ns |    40.018 ns | 0.005 |    0.00 |",0,0.5
-"| SliceInALoop |      main |           4096 |              True | 2,495,866.67 ns | 136,852.103 ns | 7,501.326 ns | 1.000 |    0.00 |",0,0.5
-## Discussion,0,0.5
+Full benchmark app: #url,0,0.5
 "This benchmark tests #code when called in a loop (a typical use case) for various haystack lengths, and it alternates whether the first needle or the last needle is discovered. In particular, this shows how the original #code logic when called in a loop devolves into an #code operation if the last needle in the collection is the one that keeps being found, and how with the new logic the loop maintains an #code worst-case performance guarantee",0,0.5
 "Don't read too deeply into the benchmark showing that the new #code logic consistently outperforms the original logic. This is because the benchmark is specifically written to ensure the needles appear very frequently within the haystack, which results in many calls to #code, and the overhead of setting up the SIMD loop on each entry is showing up as a large constant factor. Ignore this for now, as the really important takeaway is the worst-case algorithmic complexity as discussed in the previous paragraph",0,0.5
 "@github what are your thoughts about including an app context switch (default to the new behavior)? If there is a customer broken by this, they would still be able to receive the other fixes in the 6.0.2 patch. There is no need for a switch in main/7.0 as that is a voluntary update",0,0.5
 "Worst case, nobody uses it (I suspect nobody will)",1,0.5
 This seems sensible (conservative/safe to return the worst case state),0,0.5
-I took a note in [https://github.com/dotnet/csharplang/issues/2201](https://github.com/dotnet/csharplang/issues/2201) to let LDM know,0,0.5
----,0,0.5
-In reply to: [288212991](https://github.com/dotnet/roslyn/pull/35955#discussion_r288212991) [](ancestors = 288212991),0,0.5
+I took a note in [#url](#url) to let LDM know,0,0.5
 i'm seriously surprised that we're even getting a bracketed anything from the parser here,0,0.5
 Where can we get a concise description of where TemporaryArray<T> is believed to be better than our traditional builder,0,0.5
 @github it should always be better when the array will have to store 4 or less items.  This is for two reasons,0,0.5
 "1. the values are just stored on the stack, and no part of the TempArray will hit the heap",0,0.5
 "2. there is no contention/garbage possibility around pooling.   this is because nothing is pulled (or returned) to a pool until you hit 5 elements.  This avoids those costs, as well as the (real) garbage cost that arises with pooling when concurrent returns happen and one returned item it overwritten by another returned item",0,0.5
 You can practically think about it as if this gives you a small stackalloc'ed scratch area for lots of small-collection scenarios.  Only once you go past that scratch area do you have the same perf costs that you'd have today with normal ArrayBuilder,0,0.5
-The [documentation](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.marshal.getfunctionpointerfordelegate) for #code says,0,0.5
+The [documentation](#url) for #code says,0,0.5
 You must manually keep the delegate from being collected by the garbage collector from managed code. The garbage collector does not track references to unmanaged code,0,0.5
 "This is a Mono-specific codepath, so do different rules apply",0,0.5
 I think it would be better to have a #code method on Compilation to break these cycles and allow things to be garbage collected,0,0.5
@@ -3696,14 +3637,14 @@ You can call these functions to change the value. This means you have the capabi
 It's best to call them from apps that are in tight control of their resources to limit security issues due to leaking resources of the privileged user,0,0.5
 "I'm not aware of apps that do this besides those specifically meant to change user (like #code, #code). That is the only thing they do",0,0.5
 That's why I seriously discourage doing this in a .NET app,1,0.5
-"We could, if it makes a difference, avoid caching for #code (#code), since that is the most expected privileged user (which can use these calls)",0,0.5
+"We could, if it makes a difference, avoid caching for #code, since that is the most expected privileged user (which can use these calls)",0,0.5
 "IMO, #code is similar to #code: They both assume that the app can only ever have a single window",0,0.5
 "This is fine (and convenient) for the majority of apps, but it is also a trap for the minority of developers who build multi-window apps. The worst scenario is when that developer takes a dependency on a library that uses these APIs",0,0.5
 "Based on that, I think that",0,0.5
 "- This API should never be used by libraries (including MAUI itself and the toolkit). An idea would even be to put something like #code, add the #code attribute to at least warn MAUI devs",0,0.5
 "- We should move this singleton #code to a place that has a name that says ""Use this only if you are sure that this code will only be used in single window apps"" (something more explicit than a comment in the documentation that most devs will not read)",0,0.5
-Won't this double the garbage since we have to make the byte[] then copy it into a new byte[] inside ImmutableArray?  I think we used byte[] (even though it's mutable) to avoid that,0,0.5
+Won't this double the garbage,1,0.5
+I think we used byte[] (even though it's mutable) to avoid that,0,0.5
 "Would it be possible to add target namespace, target folder, and api client class name parameters to the tool",0,0.5
-"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <https://github.com/dotnet/aspnetcore/blob/main/src/Tools/Extensions.ApiDescription.Client/src/build/Microsoft.Extensions.ApiDescription.Client.props>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",0,0.5
+"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <#url>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",0,0.5
 Why is the Option for CodeGenerator not using a generic type to pass the enum and leave the parsing to system.command line,0,0.5
-
