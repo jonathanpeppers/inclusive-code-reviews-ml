@@ -13,6 +13,7 @@ using Microsoft.ML.Data;
 using InclusiveCodeReviews.Model;
 using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms.Text;
+using Microsoft.ML.Trainers.LightGbm;
 
 namespace InclusiveCodeReviews.ConsoleApp
 {
@@ -64,7 +65,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 									  .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
 									  .AppendCacheCheckpoint(mlContext);
 			// Set the training algorithm 
-			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 1E-05f, L1Regularization = 0f, ConvergenceTolerance = 0.1f, MaximumNumberOfIterations = 20, Shuffle = true, BiasLearningRate = 0.01f, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
+			var trainer = mlContext.MulticlassClassification.Trainers.LightGbm(new LightGbmMulticlassTrainer.Options() { NumberOfIterations = 150, LearningRate = 0.11212235f, NumberOfLeaves = 52, MinimumExampleCountPerLeaf = 1, UseCategoricalSplit = false, HandleMissingValue = false, UseZeroAsMissingValue = false, MinimumExampleCountPerGroup = 10, MaximumCategoricalSplitPointCount = 8, CategoricalSmoothing = 10, L2CategoricalRegularization = 1, UseSoftmax = true, Booster = new GradientBooster.Options() { L2Regularization = 1, L1Regularization = 0 }, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
 						  .Append(mlContext.Transforms.Conversion.MapValueToKey("importance", "importance"))
 						  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 
