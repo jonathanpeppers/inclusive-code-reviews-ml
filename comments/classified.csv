@@ -2991,3 +2991,408 @@ When is #code? Whenever we do a keyboard selection? Would #code (or inversely #c
 . image](ht,0,0.5
 - seemingly fixed by 4a32b33,0,0.5
 "- [x] Open WSL vim. Add a line of text to a file, in the middle of the viewport. Write the file. Whole screen is cleared, except cursor line and the status line",0,0.5
+"Alright so this is a wack idea that might need socializing with the rest of the team, but I wonder if it would make sense to just combine this functionality with the #code action? Thoughts on the matter",0,0.5
+* #code is kinda a black swan here - all the other short forms are two characters,0,0.5
+"* for something like #code, the long form could actually just be #code 🤔",0,0.5
+"* #code now is a little weird, ""move the pane to tab 0 (to the left???)"" That doesn't make sense. The two options (#code and #code) would have to be exclusive",0,0.5
+* It's probably not _that_ insane to have two actions (#code and #code) that are exposed through a single commandline interface,0,0.5
+* (as a follow up idea:) we could do something like #code which would move the pane to be a sibling of pane 4 in tab 0,0,0.5
+"(high horse) and *here* is where negative numeric types are handy!  *IF* (lol?) there were #code environment variables, this would become an infinite loop, as we'd loop from #code to 0 without nary a blip",0,0.5
+"(Granted, that would require having a lib with #code environment variables, which is *insane*...but kinda/sorts shows the utility of negative numbers. :-)",0,0.5
+I'm stupid. PatternSyntax check already excludes a parenthesized designation. I'll adjust the comment,0,0.5
+"It has the base type of DocumentationProvider, not XmlDocumentationProvider. (I agree the names are terrible.)",0,0.5
+wtf,1,0.5
+"Well, so this _works_, but it has 2 problems",0,0.5
+"1. Most consumers do not expect the very specific type the jsx factory function actually returns. Usually, this manifests in reassignments, where",0,0.5
+"ends up being an error because rather than both being #code, the first assignment makes #code a #code, while the second line is a #code. This is, unfortunately, a breaking change we'd force on people. It's not hard to fix (annotate #code with the more vague #code yourself), but could be frustrating. That break reduces the appetite to take this change a bit",0,0.5
+"2. Performance is _terrible_. Like beyond bad. This makes _every_ jsx tag tree in your program into a series of nested generic context sensitive function calls (and _most_ jsx apps have a _lot_ of nested tags!). That's just about the worst-case scenario for the type checker. If we could make nested context sensitive function calls much more performant to check, it's go a long way towards making merging this feasible",0,0.5
+This looks insane to me,1,0.5
+"Basically, it's not terrible if we offer keywords even when not always applicable.  That's still much better than *not* offering it.  Then, we could just make this cod really simple.  Basically: ""offer these things if it's in a parameter list"", even if that allows some things when not applicable",0,0.5
+Wohoo. Five minutes after loading the PR and I can finally comment here,0,0.5
+"Oh crap I pressed Enter, another five second delay",0,0.5
+Anyways yes this will fail if the file is missing,0,0.5
+Wtf I know I changed that,1,0.5
+"Yea I can concur with that. I'd make sure that this is clear in the doc comment for this function, because it's definitely _not_ clear just reading the code wtf is happening here",1,0.5
+@github I think you meant to mention @github,0,0.5
+haha crap sorry,0,0.5
+"I checked OS set to light and OS set to dark with the app following. If you switch it while it is open, it looks terrible. But if you close and reopen the page it's fine. I wasn't going to cry over that",0,0.5
+I can check and cross-reference the other bug I guess,0,0.5
+"This should be a more ""context free"" error message.  We certainly *don't* want the stack trace dumped to the ""error"" output, as this is user hostile (wtf are they supposed to do with it?), though that said, what are they supposed to do when this task fails, *period*? :-/",0,0.5
+"Regardless, I'd suggest",0,0.5
+"Loed, I'm stupid. Sorry for that",0,0.5
+"this is the meat of where things changed. unfortunately, the diff is terrible. effectively teh logic is pretty simple",0,0.5
+1. determine the expression we want to inline,0,0.5
+1. find the reference locations to inline and inline there,0,0.5
+"1. if we had no conflicts, remove the declaration",0,0.5
+1. add warning annotations for things like side-effects or moving code into conditionally compiled methods,0,0.5
+Gross,1,0.5
+"This is build time, but I agree this error message is terrible especially in light of the new convention-based inference of parameter sources. I want to track more information about the parameters when building up the RequestDelegate arguments which will lead to better errors, but I've already started on the culture stuff so I think I'll do this as part of this PR",0,0.5
+"We don't use it often (I think because people don't know about it), but if it makes things worse feel free to disregard this. It's sometimes cute, sometimes terrible",0,0.5
+"What's the best code pattern to do something like this? I feel like #code with a lambda is too heavyweight, and a #code is kind of gross (so I want confirmation before doing that). (Or did you mean something else by that? Not computing if #code is true or something like that?)",0,0.5
+"this seems inconspicuous, but also, wtf is it doing? A comment (below, outside the macro) might help enlighten as to why that's needed",1,0.5
+Does it need to be Roslyn specific,0,0.5
+"Long term I think that terrapin will end up encompassing all of the tools in our build that contribute to how our DLL files are written. So there are some obvious examples that go past Roslyn: single file writer, F#, etc ... Hence I do think long term we will need a manifest file that encompasses the artifacts needed be the totality of these tools",0,0.5
+At the same time I tried to write this section to be more general but had trouble doing so as we don't know the exact requirements of the tools. Given that the next six months is largely Terrapin focused I kept this doc fairly Roslyn specific to keep it concrete,0,0.5
+I should add a section at the end though clarifying that the intent here is for this to envolve though,0,0.5
+"So, I think we can have dotnet-build-dependencies tool that works with all managed binaries using a common set of entries that express dependencies",0,0.5
+"As the end of the doc states, I'm terrible at naming. I'm fine with whatever name others agree on. @github do u have any opinions here",0,0.5
+HOLY SHIT that totally fixes it,1,0.5
+"wait uh, I don't think we need this. Win+down will minimize a window",0,0.5
+Ah crap I didn't even know about this shortcut 😅,0,0.5
+"Ok so with this shortcut, the user can minimize to tray with the keyboard as long as #code",0,0.5
+" Stupid context specific diff, did not notice",1,0.5
+all while continuing not to have evidence that this is actually a hot path for real-world apps,0,0.5
+Signals Rosyln would move away from ImmuntableDictionary for a fast Dictionary clone method #url,0,0.5
+"Yes, ImmutableDictionary is really bad. We just haven't had cases yet that fell into the patterns for which we have production-ready alternatives. The main scenario that we have the ability to improve today is collections with the following characteristics",0,0.5
+"* The dictionary is built up from empty, as opposed to built by transforming a previous collection through add/remove operations",0,0.5
+"* The collection has more than a few elements, but less than ~10K elements",0,0.5
+"For this we could switch to an immutable wrapper around #code, similar to how we use #code instead of #code",0,0.5
+"My gut tells me this should be a slam dunk win. The vast majority (probably nearly all) of cases where we use ImmutableDict, it's not to benefit from what ID is decent at, but just to ensure it will not be mutated post creation. For that purpose it's actually a pretty terrible choice and adds a tremendous amount of overhead for functionality that we're not needing in those scenarios",0,0.5
+"Also for lockless read Dictionary, with very infrequent updates (where reallocating the entire dictionary is more lightweight than taking a lock on every read, or using #code) e.g",0,0.5
+"Since we're having to update what is installed with VS too, can we just fix this for good? This was a terrible hack that's caused other problems in the past",0,0.5
+"Technically, 'an' is correct since MS is pronounced ""em ess"", and that leads with a vowel sound... :smile",0,0.5
+(English is a terrible language.),0,0.5
+Typo: overflow ar runtime,0,0.5
+"You basically say ""We are only able to provide an algorithm that fails at non deterministic occasions at runtime until you remove a safety net ( which many developers are not allowed to remove). Good luck with that."". I would say that anything, even the most terrible algorithm, is better than obviously buggy code",0,0.5
+"If #code, terrible things will happen below, so we might as well assume that and consider the Body check redundant",0,0.5
+I believe InstantiateSignature is going to be a no-op if the constrained type has an instantiation because that part is already instantiated,0,0.5
+"Ideally we'd probably also check if #code just to be sure, but I don't think we'll do something stupid like #code anywhere, so it's likely safe to assume it's a #code",1,0.5
+"@github Thanks. That makes sense. But in that case, it seems like its not really ok to be conservative about when to do the transformation? eg right now it would reject",0,0.5
+even though it *is* distributive wrt K,0,0.5
+"[edit: never mind about the last part, it is a bug, and it's fixed in the nightly. Sorry should have checked that first]. Can you explain what's going on with f3's parameter type? We know that #code and that #code, so the nested conditional *should* evaluate to #code, but it doesn't seem to. Is that a bug? Or am I doing something stupid here? The really weird thing is that if I change it to #code, then f3 doesn't accept #code, #code *or* #code as its parameter",0,0.5
+I see and understand the risk now,0,0.5
+"I don't speak enough languages to demonstrate a counter-example, but I would not be surprised to see one. I think the only thing that is ""right"" in the sense that it can't go wrong in this way is to just have separate resources for each of the ""several strings we show user here""",0,0.5
+"How many strings are we talking about if we split them out. Unless it's insane, I'd recommend doing that and eliminating even having to worry about this",0,0.5
+@github What do you think,0,0.5
+"Probably unrelated, but this is a terrible error message. We should say _what_ the inconsistencies are. #Resolved",0,0.5
+"Crap I broke something in the merge, I think the automationPeer is getting torn down in the wrong order. It's crashing on close again. 💩",0,0.5
+#code WTF? 😛 Debug spew message,1,0.5
+You're right - I was stupid enough to trust ILSpy to resolve the right dependency - and it resolved 3.1 version ... My bad,0,0.5
+In that case this should work (you would get a RUC warning when calling AddSingleton),0,0.5
+It is a terrible terrible url for vsdrops. That is what it is used for a path in a vs drop. 🤦,1,0.5
+The performance of this is terrible for large buffers,1,0.5
+This should no longer be the case with .NET 6. Are you still seeing that,0,0.5
+wat...  seriously.  wtf :),1,0.5
+"@github Thank you, that's the kind of response I was hoping for",0,0.5
+So is this a inherent design flaw of the original monaco editor (You are the expert on original Monaco),0,0.5
+"If so, do you have some ideas how we can mitigate this stupid design flaw? (Global solution to a local problem does not seem to work, (no surprise))",0,0.5
+(In other words) What can be done,0,0.5
+"Yes, but I was thinking, is this ever going to be """" ever? That might seem strange for the API user, and I did not want us doing something wrong, returning """" and end up with issues. (mainly, ""I don't want me changing this ever to do something stupid"" ;) )",0,0.5
+Oops. Stupid tab/spaces settings,1,0.5
+This name is terrible.  Maybe #code,1,0.5
+"If you're going to make this less terrible, we probably should remove the . after this so it's grammatically correct",0,0.5
+prototype assignments jump from the assignment location to the location of the constructor function and continues walking up the tree looking for type parameters. It does *not* fork and continue looking from the site of the assignment,0,0.5
+"In a [hilarious tweet](#url), I provided some code where this  difference could be observed, but it was clearly insane. I think this is a good solution, because it makes prototype assignments act as if they are effectively nested inside the constructor function, in the same way that methods are nested inside classes in modern JS",0,0.5
+"sorry about that delay I did not check the base branch, In fact I'm surprised I managed to apply a diff on master while it was fixed in #code :D",0,0.5
+i feel stupid,1,0.5
+"@github Are there any docs on the low level design of liveshare?  specifically, i'm looking to understand how it works from a client/server perspective.  Where is information expected to live?  Who is responsible for ""source of truth"".  How clients and servers synchronize and ask questions in a way that is consistent, etc. etc",0,0.5
+"For example, here's an easy sort of problem i can envision, which i'd like an undertanding of how it is handled",0,0.5
+"1. on the client (without roslyn), user makes some edits.  this increases the length of the file",0,0.5
+2. client then wants to classify the text at the end of the file,0,0.5
+"3. tehy then communicate with server, but server doesn't have text/project that matches what client has.  server passes requests onto roslyn, which crashes because invariant is broken",0,0.5
+"Now, given this is such a simple scenario, and you're likkely not crashing.  You have presumably solved this in some manner.  For example, some sort of syncing.  Or perhaps validating that the request can even be asked on the other end.  However, those designs and invariants are not clear here, and as such it makes it *very* hard to tell if the code here is correct",0,0.5
+
+"As I briefly mentioned in chat before the holidays - this _can_ be localized, but it will _hyperexplode_ the unittets. In my opinion, we should probably not hyperexplode the unittests. The solution to the unittests problem appears to be ""rewrite the entire thing"", but I need to do a bunch more investigation of WTF is going on there. I think the right path here is to do this non-localized for now, and file a follow up for adding localization to them. That way, we won't need to include a massive ""rewrite the unittests"" change as a part of this already hefty PR. Thoughts",0,0.5
+"Okay, the Terrible solution I have is to have a #code, and include it manually in each of TSE and #code. That'll get the resources added to the correct libraries, so #code will still work, regardless of which dll it's being called from",1,0.5
+@github Will that still work for localization,0,0.5
+Oh crap. I think I messed up the commits. Well this is indeed a lengthy thread. In fact I think this is most commented PR I've ever made on Github. I'll force push later,0,0.5
+"@github any specific preference to the preferred sort, or just sort via StringComparer.Ordinal or something",0,0.5
+"Oddly the current comparer for the hashset-based comparer is PathComparer, which does a bunch of extra comparisons around relative pathing and such to attempt to ""normalize"" the path. I was going to just switch this over to an ImmutableSortedSet but PathComparer doesn't implement that (since it would seem insane to do so)",0,0.5
+"So this is a good point.  For clarity, whatever newline sequence you wrote, we will embed into your converted string.  This means from the language/compiler perspective, on that machine, the literal has the exact meaning as before (no semantics change)",0,0.5
+Where it gets subtle though is the absolutely insane behavior of git where it may take a file and just change newlines *even that are language relevant* when sent to *another* machine,0,0.5
+"In this case, the refactoring is in line with the lang and compiler.  However, it is *git* that ends up causing issues here as it thinks it is sensible to touch programming lines that relate to content",0,0.5
+"Note that this is a refactoring though.  It is opted into the user, presumably because they actually think this is better.  And it will be very clear that a single line became multi-line.  So i think the user can be trusted to decide if that is acceptable for them given their git config",0,0.5
+"WTF are ""reverse forwarders""",1,0.5
+@github @github Is the stream context completing the transport output like this a terrible hack or an elegant solution? IDK 🤷,1,0.5
+"Crap, before this will work we need to update the spa-templates submodule to reference the dotnet7 feed & ingest it. I'll update that repo now",0,0.5
+Presumably we also need to back-port this into release/6.0 as runtime's 6.0 contains the updated transport package,0,0.5
+"➡️ In the total absence of enforcement to date, we did a terrible job making sure tests clean up after themselves. I fixed enough cases in #25558 to make sure this change is viable, but I expect to see this condition hit in practice. Earlier portions of the cleanup code guarantee that all synchronous and immediately-queued cancellation requests are processed before reaching this condition. **All cases where this is hit are a bug.** However, the condition relaxes the overall acceptance criteria for this large change and allows us to pay off the debt over time",0,0.5
+"What happens when you have two text editors open to settings.json? Best case scenario, one tells you ""this file changed. want to reload it?""",0,0.5
+"This is a case of ""play stupid games, win stupid prizes""",1,0.5
+"Not nearly as bad as enabling NRT for the first time. The #code constraint is the only place I had trouble. We desperately need a code fix for this particular error or we're going to be fielding a ton of ""WTF"" questions",0,0.5
+"I concur - almost seems like we should have #code that allows for reverting to the parent, but only for settings in profiles",0,0.5
+"All this is terrible, but let's not pretend our settings model was designed for a GUI",1,0.5
+Ohhhhhhhhhh.  I'm an idiot.  we can use the return value to figure this out.  tnx,0,0.5
+these diffs are terrible.  I'm not srue why it threw it off so much to indent.  working on this,0,0.5
+"@github Can you add a comment stating the intent then? I could totally imagine somebody coming by, saying ""heh, that's stupid it's not sorted"", and adding in the exact thing you're removing",0,0.5
+(bonus points for having some sort of visible grouping so it's clear to users too.),0,0.5
+"Possibly a stupid question, but why rewrite this",0,0.5
+"Short-circuiting binary operators imply a control flow. For example, if #code in #code is true, we jump over evaluation of #code. This should be explicitly reflected in the graph through links. See LogicalOrFlow_01 unit-test in IOperationTests_IBinaryOperatorExpression.cs",0,0.5
+"I was going to suggest using #code to avoid the long declaration of #code then I realized #code has side-effects. Maybe just call it something like #code to make it more clear what it actually does? Sorry, I'm terrible at naming things, but I'm sure you know I'm saying :)",0,0.5
+"We use it to let the solution crawler back off. We have logic to back of if we are editing our files (to avoid us causing lots of GC for example), but if say you're editing a Readme file or something else we don't want to be making that terrible",0,0.5
+"In order to diagnose it, I used hardcoded DebugBreak() since even ImageFileExecutionOptions didn't like running against conhost - is there are better way to debug and test these cases without being so invasive on the system",0,0.5
+"Not really, no. #code is gross to debug",1,0.5
+the #code which is embeded in the native ALC - and yes - that name is TERRIBLE and has to go,1,0.5
+The #code which also contains an #code which is a subclass of  #code! So much context,0,0.5
+This may be out of scope for this but the old (and new) behavior seem. wrong to me,0,0.5
+Let say the kernel was built without IPv6 support (or v4 in distant future). The file would be missing and we would always throw even if there is nothing wrong,0,0.5
+In many cases like this it feels it would be better to return empty collection. Since the networking grabs massive amount of information had several cases in the past when we thrown on stupid things even if the caller really does not care,0,0.5
+"Holy crap, I saw this issue weeks ago and didn't expect this one to ever get fixed",0,0.5
+"""Wouldn't be surprised if other components in the ecosystem exhibited the same problem.""",0,0.5
+"I agree this is very likely not the only one, it's just one that keeps popping up quite often. It's been a pain point for years (first on WPF, then on UWP, now on both MAUI and WinUI 3, etc.), and something that has received countless feature requests for. The solution many have come up with is to just roll their own collection types with support for ""range operations"", with the big drawback being though that since no UI framework among these actually supports the API, they're just forced to either iterate over items one by one (which is just terrible for performance), or just reset the collection and reinitialize it (which is also bad for performance, maybe just a little bit less, and also completely breaks all animations). It's just a very unfortunate situation where customers get frustrated, and they often have to both do extra work to build these helpers, and then still end up with a suboptimal experience. I mean, we have the same exact custom collection type in the Microsoft Store too, and it has the same exact issues (and I hate it). It's just a really common issue, and I'm saying I'd love for us to find the time to coordinate with the right folks and maybe try to finally get this resolved at least for .NET 8 🙂",0,0.5
+"I've also received multiple requests to add such a custom collection type in the .NET Community Toolkit, and I've had to reject them for the reasons mentioned above (it still results in a very bad experience, and I'd much rather just fix this properly in the BCL). The net result though is that at least for now, the API is not there and plenty of folks are frustrated",0,0.5
+"""but my recollection is that it broke in a substantial way as soon as runtime merged this change originally.""",0,0.5
+"I find that surprising and I'd love to learn more about that. Even with the new APIs, as long as nobody actually calls them, there should be no functional differences in the way the currently existing APIs work at all. So I'm not sure I understand what broke. Are you sure it wasn't just folks trying out the _new_ APIs, and then reporting WPF crashing/breaking in that scenario? 🤔",0,0.5
+"""Would doing that be a less disruptive way for newer frameworks to get range support?""",0,0.5
+"I personally don't think that'd be the correct solution for this issue, for a number of reasons",0,0.5
+"- The core issue is that right now, the various UI frameworks don't support multiple collection updates. Where they come from is not what's causing the issue. That is, even with a new collection type, you'd get the same exact crashes until the frameworks were updated to handle the args. And if they were updated, then there would be no reason to have a separate collection type in the first place, as it'd just be the same exact one but with two new APIs. Those should just be added on what we have",0,0.5
+"- It'd make updating codebases much more tedious, as now you'd have to swap the whole collection type in all locations rather than just being able to opt-in into a range update whenever necessary",0,0.5
+"- I'd argue it'd be an abstraction leak. You want an observable collection, the fact that some callsites would need to perform range operations on that is just an implementation detail of your viewmodels. You shouldn't need to use a completely different collection type just to support this",0,0.5
+"I would really love for us to just manage to coordinate across the various teams and officially add support for this in a future release, not sooner than .NET 8 at this point. We could both update all underlying frameworks to support this (which I realize is non trivial work, especially since eg. WinUI 3 would likely need some new WinRT APIs and projections for this), and then provide the necessary migration docs, if needed. I believe this would be the best long term solution for this issue 🙂",0,0.5
+"I initially went along with this, but when usability testing it locally I remembered why I had done it this way in the first place",0,0.5
+"Basically I'm using exceptions to show the users their error messages, so it really ought to be more user friendly then your actual problem being buried in amongst an Aggregate exception format and a bunch of stack-trace stuff. This all stems from me using exceptions to bail out of functions early when we find argument problems (url is null, doesn't exist) so I don't have to make every method return #code where Result could have an error that should cause us to bail early or the value we actually asked for. If you can think of a better paradigm than using exceptions of that gross Result<T> stuff I'm on board, because I agree that using exceptions this way isn't great, it's just the best I could come up with",0,0.5
+oh right. Stupid API doesn't do what I want. :grumble,1,0.5
+"I was just testing the cmd defaults and one was enough there, but if there are shells that need 2 or 3 then maybe this is a good idea.  It's a trade-off of size for every scenario vs. speed for some scenarios",0,0.5
+"With my change, each TextAttributeRun is 20 bytes, so given there are 9001 of these created in the default cmd scenario, each increase by 1 in this small_vector costs ~176KB, which seems like enough we should think carefully about what to tune for, but not so much that bumping to 2 or 3 is terrible",0,0.5
+Is there any data on how often different shells are used so we could try to tune for the most common ones,0,0.5
+"I have a terrible workaround for the symlinking issue, which (unlike the compression option) is consistent with our symbol publishing :)",0,0.5
+"Technically, iOS-style unversioned frameworks are valid on macOS, so... flatten the framework post-creation. That should fix the Catalyst build",0,0.5
+the previously display text was just terrible,1,0.5
+"As a sentinel, if we decide that #code is globally stupid for making the caller maintain the walk-count... (which it is... in my opinion...) we can globally change it at some point by finding all affected areas",0,0.5
+"I know I don't need to convince you any more, just giving more clarity on my thoughts",0,0.5
+"Sorry for the noob question: does #code and #code stand for ""Type"" and ""Value"" respectively? I'm trying to understand a little bit of the code by checking some PR's (yours is pretty cool!)",0,0.5
+"For this we could switch to an immutable wrapper around Dictionary<TKey, TValue>, similar to how we use ImmutableArray<T> instead of ImmutableList<T>",0,0.5
+"My gut tells me this should be a slam dunk win.  The vast majority (probably nearly all) of cases where we use ImmutableDict, it's not to benefit from what ID is decent at, but just to ensure it will not be mutated post creation.  For that purpose it's actually a pretty terrible choice and adds a tremendous amount of overhead for functionality that we're not needing in those scenarios",0,0.5
+cref? This might also be a nice place to use the list syntax @github was doing since this will format like crap in Quick Info otherwise,0,0.5
+Should the test that the value shouldn't change just live in the compiler,0,0.5
+"If nothing, I wonder if this deserves a good comment in the code. If I saw this I'd go ""WTF"" and just delete it without a second thought",1,0.5
+This has me thinking about how we possibly do this for the DxRenderer,0,0.5
+I imagine that we will either have to,0,0.5
+1. Form all this data into an alternate stream that looks like a TTF/OTF font instead of this old Windows Font format that GDI seems to understand on #code and then feed it into [IDWriteInMemoryFontFileLoader::CreateInMemoryFontFileReference](#url) per the documentation at [Custom Font Sets](#url),0,0.5
+2. Make the DxRenderer load this HFONT into a GDI HDC and then call [IDWriteGdiInterop::CreateFontFaceFromHdc](#url) and use the resulting #code normally,0,0.5
+"I bet the second one is easier but is a little gross for using GDI inside the DX renderer. The first one is probably difficult because I think TTF/OTF always specifies fonts as vector outlines, so I'm not sure how we'd live-specify these. Probably a lot more math",0,0.5
+Just ideas,0,0.5
+"I agree with Dustin on this one. I'd reckon that most [questions](#url) actually start out as ""bug report""s that stem from a misunderstanding or generally not reading the docs",0,0.5
+It's not a terrible lot of work to swap out the tags. I know that I personally reserve the Bug tag for when I'm fairly confident something actually is a bug and either needs more investigation or is generally on the backlog somewhere. I suppose that's really #code's job,0,0.5
+yes.  that name was terrible. changed to #code,0,0.5
+Performance at the full solution goes from,0,0.5
+You'll get at least 60 seconds gain my moving from MSBuildWorkspace to direct creation of compilations from csc invocations in the binlog. MSBuildWorkspace is extremely terrible for end-to-end performance because there is no parallelism in the MSBuild evaluation,0,0.5
+csc invocations have a secondary benefit of improved accuracy,0,0.5
+"note: IDE pattern is to name these MyCodeAction in almost all cases.  That said, that name is pretty terrible.  So if you want to keep the name like this, i'm ok with that",0,0.5
+"I tend to agree that these are truly special cases—since the relationship between #code/#code and #code/#code comes from the mapping between HTML attributes and DOM element property names, the spelling similarity is not a coincidence, but it’s not a given either. You can imagine a world where the DOM spec decided to map the #code HTML attribute onto #code, or the #code HTML attribute onto #code. Both of these would be terrible APIs, but my point is that despite the fairly small string distance between these substitutions, the string distance is not the reason they should be offered. So I’m unconvinced that they merit a change to the string distance algorithm",0,0.5
+"Sorry, the part that I originally found ""gross"" was that this call was ever in the #code in the first place, not your changes; now that you've moved the parameter out though, it's at least a lot cleaner",0,0.5
+#code does an IEnumerable-based comparison. The performance of this is terrible for large buffers. So terrible that it was dominating the total time of test runs in the stream conformance tests,1,0.5
+"#code does a span-based comparison, which is much much faster. Like 20x or more",0,0.5
+"#code also has some logic around reporting differences that's kind of nice, but that's secondary to the performance issue",0,0.5
+We should always use #code for comparing buffers. #code is fine for non-buffers,0,0.5
+"@github oh my you're right, I feel so stupid! Thanks",0,0.5
+"To my knowledge the spec is not generated when you add the packages we add, so I think @github is right that we should reduce the timeout. I made it 5 seconds, which is still probably more than is needed, but not by an insane amount if you account for slow machines",0,0.5
+"This is stupid, everyone knows what whitelist means, and ignorableAssemblyList means nothing on the first read",1,0.5
+"This is very clever, and I like it. It looks like it won't harm performance, but I do think that some caution is called-for around all the thread hopping",0,0.5
+@github: thanks for always cutting through our layers of crap (both organizationally and code-wise) and _getting good shit done_ 😄,0,0.5
+Thanks! I want to be super cautious here - as the potential damage is... nice -  and  I am absolutely not in hurry to commit this one before we are fully confident! Just want to make sure we keep working on it - as it gets bigger and I am quite senile :blush,0,0.5
+I any case I found another concerning case,0,0.5
+"* Assume we search backwards for some word, such that the matches are in lines 10, 20, 30",0,0.5
+* In this case we find the match at line 30,0,0.5
+"* Then assume the user scrolls up and selects a text in line 15. Then the user clicks ""search previous""",0,0.5
+"* We  will select the match at line 20 (because our state suggests to move from #code to #code), though probably the user expected to get the match in line 10 (at least VSCode in this case selects line 10 and puts the state at #code)",0,0.5
+"Yeah it's not fun to hook this up. Not terrible, but not fun",0,0.5
+"Please add a comment here explaining this type lives in the VS side of things and exists to be the proxy. It makes sense to me since we have chatted about it, but @github can attest to having to debug through other frameworks where there was no documentation on what lived in what process and it drove him insane",0,0.5
+"Oh, that makes it terrible",1,0.5
+Terrible 😁. At least have a bool or enum property,1,0.5
+
+"It's grabbing it off of the getter.  The assumption being that the getter is normally before the setter.  Here it's suboptimal, but not terrible.  We can consider trying to do better in the cases where the getter is after the setter.  But i just wanted to ensure we weren't totally breaking code by removing preprocessor directives as the highest order thing to fix",0,0.5
+"(oh, i'm also an idiot since i read this as #code not #code.  But the above points still stand)",0,0.5
+How does GetDiagnosticsUpdatedEventArgs work exactly,0,0.5
+"You can think of the IDiagnosticsService as a mapping from special ""keys"" to the set of diagnostics for those keys.  This method name is actually *terrible* as these aren't really events or args.  They're really just saying ""what are all the keys we know about for this particular set of args"".  In this case, we're asking for all the keys associated with a particular document.  We can then use those keys to actually find out all the diagnostics for that doc",0,0.5
+You could imagine this exposed behind a helper method (which is what i think i will do :)),0,0.5
+"Thanks for the notice & discussion! TIL 😄 , and it makes a lot of sense",0,0.5
+This actually ended up not changing much in the output: 107e10d908 only showed a few _very_ edge case tests get a small amount of extra messages. Not so terrible. Phew,0,0.5
+"Stupid question - won't some of the changes by overwritten by arcade in some point in time - I don't know the flow of those, but I see some files are the same and looking at history they are updated",0,0.5
+Ping @github - let me know if you disagree with the justification,0,0.5
+"I don't like it.  I think we should not do this if we can't move the whole feature over (analyzer and diagnostic).  I worry that we'll just end up with crap left behind that we never get to.  But not moving this at all, it highly motivates solving this in an appropriate manner",0,0.5
+**This is a warning**,0,0.5
+"We have recently observed the presumably well-intentioned act of the author of this PR (@github), who has been spamming pull requests to many (~50) github repos, claiming to ``switch to gender neutral pronouns''. In reality, the bot performs a dictionary replace of gendered nouns and pronouns, and the outcome is questionable at best, and literally harmful at worst. See",0,0.5
+- The bot did a terrible job at replacing these words - [EbookFoundation/free-programming-books#6801](#url),0,0.5
+- The code fails to compile at [rust-lang/rust#95508](#url),0,0.5
+- The bot ignores all context whatsoever at [moby/moby#43441](#url),0,0.5
+"- After initial PR being closed, the bot keeps sending PRs, effectly spamming the repos. For example, these 5 PRs were sent to the same repo within 2 days [#1](#url) [#2](#url) [#3](#url) [#4](#url) [#5](#url)",0,0.5
+"We have reviewed the changes in this PR. Most of the changed words are ""accidental gender pronouns"" - #code as a prefix of #code, or #code as a suffix of #code, and both examples come from test cases where inline comments are used to split words (like #code), and the PR wants to change them into #code etc.. These changes are obviously not helpful at all",0,0.5
+"To save more time for the open-source community, we recommend the maintainers of this repo to close this PR and ban this bot from further spamming",0,0.5
+"Many workloads for which tasks were originally introduced, actually. Consider, for example, parallelized divide and conquer. A worker partitions its work into multiple pieces, queues identical workers to process N - 1 of those pieces, processes its own, and then waits for those other workers to complete. Also think about algorithms that require coordination between those pieces, such as various operations used by PLINQ (e.g. OrderBy) that needs to block each of the workers until they reach a common point so that they can exchange data and all continue on, and what would happen if one of the workers was throttled indefinitely",0,0.5
+Today do the implementation of those kick end up doing Task.Wait,0,0.5
+"I think that's the wrong direction, at least for the foreseeable future. If we decided to go with an approach like the one proposed in this draft, I have trouble seeing it as anything other than opt-in, given all of the previously cited concerns, the potential for introducing deadlocks where they weren't previously, the potential for casting way too wide a net, the potential for negatively impacting the throughput of unrelated workloads, etc. _If such a mitigation was added as opt-in, and if enough testing demonstrated it was a good decision for certain workloads, then it could potentially be automatically opted-in for those, e.g. if you felt ASP.NET should always turn this on. Even there, though, I'd be surprised if in the current configuration that was a wise choice",0,0.5
+"Yes I have similar fears but I'm looking for solutions. Maybe this isn't this one but there are aspects of this that seem interesting. Say we added a public API to enable this and it was opt-in, I could see the potential for adding a piece of middleware or filters that enables this on the current workitem before the blocking code executed. Something like this",0,0.5
+That filter could yield to thread pool to get off the current work item and enable mitigation on a unique workitem that's closer to this code. The equivalent of doing this,0,0.5
+Thoughts,0,0.5
+Shouldn't this be done in the other ctor? Also how do you feel about passing in an #code \ #code instead to the ctor? This feels a little gross,1,0.5
+"If #code and #code are both #code, then can't this technically cast into something gross when it's returned as #code",1,0.5
+"I spent some time yesterday looking through the implementations of ReplacePattern in vs/editor/contrib/find/replacePattern.ts and vs/workbench/services/search/common/replace.ts. Each of these implements different mechanisms for the CharCode #codees, so a small CharCode-aware-only helper function doesn't seem viable",0,0.5
+"The alternative IMO is to choose (or combine) one of the ReplacePattern implementations, move it to vs/base/common/search.ts (or perhaps .../replace.ts) and tweak the small handful of callers",0,0.5
+I'm probably not the best choice to perform a nuanced refactor since I'm a TS noob; however I can likely implement the replacement change in .../replace.ts as a parallel to .../replacePattern.ts,0,0.5
+Thoughts,0,0.5
+@github Those are the default settings for insane (just copied over so I could add a few more attributes). The allowed tags are separate from the allowed attributes. The current setting just says: if we allow iframes (which we don't) here are the allowed attributes for them. We can remove the line since it has no effect,0,0.5
+"@github I'm good with removing #code. The setting is deprecated and has known issues, which is why we added #code",0,0.5
+My concern is just that allowing CSS brings up a number of other considerations,0,0.5
+"- Which css rules do we allow? Do we try sanitizing the css? If we do have a whitelist of allowed css, how do we handle feature requests to support additional properties",0,0.5
+- Do we want extensions to control the styling insides hovers at all? Right now we control the presentation and can try our best to make sure the hovers look ok with all themes,0,0.5
+"- Enabling css expands the potential attack surface. If someone finds an exploit in Chromium related to CSS, it could potentially now effect VS Code too",0,0.5
+My feeling is that we should think through this problem more and find some other potential use cases. Issues labels seem like a very specific use case,0,0.5
+wtf i get notifications and i can approve MR. i see this repository first time in my life and i have permissions,1,0.5
+[sceen](#url),0,0.5
+"That might just be a case of ""play stupid games, win stupid prizes""",1,0.5
+"That is how I am thinking of this feature. There are cases where the compiler can definitely determine if the user is doing something wrong, but also where it _might_ be doing something wrong. The [#code](#url) is another example. If a user calls #code and #code is known to be ByRefLike, the compiler could issue a failure. However, if #code isn't know at compile time then it would be up to the implementer to have handled this appropriately using something like the proposed intrinsi-fication of #code in this document. The updated #code would look as follows and handle the case at runtime. The other APIs in question would have similar checks",0,0.5
+"Do we have an issue somewhere to clean this up? Throwing inside dispose isn't a nice thing to do, especially when you have inheritance involved. There are a bunch of places in this PR that will leak stuff on failed dispose 😆",0,0.5
+"I realize that you didn't make it worse in this PR, but it is gross so I want to make sure it's on someone's plate to fix",1,0.5
+"Crap - the tree from the quarantined test jobs does appear to have #url, but doesn't produce binlogs. I'll see if I can find another public build since my commit that has the failures",0,0.5
+"this feels like a terrible nit, but all the other options are #code style, so this should probably be #code, right",1,0.5
+(except #code which maybe raises more questions - maybe predates the other args),0,0.5
+Noob question 😅Does #code not mean anything 13+? Then are there two Exports for the same selector? How does it get resolved,0,0.5
+"Hmm, yeah, I can see how those types are a disaster in a structural comparison. For example, to structurally compare two #code instantiations, we fan out to an insane number of comparisons between instantiations of the same generic types for different type parameters, which again fans out more, etc. The cycles are very long and apparently don't get to a depth of five before we run out of memory. I stopped it in the debugger and observed a relation stack 70 levels deep that still wasn't considered deeply nested. Tough one",0,0.5
+"@github @github @github Ok, I am using the SharedFramework SDK to make a new #code nuget - it seems to be working at least for #code",0,0.5
+"There are some gross cmake hacks in here, too, because I don't really know cmake",1,0.5
+Could you take a look at what's here so far,0,0.5
+Next steps: update the workload manifest to use all these new nugets.  Figure out some way to test this,0,0.5
+(I tested that the msbuild target works by copy-pasting to a dummy project and setting the appropriate props and looking that the properties are getting set to reasonable-looking values.),0,0.5
+"Forgive me if it's a stupid question, but what's the point of adding an empty object as a value if we are only checking ContainsKey? Can't we set the value to null and get rid of the readonly property",0,0.5
+Yeah but that looks gross if I have to do it like this,0,0.5
+You're nullable disabling/enabling around the closing brace,0,0.5
+"Regardless, yes, it's possible for someone to implement Fail in a way that still returns, but that goes against the purpose of the method.  If we held true to the possibility that someone did that, then we'd need to remove #code from Debug.Assert and all such methods, which would be terrible. #Resolved",0,0.5
+This is a really confusing way to declare flyout... I mean I get what it does but holy crap did it hurt my head for a second. Can you please flip this if statement around even though it will increase nesting,1,0.5
+edit: I am stupid,1,0.5
+Part of the *intention* -- and *maybe* unnecessary? -- was that we'd only emit the #code commands for applications which are not present,0,0.5
+"This check can be done for #code, but not for #code: how do you check that the package is already installed?  ¯\_(ツ)_/¯",0,0.5
+"Then again, I'm not sure if this will be an *actual* problem in practice",0,0.5
+I have similar fears about #code: what happens if the same #code command is executed multiple times,0,0.5
+"In my case, it errors, but it doesn't *error* (?!)",0,0.5
+I'm not even sure what to make of this state of affairs. :-/,0,0.5
+"Fortunately, reinstalling a package is a no-op",0,0.5
+I'm not sure using this #code will work? #code is this terrible thing that references #code directly,1,0.5
+"It doesn't report L3 on 12 core eMAG I have access to, Trust me, Windows team is aware and helping us here ;-)",0,0.5
+Can we not do something like the following,0,0.5
+"No, only when we find a reliable mechanism to detect LLC or switch to something else to calculate Gen0 size. Till then we should not trust whatever API gives us or we might stuck with 256Kb Last-Level-Cache on a 30 core machine and hit a terrible penalty on GC-intensive workloads",0,0.5
+"Small/Destkop class hardware should not be hurt with this intrinsic, for e.g. 8 cores it picks 1Mb cache (leading to 1.8Mb gen0 size) and for single/dual-cores it's around 480Kb for Gen0",0,0.5
+"Yes, though it took me a while to walk through this all (it's unpleasant that there's no grammar we can just look at at this point)",0,0.5
+Here's the chain of productions through which we can see the 'GeneratorParameter' being passed down,0,0.5
+"So, if you have",0,0.5
+"Then 'generator parameter' is used ot indicate you're creating the parameters for hte generator.  And eventually that flag bubbles down to when you're doing the computed properties.  And, within those computed properties, yield is apparently disabled.  Meaning you can't use a yield expression inside a computed property name (which is not a terrible thing IMO)",0,0.5
+(Hopefully i'm reading that right),0,0.5
+"Now, oddly enough, outside of a generator parameter, i think it would be legal to use 'yield'.  so if you had",0,0.5
+Then that would be fine.  'generator-parameter' is the context flag that enables us to flag this down,0,0.5
+"I don't like it. I think we should not do this if we can't move the whole feature over (analyzer and diagnostic). I worry that we'll just end up with crap left behind that we never get to. But not moving this at all, it highly motivates solving this in an appropriate manner",0,0.5
+"From an end-user perspective, this will make no difference at all. They just need the analyzer on CI, and code fix in IDE (regardless of whether it is invoked from a NuGet package or from an implementation in IDE). My point is, do we think it is worth blocking a user feature (CI enforcement) on just the fact that we'd like to cleanup and port the fixer to NuGet package",0,0.5
+"We are making the string marshaller types public, so the innovation that can be applied to them will be fairly limited",0,0.5
+"I'd hope we have some latitude here, but your point is fair. I don't think this argument moves me much though",0,0.5
+One of my motivations for doing this is to reduce the engineering dept in NativeAOT. The built-in system in NativeAOT is using different set of helpers for interop. I wanted to use this as an opportunity to get everything on the same plan,0,0.5
+
+"I spent some time yesterday looking through the implementations of ReplacePattern in vs/editor/contrib/find/replacePattern.ts and vs/workbench/services/search/common/replace.ts. Each of these implements different mechanisms for the CharCode #codees, so a small CharCode-aware-only helper function doesn't seem viable",0,0.5
+"The alternative IMO is to choose (or combine) one of the ReplacePattern implementations, move it to vs/base/common/search.ts (or perhaps .../replace.ts) and tweak the small handful of callers",0,0.5
+I'm probably not the best choice to perform a nuanced refactor since I'm a TS noob; however I can likely implement the replacement change in .../replace.ts as a parallel to .../replacePattern.ts,0,0.5
+Thoughts,0,0.5
+"These relations are insane! Everything looks good to me though! Perhaps remove the newline before the curly braces when starting interfaces though for style, but your call",0,0.5
+wtf i get notifications and i can approve MR. i see this repository first time in my life and i have permissions,1,0.5
+"sorry, wrong autocomplete from github",0,0.5
+"@github Sure enough if there's people enthusiastic about it! It's not trivial to rebase it, but it's not completely terrible either. I might be a bit busy during the start of this week but might have time in latter half. Feel free to message me here and push me forward again If I don't write an update here during this week. :-)",0,0.5
+"This is kinda gross. This namespace doesn't exist in Ignitor, but I could make an empty one if that's cleaner",1,0.5
+Oh crap! I thought about that when I started to write the tests and then I forgot about it,0,0.5
+"Yea stupid me, forgot to check in the added file.  Its up now.  I moved it because it is now used in three places TimePicker, DatePicker, & Entry.  The reality is, it will most likely need to be used in more places.  Check that out again and if you want to move the BoolEventArgs somewhere else, like a separate file then we can do that",0,0.5
+- [x] Update IDL with #code functions,0,0.5
+"- [x] Runtime error when #code is being assigned (only when loading settings.json, fine otherwise)",0,0.5
+- [x] Update spec and propagate changes from spec,0,0.5
+- [x] Profile has a few settings we handle manually (i.e. BI alignment). I need to hook those up properly too,0,0.5
+- [x] ~(Bonus Points) _maybe_ make these settings observable (we'll need that soon anyways)~ Nope,0,0.5
+(new items!),0,0.5
+- [x] Fix #code being null,0,0.5
+- [x] Fix tests,0,0.5
+- [x] merge master (new Profile setting),0,0.5
+"- [x] (after #7877 merges) address ""TODO CARLOS"", copy commands/keybindings/schemes in globals",0,0.5
+(new items 2!),0,0.5
+- [x] fix/add tests,0,0.5
+- [x] remove IInspectable crap,0,0.5
+- [x] fix/test Copy,0,0.5
+(new items 3!),0,0.5
+- [x] really do get rid of #code internally,0,0.5
+Tagging subscribers to this area: @github/ncl,0,0.5
+See info in [area-owners.md](#url) if you want to be subscribed,0,0.5
+<details>,0,0.5
+<summary>Issue Details</summary>,0,0.5
+<hr />,0,0.5
+"Note, the old Begin/EndAccept methods support doing an accept and receive in a single operation. Unfortunately the API for this is terrible and forces allocation. It's also not currently supported on non-Windows platforms. So, replace this with a helper routine that performs an accept followed by a receive, and works across all platforms",0,0.5
+Contributes to #43845,0,0.5
+@github how gross is this? Having this here avoids a second dictionary lookup per page invocation,1,0.5
+I'm not sure that's necessarily an improvement,0,0.5
+"If there should *never* be more than one License file, should we #code on it",0,0.5
+If there *should* be more than one…but we only ever use one…wtf should happen,0,0.5
+"This just ""feels weird""",0,0.5
+"Okay going to show my C++ noob here, what's the proper pattern to do this call then, do I need to explicitly copy the string into another variable, like hostFxrPath for it not to get destroyed",0,0.5
+"Kinda nasty, but I think I did it correctly within the locks, and added a gross test that adds/removes a bunch of schemes for correctness",0,0.5
+"Verified, insane",1,0.5
+"See, I wanted to ensure that whatever set of args the user provided always generated a unique string. Yea, if the user puts all the args into a keybinding/command, this will be stupid long like this. At that point, the user should probably have a better name they could give the command",0,0.5
+"Yeah, I'm not a fan of any of these extension methods that all take lambdas that call each other. I only looked at cleaning up the solution provider ones, but I can have a pass at the rest. I think this is part of an existing one that I pulled the filtering code out of, but the diff of this file looks pretty terrible in general",1,0.5
+"yeah, no problem, as I said, I'm terrible at naming :)",0,0.5
+"Are there any custom triggers being used to represent other types of triggering, or is it really being used as ""here's a way to pass ambient state along for the ride""? I recognize this might churn stuff, but it very much feels like this CustomTags exists on trigger just because it was the convenient type that happens to be there",0,0.5
+"Three interesting, potentially controversial, and likely terrible ideas came to mind while writing that previous sentence",1,0.5
+"1. I think you already had some sort of ""context"" object that was beginning to congeal. Perhaps a type that is the ""context"" that contains the trigger, various ""environment"" flags (notably this debugger flag and the interactive flag), and maybe some other pieces of information could become the replacement",0,0.5
+"2. Is the debugger flag only being used to control whether we list completion items before their declaration point? And do completion providers get passed an OptionSet from the originating workspace (or can get at it)? If both are ""yes"", then _perhaps_ we should instead have there be a not-UI-exposed completion option that simply specifies that debugger behavior, and the debugger workspace we create just sets that option explicitly. I could _imagine_ people might actually like that behavior during real typing as well. It's not rare that you might write some code and realize you need to use a local declared farther down. Rather than me breaking context, moving the local up, and then writing the code again, that it's perhaps OK to actually complete it anyways. It's I am _not_ saying we should expose it in a UI (at least not until customers come with pitchforks asking for it :smile:), but if they did come along and ask for that we'd implement that with an option. Given that _also_ might fix this problem too, I can't help but notice the coincidence",0,0.5
+"3. Rather than having some additional way to shuttle info, this could just be checking the workspace kind. It's still comparing magic strings, but at least without the baggage of extra types",0,0.5
+"If we allow #code to continue, the relevant symbol still ends up marked referenced via #code -> #code -> #code -> #code. In other words, it's not only #code that will end up marking it referenced",0,0.5
+"So I think it's possible to alter #code instead of #code, though it may be a bit more awkward since #code takes a couple different kinds of nodes",0,0.5
+"And then we do still need to handle the other code path too. For that, nothing stands out as a great option. It feels like an #code ancestor check is possible, and similar to other checks that #code does already for example (#code), but depending on where we try to check, it could be an arbitrarily long ancestor walk",0,0.5
+"I guess the choice I'm leaning towards for this other code path would be a check in #code for the #code being a type only export declaration. This would be similar to the check for a property access expression and would go around the call to #code. Feels a bit gross, but we can know the exact ancestor to try to check from here",0,0.5
+"No, the feature is only set if an activity is created. (also there really should be comments about these different sections, maybe vs. sometimes, wtf?)",0,0.5
+"I don't think this is a terrible idea, but maybe one we do in another PR",0,0.5
+"Downloaded the branch and tested it. Yeah, this works fine. And scenarios like ""opening the search box while the tab switcher is open"" would probably fall under the ""play stupid games"" category. Fixing this is probably more effort than it's worth right now, so good enough for me",0,0.5
+#code does not propagate user's exception from whoever is awaiting the task,0,0.5
+"It could only throw if runtime is in some terrible state already. In such case, I'm not sure what is the correct recovery",0,0.5
+"As it is, the exception would bubble to main loop, as this is promise callback",0,0.5
+I at lest moved both #code and #code to #code,0,0.5
+I guess we have to account for the offline client here which is gross. Yet another reason to figure out #7805,0,0.5
+"_technically_ yes. But also technically, a caller could be stupid and set #code _before_ calling this. Or you could be me in the tests, and reusing the same #code across multiple calls, because you're too lazy to instantiate multiple. So I always think it's good form to have the handler manually set a result like this, so that _no matter what_, the result is initialized to a failure state, and only set to success when we know we're successful",0,0.5
+"I actually split it up into two parts - one for unpacking the json (#code), and another for doing the source/name GUID generation. I had to split it up like that because the profile doesn't actually have a reference to its own JSON. i could have theoretically had the profile re-create a blob of json and call the json parsing function, but that seemed insane",0,0.5
+Hmm,0,0.5
+Would it make sense having _stream on Connection as private protected? (probably a terrible idea),0,0.5
+Or have you considered a different name here or the base type? _streamWrapper on the base type,0,0.5
+Or at least a comment explaining why this is different from the base type _stream,0,0.5
+Same for new Pipe below,0,0.5
+That shouldn't be the case ... o_O the title should never be empty because it was getting set by #code,0,0.5
+oh crap i just realized i made you make a bad/annoying change,0,0.5
+"Ugh gross. OK, maybe don't put it in by default and let people override it for now and file a follow-on to make #code smarter",0,0.5
+"\<aside> Yea, this ""Capabilities"" section I've always hated. I think if you're outside MSFT, then you don't have any idea what to put here, and ""capabilities"" is a _terrible_ heading for it",0,0.5
+This PR fixes #127365,0,0.5
+"The added code follows the #code method recommended by [Windows Blog](#url), which is the minimal code necessary to implement this feature, and has _not been integrated into the Inno Setup script_. I hope that these codes can be used as an inspiration, and the VS Code developers would find out a sensible way to achieve this feature",0,0.5
+. Screenshot 2021-12-22 230721](ht,0,0.5
+. Screenshot 2021-12-22 230859](ht,0,0.5
+"The added codes are located at #code, including an action handler, a minimal sparse package manifest, build script and setup script",0,0.5
+"Because these are not integrated into Inno Setup, a manual build process is needed",0,0.5
+"Assume that VS2019 with desktop development workload is installed in the working environment. #code can make the sparse package and #code library file for handling menu actions, which are needed by Windows. It also self-issues a test certificate to sign the sparse package. (This maybe needs to be implemented in a more formal way.)",0,0.5
+"By executing #code 3 files will be put in the #code directory, namely #code, #code and #code. The certificate issuance and signature process will prompt to enter a password for 3 times, just enter the same password",0,0.5
+"Copy these 3 files with #code to anywhere inside an VS Code installation, and execute #code with administrator privileges. After restarting explorer.exe, you can see the option of ""Open by Code"" in context menus of files and directories",0,0.5
+"The menu action is handled by C++ code implementing the COM interface, while currently for older versions of Windows this is achieved by the installer to directly write into registry. So the COM implemention directly reads the keys from registry to present the icon and determine the executable file path, to keep it simple and stupid. Perhaps this approach needs further improvement",0,0.5
+"Localization has not been implemented yet, but by reading the registry, it should be easy",0,0.5
+Can you record short video,0,0.5
+Just me being stupid... :-P,0,0.5
+"One option is to pass the string and a variable number of arguments, and only smash them together in a string if we're called to walk the stack",0,0.5
+"I discarded it due to complexity for now. I could write up a performance benchmark and see how much it helps, but went with the simple and stupid thing for a RFC PR",0,0.5
+"Is a result task, it would allocate a #code",0,0.5
+Thought about adding an extension method called #code; but that seemed a terrible name,0,0.5
+wtf,1,0.5
+
+"I guess if it was OK for BindableLayout, it should be OK for Map too",0,0.5
+"Either that, or we made a terrible mistake merging 5582. That implementation of Replace in #code is very suspect",0,0.5
+"It looks like Map.Pins is an #code, so while I don't like this implementation of #code, it should be fine for this purpose. It looks like the implementation of #code only uses #code for a single item being set. So at least for this specific application, it shouldn't cause any immediate problems",0,0.5
+"Possibly this is an example of me trying to outsmart the compiler and in the end doing something stupid 😄 Was trying to achieve inlining this method in its usages, given that it's just a simple expression, to avoid unnecessary calls to this method. The compiler will be smart enough to inline it without the attributes",0,0.5
+"As a side note, the reason fixing this is important even given the obvious uselessness of the construct #code is that we ought to be able to deliver accurate completions inside the #code. Prior to this fix, you got both #code and #code since that’s what #code had in its domain, but as soon as you accept the #code completion, the contextual type changes and therefore the inference changes and it becomes an error, which is a terrible experience",0,0.5
+It's sad to see that the work on this seems to have come to a halt,0,0.5
+Implementing would-be-convenient functionality now requires insane workarounds,0,0.5
+"Bumping this again, in hope to see this released ♥️",0,0.5
+This is where we call into the action constraints,0,0.5
+The reasons that I went this way instead of using something new to solve the problem,0,0.5
+- This is the simplest thing to do for now,0,0.5
+- I'm not sure how common this requirement is outside of MVC,0,0.5
+"The thing that this solves is selecting between a GET endpoint and a POST endpoint, etc. It seems obvious someone layering a CMS on top of MVC needs this functionality. Maybe I am just being stupid and this needs to be *built-in*",0,0.5
+Shouldn't this be done in the other ctor,0,0.5
+"Yes, absolutely right! I knew to do that earlier then for some reason started working on something else and forgot about it. Thanks for catching that",0,0.5
+Also how do you feel about passing in an ILogger \ ILoggerFactory instead to the ctor? This feels a little gross. This feels a little gross,1,0.5
+"I did this because we already take a #code, so why complicate things for the consumer? Under what circumstances would someone have reason to supply a different #code than the one the service provider would offer? I'm not absolutely set against it, but would like to make a choice based on practical reasoning",0,0.5
+"In the long term, we may need to consume other services too. If we keep adding them as extra constructor overloads one-by-one, it will not be a nice experience for consumers",0,0.5
+I flipped this because _calling the destructor manually is terrible._,0,0.5
+holy shit this whole function is magic,1,0.5
+Gross. OK,1,0.5
+@github could this be something as stupid as not giving mlaunch enough time to finish,1,0.5
+Here's a good run,0,0.5
+That took 22 seconds to return any results,0,0.5
+Here's a bad one,0,0.5
+Timeout is 30 seconds,0,0.5
+How close to the wire is it getting,0,0.5
+python3 wtf. Is there an easy way to run on the same hardware? Also do I need to manually patch bits and run before and after,1,0.5
+
