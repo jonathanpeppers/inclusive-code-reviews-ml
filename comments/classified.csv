@@ -3648,3 +3648,98 @@ I think we used byte[] (even though it's mutable) to avoid that,0,0.5
 "Would it be possible to add target namespace, target folder, and api client class name parameters to the tool",0,0.5
 "That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <#url>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",0,0.5
 Why is the Option for CodeGenerator not using a generic type to pass the enum and leave the parsing to system.command line,0,0.5
+"Can we add this, and the other changes to the PR description? Maybe like",0,0.5
+"Or corrected, if I have some of that wrong",0,0.5
+"Oops, merged before I could use my preferred commit message… :-(",0,0.5
+"When I tried using the DLL in a test app, both client handlers throw an exception when I set #code (#code calls #code from #code). This must be something wrong with my test's code",0,0.5
+Validated with my [crazy cleartype matrix](https://github.com/microsoft/terminal/pull/11619/commits/6e8a2adbd993a72c0d0cb56f0c747a4546654d73),0,0.5
+atlas engine and DX both look the same,0,0.5
+. image](ht,0,0.5
+I should really put that somewhere more memorable than in a commit message but aint nobody got time for that,0,0.5
+These are likely wrong,0,0.5
+"interesting.  it's arguable that the VB hint is wrong and should be #code to indicate the actual VB implied text... can you try that out and show me what it looks like?  if it's not hideous, we could mvoe to that.  If it's awful, then your solution is a good workaround",0,0.5
+"but this just happens on CI where we have xml, not locally",0,0.5
+"Yes, that's fine. The confusing part is that replacing files with different content ends up being confusing, especially when something goes wrong and only some files are replaced and then you have several files that are named similarly but with wildly different content",0,0.5
+Keeping all the files around avoids this,0,0.5
+"I'm reading the comment as if it's related to what code will be synthesized for the initializer,",0,0.5
+That is correct,0,0.5
+not sure why this comment is specifically about this line,0,0.5
+"Sorry for the confusion. I should have made it clear that it is not specifically about this line. I couldn't find a ""better"" modified line that has some relation to the issue",0,0.5
+I'm also not sure if you mean the spec doesn't make sense to you,0,0.5
+"Also consider this #code, what should be its behavior",0,0.5
+"Since this property doesn't have declared setter, the specified behavior (initialize the backing field) is reasonable. Because there isn't really other alternative with exception of disallowing this. The behavior would be reasonable for #code because this is what the generated setter would do anyway",0,0.5
+"However, the specified behavior (initialize the backing field) doesn't feel reasonable for this scenario",0,0.5
+"I personally would incline for documenting this, this is something very specific to us Xamarin so swizzling the native behavior feels wrong",0,0.5
+Correct me if I'm wrong please,0,0.5
+"So user normally doesn't see ODE. We observe it here because we're directly touching #code outside of the normal content sending flow. And in case of duplex, the #code doesn't apply outside of #code so the write stream won't get disposed under user's hands just by a timeout/cancellation",0,0.5
+@github Youssef is correct. You're reading the git blame wrong: Aleksey added a _comma_ in 2020,0,0.5
+"However, it doesn't change the answer. The C# compiler has long supported giving good errors when members are declared in namespaces, or without a namespace at all. These are all error scenarios, and ImplicitClass is used for them",0,0.5
+"We also don't usually point this attribute to PRs at all, git blame will happily tell us when it was added. You could just delete the WorkItem attribute entirely if it's just wrong",0,0.5
+"I would guess that Roslyn has metadata indicating whether a type symbol is a positional record, so such a heuristic might not be necessary. I could be wrong though",0,0.5
+"this diff sucks! isJSConstructor is now simpler -- it no longer has to check symbol.exports.get(""prototype"") since the symbols are merged. And isJSConstructorType is deleted",1,0.5
+"Do you have a sharplab example that shows the lea?  I don't see a codegen size difference on x86, but I might be doing it wrong",0,0.5
+"Sorry, I didn't add clarification about my question :)",0,0.5
+"In the current implementation, there are three steps to insert a new class declaration",0,0.5
+"1. copy comments., I think in this stage #code changes comment and adds #code",0,0.5
+"2. delete node (with comments, for that reason need to copy comments before)",0,0.5
+3. insert a new node,0,0.5
+"As I understood from the https://github.com/microsoft/TypeScript/issues/23871 description, better to combine three steps into one to just replace a node with a function by class declaration. Maybe I'm wrong and need to do the following steps",0,0.5
+"1. copy comment before (to change comment with a carriage return) and remove (to avoid comment duplication) previous original comment (I'm not sure, however, we can try to use #code in #code)",0,0.5
+2. replace a node with function by a class declaration,0,0.5
+Do #code tests require explicit changing comments to add carriage return symbols,0,0.5
+"Seems like this isn't the right fix - you'll still end up with the wrong error span, just as in the following example",0,0.5
+"Parser logic updated now. At first I thought going with this approach had broken the tests but turned out the tests were wrong, and this new approach leads to the correct result",0,0.5
+"When I wrote the tests for this back in Febuary there were not implementations to try, and babel did not get the parsing right (they have now addressed these issues). So I unfortunately developed the wrong intuition for how this syntax should parse when nested within other expressions",0,0.5
+Did spot an issue in V8 when trying to compare to what they do: https://bugs.chromium.org/p/v8/issues/detail?id=12259,0,0.5
+"I merged the latest master to PR branch a couple of days ago and compared it to the latest publicly available version, so there can be some more changes. But since no degradation is found, I don't see any issue. Is something wrong here",0,0.5
+"These assume you meant to write a type annotation but don’t say what you _did_ write. If our assumption is wrong, it’s even more confusing. I’m also a little concerned about the interpolation of the object #code being unwieldy (not uncommon to destructure a dozen props in a React component, for example)",0,0.5
+Use Contract.ThrowIfFalse. This is just masking bugs in production,0,0.5
+"I don't think it is.  I can't find any documentation from the compiler that guarantees any of this.  The VCService doesn't want to make assumptions.  It uses its best understanding, but is graceful (in a non-user impacting way) when those assumptions are wrong.  The asserts can help us then track this",0,0.5
+Note: i'd also be ok logging a watson.  I'm not ok with throwing here as i think that would reflect a poor design choice for a componentto throw about incorrect assumptions *it* made about another component,0,0.5
+Dumb question: why can't each branch use their own version of this file,0,0.5
+Well the change to remove VSIX publishing would have required updating multiple branches instead of one. The current system gives a single source of truth to check and know which builds are publishing where,0,0.5
+@github That worked. The only failing test now is the one I stated in https://github.com/dotnet/roslyn/pull/51623#issuecomment-790873352,0,0.5
+I couldn't figure out what's wrong. It's failing with the following diff,0,0.5
+"However, when I update it, it fails with the exact opposite diff",0,0.5
+Do you know what's going on? I've tried to set #code and #code but no luck,0,0.5
+"The first message I wrote was “**Spread** produces a tuple type...” but I wasn’t sure how I felt about it since the error could appear far from the actual spread via instantiation. I guess I can delete the “Type” variant, it just felt wrong to call a type an expression",0,0.5
+Is there a reason we're so restrictive here? What goes wrong if we unconditionally return #code when the returned pointer is invalid,0,0.5
+We won't be reliably undo the whole operation when something fails,0,0.5
+"@github I think the ask on https://github.com/dotnet/runtime/issues/8307 is for restoring #code when the value provided in #code (that changes Position to the arg. passed) fails, so if you try to write to a file by first checking how much space is left, the Writing should start from where it originally was",0,0.5
+"Assuming you have 900 bytes left. In the above example, the #code succeeds but an exception is thrown when #code is disposed, this is because Position will be at the end (900), since the SetLength call on the first iteration left the Position at 1000",0,0.5
+Am I understanding the problem wrong,0,0.5
+Is this an issue that we should address? If not then we can close this PR,0,0.5
+"Also, I think that as a workaround you could save #code in a local variable and set it back after #code",0,0.5
+Does the best effort provide enough interesting guarantees,0,0.5
+I am not sure what do you mean by best effort,0,0.5
+"Thanks, seems like there are actually several interesting aspects",0,0.5
+* if the current relop VN evaluates to a constant then than any dominating compare with the same outcome will match. Here we have false and false. When something like this happens we'll reach the wrong conclusions,0,0.5
+* the existing optimization (which is not destructuring phis) seems vulnerable to this too. The case where the current compare has a known outcome without any consideration of dominating compares should likely be handled specially. There might be something upstream handling these cases already which is why this hasn't tripped anything up,0,0.5
+"* if we substitute in a phi value and we get a constant then the branch is partially redundant regardless of any dominating compare, for any pred that would bring in that phi value. We don't keep track of the correspondence between phis and pred BBs (indeed we don't even have a 1-1 correspondence) so we'd need to reconstruct this info somehow",0,0.5
+"* phi inputs that lead to ambiguous outcomes may be partially redundant with a dominating compare (as was the intention of this PR) but again the resolution is only for those pred blocks that bring in that value. Other preds associated with other phis may have the same, the opposite, or an ambiguous outcome",0,0.5
+"* for the phi-destructuring we may need to disregard dominators with known-outcome VNs,  and/or else disregard the unreachable paths from those dominating compares. Here the path from BB01->BB03 is unreachable and so the phi value (j =2) is unrealizable",0,0.5
+So the upshot is that if we substitute in a phi we can either get,0,0.5
+* a known outcome -- branch is partially redundant along some paths regardless of dominator behavior,0,0.5
+"* an unknown outcome with matching dominator -- branch is partially redundant along some paths, behavior requires path analysis",0,0.5
+* an unknown outcome,0,0.5
+and we need to account for those paths and pass them down to the jump threader in some fashion; this will feed into the true/false/ambiguous preds detection done there,0,0.5
+@github @github In this PR I am trying to move #code from #code to #code. I got stuck with the following issue,0,0.5
+I've verified @github suggestion using a clean build,0,0.5
+"It looks like a bug in the GenerateRuntimeGraph msbuild task to me. It shoud be using the live-built assets, but it is using cached assets instead",0,0.5
+and it's true that the msbuild task is using the wrong assets. In my case it's using #code but with the information that #code has been already moved to #code,0,0.5
+@github @github do you have any suggestions about how this could be solved (or worked around),0,0.5
+I'm not opposed to this change as this improves build time and also the confusion around what should I use when I have a single target framework in a project within the dotnet/runtime repository. The only concern that I have is that the only validation to avoid usage of these properties will be either a wrong compilation (which might drive people nuts to not understand why the right code is not compiled) or PR Review... but I guess it is fine and people can get use to using #code,0,0.5
+"Also it is a bummer that to condition for properties we have to now use #code to get the #code value, but for items we can directly access the #code property",0,0.5
+"I think while this brings value, this will bring some confusion to the table as the #code properties are/where simpler as you didn't have to think much about when/where to use them vs now if I want to use it to condition a property I need to do a ""more"" complicated condition by calling an MSBuild function to get the TPI value",0,0.5
+"If we think it is more valuable to make the system a little bit more complex for contributors (which I think will take some time to adjust but pain will eventually be gone), I'll get an email prepared so that we can merge today but we also need to fix the current build failures",0,0.5
+1. A new #code module that stores it as two 32-bit pieces,0,0.5
+I had this PR some time ago and will need to finish it soon and it's in the same area. #64845,0,0.5
+"I need to be able to convert C# #code into JS #code as part of the new marshaling. But I need it to use all 52 integral bits of the underlying double. #code Beyond that range, it should round to next possible integer, and not go crazy by setting exponent bits",0,0.5
+"My naïve implementation uses BigInt to do the conversion, but it allocates object. So I want to improve and use math+shifts instead",0,0.5
+Your #code is also expensive by allocating array,0,0.5
+I wonder if we could use 'Number' and it's 64 bits to store the bits and only do some math when we need full sized BigInt,0,0.5
+I guess the idea is to do something like this,0,0.5
+And this works on Chrome,0,0.5
+But not in Firefox because of [NaN boxing](https://brionv.com/log/2018/05/17/javascript-engine-internals-nan-boxing/),0,0.5
+"Because they rewrite all NaNs into a canonical form, so #code will also have #code and #code",0,0.5
+"But that would be different math than in my use case, because we would store different bits. And different math to get #code",0,0.5
