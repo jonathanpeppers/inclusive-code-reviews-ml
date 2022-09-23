@@ -3367,3 +3367,32 @@ Just me being stupid... :-P,0,0.5
 Thought about adding an extension method called #code; but that seemed a terrible name,0,0.5
 wtf,1,0.5
 
+"I guess if it was OK for BindableLayout, it should be OK for Map too",0,0.5
+"Either that, or we made a terrible mistake merging 5582. That implementation of Replace in #code is very suspect",0,0.5
+"It looks like Map.Pins is an #code, so while I don't like this implementation of #code, it should be fine for this purpose. It looks like the implementation of #code only uses #code for a single item being set. So at least for this specific application, it shouldn't cause any immediate problems",0,0.5
+"Possibly this is an example of me trying to outsmart the compiler and in the end doing something stupid 😄 Was trying to achieve inlining this method in its usages, given that it's just a simple expression, to avoid unnecessary calls to this method. The compiler will be smart enough to inline it without the attributes",0,0.5
+"As a side note, the reason fixing this is important even given the obvious uselessness of the construct #code is that we ought to be able to deliver accurate completions inside the #code. Prior to this fix, you got both #code and #code since that’s what #code had in its domain, but as soon as you accept the #code completion, the contextual type changes and therefore the inference changes and it becomes an error, which is a terrible experience",0,0.5
+It's sad to see that the work on this seems to have come to a halt,0,0.5
+Implementing would-be-convenient functionality now requires insane workarounds,0,0.5
+"Bumping this again, in hope to see this released ♥️",0,0.5
+This is where we call into the action constraints,0,0.5
+The reasons that I went this way instead of using something new to solve the problem,0,0.5
+- This is the simplest thing to do for now,0,0.5
+- I'm not sure how common this requirement is outside of MVC,0,0.5
+"The thing that this solves is selecting between a GET endpoint and a POST endpoint, etc. It seems obvious someone layering a CMS on top of MVC needs this functionality. Maybe I am just being stupid and this needs to be *built-in*",0,0.5
+Shouldn't this be done in the other ctor,0,0.5
+"Yes, absolutely right! I knew to do that earlier then for some reason started working on something else and forgot about it. Thanks for catching that",0,0.5
+Also how do you feel about passing in an ILogger \ ILoggerFactory instead to the ctor? This feels a little gross. This feels a little gross,1,0.5
+"I did this because we already take a #code, so why complicate things for the consumer? Under what circumstances would someone have reason to supply a different #code than the one the service provider would offer? I'm not absolutely set against it, but would like to make a choice based on practical reasoning",0,0.5
+"In the long term, we may need to consume other services too. If we keep adding them as extra constructor overloads one-by-one, it will not be a nice experience for consumers",0,0.5
+I flipped this because _calling the destructor manually is terrible._,0,0.5
+holy shit this whole function is magic,1,0.5
+Gross. OK,1,0.5
+@github could this be something as stupid as not giving mlaunch enough time to finish,1,0.5
+Here's a good run,0,0.5
+That took 22 seconds to return any results,0,0.5
+Here's a bad one,0,0.5
+Timeout is 30 seconds,0,0.5
+How close to the wire is it getting,0,0.5
+python3 wtf. Is there an easy way to run on the same hardware? Also do I need to manually patch bits and run before and after,1,0.5
+
