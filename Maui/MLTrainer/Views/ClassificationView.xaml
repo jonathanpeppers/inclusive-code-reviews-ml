@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MLTrainer.Views.ClassificationView"
@@ -8,6 +8,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -47,10 +49,10 @@
                 VerticalOptions="Center"
                 FontSize="30"/>
 
-        <Button Text="Bad Comment (F1)"
-                
+        <Button Text="{Binding BadText}"
                 Command="{Binding BadCommentCommand}"
-                BackgroundColor="Red"
+                BackgroundColor="{Binding BadColor}"
+                TextColor="White"
                 IsEnabled="False"
                 FontSize="20"
                 Grid.Row="1"
@@ -76,16 +78,49 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
 
-        <Button Text="Good Comment (F2)"
+        <Button Text="{Binding GoodText}"
                 Command="{Binding GoodCommentCommand}"
-                BackgroundColor="Green"
+                BackgroundColor="{Binding GoodColor}"
+                TextColor="White"
                 FontSize="20"
                 Grid.Row="1"
                 Grid.RowSpan="2"
                 Grid.Column="2"/>
 
+        <Slider Grid.Row="3"
+                Grid.Column="0"
+                Minimum="0.1"
+                Maximum="1"
+                VerticalOptions="End"
+                ThumbColor="{Binding BadColor}"
+                Value="{Binding BadValue}"
+                DragCompletedCommand="{Binding BadSliderChangeCommand}"/>
 
-        <Button Grid.Row="3" Grid.Column="1"
+        <Slider Grid.Row="3"
+                Grid.Column="2"
+                Minimum="0.1"
+                Maximum="1"
+                ThumbColor="{Binding GoodColor}"
+                Value="{Binding GoodValue}"
+                DragCompletedCommand="{Binding GoodSliderChangeCommand}"/>
+
+        <Label Text="&lt;-- Slightly Bad   |    Really Bad --&gt;"
+               FontSize="20"
+               TextColor="Grey"
+               Grid.Row="4"
+               Grid.Column="0"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"/>
+
+        <Label Text="&lt;-- Slightly Good   |    Really Good --&gt;"
+               FontSize="20"
+               TextColor="Grey"
+               Grid.Row="4"
+               Grid.Column="2"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"/>
+
+        <Button Grid.Row="5" Grid.Column="1"
                 Text="Skip (Esc)"
                 SemanticProperties.Hint="Skip"
                 Command="{Binding SkipCommentCommand}"
@@ -94,7 +129,7 @@
                 FontSize="30"/>
 
         <Label Text="You can use your keyboard to classify or skip comments. Left arrow for a bad comment. Right arrow for a good comment and Space to skip the comment"
-               Grid.Row="3" Grid.Column="2"
+               Grid.Row="5" Grid.Column="2"
                HorizontalOptions="End"/>
 
     </Grid>
