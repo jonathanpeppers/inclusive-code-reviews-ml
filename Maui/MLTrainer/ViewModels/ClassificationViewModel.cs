@@ -38,10 +38,10 @@ public partial class ClassificationViewModel : ObservableObject
 	float _badValue = 0.5f;
 
 	[ObservableProperty]
-	string _goodText = "Good Comment (F2). Rating: 0.5";
+	string _badWeightLabel = "Weight: 0.5";
 
 	[ObservableProperty]
-	string _badText = "Bad Comment(F1). Rating: 0.5";
+	string _goodWeightLabel = "Weight: 0.5";
 
 	[ObservableProperty]
 	ObservableCollection<GitHubComment>? _gitHubComments;
@@ -194,7 +194,7 @@ public partial class ClassificationViewModel : ObservableObject
 	{
 		if (value is float v)
 			GoodValue = v;
-		GoodText = $"Good Comment (F2). Rating {string.Format("{0:0.0}", GoodValue)}";
+		GoodWeightLabel = $"Weight: {string.Format("{0:0.0}", GoodValue)}";
 		GoodColor = Color.FromHsla(0.314, 1.0, 0.2 + GoodValue* 0.1, 1.0);
 	}
 
@@ -208,7 +208,7 @@ public partial class ClassificationViewModel : ObservableObject
 	{
 		if (value is float v)
 			BadValue = v;
-		BadText = $"Bad Comment (F1). Rating {string.Format("{0:0.0}", BadValue)}";
+		BadWeightLabel = $"Weight: {string.Format("{0:0.0}", BadValue)}";
 		BadColor = Color.FromHsla (0, 1.0, 0.3 + BadValue * 0.1, 1.0);
 	}
 

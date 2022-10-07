@@ -49,7 +49,7 @@
                 VerticalOptions="Center"
                 FontSize="30"/>
 
-        <Button Text="{Binding BadText}"
+        <Button Text="Bad Comment (F1)."
                 Command="{Binding BadCommentCommand}"
                 BackgroundColor="{Binding BadColor}"
                 TextColor="White"
@@ -78,7 +78,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>-->
 
-        <Button Text="{Binding GoodText}"
+        <Button Text="Good Comment (F2)."
                 Command="{Binding GoodCommentCommand}"
                 BackgroundColor="{Binding GoodColor}"
                 TextColor="White"
@@ -104,7 +104,7 @@
                 Value="{Binding GoodValue}"
                 DragCompletedCommand="{Binding GoodSliderChangeCommand}"/>
 
-        <Label Text="&lt;-- Slightly Bad   |    Really Bad --&gt;"
+        <Label Text="{Binding BadWeightLabel}"
                FontSize="20"
                TextColor="Grey"
                Grid.Row="4"
@@ -112,7 +112,7 @@
                HorizontalOptions="Center"
                VerticalOptions="Start"/>
 
-        <Label Text="&lt;-- Slightly Good   |    Really Good --&gt;"
+        <Label Text="{Binding GoodWeightLabel}"
                FontSize="20"
                TextColor="Grey"
                Grid.Row="4"
