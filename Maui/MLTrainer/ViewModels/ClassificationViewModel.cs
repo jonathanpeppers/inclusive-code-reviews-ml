@@ -26,6 +26,24 @@ public partial class ClassificationViewModel : ObservableObject
 	string _status = String.Empty;
 
 	[ObservableProperty]
+	Color _goodColor = Color.FromHsla(0.314, 1.0, 0.25, 1.0);
+
+	[ObservableProperty]
+	Color _badColor = Color.FromHsla(0, 1.0, 0.35, 1.0);
+
+	[ObservableProperty]
+	float _goodValue = 0.5f;
+
+	[ObservableProperty]
+	float _badValue = 0.5f;
+
+	[ObservableProperty]
+	string _badWeightLabel = "Weight: 0.5";
+
+	[ObservableProperty]
+	string _goodWeightLabel = "Weight: 0.5";
+
+	[ObservableProperty]
 	ObservableCollection<GitHubComment>? _gitHubComments;
 
 	[ObservableProperty]
@@ -92,14 +110,14 @@ public partial class ClassificationViewModel : ObservableObject
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void GoodComment()
 	{
-		_scores.Add(new MLScore(Message, "0"));
+		_scores.Add(new MLScore(Message, "0", (float)Math.Round (GoodValue, 1)));
 		UpdateComment();
 	}
 
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void BadComment()
 	{
-		_scores.Add(new MLScore(Message, "1"));
+		_scores.Add(new MLScore(Message, "1", (float)Math.Round (BadValue, 1)));
 		UpdateComment();
 	}
 
@@ -166,6 +184,34 @@ public partial class ClassificationViewModel : ObservableObject
 		await RemoveLinesFromInitialFile();
 	}
 
+	[RelayCommand (CanExecute = nameof (DoWeHaveComments))]
+	void GoodSliderChange ()
+	{
+		UpdateGoodSliderElements (null);
+	}
+
+	void UpdateGoodSliderElements (float? value)
+	{
+		if (value is float v)
+			GoodValue = v;
+		GoodWeightLabel = $"Weight: {string.Format("{0:0.0}", GoodValue)}";
+		GoodColor = Color.FromHsla(0.314, 1.0, 0.2 + GoodValue* 0.1, 1.0);
+	}
+
+	[RelayCommand (CanExecute = nameof (DoWeHaveComments))]
+	void BadSliderChange ()
+	{
+		UpdateBadSliderElements (null);
+	}
+
+	void UpdateBadSliderElements (float? value)
+	{
+		if (value is float v)
+			BadValue = v;
+		BadWeightLabel = $"Weight: {string.Format("{0:0.0}", BadValue)}";
+		BadColor = Color.FromHsla (0, 1.0, 0.3 + BadValue * 0.1, 1.0);
+	}
+
 	bool DoWeHaveComments() => (Sentences != null) && Sentences.Count > _sentenceCount;
 
 	bool DoWeHaveScores() => _scores.Count > 0;
@@ -215,6 +261,9 @@ public partial class ClassificationViewModel : ObservableObject
 
 	bool UpdateComment()
 	{
+		UpdateGoodSliderElements (0.5f);
+		UpdateBadSliderElements (0.5f);
+
 		if (Sentences?.Count > _sentenceCount)
 		{
 			//Mark as processed the previous sentence
