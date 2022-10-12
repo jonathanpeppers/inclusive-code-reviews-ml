@@ -236,6 +236,22 @@
         "isnegative": "0"
     },
     {
+        "text": "You are awesome",
+        "isnegative": "0"
+    },
+    {
+        "text": "Did you find any workaround",
+        "isnegative": "0"
+    },
+    {
+        "text": "Can you share a",
+        "isnegative": "0"
+    },
+    {
+        "text": "You can put things in your project file",
+        "isnegative": "0"
+    },
+    {
         "text": "this should immediately be deleted",
         "isnegative": "1"
     },
