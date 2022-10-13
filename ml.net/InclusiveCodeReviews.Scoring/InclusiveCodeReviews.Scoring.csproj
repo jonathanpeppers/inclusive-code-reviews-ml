@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\InclusiveCodeReviews.ConsoleApp\InclusiveCodeReviews.ConsoleApp.csproj" />
     <ProjectReference Include="..\InclusiveCodeReviews.Model\InclusiveCodeReviews.Model.csproj" />
   </ItemGroup>
 
