@@ -270,5 +270,37 @@
     {
         "text": "This is so confusing.",
         "isnegative": "1"
+    },
+    {
+        "text": "I know Embedinnator-4000 is archived/readonly, hopefully you are able to work on your own fork?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why is this a blocker?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why do you need LinkAll?",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is to talk about",
+        "isnegative": "0"
+    },
+    {
+        "text": "Are customers generally wanting Hot Reload to be successful a bigger % of the time?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Microsoft Hackathon 2022",
+        "isnegative": "0"
+    },
+    {
+        "text": "No text is stored anywhere, at any time.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Note xUnit's custom scheduler `Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext`.",
+        "isnegative": "0"
     }
 ]
