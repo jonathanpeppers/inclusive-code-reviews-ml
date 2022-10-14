@@ -302,5 +302,13 @@
     {
         "text": "Note xUnit's custom scheduler `Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext`.",
         "isnegative": "0"
+    },
+    {
+        "text": "If you're ever wanting a friendly place to watch, let me know",
+        "isnegative": "0"
+    },
+    {
+        "text": "Do you know when this started to happen?",
+        "isnegative": "0"
     }
 ]
