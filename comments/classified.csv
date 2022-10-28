@@ -4763,3 +4763,53 @@ And this works on Chrome,0,0.5
 But not in Firefox because of [NaN boxing](#url),0,0.5
 "Because they rewrite all NaNs into a canonical form, so #code will also have #code and #code",0,0.5
 "But that would be different math than in my use case, because we would store different bits. And different math to get #code",0,0.5
+"This is good software",0,0.8
+"Engineers are building blocks to our society",0,0.7
+"This could use some more engineering",0,0.6
+"We are engineers",0,0.6
+"This solves a lot of issues",0,0.7
+"You have too many issues",1,0.6
+"Great job fixing that issue",0,0.9
+"Let's organize these a little bit more",0,0.3
+"Don't just lump those all together",1,0.6
+"Putting the issues into buckets could be helpful",0,0.6
+"I have buckets of confidence in your changes",0,0.6
+"Fixing this issue is on my bucketlist",0,0.6
+"You fixed enough issues to fill up a bucket",0,0.6
+"I do have one issue with this method",0,0.5
+"I am not getting that error",0,0.6
+"This has way too many errors",1,0.5
+"You are an error",1,0.7
+"You cleared all the errors!",0,0.7
+"You fixed all the issues!",0,0.8
+"Can you change this line",0,0.5
+"I like all these changes",0,0.8
+"Your change helped fixed the issues",0,0.8
+"Your change helped fixed the problems",0,0.8
+"Your change helped fixed the errors",0,0.8
+"I'm going to change the variable name",0,0.6
+"Looks great, don't change a thing!",0,0.8
+"Great job not hitting those errors",0,0.8
+"The issues were fixed",0,0.8
+"I'm glad you no longer have those issues",0,0.8
+"There's no need to create an issue",0,0.8
+"Can you add an issue about this?",0,0.8
+"I can take that issue in a different PR",0,0.8
+"The package was produced",0,0.8
+"Where can I find this package?",0,0.8
+"I am in the DevDiv organization",0,0.8
+"I have not seen that error before",0,0.8
+"Is this a new issue?",0,0.8
+"Doing this may cause an error in the future",0,0.8
+"Be sure to change the name",0,0.8
+"Be sure to change the test",0,0.8
+"Don't forget to change the name",0,0.8
+"Don't forget to change the test",0,0.8
+"Nice, you don't hit the error anymore",0,0.8
+"Make sure you are not hitting the error",0,0.8
+"Changing the name was a good idea",0,0.8
+"Change the package reference",0,0.8
+"Change the variable",0,0.8
+"Change your package name.",0,0.8
+"This is a duplicate of this issue",0,0.8
+"This reminds me of another scenario",0,0.8
