@@ -4810,6 +4810,7 @@ But not in Firefox because of [NaN boxing](#url),0,0.5
 "Changing the name was a good idea",0,0.8
 "Change the package reference",0,0.8
 "Change the variable",0,0.8
-"Change your package name.",0,0.8
+"Change your package name to 'com.foo.bar`.",0,0.8
+"Change your package name and let's see what happens.",0,0.8
 "This is a duplicate of this issue",0,0.8
 "This reminds me of another scenario",0,0.8
