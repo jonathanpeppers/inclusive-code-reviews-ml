@@ -272,6 +272,26 @@
         "isnegative": "1"
     },
     {
+        "text": "DevDiv software engineers",
+        "isnegative": "0"
+    },
+    {
+        "text": "Try to bucket all our issues into categories:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This reminds me of a past issue:",
+        "isnegative": "0"
+    },
+    {
+        "text": "With a package name of abc, you hit the error:",
+        "isnegative": "0"
+    },
+    {
+        "text": "Change your package name.",
+        "isnegative": "0"
+    },
+    {
         "text": "I know Embedinnator-4000 is archived/readonly, hopefully you are able to work on your own fork?",
         "isnegative": "0"
     },
