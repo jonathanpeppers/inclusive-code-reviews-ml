@@ -6,6 +6,6 @@ public partial class ClassificationView : ContentView
 	{
 		InitializeComponent();
 
-	
+
 	}
 }

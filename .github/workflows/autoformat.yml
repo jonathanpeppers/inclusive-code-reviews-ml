@@ -1,0 +1,22 @@
+name: Autoformat code
+on: pull_request
+
+# This action only need a single permission in order to autoformat the code.
+permissions:
+  contents: read
+
+jobs:
+  autoformat-code:
+    name: Autoformat code
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Autoformat'
+      uses: rolfbjarne/autoformat@v0.1
+      with:
+        projects:
+            - "Maui/MLTrainer/MLTrainer.csproj"
+            - "ml.net/InclusiveCodeReviews.Convert/InclusiveCodeReviews.Convert.csproj" 
+            - "ml.net/InclusiveCodeReviews.Model/InclusiveCodeReviews.Model.csproj"
+            - "ml.net/InclusiveCodeReviews.Scoring/InclusiveCodeReviews.Scoring.csproj"
+            - "ml.net/InclusiveCodeReviews.ConsoleApp/InclusiveCodeReviews.ConsoleApp.csproj"

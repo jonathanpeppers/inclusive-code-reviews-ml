@@ -80,7 +80,7 @@ public partial class ClassificationViewModel : ObservableObject
 			await DisplayAlert("Wrong File configuration", $"Please make sure there is a Header column with 'Body' text. {v.Message}", "OK");
 			return;
 		}
-	
+
 		// TODO this doesn't seem to properly check for csv files with incorrect headers
 		if (!GitHubComments.Any())
 		{
@@ -110,14 +110,14 @@ public partial class ClassificationViewModel : ObservableObject
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void GoodComment()
 	{
-		_scores.Add(new MLScore(Message, "0", (float)Math.Round (GoodValue, 1)));
+		_scores.Add(new MLScore(Message, "0", (float)Math.Round(GoodValue, 1)));
 		UpdateComment();
 	}
 
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void BadComment()
 	{
-		_scores.Add(new MLScore(Message, "1", (float)Math.Round (BadValue, 1)));
+		_scores.Add(new MLScore(Message, "1", (float)Math.Round(BadValue, 1)));
 		UpdateComment();
 	}
 
@@ -184,32 +184,32 @@ public partial class ClassificationViewModel : ObservableObject
 		await RemoveLinesFromInitialFile();
 	}
 
-	[RelayCommand (CanExecute = nameof (DoWeHaveComments))]
-	void GoodSliderChange ()
+	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
+	void GoodSliderChange()
 	{
-		UpdateGoodSliderElements (null);
+		UpdateGoodSliderElements(null);
 	}
 
-	void UpdateGoodSliderElements (float? value)
+	void UpdateGoodSliderElements(float? value)
 	{
 		if (value is float v)
 			GoodValue = v;
 		GoodWeightLabel = $"Weight: {string.Format("{0:0.0}", GoodValue)}";
-		GoodColor = Color.FromHsla(0.314, 1.0, 0.2 + GoodValue* 0.1, 1.0);
+		GoodColor = Color.FromHsla(0.314, 1.0, 0.2 + GoodValue * 0.1, 1.0);
 	}
 
-	[RelayCommand (CanExecute = nameof (DoWeHaveComments))]
-	void BadSliderChange ()
+	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
+	void BadSliderChange()
 	{
-		UpdateBadSliderElements (null);
+		UpdateBadSliderElements(null);
 	}
 
-	void UpdateBadSliderElements (float? value)
+	void UpdateBadSliderElements(float? value)
 	{
 		if (value is float v)
 			BadValue = v;
 		BadWeightLabel = $"Weight: {string.Format("{0:0.0}", BadValue)}";
-		BadColor = Color.FromHsla (0, 1.0, 0.3 + BadValue * 0.1, 1.0);
+		BadColor = Color.FromHsla(0, 1.0, 0.3 + BadValue * 0.1, 1.0);
 	}
 
 	bool DoWeHaveComments() => (Sentences != null) && Sentences.Count > _sentenceCount;
@@ -261,8 +261,8 @@ public partial class ClassificationViewModel : ObservableObject
 
 	bool UpdateComment()
 	{
-		UpdateGoodSliderElements (0.5f);
-		UpdateBadSliderElements (0.5f);
+		UpdateGoodSliderElements(0.5f);
+		UpdateBadSliderElements(0.5f);
 
 		if (Sentences?.Count > _sentenceCount)
 		{
