@@ -15,8 +15,5 @@ jobs:
       uses: rolfbjarne/autoformat@v0.1
       with:
         projects:
-            - "Maui/MLTrainer/MLTrainer.csproj"
-            - "ml.net/InclusiveCodeReviews.Convert/InclusiveCodeReviews.Convert.csproj" 
-            - "ml.net/InclusiveCodeReviews.Model/InclusiveCodeReviews.Model.csproj"
-            - "ml.net/InclusiveCodeReviews.Scoring/InclusiveCodeReviews.Scoring.csproj"
-            - "ml.net/InclusiveCodeReviews.ConsoleApp/InclusiveCodeReviews.ConsoleApp.csproj"
+            - "Maui/MLTrainer/MLTrainer.sln"
+            - "ml.net/InclusiveCodeReviews.sln"
