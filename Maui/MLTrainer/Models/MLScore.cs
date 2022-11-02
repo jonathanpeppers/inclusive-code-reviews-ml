@@ -12,7 +12,7 @@ public class MLScore
 		IsNegative = isNegative == "0" ? "0" : "1";
 	}
 
-	public MLScore (string text, string isNegative, float importance)
+	public MLScore(string text, string isNegative, float importance)
 	{
 		Text = text;
 		IsNegative = isNegative == "0" ? "0" : "1";
