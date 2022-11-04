@@ -334,5 +334,18 @@
     {
         "text": "This is cool.",
         "isnegative": "0"
+    },
+    {
+        "text": "Deleted:",
+        "isnegative": "0",
+        "notes": "The idea on this one, is you have a bulleted-list mentioning what you deleted."
+    },
+    {
+        "text": "I don't like this delete it",
+        "isnegative": "1"
+    },
+    {
+        "text": "Delete all of this junk",
+        "isnegative": "1"
     }
 ]
