@@ -155,6 +155,12 @@ This is awful,1,0.5
 You are awful,1,0.5
 This is confusing,1,0.5
 This is confusing code,1,0.5
+"Deleted: an unused class, #code, and two unused methods",0,0.5
+I deleted the following,0,0.5
+I deleted #code,0,0.5
+Deleted #code and #code,0,0.5
+Deleted,0,0.5
+"Deleted, thanks",0,0.5
 Delete this confusing code,1,0.5
 Delete this code immediately,1,0.5
 This should be deleted immediately,1,0.5
