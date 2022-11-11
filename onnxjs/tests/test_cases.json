@@ -347,5 +347,37 @@
     {
         "text": "Delete all of this junk",
         "isnegative": "1"
+    },
+    {
+        "text": "I want to dogfood private builds",
+        "isnegative": "0"
+    },
+    {
+        "text": "I can show you more",
+        "isnegative": "0"
+    },
+    {
+        "text": "Send me one back, too.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Going to focus on Fix / Hack / Learn week",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your settings don't seem quite right:",
+        "isnegative": "0"
+    },
+    {
+        "text": ".NET 7 GA is going out a day before",
+        "isnegative": "0"
+    },
+    {
+        "text": "What \"FPS\" are you looking for?",
+        "isnegative": "0"
+    },
+    {
+        "text": "You mention that you disabled linking",
+        "isnegative": "0"
     }
 ]
