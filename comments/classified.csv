@@ -4907,3 +4907,8 @@ Did you disable linking,0,0.5
 "It didn't hurt anything",0,0.5
 We just left it,0,0.5
 We just left the changes in,0,0.5
+"Added a comment with rationale, also pasting here since it's interesting",0,0.5
+"Currently with the stress tests we have removing these caches wouldn't be a problem. However, we don't have a proof that our current simplification rules always avoid these worst-cases. There might be hope for removing some of these caches with future work on the theory side",0,0.5
+"I haven't measured, but it's my understanding that in the worst case (when headers+body) happen to fit in a single TCP packet, you'll need an extra call to #code to schedule another IOCP callback",0,0.5
+Ughhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh,1,0.5
+
