@@ -379,5 +379,9 @@
     {
         "text": "You mention that you disabled linking",
         "isnegative": "0"
+    },
+    {
+        "text": "It didn't hurt anything, so we just left it.",
+        "isnegative": "0"
     }
 ]
