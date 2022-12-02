@@ -120,7 +120,7 @@
         "isnegative": "0"
     },
     {
-        "text": "You're giving us issues",
+        "text": "You're causing us issues",
         "isnegative": "1"
     },
     {
@@ -382,6 +382,22 @@
     },
     {
         "text": "It didn't hurt anything, so we just left it.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Hmm, how did you end up with:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is hitting:",
+        "isnegative": "0"
+    },
+    {
+        "text": "When your",
+        "isnegative": "0"
+    },
+    {
+        "text": "`YourClass.YourType` has:",
         "isnegative": "0"
     }
 ]
