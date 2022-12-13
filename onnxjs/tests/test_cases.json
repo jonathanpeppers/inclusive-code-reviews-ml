@@ -399,5 +399,13 @@
     {
         "text": "`YourClass.YourType` has:",
         "isnegative": "0"
+    },
+    {
+        "text": "So we don't really know how many customers hit it.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should create a C# method for you",
+        "isnegative": "0"
     }
 ]

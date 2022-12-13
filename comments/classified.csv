@@ -4925,3 +4925,10 @@ hitting:,0,0.5
 When your code gets here,0,0.5
 When you're this good,0,0.5
 #code has,0,0.5
+"customers are hitting this issue",0,0.5
+"customers hit this issue",0,0.5
+"Not many customers hit it",0,0.5
+"If you hit it again, please let me know",0,0.5
+"This should create a new solution for you",0,0.5
+"This should work",0,0.5
+"It should create a C# method for you",0,0.5
