@@ -6,5 +6,5 @@ if (!(Test-Path "node_modules")) {
 echo "generate model"
 dotnet run --project ..\ml.net\InclusiveCodeReviews.Convert\InclusiveCodeReviews.Convert.csproj
 
-echo "Run tests"
+echo "run tests"
 npm test
