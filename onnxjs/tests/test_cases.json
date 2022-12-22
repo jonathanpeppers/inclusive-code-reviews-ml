@@ -411,5 +411,9 @@
     {
         "text": "Hi Chuck,",
         "isnegative": "0"
+    },
+    {
+        "text": "(\"technically\" it is not a \"must\", but asking to build with such configuration means you are stupid)",
+        "isnegative": "1"
     }
 ]
