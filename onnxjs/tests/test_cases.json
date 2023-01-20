@@ -419,5 +419,17 @@
     {
         "text": "This should create a C# method for you",
         "isnegative": "0"
+    },
+    {
+        "text": "Going to close this",
+        "isnegative": "0"
+    },
+    {
+        "text": "[net7.0] Fix Managing Layout Children",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is a dedicated storage account",
+        "isnegative": "0"
     }
 ]

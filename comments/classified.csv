@@ -100,7 +100,7 @@ Everything is wrong,1,0.5
 Stop that,1,0.5
 Just quit,1,0.5
 Kill this,1,0.5
-Close this PR,1,0.5
+We can close this PR,0,0.5
 I missed this earlier,0,0.5
 This is a breaking change,0,0.5
 There is a version mismatch,0,0.5
@@ -1333,7 +1333,8 @@ Seems insane,1,0.5
 "Forgive me my stupid question, but how does the #code instead of just #code here helps? If the previous block ends with #code",0,0.5
 we only use small_vector.hpp and its dependencies,0,0.5
 holy shit it's 449 files for one header?! Man boost is giving npm a run for it's money,1,0.5
-This is absolutely terrible solution and we need to come up with better one. I'm taking this into account for Listener API,1,0.5
+This is absolutely terrible solution and we need to come up with better one,1,0.5
+I'm taking this into account for Listener API,0,0.5
 you're a terrible person,1,0.5
 "woah well that's... insane, but I get it. Such is life using C macros :P",1,0.5
 "OK this is kinda stupid but it works pretty well. The “gray"" series and ""grey"" series of color are identical. This saves us a lot of space",1,0.5
@@ -2743,7 +2744,8 @@ fuck you,1,0.5
 Look you little cocksucker. I did nothing wrong. I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
 YOU BIG BOY,1,0.5
 good grief. can you read,1,0.5
-why don't you try examining the substance of the links?  I am sick and tired of children ranting without reading,1,0.5
+why don't you try examining the substance of the links?,1,0.5
+I am sick and tired of children ranting without reading,1,0.5
 What the fuck gose here,1,0.5
 "You're a little bitch. You can't handle an argument like a man, so you're crying to the administrators. Go fuck yourself",1,0.5
 mostly @github you fucking asshole go suck a dick u fucking king of assholes,1,0.5
@@ -4609,7 +4611,7 @@ Frequency Transition | ~10 μs | Time required for the halted part of a frequenc
 "It is important to note that on server CPUs, this normally applies for individual cores, where on client CPUs this is ""global""",0,0.5
 "For 14nm there are currently only server parts, with the exception of Intel Icelake CPUs",0,0.5
 "I think that given we are saving multiple milliseconds with this optimization, even while increasing the mark-list, and paying with 700usec of reduced frequency post that time-saving window directly is more than a reasonable and temporary sacrifice",0,0.5
-"My conclusion from this is that the current ""state of the union"" is roughly the worst it can get (although multi-threaded results are missing, due to me not having access to a dedicated machine where I could produce meaningful results: I barely respect the results I have, in that sense since this is not a machine I can kick people off of)",1,0.5
+"My conclusion from this is that the current ""state of the union"" is roughly the worst it can get",1,0.5
 "As you mentioned, Icelake and Tigerlake make things only better, and it is hard to imagine AMD doing worse once they come around to supporting AVX512, probably sometime around transitioning to TSMC 5nm",0,0.5
 "I still think I can kick things up with a few more iterations (e.g. coming weekends). Peter has inspired me with an idea that can truly go ballistic, and I have some more ammo left regardless. So this really is as ""bad"" as it gets",1,0.5
 Hope this helps clear the fog and justify the risk,0,0.5
@@ -4940,3 +4942,6 @@ Setting up such a configuration means you are stupid,1,0.5
 asking to build with such configuration means you are stupid,1,0.5
 Code looks great (but doesn't mean you aren't stupid),1,0.5
 You are stupid,1,0.5
+What happens to the children of this node in this case,0,0.5
+Can we fix the child layout here,0,0.5
+What happens to the layout children here,0,0.5
