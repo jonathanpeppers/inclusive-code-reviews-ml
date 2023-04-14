@@ -4945,3 +4945,10 @@ You are stupid,1,0.5
 What happens to the children of this node in this case,0,0.5
 Can we fix the child layout here,0,0.5
 What happens to the layout children here,0,0.5
+You are a child,1,0.5
+You foolish persion,1,0.5
+Do you have antivirus installed,0,0.5
+Do you have any third-party plugins installed,0,0.5
+This partially reverts d298dc1d,0,0.5
+This reverts ae0b35a,0,0.5
+This partially reverts our changes from last week,0,0.5

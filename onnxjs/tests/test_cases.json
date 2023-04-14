@@ -431,5 +431,17 @@
     {
         "text": "This is a dedicated storage account",
         "isnegative": "0"
+    },
+    {
+        "text": "Foolish child!",
+        "isnegative": "1"
+    },
+    {
+        "text": "Do you have any third-party antivirus installed?",
+        "isnegative": "0"
+    },
+    {
+        "text": "This partially reverts 8a0da60c.",
+        "isnegative": "0"
     }
 ]
