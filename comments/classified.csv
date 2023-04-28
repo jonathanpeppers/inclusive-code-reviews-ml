@@ -573,7 +573,7 @@ nice,0,0.5
 I agree! I just wanted to leave them for @github in case there are any we want to comment in before I delete them entirely,0,0.5
 Commented out because the values aren't clear yet and we want your opinions on what the values should be :),0,0.5
 "Similarly, for any controls/properties you don't see in this PR that you believe belong, please let me know which ones and which values you might see them with",0,0.5
-"I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct""",1,0.5
+"I think that's fair. We can get rid of the checkbox and rephrase so it says ""By submitting this issue, I am agreeing to follow this project's Code of Conduct""",0,0.5
 "ah ok, makes sense! docs for #code was a big confusing and seemed right to me at first, since I was thinking the container should usually not receive any focus. But your explanation of ""consider first as a viable focus target"" helps clarify things",0,0.5
 typo fix that's been bothering me,1,0.5
 done,0,0.5
@@ -4952,3 +4952,6 @@ Do you have any third-party plugins installed,0,0.5
 This partially reverts d298dc1d,0,0.5
 This reverts ae0b35a,0,0.5
 This partially reverts our changes from last week,0,0.5
+Such as #code,0,0.5
+Such as #url,0,0.5
+Let me know what you think about this,0,0.5
