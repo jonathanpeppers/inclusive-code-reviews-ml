@@ -231,6 +231,7 @@ You're not good at this,1,0.5
 Everything you do is bad,1,0.5
 Everything looks great,0,0.5
 "This code was terrible, I'm so happy you made it better",1,0.5
+I'm so happy about these changes,0,0.5
 This code is terrible,1,1
 This code was terrible,1,1
 Good job,0,0.5
@@ -1451,7 +1452,8 @@ stupid off by one errors,1,0.5
 "This looks insane on GitHub, but whatever. :)",1,0.5
 Sorry for my stupid fault,1,0.5
 "They are useful **sometimes** :) But not in situations when you're supposed to specify a length of something, a size of something etc - that's where they are *insane* :)",0,0.5
-"This feels a little gross to me, happy to change this if someone has a better idea",1,0.5
+This feels a little gross to me,1,0.5
+I'm happy to change this if someone has a better idea,0,0.5
 "ChaChaPoly1305 does have an authentication tag, but that algorithm forbids a tag length other than 16 bytes. Because of that, ChaChaPoly1305 on Android can use the #code",0,0.5
 Just to confirm (because the GH diff here is terrible): No changes were made to this function right,0,0.5
 @github if you're wondering what terrible person would implement an extension method that handles #code values for #code ... that was me.  I'm still a bit ashamed,1,0.5
@@ -4955,3 +4957,5 @@ This partially reverts our changes from last week,0,0.5
 Such as #code,0,0.5
 Such as #url,0,0.5
 Let me know what you think about this,0,0.5
+His changes look great to me,0,0.5
+His behavior is concerning,0,0.5
