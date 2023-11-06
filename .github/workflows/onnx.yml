@@ -16,7 +16,8 @@ jobs:
     - name: install .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 6.x
+        dotnet-version: 8.x
+        include-prerelease: true
 
     - name: create models
       run: cd ml.net/InclusiveCodeReviews.Convert && dotnet run

@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0-maccatalyst</TargetFramework>
-		<TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">net6.0-windows10.0.19041.0</TargetFramework>
+		<TargetFramework>net8.0-maccatalyst</TargetFramework>
+		<TargetFramework Condition="$([MSBuild]::IsOSPlatform('windows'))">net8.0-windows10.0.19041.0</TargetFramework>
 		<OutputType>Exe</OutputType>
 		<RootNamespace>MLTrainer</RootNamespace>
 		<UseMaui>true</UseMaui>
@@ -53,6 +53,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" />
 		<PackageReference Include="CsvHelper" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9511" />
 	</ItemGroup>
 	
 </Project>

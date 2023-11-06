@@ -33,7 +33,8 @@ jobs:
     - name: install .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: 6.x
+        dotnet-version: 8.x
+        include-prerelease: true
 
     - name: Install MAUI Workloads
       run: dotnet workload install maui-desktop --ignore-failed-sources
@@ -53,10 +54,10 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: MLTrainer-macos
-        path: Maui/MLTrainer/bin/Release/net6.0-maccatalyst/publish
+        path: Maui/MLTrainer/bin/Release/net8.0-maccatalyst/publish
 
     - name: Archive Windows MAUI App
       uses: actions/upload-artifact@v2
       with:
         name: MLTrainer-windows
-        path: Maui/MLTrainer/bin/Release/net6.0-windows10.0.19041.0/win10-x64/publish
+        path: Maui/MLTrainer/bin/Release/net8.0-windows10.0.19041.0/win10-x64/publish
