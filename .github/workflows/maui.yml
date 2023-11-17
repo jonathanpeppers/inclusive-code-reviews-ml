@@ -34,7 +34,6 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 8.x
-        include-prerelease: true
 
     - name: Install MAUI Workloads
       run: dotnet workload install maui-desktop --ignore-failed-sources

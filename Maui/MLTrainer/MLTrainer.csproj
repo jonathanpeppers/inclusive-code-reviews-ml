@@ -53,7 +53,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" />
 		<PackageReference Include="CsvHelper" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.0-rc.2.9511" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 	</ItemGroup>
 	
 </Project>
