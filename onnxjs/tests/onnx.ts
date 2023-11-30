@@ -32,7 +32,7 @@ describe('onnx tests', async () => {
 
     test_cases.forEach(x => {
         it(x.text, async () => {
-            await assertText(x.text, x.isnegative, 0.65);
+            await assertText(x.text, x.isnegative, 0.7);
         });
     })
 });

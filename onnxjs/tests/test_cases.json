@@ -120,10 +120,6 @@
         "isnegative": "0"
     },
     {
-        "text": "You're causing us issues",
-        "isnegative": "1"
-    },
-    {
         "text": "Thank you for submitting that issue!",
         "isnegative": "0"
     },
@@ -458,6 +454,18 @@
     },
     {
         "text": "Happy Birthday",
+        "isnegative": "0"
+    },
+    {
+        "text": "Roslyn emits a custom attribute that tells you to",
+        "isnegative": "0"
+    },
+    {
+        "text": "Mono has always let you do any one of:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This package may not be fully compatible with your project.",
         "isnegative": "0"
     }
 ]

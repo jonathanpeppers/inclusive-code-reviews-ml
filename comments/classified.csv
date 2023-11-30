@@ -140,6 +140,7 @@ sometimes nasty bugs can be introduced,1,0.5
 it's not going to help,1,0.5
 Damage has been done,1,0.5
 I will ignore your code,1,0.5
+I'm always right,1,0.5
 I'm always right about things like this,1,0.5
 "I'm always right, follow my instructions",1,0.5
 How did this *ever* work,1,0.5
@@ -1889,7 +1890,7 @@ We are seeing the same issue in the 'release/5.0-preview1' branch and need this 
 How can we help investigate,0,0.5
 "For clarification, a movzx of 8-bit to 32-bit can sometimes be elided entirely by the processor. In the worst case it's a 1/4 nanosecond latency on modern CPUs",0,0.5
 "A movzx of 16-bit to 32-bit can never be elided by the processor. In the worst case it's a multi-cycle latency, as you have the cost of the operation _and_ the fact that this instruction operates on a dedicated port separate from many other ALU instructions. So that's a potential pipeline stall that affects anybody who will end up reading this value after it's computed",0,0.5
-"Hmm, is this going to work right? If this is reflecting against the compiler's object, but we're linking a copy into our project, is this going to fail the ""is"" check because the types won't unify? note the reflection before wouldn't have cared in the slightest",1,0.5
+"Hmm, is this going to work right? If this is reflecting against the compiler's object, but we're linking a copy into our project, is this going to fail the ""is"" check because the types won't unify? note the reflection before wouldn't have cared in the slightest",0,0.5
 The prior reflection not throwing asserts or something if it failed to me is incredibly suspicious too since we could have silently broken this in other ways,0,0.5
 I don't think this loop is critical for performance as it's only executed once and it's very likely that this information is needed later anyway,0,0.5
 In addition #code is only available in the scope of this function. I would need to move it to an outer scope to access it later. I'd like to avoid that as it increases the likelihood to retain references to old sourcefiles that could otherwise be garbage collected,0,0.5
@@ -4963,3 +4964,27 @@ This code has some quite foolish error handling,1,0.5
 This fixes the layout of child controls,0,0.5
 When,0,0.5
 your:,0,0.5
+Roslyn has code analyzers for this scenario,0,0.5
+Roslyn emits a custom attribute for this scenario,0,0.5
+We emit a custom attribute that tells you,0,0.5
+We have a custom attribute that tells you to solve this warning,0,0.5
+This emits custom attribute that tells to do the following:,0,0.5
+Mono let's you do the following:,0,0.5
+This has always let you do any one of,0,0.5
+This package isn't actually compatible,0,0.5
+This is not compatible with your project,0,0.5
+Your project has some great examples,0,0.5
+You go girl it's your birthday,0,0.5
+This code is a nightmare to work with,1,0.5
+This code is a nightmare to read,1,0.5
+This code is a nightmare to understand,1,0.5
+The author of this code should be fired,1,0.5
+The author of this code is a fool,1,0.5
+The author of this code is a pure magician,0,0.5
+I love examples such as,0,0.5
+Such as this:,0,0.5
+We are hitting some issues here,0,0.5
+This is a dedicated server,0,0.5
+This is a dedicated client,0,0.5
+How did you end up with this error,0,0.5
+His code,0,0.5
