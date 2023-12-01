@@ -467,5 +467,9 @@
     {
         "text": "This package may not be fully compatible with your project.",
         "isnegative": "0"
+    },
+    {
+        "text": "This is fantastc",
+        "isnegative": "0"
     }
 ]
