@@ -8,7 +8,6 @@ namespace MLTrainer.Models
 		{
 			Map(s => s.Text).Name("text");
 			Map(s => s.IsNegative).Name("isnegative");
-			Map(s => s.Importance).Name("importance");
 		}
 	}
 }

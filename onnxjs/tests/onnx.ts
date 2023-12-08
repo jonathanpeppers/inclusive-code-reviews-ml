@@ -18,9 +18,8 @@ describe('onnx tests', async () => {
         const punctuation_replaced = urls_replaced.replace(punctuationRegex, '');
         const results = await session.run({
             text: new ort.Tensor([punctuation_replaced.trim()], [1,1]),
-            isnegative: new ort.Tensor([''], [1,1]),
-            importance: new ort.Tensor('float32', [''], [1,1]),
-        })
+            isnegative: new ort.Tensor([''], [1,1])
+        });
         expect(results).to.be.not.null;
 
         const result = results['PredictedLabel.output'].data[0];
