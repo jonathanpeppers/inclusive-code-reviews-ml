@@ -475,5 +475,13 @@
     {
         "text": "You are generous with your time",
         "isnegative": "0"
+    },
+    {
+        "text": "I am pissed",
+        "isnegative": "1"
+    },
+    {
+        "text": "You prcik!",
+        "isnegative": "1"
     }
 ]
