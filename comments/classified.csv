@@ -136,7 +136,7 @@ _technically_ yes.,0,0.5
 "@github any specific preference to the preferred sort, or just sort via StringComparer.Ordinal or something",0,0.5
 "@github Any thoughts on this? Between #code and just adding the property to #code, do you see a clearly better option? Or a third way that we're missing",0,0.5
 "@github Are there any docs on the low level design of liveshare?  specifically, i'm looking to understand how it works from a client/server perspective.  Where is information expected to live?  Who is responsible for ""source of truth"".  How clients and servers synchronize and ask questions in a way that is consistent, etc. etc",0,0.5
-"@github are you manually updating these logger messages? I used a code-fix to do this in the past because it's far too easy to introduce errors / typos with such a large number of messages and it's incredibly difficult to review these in a PR. https://github.com/pranavkm/LoggerConvert has a version of the codefix, perhaps you want to give that a go (in a separate branch so you don't lose these changes)",0,0.5
+"@github are you manually updating these logger messages? I used a code-fix to do this in the past because it's far too easy to introduce errors / typos with such a large number of messages and it's incredibly difficult to review these in a PR. #url has a version of the codefix, perhaps you want to give that a go (in a separate branch so you don't lose these changes)",0,0.5
 "@github at above commit, with GCStress=C, HeapVerify=1, on Linux arm32",0,0.5
 "@github Can you add a comment stating the intent then? I could totally imagine somebody coming by, saying ""heh, that's stupid it's not sorted"", and adding in the exact thing you're removing",0,0.5
 "@github Comments from @github were only some renaming of tests and spacing, and discussion on certain doc comments. I tried to edit them from mobile, but hit the wrong buttons (it's really quite tricky to delete one line in a file)",0,0.5
@@ -280,7 +280,7 @@ _technically_ yes.,0,0.5
 "2. delete node (with comments, for that reason need to copy comments before)",0,0.5
 "2. for #6986: we'll need _a lot_ of tests to make sure this works correctly. The idea here is that anything past the ""document end"" will be treated as a degenerate range at document end. So this is gonna be a really nice transition where I'll just update the CSV appropriately and generate/run the tests",0,0.5
 "2. Has limitations; it will not work when trying to define an actual ""arbitrarily large integer"" like tested  by multiple people in this Stack Overflow question (#url)",0,0.5
-"2. If GC config #code is set. However I'm not sure if this is a valid scenario since this config is not documented [here](https://docs.microsoft.com/en-us/dotnet/core/runtime-config/garbage-collector) and when I run the test program with this config set to some limit, even with the latest .NET release it seems to be broken (reports #code significantly higher than this limit, and the program still finishes successfully)",0,0.5
+"2. If GC config #code is set. However I'm not sure if this is a valid scenario since this config is not documented [here](#url) and when I run the test program with this config set to some limit, even with the latest .NET release it seems to be broken (reports #code significantly higher than this limit, and the program still finishes successfully)",0,0.5
 "2. Is the debugger flag only being used to control whether we list completion items before their declaration point? And do completion providers get passed an OptionSet from the originating workspace (or can get at it)? If both are ""yes"", then _perhaps_ we should instead have there be a not-UI-exposed completion option that simply specifies that debugger behavior, and the debugger workspace we create just sets that option explicitly. I could _imagine_ people might actually like that behavior during real typing as well. It's not rare that you might write some code and realize you need to use a local declared farther down. Rather than me breaking context, moving the local up, and then writing the code again, that it's perhaps OK to actually complete it anyways. It's I am _not_ saying we should expose it in a UI (at least not until customers come with pitchforks asking for it :smile:), but if they did come along and ask for that we'd implement that with an option. Given that _also_ might fix this problem too, I can't help but notice the coincidence",0,0.5
 "2. it adds 90 test cases, so that makes me 😄",0,0.5
 "2. Performance is _terrible_. Like beyond bad. This makes _every_ jsx tag tree in your program into a series of nested generic context sensitive function calls (and _most_ jsx apps have a _lot_ of nested tags!). That's just about the worst-case scenario for the type checker. If we could make nested context sensitive function calls much more performant to check, it's go a long way towards making merging this feasible",0,0.5
@@ -408,7 +408,7 @@ _technically_ yes.,0,0.5
 "As per the bug we were seeing with #code and #code, I think this needs to be",0,0.5
 "As such, the perf bump can be thought of as *ONLY* being 2x-ish due to downclocking, with a clear expectation of seeing 3x with future 10nm parts and below",0,0.5
 "As the end of the doc states, I'm terrible at naming. I'm fine with whatever name others agree on. @github do u have any opinions here",0,0.5
-"As to that, the long answer is that Travis Downs (@github) measured this independently: https://travisdowns.github.io/blog/2020/01/17/avxfreq1.html",0,0.5
+"As to that, the long answer is that Travis Downs (@github) measured this independently: #url",0,0.5
 "As we talked about on the meeting, we could just make #code internal. So not something users would use, but it would be automatic if they are using .net 6 AND #code And #code",0,0.5
 "As with any double-negative, you're forced to pause and do some mental calculations: *""ah, it's checking for position, then asserts that position is not good; no wait it asserts that it's not wrong, then proceeds — therefore this statement checks that the substring exists in the path string! Phew....""*",0,0.5
 "As with the _Xterm_ scheme you can see some ""glitches"" in the 16-color mappings. Only now even the colors are wrong. For example, it thinks the _Solarized_ dark green is closer to a shade of yellow, and the blue looks more like cyan. But again, I don't think that is such a big deal - it's still mapping to a reasonable color",0,0.5
@@ -433,7 +433,7 @@ _technically_ yes.,0,0.5
 "Basically I felt like keeping the data in the *always consistent* state was the best thing overall. Without doing dedicated perf work around this specific feature, I don't have a clear insight into which of these are the best. That seems like a good thing to do some other time",0,0.5
 "Basically I'm using exceptions to show the users their error messages, so it really ought to be more user friendly then your actual problem being buried in amongst an Aggregate exception format and a bunch of stack-trace stuff. This all stems from me using exceptions to bail out of functions early when we find argument problems (url is null, doesn't exist) so I don't have to make every method return #code where Result could have an error that should cause us to bail early or the value we actually asked for. If you can think of a better paradigm than using exceptions of that gross Result<T> stuff I'm on board, because I agree that using exceptions this way isn't great, it's just the best I could come up with",0,0.5
 "Basically, it's not terrible if we offer keywords even when not always applicable.  That's still much better than *not* offering it.  Then, we could just make this cod really simple.  Basically: ""offer these things if it's in a parameter list"", even if that allows some things when not applicable",0,0.5
-"Basically, the method being modified #code is only called (through #code) from #code and only if #code is set: https://github.com/dotnet/runtime/blob/69b9000671f1b73b3fa17810a9f6cb31abb612a2/src/coreclr/gc/unix/gcenv.unix.cpp#L1326",0,0.5
+"Basically, the method being modified #code is only called (through #code) from #code and only if #code is set: #url",0,0.5
 "Basically, when jitting, the compiler is already doing the right thing, #code today return effectively just #code (#code) or #code (#code)",0,0.5
 "Be sure to change the name",0,0.8
 "Be sure to change the test",0,0.8
@@ -571,7 +571,6 @@ _technically_ yes.,0,0.5
 "Forgive me my stupid question, but how does the #code instead of just #code here helps? If the previous block ends with #code",0,0.5
 "Fortunately, reinstalling a package is a no-op",0,0.5
 "Fortunately, someone used Benchmark.net: #url",0,0.5
-"Fortunately, someone used Benchmark.net: https://blog.ladeak.net/posts/string-interpolation-stringbuilder",0,0.5
 "Fortunately, this code path is only called when the screen readers are on, which I believe kill perf more than an enumerator will",0,0.5
 "Found the root cause. Had a stupid bug in the test (missing import for System) which caused Action to be error type, so the event implementation would not get matched with event from interface",0,0.5
 "From an end-user perspective, this will make no difference at all. They just need the analyzer on CI, and code fix in IDE (regardless of whether it is invoked from a NuGet package or from an implementation in IDE). My point is, do we think it is worth blocking a user feature (CI enforcement) on just the fact that we'd like to cleanup and port the fixer to NuGet package",0,0.5
@@ -663,7 +662,6 @@ _technically_ yes.,0,0.5
 "I actually caught this because I'm currently working on unittests over in #6842. The whole #code is getting split into 3 pieces, with the bottom two being fully unit testable. An unfortunate side effect is that I'll absolutely be blowing up any in-flight PRs that touch that area of the code, so maybe it's best to hold off for a bit",0,0.5
 "I actually split it up into two parts - one for unpacking the json (#code), and another for doing the source/name GUID generation. I had to split it up like that because the profile doesn't actually have a reference to its own JSON. i could have theoretically had the profile re-create a blob of json and call the json parsing function, but that seemed insane",0,0.5
 "I actually tried out writing the change you suggested. Please take a look [at this diff](#url). But I'm not sure it is work to take in that complexity in a servicing fix, given that this case is unlikely, and that such a case is hard to test. If you still think we need to take the change, I can add it on to the PR",0,0.5
-"I actually tried out writing the change you suggested. Please take a look [at this diff](https://github.com/swaroop-sridhar/runtime/compare/1fcheck...swaroop-sridhar:2fcheck?expand=1). But I'm not sure it is work to take in that complexity in a servicing fix, given that this case is unlikely, and that such a case is hard to test. If you still think we need to take the change, I can add it on to the PR",0,0.5
 "I added #code, which seems a lot better",0,0.5
 "I agree this is very likely not the only one, it's just one that keeps popping up quite often. It's been a pain point for years (first on WPF, then on UWP, now on both MAUI and WinUI 3, etc.), and something that has received countless feature requests for. The solution many have come up with is to just roll their own collection types with support for ""range operations"", with the big drawback being though that since no UI framework among these actually supports the API, they're just forced to either iterate over items one by one (which is just terrible for performance), or just reset the collection and reinitialize it (which is also bad for performance, maybe just a little bit less, and also completely breaks all animations). It's just a very unfortunate situation where customers get frustrated, and they often have to both do extra work to build these helpers, and then still end up with a suboptimal experience. I mean, we have the same exact custom collection type in the Microsoft Store too, and it has the same exact issues (and I hate it). It's just a really common issue, and I'm saying I'd love for us to find the time to coordinate with the right folks and maybe try to finally get this resolved at least for .NET 8 🙂",0,0.5
 "I agree with Dustin on this one. I'd reckon that most [questions](#url) actually start out as ""bug report""s that stem from a misunderstanding or generally not reading the docs",0,0.5
@@ -757,7 +755,7 @@ _technically_ yes.,0,0.5
 "I saw this message ~2700 times in a build log. It is still logging the *other* case, which I think is sufficient",0,0.5
 "I see a new version #code, waiting to see if that is what we should bump to",0,0.5
 "I seems that when this condition is false, we'll have done the first visit (based on when-not-null state) for nothing",0,0.5
-"I seriously hope this change is just temporary and would be resolved in a better way before we hit general availability. Please check the issue I have logged: https://github.com/dotnet/maui/issues/6183. The change introduces a major inconsistency between the platforms and the new behavior is rather unexpected, breaking dynamic style changes, VisualStateManager etc",1,0.5
+"I seriously hope this change is just temporary and would be resolved in a better way before we hit general availability.",1,0.5
 "I spend an excessive amount of time trying to get a stupid #code returned up the chain to the peasant, before  finally giving in and making a managed class that just wraps a string",0,0.5
 "I spent some time yesterday looking through the implementations of ReplacePattern in vs/editor/contrib/find/replacePattern.ts and vs/workbench/services/search/common/replace.ts. Each of these implements different mechanisms for the CharCode #codees, so a small CharCode-aware-only helper function doesn't seem viable",0,0.5
 "I still think I can kick things up with a few more iterations (e.g. coming weekends). Peter has inspired me with an idea that can truly go ballistic, and I have some more ammo left regardless. So this really is as ""bad"" as it gets",1,0.5
@@ -769,7 +767,6 @@ _technically_ yes.,0,0.5
 "I tend to agree that these are truly special cases—since the relationship between #code/#code and #code/#code comes from the mapping between HTML attributes and DOM element property names, the spelling similarity is not a coincidence, but it’s not a given either. You can imagine a world where the DOM spec decided to map the #code HTML attribute onto #code, or the #code HTML attribute onto #code. Both of these would be terrible APIs, but my point is that despite the fairly small string distance between these substitutions, the string distance is not the reason they should be offered. So I’m unconvinced that they merit a change to the string distance algorithm",0,0.5
 "I tested the Android changes by rebasing against your branch. CoreCLR build succeeded (native and managed components), no more errors about crossgen2. 👍  Libraries build continues to succeed (native and managed components)",0,0.5
 "I think ([see my comment here](#url)) that that's why this is only done when we're about to fix (which are cases that are broken today). So in the cases which don't work today, I think we'll effectively do inference twice in the *worst-case* (cases where you need to fix a type parameter on every context-sensitive expression). Otherwise, it should be the same amount of inference as before, the only new work is collecting the context-sensitive inner expressions)",0,0.5
-"I think ([see my comment here](https://github.com/microsoft/TypeScript/pull/48538#issuecomment-1088157524)) that that's why this is only done when we're about to fix (which are cases that are broken today). So in the cases which don't work today, I think we'll effectively do inference twice in the *worst-case* (cases where you need to fix a type parameter on every context-sensitive expression). Otherwise, it should be the same amount of inference as before, the only new work is collecting the context-sensitive inner expressions)",0,0.5
 "I think #code sounds better (mostly because #code is a verb, and this is a property, not a method)",0,0.5
 "I think adding the test case is fine for now, and you would get the above error from #code",0,0.5
 "I think at a minimum, #code should be allowed on many commonly used html elements, such as #code and #code. Check to see if insane lets you configure an allowed attribute for all tags. If not, then let's list off the common tags (preferably have a list of tags and use that to construct the object map instead of repeating tags in the object literal)",0,0.5
@@ -826,6 +823,7 @@ _technically_ yes.,0,0.5
 "I would guess that Roslyn has metadata indicating whether a type symbol is a positional record, so such a heuristic might not be necessary. I could be wrong though",0,0.5
 "I would have thought component model syncs with the shell version and not editor version, but maybe I'm wrong there",0,0.5
 "I would really love for us to just manage to coordinate across the various teams and officially add support for this in a future release, not sooner than .NET 8 at this point. We could both update all underlying frameworks to support this (which I realize is non trivial work, especially since eg. WinUI 3 would likely need some new WinRT APIs and projections for this), and then provide the necessary migration docs, if needed. I believe this would be the best long term solution for this issue 🙂",0,0.5
+"I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",0,0.5
 "I would say that anything, even the most terrible algorithm, is better than obviously buggy code",1,0.5
 "I'd hope we have some latitude here, but your point is fair. I don't think this argument moves me much though",0,0.5
 "I'd rather convey our decision that ""it could be null but that's uncommon enough that we don't want to add special logic for it"" more literally in the code, such as changing",0,0.5
@@ -1190,6 +1188,7 @@ _technically_ yes.,0,0.5
 "Performance benefits aren't as good as they used to be with a way more aggressive inliner but I'm going to investigate what exactly led to such improvements and send separate PRs. At least currently I don't see any impact on ""time to first request"", I'll publish the first results once my [script](#url) finishes",0,0.5
 "Performance is _terrible_. Like beyond bad. ... If we could make nested context sensitive function calls much more performant to check, it's go a long way towards making merging this feasible",1,0.5
 "Please add a comment here explaining this type lives in the VS side of things and exists to be the proxy. It makes sense to me since we have chatted about it, but @github can attest to having to debug through other frameworks where there was no documentation on what lived in what process and it drove him insane",0,0.5
+"Please check the issue I have logged: #url. The change introduces a major inconsistency between the platforms and the new behavior is rather unexpected, breaking dynamic style changes, VisualStateManager etc",0,0.5
 "Please do, this seems insane",1,0.5
 "Please excuse me if this is a stupid question, but why can't you just call the #code method here",0,0.5
 "Please note that I'm not an expert on this. This test probably has a lot of bugs. For example, in this test, I'm Sleeping for a small certain amount of ms but I don't know for how much time the kernel actually sleeps because I don't really know how how precise Sleep is. Also, I'm probably measuring render time wrong because I only measure CPU time between the calls but maybe GPU calls are async (?). My code in that repo is probably very naive. Also, I'm not sure if the terms that I use are the right terms",0,0.5
@@ -1219,7 +1218,6 @@ _technically_ yes.,0,0.5
 "Refers to: src/libraries/System.Private.CoreLib/src/System/Activator.RuntimeType.cs:42 in d9ba474. [](commit_id = d9ba47416aae7afa8ac5bdb8016dba928cdc642c, deletion_comment = False)",0,0.5
 "Regardless, as mentioned in #url, I think neither of these are really good long term solutions and we should eventually just move these analyzers/fixers completely into CodeStyle layer and ship CodeStyle NuGet with the SDK",0,0.5
 "Regardless, I believe you'll also want to change SGen to match this change as well. #url",0,0.5
-"Regardless, I believe you'll also want to change SGen to match this change as well. https://github.com/dotnet/runtime/blob/master/src/libraries/Microsoft.XmlSerializer.Generator/src/Sgen.cs#L523",0,0.5
 "Regardless, I'd suggest",0,0.5
 "Regardless, we update F#/TypeScript for breaking changes like this when we move them directly to the editor APIs, no? This is clearly in the wrong namespace",0,0.5
 "Regardless, yes, it's possible for someone to implement Fail in a way that still returns, but that goes against the purpose of the method.  If we held true to the possibility that someone did that, then we'd need to remove #code from Debug.Assert and all such methods, which would be terrible. #Resolved",0,0.5
@@ -1363,9 +1361,7 @@ _technically_ yes.,0,0.5
 "that looks insane, does that just set to #code to true the first time it's called then we just check #code",1,0.5
 "That might just be a case of ""play stupid games, win stupid prizes""",1,0.5
 "That said, I'm not sure if it would still work if it all happens within the same assembly",0,0.5
-"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <#url>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",0,0.5
-"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <#url>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",1,0.5
-"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <https://github.com/dotnet/aspnetcore/blob/main/src/Tools/Extensions.ApiDescription.Client/src/build/Microsoft.Extensions.ApiDescription.Client.props>. I would recommend adjusting the defaults to your preferences in the Microsoft.OpenApi.Kiota.ApiDescription.Client package and adding a bit more information for users over complicating the tool w/ lots of new options. Editing the updated project file isn't that big a deal",0,0.5
+"That sounds like additional customization users could do based on the incredibly poor ""documentation"" in <#url>.",1,0.5
 "That wasn't my understanding on the docs on INotify, though I'm far from a Linux expert. The way I read the docs they were talking about pathname which I read to mean only the directory passed in. If a file within that directory is a symlink outside the directory are you seeing that it's still watched? I guess child directories would be followed since those require independent additions",0,0.5
 "That way, we can preserve a maximized view's state across #code calls. We can even have tests for this. The problem is what happens when the user resizes the splitview until it reaches the sum of all minimum sizes: at that point no view will be maximized any more. So, growing the splitview from then on would make it grow all views proportionally. This is why using layout priorities would be benefitial here. But we can also live with that behavior",0,0.5
 "That will not help for the case which imho is also the most likely one: you see a tree from 1 extension and interact with it multiple times with multiple items in short time frame. Chances are high that if the opening takes long, the context we set is always wrong",0,0.5
@@ -1843,7 +1839,6 @@ _technically_ yes.,0,0.5
 @github / @github what do you think? I lean towards the mlaunch version (although the downside here is that there can be multiple mlaunch versions for the same maccore hash),0,0.5
 @github #url is the tool I use. It is incredibly useful in validating these little things,0,0.5
 @github can you look over the failures in #url and see if anything comes to mind,0,0.5
-@github can you look over the failures in https://dev.azure.com/dnceng/public/_build/results?buildId=532465&view=ms.vss-test-web.build-test-results-tab and see if anything comes to mind,0,0.5
 @github can you review this one,0,0.5
 @github changes look good. Interestingly all the ignored enums and functions are in all platforms supported by the framework. There is an option to create a single ignore file that uses common-* as the prefix rather than the platform name. Food for though 😉,0,0.5
 @github could this be something as stupid as not giving mlaunch enough time to finish,1,0.5
@@ -1856,7 +1851,6 @@ _technically_ yes.,0,0.5
 @github glad you asked,0,0.5
 @github hmmm what does the semicolon in this path name do,0,0.5
 @github how gross is this? Having this here avoids a second dictionary lookup per page invocation,1,0.5
-@github https://github.com/egorbo/disasmo is the tool I use. It is incredibly useful in validating these little things,0,0.5
 @github I actually search twice per line so I don't miss cases like #code Didn't want to mess with Regexes too much as it's easy to make stupid mistake,1,0.5
 @github I bet this #code check was important,0,0.5
 @github I have no idea what's wrong with Linux or how to fix it,0,0.5
@@ -2005,7 +1999,7 @@ _technically_ yes.,0,0.5
 #code has,0,0.5
 #code indeed needs to be updated to ignore tuple name differences,0,0.5
 #code is hitting this issue:,0,0.5
-#code is only set to a non-zero value if #code is set to #code in [gc.cpp](https://github.com/dotnet/runtime/blob/69b9000671f1b73b3fa17810a9f6cb31abb612a2/src/coreclr/gc/gc.cpp). And this seems possible in only 2 cases,0,0.5
+#code is only set to a non-zero value if #code is set to #code in [gc.cpp](#url). And this seems possible in only 2 cases,0,0.5
 #code is smaller after inlining: #url,0,0.5
 #code means we're fine that inliner won't inline anything in cold blocks (call-sites with real profiles),0,0.5
 #code should be imported here already,0,0.5
@@ -2428,7 +2422,7 @@ For the replay commands I invoked superpmi.exe directly with a checked JIT. For 
 Fortunately it isn't public API,0,0.5
 Frequency Transition | ~10 μs | Time required for the halted part of a frequency transition,0,0.5
 Friday Spec Brownbag Quick Summary,0,0.5
-From Anandtech's article [Sizing Up Servers: Intel's Skylake-SP Xeon versus AMD's EPYC 7000 - The Server CPU Battle of the Decade?](https://www.anandtech.com/show/11544/intel-skylake-ep-vs-amd-epyc-7000-cpu-battle-of-the-decade/8),0,0.5
+From Anandtech's article [Sizing Up Servers: Intel's Skylake-SP Xeon versus AMD's EPYC 7000 - The Server CPU Battle of the Decade?](#url),0,0.5
 from beginning. [^<>] would probably be the best,0,0.5
 From the issue,0,0.5
 From the point of readability #code sucks,1,0.5
@@ -2451,7 +2445,6 @@ Fuck your mouth. Your girlfriend is ugly,1,0.5
 Fuck. 😄 I need to learn to read. 😄,1,0.5
 Fucked with the wrong muchacho,1,0.5
 Full benchmark app: #url,0,0.5
-Full benchmark app: https://github.com/GrabYourPitchforks/ConsoleApplicationBenchmark/blob/471fa6822a5c5e5fecfc14196e54dbfe82a0f20c/ConsoleAppBenchmark/IndexOfAnyRunner.cs,0,0.5
 Full log: [adb.txt](#url),0,0.5
 Fully agree but I couldn't figure out to configure insane that way,0,0.5
 Further investigation reviled an existing issue with incremental builds when using #code AOT,0,0.5
@@ -2564,13 +2557,11 @@ How do you calculate "FPS",0,0.5
 How does GetDiagnosticsUpdatedEventArgs work exactly,0,0.5
 How long did you spend working on this,1,0.5
 How would this ever work,1,0.5
-https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 looks like these are always two-letter uppercase pairs,0,0.5
 I *think* (and @github can correct me :) ) we tend to prefer that we explicitly define the dependencies in,0,0.5
 I agree on [Sealed],0,0.5
 I agree with the concern here: #url,0,0.5
 I agree! I just wanted to leave them for @github in case there are any we want to comment in before I delete them entirely,0,0.5
 I also made a request [How to implement DI in Xamarin.Forms](#url),0,0.5
-I also made a request [How to implement DI in Xamarin.Forms](https://github.com/xamarin/xamarin-forms-samples/issues/526),0,0.5
 i am a stupid person. typescript is garbage. Bill should be fired,1,0.5
 i am adding this to the list of things to try out in my followup PR :)  but yes.  seems insane,0,0.5
 I am curious though why each test has to call .Initialize(),0,0.5
@@ -2736,7 +2727,6 @@ I thought part of the problem was that nodes are reused? Won't this stop that fr
 I told you already to leave me alone.why can't you fuck off and do your own fucking thing. Or do you find that hounding me is amusing. Id u do then you are a mothafuckin asshole and I will ban you,1,0.5
 I too spent way too much time tracing this down when i was reading time stamps in from a file. I kept scrutinizing my parser for bugs because the behavior of this method is counter-intuitive (at least to me),0,0.5
 I took a note in [#url](#url) to let LDM know,0,0.5
-I took a note in [https://github.com/dotnet/csharplang/issues/2201](https://github.com/dotnet/csharplang/issues/2201) to let LDM know,0,0.5
 I tried including the HomeKit in the MacCatalyst section of the frameworks.source file and I kept getting this error in the build,0,0.5
 I updated the commit message around this conversation 👍,0,0.5
 I updated the test case some -- it needs to set all the properties to weird values so we see who wins,0,0.5
@@ -2850,9 +2840,7 @@ In addition #code is only available in the scope of this function. I would need 
 In any case I don't think this PR changes the current behavior,0,0.5
 In many cases like this it feels it would be better to return empty collection. Since the networking grabs massive amount of information had several cases in the past when we thrown on stupid things even if the caller really does not care,0,0.5
 In order for the the Button to display correctly,0,0.5
-In reply to: [125134566](https://github.com/dotnet/roslyn/pull/20548#discussion_r125134566) [](ancestors = 125134566),0,0.5
-In reply to: [210390086](https://github.com/dotnet/roslyn/pull/29317#discussion_r210390086) [](ancestors = 210390086),0,0.5
-In reply to: [288212991](https://github.com/dotnet/roslyn/pull/35955#discussion_r288212991) [](ancestors = 288212991),0,0.5
+In reply to: [125134566](#url) [](ancestors = 125134566),0,0.5
 In that case this should work (you would get a RUC warning when calling AddSingleton),0,0.5
 In the past I've tried to bias this classification so that we false negatives while keeping false positives still somewhat minimal,0,0.5
 in the worst case it will just create a useless instance,1,0.5
@@ -3343,7 +3331,6 @@ That's why I seriously discourage doing this in a .NET app,0,0.5
 That's why I seriously discourage doing this in a .NET app,1,0.5
 The .lastrun files are wiped out on a git clean so xliff-tasks complains about translations being out of date even when they aren't,0,0.5
 The [documentation](#url) for #code says,0,0.5
-The [documentation](https://docs.microsoft.com/dotnet/api/system.runtime.interopservices.marshal.getfunctionpointerfordelegate) for #code says,0,0.5
 The #code is correct,0,0.5
 The #code which also contains an #code which is a subclass of  #code! So much context,0,0.5
 the #code which is embeded in the native ALC - and yes - that name is TERRIBLE and has to go,1,0.5
@@ -3354,7 +3341,7 @@ The author of this code is a pure magician,0,0.5
 The author of this code should be fired,1,0.5
 the behavior is crazy why are you doing this,1,0.5
 the behavior is unpredictable,0,0.5
-The benchmarks and code are all up-to-date and accessible from the [vxsort-cpp](https://github.com/damageboy/vxsort-cpp),0,0.5
+The benchmarks and code are all up-to-date and accessible from the [vxsort-cpp](#url),0,0.5
 The BigInteger type is an immutable type that represents an arbitrarily large integer whose value in theory has no upper or lower bounds,0,0.5
 The bounds (128 => 512) can be tightened further here in that case. I will extract these to consts,0,0.5
 The built-in platforms also use color for interactive controls,0,0.5
