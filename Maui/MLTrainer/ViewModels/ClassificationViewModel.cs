@@ -110,14 +110,14 @@ public partial class ClassificationViewModel : ObservableObject
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void GoodComment()
 	{
-		_scores.Add(new MLScore(Message, "0", (float)Math.Round(GoodValue, 1)));
+		_scores.Add(new MLScore(Message, "0"));
 		UpdateComment();
 	}
 
 	[RelayCommand(CanExecute = nameof(DoWeHaveComments))]
 	void BadComment()
 	{
-		_scores.Add(new MLScore(Message, "1", (float)Math.Round(BadValue, 1)));
+		_scores.Add(new MLScore(Message, "1"));
 		UpdateComment();
 	}
 

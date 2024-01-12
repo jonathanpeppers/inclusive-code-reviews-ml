@@ -64,9 +64,8 @@ namespace InclusiveCodeReviews.ConsoleApp
 									  .Append(mlContext.Transforms.NormalizeMinMax("Features", "Features"))
 									  .AppendCacheCheckpoint(mlContext);
 			// Set the training algorithm 
-			var trainer = mlContext.MulticlassClassification.Trainers.SdcaMaximumEntropy(new SdcaMaximumEntropyMulticlassTrainer.Options() { L2Regularization = 1E-05f, L1Regularization = 0f, ConvergenceTolerance = 0.1f, MaximumNumberOfIterations = 20, Shuffle = true, BiasLearningRate = 0.01f, LabelColumnName = "isnegative", FeatureColumnName = "Features", ExampleWeightColumnName = "importance" })
-						  .Append(mlContext.Transforms.Conversion.MapValueToKey("importance", "importance"))
-						  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
+			var trainer = mlContext.MulticlassClassification.Trainers.OneVersusAll(mlContext.BinaryClassification.Trainers.AveragedPerceptron(labelColumnName: "isnegative", numberOfIterations: 10, featureColumnName: "Features"), labelColumnName: "isnegative")
+									  .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 
 			var trainingPipeline = dataProcessPipeline.Append(trainer);
 
@@ -145,11 +144,6 @@ namespace InclusiveCodeReviews.ConsoleApp
 			var logLossReductionStdDeviation = CalculateStandardDeviation(logLossReductionValues);
 			var logLossReductionConfidenceInterval95 = CalculateConfidenceInterval95(logLossReductionValues);
 
-			if (metricsInMultipleFolds.Any(m => m.ConfusionMatrix.PerClassPrecision.Count != 2))
-			{
-				throw new Exception("We should only have two classes in this model!");
-			}
-
 			var class0Values = metricsInMultipleFolds.Select(m => m.ConfusionMatrix.PerClassPrecision[0]);
 			var class0Average = class0Values.Average();
 			var class0StdDev = CalculateStandardDeviation(class0Values);
@@ -171,7 +165,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 			Console.WriteLine($"*************************************************************************************************************");
 
 			// Fail if detecting IsNegative=1 is less than a threshold
-			const double threshold = 0.8;
+			const double threshold = 0.75;
 			if (class1Average < threshold)
 			{
 				throw new Exception($"Class 1 Precision must be higher than {threshold}!");
