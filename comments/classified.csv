@@ -3598,7 +3598,9 @@ Do we have a task for UT coverage? I volunteer to do it (the moment I get a week
 Note: shame for the non deprecated name that is worst,1,0.5
 "@github why not? my opinion is consistency is good. but worst is it silently failing and do nothing only because it couldn't keep consistency. as bad as we crashing VS, because outlining couldn't figure out a region",1,0.5
 "These intersections do make the intellisense popups uglier, but they're required for correctness",0,0.5
-"Could the solution to that ugliness be for the compiler to do some work simplifying intersections (and unions)? E.g., #code could just be simplified to to #code (or, more generally, #code could just be simplified to #code). Any efforts in that direction could also help with the bug I brought up in #11426. Would this be that hard? I'd kind of expect simplifying logical formulations to be a somewhat solved problem with theorem provers etc, though I haven't looked into it, so maybe that's incredibly naive. Or maybe it's way too slow to apply here in the general case. Still, specific simplification rules might be a good idea",1,0.5
+"Could the solution to that ugliness be for the compiler to do some work simplifying intersections (and unions)?",0,0.5
+"E.g., #code could just be simplified to to #code (or, more generally, #code could just be simplified to #code). Any efforts in that direction could also help with the bug I brought up in #11426.",0,0.5
+"Would this be that hard? I'd kind of expect simplifying logical formulations to be a somewhat solved problem with theorem provers etc, though I haven't looked into it, so maybe that's incredibly naive. Or maybe it's way too slow to apply here in the general case. Still, specific simplification rules might be a good idea",0,0.5
 "Here's the worst case that I could come up with. Both #code and #code will jump to the same definition, I think",0,0.5
 1. I made meaningful names,0,0.5
 2. I split usages across multiple modules,0,0.5
@@ -3773,7 +3775,6 @@ Do we have a task for UT coverage? I volunteer to do it (the moment I get a week
 Note: shame for the non deprecated name that is worst,1,0.5
 "@github why not? my opinion is consistency is good. but worst is it silently failing and do nothing only because it couldn't keep consistency. as bad as we crashing VS, because outlining couldn't figure out a region",1,0.5
 "These intersections do make the intellisense popups uglier, but they're required for correctness",0,0.5
-"Could the solution to that ugliness be for the compiler to do some work simplifying intersections (and unions)? E.g., #code could just be simplified to to #code (or, more generally, #code could just be simplified to #code). Any efforts in that direction could also help with the bug I brought up in #11426. Would this be that hard? I'd kind of expect simplifying logical formulations to be a somewhat solved problem with theorem provers etc, though I haven't looked into it, so maybe that's incredibly naive. Or maybe it's way too slow to apply here in the general case. Still, specific simplification rules might be a good idea",1,0.5
 "Here's the worst case that I could come up with. Both #code and #code will jump to the same definition, I think",0,0.5
 1. I made meaningful names,0,0.5
 2. I split usages across multiple modules,0,0.5
@@ -4073,7 +4074,6 @@ Do we have a task for UT coverage? I volunteer to do it (the moment I get a week
 Note: shame for the non deprecated name that is worst,1,0.5
 "@github why not? my opinion is consistency is good. but worst is it silently failing and do nothing only because it couldn't keep consistency. as bad as we crashing VS, because outlining couldn't figure out a region",1,0.5
 "These intersections do make the intellisense popups uglier, but they're required for correctness",0,0.5
-"Could the solution to that ugliness be for the compiler to do some work simplifying intersections (and unions)? E.g., #code could just be simplified to to #code (or, more generally, #code could just be simplified to #code). Any efforts in that direction could also help with the bug I brought up in #11426. Would this be that hard? I'd kind of expect simplifying logical formulations to be a somewhat solved problem with theorem provers etc, though I haven't looked into it, so maybe that's incredibly naive. Or maybe it's way too slow to apply here in the general case. Still, specific simplification rules might be a good idea",1,0.5
 "Here's the worst case that I could come up with. Both #code and #code will jump to the same definition, I think",0,0.5
 1. I made meaningful names,0,0.5
 2. I split usages across multiple modules,0,0.5
@@ -4383,7 +4383,6 @@ Do we have a task for UT coverage? I volunteer to do it (the moment I get a week
 Note: shame for the non deprecated name that is worst,1,0.5
 "@github why not? my opinion is consistency is good. but worst is it silently failing and do nothing only because it couldn't keep consistency. as bad as we crashing VS, because outlining couldn't figure out a region",1,0.5
 "These intersections do make the intellisense popups uglier, but they're required for correctness",0,0.5
-"Could the solution to that ugliness be for the compiler to do some work simplifying intersections (and unions)? E.g., #code could just be simplified to to #code (or, more generally, #code could just be simplified to #code). Any efforts in that direction could also help with the bug I brought up in #11426. Would this be that hard? I'd kind of expect simplifying logical formulations to be a somewhat solved problem with theorem provers etc, though I haven't looked into it, so maybe that's incredibly naive. Or maybe it's way too slow to apply here in the general case. Still, specific simplification rules might be a good idea",1,0.5
 "Here's the worst case that I could come up with. Both #code and #code will jump to the same definition, I think",0,0.5
 1. I made meaningful names,0,0.5
 2. I split usages across multiple modules,0,0.5

@@ -483,5 +483,9 @@
     {
         "text": "You prcik!",
         "isnegative": "1"
+    },
+    {
+        "text": "114",
+        "isnegative": "0"
     }
 ]
