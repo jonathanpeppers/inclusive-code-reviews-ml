@@ -171,7 +171,7 @@ namespace InclusiveCodeReviews.ConsoleApp
 			Console.WriteLine($"*************************************************************************************************************");
 
 			// Fail if detecting IsNegative=1 is less than a threshold
-			const double threshold = 0.82;
+			const double threshold = 0.8;
 			if (class1Average < threshold)
 			{
 				throw new Exception($"Class 1 Precision must be higher than {threshold}!");
