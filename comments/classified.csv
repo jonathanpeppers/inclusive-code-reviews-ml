@@ -485,6 +485,7 @@ _technically_ yes.,0,0.5
 "Changing the field to #code would allow 64, I'd prefer not going bigger because then we'll need to allocate/lazy-alloc and have another field",0,0.5
 "Changing the name was a good idea",0,0.8
 "Check my response about it from your other comment. It's wrong, but it kept me from changing another file before ensuring my logic is correct",0,0.5
+"Chet, you are a great contributor",0,0.5
 "ColorTypeConverter and ThicknessTypeConverter do _not_ need to be cached in a known list, as they are attributed with a TypeConverterAttribute, they need to be in the KnownCOMPILEDTypeConverter as they're not attributed with the ProvideCompiledAttibute",0,0.5
 "Conceptually, #code + #code feels ""weird"": it's inconsistent with other existing properties, such as #code, #code",0,0.5
 "Conceptually, I'm not sure what separates this test from #code in terms of error messages. It also feels very wrong that the error message here mentions return types when they actually have nothing to do with what's wrong with the method, ie missing a yield statement",0,0.5
@@ -720,6 +721,7 @@ _technically_ yes.,0,0.5
 "I hate that the test param is named #code, that's a terrible name for a bool param. But that predates this PR so not something to block on",1,0.5
 "i have a dick, its bigger than yours! hahaha",1,0.5
 "I have a feeling that NuGet authors will have to use #code for their directory names... where they have been used to using #code, #code, etc",0,0.5
+"I have a husky dog just got it today",0,0.5
 "I have a terrible workaround for the symlinking issue, which (unlike the compression option) is consistent with our symbol publishing :)",0,0.5
 "I have buckets of confidence in your changes",0,0.6
 "I have checked how it works with ""zero offset field map"" and you are right, overall results are better",0,0.5
@@ -742,6 +744,7 @@ _technically_ yes.,0,0.5
 "i mean, _this seems insane_",1,0.5
 "I merged the latest master to PR branch a couple of days ago and compared it to the latest publicly available version, so there can be some more changes. But since no degradation is found, I don't see any issue. Is something wrong here",0,0.5
 "I might be wrong here but if #code finds the first node that matches the span that it wouldn't work for situation where only the identifier is selected. That has pretty easy solution, however. (could simply test #code even for selection and proceed with this test only for situations where it doesn't return anything valuable)",0,0.5
+"I need corn husk to make tomales",0,0.5
 "I need to be able to convert C# #code into JS #code as part of the new marshaling. But I need it to use all 52 integral bits of the underlying double. #code Beyond that range, it should round to next possible integer, and not go crazy by setting exponent bits",0,0.5
 "I noticed that SuggestWidget.onDidHide gets called constantly when typing, even when SuggestWidget.onDidShow has not been called before and the widget is not active. Perhaps this should be removed for performance",0,0.5
 "I only see one caller to Pump.  Since we'll throw if #code is null, it shouldn't be declared as null-accepting.  At worst, we're just moving this #code to the caller where they're asserting it's not null",0,0.5
@@ -1346,6 +1349,7 @@ _technically_ yes.,0,0.5
 "Thanks, @github.  Not stupid questions.  We handle merging.  I re-ran the failed leg and it passed.  Thanks for the contribution",0,0.5
 "Thanks, @github",0,0.5
 "Thanks, actually refactored this a bit.  I'm a bash noob so I'm learning quite a bit.  Still testing, but could use another review shortly",0,0.5
+"Thanks, chet",0,0.5
 "Thanks, seems like there are actually several interesting aspects",0,0.5
 "Thanks, this has been such a pain point",0,0.5
 "Thanks. To understand worst case, can you try counting a long string of all a's with a pattern that's just a single a",0,0.5
