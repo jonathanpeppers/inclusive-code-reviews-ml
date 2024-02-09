@@ -1518,6 +1518,7 @@ _technically_ yes.,0,0.5
 "This is good software",0,0.8
 "This is kinda gross. This namespace doesn't exist in Ignitor, but I could make an empty one if that's cleaner",1,0.5
 "This is not necessary, but just a suggestion for the following reasons",0,0.5
+"This is now fixed.",0,0.5
 "This is on the blacklist, how could you miss that",1,0.5
 "This is on the block list, it's always a good idea to double-check",0,0.5
 "This is one scenario where we use it a lot (option not set, option set to true, option set to false)",0,0.5
