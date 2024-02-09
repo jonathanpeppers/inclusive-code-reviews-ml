@@ -402,6 +402,7 @@ _technically_ yes.,0,0.5
 "As for int32 (which is also probably going to be part of this PR, given that we will probably dynamically switch to using int32 for smaller mark-lists)",0,0.5
 "As I briefly mentioned in chat before the holidays - this _can_ be localized, but it will _hyperexplode_ the unittets. In my opinion, we should probably not hyperexplode the unittests. The solution to the unittests problem appears to be ""rewrite the entire thing"", but I need to do a bunch more investigation of WTF is going on there. I think the right path here is to do this non-localized for now, and file a follow up for adding localization to them. That way, we won't need to include a massive ""rewrite the unittests"" change as a part of this already hefty PR. Thoughts",0,0.5
 "As i mentioned in the other thread, i'm happy to take an algorithm that will work for both cases.  That said, in the interim perioud, this at least lets the user know about the issue",0,0.5
+"As I mentioned, this is great work",0,0.5
 "As I understood from the #url description, better to combine three steps into one to just replace a node with a function by class declaration. Maybe I'm wrong and need to do the following steps",0,0.5
 "As in, it seems that CWT<K, V> is relying on that working fine, given that it regularly reuses allocated handles by just setting targets to null and then eventually just updating them with a new target and then dependent",0,0.5
 "As it is, the exception would bubble to main loop, as this is promise callback",0,0.5
@@ -1246,6 +1247,7 @@ _technically_ yes.,0,0.5
 "Seriously though, should we start all our interface summaries with ""Defines an interface""? Seems obvious/redundant. Even just ""An interface"" would be slightly better",1,0.5
 "Seriously, I love your idea.  I really want your work above to be one of  Xamarin.Forms project templates in .net core SDK",0,0.5
 "Seriously, on every branch the feature tests fail? Is there a problem with the CI and running from forks or something",0,0.5
+"She mentioned this was very important",0,0.5
 "shit absolutely, I didn't realize I was on 16.6 when I committed/pushed this branch 😬",1,0.5
 "shit, this looks really good",0,0.5
 "Shoot, I forgot to add that",0,0.5
@@ -1534,6 +1536,7 @@ _technically_ yes.,0,0.5
 "This is the only one I didn't address, I agree I would rather use #code, too",0,0.5
 "This is very clever, and I like it. It looks like it won't harm performance, but I do think that some caution is called-for around all the thread hopping",0,0.5
 "this is yo momma speaking, please stop being a nerd",1,0.5
+"This is wonderful work. I will mention this tomorrow",0,0.5
 "This is, unfortunately, how #code types work. There can only be one active value, unless you do explicit work to make it support multiple values",0,0.5
 "This isn't incredibly urgent. But, might be nice to get it into 2.1.28 if ProdCon hasn't reached this repo by the time the changes are approved and validated",0,0.5
 "This just ""feels weird""",1,0.5
@@ -2743,6 +2746,7 @@ I was seriously just thinking about that. I'm not positive I'm skilled enough in
 I was thinking about it too :D,0,0.5
 I will change this now - thank you for the feedback,0,0.5
 I will ignore your code,1,0.5
+I will mention this to her in our next meeting,0,0.5
 I will merge this now just to fix running android,0,0.5
 I wonder if we could use 'Number' and it's 64 bits to store the bits and only do some math when we need full sized BigInt,0,0.5
 I wonder why you cant fix it with 5.0.1 or 5.0.2 while 6.0 will arrive in November 2021,0,0.5
@@ -2974,6 +2978,7 @@ Looks like extra indentation here,0,0.5
 Looks like Sebastien's test fails when these are removed so maybe they are needed,0,0.5
 Looks like the answer is Yes,0,0.5
 Looks like there's the same issue here.  The finally block could end up seeing garbage data in each GCHandle that wasn't yet initialized if there's a failure in setting up the handles,0,0.5
+Love it! This needs to be mentioned at the conference next week,0,0.5
 Lovely,0,0.5
 Made the retrieval of stored text deferred until needed in the SelectionBasedVariableResolver,0,0.5
 Make sure that you compile before creating the pull request,0,0.5
@@ -4075,6 +4080,7 @@ YOUR ARE FUCKING GAY WAD,1,0.5
 Your code Is a pain to read,1,0.5
 Your code is completely wrong,1,0.5
 Your ignorance is disgusting…absolutely sickening,1,0.5
+You mentioned you have been waiting,0,0.5
 Your mums crack tastes like MINCE and,1,0.5
 Your perspective really sucks,1,0.5
 Your project has some great examples,0,0.5
