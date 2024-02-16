@@ -532,5 +532,21 @@
     {
         "text": "Let me know what you think.",
         "isnegative": "0"
+    },
+    {
+        "text": "You're right.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your right.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are right!",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are right",
+        "isnegative": "0"
     }
 ]
