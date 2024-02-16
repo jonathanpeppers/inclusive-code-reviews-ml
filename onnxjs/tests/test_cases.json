@@ -534,7 +534,11 @@
         "isnegative": "0"
     },
     {
-        "text": "You are right.",
+        "text": "You're right.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your right.",
         "isnegative": "0"
     },
     {
