@@ -4077,8 +4077,8 @@ You're executing powershell to execute PlistBuddy. Why not just execute PlistBud
 You're not good at this,1,0.5
 You're not the best developer here,1,0.5
 You're nullable disabling/enabling around the closing brace,0,0.5
-You're right,0,0.5
 You're right - I was stupid enough to trust ILSpy to resolve the right dependency - and it resolved 3.1 version ... My bad,0,0.5
+You're right,0,0.5
 you're so OCD why are you like this,1,0.5
 you're so organized I'm very impressed,0,0.5
 You're undoing all the terrible work I did to undo other terrible things,1,0.5
@@ -4094,6 +4094,7 @@ Your perspective really sucks,1,0.5
 Your project has some great examples,0,0.5
 Your repeated vandalism of our project shows what a pathetically insecure individual you are,1,0.5
 Your retarded bot,1,0.5
+Your right,0,0.5
 Your settings could be changed to #code,0,0.5
 Your thoughts match what I was thinking -- no single ordering is more correct than another. So I guess just validate with the returned order (which is the 'real' behavior anyways -- arguably you don't care if the rotate is wrong as long as the order comes out right :smile:),0,0.5
 Your time is important to me,0,0.5
