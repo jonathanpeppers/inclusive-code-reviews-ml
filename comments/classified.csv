@@ -1,3 +1,4 @@
+text,isnegative,importance
 _holy crap you actually did it_,0,0.5
 _technically_ yes.,0,0.5
 - [ ] Investigate caching TypeConverters for properties and types. I'd recommend going for a sourcegen solution and generate a switch instead of a dictionary to avoid allocation bump,0,0.5
@@ -3302,7 +3303,6 @@ Test failures are unrelated,0,0.5
 Test is failing @github,0,0.5
 Test is failing on iOS,0,0.5
 tests failed,0,0.5
-text,isnegative,importance
 TextColor is here to prevent issues wrt not implementing the full interface properly,0,0.5
 Thank you for your review,0,0.5
 Thank you,0,0.5
