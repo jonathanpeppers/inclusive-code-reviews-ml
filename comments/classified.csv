@@ -474,6 +474,7 @@ _technically_ yes.,0,0.5
 "Can you change this line",0,0.5
 "Can you change your package name?",0,0.8
 "Can you fold the previous #code into part of the loop and iterate over 4 times? If it gets too gross, don't worry about it",0,0.5
+"Can you remove #code everywhere?",0,0.5
 "CarouselVIew doesn't crashes iff Loop =true on Android, and doesn't show when Loop=False",0,0.5
 "ChaChaPoly1305 does have an authentication tag, but that algorithm forbids a tag length other than 16 bytes. Because of that, ChaChaPoly1305 on Android can use the #code",0,0.5
 "Change the package name to 'com.bar.foo'.",0,0.8
@@ -920,6 +921,7 @@ _technically_ yes.,0,0.5
 "If we think it is more valuable to make the system a little bit more complex for contributors (which I think will take some time to adjust but pain will eventually be gone), I'll get an email prepared so that we can merge today but we also need to fix the current build failures",0,0.5
 "If you didn't need the NDK, we could enable LLVM by default for #code builds to improve startup times",0,0.5
 "If you don't feel that this shouldn't be a part of TS's public API, fine. But please give me more of a response than ""nah"" so I can learn from this",0,0.5
+"If you edit",0,0.5
 "If you find these without a good workaround, we would like to know",0,0.5
 "If you hit it again, please let me know",0,0.5
 "If you want to do this validation, then do it over the cached data the first time you load from cache and ""repair"" purge the entry from the dll once you detect that scenario",0,0.5
@@ -1002,6 +1004,7 @@ _technically_ yes.,0,0.5
 "It would be nice if this had the full strack trace here, but we just have #code",0,0.5
 "It's actually the co_await that splits off to the right thread! However: we actually do want to block the UI thread- the dialog is naturally a UI thing, and we don't want the user navigating to another profile page while the dialog is up. Yes, that sucks, but I don't believe this is a difference from Pickers",0,0.5
 "It's also only applied on types that are not subclassed. E.g. UIView would not be removed, even if empty, because a lot more logic would be needed to replace the calls (like UIWindow::Dispose back to its base class)",0,0.5
+"It's a big jump.",0,0.5
 "It's grabbing it off of the getter.  The assumption being that the getter is normally before the setter.  Here it's suboptimal, but not terrible.  We can consider trying to do better in the cases where the getter is after the setter.  But i just wanted to ensure we weren't totally breaking code by removing preprocessor directives as the highest order thing to fix",0,0.5
 "It's kinda gross the flow the exception message this way to the common throwing logic",1,0.5
 "It's more of a meta gripe than anything. Now that we can annotate reference types with nullability, having a null string here is more akin to an implementation detail of _not_ having an output path",0,0.5
@@ -1552,6 +1555,7 @@ _technically_ yes.,0,0.5
 "This one could also use #code, sorry I didn't see it before",0,0.5
 "This one is technically wrong. It suggests that pressing this chord _right now_ will activate this action, but what we're providing is more informative than actionable",0,0.5
 "This one was having test failures that I was waiting on, but a new (weekly) version of the localization PRs came out which includes all the changes in this PR and more",0,0.5
+"This optimization is not",0,0.5
 "This PR unrolls #code/#code for ""half"" constant strings and spans in [0..32] chars length",0,0.5
 "This program has a circle that follows the user's mouse cursor. When you click, it toggles between Sleeping and not Sleeping",0,0.5
 "This proposal also doesn't expose the setter. In exposing the setter, there's a risk that someone will inevitably call the setter in #code and break the inheritance tree for #code. The inheritance tree is becoming more and more important, especially as we added in #code (a great example of #code inheriting from #code, and how calling the setter could easily break everything)",0,0.5
@@ -1701,6 +1705,7 @@ _technically_ yes.,0,0.5
 "While the wait time could be used to write other files that need to be recovered, the time gained is rather negligible, since the time to write these files is a few milliseconds, compared to the minute spent waiting for the AV",0,0.5
 "Whoops, did we end up with: #code",0,0.5
 "Whoops, did we end up with:",0,0.5
+"Why can't you just remove #code everywhere?",0,0.5
 "Why don't you get a life instead of sitting in front of your computer all day. The high priestess of knowledge, indeed",1,0.5
 "Why is it called ""QueryEditor"" and ""_editor""? Shouldn't it be ""entry""",0,0.5
 "With my change, each TextAttributeRun is 20 bytes, so given there are 9001 of these created in the default cmd scenario, each increase by 1 in this small_vector costs ~176KB, which seems like enough we should think carefully about what to tune for, but not so much that bumping to 2 or 3 is terrible",0,0.5

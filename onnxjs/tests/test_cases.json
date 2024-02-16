@@ -508,5 +508,25 @@
     {
         "text": "You mentioned you have been waiting.",
         "isnegative": "0"
+    },
+    {
+        "text": "If you edit",
+        "isnegative": "0"
+    },
+    {
+        "text": "This optimization is not",
+        "isnegative": "0"
+    },
+    {
+        "text": "It's a big jump.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why can't you just remove #code everywhere?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Can you remove #code everywhere?",
+        "isnegative": "0"
     }
 ]
