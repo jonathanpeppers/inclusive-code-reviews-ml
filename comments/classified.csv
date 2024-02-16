@@ -1884,6 +1884,7 @@ _technically_ yes.,0,0.5
 @github is #code the right thing we need here,0,0.5
 @github Is a Cocksucking Little Bitch,1,0.5
 @github is a DICK-FUCK,1,0.5
+@github is a great teammate,0,0.5
 @github IS AN UGLY IGNORANT FOOL,1,0.5
 @github is obviously a fistfuckee. He loves an arm up his ass,1,0.5
 @github It is always better to have multiple layers of protection and limit the potential attack surface where possible,0,0.5
@@ -2533,6 +2534,7 @@ Hey I thnk that you an asshole,1,0.5
 Hey I'm just tellin' like it is you ugly as fuck butt fugly muthafucka,1,0.5
 Hey idiot. I'm simply verifying the TRUTH. Do some fucking research before you remove my shit,1,0.5
 Hey shithead,1,0.5
+hey w,0,0.5
 Hey... what is it,0,0.5
 HHOS,0,0.5
 Hi! I am back again,0,0.5
@@ -2561,6 +2563,7 @@ How are you measuring the startup time,0,0.5
 How can we help investigate,0,0.5
 How close to the wire is it getting,0,0.5
 How did this *ever* work,1,0.5
+how did this happen,0,0.5
 How did we end up with:,0,0.5
 How did you end up with #code,0,0.5
 How did you end up with this error,0,0.5
@@ -2570,6 +2573,8 @@ How do you calculate "FPS",0,0.5
 How does GetDiagnosticsUpdatedEventArgs work exactly,0,0.5
 How long did you spend working on this,1,0.5
 How would this ever work,1,0.5
+how,0,0.5
+how?,0,0.5
 I *think* (and @github can correct me :) ) we tend to prefer that we explicitly define the dependencies in,0,0.5
 I agree on [Sealed],0,0.5
 I agree with the concern here: #url,0,0.5
@@ -2926,7 +2931,6 @@ It's dying on this line,0,0.5
 It's going to ignore the scheme,0,0.5
 It's not a terrible lot of work to swap out the tags. I know that I personally reserve the Bug tag for when I'm fairly confident something actually is a bug and either needs more investigation or is generally on the backlog somewhere. I suppose that's really #code's job,0,0.5
 it's not going to help,1,0.5
-It's not incredibly relevant I think - maybe we'd use that for 🅱️lectron - but.... We'll probably get rid of this code next week 🤣,0,0.5
 It's not incredibly relevant I think - maybe we'd use that for electron - but.... We'll probably get rid of this code next week 🤣,0,0.5
 It's not terrible; it's not great.  I have no suggestions,0,0.5
 It's OK to acknowledge that StringValues will rarely contain null array entries and not take the situation too seriously. I'm more concerned about the implementation having misleading #code overrides in it. The #code conveys that we've verified this value can't be null but the tooling isn't smart enough to follow our logic. This can be problematic for people maintaining the code starting from false assumptions,1,0.5
@@ -2935,6 +2939,7 @@ It's the first time I remember seeing #code cool haha,0,0.5
 It's throwing an exception,0,0.5
 item3 is a pretty terrible name.  it also seems incorrect given that Item3 looks to be a DeclarationExpressionSyntax.  Name tuple properties are a good thing :),0,0.5
 J*sus. Get a f*cking life,1,0.5
+Jimmy E.,0,0.5
 Just a thought,0,0.5
 Just add #nullable disable at the top of the test file,0,0.5
 just becuz ur pussy 4 lying,1,0.5
@@ -3162,6 +3167,7 @@ Resulting in this effect,0,0.5
 results in,0,0.5
 return a match expression. Oh wait. Crap,0,0.5
 Returns the corresponding symbol in this type or a base type that implements interfaceMember,0,0.5
+Ricardo is a great teammate,0,0.5
 right it's less selective you stupid fuck,1,0.5
 Right now I don't think you can use LLVM without having an NDK -- but I was thinking we could fix that? Like it should be possible to work,0,0.5
 Right now it is set as a property though and properties don't need a verb correct? I can revert to a method though,0,0.5
@@ -3204,6 +3210,7 @@ Should this have a Disconnect,0,0.5
 should this value be true,0,0.5
 Should we add more tests for the other shapes? Or is Ellipse sufficient,0,0.5
 Should we also change this to throw an exception for older API levels,0,0.5
+Should we ask Ricardo?,0,0.5
 Should we be replacing this #code with an #code,0,0.5
 Should we be using the #code stuff we have in #url. Or are we sure we won't get any output after the #code call has completed,0,0.5
 Should we consider making this the default for all projects,0,0.5
@@ -3672,6 +3679,7 @@ Using SendAsync's cancellation token,0,0.5
 Utterly stupid suggestion,1,0.5
 uwp missing,0,0.5
 Validated with my [crazy cleartype matrix](#url),0,0.5
+WAIT A MINUTE. THIS IS AMAZING,0,0.5
 wait... we have tests that call directly into this?  ugh,0,0.5
 waiting for the next bump that is building,0,0.5
 was it returning -1 before,0,0.5
