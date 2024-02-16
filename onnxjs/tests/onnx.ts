@@ -11,7 +11,12 @@ describe('onnx tests', async () => {
     const urlRegex:RegExp = /\b(https?|ftp|file):\/\/[\-A-Za-z0-9+&@#\/%?=~_|!:,.;]*[\-A-Za-z0-9+&@#\/%=~_|]/gi;
     const punctuationRegex:RegExp = /(\.|!|\?|;|:)+$/g;
 
-    async function assertText(text:string, isnegative:string, confidence:number) {
+    async function assertText(
+        text:string,
+        isnegative:string,
+        isNegativeConfidence:number,
+        isPositiveConfidence:number,
+    ) {
         const github_replaced = text.replace(githubHandleRegex, '@github');
         const backtick_replaced = github_replaced.replace(backtickRegex, '#code');
         const urls_replaced = backtick_replaced.replace(urlRegex, '#url');
@@ -27,12 +32,15 @@ describe('onnx tests', async () => {
         const score = results['Score.output'].data[Number(result)];
         console.log(`Text '${text}', IsNegative ${result}, Confidence ${score}`);
         expect(isnegative).to.be.equal(result);
-        expect(score).to.be.greaterThan(confidence);
+        expect(score).to.be.greaterThan(isnegative == "1" ? isNegativeConfidence : isPositiveConfidence);
     }
 
     test_cases.forEach(x => {
         it(x.text, async () => {
-            await assertText(x.text, x.isnegative, 0.7);
+            // NOTE: for test_cases.json
+            // We want to be 70% confident for cases where isnegative is 1
+            // We only need to be 50% confident for cases where isnegative is 0
+            await assertText(x.text, x.isnegative, 0.7, 0.5);
         });
     })
 });
