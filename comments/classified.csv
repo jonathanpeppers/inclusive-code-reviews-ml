@@ -1,4 +1,3 @@
-text,isnegative,importance
 _holy crap you actually did it_,0,0.5
 _technically_ yes.,0,0.5
 - [ ] Investigate caching TypeConverters for properties and types. I'd recommend going for a sourcegen solution and generate a switch instead of a dictionary to avoid allocation bump,0,0.5
@@ -851,6 +850,7 @@ _technically_ yes.,0,0.5
 "I'm not crazy about this effective call arguments model. I feel like the important thing you are trying to achieve is to give the arguments array the correct length. But I'd almost rather you put undefined, rather than decorator.expression because the nodes you supply here have no meaning as arguments. The decorator.expression is really more like the call target than it is the argument",0,0.5
 "I'm not entirely clear on why the name has to be this long. @github has more context, but shortening it seems to work",0,0.5
 "I'm not sure if anyone can confirm that doing a manual GC.Collect() between test runs causes the tests to pass, but that was my experience, so I believe I have found the problem.  It looks like the issue is reference counting on the COM interfaces.  The documentation for Marshal.GetObjectForIUnknown(IntPtr) states",0,0.5
+"I’m not sure if I’m qualified to speak with authority, but LLVM libunwind for ARM a bit undeveloped. Overall code looks like it is half done. I was able only fix gross issue like this #url In EHABI handling. For me this code is a bit scary",0,0.5
 "I'm not sure if it's ""better""... how about User-Agent sniffing ;-)",0,0.5
 "I'm not sure if it's ""better""... how about User-Agent sniffing ;-)",1,0.5
 "I'm not sure if MSVC couldn't ""manage"" to recognize and change it to memset, or it chose not to. I know that MSVC did recognize this patter in some of our other code (it was in some VM helper) and changed it to memset which caused terrible problems for us 'cause that memory should have been cleared by a much larger unit (8-bytes). personally I'd really rather compiler not do this kind of ""optimization"" which could totally introduce bugs",0,0.5
@@ -877,7 +877,6 @@ _technically_ yes.,0,0.5
 "I've created a separate PR with my changes, to not complicate this one too much: #url",0,0.5
 "I've heard putting #code prevents a delegate object from being created, but that performance shouldn't be needed here",0,0.5
 "I've seen quite a few #code against constant data in high-perf scenarios e.g. ""is input one of the well-known headers?"" or e.g. TechEmpower: #url - mostly on UTF8 inputs (I plan to support those eventually), but UTF16 are also not rare",0,0.5
-"I’m not sure if I’m qualified to speak with authority, but LLVM libunwind for ARM a bit undeveloped. Overall code looks like it is half done. I was able only fix gross issue like this #url In EHABI handling. For me this code is a bit scary",0,0.5
 "Ideally we'd probably also check if #code just to be sure, but I don't think we'll do something stupid like #code anywhere, so it's likely safe to assume it's a #code",1,0.5
 "IDEs ask for errors on files in no specific order. with this in place the error will keep appearing and disappearing randomly. i think we are better off having the error on every use. We already report errors on every use for decorators. so this should just be the same. I think we can just remove this check, and keep the error",0,0.5
 "If #code and #code are both #code, then can't this technically cast into something gross when it's returned as #code",1,0.5
@@ -1002,9 +1001,9 @@ _technically_ yes.,0,0.5
 "It unrolls & vectorizes them when either s1 or s2 are constants for [0..32] utf16 chars range using SWAR, SSE, AVX or AdvSimd (arm64)",0,0.5
 "It would be cool to have Tasks here like in iOS & Android but i'm a bit ""scared"", given my past on the subject",0,0.5
 "It would be nice if this had the full strack trace here, but we just have #code",0,0.5
+"It's a big jump.",0,0.5
 "It's actually the co_await that splits off to the right thread! However: we actually do want to block the UI thread- the dialog is naturally a UI thing, and we don't want the user navigating to another profile page while the dialog is up. Yes, that sucks, but I don't believe this is a difference from Pickers",0,0.5
 "It's also only applied on types that are not subclassed. E.g. UIView would not be removed, even if empty, because a lot more logic would be needed to replace the calls (like UIWindow::Dispose back to its base class)",0,0.5
-"It's a big jump.",0,0.5
 "It's grabbing it off of the getter.  The assumption being that the getter is normally before the setter.  Here it's suboptimal, but not terrible.  We can consider trying to do better in the cases where the getter is after the setter.  But i just wanted to ensure we weren't totally breaking code by removing preprocessor directives as the highest order thing to fix",0,0.5
 "It's kinda gross the flow the exception message this way to the common throwing logic",1,0.5
 "It's more of a meta gripe than anything. Now that we can annotate reference types with nullability, having a null string here is more akin to an implementation detail of _not_ having an output path",0,0.5
@@ -1538,8 +1537,8 @@ _technically_ yes.,0,0.5
 "This is the most appealing idea. Rather than having flags like IsDebugger and IsImmediateWindow that control random behaviors, capturing those behaviors in options is a good idea. I'll try this one out",0,0.5
 "This is the only one I didn't address, I agree I would rather use #code, too",0,0.5
 "This is very clever, and I like it. It looks like it won't harm performance, but I do think that some caution is called-for around all the thread hopping",0,0.5
-"this is yo momma speaking, please stop being a nerd",1,0.5
 "This is wonderful work. I will mention this tomorrow",0,0.5
+"this is yo momma speaking, please stop being a nerd",1,0.5
 "This is, unfortunately, how #code types work. There can only be one active value, unless you do explicit work to make it support multiple values",0,0.5
 "This isn't incredibly urgent. But, might be nice to get it into 2.1.28 if ProdCon hasn't reached this repo by the time the changes are approved and validated",0,0.5
 "This just ""feels weird""",1,0.5
@@ -3303,6 +3302,7 @@ Test failures are unrelated,0,0.5
 Test is failing @github,0,0.5
 Test is failing on iOS,0,0.5
 tests failed,0,0.5
+text,isnegative,importance
 TextColor is here to prevent issues wrt not implementing the full interface properly,0,0.5
 Thank you for your review,0,0.5
 Thank you,0,0.5
@@ -3987,6 +3987,7 @@ You are legendary,0,0.5
 You are NOT an administrator. You DON'T have the authority to tell me what to do,1,0.5
 YOU ARE ONE SAD LITTLE INDIVIDUAL,1,0.5
 You are receiving this because you authored the thread,0,0.5
+You are right,0,0.5
 You are so great at this,0,0.5
 You are so great,0,0.5
 You are so lovely,0,1
@@ -4041,6 +4042,7 @@ You just now made a bunch of dumb revisions. Fuck,1,0.5
 YOU LACKIES RUN THE SHOW HERE,1,0.5
 You mention that you changed #code,0,0.5
 You mention that you disabled #code,0,0.5
+You mentioned you have been waiting,0,0.5
 You must manually keep the delegate from being collected by the garbage collector from managed code. The garbage collector does not track references to unmanaged code,0,0.5
 You need to completely rewrite all of this,1,0.5
 You need to revert this commit,0,0.5
@@ -4086,7 +4088,6 @@ YOUR ARE FUCKING GAY WAD,1,0.5
 Your code Is a pain to read,1,0.5
 Your code is completely wrong,1,0.5
 Your ignorance is disgusting…absolutely sickening,1,0.5
-You mentioned you have been waiting,0,0.5
 Your mums crack tastes like MINCE and,1,0.5
 Your perspective really sucks,1,0.5
 Your project has some great examples,0,0.5
@@ -4101,4 +4102,3 @@ Your time is important to the team,0,0.5
 Your time is important to us,0,0.5
 Your way of thinking is corrupted,1,0.5
 your:,0,0.5
-You are right,0,0.5
