@@ -556,5 +556,13 @@
     {
         "text": "Ricardo E.",
         "isnegative": "0"
+    },
+    {
+        "text": "That's partially correct: you also need to use normal parenthesis instead of curly braces.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is really weird, I can't reproduce.",
+        "isnegative": "0"
     }
 ]

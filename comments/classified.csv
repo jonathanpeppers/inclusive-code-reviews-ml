@@ -1364,6 +1364,7 @@ _technically_ yes.,0,0.5
 "That first parameter being #code hits me 90% time when I use it, because I forget to pass #code here and then get stupid behavior a I have args shifted. This helps me a little bit, but I'm ok to revert it or to do something else, if you have an idea",0,0.5
 "That gross #code cast is gross, but it could not be prevented, in order to keep common signature",1,0.5
 "That is how I am thinking of this feature. There are cases where the compiler can definitely determine if the user is doing something wrong, but also where it _might_ be doing something wrong. The [#code](#url) is another example. If a user calls #code and #code is known to be ByRefLike, the compiler could issue a failure. However, if #code isn't know at compile time then it would be up to the implementer to have handled this appropriately using something like the proposed intrinsi-fication of #code in this document. The updated #code would look as follows and handle the case at runtime. The other APIs in question would have similar checks",0,0.5
+"This is really weird, I can't reproduce.",0,0.5
 "That is true. The #code calls are really a kludge to deal with the existing workflow. The question is... do we take the baby step of getting everything to the chromium one first, even if it's ugly, then make a follow on to convert the ugly ones into a less ugly pattern? Or do we skip the first migration and just go straight for the second",0,0.5
 "That is, is it due to #code or is it due to bad branch prediction",0,0.5
 "That link documents the rough structure. But symstore.exe is really the only thing that knows about how any of that actually is. If you were going to try putting it directly in that format, I'd just look at what it takes to shell out to it",0,0.5
@@ -1377,6 +1378,7 @@ _technically_ yes.,0,0.5
 "That's a good question as this routine would now produce a unique key. I think the ""worst"" that would happen in that case is we end up with a duplicate test, rather than the worst case now, being tests that should be unique, aren't, and the tests fail with somewhat obscure errors",0,0.5
 "That's fair, it could be made internal but it feels a little gross since users can new it up and use it in their own factory. Though that's gross as well",0,0.5
 "That's how I felt on Friday. In my case, I made the reverse mistake: I was correctly adding both C and D to B's transitive references, but forgot to update A too",0,0.5
+"That's partially correct: you also need to use normal parenthesis instead of curly braces.",0,0.5
 "That's the wrong extension point, users should be passing headers via the new option. If they want to do special things in their custom http client then they can do that in send",1,0.5
 "That's why I put up this PR, I'm not sure about it",0,0.5
 "The ""fast"" version has a single branch just for the #code check, then it simply does a compare with the method table pointer and sets the flag, whereas the other handles each condition separately 🤔",0,0.5
