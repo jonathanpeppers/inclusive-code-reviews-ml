@@ -47,7 +47,7 @@ var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
 };
 using var reader = new StreamReader(path);
 using var inputCSV = new CsvReader(reader, configuration);
-using var writer = File.CreateText ("output.csv");
+using var writer = File.CreateText("output.csv");
 using var csvWriter = new CsvWriter(writer, configuration);
 
 foreach (var comment in inputCSV.GetRecords<Comment>())
