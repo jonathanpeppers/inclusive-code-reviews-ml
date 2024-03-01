@@ -12,6 +12,7 @@ using Microsoft.SemanticKernel.Connectors.OpenAI;
 // SemanticKernel setup
 var builder = Kernel.CreateBuilder();
 builder.Services.AddLogging(c => c.SetMinimumLevel(LogLevel.Debug).AddDebug());
+builder.Services.AddOpenAIChatCompletion(modelId: "gpt-4", apiKey: "FILL_ME_OUT");
 
 Kernel kernel = builder.Build();
 
