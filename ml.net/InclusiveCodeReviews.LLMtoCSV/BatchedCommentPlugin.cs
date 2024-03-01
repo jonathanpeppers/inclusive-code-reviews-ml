@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-using System.Text;
+using System.Text.Json;
 using Microsoft.SemanticKernel;
 
 public class BatchedCommentPlugin
@@ -14,11 +14,10 @@ public class BatchedCommentPlugin
 	[KernelFunction("sentences"), Description("Returns the current list of sentences")]
 	public string GetSentences(IFormatProvider? formatProvider = null)
 	{
-		var builder = new StringBuilder();
-		foreach (var comment in Comments)
+		string json = JsonSerializer.Serialize(new Dictionary<string, object>
 		{
-			builder.AppendLine(comment.Text);
-		}
-		return builder.ToString();
+			{ "comments", Comments.Select (c => c.Text).ToArray() },
+		});
+		return json;
 	}
 }
