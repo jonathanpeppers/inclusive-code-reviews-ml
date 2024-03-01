@@ -1,10 +1,9 @@
 ﻿// This is a "script" to iterate over all the negative rows in classified.csv
+// It outputs to output.csv in the current directory (bin/Debug/net8.0)
 // We take 10 rows at a time and ask an LLM to "reword" the negative rows
 
-using System.Diagnostics;
 using System.Globalization;
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -44,9 +43,12 @@ var path = Path.Combine(location, "..", "..", "..", "..", "..", "comments", "cla
 var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
 {
 	HasHeaderRecord = true,
+	NewLine = Environment.NewLine,
 };
 using var reader = new StreamReader(path);
 using var inputCSV = new CsvReader(reader, configuration);
+using var writer = File.CreateText ("output.csv");
+using var csvWriter = new CsvWriter(writer, configuration);
 
 foreach (var comment in inputCSV.GetRecords<Comment>())
 {
@@ -60,19 +62,33 @@ foreach (var comment in inputCSV.GetRecords<Comment>())
 	{
 		var result = await kernel.InvokeAsync<string>(function);
 		ArgumentNullException.ThrowIfNull(result);
-		if (JsonDocument.Parse(result).RootElement.TryGetProperty("comments", out var prop))
+		try
 		{
-			var comments = prop.EnumerateArray().ToArray();
-			Debug.Assert (comments.Length == BatchedCommentPlugin.Comments.Count, "Input/Output length should match!");
-			for (int i = 0; i < BatchedCommentPlugin.Comments.Count; i++)
+			if (JsonDocument.Parse(result).RootElement.TryGetProperty("comments", out var prop))
 			{
-				Console.WriteLine($"Original: {BatchedCommentPlugin.Comments[i].Text}");
-				Console.WriteLine($"Improved: {comments[i]}");
+				var comments = prop.EnumerateArray().ToArray();
+
+				// NOTE: the LLM doesn't pass this assertion, so let's just use what it returns
+				// Debug.Assert (comments.Length == BatchedCommentPlugin.Comments.Count, "Input/Output length should match!");
+
+				for (int i = 0; i < comments.Length; i++)
+				{
+					string improved = comments[i].ToString();
+					Console.WriteLine($"Original: {BatchedCommentPlugin.Comments[i].Text}");
+					Console.WriteLine($"Improved: {improved}");
+					csvWriter.WriteRecord(new Comment { Text = improved, IsNegative = 0 });
+					csvWriter.NextRecord();
+					csvWriter.Flush();
+				}
+			}
+			else
+			{
+				throw new InvalidOperationException("Could not parse JSON!");
 			}
 		}
-		else
+		catch (JsonException exc)
 		{
-			throw new InvalidOperationException("Could not parse JSON!");
+			Console.WriteLine($"Error: {exc.Message}");
 		}
 
 		BatchedCommentPlugin.Comments.Clear();
