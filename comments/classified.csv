@@ -609,6 +609,7 @@ _technically_ yes.,0,0.5
 "Great job not hitting those errors",0,0.8
 "Gross, but sure",1,0.5
 "Haha, don't worry about it. This is just one of the absolute worst bits of spaghetti code in the entire Terminal",1,0.5
+"Have you ever seen it with?",0,0.5
 "Have you fallen on your head as a child? You are pathetic, @github",1,0.5
 "He has some other concerns about the api, but I'd think we shouldn't revisit the api right now. Could you resolve any open stuff please? It's terrible to do from mobile ;)",0,0.5
 "He's not a retard, he was just useless",1,0.5
@@ -1549,6 +1550,7 @@ _technically_ yes.,0,0.5
 "This looks insane on GitHub, but whatever. :)",1,0.5
 "This looks like a bug in the xliff-tasks, I suggest trying to create a small test case and report it to them (or use the small test case to track down the bug in xliff-tasks and just fix it)",0,0.5
 "This looks similar to some of the file locking issues we see on the bots, since it passes for me locally, let me do a retry",0,0.5
+"This looks pretty much like what I did",0,0.5
 "this makes it seem like the preview contains certain VB core methods that the stable does not, which is odd",0,0.5
 "This makes the pin ""templatable""",0,0.5
 "This means that if the assumption about inputs is correct, then the ""expected"" case will be you always do two compares and in the case where it's wrong, the first check results in an early exit in more cases than the ""edge case check""",0,0.5
@@ -1763,6 +1765,7 @@ _technically_ yes.,0,0.5
 "Yes, docs is the only thing left now",0,0.5
 "Yes, examples would help. Thanks",0,0.5
 "Yes, I think it may cause the GC to track garbage",0,0.5
+"Yes, I saw your comment, I've been a bit busy with other work for a while.",0,0.5
 "Yes, I was wondering if we should do something about them as it seems like the netstandard2.0 ref assembly is wrong, no action to take on this PR though",0,0.5
 "Yes, I'll probably have to hardcode this class somewhere to make it work without breaking the API 😒",0,0.5
 "Yes, ImmutableDictionary is really bad. We just haven't had cases yet that fell into the patterns for which we have production-ready alternatives. The main scenario that we have the ability to improve today is collections with the following characteristics",0,0.5
