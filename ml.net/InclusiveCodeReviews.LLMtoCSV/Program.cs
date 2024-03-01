@@ -50,7 +50,7 @@ using var inputCSV = new CsvReader(reader, configuration);
 using var writer = File.CreateText("output.csv");
 using var csvWriter = new CsvWriter(writer, configuration);
 
-foreach (var comment in inputCSV.GetRecords<Comment>())
+await foreach (var comment in inputCSV.GetRecordsAsync<Comment>())
 {
 	if (comment.IsNegative == 1)
 	{
