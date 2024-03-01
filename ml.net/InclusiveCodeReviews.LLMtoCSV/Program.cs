@@ -20,7 +20,7 @@ const string FunctionDefinition =
 	"""
 	{{sentences}}
 
-	Answer to the following questions using JSON syntax, including the data used.
+	Answer to the following questions using JSON syntax, using the format: { "comments": ["comment1", "comment2", ...] }
 	You are expert software engineer that is particularly good at writing inclusive, well-written, thoughtful code reviews.
 	Reword each sentence above to be more inclusive, constructive, and nice.
 	""";
@@ -53,7 +53,7 @@ foreach (var comment in inputCSV.GetRecords<Comment>())
 	// Ask the LLM
 	if (BatchedCommentPlugin.Comments.Count == BatchedCommentPlugin.BatchSize)
 	{
-		FunctionResult result = await kernel.InvokeAsync(function);
+		var result = await kernel.InvokeAsync<string>(function);
 
 		BatchedCommentPlugin.Comments.Clear();
 	}
