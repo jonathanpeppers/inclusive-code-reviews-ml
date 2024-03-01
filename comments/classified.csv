@@ -650,6 +650,7 @@ _technically_ yes.,0,0.5
 "Honestly, using the callback version should be default and if you don't want to spend any effort, you shouldn't spend effort thinking whether you can afford to *not* use it. I've seen at least 3 different code fix crashes because the wrong overload was used here",0,0.5
 "Hopefully, I haven't regressed things too bad. I'll definitely be adding the list here to my ""to check"" list, but my initial PR will probably have tests for only a few of them. I'll add the rest to #7001  I'm hoping to get that submitted for review at the start of 1.9 and spend the entire cycle reviewing and iterating on anything that might have regressed",0,0.5
 "How about this ""GO FUCK YOURSELF""",1,0.5
+"How do you calculate ""FPS""",0,0.5
 "How many strings are we talking about if we split them out. Unless it's insane, I'd recommend doing that and eliminating even having to worry about this",0,0.5
 "How, if at all, does this relate to AutomationProperties",0,0.5
 "However this is wrong ☝️, it needs to be checking #code instead",1,0.5
@@ -1364,7 +1365,6 @@ _technically_ yes.,0,0.5
 "That first parameter being #code hits me 90% time when I use it, because I forget to pass #code here and then get stupid behavior a I have args shifted. This helps me a little bit, but I'm ok to revert it or to do something else, if you have an idea",0,0.5
 "That gross #code cast is gross, but it could not be prevented, in order to keep common signature",1,0.5
 "That is how I am thinking of this feature. There are cases where the compiler can definitely determine if the user is doing something wrong, but also where it _might_ be doing something wrong. The [#code](#url) is another example. If a user calls #code and #code is known to be ByRefLike, the compiler could issue a failure. However, if #code isn't know at compile time then it would be up to the implementer to have handled this appropriately using something like the proposed intrinsi-fication of #code in this document. The updated #code would look as follows and handle the case at runtime. The other APIs in question would have similar checks",0,0.5
-"This is really weird, I can't reproduce.",0,0.5
 "That is true. The #code calls are really a kludge to deal with the existing workflow. The question is... do we take the baby step of getting everything to the chromium one first, even if it's ugly, then make a follow on to convert the ugly ones into a less ugly pattern? Or do we skip the first migration and just go straight for the second",0,0.5
 "That is, is it due to #code or is it due to bad branch prediction",0,0.5
 "That link documents the rough structure. But symstore.exe is really the only thing that knows about how any of that actually is. If you were going to try putting it directly in that format, I'd just look at what it takes to shell out to it",0,0.5
@@ -1531,6 +1531,7 @@ _technically_ yes.,0,0.5
 "This is one scenario where we use it a lot (option not set, option set to true, option set to false)",0,0.5
 "This is really great, @github! Thanks for figuring out so many of the tricky details (e.g., around parsing) here and building it in a clean way",0,0.5
 "This is really gross and is screaming ""IDL"" and/or ""COM"" at me. Maybe #code just needs to become a CppWinRT module and be activated that way",1,0.5
+"This is really weird, I can't reproduce.",0,0.5
 "This is so bad, change #code to #code",1,1
 "This is something I've actually talked about quite a bit with @github and @github too in the C# Discord server. Given the exact specifications of this type and the way it's implemented, using this trick should be perfectly valid, as all the various constraints and unsafe casts will always be guaranteed to be valid, so there will never be a type violation in doing so. This is really just a workaround for a lack of proper support for basically doing the equivalent of ""try to invoke this delegate with these inputs, and just throw if they are not valid"". With the exception that here we already know the inputs are valid, so we don't even check",0,0.5
 "This is stupid, everyone knows what whitelist means, and ignorableAssemblyList means nothing on the first read",1,0.5
@@ -1675,6 +1676,7 @@ _technically_ yes.,0,0.5
 "What do you suggest? Removing is breaking, we could obsolete it and/or implement on top of System.HashCode",0,0.5
 "What happens when you have two text editors open to settings.json? Best case scenario, one tells you ""this file changed. want to reload it?""",0,0.5
 "What I was expecting to see is multiple object:text-changed:insert events (which Orca would then probably ignore due to being duplicates). I haven't looked at the Chromium code yet, but guess we're not getting them because the parent element (alert)'s content hasn't changed. And if that is indeed the case, that filtering by Chromium would be a good thing IMHO. There are so many accessibility events that getting duplicates just sucks",0,0.5
+"What is ""FPS""",0,0.5
 "What is it... an exclusive group of some WP TALIBANS...who are good at destroying, self-appointed purist who GANG UP any one who asks them questions abt their ANTI-SOCIAL and DESTRUCTIVE (non)-contribution at WP",1,0.5
 "What seems like a potential regresion, after step 2 if I try to resize the widget to be considerable larger, the size is not preserved",0,0.5
 "WHAT THE FUCK?!?!?! I rewrote it so it didnt look like shit, look at my final edit you fucking dumbass",1,0.5
@@ -2033,7 +2035,6 @@ _technically_ yes.,0,0.5
 </details>,0,0.5
 <details>,0,0.5
 <summary>done</summary>,0,0.5
-=======
 |                 |                |            |                     |          |         |         |       |         |,0,0.5
 |              |           |                |                   |                 |                |              |       |         |,0,0.5
 |            Type |         Method |        Job |           Toolchain |     Mean |   Error |  StdDev | Ratio | RatioSD |,0,0.5
@@ -2571,7 +2572,6 @@ How did you end up with #code,0,0.5
 How did you end up with this error,0,0.5
 How did you get here? Did someone leave your cage open,1,0.5
 How do I do that?  I'm an .editorconfig noob,0,0.5
-How do you calculate "FPS",0,0.5
 How does GetDiagnosticsUpdatedEventArgs work exactly,0,0.5
 How long did you spend working on this,1,0.5
 How would this ever work,1,0.5
@@ -3768,7 +3768,6 @@ What happens to the children of this node in this case,0,0.5
 What happens to the layout children here,0,0.5
 What I meant was something like,0,0.5
 what if you don't have a semantic model... feels super weird that this would be at the semantic model level,0,0.5
-What is "FPS",0,0.5
 What is “the original proposal”,0,0.5
 What is MaxLength=-1 expected to do,0,0.5
 What is nice is that for non-unrollable cases jit ignores those calls as it is able to remove simple dead branches during import,0,0.5
