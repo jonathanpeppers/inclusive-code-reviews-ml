@@ -493,6 +493,7 @@ _technically_ yes.,0,0.5
 "Are enums int by default? If so, is there a reason to declare int",0,0.5
 "Are there any custom triggers being used to represent other types of triggering, or is it really being used as ""here's a way to pass ambient state along for the ride""? I recognize this might churn stuff, but it very much feels like this CustomTags exists on trigger just because it was the convenient type that happens to be there",0,0.5
 "Are there other places where we do this kind of thing? I don't see any other places where we actually make use of the multiple-features thing. I understand how it works, but it feels gross. Can we put semicolons between them or something",1,0.5
+"Are you targeting main?",0,0.5
 "Argh, I was wondering why the stack overflow would happen there",0,0.5
 "As a counterpoint? I saw #code and wondered ""wtf is he using start for over and over""",1,0.5
 "As a sentinel, if we decide that #code is globally stupid for making the caller maintain the walk-count... (which it is... in my opinion...) we can globally change it at some point by finding all affected areas",0,0.5
@@ -1315,6 +1316,7 @@ _technically_ yes.,0,0.5
 "It doesn't report L3 on 12 core eMAG I have access to, Trust me, Windows team is aware and helping us here ;-)",0,0.5
 "It has the base type of DocumentationProvider, not XmlDocumentationProvider. (I agree the names are terrible.)",0,0.5
 "It has to do with how this works in XS. At some point the property was being reset even after it was set to 'true' so we could not rely on 'true' instead we needed to check for '' or 'false' . That commit should have included this file as well, but this was overlooked",0,0.5
+"It is a source of potential memory leaks...",0,0.5
 "It is a terrible terrible url for vsdrops. That is what it is used for a path in a vs drop. 🤦 - Let's discuss how the URL for vsdrops can be improved and used effectively as a path in a vs drop, @github.",0,0.5
 "It is almost 3am, but my brain says that #code should not affect VN of #code (because it is a pointer type, not a real value), but should affect #code node on top of it. Does it make sense",0,0.5
 "It is important to note that on server CPUs, this normally applies for individual cores, where on client CPUs this is ""global""",0,0.5
@@ -1629,6 +1631,7 @@ _technically_ yes.,0,0.5
 "Now, given this is such a simple scenario, and you're likkely not crashing.  You have presumably solved this in some manner.  For example, some sort of syncing.  Or perhaps validating that the request can even be asked on the other end.  However, those designs and invariants are not clear here, and as such it makes it *very* hard to tell if the code here is correct",0,0.5
 "Now, instead of automatically closing these open pull requests, the pull requests will be retargeted—the base branch of each pull request will be updated to the merged pull request's base branch",0,0.5
 "Now, oddly enough, outside of a generator parameter, i think it would be legal to use 'yield'.  so if you had",0,0.5
+"Obviously that's not optimal, so I'm working on a fix.",0,0.5
 "Oddly the current comparer for the hashset-based comparer is PathComparer, which does a bunch of extra comparisons around relative pathing and such to attempt to ""normalize"" the path. I was going to just switch this over to an ImmutableSortedSet but PathComparer doesn't implement that (since it would seem insane to do so)",0,0.5
 "Of course, this is insane and not code that anyone would write, but it does indicate that the declared type of a field on the closure does not necessarily have to match the runtime type. So #code seems appropriate to me",0,0.5
 "Off the top of my head, in top-of-my-head best-to-worst",0,0.5
