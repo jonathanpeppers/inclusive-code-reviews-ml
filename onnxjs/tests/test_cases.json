@@ -576,5 +576,17 @@
     {
         "text": "This is really weird, I can't reproduce.",
         "isnegative": "0"
+    },
+    {
+        "text": "Are you targeting main?",
+        "isnegative": "0"
+    },
+    {
+        "text": "It is a source of potential memory leaks...",
+        "isnegative": "0"
+    },
+    {
+        "text": "Obviously that's not optimal, so I'm working on a fix.",
+        "isnegative": "0"
     }
 ]
