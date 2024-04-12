@@ -598,6 +598,9 @@ _technically_ yes.,0,0.5
 "Changing the field to #code would allow 64, I'd prefer not going bigger because then we'll need to allocate/lazy-alloc and have another field",0,0.5
 "Changing the name was a good idea",0,0.8
 "Check my response about it from your other comment. It's wrong, but it kept me from changing another file before ensuring my logic is correct",0,0.5
+"Check your .NET 8 path",0,0.5
+"Check your NET 8 path",0,0.5
+"Check your .NET path",0,0.5
 "Chet, you are a great contributor",0,0.5
 "ColorTypeConverter and ThicknessTypeConverter do _not_ need to be cached in a known list, as they are attributed with a TypeConverterAttribute, they need to be in the KnownCOMPILEDTypeConverter as they're not attributed with the ProvideCompiledAttibute",0,0.5
 "Conceptually, #code + #code feels ""weird"": it's inconsistent with other existing properties, such as #code, #code",0,0.5
