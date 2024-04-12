@@ -588,5 +588,17 @@
     {
         "text": "Obviously that's not optimal, so I'm working on a fix.",
         "isnegative": "0"
+    },
+    {
+        "text": "Check your .NET 8 path.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Check your .NET path.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Check your NET path.",
+        "isnegative": "0"
     }
 ]
