@@ -600,5 +600,17 @@
     {
         "text": "Check your NET path.",
         "isnegative": "0"
+    },
+    {
+        "text": "Just checking",
+        "isnegative": "0"
+    },
+    {
+        "text": "I believe this is the feed you need",
+        "isnegative": "0"
+    },
+    {
+        "text": "Stop tracing",
+        "isnegative": "0"
     }
 ]
