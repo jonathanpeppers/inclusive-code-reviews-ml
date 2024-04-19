@@ -612,5 +612,17 @@
     {
         "text": "Stop tracing",
         "isnegative": "0"
+    },
+    {
+        "text": "I had to figure out new ways to manage myself and my work and keep track of everything.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are willing to dive into any problem you are given and educate yourself",
+        "isnegative": "0"
+    },
+    {
+        "text": "Another point is that you know really well who to ask for help",
+        "isnegative": "0"
     }
 ]
