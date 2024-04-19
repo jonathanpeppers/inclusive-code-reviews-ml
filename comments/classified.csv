@@ -599,8 +599,8 @@ _technically_ yes.,0,0.5
 "Changing the name was a good idea",0,0.8
 "Check my response about it from your other comment. It's wrong, but it kept me from changing another file before ensuring my logic is correct",0,0.5
 "Check your .NET 8 path",0,0.5
-"Check your NET 8 path",0,0.5
 "Check your .NET path",0,0.5
+"Check your NET 8 path",0,0.5
 "Chet, you are a great contributor",0,0.5
 "ColorTypeConverter and ThicknessTypeConverter do _not_ need to be cached in a known list, as they are attributed with a TypeConverterAttribute, they need to be in the KnownCOMPILEDTypeConverter as they're not attributed with the ProvideCompiledAttibute",0,0.5
 "Conceptually, #code + #code feels ""weird"": it's inconsistent with other existing properties, such as #code, #code",0,0.5
@@ -2846,6 +2846,7 @@ and your mother's cunt stinks,1,0.5
 and,0,0.5
 Another #code failure in #url. The logging is _insane_; is any of that detail useful❔,1,0.5
 Another crap article,1,0.5
+Another point is that you know really well who to ask for help,0,0.5
 Another thing to note is that generated assemblies do not really share between 4.8 and .Net Core due to netstandard.dll. So maintaining some resemblance with either 32-bit or 64-bit .Net 4.8 isn't much of a concern here,0,0.5
 any suggestions on how we should proceed with this PR,0,0.5
 Any way to add a test,0,0.5
@@ -3350,6 +3351,7 @@ I guess the idea is to do something like this,0,0.5
 I guess we have to account for the offline client here which is gross. Yet another reason to figure out #7805,0,0.5
 I guess we might want to put some proper locking here. as HTTP/2 has.. or just always call abort ant let quic stream/msquic handle the race? If we imagine Dispose being called synchronously after finishing reading the response -- I imagine graceful shutdown should be complete inside QuicStream by that time. So Abort will be just a no-op. But I may be wrong. Always calling Abort may lead to unexpected behavior in streaming scenarios 🤔 but I feel like this check without any locks will not be much better that always aborting,0,0.5
 I had this PR some time ago and will need to finish it soon and it's in the same area. #64845,0,0.5
+I had to figure out new ways to manage myself and my work and keep track of everything.,0,0.5
 I HATE @github!! HE IS AN IDIOT,1,0.5
 I hate this change,1,0.5
 I have a feeling that NuGet authors will have to use #code for their directory names,0,0.5
@@ -4879,6 +4881,7 @@ You are so lovely,0,1
 You are so terrible,1,1
 You are stupid,1,0.5
 You are such a generous individual,0,0.5
+You are willing to dive into any problem you are given and educate yourself,0,0.5
 you are wonderful,0,0.5
 You are wrong about everything,1,0.5
 You better run and hide,1,0.5
