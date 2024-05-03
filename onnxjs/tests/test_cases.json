@@ -624,5 +624,44 @@
     {
         "text": "Another point is that you know really well who to ask for help",
         "isnegative": "0"
+    },  {
+        "text": "low-hanging",
+        "isnegative": "0"
+    },
+    {
+        "text": "You should:",
+        "isnegative": "0"
+    },
+    {
+        "text": "wife",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is really close!",
+        "isnegative": "0"
+    },
+    {
+        "text": "I don't know the answer, so just checking.",
+        "isnegative": "0"
+    },
+    {
+        "text": "That's not a bad idea.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Everything really.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Just keep doing what you're doing!",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You have.",
+        "isnegative": "0"
     }
 ]
