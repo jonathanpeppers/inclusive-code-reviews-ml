@@ -2821,6 +2821,7 @@ Also would #code be happy with a negative count so it goes backwards also,0,0.5
 Although there are no compiler warnings/errors regarding this,0,0.5
 Always good to have the ignorant and mentally defective getting together. Die soon,1,0.5
 Am I understanding the problem wrong,0,0.5
+Amazing idea,0,0.5
 Amazing,0,0.5
 amazing! (seriously).  awesome job,0,0.5
 An Asshole That's Better Than You In Every Way,1,0.5
@@ -2853,6 +2854,8 @@ Any way to add a test,0,0.5
 Anyone reading/writing to the stream wrappers should fail. Terrible idea or no? I can add a cancellation unit test,0,0.5
 Anyways yes this will fail if the file is missing,0,0.5
 Applies the technique from dotnet/runtime#35330 to IOQueue,0,0.5
+Appreciate this,0,0.5
+Appreciate you,0,0.5
 Are customers wanting to be successful a bigger % of the time,0,0.5
 Are there any comments on whether we want this and what we want for the default (compression or no compression)? And any tips for how to handle the Brotli source files in CMake,0,0.5
 Are there any concerns about potential conflicts when two threads are trying to compute the new SemanticModel? How can we ensure smooth coordination between them?,0,0.5
@@ -2892,6 +2895,7 @@ Because #code AOT calls the #code task during the #code target it updates the as
 because i'm dumb.  #fixed,0,0.5
 Because I'm terrible at all the WPF stuff and didn't even realize I can do  #code? :),0,0.5
 because now you're creating garbage,1,0.5
+Best wishes to you,0,0.5
 better to heap allocate #code and free it from #code,0,0.5
 Binary log at #url may help too,0,0.5
 Bla bla bla. suck it @github,1,0.5
@@ -2947,13 +2951,16 @@ Can you share sample project with this issue,0,0.5
 Can you target rc1 branch,0,0.5
 Can you turn off linking,0,0.5
 Can't decide if having comments tracking all three cases is worth it. For some reason it just stands out when I'm reviewing the change. Possible that is because this is calling out the ~100 or so times this happens out of the hundreds of thousands of tests that we have hence I'm just looking at the worst case. Means I won't notice in the typical flow of PRs through the repo,0,0.5
+Can't wait,0,0.5
 Can't you do better,1,0.5
+Cannot wait,0,0.5
 Cause I'm still a noob with Visual Studio code,0,0.5
 cc @github Some potential API feedback here,0,0.5
 cc @github,0,0.5
 Change this now,1,0.5
 Change your settings to #code,0,0.5
 Changed back for now and put all the gross casting code back,1,0.5
+Cheering you on,0,0.5
 Clarifying the code for better understanding is key. Let's work on improving the readability together. Your perspectives on this matter are valued. @github,0,0.5
 Clearly we're inconsistent with whether we use extension methods on #code for structured logging or not. I vote for not using extension methods for this purpose going forward,0,0.5
 Cloning is faster and uses less disk space,0,0.5
@@ -2994,6 +3001,7 @@ Could you please help me understand the issue so I can assist in getting it fixe
 Could you please provide more information or context about the restrictions on async methods?,0,0.5
 Could you share an example so that I can understand this better? I'm wondering why it's [#code](#url) instead of [#code](#url). Is the #code here the rootView or the contained views,0,0.5
 Could you take a look at what's here so far,0,0.5
+Count on me,0,0.5
 Create a new #code method with more parameters only in #code,0,0.5
 Created a issue for this @github #url,0,0.5
 created a ussye ti follow up on this #url,0,0.5
@@ -3088,6 +3096,7 @@ edit: I am stupid,1,0.5
 EDIT: I have read up on panels and terminal editors... it's an over complicated mess. Why have two different abstractions that do the same thing. Why force the users to get involved in understanding those concepts and configuring them. Basically you are trying to recreate Eclipse. Jesus. I miss the days when VSCode Just Worked,0,0.5
 Edit: Sorry this is essentially a long-winded dup of DHowett's comment,0,0.5
 Either approach would be reasonable,0,0.5
+Enjoy your day,0,0.5
 Enum value looks strange,0,0.5
 erring out with a non actionable error is probably not the best. Let's leave this as it is,0,0.5
 Errors are opportunities for growth and learning. Let's ensure correctness in our code and maintain consistency to avoid confusion and improve code readability.,0,0.5
@@ -3156,6 +3165,8 @@ GET FUCKED UP. GET FUCKEEED UP.  GOT A DRINK THAT YOU CANT PUT DOWN???/ GET FUCK
 Get your head out of your ass,1,0.5
 git,0,0.5
 Github's sanitizer for markdown previews strips out #code attributes for these reasons (and also I believe because #code could at one point be used in very old browsers to run scripts and do other super unsafe things),0,0.5
+Glad to hear this,0,0.5
+Glad to hear,0,0.5
 go ahead,0,0.5
 go fuck your self,1,0.5
 Go fuck yourself @github,1,0.5
@@ -3171,7 +3182,9 @@ good job guys you ruined it,1,0.5
 good job team keep up the good work,0,0.5
 Good job,0,0.5
 Good Luck,0,0.5
+Good vibes,0,0.5
 gotcha - will fix both here and in XCT soon,0,0.5
+Great idea,0,0.5
 Great Job,0,0.5
 Great work! Thanks a lot,0,0.5
 Great! Just idiot thoughts,1,0.5
@@ -3201,6 +3214,7 @@ HELLO HOW DO I GET SOMEBODY TO FIX SHIT AROUND HERE,1,0.5
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
 HELLO,0,0.5
 Here are my steps,0,0.5
+Here for you,0,0.5
 Here is the commit that implements this,0,0.5
 Here is the diff example #url,0,0.5
 Here is the jit-diff (PMI mode) without taking PGO into account: #url,0,0.5
@@ -3242,6 +3256,9 @@ holy shit this whole function is magic,1,0.5
 holy shit this works,1,0.5
 Hope this helps clear the fog and justify the risk,0,0.5
 Hope this helps to clarify why the usage of that arguably very niche API in that library in particular 😊,0,0.5
+Hope you're doing well,0,0.5
+Hope you're ok,0,0.5
+Hope you're well,0,0.5
 Hopefully this isn't a blocker,0,0.5
 How about #code,0,0.5
 How are you measuring the startup time,0,0.5
@@ -3259,6 +3276,7 @@ How long did you spend working on this,1,0.5
 How would this ever work,1,0.5
 how,0,0.5
 how?,0,0.5
+How's everything?,0,0.5
 I *think* (and @github can correct me :) ) we tend to prefer that we explicitly define the dependencies in,0,0.5
 I acknowledge your concerns. Let's explore ways to address them together. - @github,0,0.5
 I agree on [Sealed],0,0.5
@@ -3538,6 +3556,7 @@ I'm gonna throw this out here right now - the team is absolutely stoked that you
 I'm happy to change this if someone has a better idea,0,0.5
 I'm here to assist you with any questions you may have. @github,0,0.5
 I'm here to support you in achieving our goals. Let's collaborate to make progress. - @github,0,0.5
+I'm just going to vibe,0,0.5
 I'm not confident in the effectiveness of this approach,0,0.5
 I'm not counting on it working,1,0.5
 I'm not entirely certain about a better term than 'grant' in this context. Let's brainstorm together for a more suitable name.,0,0.5
@@ -3737,6 +3756,8 @@ Just that it's never going to be refactored after this,0,0.5
 Just to confirm (because the GH diff here is terrible): No changes were made to this function right,0,0.5
 Just wanted to let you know that I think you're a faggot.  Find better things to do with your time,1,0.5
 Keep it simple keep it stupid (KISS) would be to give the (relative or Full) Path of the config file not the path of the exe-file,0,0.5
+Keep me posted,0,0.5
+Keep posted,0,0.5
 Keep your pathetic winking marks to your antiturkish ass,1,0.5
 Keeping all the files around avoids this,0,0.5
 Kill all niggers,1,0.5
@@ -3825,12 +3846,15 @@ lol! let the porky make a fool out of himself,1,0.5
 LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL,1,0.5
 Look you little cocksucker. I did nothing wrong. I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
 Looking at the code I don't think we need this really. I'll be removing it,0,0.5
+Looking forward to it,0,0.5
+Looking forward,0,0.5
 Looks good to me,0,0.5
 Looks like extra indentation here,0,0.5
 Looks like Sebastien's test fails when these are removed so maybe they are needed,0,0.5
 Looks like the answer is Yes,0,0.5
 Looks like there's the same issue here.  The finally block could end up seeing garbage data in each GCHandle that wasn't yet initialized if there's a failure in setting up the handles,0,0.5
 Love it! This needs to be mentioned at the conference next week,0,0.5
+Love your work,0,0.5
 Lovely,0,0.5
 Made the retrieval of stored text deferred until needed in the SelectionBasedVariableResolver,0,0.5
 Make sure that you compile before creating the pull request,0,0.5
@@ -3852,6 +3876,7 @@ Maybe you should get an education,1,0.5
 Maybe,0,0.5
 Memory leaks all over the place,1,0.5
 Merging since the test failures are unrelated timeouts,0,0.5
+Miss you lots,0,0.5
 Missing availability attributes,0,0.5
 Missing comma at the end of the last element,0,0.5
 missing d,0,0.5
@@ -3874,6 +3899,8 @@ My feeling is that we should think through this problem more and find some other
 My opinion is just make the change to satisfy the linter. While I see the argument for the 'define as close to usage as possible' it's not hard to use GoToDef occasionally vs adding gross comments,0,0.5
 My plan was to not import or ship #code at all,0,0.5
 NativeAOT currently goes through a helper call whenever we need to access static fields. For this simple program,0,0.5
+Need anything?,0,0.5
+Need something?,0,0.5
 Need to update the comment above on #code's declaration,0,0.5
 Needs rebase,0,0.5
 Never mind. It was a stupid mistake on my part,1,0.5
@@ -4046,6 +4073,7 @@ See info in area-owners.md if you want to be subscribed,0,0.5
 Seems insane,1,0.5
 Seems is building fine,0,0.5
 seems wrong #Closed,1,0.5
+Sending smiles,0,0.5
 Setting up such a configuration means you are stupid,1,0.5
 ship it,0,0.5
 Shit. I guess I cannot pick this up,1,0.5
@@ -4124,6 +4152,7 @@ Sorry for my stupid to make this pr happened,1,0.5
 Sorry for the bad suggestion,0,0.5
 Sounds good 😂,0,0.5
 start with either #code or #code so it gets sorted along other important/critical logs,0,0.5
+Stay in touch,0,0.5
 Still fails for me,1,0.5
 still not working :(,0,0.5
 still seeing similar issues where hovering changes the color,0,0.5
@@ -4154,6 +4183,7 @@ Suicide,1,0.5
 Swear to fuck your mom if you swear to tape it,1,0.5
 System.InvalidCastException : Specified cast is not valid,0,0.5
 Tagging subscribers to this area: @github,0,0.5
+Take care now,0,0.5
 takes care of the rest.  Too many languages doesn't mix with late-night programming,0,0.5
 Terrible 😁. At least have a bool or enum property,1,0.5
 Test failure is unrelated (#url),0,0.5
@@ -4168,6 +4198,7 @@ Thank you for your feedback. Let's focus on constructive criticism to improve ou
 Thank you for your review,0,0.5
 Thank you,0,0.5
 Thanks @github and @github,0,0.5
+Thanks a lot,0,0.5
 Thanks a lot. The logic was definitely wrong,0,0.5
 Thanks for calling this out. I think this is actually wrong. I'll come up with a test case to hit this. #Resolved,0,0.5
 Thanks for checking,0,0.5
@@ -4180,6 +4211,7 @@ Thanks for sharing. We'll do better 😊,0,0.5
 Thanks for submitting this issue,0,0.5
 Thanks for the feedback @github! Opened an issue here #url - feel free to add more info,0,0.5
 Thanks for the remind. This one is about allowing the core markdown renderer to display #code which is sanitized by #code. I'll revert the change for now and see ppl's feedback,0,0.5
+Thanks so much,0,0.5
 Thanks to you neither me nor my family will give this shit open source project a fucking dime,1,0.5
 thanks,0,0.5
 Thanks,0,0.5
