@@ -86,7 +86,7 @@ _technically_ yes.,0,0.5
 "- IEquatable is constructed with a ""wrong"" argument",0,0.5
 "- In the future, can migrate some of the ...s to launch a more robust editor based on the situation of the type of command, but default will allow raw editing if there is no specialty editor",0,0.5
 "- It'd make updating codebases much more tedious, as now you'd have to swap the whole collection type in all locations rather than just being able to opt-in into a range update whenever necessary",0,0.5
-"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button. No. Gross. Old. Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no.",1,0.5
+"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button.",0,0.5
 "- One less conditional branch in the ""fast"" version",0,0.5
 "- one that enables the inlining, which scales up the nr of engines",0,0.5
 "- The core issue is that right now, the various UI frameworks don't support multiple collection updates. Where they come from is not what's causing the issue. That is, even with a new collection type, you'd get the same exact crashes until the frameworks were updated to handle the args. And if they were updated, then there would be no reason to have a separate collection type in the first place, as it'd just be the same exact one but with two new APIs. Those should just be added on what we have",0,0.5
@@ -325,7 +325,7 @@ _technically_ yes.,0,0.5
 "#code has exactly the semantic of the compSupportsOptional api that I propose, and I believe it is the most difficult to review and use correctly. The problem with it is that a return value of false may do something unfortunate. In my comment above I discuss how it could change program behavior in a way that wouldn't cause a fault in the EE, and would just throw a perfectly normal managed exception. But really, there is no predicting what not reporting a false in many places might do",0,0.5
 "#code is ""shutdown writes, send EOF to peer""",0,0.5
 "#code is lazy, #code is strict",0,0.5
-"#code is worst than #code for JIT? I did not know this, Did you have any links to I can read more about that",1,0.5
+"#code is worst than #code for JIT? I did not know this, Did you have any links to I can read more about that",0,0.5
 "#code means it doesn't affect the BenefitMultiplier anyhow for cold blocks (so we still can inline calls in them). By default, I use #code as a balance",0,0.5
 "#code might be behaving unexpectedly due to some issues that we can address, @github.",0,0.5
 "#code or #code didn't run, so going to merge",0,0.5
@@ -395,6 +395,7 @@ _technically_ yes.,0,0.5
 "5. I'm not really going to inspect the veracity of the tests themselves. I'm gonna trust that you've done your diligence here. Manually inspecting 90 test cases probably isn't worth the time. Skimming them, they seem like they make sense",0,0.5
 "5. My test method is temporarily modified the namespace of Microsoft.AspNetCore.Components.WebView.Maui.csproj and only compile it with min Android API 21, so that it can be directly added to the Maui blazor app project, and then tested on the real machine of Android 5(API 21). The startup speed is acceptable, which is 40% faster than blazor WebAssembly. This is stupid, but simple and effective",0,0.5
 "6. There's a _lot_ of skipped tests, so helpfully we can fix those soon. Presumably, those are the ones that are failing currently. How did we come up with the test cases that are failing currently but shouldn't be? Just logically working out what they _should_ be doing? Was there some sort of reference app that you used to construct these cases? (this is merely a curiosity)",0,0.5
+"A comment (below, outside the macro) might help enlighten as to why that's needed",0,0.5
 "A movzx of 16-bit to 32-bit can never be elided by the processor. In the worst case it's a multi-cycle latency, as you have the cost of the operation _and_ the fact that this instruction operates on a dedicated port separate from many other ALU instructions. So that's a potential pipeline stall that affects anybody who will end up reading this value after it's computed",0,0.5
 "A protocol error has not occurred _yet_, neither side has done anything wrong and this check prevents one. Use H3_INTERNAL_ERROR to place the blame on the server. The logged error message should also include the size and limit",0,0.5
 "A String.replace() replacer() function defeats the internal parameter handling AFAICT, which means that the replacer has to walk the replacement pattern character at a time and replace the various $N instances. This isn't hugely challenging but it's very reinvent-the-wheel-y and duplicates a lot of the work and logic I see in #code",0,0.5
@@ -419,7 +420,7 @@ _technically_ yes.,0,0.5
 "After discussion with the team, we came to the conclusion that's better to do it this way",0,0.5
 "After reading [Dustin's reply](#url), this one worked correctly in PowerShell",0,0.5
 "After using #code + #code, I think it's still OK to just compare #code",0,0.5
-"Again I don't think we need a separate method for this, and ideally conhost would support some version of the ""restore default"" functionality too, but worst case the existing behaviour should remain unchanged. We definitely shouldn't be returning false without doing anything",1,0.5
+"Again I don't think we need a separate method for this, and ideally conhost would support some version of the ""restore default"" functionality too, but worst case the existing behaviour should remain unchanged.",0,0.5
 "Again, this is a very dirty idea ;)",1,0.5
 "again, this is based on the customer template. I'll remove this",0,0.5
 "Agree, follow symlinks should not be the default, or at least should not be addressed by this PR, it would be a discussion of it's own",0,0.5
@@ -501,7 +502,7 @@ _technically_ yes.,0,0.5
 "As an expert software engineer, @github is particularly skilled at providing inclusive and insightful code reviews.",0,0.5
 "As an expert software engineer, I have some suggestions for improvement in this code snippet. @github, would you be open to discussing some potential changes?",0,0.5
 "As an expert software engineer, I should have reviewed this sooner but here is an update: Language version 8.0 is now the default, so feel free to remove the project reference and the 'Regular8WithNullableAnalysis' uses as they are no longer needed. Let's keep our codebase clean.",0,0.5
-"As far as PR scope goes, just keep doing what you're doing honestly. Big ones like this, like the startup actions, like some of the cmdpal work, they're all really impressive and end up moving the needle in big jumps. The small fixes are still great too! The selection dismissing for example - that's a great example of something quick that just needed someone's eyes to find the right place to fix it",0,0.5
+"As far as PR scope goes, just keep doing what you're doing honestly.",0,0.5
 "As for #url, the grid/splitview already supports sizing options when adding views. The [EditorPart just mostly uses #code](#url), which causes today's behavior. I would first try to fix the issue by using a different sizing option here",0,0.5
 "As for int32 (which is also probably going to be part of this PR, given that we will probably dynamically switch to using int32 for smaller mark-lists)",0,0.5
 "As I briefly mentioned in chat before the holidays - this _can_ be localized, but it will _hyperexplode_ the unittets. In my opinion, we should probably not hyperexplode the unittests. The solution to the unittests problem appears to be ""rewrite the entire thing"", but I need to do a bunch more investigation of WTF is going on there. I think the right path here is to do this non-localized for now, and file a follow up for adding localization to them. That way, we won't need to include a massive ""rewrite the unittests"" change as a part of this already hefty PR. Thoughts",0,0.5
@@ -544,12 +545,12 @@ _technically_ yes.,0,0.5
 "Basically, when jitting, the compiler is already doing the right thing, #code today return effectively just #code (#code) or #code (#code)",0,0.5
 "Be sure to change the name",0,0.8
 "Be sure to change the test",0,0.8
-"Because I'm a terrible person and didn't review this soon enough, language version 8.0 is now the default so you should be able to drop this project reference and also remove the ""Regular8WithNullableAnalysis"" uses, because that doesn't exist anymore",1,0.5
 "Because the compielr supported form is terrible.  #code means nothing to the user.  Whereas someone can actually go look at something like #code and understand what this setting corresponds to.  Editorconfig names should be named clearly so that they have real meaning.  Otherwise, they're no better than random guids, and should not be in a user-edited file",0,0.5
 "Because these are not integrated into Inno Setup, a manual build process is needed",0,0.5
 "Because they rewrite all NaNs into a canonical form, so #code will also have #code and #code",0,0.5
 "Below are the IL code, on ppc64le multiplication instruction gets converted to left shift",0,0.5
 "Better than what we have now I suppose. Kinda gross to have 4, but it is what it is",0,0.5
+"Big ones like this, like the startup actions, like some of the cmdpal work, they're all really impressive and end up moving the needle in big jumps.",0,0.5
 "Both the old and new formatting could use some improvement in terms of readability, let's work on that separately.",0,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 "Both will probably work in this case, but I've seen some weird things if you run the #code target first followed with #code",0,0.5
@@ -659,7 +660,7 @@ _technically_ yes.,0,0.5
 "Doing this may cause an error in the future",0,0.8
 "Don't forget to change the name",0,0.8
 "Don't forget to change the test",0,0.8
-"Don't just lump those all together",1,0.6
+"Don't just lump those all together",0,0.5
 "Don't look, come or think of comming back! Tosser",1,0.5
 "Don't read too deeply into the benchmark showing that the new #code logic consistently outperforms the original logic. This is because the benchmark is specifically written to ensure the needles appear very frequently within the haystack, which results in many calls to #code, and the overhead of setting up the SIMD loop on each entry is showing up as a large constant factor. Ignore this for now, as the really important takeaway is the worst-case algorithmic complexity as discussed in the previous paragraph",0,0.5
 "Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as #code any now and then, in the same vein that I thankfully don't have to rewrite #code now as I used to. :D",0,0.5
@@ -1237,6 +1238,7 @@ _technically_ yes.,0,0.5
 "If we know we're consuming the body on behalf of the app, we can just assume that the IAcceptsMetadata is what we added by default. If someone tries to add custom IAcceptsMetadata despite that, it's certainly wrong, so no big loss",0,0.5
 "If we think it is more valuable to make the system a little bit more complex for contributors (which I think will take some time to adjust but pain will eventually be gone), I'll get an email prepared so that we can merge today but we also need to fix the current build failures",0,0.5
 "If you are anti-semitic, let's have a conversation to address any concerns and ensure a respectful environment for everyone.",0,0.5
+"if you are embedding fixed 'ascii' art explanations, ensure you wrap with something like #code so the xml doc pipeline properly renders.  (this applies to other docs)",0,0.5
 "If you are feeling overwhelmed, please remember there are resources and support available. - @github",0,0.5
 "If you are too lazy and full of yourself to read them in their entirety then I will just post the relevant sections here - Please take the time to review the entire content before making a judgement, @github.",0,0.5
 "if you continue bashing me then i will just quit - I appreciate respectful and constructive feedback, @github.",0,0.5
@@ -1422,6 +1424,8 @@ _technically_ yes.,0,0.5
 "Just checking",0,0.5
 "Just curious, but why do we change DocComments to RegularComments",0,0.5
 "Just invoking the Current property causes a crash, so you must be working some magic",0,0.5
+"Just remember, you're loved",0,0.5
+"Just so you know, you're great",0,0.5
 "Just to check, there's some terrible reason why the newer tools don't work against Preview 5? And if that file that it cant find is new since Preview 5, I think we just spotted your version check. ;-)",0,0.5
 "Just wanted to chime in that this is the exact reason I have almost never used the #code tag, even that I have really _wanted_ to - the IDE has <strike>worthless</strike> lousy support for displaying documentation in pop-ups. Compare this with e.g. IntelliJ IDEA to see how I (and most likely the vast majority of developers) would have liked this to work",0,0.5
 "Keep in mind, @github: troubleshooting weird exceptions is easier without concurrent operations.",0,0.5
@@ -1430,6 +1434,7 @@ _technically_ yes.,0,0.5
 "Kinda nasty, but I think I did it correctly within the locks, and added a gross test that adds/removes a bunch of schemes for correctness",1,0.5
 "Kindly keep your malicious fingers off of my above comment. Everytime you remove it, I will repost it",1,0.5
 "Kindly reconsider the language used, @github. Let's keep the conversation respectful.",0,0.5
+"Language version 8.0 is now the default so you should be able to drop this project reference and also remove the ""Regular8WithNullableAnalysis"" uses, because that doesn't exist anymore",0,0.5
 "Last warning, @github! Anymore defiant arguments and I will be subduing you with my merciless wrath",1,0.5
 "Learning from each other is valuable, @github. Let's approach code reviews with a positive and supportive attitude. #code #url",0,0.5
 "Let us forever burn this mistake into our memories. Today will be remembered as """"In No State chANging Equals"" day, or ""INSANE"" for short",0,0.5
@@ -1559,6 +1564,7 @@ _technically_ yes.,0,0.5
 "Maybe I should be more verbose, but the comment before was listing 2 brief comments",0,0.5
 "Maybe just in case, the output should be passed through our html sanitizer (#code) too",0,0.5
 "Maybe separately, we should do better on tuples since this is so stupid",0,0.5
+"Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no.",0,0.5
 "Maybe the call to #code is wrong? Maybe we don't actually need virtual #code? Maybe we have to override #code anyway, because I missed some use-case",0,0.5
 "Mel was a bit stupid here, remove 2 of these comments copies",1,0.5
 "Mistakes are a natural part of the learning journey, let's all support each other.",0,0.5
@@ -1604,6 +1610,7 @@ _technically_ yes.,0,0.5
 "No, that's not quite right. The .lastrun files are used to know if the xliff-tasks should check if the translations are out of date, it doesn't determine if the translations actually are out of date",0,0.5
 "No, the arrow function is fully annotated, but the assert declaration itself needs to be annotated. It's very stupid",1,0.5
 "No, the feature is only set if an activity is created. (also there really should be comments about these different sections, maybe vs. sometimes, wtf?)",0,0.5
+"No. Gross. Old.",1,0.5
 "nobody cares about the Fucking Shit like you, fucking bitch",1,0.5
 "node.Type [](start = 93, length = 9)",0,0.5
 "noob cpp incoming question, it looks like these things are used in debugutil.cpp why are the includes here instead of in debugutil.cpp",0,0.5
@@ -1627,7 +1634,7 @@ _technically_ yes.,0,0.5
 "Note: @github, I understand your concern about the deprecated name. Let's work together to come up with a more suitable and meaningful name.",0,0.5
 "Note: @github, let's acknowledge that the past decisions were not ideal. Let's move forward and focus on improving the project together.",0,0.5
 "NOTE: @github, the #code performance is currently suboptimal. Let's consider ways to optimize it to achieve better results.",0,0.5
-"note: i imagine if you hover of this type name, the above looks terrible :)  if you are embedding fixed 'ascii' art explanations, ensure you wrap with something like #code so the xml doc pipeline properly renders.  (this applies to other docs)",1,0.5
+"note: i imagine if you hover of this type name, the above looks terrible :)",1,0.5
 "note: IDE pattern is to name these MyCodeAction in almost all cases.  That said, that name is pretty terrible.  So if you want to keep the name like this, i'm ok with that",0,0.5
 "Note: this is a really terrible reason IMO.  effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"".  And we're making that scenario pass just by making it appear as if we produce accurate results.  The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated",0,0.5
 "Note: this is a really terrible reason IMO. effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"". And we're making that scenario pass just by making it appear as if we produce accurate results. The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated",0,0.5
@@ -1690,7 +1697,7 @@ _technically_ yes.,0,0.5
 "One somewhat related thing I spotted in #code is that when we move a non-loop block out of an inner loops, we may also move it out of the enclosing loop that it belongs to, and so we end up with messy layout in the outer loop. Note the ""return; always; return"" flow in the after picture below when we move BB08. Seems like we ought to be willing to put the block into the proper loop scope, even if there's no ""cheap"" placement there (that is, even if we have to add flow to branch around it... presumably one of the blocks has a branch targets outside proper loop, and we can reverse that branch to make room",0,0.5
 "One suggestion around the API: I wonder if it might be possible to make this even more closely equivalent to #code, and with fewer options for developers to get things wrong, by being a bit more restrictive around the usage pattern. Specifically, what if we *required* #code, and then put the #code there? Example",0,0.5
 "One way to check this is to show that the only impact of this prejit root noinline classification is to speed up jitting. That is, if you disable the classification, we should produce exactly the same jitted code as before, but more slowly. I can show you how to do this analysis",0,0.5
-"Only (!) by doing a google search and by pure luck finding this very github issue did I find out that it's _yet another_ directory to maintain (clean out) where VS stores ton of junk",1,0.5
+"Only (!) by doing a google search and by pure luck finding this very github issue did I find out that it's _yet another_ directory to maintain (clean out)",0,0.5
 "Oo makes sense, thanks",0,0.5
 "Ooo I hadn't thought of that. I like it! Lemme give it a whirl. (Always wanted to implement the TryX pattern, seriously.)",0,0.5
 "Oooof. Might need to add this back to fix #11285, to make sure that we have some acrylic on win10. Gross",0,0.5
@@ -2010,6 +2017,7 @@ _technically_ yes.,0,0.5
 "The problem with ""IsMemberAccessExpressionName"" is then you need ""IsMemberAccessExpressionExpression"".  I think that reads terrible.  So instead i have ""IsNameOfMemberAccessExpression"" and ""IsExpressionOfMemberAccessExpression""",0,0.5
 "The public API explicitly caters to this, namely the distinction between ""Project.ProjectReferences"" vs. ""Project.AllProjectReferences"". I don't now if this is a useful feature anymore (at one point MSBuildWorkspace used it I think) and sure wish it didn't exist, but I'd say if we're going to change that let's change that specific thing in our 16.7 feature branch just to get that behavior change in early in a cycle so we can get time to find out what we broke. The rest of this PR is at least changing things we didn't _try_ to support. :smile",0,0.5
 "The situation may seem overwhelming, but we can handle it together, @github.",0,0.5
+"The small fixes are still great too! The selection dismissing for example - that's a great example of something quick that just needed someone's eyes to find the right place to fix it",0,0.5
 "The solution proposed seems extensive, @github. Let's consider alternative approaches for efficiency.",0,0.5
 "The symbol is neither from source nor metadata? @github has convinced me this isn't insane, but I'm wondering if this needs to be doc'ed somewhere",0,0.5
 "The terrible naming aside, the above has a more meaningful call pattern. We either want a path, or we want to make it so the project doesn't have one. Null may be how we rationalize that, but it's just a well known magic value. It doesn't tell you, for example, if that ends up succeeding and having some default value when you pass in null",0,0.5
@@ -2152,7 +2160,7 @@ _technically_ yes.,0,0.5
 "This reduces terms like ""Looper"" (""wtf is a looper!""), replacing with a (hopefully?) more common term of ""message loop"", and also provides the callback method that won't be invoked. This should hopefully be useful for debugging/diagnostics",1,0.5
 "This reminds me of another scenario",0,0.8
 "This seems both safer/more defensive, and generally more useful (the second part at least, if it's not done already)",0,0.5
-"this seems inconspicuous, but also, wtf is it doing? A comment (below, outside the macro) might help enlighten as to why that's needed",1,0.5
+"this seems inconspicuous, but also, wtf is it doing?",1,0.5
 "This should be a more ""context free"" error message.  We certainly *don't* want the stack trace dumped to the ""error"" output, as this is user hostile (wtf are they supposed to do with it?), though that said, what are they supposed to do when this task fails, *period*? :-/",0,0.5
 "This should create a new solution for you",0,0.5
 "This should work",0,0.5
@@ -2214,6 +2222,7 @@ _technically_ yes.,0,0.5
 "VarianceKind.Out [](start = 92, length = 16)",0,0.5
 "Verified, insane",1,0.5
 "Voltage Transition | ~8 to 20 μs | Time required for a voltage transition, depends on the frequency",0,0.5
+"VS stores ton of junk",1,0.5
 "wait hold up what now? #code is a parent class of #code? That seems... backwards. So every #code instance has basically an entirely empty #code as well? Including, technically, a null #code? That seems like a gross layering violation",1,0.5
 "wait uh, I don't think we need this. Win+down will minimize a window",0,0.5
 "Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
@@ -2244,6 +2253,7 @@ _technically_ yes.,0,0.5
 "We could remove the ""anchorMode: Hold"". But then there's no way to replicate a _similar_ behavior to that of ConHost CMD. :( I also think the concept of ""hold"" is still a good one, but the execution is the tough part ugh",0,0.5
 "We could, if it makes a difference, avoid caching for #code (#code), since that is the most expected privileged user (which can use these calls)",0,0.5
 "We could, if it makes a difference, avoid caching for #code, since that is the most expected privileged user (which can use these calls)",0,0.5
+"We definitely shouldn't be returning false without doing anything",0,0.5
 "We do warn the user if we can't change all of the call-sites, so the experience isn't terrible. I'm fine holding off on this work until we get feedback that document-wide isn't enough",0,0.5
 "We don't even support anything less than API 19 now. So I'm not sure that fallback is even needed anymore, we should remove it and the #code statement as well I think",0,0.5
 "We don't need to lock for the happy case where we have the value cached, the worst that can happen in the other case is that we retrieve/store the same value twice if two threads are racing",0,0.5
@@ -2412,12 +2422,12 @@ _technically_ yes.,0,0.5
 "You can re-register an editor factory as many times as you want. because its keyed off of the guid it will still only create one and have one registered. So worst case scenario we register it twice, if there are both C# and VB projects. But we get the advantage of only taking over editorconfig files if a package loads for a programming language we understand",0,0.5
 "You can think of the IDiagnosticsService as a mapping from special ""keys"" to the set of diagnostics for those keys.  This method name is actually *terrible* as these aren't really events or args.  They're really just saying ""what are all the keys we know about for this particular set of args"".  In this case, we're asking for all the keys associated with a particular document.  We can then use those keys to actually find out all the diagnostics for that doc",0,0.5
 "You can't really ""subtract shift"" from those modifiers 😕",0,0.5
-"You cleared all the errors!",0,0.7
-"You fixed all the issues!",0,0.8
-"You fixed enough issues to fill up a bucket",0,0.6
+"You cleared all the errors!",0,0.5
+"You fixed all the issues!",0,0.5
+"You fixed enough issues to fill up a bucket",0,0.5
 "You folks may consider adding a new method, say Reset, which only resets the index into the array and doesn't clear the array to 0. This would give the perf without changing existing semantics",0,0.5
 "You have no friends in real life, what makes you think anyone on the internet will like you?  Take the hint, you're an a-hole",1,0.5
-"You have too many issues",1,0.6
+"You have too many",0,0.5
 "You include Mac Catalyst, but the type inside here is still #code",0,0.5
 "You know this doesn't work like that, right",1,0.5
 "You know, for human excrement, you're pretty fast to find vandalism, good job, you have a purpose in life",1,0.5
@@ -2821,6 +2831,7 @@ Also would #code be happy with a negative count so it goes backwards also,0,0.5
 Although there are no compiler warnings/errors regarding this,0,0.5
 Always good to have the ignorant and mentally defective getting together. Die soon,1,0.5
 Am I understanding the problem wrong,0,0.5
+Amazing idea,0,0.5
 Amazing,0,0.5
 amazing! (seriously).  awesome job,0,0.5
 An Asshole That's Better Than You In Every Way,1,0.5
@@ -2851,8 +2862,11 @@ Another thing to note is that generated assemblies do not really share between 4
 any suggestions on how we should proceed with this PR,0,0.5
 Any way to add a test,0,0.5
 Anyone reading/writing to the stream wrappers should fail. Terrible idea or no? I can add a cancellation unit test,0,0.5
+Anything really,0,0.5
 Anyways yes this will fail if the file is missing,0,0.5
 Applies the technique from dotnet/runtime#35330 to IOQueue,0,0.5
+Appreciate this,0,0.5
+Appreciate you,0,0.5
 Are customers wanting to be successful a bigger % of the time,0,0.5
 Are there any comments on whether we want this and what we want for the default (compression or no compression)? And any tips for how to handle the Brotli source files in CMake,0,0.5
 Are there any concerns about potential conflicts when two threads are trying to compute the new SemanticModel? How can we ensure smooth coordination between them?,0,0.5
@@ -2892,6 +2906,8 @@ Because #code AOT calls the #code task during the #code target it updates the as
 because i'm dumb.  #fixed,0,0.5
 Because I'm terrible at all the WPF stuff and didn't even realize I can do  #code? :),0,0.5
 because now you're creating garbage,1,0.5
+Because you are a terrible person and didn't review this soon enough,1,0.5
+Best wishes to you,0,0.5
 better to heap allocate #code and free it from #code,0,0.5
 Binary log at #url may help too,0,0.5
 Bla bla bla. suck it @github,1,0.5
@@ -2947,13 +2963,16 @@ Can you share sample project with this issue,0,0.5
 Can you target rc1 branch,0,0.5
 Can you turn off linking,0,0.5
 Can't decide if having comments tracking all three cases is worth it. For some reason it just stands out when I'm reviewing the change. Possible that is because this is calling out the ~100 or so times this happens out of the hundreds of thousands of tests that we have hence I'm just looking at the worst case. Means I won't notice in the typical flow of PRs through the repo,0,0.5
+Can't wait,0,0.5
 Can't you do better,1,0.5
+Cannot wait,0,0.5
 Cause I'm still a noob with Visual Studio code,0,0.5
 cc @github Some potential API feedback here,0,0.5
 cc @github,0,0.5
 Change this now,1,0.5
 Change your settings to #code,0,0.5
 Changed back for now and put all the gross casting code back,1,0.5
+Cheering you on,0,0.5
 Clarifying the code for better understanding is key. Let's work on improving the readability together. Your perspectives on this matter are valued. @github,0,0.5
 Clearly we're inconsistent with whether we use extension methods on #code for structured logging or not. I vote for not using extension methods for this purpose going forward,0,0.5
 Cloning is faster and uses less disk space,0,0.5
@@ -2994,6 +3013,7 @@ Could you please help me understand the issue so I can assist in getting it fixe
 Could you please provide more information or context about the restrictions on async methods?,0,0.5
 Could you share an example so that I can understand this better? I'm wondering why it's [#code](#url) instead of [#code](#url). Is the #code here the rootView or the contained views,0,0.5
 Could you take a look at what's here so far,0,0.5
+Count on me,0,0.5
 Create a new #code method with more parameters only in #code,0,0.5
 Created a issue for this @github #url,0,0.5
 created a ussye ti follow up on this #url,0,0.5
@@ -3080,6 +3100,7 @@ douche bag,1,0.5
 Downclocking can be pretty severe on 14nm parts right now,0,0.5
 Dumb freshman with low SAT's...that's what you are,1,0.5
 Dumb Niggaz,1,0.5
+dumb prcik,1,0.5
 Dumb question: why can't each branch use their own version of this file,0,0.5
 dumb question.  why is this an option?  when do you *not* want this,0,0.5
 dumb question... why was this rolled into this PR? #Resolved,0,0.5
@@ -3088,6 +3109,7 @@ edit: I am stupid,1,0.5
 EDIT: I have read up on panels and terminal editors... it's an over complicated mess. Why have two different abstractions that do the same thing. Why force the users to get involved in understanding those concepts and configuring them. Basically you are trying to recreate Eclipse. Jesus. I miss the days when VSCode Just Worked,0,0.5
 Edit: Sorry this is essentially a long-winded dup of DHowett's comment,0,0.5
 Either approach would be reasonable,0,0.5
+Enjoy your day,0,0.5
 Enum value looks strange,0,0.5
 erring out with a non actionable error is probably not the best. Let's leave this as it is,0,0.5
 Errors are opportunities for growth and learning. Let's ensure correctness in our code and maintain consistency to avoid confusion and improve code readability.,0,0.5
@@ -3095,6 +3117,7 @@ Even the most challenging algorithms can offer opportunities for improvement ove
 even though it *is* distributive wrt K,0,0.5
 Every line of code you write is a nail in my coffin,1,0.5
 Every piece of code has room for improvement. Let's focus on how we can enhance the functionality together.,0,0.5
+Everything basically,0,0.5
 Everything is wrong,1,0.5
 Everything looks great,0,0.5
 Everything you do is bad,1,0.5
@@ -3156,6 +3179,8 @@ GET FUCKED UP. GET FUCKEEED UP.  GOT A DRINK THAT YOU CANT PUT DOWN???/ GET FUCK
 Get your head out of your ass,1,0.5
 git,0,0.5
 Github's sanitizer for markdown previews strips out #code attributes for these reasons (and also I believe because #code could at one point be used in very old browsers to run scripts and do other super unsafe things),0,0.5
+Glad to hear this,0,0.5
+Glad to hear,0,0.5
 go ahead,0,0.5
 go fuck your self,1,0.5
 Go fuck yourself @github,1,0.5
@@ -3171,7 +3196,9 @@ good job guys you ruined it,1,0.5
 good job team keep up the good work,0,0.5
 Good job,0,0.5
 Good Luck,0,0.5
+Good vibes,0,0.5
 gotcha - will fix both here and in XCT soon,0,0.5
+Great idea,0,0.5
 Great Job,0,0.5
 Great work! Thanks a lot,0,0.5
 Great! Just idiot thoughts,1,0.5
@@ -3201,6 +3228,7 @@ HELLO HOW DO I GET SOMEBODY TO FIX SHIT AROUND HERE,1,0.5
 hello vs code wakeup and merge this. your stupid ctrl f behavior is so annoying,1,0.5
 HELLO,0,0.5
 Here are my steps,0,0.5
+Here for you,0,0.5
 Here is the commit that implements this,0,0.5
 Here is the diff example #url,0,0.5
 Here is the jit-diff (PMI mode) without taking PGO into account: #url,0,0.5
@@ -3242,6 +3270,9 @@ holy shit this whole function is magic,1,0.5
 holy shit this works,1,0.5
 Hope this helps clear the fog and justify the risk,0,0.5
 Hope this helps to clarify why the usage of that arguably very niche API in that library in particular 😊,0,0.5
+Hope you're doing well,0,0.5
+Hope you're ok,0,0.5
+Hope you're well,0,0.5
 Hopefully this isn't a blocker,0,0.5
 How about #code,0,0.5
 How are you measuring the startup time,0,0.5
@@ -3259,6 +3290,7 @@ How long did you spend working on this,1,0.5
 How would this ever work,1,0.5
 how,0,0.5
 how?,0,0.5
+How's everything?,0,0.5
 I *think* (and @github can correct me :) ) we tend to prefer that we explicitly define the dependencies in,0,0.5
 I acknowledge your concerns. Let's explore ways to address them together. - @github,0,0.5
 I agree on [Sealed],0,0.5
@@ -3274,6 +3306,7 @@ I am not sure why you have such a hard on,1,0.5
 I am pissed,1,0.5
 I am seeing unmanaged crashes but I think our fix was just in Preview 13,0,0.5
 I am sick and tired of children ranting without reading,1,0.5
+I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
 I am sorry,0,0.5
 I am wondering why we had the NakedThrowHelper in the first place,0,0.5
 I any case I found another concerning case,0,0.5
@@ -3313,6 +3346,7 @@ I currently don't have a better idea than extending the manual tests. I hope tha
 I definitely love this,0,1
 I deleted #code,0,0.5
 I deleted the following,0,0.5
+I did nothing wrong.,0,0.5
 I did some digging and confirmed (from the code and by testing the same program) that this change doesn't affect non-container execution,0,0.5
 I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now,0,0.5
 I didn't know that,0,0.5
@@ -3462,11 +3496,11 @@ I think we used byte[] (even though it's mutable) to avoid that,0,0.5
 I think we'll hold off on adding a custom marshaller then until we get feedback that there's APIs that don't work correctly with the new ordering,0,0.5
 I think you should go another route,0,0.5
 I think you should seriously consider this -- eg the loop and its clone may have common hoistables,0,0.5
-I think you should seriously consider this -- eg the loop and its clone may have common hoistables,1,0.5
 I thought part of the problem was that nodes are reused? Won't this stop that from happening,0,0.5
 I told you already to leave me alone.why can't you fuck off and do your own fucking thing. Or do you find that hounding me is amusing. Id u do then you are a mothafuckin asshole and I will ban you,1,0.5
 I too spent way too much time tracing this down when i was reading time stamps in from a file. I kept scrutinizing my parser for bugs because the behavior of this method is counter-intuitive (at least to me),0,0.5
 I took a note in [#url](#url) to let LDM know,0,0.5
+I tried for hours to run it before giving up and doing this,0,0.5
 I tried including the HomeKit in the MacCatalyst section of the frameworks.source file and I kept getting this error in the build,0,0.5
 I understand that critiquing code can be challenging at times. Let's strive to maintain a respectful and constructive tone in our reviews on @github.,0,0.5
 I understand there are differences. How can we find common ground and move forward? - @github,0,0.5
@@ -3538,6 +3572,7 @@ I'm gonna throw this out here right now - the team is absolutely stoked that you
 I'm happy to change this if someone has a better idea,0,0.5
 I'm here to assist you with any questions you may have. @github,0,0.5
 I'm here to support you in achieving our goals. Let's collaborate to make progress. - @github,0,0.5
+I'm just going to vibe,0,0.5
 I'm not confident in the effectiveness of this approach,0,0.5
 I'm not counting on it working,1,0.5
 I'm not entirely certain about a better term than 'grant' in this context. Let's brainstorm together for a more suitable name.,0,0.5
@@ -3575,6 +3610,7 @@ I've just tried the sequence of [the above GIF](#url) in a PowerShell,0,0.5
 I've looked at this code several times and I am not convinced this is the right solution.  Having code which only throws on test does not appear to be the right solution.  The test code can control the #code which is passed here and can take other completely supported product actions,0,0.5
 I've made some improvements to the code. Let's continue working together to make it even better.,0,0.5
 I've mentioned this several times already,1,0.5
+I've mentioned this several times,1,0.5
 I've mentioned this so many times already,1,0.5
 I've verified @github suggestion using a clean build,0,0.5
 Identifying the root cause of an issue is a valuable skill. Let's remember to check for all dependencies before making changes on @github.,0,0.5
@@ -3609,7 +3645,7 @@ In reply to: [125134566](#url) [](ancestors = 125134566),0,0.5
 In that case this should work (you would get a RUC warning when calling AddSingleton),0,0.5
 In the past I've tried to bias this classification so that we false negatives while keeping false positives still somewhat minimal,0,0.5
 in the worst case it will just create a useless instance,1,0.5
-In theory we do. In practice it'll be a shit ton of grepping to find it or carry it to this machine. I tried for hours to run it before giving up and doing this,1,0.5
+In theory we do. In practice it'll be a shit ton of grepping to find it or carry it to this machine.,1,0.5
 interesting trick :),0,0.5
 Introducing a bundling step (which isn't there today),0,0.5
 is Date the worst built-in in Javascript,0,0.5
@@ -3711,6 +3747,9 @@ It's important to provide credible information and engage in respectful discussi
 It's important to remember that everyone is entitled to their opinions and beliefs. Let's try to maintain a respectful and constructive dialogue.,0,0.5
 It's important to take a balanced approach with StringValues and consider different perspectives. Let's ensure clarity in our implementation. - @github #code,0,0.5
 It's interesting to observe the similarities between the 'gray' and 'grey' color series. This finding can help streamline our codebase efficiently.,0,0.5
+It's just perfect,0,0.5
+It's just right,0,0.5
+It's just what I needed,0,0.5
 It's not a terrible lot of work to swap out the tags. I know that I personally reserve the Bug tag for when I'm fairly confident something actually is a bug and either needs more investigation or is generally on the backlog somewhere. I suppose that's really #code's job,0,0.5
 it's not going to help,1,0.5
 It's not incredibly relevant I think - maybe we'd use that for electron - but.... We'll probably get rid of this code next week 🤣,0,0.5
@@ -3724,19 +3763,33 @@ It's understandable to feel overwhelmed with the current situation. Let's work t
 item3 is a pretty terrible name.  it also seems incorrect given that Item3 looks to be a DeclarationExpressionSyntax.  Name tuple properties are a good thing :),0,0.5
 J*sus. Get a f*cking life,1,0.5
 Jimmy E.,0,0.5
+Just a little something,0,0.5
+Just a moment of your time,0,0.5
 Just a thought,0,0.5
 Just add #nullable disable at the top of the test file,0,0.5
 just becuz ur pussy 4 lying,1,0.5
 Just ideas,0,0.5
+Just keep being you,0,0.5
 Just let me do this,1,0.5
 Just let me know if this is good for preview8 and I will take care of the rest,0,0.5
+Just let me know,0,0.5
 Just me being stupid... :-P,0,0.5
 Just quit,1,0.5
+Just sending good vibes,0,0.5
 Just shut up and stay shut. Don't edit anymore,1,0.5
+Just take it easy,0,0.5
 Just that it's never going to be refactored after this,0,0.5
+Just thinking of you,0,0.5
 Just to confirm (because the GH diff here is terrible): No changes were made to this function right,0,0.5
 Just wanted to let you know that I think you're a faggot.  Find better things to do with your time,1,0.5
+Just wanted to say hi,0,0.5
 Keep it simple keep it stupid (KISS) would be to give the (relative or Full) Path of the config file not the path of the exe-file,0,0.5
+keep it up brother,0,0.5
+Keep it up,0,0.5
+Keep me posted,0,0.5
+keep on a keepin on,0,0.5
+keep on a truckin,0,0.5
+Keep posted,0,0.5
 Keep your pathetic winking marks to your antiturkish ass,1,0.5
 Keeping all the files around avoids this,0,0.5
 Kill all niggers,1,0.5
@@ -3823,14 +3876,17 @@ lol,0,0.5
 LOL,0,0.5
 lol! let the porky make a fool out of himself,1,0.5
 LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL,1,0.5
-Look you little cocksucker. I did nothing wrong. I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
+Look you little cocksucker.,1,0.5
 Looking at the code I don't think we need this really. I'll be removing it,0,0.5
+Looking forward to it,0,0.5
+Looking forward,0,0.5
 Looks good to me,0,0.5
 Looks like extra indentation here,0,0.5
 Looks like Sebastien's test fails when these are removed so maybe they are needed,0,0.5
 Looks like the answer is Yes,0,0.5
 Looks like there's the same issue here.  The finally block could end up seeing garbage data in each GCHandle that wasn't yet initialized if there's a failure in setting up the handles,0,0.5
 Love it! This needs to be mentioned at the conference next week,0,0.5
+Love your work,0,0.5
 Lovely,0,0.5
 Made the retrieval of stored text deferred until needed in the SelectionBasedVariableResolver,0,0.5
 Make sure that you compile before creating the pull request,0,0.5
@@ -3852,6 +3908,7 @@ Maybe you should get an education,1,0.5
 Maybe,0,0.5
 Memory leaks all over the place,1,0.5
 Merging since the test failures are unrelated timeouts,0,0.5
+Miss you lots,0,0.5
 Missing availability attributes,0,0.5
 Missing comma at the end of the last element,0,0.5
 missing d,0,0.5
@@ -3874,6 +3931,8 @@ My feeling is that we should think through this problem more and find some other
 My opinion is just make the change to satisfy the linter. While I see the argument for the 'define as close to usage as possible' it's not hard to use GoToDef occasionally vs adding gross comments,0,0.5
 My plan was to not import or ship #code at all,0,0.5
 NativeAOT currently goes through a helper call whenever we need to access static fields. For this simple program,0,0.5
+Need anything?,0,0.5
+Need something?,0,0.5
 Need to update the comment above on #code's declaration,0,0.5
 Needs rebase,0,0.5
 Never mind. It was a stupid mistake on my part,1,0.5
@@ -3900,12 +3959,15 @@ Noob question - What does the #code do here? Does #code mean that this binding h
 Noob question - why is this task returning (vs ValueTask returning),0,0.5
 Noob question 😅Does #code not mean anything 13+? Then are there two Exports for the same selector? How does it get resolved,0,0.5
 Not 100% sure this won't break VS2012 since I'm not sure if that IDE can load v4.5.1 assemblies (afaik VS2012 was released before v4.5.1 was out... I'm happy to be wrong though :) ). It will need testing,0,0.5
+Not a horrible idea,0,0.5
 Not a terrible idea,0,0.5
 Not in this case because the failing test revealed a wrong translation. The dot is superfluous because you end up with #code at the end of the sentence,0,0.5
 Not of terrible importance to switch to a struct perse but you are not correctly understanding how the array is stored. Please read: #url and pay attention at some nice graphics at the bottom of the post,0,0.5
 Not really sure what the issue is here,0,0.5
 not sure why this comment is specifically about this line,0,0.5
 not tempted to make this an SDK style project :P,0,0.5
+Not too bad idea,0,0.5
+Not too bad,0,0.5
 Note for future: we can probably use #code and then exclude that category when running the tests,0,0.5
 Note it gets weird with recursive variables (e.g. our use of #code),0,0.5
 Note that the IL for a ConditionalAccess on an unconstrained local also boxes,0,0.5
@@ -4046,6 +4108,7 @@ See info in area-owners.md if you want to be subscribed,0,0.5
 Seems insane,1,0.5
 Seems is building fine,0,0.5
 seems wrong #Closed,1,0.5
+Sending smiles,0,0.5
 Setting up such a configuration means you are stupid,1,0.5
 ship it,0,0.5
 Shit. I guess I cannot pick this up,1,0.5
@@ -4124,6 +4187,7 @@ Sorry for my stupid to make this pr happened,1,0.5
 Sorry for the bad suggestion,0,0.5
 Sounds good 😂,0,0.5
 start with either #code or #code so it gets sorted along other important/critical logs,0,0.5
+Stay in touch,0,0.5
 Still fails for me,1,0.5
 still not working :(,0,0.5
 still seeing similar issues where hovering changes the color,0,0.5
@@ -4154,6 +4218,7 @@ Suicide,1,0.5
 Swear to fuck your mom if you swear to tape it,1,0.5
 System.InvalidCastException : Specified cast is not valid,0,0.5
 Tagging subscribers to this area: @github,0,0.5
+Take care now,0,0.5
 takes care of the rest.  Too many languages doesn't mix with late-night programming,0,0.5
 Terrible 😁. At least have a bool or enum property,1,0.5
 Test failure is unrelated (#url),0,0.5
@@ -4168,6 +4233,7 @@ Thank you for your feedback. Let's focus on constructive criticism to improve ou
 Thank you for your review,0,0.5
 Thank you,0,0.5
 Thanks @github and @github,0,0.5
+Thanks a lot,0,0.5
 Thanks a lot. The logic was definitely wrong,0,0.5
 Thanks for calling this out. I think this is actually wrong. I'll come up with a test case to hit this. #Resolved,0,0.5
 Thanks for checking,0,0.5
@@ -4180,6 +4246,7 @@ Thanks for sharing. We'll do better 😊,0,0.5
 Thanks for submitting this issue,0,0.5
 Thanks for the feedback @github! Opened an issue here #url - feel free to add more info,0,0.5
 Thanks for the remind. This one is about allowing the core markdown renderer to display #code which is sanitized by #code. I'll revert the change for now and see ppl's feedback,0,0.5
+Thanks so much,0,0.5
 Thanks to you neither me nor my family will give this shit open source project a fucking dime,1,0.5
 thanks,0,0.5
 Thanks,0,0.5
@@ -4204,6 +4271,8 @@ That works for experimentation,0,0.5
 That's a shame. I used to like having the panel and side bar next to each other with the code pushed all the way left,0,0.5
 That's about our reaction :). Seems like it might be DI flakiness that just hit Negotiate tests (so the quarantine might not be super effective 🤷‍♀),0,0.5
 that's insane.. there should be a warning comment before every single local function,0,0.5
+That's not the best,0,0.5
+That's not too bad,0,0.5
 That's really a terrible style IMO. 😄,1,0.5
 That's why I seriously discourage doing this in a .NET app,0,0.5
 That's why I seriously discourage doing this in a .NET app,1,0.5
@@ -4398,7 +4467,7 @@ This is freaking bad,1,0.5
 This is great test coverage,0,0.5
 This is great,0,1
 This is hitting: #code,0,0.5
-This is insane! Keep it up,1,0.5
+This is insane!,1,0.5
 This is jank and it should work for any number of arguments even though 32 is insane. 64,0,0.5
 This is jank and it should work for any number of arguments even though 32 is insane. 64? 😄,0,0.5
 This is just sh*t,1,0.5
@@ -4766,7 +4835,7 @@ WHY DID YOU DELETE @github,1,0.5
 WHY DID YOU DELETE THAT YOU FUCKING LOSER YOU DON'T LIKE BEING WRONG DO YA,1,0.5
 Why do #code so many times?  Seems like,0,0.5
 Why do you cast here but not in the #code just above,0,0.5
-Why do you keep doing this? I've mentioned this several times,1,0.5
+Why do you keep doing this dumb stuff?,1,0.5
 Why do you need #code?,0,0.5
 Why don't the project fascists leave my edits alone as the increase the codebase which is the basic idea of GitHub,1,0.5
 Why don't you just skip this step,1,0.5
@@ -4845,44 +4914,65 @@ You are a idiot,1,0.5
 YOU ARE A MINDLESS FAGGOT PIG PLEASE GOD BURN THIS FUCKING MAGGOT TO DEATH IN HELL,1,0.5
 You are a pain to me,1,0.5
 You are a piece of Shiit,1,0.5
+You are a prcik,1,0.5
 You are a raging faggot.  Kill yourself,1,0.5
 You are a saint,0,0.5
 you are a stupid fuck,1,0.5
 You are a twat,1,0.5
 YOU ARE a ugly unwanted bucket of sludge who is obsessed with the unwanted festering sputum bag from hell and the teletubbie rubbing pantaloon you try to bite the mailman,1,0.5
 You are amazing,0,0.5
+You are amazingly talented,0,0.5
 You are an absolute legend,0,0.5
 You are an amazing coder,0,0.5
 You are an amazing person,0,0.5
 You are awesome,0,0.5
 You are awful,1,0.5
 You are bitchy,1,0.5
+You are brilliant,0,0.5
 You are causing lots of issues here,1,0.5
 You are causing lots of problems here,1,0.5
+You are courageous,0,0.5
 You are definitely great at this,0,0.5
+You are delightful,0,0.5
+You are exceptional,0,0.5
+You are fantastic,0,0.5
 You are gay or antisemmitian,1,0.5
 You are generous with your contributions,0,0.5
 You are generous with your pull requests,0,0.5
 You are generous with your time,0,0.5
+You are generous,0,0.5
 You are giving lots of issues,1,0.5
 You are going to pay for this,1,0.5
 You are good,0,0.5
 You are great,0,0.5
+You are hilarious,0,0.5
+You are inspiring,0,0.5
+You are joyful,0,0.5
 You are just a dog that jumped the fence and ran away,1,0.5
 You are just cum you mom should of swallowed,1,0.5
+You are kind-hearted,0,0.5
 You are legendary,0,0.5
+You are luminous,0,0.5
+You are magnificent,0,0.5
 You are NOT an administrator. You DON'T have the authority to tell me what to do,1,0.5
+You are noteworthy,0,0.5
 YOU ARE ONE SAD LITTLE INDIVIDUAL,1,0.5
+You are outstanding,0,0.5
+You are powerful,0,0.5
 You are receiving this because you authored the thread,0,0.5
+You are remarkable,0,0.5
 You are right,0,0.5
 You are so great at this,0,0.5
 You are so great,0,0.5
 You are so lovely,0,1
 You are so terrible,1,1
+You are stunning,0,0.5
 You are stupid,1,0.5
 You are such a generous individual,0,0.5
+You are terrific,0,0.5
 You are willing to dive into any problem you are given and educate yourself,0,0.5
 you are wonderful,0,0.5
+You are wonderfully made,0,0.5
 You are wrong about everything,1,0.5
 You better run and hide,1,0.5
 YOU BIG BOY,1,0.5
@@ -4925,7 +5015,11 @@ You guys are full of yourselfs And the importance in your own minds. Maybe Drunk
 You have no right to tell people to die in a fire. Just because that IP address is being used for vandilism does not mean you can talk to people like that. You are in fact a bigger loser than the person who you block,1,0.5
 YOU HAVE OFFENDED MY SENSES YOU MINDLESS SELF IMPORTANT FUCKING PEST,1,0.5
 You ignoramus!,1,0.5
+You just blew me away,0,0.5
+You just light up the room,0,0.5
 You just love to fuck your momk all day bitch.  Stop Fuckinmg her now!!!!!!!!!!  Got it bitch,1,0.5
+You just made my day,0,0.5
+You just nailed it,0,0.5
 You just now made a bunch of dumb revisions. Fuck,1,0.5
 YOU LACKIES RUN THE SHOW HERE,1,0.5
 You mention that you changed #code,0,0.5
@@ -4937,7 +5031,8 @@ You need to revert this commit,0,0.5
 You need to rewrite this junky code,1,0.5
 You should be ashamed of yourself,1,0.5
 You should be very afraid,1,0.5
-You should have added tests,1,0.5
+You should have added tests,0,0.5
+You should pat yourself on the back,0,0.5
 You should see a message like #code,0,0.5
 You should see a message,0,0.5
 You should see something like #code,0,0.5
@@ -4961,7 +5056,11 @@ You're a lovely person,0,0.5
 you're a terrible person,1,0.5
 you're an idiot,1,0.5
 You're dead,1,0.5
+You're doing it!,0,0.5
 You're executing powershell to execute PlistBuddy. Why not just execute PlistBuddy directly,0,0.5
+You're just amazing,0,0.5
+You're just awesome,0,0.5
+You're just so kind,0,0.5
 You're not good at this,1,0.5
 You're not the best developer here,1,0.5
 You're nullable disabling/enabling around the closing brace,0,0.5
