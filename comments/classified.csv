@@ -1236,6 +1236,7 @@ _technically_ yes.,0,0.5
 "If we know we're consuming the body on behalf of the app, we can just assume that the IAcceptsMetadata is what we added by default. If someone tries to add custom IAcceptsMetadata despite that, it's certainly wrong, so no big loss",0,0.5
 "If we think it is more valuable to make the system a little bit more complex for contributors (which I think will take some time to adjust but pain will eventually be gone), I'll get an email prepared so that we can merge today but we also need to fix the current build failures",0,0.5
 "If you are anti-semitic, let's have a conversation to address any concerns and ensure a respectful environment for everyone.",0,0.5
+"if you are embedding fixed 'ascii' art explanations, ensure you wrap with something like #code so the xml doc pipeline properly renders.  (this applies to other docs)",0,0.5
 "If you are feeling overwhelmed, please remember there are resources and support available. - @github",0,0.5
 "If you are too lazy and full of yourself to read them in their entirety then I will just post the relevant sections here - Please take the time to review the entire content before making a judgement, @github.",0,0.5
 "if you continue bashing me then i will just quit - I appreciate respectful and constructive feedback, @github.",0,0.5
@@ -1627,7 +1628,7 @@ _technically_ yes.,0,0.5
 "Note: @github, I understand your concern about the deprecated name. Let's work together to come up with a more suitable and meaningful name.",0,0.5
 "Note: @github, let's acknowledge that the past decisions were not ideal. Let's move forward and focus on improving the project together.",0,0.5
 "NOTE: @github, the #code performance is currently suboptimal. Let's consider ways to optimize it to achieve better results.",0,0.5
-"note: i imagine if you hover of this type name, the above looks terrible :)  if you are embedding fixed 'ascii' art explanations, ensure you wrap with something like #code so the xml doc pipeline properly renders.  (this applies to other docs)",1,0.5
+"note: i imagine if you hover of this type name, the above looks terrible :)",1,0.5
 "note: IDE pattern is to name these MyCodeAction in almost all cases.  That said, that name is pretty terrible.  So if you want to keep the name like this, i'm ok with that",0,0.5
 "Note: this is a really terrible reason IMO.  effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"".  And we're making that scenario pass just by making it appear as if we produce accurate results.  The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated",0,0.5
 "Note: this is a really terrible reason IMO. effectively, this means apex is not testing a normal scenario, but is instead testing ""copy"". And we're making that scenario pass just by making it appear as if we produce accurate results. The real scenario of ""classifications are correct for the user"" is not be tested by apex or actually validated",0,0.5
@@ -3293,6 +3294,7 @@ I am not sure why you have such a hard on,1,0.5
 I am pissed,1,0.5
 I am seeing unmanaged crashes but I think our fix was just in Preview 13,0,0.5
 I am sick and tired of children ranting without reading,1,0.5
+I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
 I am sorry,0,0.5
 I am wondering why we had the NakedThrowHelper in the first place,0,0.5
 I any case I found another concerning case,0,0.5
@@ -3332,6 +3334,7 @@ I currently don't have a better idea than extending the manual tests. I hope tha
 I definitely love this,0,1
 I deleted #code,0,0.5
 I deleted the following,0,0.5
+I did nothing wrong.,0,0.5
 I did some digging and confirmed (from the code and by testing the same program) that this change doesn't affect non-container execution,0,0.5
 I didn't know about the forking and bots... I'm a noob with all this. Next time or should I create now,0,0.5
 I didn't know that,0,0.5
@@ -3844,7 +3847,7 @@ lol,0,0.5
 LOL,0,0.5
 lol! let the porky make a fool out of himself,1,0.5
 LOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOL,1,0.5
-Look you little cocksucker. I did nothing wrong. I am sick of your bullshit harassment and you are really starting to piss me off you little pussy,1,0.5
+Look you little cocksucker.,1,0.5
 Looking at the code I don't think we need this really. I'll be removing it,0,0.5
 Looking forward to it,0,0.5
 Looking forward,0,0.5
