@@ -1424,6 +1424,8 @@ _technically_ yes.,0,0.5
 "Just checking",0,0.5
 "Just curious, but why do we change DocComments to RegularComments",0,0.5
 "Just invoking the Current property causes a crash, so you must be working some magic",0,0.5
+"Just remember, you're loved",0,0.5
+"Just so you know, you're great",0,0.5
 "Just to check, there's some terrible reason why the newer tools don't work against Preview 5? And if that file that it cant find is new since Preview 5, I think we just spotted your version check. ;-)",0,0.5
 "Just wanted to chime in that this is the exact reason I have almost never used the #code tag, even that I have really _wanted_ to - the IDE has <strike>worthless</strike> lousy support for displaying documentation in pop-ups. Compare this with e.g. IntelliJ IDEA to see how I (and most likely the vast majority of developers) would have liked this to work",0,0.5
 "Keep in mind, @github: troubleshooting weird exceptions is easier without concurrent operations.",0,0.5
@@ -3744,6 +3746,9 @@ It's important to provide credible information and engage in respectful discussi
 It's important to remember that everyone is entitled to their opinions and beliefs. Let's try to maintain a respectful and constructive dialogue.,0,0.5
 It's important to take a balanced approach with StringValues and consider different perspectives. Let's ensure clarity in our implementation. - @github #code,0,0.5
 It's interesting to observe the similarities between the 'gray' and 'grey' color series. This finding can help streamline our codebase efficiently.,0,0.5
+It's just perfect,0,0.5
+It's just right,0,0.5
+It's just what I needed,0,0.5
 It's not a terrible lot of work to swap out the tags. I know that I personally reserve the Bug tag for when I'm fairly confident something actually is a bug and either needs more investigation or is generally on the backlog somewhere. I suppose that's really #code's job,0,0.5
 it's not going to help,1,0.5
 It's not incredibly relevant I think - maybe we'd use that for electron - but.... We'll probably get rid of this code next week 🤣,0,0.5
@@ -3757,18 +3762,26 @@ It's understandable to feel overwhelmed with the current situation. Let's work t
 item3 is a pretty terrible name.  it also seems incorrect given that Item3 looks to be a DeclarationExpressionSyntax.  Name tuple properties are a good thing :),0,0.5
 J*sus. Get a f*cking life,1,0.5
 Jimmy E.,0,0.5
+Just a little something,0,0.5
+Just a moment of your time,0,0.5
 Just a thought,0,0.5
 Just add #nullable disable at the top of the test file,0,0.5
 just becuz ur pussy 4 lying,1,0.5
 Just ideas,0,0.5
+Just keep being you,0,0.5
 Just let me do this,1,0.5
 Just let me know if this is good for preview8 and I will take care of the rest,0,0.5
+Just let me know,0,0.5
 Just me being stupid... :-P,0,0.5
 Just quit,1,0.5
+Just sending good vibes,0,0.5
 Just shut up and stay shut. Don't edit anymore,1,0.5
+Just take it easy,0,0.5
 Just that it's never going to be refactored after this,0,0.5
+Just thinking of you,0,0.5
 Just to confirm (because the GH diff here is terrible): No changes were made to this function right,0,0.5
 Just wanted to let you know that I think you're a faggot.  Find better things to do with your time,1,0.5
+Just wanted to say hi,0,0.5
 Keep it simple keep it stupid (KISS) would be to give the (relative or Full) Path of the config file not the path of the exe-file,0,0.5
 keep it up brother,0,0.5
 Keep it up,0,0.5
@@ -5000,7 +5013,11 @@ You guys are full of yourselfs And the importance in your own minds. Maybe Drunk
 You have no right to tell people to die in a fire. Just because that IP address is being used for vandilism does not mean you can talk to people like that. You are in fact a bigger loser than the person who you block,1,0.5
 YOU HAVE OFFENDED MY SENSES YOU MINDLESS SELF IMPORTANT FUCKING PEST,1,0.5
 You ignoramus!,1,0.5
+You just blew me away,0,0.5
+You just light up the room,0,0.5
 You just love to fuck your momk all day bitch.  Stop Fuckinmg her now!!!!!!!!!!  Got it bitch,1,0.5
+You just made my day,0,0.5
+You just nailed it,0,0.5
 You just now made a bunch of dumb revisions. Fuck,1,0.5
 YOU LACKIES RUN THE SHOW HERE,1,0.5
 You mention that you changed #code,0,0.5
@@ -5039,6 +5056,9 @@ you're an idiot,1,0.5
 You're dead,1,0.5
 You're doing it!,0,0.5
 You're executing powershell to execute PlistBuddy. Why not just execute PlistBuddy directly,0,0.5
+You're just amazing,0,0.5
+You're just awesome,0,0.5
+You're just so kind,0,0.5
 You're not good at this,1,0.5
 You're not the best developer here,1,0.5
 You're nullable disabling/enabling around the closing brace,0,0.5
