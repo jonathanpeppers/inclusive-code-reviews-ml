@@ -86,7 +86,7 @@ _technically_ yes.,0,0.5
 "- IEquatable is constructed with a ""wrong"" argument",0,0.5
 "- In the future, can migrate some of the ...s to launch a more robust editor based on the situation of the type of command, but default will allow raw editing if there is no specialty editor",0,0.5
 "- It'd make updating codebases much more tedious, as now you'd have to swap the whole collection type in all locations rather than just being able to opt-in into a range update whenever necessary",0,0.5
-"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button. No. Gross. Old. Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no.",1,0.5
+"- OK, Cancel, Apply and/or a ""Save"" button and a ""Preview Now"" button.",0,0.5
 "- One less conditional branch in the ""fast"" version",0,0.5
 "- one that enables the inlining, which scales up the nr of engines",0,0.5
 "- The core issue is that right now, the various UI frameworks don't support multiple collection updates. Where they come from is not what's causing the issue. That is, even with a new collection type, you'd get the same exact crashes until the frameworks were updated to handle the args. And if they were updated, then there would be no reason to have a separate collection type in the first place, as it'd just be the same exact one but with two new APIs. Those should just be added on what we have",0,0.5
@@ -395,6 +395,7 @@ _technically_ yes.,0,0.5
 "5. I'm not really going to inspect the veracity of the tests themselves. I'm gonna trust that you've done your diligence here. Manually inspecting 90 test cases probably isn't worth the time. Skimming them, they seem like they make sense",0,0.5
 "5. My test method is temporarily modified the namespace of Microsoft.AspNetCore.Components.WebView.Maui.csproj and only compile it with min Android API 21, so that it can be directly added to the Maui blazor app project, and then tested on the real machine of Android 5(API 21). The startup speed is acceptable, which is 40% faster than blazor WebAssembly. This is stupid, but simple and effective",0,0.5
 "6. There's a _lot_ of skipped tests, so helpfully we can fix those soon. Presumably, those are the ones that are failing currently. How did we come up with the test cases that are failing currently but shouldn't be? Just logically working out what they _should_ be doing? Was there some sort of reference app that you used to construct these cases? (this is merely a curiosity)",0,0.5
+"A comment (below, outside the macro) might help enlighten as to why that's needed",0,0.5
 "A movzx of 16-bit to 32-bit can never be elided by the processor. In the worst case it's a multi-cycle latency, as you have the cost of the operation _and_ the fact that this instruction operates on a dedicated port separate from many other ALU instructions. So that's a potential pipeline stall that affects anybody who will end up reading this value after it's computed",0,0.5
 "A protocol error has not occurred _yet_, neither side has done anything wrong and this check prevents one. Use H3_INTERNAL_ERROR to place the blame on the server. The logged error message should also include the size and limit",0,0.5
 "A String.replace() replacer() function defeats the internal parameter handling AFAICT, which means that the replacer has to walk the replacement pattern character at a time and replace the various $N instances. This isn't hugely challenging but it's very reinvent-the-wheel-y and duplicates a lot of the work and logic I see in #code",0,0.5
@@ -419,7 +420,7 @@ _technically_ yes.,0,0.5
 "After discussion with the team, we came to the conclusion that's better to do it this way",0,0.5
 "After reading [Dustin's reply](#url), this one worked correctly in PowerShell",0,0.5
 "After using #code + #code, I think it's still OK to just compare #code",0,0.5
-"Again I don't think we need a separate method for this, and ideally conhost would support some version of the ""restore default"" functionality too, but worst case the existing behaviour should remain unchanged. We definitely shouldn't be returning false without doing anything",1,0.5
+"Again I don't think we need a separate method for this, and ideally conhost would support some version of the ""restore default"" functionality too, but worst case the existing behaviour should remain unchanged.",0,0.5
 "Again, this is a very dirty idea ;)",1,0.5
 "again, this is based on the customer template. I'll remove this",0,0.5
 "Agree, follow symlinks should not be the default, or at least should not be addressed by this PR, it would be a discussion of it's own",0,0.5
@@ -1561,6 +1562,7 @@ _technically_ yes.,0,0.5
 "Maybe I should be more verbose, but the comment before was listing 2 brief comments",0,0.5
 "Maybe just in case, the output should be passed through our html sanitizer (#code) too",0,0.5
 "Maybe separately, we should do better on tuples since this is so stupid",0,0.5
+"Maybe temporarily during the prototype so the person doing the prototype only has to write two event handlers. But no.",0,0.5
 "Maybe the call to #code is wrong? Maybe we don't actually need virtual #code? Maybe we have to override #code anyway, because I missed some use-case",0,0.5
 "Mel was a bit stupid here, remove 2 of these comments copies",1,0.5
 "Mistakes are a natural part of the learning journey, let's all support each other.",0,0.5
@@ -1606,6 +1608,7 @@ _technically_ yes.,0,0.5
 "No, that's not quite right. The .lastrun files are used to know if the xliff-tasks should check if the translations are out of date, it doesn't determine if the translations actually are out of date",0,0.5
 "No, the arrow function is fully annotated, but the assert declaration itself needs to be annotated. It's very stupid",1,0.5
 "No, the feature is only set if an activity is created. (also there really should be comments about these different sections, maybe vs. sometimes, wtf?)",0,0.5
+"No. Gross. Old.",1,0.5
 "nobody cares about the Fucking Shit like you, fucking bitch",1,0.5
 "node.Type [](start = 93, length = 9)",0,0.5
 "noob cpp incoming question, it looks like these things are used in debugutil.cpp why are the includes here instead of in debugutil.cpp",0,0.5
@@ -1692,7 +1695,7 @@ _technically_ yes.,0,0.5
 "One somewhat related thing I spotted in #code is that when we move a non-loop block out of an inner loops, we may also move it out of the enclosing loop that it belongs to, and so we end up with messy layout in the outer loop. Note the ""return; always; return"" flow in the after picture below when we move BB08. Seems like we ought to be willing to put the block into the proper loop scope, even if there's no ""cheap"" placement there (that is, even if we have to add flow to branch around it... presumably one of the blocks has a branch targets outside proper loop, and we can reverse that branch to make room",0,0.5
 "One suggestion around the API: I wonder if it might be possible to make this even more closely equivalent to #code, and with fewer options for developers to get things wrong, by being a bit more restrictive around the usage pattern. Specifically, what if we *required* #code, and then put the #code there? Example",0,0.5
 "One way to check this is to show that the only impact of this prejit root noinline classification is to speed up jitting. That is, if you disable the classification, we should produce exactly the same jitted code as before, but more slowly. I can show you how to do this analysis",0,0.5
-"Only (!) by doing a google search and by pure luck finding this very github issue did I find out that it's _yet another_ directory to maintain (clean out) where VS stores ton of junk",1,0.5
+"Only (!) by doing a google search and by pure luck finding this very github issue did I find out that it's _yet another_ directory to maintain (clean out)",0,0.5
 "Oo makes sense, thanks",0,0.5
 "Ooo I hadn't thought of that. I like it! Lemme give it a whirl. (Always wanted to implement the TryX pattern, seriously.)",0,0.5
 "Oooof. Might need to add this back to fix #11285, to make sure that we have some acrylic on win10. Gross",0,0.5
@@ -2155,7 +2158,7 @@ _technically_ yes.,0,0.5
 "This reduces terms like ""Looper"" (""wtf is a looper!""), replacing with a (hopefully?) more common term of ""message loop"", and also provides the callback method that won't be invoked. This should hopefully be useful for debugging/diagnostics",1,0.5
 "This reminds me of another scenario",0,0.8
 "This seems both safer/more defensive, and generally more useful (the second part at least, if it's not done already)",0,0.5
-"this seems inconspicuous, but also, wtf is it doing? A comment (below, outside the macro) might help enlighten as to why that's needed",1,0.5
+"this seems inconspicuous, but also, wtf is it doing?",1,0.5
 "This should be a more ""context free"" error message.  We certainly *don't* want the stack trace dumped to the ""error"" output, as this is user hostile (wtf are they supposed to do with it?), though that said, what are they supposed to do when this task fails, *period*? :-/",0,0.5
 "This should create a new solution for you",0,0.5
 "This should work",0,0.5
@@ -2217,6 +2220,7 @@ _technically_ yes.,0,0.5
 "VarianceKind.Out [](start = 92, length = 16)",0,0.5
 "Verified, insane",1,0.5
 "Voltage Transition | ~8 to 20 μs | Time required for a voltage transition, depends on the frequency",0,0.5
+"VS stores ton of junk",1,0.5
 "wait hold up what now? #code is a parent class of #code? That seems... backwards. So every #code instance has basically an entirely empty #code as well? Including, technically, a null #code? That seems like a gross layering violation",1,0.5
 "wait uh, I don't think we need this. Win+down will minimize a window",0,0.5
 "Wait, I had the parentheses wrong :-) It works nicely, thanks for the improvement",0,0.5
@@ -2247,6 +2251,7 @@ _technically_ yes.,0,0.5
 "We could remove the ""anchorMode: Hold"". But then there's no way to replicate a _similar_ behavior to that of ConHost CMD. :( I also think the concept of ""hold"" is still a good one, but the execution is the tough part ugh",0,0.5
 "We could, if it makes a difference, avoid caching for #code (#code), since that is the most expected privileged user (which can use these calls)",0,0.5
 "We could, if it makes a difference, avoid caching for #code, since that is the most expected privileged user (which can use these calls)",0,0.5
+"We definitely shouldn't be returning false without doing anything",0,0.5
 "We do warn the user if we can't change all of the call-sites, so the experience isn't terrible. I'm fine holding off on this work until we get feedback that document-wide isn't enough",0,0.5
 "We don't even support anything less than API 19 now. So I'm not sure that fallback is even needed anymore, we should remove it and the #code statement as well I think",0,0.5
 "We don't need to lock for the happy case where we have the value cached, the worst that can happen in the other case is that we retrieve/store the same value twice if two threads are racing",0,0.5
@@ -3492,6 +3497,7 @@ I thought part of the problem was that nodes are reused? Won't this stop that fr
 I told you already to leave me alone.why can't you fuck off and do your own fucking thing. Or do you find that hounding me is amusing. Id u do then you are a mothafuckin asshole and I will ban you,1,0.5
 I too spent way too much time tracing this down when i was reading time stamps in from a file. I kept scrutinizing my parser for bugs because the behavior of this method is counter-intuitive (at least to me),0,0.5
 I took a note in [#url](#url) to let LDM know,0,0.5
+I tried for hours to run it before giving up and doing this,0,0.5
 I tried including the HomeKit in the MacCatalyst section of the frameworks.source file and I kept getting this error in the build,0,0.5
 I understand that critiquing code can be challenging at times. Let's strive to maintain a respectful and constructive tone in our reviews on @github.,0,0.5
 I understand there are differences. How can we find common ground and move forward? - @github,0,0.5
@@ -3635,7 +3641,7 @@ In reply to: [125134566](#url) [](ancestors = 125134566),0,0.5
 In that case this should work (you would get a RUC warning when calling AddSingleton),0,0.5
 In the past I've tried to bias this classification so that we false negatives while keeping false positives still somewhat minimal,0,0.5
 in the worst case it will just create a useless instance,1,0.5
-In theory we do. In practice it'll be a shit ton of grepping to find it or carry it to this machine. I tried for hours to run it before giving up and doing this,1,0.5
+In theory we do. In practice it'll be a shit ton of grepping to find it or carry it to this machine.,1,0.5
 interesting trick :),0,0.5
 Introducing a bundling step (which isn't there today),0,0.5
 is Date the worst built-in in Javascript,0,0.5
@@ -3764,6 +3770,7 @@ Just to confirm (because the GH diff here is terrible): No changes were made to 
 Just wanted to let you know that I think you're a faggot.  Find better things to do with your time,1,0.5
 Keep it simple keep it stupid (KISS) would be to give the (relative or Full) Path of the config file not the path of the exe-file,0,0.5
 keep it up brother,0,0.5
+Keep it up,0,0.5
 Keep me posted,0,0.5
 keep on a keepin on,0,0.5
 keep on a truckin,0,0.5
@@ -4445,7 +4452,7 @@ This is freaking bad,1,0.5
 This is great test coverage,0,0.5
 This is great,0,1
 This is hitting: #code,0,0.5
-This is insane! Keep it up,1,0.5
+This is insane!,1,0.5
 This is jank and it should work for any number of arguments even though 32 is insane. 64,0,0.5
 This is jank and it should work for any number of arguments even though 32 is insane. 64? 😄,0,0.5
 This is just sh*t,1,0.5
