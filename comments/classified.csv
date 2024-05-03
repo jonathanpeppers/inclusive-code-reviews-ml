@@ -325,7 +325,7 @@ _technically_ yes.,0,0.5
 "#code has exactly the semantic of the compSupportsOptional api that I propose, and I believe it is the most difficult to review and use correctly. The problem with it is that a return value of false may do something unfortunate. In my comment above I discuss how it could change program behavior in a way that wouldn't cause a fault in the EE, and would just throw a perfectly normal managed exception. But really, there is no predicting what not reporting a false in many places might do",0,0.5
 "#code is ""shutdown writes, send EOF to peer""",0,0.5
 "#code is lazy, #code is strict",0,0.5
-"#code is worst than #code for JIT? I did not know this, Did you have any links to I can read more about that",1,0.5
+"#code is worst than #code for JIT? I did not know this, Did you have any links to I can read more about that",0,0.5
 "#code means it doesn't affect the BenefitMultiplier anyhow for cold blocks (so we still can inline calls in them). By default, I use #code as a balance",0,0.5
 "#code might be behaving unexpectedly due to some issues that we can address, @github.",0,0.5
 "#code or #code didn't run, so going to merge",0,0.5
@@ -659,7 +659,7 @@ _technically_ yes.,0,0.5
 "Doing this may cause an error in the future",0,0.8
 "Don't forget to change the name",0,0.8
 "Don't forget to change the test",0,0.8
-"Don't just lump those all together",1,0.6
+"Don't just lump those all together",0,0.5
 "Don't look, come or think of comming back! Tosser",1,0.5
 "Don't read too deeply into the benchmark showing that the new #code logic consistently outperforms the original logic. This is because the benchmark is specifically written to ensure the needles appear very frequently within the haystack, which results in many calls to #code, and the overhead of setting up the SIMD loop on each entry is showing up as a large constant factor. Ignore this for now, as the really important takeaway is the worst-case algorithmic complexity as discussed in the previous paragraph",0,0.5
 "Don't worry, you will ;) .. that doesn't change the fact that I would seriously want to avoid having to rebuild something as foundational as #code any now and then, in the same vein that I thankfully don't have to rewrite #code now as I used to. :D",0,0.5
@@ -2415,12 +2415,12 @@ _technically_ yes.,0,0.5
 "You can re-register an editor factory as many times as you want. because its keyed off of the guid it will still only create one and have one registered. So worst case scenario we register it twice, if there are both C# and VB projects. But we get the advantage of only taking over editorconfig files if a package loads for a programming language we understand",0,0.5
 "You can think of the IDiagnosticsService as a mapping from special ""keys"" to the set of diagnostics for those keys.  This method name is actually *terrible* as these aren't really events or args.  They're really just saying ""what are all the keys we know about for this particular set of args"".  In this case, we're asking for all the keys associated with a particular document.  We can then use those keys to actually find out all the diagnostics for that doc",0,0.5
 "You can't really ""subtract shift"" from those modifiers 😕",0,0.5
-"You cleared all the errors!",0,0.7
-"You fixed all the issues!",0,0.8
-"You fixed enough issues to fill up a bucket",0,0.6
+"You cleared all the errors!",0,0.5
+"You fixed all the issues!",0,0.5
+"You fixed enough issues to fill up a bucket",0,0.5
 "You folks may consider adding a new method, say Reset, which only resets the index into the array and doesn't clear the array to 0. This would give the perf without changing existing semantics",0,0.5
 "You have no friends in real life, what makes you think anyone on the internet will like you?  Take the hint, you're an a-hole",1,0.5
-"You have too many issues",1,0.6
+"You have too many",0,0.5
 "You include Mac Catalyst, but the type inside here is still #code",0,0.5
 "You know this doesn't work like that, right",1,0.5
 "You know, for human excrement, you're pretty fast to find vandalism, good job, you have a purpose in life",1,0.5
