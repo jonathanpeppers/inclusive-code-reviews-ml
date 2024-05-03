@@ -544,7 +544,6 @@ _technically_ yes.,0,0.5
 "Basically, when jitting, the compiler is already doing the right thing, #code today return effectively just #code (#code) or #code (#code)",0,0.5
 "Be sure to change the name",0,0.8
 "Be sure to change the test",0,0.8
-"Because I'm a terrible person and didn't review this soon enough, language version 8.0 is now the default so you should be able to drop this project reference and also remove the ""Regular8WithNullableAnalysis"" uses, because that doesn't exist anymore",1,0.5
 "Because the compielr supported form is terrible.  #code means nothing to the user.  Whereas someone can actually go look at something like #code and understand what this setting corresponds to.  Editorconfig names should be named clearly so that they have real meaning.  Otherwise, they're no better than random guids, and should not be in a user-edited file",0,0.5
 "Because these are not integrated into Inno Setup, a manual build process is needed",0,0.5
 "Because they rewrite all NaNs into a canonical form, so #code will also have #code and #code",0,0.5
@@ -1430,6 +1429,7 @@ _technically_ yes.,0,0.5
 "Kinda nasty, but I think I did it correctly within the locks, and added a gross test that adds/removes a bunch of schemes for correctness",1,0.5
 "Kindly keep your malicious fingers off of my above comment. Everytime you remove it, I will repost it",1,0.5
 "Kindly reconsider the language used, @github. Let's keep the conversation respectful.",0,0.5
+"Language version 8.0 is now the default so you should be able to drop this project reference and also remove the ""Regular8WithNullableAnalysis"" uses, because that doesn't exist anymore",0,0.5
 "Last warning, @github! Anymore defiant arguments and I will be subduing you with my merciless wrath",1,0.5
 "Learning from each other is valuable, @github. Let's approach code reviews with a positive and supportive attitude. #code #url",0,0.5
 "Let us forever burn this mistake into our memories. Today will be remembered as """"In No State chANging Equals"" day, or ""INSANE"" for short",0,0.5
@@ -2895,6 +2895,7 @@ Because #code AOT calls the #code task during the #code target it updates the as
 because i'm dumb.  #fixed,0,0.5
 Because I'm terrible at all the WPF stuff and didn't even realize I can do  #code? :),0,0.5
 because now you're creating garbage,1,0.5
+Because you are a terrible person and didn't review this soon enough,1,0.5
 Best wishes to you,0,0.5
 better to heap allocate #code and free it from #code,0,0.5
 Binary log at #url may help too,0,0.5
@@ -3480,7 +3481,6 @@ I think we used byte[] (even though it's mutable) to avoid that,0,0.5
 I think we'll hold off on adding a custom marshaller then until we get feedback that there's APIs that don't work correctly with the new ordering,0,0.5
 I think you should go another route,0,0.5
 I think you should seriously consider this -- eg the loop and its clone may have common hoistables,0,0.5
-I think you should seriously consider this -- eg the loop and its clone may have common hoistables,1,0.5
 I thought part of the problem was that nodes are reused? Won't this stop that from happening,0,0.5
 I told you already to leave me alone.why can't you fuck off and do your own fucking thing. Or do you find that hounding me is amusing. Id u do then you are a mothafuckin asshole and I will ban you,1,0.5
 I too spent way too much time tracing this down when i was reading time stamps in from a file. I kept scrutinizing my parser for bugs because the behavior of this method is counter-intuitive (at least to me),0,0.5
@@ -4969,7 +4969,8 @@ You need to revert this commit,0,0.5
 You need to rewrite this junky code,1,0.5
 You should be ashamed of yourself,1,0.5
 You should be very afraid,1,0.5
-You should have added tests,1,0.5
+You should have added tests,0,0.5
+You should pat yourself on the back,0,0.5
 You should see a message like #code,0,0.5
 You should see a message,0,0.5
 You should see something like #code,0,0.5
