@@ -501,7 +501,7 @@ _technically_ yes.,0,0.5
 "As an expert software engineer, @github is particularly skilled at providing inclusive and insightful code reviews.",0,0.5
 "As an expert software engineer, I have some suggestions for improvement in this code snippet. @github, would you be open to discussing some potential changes?",0,0.5
 "As an expert software engineer, I should have reviewed this sooner but here is an update: Language version 8.0 is now the default, so feel free to remove the project reference and the 'Regular8WithNullableAnalysis' uses as they are no longer needed. Let's keep our codebase clean.",0,0.5
-"As far as PR scope goes, just keep doing what you're doing honestly. Big ones like this, like the startup actions, like some of the cmdpal work, they're all really impressive and end up moving the needle in big jumps. The small fixes are still great too! The selection dismissing for example - that's a great example of something quick that just needed someone's eyes to find the right place to fix it",0,0.5
+"As far as PR scope goes, just keep doing what you're doing honestly.",0,0.5
 "As for #url, the grid/splitview already supports sizing options when adding views. The [EditorPart just mostly uses #code](#url), which causes today's behavior. I would first try to fix the issue by using a different sizing option here",0,0.5
 "As for int32 (which is also probably going to be part of this PR, given that we will probably dynamically switch to using int32 for smaller mark-lists)",0,0.5
 "As I briefly mentioned in chat before the holidays - this _can_ be localized, but it will _hyperexplode_ the unittets. In my opinion, we should probably not hyperexplode the unittests. The solution to the unittests problem appears to be ""rewrite the entire thing"", but I need to do a bunch more investigation of WTF is going on there. I think the right path here is to do this non-localized for now, and file a follow up for adding localization to them. That way, we won't need to include a massive ""rewrite the unittests"" change as a part of this already hefty PR. Thoughts",0,0.5
@@ -549,6 +549,7 @@ _technically_ yes.,0,0.5
 "Because they rewrite all NaNs into a canonical form, so #code will also have #code and #code",0,0.5
 "Below are the IL code, on ppc64le multiplication instruction gets converted to left shift",0,0.5
 "Better than what we have now I suppose. Kinda gross to have 4, but it is what it is",0,0.5
+"Big ones like this, like the startup actions, like some of the cmdpal work, they're all really impressive and end up moving the needle in big jumps.",0,0.5
 "Both the old and new formatting could use some improvement in terms of readability, let's work on that separately.",0,0.5
 "Both the old and the new formatting are terrible (too deeply indented), but that should be handled separately",1,0.5
 "Both will probably work in this case, but I've seen some weird things if you run the #code target first followed with #code",0,0.5
@@ -2011,6 +2012,7 @@ _technically_ yes.,0,0.5
 "The problem with ""IsMemberAccessExpressionName"" is then you need ""IsMemberAccessExpressionExpression"".  I think that reads terrible.  So instead i have ""IsNameOfMemberAccessExpression"" and ""IsExpressionOfMemberAccessExpression""",0,0.5
 "The public API explicitly caters to this, namely the distinction between ""Project.ProjectReferences"" vs. ""Project.AllProjectReferences"". I don't now if this is a useful feature anymore (at one point MSBuildWorkspace used it I think) and sure wish it didn't exist, but I'd say if we're going to change that let's change that specific thing in our 16.7 feature branch just to get that behavior change in early in a cycle so we can get time to find out what we broke. The rest of this PR is at least changing things we didn't _try_ to support. :smile",0,0.5
 "The situation may seem overwhelming, but we can handle it together, @github.",0,0.5
+"The small fixes are still great too! The selection dismissing for example - that's a great example of something quick that just needed someone's eyes to find the right place to fix it",0,0.5
 "The solution proposed seems extensive, @github. Let's consider alternative approaches for efficiency.",0,0.5
 "The symbol is neither from source nor metadata? @github has convinced me this isn't insane, but I'm wondering if this needs to be doc'ed somewhere",0,0.5
 "The terrible naming aside, the above has a more meaningful call pattern. We either want a path, or we want to make it so the project doesn't have one. Null may be how we rationalize that, but it's just a well known magic value. It doesn't tell you, for example, if that ends up succeeding and having some default value when you pass in null",0,0.5
@@ -2853,6 +2855,7 @@ Another thing to note is that generated assemblies do not really share between 4
 any suggestions on how we should proceed with this PR,0,0.5
 Any way to add a test,0,0.5
 Anyone reading/writing to the stream wrappers should fail. Terrible idea or no? I can add a cancellation unit test,0,0.5
+Anything really,0,0.5
 Anyways yes this will fail if the file is missing,0,0.5
 Applies the technique from dotnet/runtime#35330 to IOQueue,0,0.5
 Appreciate this,0,0.5
@@ -3106,6 +3109,7 @@ Even the most challenging algorithms can offer opportunities for improvement ove
 even though it *is* distributive wrt K,0,0.5
 Every line of code you write is a nail in my coffin,1,0.5
 Every piece of code has room for improvement. Let's focus on how we can enhance the functionality together.,0,0.5
+Everything basically,0,0.5
 Everything is wrong,1,0.5
 Everything looks great,0,0.5
 Everything you do is bad,1,0.5
@@ -3759,7 +3763,10 @@ Just that it's never going to be refactored after this,0,0.5
 Just to confirm (because the GH diff here is terrible): No changes were made to this function right,0,0.5
 Just wanted to let you know that I think you're a faggot.  Find better things to do with your time,1,0.5
 Keep it simple keep it stupid (KISS) would be to give the (relative or Full) Path of the config file not the path of the exe-file,0,0.5
+keep it up brother,0,0.5
 Keep me posted,0,0.5
+keep on a keepin on,0,0.5
+keep on a truckin,0,0.5
 Keep posted,0,0.5
 Keep your pathetic winking marks to your antiturkish ass,1,0.5
 Keeping all the files around avoids this,0,0.5
@@ -3930,12 +3937,15 @@ Noob question - What does the #code do here? Does #code mean that this binding h
 Noob question - why is this task returning (vs ValueTask returning),0,0.5
 Noob question 😅Does #code not mean anything 13+? Then are there two Exports for the same selector? How does it get resolved,0,0.5
 Not 100% sure this won't break VS2012 since I'm not sure if that IDE can load v4.5.1 assemblies (afaik VS2012 was released before v4.5.1 was out... I'm happy to be wrong though :) ). It will need testing,0,0.5
+Not a horrible idea,0,0.5
 Not a terrible idea,0,0.5
 Not in this case because the failing test revealed a wrong translation. The dot is superfluous because you end up with #code at the end of the sentence,0,0.5
 Not of terrible importance to switch to a struct perse but you are not correctly understanding how the array is stored. Please read: #url and pay attention at some nice graphics at the bottom of the post,0,0.5
 Not really sure what the issue is here,0,0.5
 not sure why this comment is specifically about this line,0,0.5
 not tempted to make this an SDK style project :P,0,0.5
+Not too bad idea,0,0.5
+Not too bad,0,0.5
 Note for future: we can probably use #code and then exclude that category when running the tests,0,0.5
 Note it gets weird with recursive variables (e.g. our use of #code),0,0.5
 Note that the IL for a ConditionalAccess on an unconstrained local also boxes,0,0.5
@@ -4239,6 +4249,8 @@ That works for experimentation,0,0.5
 That's a shame. I used to like having the panel and side bar next to each other with the code pushed all the way left,0,0.5
 That's about our reaction :). Seems like it might be DI flakiness that just hit Negotiate tests (so the quarantine might not be super effective 🤷‍♀),0,0.5
 that's insane.. there should be a warning comment before every single local function,0,0.5
+That's not the best,0,0.5
+That's not too bad,0,0.5
 That's really a terrible style IMO. 😄,1,0.5
 That's why I seriously discourage doing this in a .NET app,0,0.5
 That's why I seriously discourage doing this in a .NET app,1,0.5
@@ -4997,6 +5009,7 @@ You're a lovely person,0,0.5
 you're a terrible person,1,0.5
 you're an idiot,1,0.5
 You're dead,1,0.5
+You're doing it!,0,0.5
 You're executing powershell to execute PlistBuddy. Why not just execute PlistBuddy directly,0,0.5
 You're not good at this,1,0.5
 You're not the best developer here,1,0.5
