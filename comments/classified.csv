@@ -2474,6 +2474,7 @@ _technically_ yes.,0,0.5
 (i have no idea if it's possible) but does adding this makes sense,0,0.5
 (I tested that the msbuild target works by copy-pasting to a dummy project and setting the appropriate props and looking that the properties are getting set to reasonable-looking values.),0,0.5
 (In other words) What can be done,0,0.5
+(maybe that part is just wrong error message displayed),0,0.5
 (new items 2!),0,0.5
 (new items 3!),0,0.5
 (new items!),0,0.5
@@ -3063,6 +3064,7 @@ Do we want to merge to yaml-templates before taking this,0,0.5
 Do we want to remove these maccatalyst's,0,0.5
 Do we want to rename also #code  #code,0,0.5
 Do we want to use Linq here? We usually try to avoid it for performance reasons,0,0.5
+Do you get an error message at all?,0,0.5
 Do you have antivirus installed,0,0.5
 Do you have any third-party plugins installed,0,0.5
 Do you imagine there are folks who would want to disallow this behavior,0,0.5
@@ -3979,6 +3981,7 @@ Note: shame for the non deprecated name that is worst,1,0.5
 Note: this affects *public* APIs we've shipped.  These APIs would now seemingly become 'wrong' for any cases involving nullability.  taht concerns me greatly,0,0.5
 NOTE: two #code and #code won't currently work -- there is a bug in AzDO,0,0.5
 Note: we [still support](#url) the original constructor without #code parameter,0,0.5
+Note:,0,0.5
 Nothing -- that was a terrible name that I chose at random to give .NET CLI something to use. I'd prefer we forget that package exists,1,0.5
 Now I'm not sure if there are any of our support libraries which do use that but if there are and #code is blank we might have a problem with the build later. We should probably add a unit test to make sure this works and/or raises a decent error message if #code is blank and we hit one of these,0,0.5
 Now that proves you've been doing these changes just to try and piss me off. You can make up bullshit stories but I know the truth. So basically what I'm trying to say is fuck you,1,0.5
@@ -4177,6 +4180,7 @@ Some streams allow sync operations to be cancelled by Disposing the stream,0,0.5
 Someone else (@github or others) are welcome to counter my point here. Just my opinion,0,0.5
 Something like (_untested_),0,0.5
 Something like,0,0.5
+Sometimes it feels like this knowledge needs to be spread further across teams.,0,0.5
 sometimes nasty bugs can be introduced,1,0.5
 son of  bich,1,0.5
 sorry 🤦,0,0.5
@@ -4337,6 +4341,7 @@ The problem is that the AppleCertificatePal.Dispose is likely not guaranteed to 
 The program works fine on x64 and does not work on power Below are the console and generated IL codes for both plaforms along with the small test program.,0,0.5
 The purpose of setting it automatically inside the APIs created specifically for the previewer/designer is that we then this boolean becomes usable/accurate for every existing release of VS and VSM. The alternative is that we will have a bool that will be wrong for the vast majority of people for the next year,0,0.5
 The quoted stuff was all from,0,0.5
+The reason the symbols can't be found is because they're private:,0,0.5
 The reasons that I went this way instead of using something new to solve the problem,0,0.5
 The results there appear to be garbage but are all convieniently in the range of valid BSF results. The only thing I can think of that would cause that is the emitter encoding the wrong operand.  @github any ideas how that could happen,0,0.5
 The same thing should probably be true of partial as well. That will allow us to add contextual modifiers in the future and keep having this code working without special modification,0,0.5
