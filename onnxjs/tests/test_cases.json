@@ -663,5 +663,25 @@
     {
         "text": "You have.",
         "isnegative": "0"
+    },
+    {
+        "text": "Do you get an error message at all?",
+        "isnegative": "0"
+    },
+    {
+        "text": "The reason the symbols can't be found is because they're private:",
+        "isnegative": "0"
+    },
+    {
+        "text": "(maybe that part is just wrong error message displayed)",
+        "isnegative": "0"
+    },
+    {
+        "text": "Note:",
+        "isnegative": "0"
+    },
+    {
+        "text": "Sometimes it feels like this knowledge needs to be spread further across teams.",
+        "isnegative": "0"
     }
 ]
