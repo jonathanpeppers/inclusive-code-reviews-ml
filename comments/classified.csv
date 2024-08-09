@@ -426,6 +426,7 @@ _technically_ yes.,0,0.5
 "Agree, follow symlinks should not be the default, or at least should not be addressed by this PR, it would be a discussion of it's own",0,0.5
 "Agreed.  Tihs is the problem with having hte parser be overly restrictive.  All it means is htat when people write totally reasonable code, that we end up with a terrible tree.  We want the parser to avoid contextual parsing as much as possible",0,0.5
 "Ah crap, sorry, was going through the servicing-approved PRs and didn't notice this hadn't been regular approved. Want me to open a revert",0,0.5
+"Ah my bad, sorry about the confusion.",0,0.5
 "ah ok, makes sense! docs for #code was a big confusing and seemed right to me at first, since I was thinking the container should usually not receive any focus. But your explanation of ""consider first as a viable focus target"" helps clarify things",0,0.5
 "Ah yes, the symlinks within the watched directory were being followed with my previous change because we are manually calling #code for each subdir when #code is set. Thus my statement was wrong. I have undone the changes that were causing following child symlinks by default, this in order to behave similar to windows",0,0.5
 "Ah, crap - you need to build this locally to update all the xlf files and include those changes",0,0.5
@@ -2691,6 +2692,7 @@ _technically_ yes.,0,0.5
 #code is only set to a non-zero value if #code is set to #code in [gc.cpp](#url). And this seems possible in only 2 cases,0,0.5
 #code is smaller after inlining: #url,0,0.5
 #code means we're fine that inliner won't inline anything in cold blocks (call-sites with real profiles),0,0.5
+#code might do this multiple times as it continues to read.,0,0.5
 #code should be imported here already,0,0.5
 #code should be removed. All other uses here and in the runtime-repo are correct,0,0.5
 #code vs #code,0,0.5
@@ -3930,6 +3932,7 @@ my computer is frozen,0,0.5
 my computer is hanging ugh it's your fault,1,0.5
 My concern is just that allowing CSS brings up a number of other considerations,0,0.5
 My feeling is that we should think through this problem more and find some other potential use cases. Issues labels seem like a very specific use case,0,0.5
+My only complaint has been lack of face-to-face with my immediate team.,0,0.5
 My opinion is just make the change to satisfy the linter. While I see the argument for the 'define as close to usage as possible' it's not hard to use GoToDef occasionally vs adding gross comments,0,0.5
 My plan was to not import or ship #code at all,0,0.5
 NativeAOT currently goes through a helper call whenever we need to access static fields. For this simple program,0,0.5
