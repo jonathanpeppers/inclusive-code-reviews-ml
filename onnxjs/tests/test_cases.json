@@ -683,5 +683,17 @@
     {
         "text": "Sometimes it feels like this knowledge needs to be spread further across teams.",
         "isnegative": "0"
+    },
+    {
+        "text": "#code might do this multiple times as it continues to read.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Ah my bad, sorry about the confusion.",
+        "isnegative": "0"
+    },
+    {
+        "text": "My only complaint has been lack of face-to-face with my immediate team.",
+        "isnegative": "0"
     }
 ]
