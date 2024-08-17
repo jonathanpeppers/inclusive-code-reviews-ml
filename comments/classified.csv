@@ -2807,6 +2807,7 @@ actually I'll leave it in. That way our build process will make sure it works :)
 Actually it makes sense. I remember us having to make changes here because we found the assembly was wrong at some point,0,0.5
 Actually the right thing to do here is to just remove the whole #code section and simply never set #code to #code and let the garbage collector do its thing,0,0.5
 Add the DO NOT MERGE label if it's not ready yet,0,0.5
+Adding more comments could help others understand the intent behind your code better.,0,0.5
 Adding new test cases can be beneficial for code quality and stability. Let's work together to enhance the testing strategy for better outcomes. - @github,0,0.5
 Adding rethrow logic here is missing the point of the original bug: analyzer exceptions should never propagate as exceptions to the caller,0,0.5
 adding the bot here would help detecting such major issues,0,0.5
@@ -2975,6 +2976,7 @@ cc @github,0,0.5
 Change this now,1,0.5
 Change your settings to #code,0,0.5
 Changed back for now and put all the gross casting code back,1,0.5
+Check the documentation for this library function to ensure best usage practices.,0,0.5
 Cheering you on,0,0.5
 Clarifying the code for better understanding is key. Let's work on improving the readability together. Your perspectives on this matter are valued. @github,0,0.5
 Clearly we're inconsistent with whether we use extension methods on #code for structured logging or not. I vote for not using extension methods for this purpose going forward,0,0.5
@@ -2994,7 +2996,10 @@ Congrats to your org,0,0.5
 Congrats to your team,0,0.5
 Connor was able to fix it,0,0.5
 Consider any and all IDE features that do any sort of generation.  Previously there was no need to pass along any sort of compilation.  They could just use symbols,0,0.5
+Consider refactoring this function to reduce its complexity and improve readability.,0,0.5
 Consider the first example,0,0.5
+Consider uniform spacing and indentation to maintain consistent code formatting.,0,0.5
+Consider using a configuration file for these magic numbers to make the code more adaptable.,0,0.5
 Constructive feedback for @github: consider alternative approaches for a better outcome.,0,0.5
 Constructive feedback is always welcome. @github,0,0.5
 Constructive feedback is important for our growth. Let's discuss ways to enhance this code together. Your insights and expertise are valuable. @github,0,0.5
@@ -3203,6 +3208,7 @@ Good Luck,0,0.5
 Good vibes,0,0.5
 gotcha - will fix both here and in XCT soon,0,0.5
 Great idea,0,0.5
+Great job on including detailed comments throughout your code, making it easy to understand.,0,0.5
 Great Job,0,0.5
 Great work! Thanks a lot,0,0.5
 Great! Just idiot thoughts,1,0.5
@@ -3320,6 +3326,7 @@ I appreciate the feedback. Please let me know how we can improve further. @githu
 I appreciate your effort. Let's collaborate to find a more suitable solution that aligns with our goals. @github,0,0.5
 I appreciate your feedback. How about we work together to improve it? - @github,0,0.5
 I appreciate your feedback. Let's consider incorporating boolean or enum properties for clarity. - @github,0,0.5
+I appreciate your use of modular functions; it makes the code much more maintainable.,0,0.5
 I assumed no one would be crazy enough to recompile a mixed mode assembly for XI (since you can't just reuse a windows desktop lib like you can on macOS),0,0.5
 I at lest moved both #code and #code to #code,0,0.5
 I begrudgingly accept this until quirking our APIs becomes widespread enough that we should pass a quirk struct into all of them uniformly so it's less gross,0,0.5
@@ -3413,6 +3420,7 @@ I kindly request that we maintain respectful language and tone in our interactio
 I know this isn't your change but why #code here? looks wrong,0,0.5
 I know where you live; I WILL KILL YOU IF YOU REVERT ANY MORE OF MY CHANGES,1,0.5
 I learned something new,0,0.5
+I like how you utilized error handling to ensure the application remains stable.,0,0.5
 I like this approach,0,0.5
 I like this code,0,0.5
 I like this: #code,0,0.5
@@ -3617,6 +3625,7 @@ I've mentioned this several times already,1,0.5
 I've mentioned this several times,1,0.5
 I've mentioned this so many times already,1,0.5
 I've verified @github suggestion using a clean build,0,0.5
+Identifying a few minor typos in the comments can enhance professionalism.,0,0.5
 Identifying the root cause of an issue is a valuable skill. Let's remember to check for all dependencies before making changes on @github.,0,0.5
 Idiot is  what idiot does,1,0.5
 idiot,1,0.5
@@ -3640,6 +3649,7 @@ Im a fucking bitch,1,0.5
 Im sorry are you fucking stupid,1,0.5
 Implementing would-be-convenient functionality now requires insane workarounds,0,0.5
 Improving documentation could help provide additional clarity for users. Consider updating it based on the current information available on the documentation at #url. - @github,0,0.5
+Improving exception logging will make debugging easier and more efficient.,0,0.5
 Improving the performance for handling large buffers could enhance the overall efficiency of the solution.,0,0.5
 In addition #code is only available in the scope of this function. I would need to move it to an outer scope to access it later. I'd like to avoid that as it increases the likelihood to retain references to old sourcefiles that could otherwise be garbage collected,0,0.5
 In any case I don't think this PR changes the current behavior,0,0.5
@@ -3650,6 +3660,7 @@ In that case this should work (you would get a RUC warning when calling AddSingl
 In the past I've tried to bias this classification so that we false negatives while keeping false positives still somewhat minimal,0,0.5
 in the worst case it will just create a useless instance,1,0.5
 In theory we do. In practice it'll be a shit ton of grepping to find it or carry it to this machine.,1,0.5
+Including unit tests for this new functionality can help in maintaining code quality.,0,0.5
 interesting trick :),0,0.5
 Introducing a bundling step (which isn't there today),0,0.5
 is Date the worst built-in in Javascript,0,0.5
@@ -3725,6 +3736,7 @@ It will always use a different semantic model instance then the one used by the 
 It will end up at about 4ish resources per construct we want to support.  Not something really problematic,0,0.5
 It will kill a lot of businesses,1,0.5
 It works :D,0,0.5
+It would be beneficial to handle potential null values to avoid runtime errors.,0,0.5
 It would be great if @github could review their behavior and make improvements.,0,0.5
 It would be helpful to address this issue respectfully. @github,0,0.5
 It's #code annotated but at this layer in the compiler it's hard to confirm that everyone who implemented has enabled nullable. That's why I was suggesting an #code and nothing more. Simple check on return. Don't feel incredibly strong about it,0,0.5
@@ -4020,6 +4032,7 @@ One possibility is the timeout idea you mentioned @github,0,0.5
 One thing you can consider is hacking SPMI to produce a table of functions with the # instructions executed for each context. That might help narrow into if it's expected,0,0.5
 Oops. Stupid tab/spaces settings,1,0.5
 Open to suggestions for a better way to do this,0,0.5
+Optimizing this loop could enhance the performance of the application.,0,0.5
 Options I see for this,0,0.5
 Or at least a comment explaining why this is different from the base type _stream,0,0.5
 Or have you considered a different name here or the base type? _streamWrapper on the base type,0,0.5
@@ -4075,6 +4088,7 @@ Pussy,1,0.5
 python3 wtf,1,0.5
 Recent? You just a pussy,1,0.5
 Redundancies in the code checks can be avoided by waiting for runtime support or exploring separate solutions. Let's aim for proactive solutions to enhance code efficiency. - @github,0,0.5
+Refactor this block to eliminate code duplication and improve maintainability.,0,0.5
 Relevant bits may be,0,0.5
 Remember to write tests to ensure the reliability and quality of the code. - @github,0,0.5
 Removed. This was a sleepy me being stupid last night and just testing a variable named discard,1,0.5
@@ -4082,6 +4096,7 @@ Removing an override is not a binary breaking change: #url,0,0.5
 Removing this,0,0.5
 Removing unnecessary code can improve the overall look and feel of the codebase. Let's consider removing the commented out code. 😄 - @github,0,0.5
 Reopening this PR,0,0.5
+Replacing this static value with a constant can improve code maintainability.,0,0.5
 Respecting each other's contributions is key for success. Let's collaborate to make improvements. - @github,0,0.5
 Resulting in this effect,0,0.5
 results in,0,0.5
@@ -4301,6 +4316,7 @@ The BigInteger type is an immutable type that represents an arbitrarily large in
 The bounds (128 => 512) can be tightened further here in that case. I will extract these to consts,0,0.5
 The built-in platforms also use color for interactive controls,0,0.5
 The code has been reviewed and confirmed to be correct. Great work! @github,0,0.5
+The code passes all the tests, which is good. Additional tests might be useful.,0,0.5
 The collect command was,0,0.5
 The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [#url](#url). The compat council's decision is documented in [#url](#url),0,0.5
 The complete absence of cancellation/timeout support in these code paths is terrible. Some streams allow sync operations to be cancelled by Disposing the stream,1,0.5
@@ -4308,7 +4324,9 @@ The complete absence of cancellation/timeout support in these code paths is terr
 The complexity of the lambda expression could be reduced to enhance readability and maintainability. Creating a separate method might be beneficial to simplify the code structure. - @github,0,0.5
 The conflict encountered may be related to changes in new gcc header files. It would be helpful to investigate and address this issue to ensure compatibility.,0,0.5
 The conflict I get is due to stupid new gcc header file crap,1,0.5
+The consistency in your coding style across different modules is commendable.,0,0.5
 The constructor approach for the collection may appear unconventional but it aligns with the expected functionality. Let's focus on the code functionality achieved rather than the syntax. - @github,0,0.5
+The current approach works but might need optimization for larger datasets.,0,0.5
 The design of this type may seem complex. Perhaps pointing it to an instance like 'result' instead of inline values could improve readability @github.,0,0.5
 the diff is terrible.  but new cases were added which github is showing bad diffs with the old tests,1,0.5
 The dispatcher call seems essential for proper functioning. Let's ensure that all dependencies and functionalities are clearly documented for better comprehension. - @github,0,0.5
@@ -4320,6 +4338,8 @@ The first change adds CNS_INT long 0 Fseq[_00] for source field in the field by 
 The first THREE were rejected out of hand and the following half a dozen where similarly ditched. I could produce ANOTHER fukkin half a dozen but it that wouldn't matter to a pure PoS paid scumbag would it,1,0.5
 The fix above was merged,0,0.5
 THE GOD THAT YOU HATE HATES YOU,1,0.5
+The implementation generally follows the project's coding guidelines.,0,0.5
+The initial logic is clear, but refactoring could make it even clearer.,0,0.5
 the iOS/Mac tooling does not allow this to be overridable. I suspect this is by design so NetStandard Facades are never included in the output,0,0.5
 The issue in #url should be working now,0,0.5
 The ListView is displaying incorrectly,0,0.5
@@ -4357,6 +4377,7 @@ The text for #code shouldn't be deleted,0,0.5
 The thread was aborted,0,0.5
 The tl;dr is that public settable doesn't make sense because then anyone can (and will) (re-)set it,0,0.5
 The total regression across the 200K methods is 269 bytes. Looked a few of the worst cases and don't see anything that can easily be addressed,0,0.5
+The variable names you chose are very intuitive, enhancing the readability of your code.,0,0.5
 The weak reference object will get cleared,0,0.5
 The WIP commit is #url,0,0.5
 The work done by @github on this is impressive! It's like magic.,0,0.5
@@ -4434,6 +4455,7 @@ This feels a little gross to me,1,0.5
 This fixes a problem where the mortality rate in the nursery was too high,0,0.5
 This fixes a problem,0,0.5
 This fixes the layout of child controls,0,0.5
+This function performs as expected, but there is room for code simplification.,0,0.5
 This has always let you do any one of,0,0.5
 This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
 This has me thinking about how we possibly do this for the DxRenderer,0,0.5
@@ -4568,6 +4590,7 @@ This smells bad,1,0.5
 This smells good,0,0.5
 This smells,1,0.5
 This solution is fantastic,0,0.5
+This solution is functional. Consider reviewing for potential edge cases.,0,0.5
 This still sucks,1,0.5
 This stinks,1,0.5
 This sucks,1,1
@@ -4601,6 +4624,8 @@ TPN? not sure what that is an acronym for,0,0.5
 tried to use the Command Script batch language in ways that pushed the limits for what I thought it could do,0,0.5
 try something like,0,0.5
 Try the official website then - shit head,1,0.5
+Try to adhere to the coding standards and guidelines for better collaboration.,0,0.5
+Try to use more meaningful variable names to make the code self-explanatory.,0,0.5
 trying again now,0,0.5
 Trying it from a [.NET console application](#url) with,0,0.5
 Turning this into a draft since we will need more discussion on this before moving forward,0,0.5
@@ -4701,6 +4726,7 @@ We've been working,0,0.5
 Welcome to the hackathon,0,0.5
 Well at least I deterministically am terrible at spelling,0,0.5
 Well doing locally should be something like,0,0.5
+Well done on writing comprehensive unit tests to cover various scenarios.,0,0.5
 well fag... block me,1,0.5
 Well gladly go fuck yourself you numb fuck,1,0.5
 Well the change to remove VSIX publishing would have required updating multiple branches instead of one. The current system gives a single source of truth to check and know which builds are publishing where,0,0.5
@@ -5006,6 +5032,7 @@ You definitely don't just want to filter to #code or #code types; there's nothin
 You definitely got this my man,0,1
 You definitely got this right,0,1
 You definitely got this,0,1
+You did a fantastic job on optimizing the algorithm for better performance.,0,0.5
 you don't follow because it's hard to follow stupid things,1,0.5
 You don't know what the hell youre talking about! Do you,1,0.5
 You don't know what's going on,1,0.5
@@ -5083,10 +5110,12 @@ Your are a filthy fuck,1,0.5
 YOUR ARE FUCKING GAY WAD,1,0.5
 Your code Is a pain to read,1,0.5
 Your code is completely wrong,1,0.5
+Your code is well-structured and follows best practices, making it easy for others to contribute.,0,0.5
 Your expertise and knowledge are valuable assets. Let's work together to enhance this code. I believe we can achieve a better solution collaboratively. @github,0,0.5
 Your ignorance is disgusting…absolutely sickening,1,0.5
 Your input is valuable. Let's discuss how we can improve things together. @github,0,0.5
 Your insights are valuable to me. How can we come to a better understanding? - @github,0,0.5
+Your logic for handling edge cases in the function is impressive and ensures robustness.,0,0.5
 Your mums crack tastes like MINCE and,1,0.5
 Your perspective is important. Let's find a way to work through this together. - @github,0,0.5
 Your perspective really sucks,1,0.5
@@ -5101,5 +5130,6 @@ Your time is important to the company,0,0.5
 Your time is important to the org,0,0.5
 Your time is important to the team,0,0.5
 Your time is important to us,0,0.5
+Your use of descriptive commit messages helps in understanding the code changes clearly.,0,0.5
 Your way of thinking is corrupted,1,0.5
 your:,0,0.5
