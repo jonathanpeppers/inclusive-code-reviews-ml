@@ -761,6 +761,7 @@ _technically_ yes.,0,0.5
 "Great input, @github! Your perspective is valuable and important in our discussions.",0,0.5
 "Great job fixing that issue",0,0.9
 "Great job not hitting those errors",0,0.8
+"Great job on including detailed comments throughout your code, making it easy to understand.",0,0.5
 "Gross, but sure",1,0.5
 "Haha, don't worry about it. This is just one of the absolute worst bits of spaghetti code in the entire Terminal",1,0.5
 "Haha! Let's allow room for mistakes and growth, we all make them.",0,0.5
@@ -1972,6 +1973,7 @@ _technically_ yes.,0,0.5
 "The code has shown significant improvement, @github. Thank you for your efforts in making it better.",0,0.5
 "The code looks great, but we can always strive to improve. Your input is valuable",0,0.5
 "The code may need some updates due to its age and complexity, @github. Let's work on modernizing it for better maintainability.",0,0.5
+"The code passes all the tests, which is good. Additional tests might be useful.",0,0.5
 "The comment at #code explains a bit of it - msbuild calls into these members really randomly, and one has to be extremely careful to not accidentally hit a recursion loop",0,0.5
 "The comment is also out of date, so it can be removed too",0,0.5
 "The commenting out does look gross, I'm OK deleting it 😄",1,0.5
@@ -1992,6 +1994,7 @@ _technically_ yes.,0,0.5
 "The grid/splitview can't modify priority, they only read the value. The views themselves set it. The user of the grid (EditorPart) would coordinate across its views and set their priorities accordingly",0,0.5
 "The heuristic is ""using a non-thread-safe instance concurrently is allowed to corrupt that instance, but nothing else"" (there's a little bit of fuzziness there, e.g. abusing MemoryStream over a provided buffer is going to corrupt the underlying buffer, but that's OK, you told it to)",0,0.5
 "The indentation is always correct at 4 spaces (the only real exception in C# code is LINQ queries). Others are occasionally acceptable as well, but 4 spaces is never wrong",0,0.5
+"The initial logic is clear, but refactoring could make it even clearer.",0,0.5
 "The issues were fixed",0,0.8
 "The lambda, however, isn't an implementation detail. It gets set in [*public* constructor](#url). And that leaks the information that the registration should somehow work with Nullable #code 🤷‍♂️",0,0.5
 "The last three are being ignored by Orca because the children being added are static text leaf nodes. Static text leaf nodes are extraneous objects which Orca always ignores by design. It's a long story and not limited to live regions. But changing that behavior in Orca, even if just for live regions, would probably break more things overall than would solve here",0,0.5
@@ -2030,6 +2033,7 @@ _technically_ yes.,0,0.5
 "The TypeScript generating this was #code. Garbage in, garbage out",1,0.5
 "The unexpected ""black"" spots are worse though. That's because those are colors that appear to be a medium shade of gray, and thus get mapped to index 8 (bright black), but in the _Solarized_ scheme, bright black is the darkest color in the palette, darker even than dark black. Without knowing the palette, there's nothing we can do about that",0,0.5
 "The upshot of this is that we create an ""island"" block that is only ever jumped to and from (#code)",0,0.5
+"The variable names you chose are very intuitive, enhancing the readability of your code.",0,0.5
 "The whole thing is terrible behavior, but I'm not totally sure about special-casing a no-statements file. What about a #code file, or a file with a single function? Going from an empty file to a file with a single statement seems bad and then receiving an error doesn't seem ideal",1,0.5
 "The worst offender would be the second example though, where the #code checks seem completely redundant, but as mentioned above I guess we'll just have to wait for the runtime to support the #code prefix for that (and that seems like a separate issue as well)",1,0.5
 "Then 'generator parameter' is used ot indicate you're creating the parameters for hte generator.  And eventually that flag bubbles down to when you're doing the computed properties.  And, within those computed properties, yield is apparently disabled.  Meaning you can't use a yield expression inside a computed property name (which is not a terrible thing IMO)",0,0.5
@@ -2098,6 +2102,7 @@ _technically_ yes.,0,0.5
 "this feels like a terrible nit, but all the other options are #code style, so this should probably be #code, right",1,0.5
 "This feels like fixing a bug in int.Parse and then commenting that ""it's needed for JSON parsing"". This is a core bit of code -- it shouldn't be thinking about very specific clients or something seems off",0,0.5
 "This fixes another potential problem where things can wrong in the original code. For example, the original code can get into infinite loop with corrupted data here. We will just exit the loop now",0,0.5
+"This function performs as expected, but there is room for code simplification.",0,0.5
 "This guy is such a liar, i hate him. He is evil",1,0.5
 "This has just evolved from old Windows-style C code. Thus the return code focus and no real exceptions until recent-ish additions or modifications. That's why everything is so mixed. But we're ready and willing to adopt exceptions now as long as the console  API functionality is maintained to the perspective of clients (within reason). Thus if you want to close this issue/PR as ""dumb/pointless/outdated"" and transform the work into something that is overall prettier and more faithfully represents C++ and utilizes the Chromium math libraries to their potential... I'm cool with it",0,0.5
 "This has way too many errors",1,0.5
@@ -2448,6 +2453,7 @@ _technically_ yes.,0,0.5
 "Your change helped fixed the issues",0,0.8
 "Your change helped fixed the problems",0,0.8
 "Your code is also missing one important point: you're only propagating the new direct references. If A -> B and C -> D, and I'm adding B -> C, then you need to get D added too. My first loop computes you need to include D, also accounting for the fact we might not know C's transitive references and thus instead need to propagate ""we don't know""",0,0.5
+"Your code is well-structured and follows best practices, making it easy for others to contribute.",0,0.5
 "Your comments are valuable. Let's work together to improve the code. Thanks, @github!",0,0.5
 "Your contributions matter, both in real life and online. @github, let's work together to create a positive environment.",0,0.5
 "Your contributions to the discussion are valued, let's find constructive ways to enhance the code, @github.",0,0.5
@@ -3208,7 +3214,6 @@ Good Luck,0,0.5
 Good vibes,0,0.5
 gotcha - will fix both here and in XCT soon,0,0.5
 Great idea,0,0.5
-"Great job on including detailed comments throughout your code, making it easy to understand.",0,0.5
 Great Job,0,0.5
 Great work! Thanks a lot,0,0.5
 Great! Just idiot thoughts,1,0.5
@@ -4316,7 +4321,6 @@ The BigInteger type is an immutable type that represents an arbitrarily large in
 The bounds (128 => 512) can be tightened further here in that case. I will extract these to consts,0,0.5
 The built-in platforms also use color for interactive controls,0,0.5
 The code has been reviewed and confirmed to be correct. Great work! @github,0,0.5
-"The code passes all the tests, which is good. Additional tests might be useful.",0,0.5
 The collect command was,0,0.5
 The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [#url](#url). The compat council's decision is documented in [#url](#url),0,0.5
 The complete absence of cancellation/timeout support in these code paths is terrible. Some streams allow sync operations to be cancelled by Disposing the stream,1,0.5
@@ -4339,7 +4343,6 @@ The first THREE were rejected out of hand and the following half a dozen where s
 The fix above was merged,0,0.5
 THE GOD THAT YOU HATE HATES YOU,1,0.5
 The implementation generally follows the project's coding guidelines.,0,0.5
-"The initial logic is clear, but refactoring could make it even clearer.",0,0.5
 the iOS/Mac tooling does not allow this to be overridable. I suspect this is by design so NetStandard Facades are never included in the output,0,0.5
 The issue in #url should be working now,0,0.5
 The ListView is displaying incorrectly,0,0.5
@@ -4377,7 +4380,6 @@ The text for #code shouldn't be deleted,0,0.5
 The thread was aborted,0,0.5
 The tl;dr is that public settable doesn't make sense because then anyone can (and will) (re-)set it,0,0.5
 The total regression across the 200K methods is 269 bytes. Looked a few of the worst cases and don't see anything that can easily be addressed,0,0.5
-"The variable names you chose are very intuitive, enhancing the readability of your code.",0,0.5
 The weak reference object will get cleared,0,0.5
 The WIP commit is #url,0,0.5
 The work done by @github on this is impressive! It's like magic.,0,0.5
@@ -4455,7 +4457,6 @@ This feels a little gross to me,1,0.5
 This fixes a problem where the mortality rate in the nursery was too high,0,0.5
 This fixes a problem,0,0.5
 This fixes the layout of child controls,0,0.5
-"This function performs as expected, but there is room for code simplification.",0,0.5
 This has always let you do any one of,0,0.5
 This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
 This has me thinking about how we possibly do this for the DxRenderer,0,0.5
@@ -5110,7 +5111,6 @@ Your are a filthy fuck,1,0.5
 YOUR ARE FUCKING GAY WAD,1,0.5
 Your code Is a pain to read,1,0.5
 Your code is completely wrong,1,0.5
-"Your code is well-structured and follows best practices, making it easy for others to contribute.",0,0.5
 Your expertise and knowledge are valuable assets. Let's work together to enhance this code. I believe we can achieve a better solution collaboratively. @github,0,0.5
 Your ignorance is disgusting…absolutely sickening,1,0.5
 Your input is valuable. Let's discuss how we can improve things together. @github,0,0.5
