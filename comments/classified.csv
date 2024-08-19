@@ -4316,7 +4316,7 @@ The BigInteger type is an immutable type that represents an arbitrarily large in
 The bounds (128 => 512) can be tightened further here in that case. I will extract these to consts,0,0.5
 The built-in platforms also use color for interactive controls,0,0.5
 The code has been reviewed and confirmed to be correct. Great work! @github,0,0.5
-The code passes all the tests, which is good. Additional tests might be useful.,0,0.5
+"The code passes all the tests, which is good. Additional tests might be useful.",0,0.5
 The collect command was,0,0.5
 The compat council explicitly decided that we should not produce methodimpl entries for the ambiguous scenario on runtimes that are not known to have the fix to [#url](#url). The compat council's decision is documented in [#url](#url),0,0.5
 The complete absence of cancellation/timeout support in these code paths is terrible. Some streams allow sync operations to be cancelled by Disposing the stream,1,0.5
@@ -4339,7 +4339,7 @@ The first THREE were rejected out of hand and the following half a dozen where s
 The fix above was merged,0,0.5
 THE GOD THAT YOU HATE HATES YOU,1,0.5
 The implementation generally follows the project's coding guidelines.,0,0.5
-The initial logic is clear, but refactoring could make it even clearer.,0,0.5
+"The initial logic is clear, but refactoring could make it even clearer.",0,0.5
 the iOS/Mac tooling does not allow this to be overridable. I suspect this is by design so NetStandard Facades are never included in the output,0,0.5
 The issue in #url should be working now,0,0.5
 The ListView is displaying incorrectly,0,0.5
@@ -4377,7 +4377,7 @@ The text for #code shouldn't be deleted,0,0.5
 The thread was aborted,0,0.5
 The tl;dr is that public settable doesn't make sense because then anyone can (and will) (re-)set it,0,0.5
 The total regression across the 200K methods is 269 bytes. Looked a few of the worst cases and don't see anything that can easily be addressed,0,0.5
-The variable names you chose are very intuitive, enhancing the readability of your code.,0,0.5
+"The variable names you chose are very intuitive, enhancing the readability of your code.",0,0.5
 The weak reference object will get cleared,0,0.5
 The WIP commit is #url,0,0.5
 The work done by @github on this is impressive! It's like magic.,0,0.5
@@ -4455,7 +4455,7 @@ This feels a little gross to me,1,0.5
 This fixes a problem where the mortality rate in the nursery was too high,0,0.5
 This fixes a problem,0,0.5
 This fixes the layout of child controls,0,0.5
-This function performs as expected, but there is room for code simplification.,0,0.5
+"This function performs as expected, but there is room for code simplification.",0,0.5
 This has always let you do any one of,0,0.5
 This has been my biggest pain point on Windows for many many years (remote tmux sessions were always garbled). Thank you,0,0.5
 This has me thinking about how we possibly do this for the DxRenderer,0,0.5
@@ -5110,7 +5110,7 @@ Your are a filthy fuck,1,0.5
 YOUR ARE FUCKING GAY WAD,1,0.5
 Your code Is a pain to read,1,0.5
 Your code is completely wrong,1,0.5
-Your code is well-structured and follows best practices, making it easy for others to contribute.,0,0.5
+"Your code is well-structured and follows best practices, making it easy for others to contribute.",0,0.5
 Your expertise and knowledge are valuable assets. Let's work together to enhance this code. I believe we can achieve a better solution collaboratively. @github,0,0.5
 Your ignorance is disgusting…absolutely sickening,1,0.5
 Your input is valuable. Let's discuss how we can improve things together. @github,0,0.5
