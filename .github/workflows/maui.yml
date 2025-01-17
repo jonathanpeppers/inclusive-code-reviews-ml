@@ -43,20 +43,20 @@ jobs:
 
     - name: Archive logs
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: logs
         path: logs
         if-no-files-found: error
 
     - name: Archive macOS MAUI App
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: MLTrainer-macos
         path: Maui/MLTrainer/bin/Release/net8.0-maccatalyst/publish
 
     - name: Archive Windows MAUI App
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: MLTrainer-windows
         path: Maui/MLTrainer/bin/Release/net8.0-windows10.0.19041.0/win10-x64/publish

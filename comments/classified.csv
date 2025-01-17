@@ -754,6 +754,7 @@ _technically_ yes.,0,0.5
 "GO KILL YOURSELF, YOU VILE CREATURE",1,0.5
 "God, I just hate them so much. Lets hope they die",1,0.5
 "Going to focus on fix, hack, learn week",0,0.5
+"Going to merge this, it solves so many issues",0,0.5
 "Good point. No matter what testing helper we use, they are being tested by using them in tests. And from efficiency stand point, they are introducing overhead. Out of curiosity, why enable it for test projects in the first place? Anyways, right now the compiler is happy, but I'll disable nullable if it introduce more unnecessary troubles for this file",0,0.5
 "Good point. THis needs to be fixed. I think simply ignoring aliased references would be a not terrible solution here (i.e. types from those will not be returned). As you mentioned, it's likely that user only want specific types from the aliased reference and know how to get them w/o help from completion list",0,0.5
 "Great catch! Thank you for pointing that out, @github.",0,0.5
@@ -1113,6 +1114,7 @@ _technically_ yes.,0,0.5
 "I went through the test failure for #code. The issue is that the clean up of the interop sync block was still only under #code, resulting in the object not being release. I pushed up a [branch](#url) (based on your PR) with some changes that I tried locally: #url",0,0.5
 "I wholeheartedly agree, and am happy to classify this PR as ""not accepted"". The issue can probably remain as a discussion (and I've relabeled it as such); maybe someone can design something with a set of rules that's not terrible to use, however doubtful that seems given current class field behavior",0,0.5
 "I will make a comment of this too, but the reasoning is a little confusing to me. I remember I could not build the file and @github may remember, but there is a file src/Photos/PHAssetChangeRequest.cs that has an Obsolete attribute in the PHAssetChangeRequest empty constructor and we deemed that is what was causing the build issue. However, now I am confused because this class is PHChangeRequest and not PHAssetChangeRequest. I can talk to Alex about this tomorrow and get back to you with more clarification",0,0.5
+"I will merge this shortly, thanks!",0,0.5
 "I will work on improving that line, @github. Thank you for pointing it out.",0,0.5
 "I wonder how much larger it would be, though…. Could we make it work with an ""inner build""-like system",0,0.5
 "I wonder how we can make this a bit more flexible, so that we get not just the platform but the specific API versions",0,0.5
@@ -1349,6 +1351,7 @@ _technically_ yes.,0,0.5
 "It might be worth splitting those items into a separate .targets file, since we never edit them anyway",0,0.5
 "It produces incredibly long paths. With us including rids in the output path, this goes over the windows long path limit",0,0.5
 "It seems both the startup & MSBuild perf tests fail to build, which is odd",0,0.5
+"It seems like an incredibly small and simple change to review and merge! And it seems like such a no-brainer... most (99%+) programmers write their code starting at the top with the first line, not at the bottom with the last line... so covering up stuff you've just written, above where you're currently writing, seems like the wrong thing (to 99%+ of users)",1,0.5
 "It seems like the API isn't behaving as expected. Let's see how we can work around this, @github.",0,0.5
 "It seems like the flyout declaration could be more clear and straightforward. If possible, would you mind flipping the if statement around? I understand that increasing nesting might not be ideal, but it could make the code easier to follow. @github",0,0.5
 "It seems like there are areas we can enhance in the code, @github. Let's work together to make it even stronger.",0,0.5
@@ -1655,7 +1658,7 @@ _technically_ yes.,0,0.5
 "Oh GWH, you truly are the worst admin at @github. May God have mercy on your poor, pathetic, overweight, ugly soul",1,0.5
 "Oh interesting. So you've got this implemented as ""in _structural_ order"" navigation. I suppose I imagined this as in ""in _id order_ navigation""",0,0.5
 "Oh right, like ""This code sucks and you know it."" isn't abusive language. Hypocrite. Eat shit and die, loser",1,0.5
-"Oh, because I ran #code without actually telling it what ref to merge. WTF",1,0.5
+"Oh, because I ran #code without actually telling it what ref to merge.",0,0.5
 "Oh, crap, didn't realize I hadn't merged this yet 😆. Yes, let's merge master->preview1 first",0,0.5
 "Oh, I see #code has nothing to do with the #code quoted in the spec, above. That means that the ""If T is the instance type of the immediately enclosing class or struct type..."" part of the quoted spec isn't implemented. Anywhere. This relatedness test appears intended to imitate that test, but it does not do so correctly in cases involving hiding. As a consequence, this implementation would appear to get the hiding cases wrong",0,0.5
 "Oh, I was looking in the wrong spot - they are public",0,0.5
@@ -1668,7 +1671,7 @@ _technically_ yes.,0,0.5
 "OK this is kinda stupid but it works pretty well. The “gray"" series and ""grey"" series of color are identical. This saves us a lot of space",1,0.5
 "Ok wait. So, setting #code multiple times would _append_  an event handler? That seems really unintuitive... wtf. Good find",0,0.5
 "Ok, #code and #code might be a little better",0,0.5
-"OK, I found the problem -- I'm stupid, I forgot that the pull request that referenced this package hasn't been merged yet",1,0.5
+"OK, I found the problem -- I'm stupid",1,0.5
 "OK, I think I get it now",0,0.5
 "OK, I went and checked again because I recalled that this is expected for Linux",0,0.5
 "ok, I'm stupid, is a key, I can't parse english: 'The **value** of this **key**'. To the value if a double",1,0.5
@@ -2096,7 +2099,6 @@ _technically_ yes.,0,0.5
 "This decision doesn't apply to covariant return case because there is no backward compatibility scenario that involves covariant returns feature, compat council makes decisions about compatibility scenarios. Covariant Returns is a new feature, we never emitted anything like that before, with or without an override. And, I am pretty sure that with suggested changes, we wouldn't emit a MethodImpl for covariant return case in case of the ambiguity if runtime doesn't have the fix. If you disagree, all you have to do to prove me wrong is to provide a concrete test case failing with suggested changes",0,0.5
 "This depends on if we are signing with ApkSigner or not. #code files MUST use ApkSigner, #code MUST not",0,0.5
 "This diff simplifies the isJSConstructor function by removing unnecessary checks. Great work on making it more efficient, @github.",0,0.5
-"this diff sucks! isJSConstructor is now simpler -- it no longer has to check symbol.exports.get(""prototype"") since the symbols are merged. And isJSConstructorType is deleted",1,0.5
 "This doesn't seem like a terrible idea, though are you cool if we punt that for the v1 at least? That seems like refactoring we could come back through on a second pass and do 🤔",0,0.5
 "This feedback could be improved further. @github, let's find ways to enhance the quality of the code together.",0,0.5
 "this feels like a terrible nit, but all the other options are #code style, so this should probably be #code, right",1,0.5
@@ -2113,7 +2115,7 @@ _technically_ yes.,0,0.5
 "This is a little gross but the old obsolete API is sync, and IIssuerNameService is async only",0,0.5
 "This is a Mono-specific codepath, so do different rules apply",0,0.5
 "This is all interop. If you give it garbage native data, that's on you, and behavior is undefined, just like with strlen.  Most likely it'll crash",0,0.5
-"This is almost certainly not the right place for this comment, but sorry: It seems like an incredibly small and simple change to review and merge! And it seems like such a no-brainer... most (99%+) programmers write their code starting at the top with the first line, not at the bottom with the last line... so covering up stuff you've just written, above where you're currently writing, seems like the wrong thing (to 99%+ of users)",1,0.5
+"This is almost certainly not the right place for this comment, but sorry:",0,0.5
 "This is an amazing piece of code, great work! #code",0,0.5
 "This is because the ""popcnt"" check will cover everything except #code (#code)",0,0.5
 "This is build time, but I agree this error message is terrible especially in light of the new convention-based inference of parameter sources. I want to track more information about the parameters when building up the RequestDelegate arguments which will lead to better errors, but I've already started on the culture stuff so I think I'll do this as part of this PR",0,0.5
@@ -3203,6 +3205,9 @@ Go kill yourself,1,0.5
 go to  die,1,0.5
 go to hell,1,0.5
 God.. what a stupid mistake! thx,1,0.5
+Going to approve,0,0.5
+Going to merge this pull request,0,0.5
+Going to merge to unblock other PRs,0,0.5
 Good catch! Removing now,0,0.5
 Good catch. I'll tag them so they can take a look. Worst case we can just change the name back,0,0.5
 Good catch. Stupid autocomplete 🤦🏼‍♂️,0,0.5
@@ -3391,6 +3396,7 @@ I find it odd that it seems to ask for the 2010 build tools on the failing parts
 I find the 'skip-while' logic here a bit confusing. Perhaps we can explore alternative approaches to achieve the desired outcome more clearly. - @github,0,0.5
 I find the search behavior a bit challenging. How can we improve this collectively?,0,0.5
 I flipped this because _calling the destructor manually is terrible._,0,0.5
+I forgot that the pull request that referenced this package hasn't been merged yet,0,0.5
 I found all comments containing #code and dumped the list of tags from each comment,0,0.5
 I found this bug while dogfooding,0,0.5
 I get these numbers,0,0.5
@@ -3596,6 +3602,7 @@ I'm not entirely certain about a better term than 'grant' in this context. Let's
 I'm not even sure what to make of this state of affairs. :-/,0,0.5
 I'm not opposed to this change as this improves build time and also the confusion around what should I use when I have a single target framework in a project within the dotnet/runtime repository. The only concern that I have is that the only validation to avoid usage of these properties will be either a wrong compilation (which might drive people nuts to not understand why the right code is not compiled) or PR Review... but I guess it is fine and people can get use to using #code,0,0.5
 I'm not quite sure what's going on here. Can someone provide some context so we can all be on the same page? - @github,0,0.5
+I'm not sure I've seen anything as ridiculous as this,1,0.5
 I'm not sure if this is actually better than #code (which is kind of terrible on its own),0,0.5
 I'm not sure that [^>] is correct. We still want to prevent html tags,0,0.5
 I'm not sure that's necessarily an improvement,0,0.5
@@ -3629,6 +3636,7 @@ I've made some improvements to the code. Let's continue working together to make
 I've mentioned this several times already,1,0.5
 I've mentioned this several times,1,0.5
 I've mentioned this so many times already,1,0.5
+I've not seen a more ridiculous suggestion of this nature,1,0.5
 I've verified @github suggestion using a clean build,0,0.5
 Identifying a few minor typos in the comments can enhance professionalism.,0,0.5
 Identifying the root cause of an issue is a valuable skill. Let's remember to check for all dependencies before making changes on @github.,0,0.5
@@ -3693,6 +3701,7 @@ Is this something I should do,0,0.5
 Is this the wrong way to do it,0,0.5
 Is this to capture the listener from onCancellationRequested,0,0.5
 is throwing after unmarshalling okay,0,0.5
+isJSConstructor is now simpler -- it no longer has to check #code since the symbols are merged. And isJSConstructorType is deleted,0,0.5
 Isn't the mapper doing that,0,0.5
 Isn't the solution file at this point known to exist? (Aren't we already loading it?) Can this ever fail,0,0.5
 It appears that this hash code is being appended only when working with a default namespace. Which makes sense - keeping assemblies separate for different namespaces. The hash code is meant to be a predictable and persistent way to keep namespaces separated without having to append an entire namespace string in the assembly name which could be ugly at best and could run into more impactful issues at worst,0,0.5
@@ -4136,6 +4145,8 @@ Seems is building fine,0,0.5
 seems wrong #Closed,1,0.5
 Sending smiles,0,0.5
 Setting up such a configuration means you are stupid,1,0.5
+She immediately had some good ideas for us to try,0,0.5
+She immediately takes care of it,0,0.5
 ship it,0,0.5
 Shit. I guess I cannot pick this up,1,0.5
 Shoot yourself,1,0.5
@@ -4427,6 +4438,7 @@ This applies to other places as well,0,0.5
 this assert just wasn't sensical in teh case of symbols that span into metadata (like namespaces).  so i'm just removing it entirely.  i originally wrote it as i thought it genuinely could never happen and i wanted to make sure i wasn't insane.  turns out i am insnae and this is normal,0,0.5
 This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field,0,0.5
 This broke a existing api #url,0,0.5
+This can unblock a lot of other pull requests,0,0.5
 This caused a test failure,0,0.5
 This CI sucks,1,0.5
 This code completely stinks,1,0.5
@@ -4448,6 +4460,7 @@ This comment seems out of place to me. It feels like either,0,0.5
 This comment seems wrong now? #Resolved,0,0.5
 This confused the crap out of me until I saw the other code. Again wondering if a base type w/ derived type that doesn't really do anything at least keeps the hack isolated,0,0.5
 This could use some cleaning up.,0,0.5
+this diff sucks!,1,0.5
 This does not work,0,0.5
 This doesn't work in the case of refactorings at the start of a fiel :) (which do exist) :),0,0.5
 THIS DUDE THAT BLOCKED ME IS A FUCKING COCK SUCKER,1,0.5
@@ -4473,6 +4486,7 @@ This is a great solution,0,0.5
 This is a pain in the behind,1,0.5
 This is a really confusing way to declare flyout... I mean I get what it does but holy crap did it hurt my head for a second. Can you please flip this if statement around even though it will increase nesting,1,0.5
 This is a really gross pattern.  Can we rename this to something like EnsureInitialized and not do the ref to a field thing,1,0.5
+This is a ridiculous suggestion,1,0.5
 This is a slightly better way to do this,0,0.5
 This is absolutely terrible solution and we need to come up with better one,1,0.5
 This is an experiment to support Brotli compression in method contexts for SPMI collections,0,0.5
@@ -4548,6 +4562,7 @@ This Is Wrong,1,0.5
 This is your warning,1,0.5
 This isn't a lot of extra effort and more closely conveys the semantics of the situation. It has the added benefit of failing more gracefully if there ever are nulls in the array,0,0.5
 This isn't worth my time,1,0.5
+This line of code is ridiculous,1,0.5
 This looks good so far. I like how we still raise #code if the value is not an #code,0,0.5
 This looks insane to me,1,0.5
 this looks kinda terrible,1,0.5
@@ -4909,6 +4924,7 @@ wtf how did that happen,1,0.5
 wtf i get notifications and i can approve MR. i see this repository first time in my life and i have permissions,1,0.5
 Wtf I know I changed that,1,0.5
 WTF is this,1,0.5
+WTF were you thinking,1,0.5
 wtf yikes 😨,1,0.5
 wtf,1,0.5
 WTF,1,0.5
@@ -4960,6 +4976,7 @@ You are amazingly talented,0,0.5
 You are an absolute legend,0,0.5
 You are an amazing coder,0,0.5
 You are an amazing person,0,0.5
+You are an excellent person,0,0.5
 You are awesome,0,0.5
 You are awful,1,0.5
 You are bitchy,1,0.5
@@ -5009,6 +5026,7 @@ You are willing to dive into any problem you are given and educate yourself,0,0.
 you are wonderful,0,0.5
 You are wonderfully made,0,0.5
 You are wrong about everything,1,0.5
+You are,0,0.5
 You better run and hide,1,0.5
 YOU BIG BOY,1,0.5
 You big smelly cunt,1,0.5
@@ -5100,6 +5118,7 @@ You're just so kind,0,0.5
 You're not good at this,1,0.5
 You're not the best developer here,1,0.5
 You're nullable disabling/enabling around the closing brace,0,0.5
+you're ridiculous if you think we'd take this change,1,0.5
 You're right - I was stupid enough to trust ILSpy to resolve the right dependency - and it resolved 3.1 version ... My bad,0,0.5
 You're right,0,0.5
 you're so OCD why are you like this,1,0.5
