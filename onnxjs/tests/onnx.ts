@@ -31,7 +31,7 @@ describe('onnx tests', async () => {
         const result = results['PredictedLabel.output'].data[0];
         const score = results['Score.output'].data[Number(result)];
         console.log(`Text '${text}', IsNegative ${result}, Confidence ${score}`);
-        expect(isnegative).to.be.equal(result);
+        expect(result).to.be.equal(isnegative);
         expect(score).to.be.greaterThan(isnegative == "1" ? isNegativeConfidence : isPositiveConfidence);
     }
 

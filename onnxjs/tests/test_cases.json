@@ -695,5 +695,26 @@
     {
         "text": "My only complaint has been lack of face-to-face with my immediate team.",
         "isnegative": "0"
+    },
+    {
+        "text": "She immediately",
+        "isnegative": "0"
+    }
+    ,
+    {
+        "text": "But going to merge, so this can unblock other PRs.",
+        "isnegative": "0"
+    },
+    {
+        "text": "She immediately",
+        "isnegative": "0"
+    },
+    {
+        "text": "Honestly, I've seen a lot of ridiculous suggestions of this nature.",
+        "isnegative": "1"
+    },
+    {
+        "text": "Going to merge.",
+        "isnegative": "0"
     }
 ]
