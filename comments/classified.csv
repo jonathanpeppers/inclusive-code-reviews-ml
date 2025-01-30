@@ -36,7 +36,6 @@ _technically_ yes.,0,0.5
 - seemingly fixed by 4a32b33,0,0.5
 - Simply fail because the exception happened,0,0.5
 - The bot did a terrible job at replacing these words - [EbookFoundation/free-programming-books#6801](#url),0,0.5
-- The bot did a terrible job at replacing these words - [EbookFoundation/free-programming-books#6801](#url),1,0.5
 - The bot ignores all context whatsoever at [moby/moby#43441](#url),0,0.5
 - The code fails to compile at [rust-lang/rust#95508](#url),0,0.5
 - This is the simplest thing to do for now,0,0.5
