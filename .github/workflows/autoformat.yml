@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: 'Autoformat'
-      uses: rolfbjarne/autoformat@v0.2
+      uses: rolfbjarne/autoformat@v0.5
       with:
         projects: "Maui/MLTrainer/MLTrainer.sln ml.net/InclusiveCodeReviews.sln"
         onlyFilesModifiedInPullRequest: true
