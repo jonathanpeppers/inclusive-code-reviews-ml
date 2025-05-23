@@ -747,6 +747,39 @@
     },
     {
         "text": "I appreciate your helpfulness!",
+        "text": "Peter",
+        "isnegative": "0"
+    },
+    {
+        "text": "His literal name is just Peter!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Piotr",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is Peter, my colleague.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Here comes Piotr with the documents.",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't say what runtime it is...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't specify what version it is...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't mention what platform it runs on...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't indicate what framework it uses...",
         "isnegative": "0"
     }
 ]
