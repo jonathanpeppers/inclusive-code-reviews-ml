@@ -14,6 +14,12 @@ When writing CSV files, verify the syntax is correct. Text containing commas sho
 "Hello, World!",0,0.5
 ```
 
+Don't pipe text to `dotnet run`, this will *not* work and get your session stuck:
+
+```bash
+echo "Everything you've done has been of very high standards, so just keep doing what you're doing." | dotnet run
+```
+
 ## How to Build and Test
 
 To work on this repository, you will need to first build the model:
