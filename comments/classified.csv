@@ -1,4 +1,10 @@
 text,isnegative,importance
+"This completely solves the issue",0,0.5
+"This completely removes the need for",0,0.5
+"This completely addresses the problem",0,0.5
+"This completely handles all edge cases",0,0.5
+"This completely eliminates the risk",0,0.5
+"This completely fixed the bug",0,0.5
 "This causes several errors:",0,0.5
 "This causes multiple errors:",0,0.5
 "This causes a few errors:",0,0.5
