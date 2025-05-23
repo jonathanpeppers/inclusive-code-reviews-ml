@@ -756,5 +756,21 @@
     {
         "text": "Here comes Piotr with the documents.",
         "isnegative": "0"
+    },
+    {
+        "text": "They don't say what runtime it is...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't specify what version it is...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't mention what platform it runs on...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't indicate what framework it uses...",
+        "isnegative": "0"
     }
 ]
