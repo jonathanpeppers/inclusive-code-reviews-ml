@@ -747,6 +747,9 @@
     },
     {
         "text": "I appreciate your helpfulness!",
+        "isnegative": "0"
+    },
+    {
         "text": "Peter",
         "isnegative": "0"
     },
