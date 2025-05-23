@@ -754,6 +754,26 @@
         "isnegative": "0"
     },
     {
+        "text": "This shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This was shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This feature shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This fix shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This bug was shipped in:",
+        "isnegative": "0"
+    },
+    {
         "text": "Your helpfulness!",
         "isnegative": "0"
     },

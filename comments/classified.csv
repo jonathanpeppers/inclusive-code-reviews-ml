@@ -12,6 +12,13 @@ text,isnegative,importance
 "The code causes several errors:",0,0.5
 "These changes cause several errors:",0,0.5
 "This pull request causes several errors:",0,0.5
+"This shipped in:",0,0.5
+"This was shipped in version:",0,0.5
+"The fix shipped in:",0,0.5
+"This feature ships in:",0,0.5
+"This change shipped in:",0,0.5
+"The bug was shipped in:",0,0.5
+"This ships in:",0,0.5
 _holy crap you actually did it_,0,0.5
 _technically_ yes.,0,0.5
 - [ ] Investigate caching TypeConverters for properties and types. I'd recommend going for a sourcegen solution and generate a switch instead of a dictionary to avoid allocation bump,0,0.5
