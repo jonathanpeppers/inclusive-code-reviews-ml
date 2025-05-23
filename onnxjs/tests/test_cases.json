@@ -736,5 +736,17 @@
     {
         "text": "He'll talk a bit how this works",
         "isnegative": "0"
+    },
+    {
+        "text": "Your helpfulness!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your helpfulness is appreciated!",
+        "isnegative": "0"
+    },
+    {
+        "text": "I appreciate your helpfulness!",
+        "isnegative": "0"
     }
 ]
