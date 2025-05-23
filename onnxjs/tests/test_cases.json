@@ -1,5 +1,21 @@
 [
     {
+        "text": "This completely",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely removes",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely solves",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely handles",
+        "isnegative": "0"
+    },
+    {
         "text": "This causes several errors:",
         "isnegative": "0"
     },
