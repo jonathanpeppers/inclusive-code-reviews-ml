@@ -34,14 +34,14 @@ jobs:
       id: install-dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.x
+        dotnet-version: 9.x
       continue-on-error: true
 
     - name: Retry installing .NET if first attempt failed
       if: steps.install-dotnet.outcome == 'failure'
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.x
+        dotnet-version: 9.x
 
     - name: Install MAUI Workloads
       run: dotnet workload install maui-desktop --ignore-failed-sources
@@ -61,10 +61,10 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: MLTrainer-macos
-        path: Maui/MLTrainer/bin/Release/net8.0-maccatalyst/publish
+        path: Maui/MLTrainer/bin/Release/net9.0-maccatalyst/publish
 
     - name: Archive Windows MAUI App
       uses: actions/upload-artifact@v4
       with:
         name: MLTrainer-windows
-        path: Maui/MLTrainer/bin/Release/net8.0-windows10.0.19041.0/win10-x64/publish
+        path: Maui/MLTrainer/bin/Release/net9.0-windows10.0.19041.0/win10-x64/publish
