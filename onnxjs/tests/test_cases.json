@@ -1,5 +1,17 @@
 [
     {
+        "text": "This causes several errors:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This causes multiple errors:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This causes a few errors:",
+        "isnegative": "0"
+    },
+    {
         "text": "This is terrible",
         "isnegative": "1"
     },
