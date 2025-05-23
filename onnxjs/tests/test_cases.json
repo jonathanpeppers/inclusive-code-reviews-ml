@@ -716,5 +716,9 @@
     {
         "text": "Going to merge.",
         "isnegative": "0"
+    },
+    {
+        "text": "10, however that [PR][0] is",
+        "isnegative": "0"
     }
 ]
