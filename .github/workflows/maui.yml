@@ -34,18 +34,14 @@ jobs:
       id: install-dotnet
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: |
-          8.x
-          9.x
+        dotnet-version: 9.x
       continue-on-error: true
 
     - name: Retry installing .NET if first attempt failed
       if: steps.install-dotnet.outcome == 'failure'
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: |
-          8.x
-          9.x
+        dotnet-version: 9.x
 
     - name: Install MAUI Workloads
       run: dotnet workload install maui-desktop --ignore-failed-sources
