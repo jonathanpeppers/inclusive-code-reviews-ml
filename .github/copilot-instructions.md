@@ -2,7 +2,19 @@
 
 See [README.md](../README.md) for information about this repository.
 
+## Important Notes
+
 Make all git diffs as small as possible, for easier code review by humans.
+
+Don't add JavaScript/TypeScript code for new tests. If you want to write more tests, just add more cases to `onnxjs/tests/test_cases.json`.
+
+When writing CSV files, verify the syntax is correct. Text containing commas should be enclosed in double quotes. For example:
+
+```CSV
+"Hello, World!",0,0.5
+```
+
+## How to Build and Test
 
 To work on this repository, you will need to first build the model:
 
@@ -32,11 +44,5 @@ To solve issues like this:
 2. Run the tests, and verify the test fails. If the test does not fail, add a few more similar cases.
 
 3. Then add entries to the following file *not* using the verbatim text, but similar text: `comments/classified.csv`
-
-When writing CSV files, verify the syntax is correct. Text containing commas should be enclosed in double quotes. For example:
-
-```CSV
-"Hello, World!",0,0.5
-```
 
 4. Run the tests again, and verify the test passes.
