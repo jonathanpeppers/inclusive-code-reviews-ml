@@ -28,10 +28,18 @@ jobs:
     name: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: install .NET
-      uses: actions/setup-dotnet@v2
+      id: install-dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.x
+      continue-on-error: true
+
+    - name: Retry installing .NET if first attempt failed
+      if: steps.install-dotnet.outcome == 'failure'
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.x
 
