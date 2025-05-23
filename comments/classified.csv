@@ -4,6 +4,12 @@ text,isnegative,importance
 "All of your contributions have been of excellent quality, please maintain this standard.",0,0.5
 "The standard of your work is very high, just keep doing what you're doing.",0,0.5
 "Everything you've done has been top notch, keep up the good work.",0,0.5
+"This completely solves the issue",0,0.5
+"This completely removes the need for",0,0.5
+"This completely addresses the problem",0,0.5
+"This completely handles all edge cases",0,0.5
+"This completely eliminates the risk",0,0.5
+"This completely fixed the bug",0,0.5
 "This causes several errors:",0,0.5
 "This causes multiple errors:",0,0.5
 "This causes a few errors:",0,0.5
@@ -5163,7 +5169,28 @@ Your time is important to us,0,0.5
 Your use of descriptive commit messages helps in understanding the code changes clearly.,0,0.5
 Your way of thinking is corrupted,1,0.5
 your:,0,0.5
+"Your helpfulness!",0,0.5
+"Your helpfulness is appreciated!",0,0.5
+"Your helpfulness is noted",0,0.5
+"Your helpfulness is outstanding!",0,0.5
+"Your helpfulness makes a difference",0,0.5
+"We value your helpfulness",0,0.5
+"Thanks for your helpfulness!",0,0.5
+"I appreciate your helpfulness!",0,0.5
 "10, however that [PR][0] is looking",0,0.5
 "He will explain a bit how this feature works",0,0.5
 "She'll describe briefly how this all works",0,0.5
 "They'll talk a little about how this operates",0,0.5
+"Peter",0,0.5
+"Piotr",0,0.5  
+"His literal name is just Peter!",0,0.5
+"His name is Piotr.",0,0.5
+"Peter is working on this feature.",0,0.5
+"Piotr is handling this task.",0,0.5
+"Peter helped me solve this issue.",0,0.5
+"Piotr reviewed this PR.",0,0.5
+"They don't say what version it is.",0,0.5
+"They don't specify what runtime it is.",0,0.5
+"They don't mention which framework it uses.",0,0.5
+"They don't indicate what OS it runs on.",0,0.5
+"They don't tell us what environment it uses.",0,0.5
