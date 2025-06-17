@@ -256,10 +256,6 @@
         "isnegative": "1"
     },
     {
-        "text": "rewrite that real fast",
-        "isnegative": "1"
-    },
-    {
         "text": "You are a lovely person!",
         "isnegative": "0"
     },
