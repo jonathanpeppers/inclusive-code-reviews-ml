@@ -824,5 +824,25 @@
     {
         "text": "They don't indicate what framework it uses...",
         "isnegative": "0"
+    },
+    {
+        "text": "This should be a little bit faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a bit faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a little faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be much faster.",
+        "isnegative": "0"
     }
 ]
