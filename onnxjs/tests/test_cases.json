@@ -256,10 +256,6 @@
         "isnegative": "1"
     },
     {
-        "text": "rewrite that real fast",
-        "isnegative": "1"
-    },
-    {
         "text": "You are a lovely person!",
         "isnegative": "0"
     },
@@ -823,6 +819,26 @@
     },
     {
         "text": "They don't indicate what framework it uses...",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a little bit faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a bit faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a little faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be much faster.",
         "isnegative": "0"
     },
     {
