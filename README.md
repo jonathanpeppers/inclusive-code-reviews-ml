@@ -22,7 +22,11 @@ projects:
 You can find these in the `models.zip` artifact on the GitHub status
 of a commit or pull request.
 
-You can create them locally via:
+## Prerequisites
+
+This project requires .NET 9.0 SDK or later. You can download it from [https://dot.net](https://dot.net).
+
+You can create the models locally via:
 
 ```bash
 dotnet run --project ml.net/InclusiveCodeReviews.Convert/InclusiveCodeReviews.Convert.csproj
