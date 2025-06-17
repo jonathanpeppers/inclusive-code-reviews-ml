@@ -1789,6 +1789,11 @@ _technically_ yes.,0,0.5
 "Probably unrelated, but this is a terrible error message. We should say _what_ the inconsistencies are. #Resolved",0,0.5
 "ProjectIds returns an IReadOnlyCollection<T>, which generally isn't safe for iteration during mutating operations",0,0.5
 "public static ObjectHandle? CreateInstance(string assemblyName, string typeName)",0,0.5
+"Put all these changes in that folder",0,0.5
+"Put all these files in the correct location",0,0.5
+"Put all these updates in the next release",0,0.5
+"Put all those items in the container",0,0.5
+"Put everything in the proper place",0,0.5
 "Punk ass snitch, get the cock",1,0.5
 "Putting the issues into buckets could be helpful",0,0.6
 "quick question, as the API has been approuved, and thinking about the summary, i have a terrible idea",0,0.5
