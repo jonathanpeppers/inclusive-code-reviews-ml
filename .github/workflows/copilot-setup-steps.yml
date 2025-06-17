@@ -1,0 +1,52 @@
+name: copilot-setup-steps
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  setup-development-environment:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: install .NET 9
+      id: install-dotnet
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+      continue-on-error: true
+
+    - name: Retry installing .NET 9 if first attempt failed
+      if: steps.install-dotnet.outcome == 'failure'
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 9.x
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: onnxjs/package-lock.json
+
+    - name: Install npm dependencies
+      run: cd onnxjs && npm install
+
+    - name: Build and run ML.NET project
+      run: cd ml.net/InclusiveCodeReviews.Convert && dotnet run
+
+    - name: Run tests
+      run: cd onnxjs && npm test
+
+    - name: Archive build artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: copilot-dev-artifacts
+        path: bin
+        if-no-files-found: warn
