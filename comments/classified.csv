@@ -5218,6 +5218,11 @@ Your time is important to us,0,0.5
 Your use of descriptive commit messages helps in understanding the code changes clearly.,0,0.5
 Your way of thinking is corrupted,1,0.5
 your:,0,0.5
+"Would the answer be ""don't do that""",0,0.5
+"Is the response ""don't do that""",0,0.5
+"Should the answer be ""don't do that""",0,0.5
+"Could the solution be ""don't do that""",0,0.5
+"What if the answer is ""don't do that""",0,0.5
 "This app is space themed",0,0.5
 "It has a cat theme",0,0.5
 "The design is animal themed",0,0.5
