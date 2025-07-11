@@ -864,5 +864,9 @@
     {
         "text": "Is the answer \"don't do that\"?",
         "isnegative": "0"
+    },
+    {
+        "text": "It is space and cat themed.",
+        "isnegative": "0"
     }
 ]
