@@ -1,29 +1,4 @@
 text,isnegative,importance
-"Everything you've done has been of very high standards, so just keep doing what you're doing.",0,0.5
-"Your work has consistently met high standards, please continue with the same approach.",0,0.5
-"All of your contributions have been of excellent quality, please maintain this standard.",0,0.5
-"The standard of your work is very high, just keep doing what you're doing.",0,0.5
-"Everything you've done has been top notch, keep up the good work.",0,0.5
-"This completely solves the issue",0,0.5
-"This completely removes the need for",0,0.5
-"This completely addresses the problem",0,0.5
-"This completely handles all edge cases",0,0.5
-"This completely eliminates the risk",0,0.5
-"This completely fixed the bug",0,0.5
-"This causes several errors:",0,0.5
-"This causes multiple errors:",0,0.5
-"This causes a few errors:",0,0.5
-"This causes some errors:",0,0.5
-"The code causes several errors:",0,0.5
-"These changes cause several errors:",0,0.5
-"This pull request causes several errors:",0,0.5
-"This shipped in:",0,0.5
-"This was shipped in version:",0,0.5
-"The fix shipped in:",0,0.5
-"This feature ships in:",0,0.5
-"This change shipped in:",0,0.5
-"The bug was shipped in:",0,0.5
-"This ships in:",0,0.5
 _holy crap you actually did it_,0,0.5
 _technically_ yes.,0,0.5
 - [ ] Investigate caching TypeConverters for properties and types. I'd recommend going for a sourcegen solution and generate a switch instead of a dictionary to avoid allocation bump,0,0.5
@@ -396,6 +371,7 @@ _technically_ yes.,0,0.5
 "1. The behavior makes sense for this method, and doesn't need further justification, or,",0,0.5
 "1. the values are just stored on the stack, and no part of the TempArray will hit the heap",0,0.5
 "1. we're wrong: I used MS Word to test what the behavior should be and added them to the CSV file as #code. Then, when they fail in TAEF, I double check that I translated MS Word correctly",0,0.5
+"10, however that [PR][0] is looking",0,0.5
 "2. API 21 app will run on approximately 98.6% of devices, and API 24 app only has 91.7%. The is from Android studio",0,0.5
 "2. delete node (with comments, for that reason need to copy comments before)",0,0.5
 "2. for #6986: we'll need _a lot_ of tests to make sure this works correctly. The idea here is that anything past the ""document end"" will be treated as a degenerate range at document end. So this is gonna be a really nice transition where I'll just update the CSV appropriately and generate/run the tests",0,0.5
@@ -461,6 +437,7 @@ _technically_ yes.,0,0.5
 "Ahh, I see. I guess we should",0,0.5
 "Alex helped suggest that name since the comment on xcode is ""/// The handle for the person that will be displayed on the incoming call notification.""",0,0.5
 "All of my edits are good. Cunts like you who revert good edits because you're too stupid to understand how to write well, and then revert other edits just because you've decided to bear a playground grudge, are the problem.  Maybe one day you'll realise the damage you did to a noble project",1,0.5
+"All of your contributions have been of excellent quality, please maintain this standard.",0,0.5
 "all these names are terrible.  can you use nameof(QualifyMemberAccess), and fix the rest",1,0.5
 "All this is terrible, but let's not pretend our settings model was designed for a GUI",1,0.5
 "All you do is introduce more issues",1,0.8
@@ -714,6 +691,8 @@ _technically_ yes.,0,0.5
 "Everyone makes mistakes, @github. Let's learn from them and continue to improve.",0,0.5
 "Everyone makes mistakes, and it's an opportunity to learn and grow. Let's offer constructive criticism and support to help each other improve, @github.",0,0.5
 "Everyone's opinion matters, @github. Let's provide constructive feedback to help each other grow. #code #url",0,0.5
+"Everything you've done has been of very high standards, so just keep doing what you're doing.",0,0.5
+"Everything you've done has been top notch, keep up the good work.",0,0.5
 "exactly, turkish has a lot of really nasty localization issues all packed into one terrible locale",1,0.5
 "F.Y.I. punk, @github was my homie. It's was due to some faggot named @github",1,0.5
 "Fair, some alternatives",0,0.5
@@ -794,6 +773,7 @@ _technically_ yes.,0,0.5
 "Have you ever seen it with?",0,0.5
 "Have you fallen on your head as a child? You are pathetic, @github",1,0.5
 "He has some other concerns about the api, but I'd think we shouldn't revisit the api right now. Could you resolve any open stuff please? It's terrible to do from mobile ;)",0,0.5
+"He will explain a bit how this feature works",0,0.5
 "He's not a retard, he was just useless",1,0.5
 "Hello @github, I appreciate your effort but it seems like there may be room for improvement in the comment made.",0,0.5
 "Hello @github, I appreciate your effort but let's consider other options.",0,0.5
@@ -847,6 +827,8 @@ _technically_ yes.,0,0.5
 "Hi, @github - what's ths issue you're seeing on iOS? Is it also the same error regarding #code ",0,0.5
 "Hi! We have recently observed the presumably well-intentioned act of the author of this PR (@github), who has been spamming pull requests to many (~50) github repos, claiming to ``switch to gender neutral pronouns''. In reality, the bot performs a dictionary replace of gendered nouns and pronouns, and the outcome is questionable at best, and literally harmful at worst. See",0,0.5
 "his isn't how I expected we'd do it. I'd have thought PreferInlineCompletions is set by a developer or by DOTNET_SYSTEM_NET_SOCKETS_INLINE_COMPLETIONS being set, and PreferInlineCompletions is always respected by the engine. That way, we can experiment with all sockets being in this mode (by setting the env var to true) and ASP.NET can experiment with just its sockets being in this mode (by using reflection to set the property to true)",0,0.5
+"His literal name is just Peter!",0,0.5
+"His name is Piotr.",0,0.5
 "hmm I tested again, but it's the same :/",0,0.5
 "Hmm, did we end up with:",0,0.5
 "Hmm, I had thought I tried that syntax and it hadn't worked, but I probably just typed something wrong. I'll add a couple of tests for this, and subparts",0,0.5
@@ -910,6 +892,7 @@ _technically_ yes.,0,0.5
 "I appreciate your feedback, but let's keep our language constructive and respectful. @github",0,0.5
 "I appreciate your feedback, but let's keep the conversation respectful and professional. It's important to maintain a positive and inclusive environment.",0,0.5
 "I appreciate your feedback, let's collaborate to enhance the code further, @github.",0,0.5
+"I appreciate your helpfulness!",0,0.5
 "I appreciate your input, @github. How can we work together to improve the code at #url?",0,0.5
 "I appreciate your input, @github. However, I believe there might be a simpler approach to the problem. Let's discuss how we can make things easier.",0,0.5
 "I appreciate your input, but I'd like to explore other options together, @github.",0,0.5
@@ -1759,6 +1742,12 @@ _technically_ yes.,0,0.5
 "Performance is _terrible_. Like beyond bad. ... If we could make nested context sensitive function calls much more performant to check, it's go a long way towards making merging this feasible",1,0.5
 "Perhaps we could consider a different approach for this issue, such as examining the common hoistables between the loop and its clone.",0,0.5
 "Personal attacks or harassment are never acceptable, @github. Let's work together to create a positive space for collaboration.",0,0.5
+"Peter helped me solve this issue.",0,0.5
+"Peter is working on this feature.",0,0.5
+"Peter",0,0.5
+"Piotr is handling this task.",0,0.5
+"Piotr reviewed this PR.",0,0.5
+"Piotr",0,0.5  
 "Please add a comment here explaining this type lives in the VS side of things and exists to be the proxy. It makes sense to me since we have chatted about it, but @github can attest to having to debug through other frameworks where there was no documentation on what lived in what process and it drove him insane",0,0.5
 "Please be mindful of how we address each other in our discussions. Let's strive to maintain a respectful tone, @github.",0,0.5
 "Please check the issue I have logged: #url. The change introduces a major inconsistency between the platforms and the new behavior is rather unexpected, breaking dynamic style changes, VisualStateManager etc",0,0.5
@@ -1789,12 +1778,12 @@ _technically_ yes.,0,0.5
 "Probably unrelated, but this is a terrible error message. We should say _what_ the inconsistencies are. #Resolved",0,0.5
 "ProjectIds returns an IReadOnlyCollection<T>, which generally isn't safe for iteration during mutating operations",0,0.5
 "public static ObjectHandle? CreateInstance(string assemblyName, string typeName)",0,0.5
+"Punk ass snitch, get the cock",1,0.5
 "Put all these changes in that folder",0,0.5
 "Put all these files in the correct location",0,0.5
 "Put all these updates in the next release",0,0.5
 "Put all those items in the container",0,0.5
 "Put everything in the proper place",0,0.5
-"Punk ass snitch, get the cock",1,0.5
 "Putting the issues into buckets could be helpful",0,0.6
 "quick question, as the API has been approuved, and thinking about the summary, i have a terrible idea",0,0.5
 "Quite the opposite. In my opinion, using nullable analysis in tests is an overkill. It simply introduces unnecessary overhead on every angle. A test doesn't have to handle every possible scenario. If it doesn't fail, there is nothing to get wrong about nullability, it is focused on a very specific scenario",0,0.5
@@ -1840,6 +1829,7 @@ _technically_ yes.,0,0.5
 "Seriously, I love your idea.  I really want your work above to be one of  Xamarin.Forms project templates in .net core SDK",0,0.5
 "Seriously, on every branch the feature tests fail? Is there a problem with the CI and running from forks or something",0,0.5
 "She mentioned this was very important",0,0.5
+"She'll describe briefly how this all works",0,0.5
 "shit absolutely, I didn't realize I was on 16.6 when I committed/pushed this branch 😬",1,0.5
 "shit, this looks really good",0,0.5
 "Shoot, I forgot to add that",0,0.5
@@ -1949,6 +1939,7 @@ _technically_ yes.,0,0.5
 "Thank you for your effort, remember that time spent learning is never wasted. Keep going! - @github",0,0.5
 "Thanks for catching these, I followed Sebastian's advice about removing the [Introduced] attribute and removing the messages that don't give us much info in the Enums.cs file but not this one. If the documentation does not give a good method to use instead, would I just clear the entire message for these as well? In this case, there are other functions that can fetch assets using different types of parameters. Should I say something along the lines of ""Use other fetchasset methods""",0,0.5
 "Thanks for the notice & discussion! TIL 😄 , and it makes a lot of sense",0,0.5
+"Thanks for your helpfulness!",0,0.5
 "Thanks to Pobst, it should go through here now: #url",0,0.5
 "Thanks, @github.  Not stupid questions.  We handle merging.  I re-ran the failed leg and it passed.  Thanks for the contribution",0,0.5
 "Thanks, @github",0,0.5
@@ -1997,11 +1988,13 @@ _technically_ yes.,0,0.5
 "The arrow function is well-documented, but we need to provide annotations for the assert declaration as well.",0,0.5
 "The benefits as I personally, subjectivelly perceive them",0,0.5
 "The BigInt Class' constructors are all conversions to other datatypes making it inefficient and limited while BigInt *already* has a method coded in which uses *string* input **and is really what you should use when actually utilizing BigInt** called the #code method. The issue of the type conversion is *especially* magnetized for BigInt because of how it was intended for and why it was made, as the official microsoft documentation of BigInteger states (#url)",0,0.5
+"The bug was shipped in:",0,0.5
 "The build failures look to be on master, too: apk sizes, tls tests, designer, libZipSharp/DotNetPackageXASdkProject test",0,0.5
 "The case when recovery is triggered is rare, and is not a path to be optimized.  If the AV blocks for a long time after writing each file, then the recovery will need to wait for it. Still, it is not expected to take the full minute after each file is written",0,0.5
 "The cases where macOS failed, it seems like #code. So how would this class know to check if the files exist in that case",0,0.5
 "The change itself is fine, but should go in a different PR, it has nothing to do with sprite kit :smile",0,0.5
 "The check done on the epoll thread is speculative. The value that is checked is updated under the lock, and since the epoll thread does not take the lock the value read may be incorrect. It is very unlikely to happen because a wait of any sort would typically involve a memory barrier (often even if it does not actually end up waiting), and the value read would be at least as recent as when the epoll wait was released. Even if the wait did not block, it is possible that (if it doesn't involve a memory barrier directly) the call sequence involved would involve a memory barrier of some sort. Nevermind the estimations on memory barriers, the fact is that at worst we are relying on the latency of processor cache consistency here, and how bad that can be depends entirely on the processor. Some old (especially arm) processors don't have any sort of cache consistency and they rely entirely on software to do the right thing. When a processor has cache consistency the whole idea is that it shouldn't take an inordinate amount of time to make caches consistent, otherwise it would defeat the purpose. For example, using #code to exit a lock relies entirely on processor cache consistency latency for it to work reasonably well. My stance remains that considering that the alternative is not functionally incorrect, this should be good enough for the purpose. That is up for debate though, we can sacrifice some perf to guarantee that sync operations are signaled on the epoll thread",0,0.5
+"The code causes several errors:",0,0.5
 "The code has shown significant improvement, @github. Thank you for your efforts in making it better.",0,0.5
 "The code looks great, but we can always strive to improve. Your input is valuable",0,0.5
 "The code may need some updates due to its age and complexity, @github. Let's work on modernizing it for better maintainability.",0,0.5
@@ -2022,6 +2015,7 @@ _technically_ yes.,0,0.5
 "The first indirection is done on #code, the second on #code and after the change they have different VNs, so too hard for #code. Probably that behaviour is responsible for other uneccessary null checks, I will look for an exisitng issue tomorrow",0,0.5
 "The first message I wrote was “**Spread** produces a tuple type...” but I wasn’t sure how I felt about it since the error could appear far from the actual spread via instantiation. I guess I can delete the “Type” variant, it just felt wrong to call a type an expression",0,0.5
 "The first three suggestions were not accepted, leading to some frustration. It may be beneficial to revisit and consider these suggestions in the spirit of collaboration.",0,0.5
+"The fix shipped in:",0,0.5
 "The game is currently in a state where changes are needed to improve it, @github. Let's collaborate on making it better.",0,0.5
 "The grid/splitview can't modify priority, they only read the value. The views themselves set it. The user of the grid (EditorPart) would coordinate across its views and set their priorities accordingly",0,0.5
 "The heuristic is ""using a non-thread-safe instance concurrently is allowed to corrupt that instance, but nothing else"" (there's a little bit of fuzziness there, e.g. abusing MemoryStream over a provided buffer is going to corrupt the underlying buffer, but that's OK, you told it to)",0,0.5
@@ -2055,6 +2049,7 @@ _technically_ yes.,0,0.5
 "The situation may seem overwhelming, but we can handle it together, @github.",0,0.5
 "The small fixes are still great too! The selection dismissing for example - that's a great example of something quick that just needed someone's eyes to find the right place to fix it",0,0.5
 "The solution proposed seems extensive, @github. Let's consider alternative approaches for efficiency.",0,0.5
+"The standard of your work is very high, just keep doing what you're doing.",0,0.5
 "The symbol is neither from source nor metadata? @github has convinced me this isn't insane, but I'm wondering if this needs to be doc'ed somewhere",0,0.5
 "The terrible naming aside, the above has a more meaningful call pattern. We either want a path, or we want to make it so the project doesn't have one. Null may be how we rationalize that, but it's just a well known magic value. It doesn't tell you, for example, if that ends up succeeding and having some default value when you pass in null",0,0.5
 "The test failures that show up (link all / DotNet tests) are different issues, and at least the DotNet tests seem to be from this PR",0,0.5
@@ -2101,34 +2096,58 @@ _technically_ yes.,0,0.5
 "There's only an issue when you can cause the work performed by the server to grow without growing your own work. (For example, if you have an input where you enter a number and the server calculates the factorial or fibonacci of that number as an example), but in general it's ok if you have to do more work to cause the server to do more work, even if the scale is different. At that point, its up to the server to establish the appropriate limits of what it considers acceptable",0,0.5
 "There's unfortunately a lot of tricky params/optional cases that make it a bit tricky to get right,",0,0.5
 "These assume you meant to write a type annotation but don’t say what you _did_ write. If our assumption is wrong, it’s even more confusing. I’m also a little concerned about the interpolation of the object #code being unwieldy (not uncommon to destructure a dozen props in a React component, for example)",0,0.5
+"These changes cause several errors:",0,0.5
 "These comments are seriously important and really ensure that people reading and maintaining the code know what's happening.  I can't look at this line and have any idea why it's doing what it's doing.  Previously, i would at least have *some* idea why we had this code and what cases it was trying to support.   #Resolved",0,0.5
 "These intersections do make the intellisense popups uglier, but they're required for correctness",0,0.5
 "These null values are needed for my stupid simple injection. If there is no default, it will try and inject the #code. We probably need to fix this, but somehow didn't cause issues with the MS DI. Might be because it used the other ctor",0,0.5
 "These relations are insane! Everything looks good to me though! Perhaps remove the newline before the curly braces when starting interfaces though for style, but your call",0,0.5
 "These tests use extended unicode escapes, which we only even parse when #code is es6 or above. So we parse this test as garbage and emit corresponding garbage",0,0.5
 "They are useful **sometimes** :) But not in situations when you're supposed to specify a length of something, a size of something etc - that's where they are *insane* :)",0,0.5
+"They don't indicate what OS it runs on.",0,0.5
+"They don't mention which framework it uses.",0,0.5
+"They don't say what version it is.",0,0.5
+"They don't specify what runtime it is.",0,0.5
+"They don't tell us what environment it uses.",0,0.5
 "They seem fairly fast locally, but yes, they should",0,0.5
 "They weren't ""actionable""",0,0.5
+"They'll talk a little about how this operates",0,0.5
 "They're mutually exclusive. After a quick chat with Dustin, here's a new approach",0,0.5
 "They're only being used on values being of private types, coming from private fields, and guaranteed to be correct due to the implementation of the type itself, so the only way this could break is if a dev actually tried to mess up with the internal fields using reflection, which is something that not even types from the BCL guard against, as far as I can tell (eg. #code will break the type safety too in the #code property getter if a dev used private reflection to store some arbitrary object there)",0,0.5
 "Thinking about it some more, would it really be a breaking change? I know almost everything can be considered breaking in a mature framework, but this maybe isn't so terrible to just add precision",0,0.5
 "Thinking on the vector latency of 3 clocks; and perhaps same for #code; methods seem to start using the highest stack values first, whereas current am clearing the highest values last. Might it make sense to reverse the clearing order",0,0.5
 "Thirdly, your dog is a bit of a bender",1,0.5
+"This approach should be faster.",0,0.5
 "This autogenerated file seems a bit confusing, what do you think we can do to improve it, @github?",0,0.5
 "This benchmark tests #code when called in a loop (a typical use case) for various haystack lengths, and it alternates whether the first needle or the last needle is discovered. In particular, this shows how the original #code logic when called in a loop devolves into an #code operation if the last needle in the collection is the one that keeps being found, and how with the new logic the loop maintains an #code worst-case performance guarantee",0,0.5
 "This block of code may seem unassuming, but a comment outside the macro could provide valuable context on its purpose @github.",0,0.5
 "This branch isn't quite finished, the #code portion is broken",0,0.5
+"This can be a bit quicker.",0,0.5
 "this cast was failing, and that's why clearing selection wasn't working. We need to find a better way to fix this cast, for example implement a Interface on the SelectableItemsViewAdapter",0,0.5
+"This causes a few errors:",0,0.5
+"This causes multiple errors:",0,0.5
+"This causes several errors:",0,0.5
+"This causes some errors:",0,0.5
+"This change shipped in:",0,0.5
+"This change will improve performance.",0,0.5
 "This check can be done for #code, but not for #code: how do you check that the package is already installed?  ¯\_(ツ)_/¯",0,0.5
 "This code could use some improvement, maybe with some help from #code - @github",0,0.5
 "This code is great, you definitely got this",0,0.5
 "This code was terrible, I'm so happy you made it better",1,0.5
+"This completely addresses the problem",0,0.5
+"This completely eliminates the risk",0,0.5
+"This completely fixed the bug",0,0.5
+"This completely handles all edge cases",0,0.5
+"This completely removes the need for",0,0.5
+"This completely solves the issue",0,0.5
+"This could be a bit faster.",0,0.5
 "This could be fixed with a VS-wide setting, with user-interface, allowing users to redirect (and move, and clean) this directory, but the way it's currently implemented my position is that this is malware",0,0.5
+"This could run a little faster.",0,0.5
 "This could use some more engineering",0,0.6
 "This decision doesn't apply to covariant return case because there is no backward compatibility scenario that involves covariant returns feature, compat council makes decisions about compatibility scenarios. Covariant Returns is a new feature, we never emitted anything like that before, with or without an override. And, I am pretty sure that with suggested changes, we wouldn't emit a MethodImpl for covariant return case in case of the ambiguity if runtime doesn't have the fix. If you disagree, all you have to do to prove me wrong is to provide a concrete test case failing with suggested changes",0,0.5
 "This depends on if we are signing with ApkSigner or not. #code files MUST use ApkSigner, #code MUST not",0,0.5
 "This diff simplifies the isJSConstructor function by removing unnecessary checks. Great work on making it more efficient, @github.",0,0.5
 "This doesn't seem like a terrible idea, though are you cool if we punt that for the v1 at least? That seems like refactoring we could come back through on a second pass and do 🤔",0,0.5
+"This feature ships in:",0,0.5
 "This feedback could be improved further. @github, let's find ways to enhance the quality of the code together.",0,0.5
 "this feels like a terrible nit, but all the other options are #code style, so this should probably be #code, right",1,0.5
 "This feels like fixing a bug in int.Parse and then commenting that ""it's needed for JSON parsing"". This is a core bit of code -- it shouldn't be thinking about very specific clients or something seems off",0,0.5
@@ -2137,6 +2156,7 @@ _technically_ yes.,0,0.5
 "This guy is such a liar, i hate him. He is evil",1,0.5
 "This has just evolved from old Windows-style C code. Thus the return code focus and no real exceptions until recent-ish additions or modifications. That's why everything is so mixed. But we're ready and willing to adopt exceptions now as long as the console  API functionality is maintained to the perspective of clients (within reason). Thus if you want to close this issue/PR as ""dumb/pointless/outdated"" and transform the work into something that is overall prettier and more faithfully represents C++ and utilizes the Chromium math libraries to their potential... I'm cool with it",0,0.5
 "This has way too many errors",1,0.5
+"This implementation should be faster.",0,0.5
 "This imports #code, so I think it would get the value you want",0,0.5
 "This is _potentially_ a deadlock risk: if the UI thread is unavailable to switch to, we're still holding the lock, and so further notifications will get blocked up. Whether this is a serious concern is hard to say -- if we're wrong we'll at least get a nice hang which should be easy to debug. :smile",0,0.5
 "This is a case of ""play stupid games, win stupid prizes""",1,0.5
@@ -2184,6 +2204,7 @@ _technically_ yes.,0,0.5
 "this makes it seem like the preview contains certain VB core methods that the stable does not, which is odd",0,0.5
 "This makes the pin ""templatable""",0,0.5
 "This means that if the assumption about inputs is correct, then the ""expected"" case will be you always do two compares and in the case where it's wrong, the first check results in an early exit in more cases than the ""edge case check""",0,0.5
+"This might be faster.",0,0.5
 "This might leave a hole where the attribute could be used on methods which only violate type parameter constraints within the implementation, not in the signature. The user wouldn't be stopped from doing it at compile time but could get a runtime error. That might just be a case of ""play stupid games, win stupid prizes""",0,0.5
 "This obviously only matters if #code is called multiple times per instance, which is exactly what's happening",0,0.5
 "This often leads to memory leaks, and that is definitely bad code.",1,0.5
@@ -2191,13 +2212,17 @@ _technically_ yes.,0,0.5
 "This one is technically wrong. It suggests that pressing this chord _right now_ will activate this action, but what we're providing is more informative than actionable",0,0.5
 "This one was having test failures that I was waiting on, but a new (weekly) version of the localization PRs came out which includes all the changes in this PR and more",0,0.5
 "This optimization is not",0,0.5
+"This optimization makes it faster.",0,0.5
 "This PR unrolls #code/#code for ""half"" constant strings and spans in [0..32] chars length",0,0.5
 "This program has a circle that follows the user's mouse cursor. When you click, it toggles between Sleeping and not Sleeping",0,0.5
 "This proposal also doesn't expose the setter. In exposing the setter, there's a risk that someone will inevitably call the setter in #code and break the inheritance tree for #code. The inheritance tree is becoming more and more important, especially as we added in #code (a great example of #code inheriting from #code, and how calling the setter could easily break everything)",0,0.5
+"This pull request causes several errors:",0,0.5
 "This reduces terms like ""Looper"" (""wtf is a looper!""), replacing with a (hopefully?) more common term of ""message loop"", and also provides the callback method that won't be invoked. This should hopefully be useful for debugging/diagnostics",1,0.5
 "This reminds me of another scenario",0,0.8
 "This seems both safer/more defensive, and generally more useful (the second part at least, if it's not done already)",0,0.5
 "this seems inconspicuous, but also, wtf is it doing?",1,0.5
+"This shipped in:",0,0.5
+"This ships in:",0,0.5
 "This should be a more ""context free"" error message.  We certainly *don't* want the stack trace dumped to the ""error"" output, as this is user hostile (wtf are they supposed to do with it?), though that said, what are they supposed to do when this task fails, *period*? :-/",0,0.5
 "This should create a new solution for you",0,0.5
 "This should work",0,0.5
@@ -2206,11 +2231,16 @@ _technically_ yes.,0,0.5
 "This syntactic check is wrong. Note that this means that this method would stop adding casts to *any* type. For example, it would no longer be able to cast #code to #code",0,0.5
 "This test name is wrong, this is about readonly members in a non-readonly struct",0,0.5
 "this type seems pretty insane to me.  why not have it point at something like  that 'result' instance, instead of needing to explode all the values inline into it",1,0.5
+"This version will be quicker.",0,0.5
+"This was shipped in version:",0,0.5
 "this was to appease github, which shows a terrible diff otherwise :'(",0,0.5
+"This will be a little faster.",0,0.5
+"This will be somewhat faster.",0,0.5
 "this will cause an extra object allocation for every occurrence. we use this on every hover, and do not want to increase the amount of garbage we create",0,0.5
 "this will not work.  #codes are often language specific.  So most will not be able to process diagnostics from another language.  Worse, they will legit just crash if given the wrong diagnostic language as they all assume they'll only get diagnostics from teh same language",0,0.5
 "This will throw at runtime, but we need to start giving translation to these message",0,0.5
 "This works, but it's pretty fragile: #code is allocated on the stack, but #code will save it away in a global var and it will be used only later in #code.  It will work as long as both of those calls are in this function - but will start pointing to garbage if this is ever refactored",0,0.5
+"This would be slightly faster.",0,0.5
 "This would give the option to add this to the support libraries, and not have to build with a new (not yet released) Xamarin.Android",0,0.5
 "This would need to be a _yet another_ type than the ""context"" object that is passed by the completion service to #code. I'd prefer not to introduce more of these. However, your point is taken. I was modeling CustomTags off of what we did with diagnostics, but perhaps that's not the best approach here",0,0.5
 "This wouldn't work, If a character is sliced between two spans, this will return the wrong character count. For example, this will fail on something like new string('あ', 10000), returning the wrong character count as for each chunk, it will add an extra character as the character is across two spans",0,0.5
@@ -2316,6 +2346,7 @@ _technically_ yes.,0,0.5
 "We typically prefer work (and pull requests) to be done in forks. It's fine for this PR, but if you could create the d16-7 PR using your fork that would be great! And we've branched d16-8 as well, so this fix needs to go there too",0,0.5
 "We use it to let the solution crawler back off. We have logic to back of if we are editing our files (to avoid us causing lots of GC for example), but if say you're editing a Readme file or something else we don't want to be making that terrible",0,0.5
 "We value a positive and professional environment for code reviews, @github.",0,0.5
+"We value your helpfulness",0,0.5
 "We woud need to check what the screen reader behavior is - does the TalkBack focus move with the keyboard focus? If it's inconsistent, we need to figure out what the desired behavior is there. If it's consistent, then I think this is an OK solution",0,0.5
 "We, as toolkit owners, can use reflection to set it and/or use any other mechanism which allows it to be set and never unset",0,0.5
 "We'll have to discuss expectations. If we want to add tests, then we'll need a list",0,0.5
@@ -2491,6 +2522,11 @@ _technically_ yes.,0,0.5
 "Your example of the final state looks good, but this interim state feels unacceptable. It churns all this code and we'll just have to change it all again later. Is there some way we can stage this without making everything gross in the interim",1,0.5
 "Your feedback is important, let's engage in a constructive dialogue to enhance the code, @github.",0,0.5
 "Your feedback is important. Let's discuss how we can make the code even better. Thanks, @github!",0,0.5
+"Your helpfulness is appreciated!",0,0.5
+"Your helpfulness is noted",0,0.5
+"Your helpfulness is outstanding!",0,0.5
+"Your helpfulness makes a difference",0,0.5
+"Your helpfulness!",0,0.5
 "Your input is valuable, @github. Let's brainstorm ways to improve this solution.",0,0.5
 "Your input is valuable, can you please clarify your thoughts further, @github?",0,0.5
 "Your input is valued, and all feedback is welcome. Let's discuss any concerns you may have with the code, @github.",0,0.5
@@ -2499,6 +2535,7 @@ _technically_ yes.,0,0.5
 "Your scheme around an optional ""name"" looks like it's sufficient to support even the most unusual UI shapes alongside the requirement to declare a group explicitly, e.g. for this",0,0.5
 "Your semen is not viable. Were you to procreate, the children would be homosexuals",1,0.5
 "Your suggestions are valuable, @github! Would you consider moving this call into a local variable?",0,0.5
+"Your work has consistently met high standards, please continue with the same approach.",0,0.5
 "Your work in the code is valuable, @github. Let's identify ways to enhance it together.",0,0.5
 "Yup it's a stupid copy-paste error, I made changes to one place but forgot it here",1,0.5
 (And I think we're in the pinvoke wrapper for #code - going up a few more frames I see us in #code),0,0.5
@@ -5181,40 +5218,3 @@ Your time is important to us,0,0.5
 Your use of descriptive commit messages helps in understanding the code changes clearly.,0,0.5
 Your way of thinking is corrupted,1,0.5
 your:,0,0.5
-"Your helpfulness!",0,0.5
-"Your helpfulness is appreciated!",0,0.5
-"Your helpfulness is noted",0,0.5
-"Your helpfulness is outstanding!",0,0.5
-"Your helpfulness makes a difference",0,0.5
-"We value your helpfulness",0,0.5
-"Thanks for your helpfulness!",0,0.5
-"I appreciate your helpfulness!",0,0.5
-"10, however that [PR][0] is looking",0,0.5
-"He will explain a bit how this feature works",0,0.5
-"She'll describe briefly how this all works",0,0.5
-"They'll talk a little about how this operates",0,0.5
-"Peter",0,0.5
-"Piotr",0,0.5  
-"His literal name is just Peter!",0,0.5
-"His name is Piotr.",0,0.5
-"Peter is working on this feature.",0,0.5
-"Piotr is handling this task.",0,0.5
-"Peter helped me solve this issue.",0,0.5
-"Piotr reviewed this PR.",0,0.5
-"They don't say what version it is.",0,0.5
-"They don't specify what runtime it is.",0,0.5
-"They don't mention which framework it uses.",0,0.5
-"They don't indicate what OS it runs on.",0,0.5
-"They don't tell us what environment it uses.",0,0.5
-"This could be a bit faster.",0,0.5
-"This will be a little faster.",0,0.5
-"This might be faster.",0,0.5
-"This would be slightly faster.",0,0.5
-"This can be a bit quicker.",0,0.5
-"This will be somewhat faster.",0,0.5
-"This could run a little faster.",0,0.5
-"This approach should be faster.",0,0.5
-"This version will be quicker.",0,0.5
-"This implementation should be faster.",0,0.5
-"This change will improve performance.",0,0.5
-"This optimization makes it faster.",0,0.5
