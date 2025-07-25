@@ -872,5 +872,9 @@
     {
         "text": "It is space and cat themed.",
         "isnegative": "0"
+    },
+    {
+        "text": "This PR is dumb",
+        "isnegative": "1"
     }
 ]
