@@ -1,0 +1,876 @@
+[
+    {
+        "text": "Everything you've done has been of very high standards, so just keep doing what you're doing.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely removes",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely solves",
+        "isnegative": "0"
+    },
+    {
+        "text": "This completely handles",
+        "isnegative": "0"
+    },
+    {
+        "text": "This causes several errors:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This causes multiple errors:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This causes a few errors:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is terrible",
+        "isnegative": "1"
+    },
+    {
+        "text": "You are a failure",
+        "isnegative": "1"
+    },
+    {
+        "text": "This code is really bad",
+        "isnegative": "1"
+    },
+    {
+        "text": "There are test failures",
+        "isnegative": "0"
+    },
+    {
+        "text": "There is a test failure",
+        "isnegative": "0"
+    },
+    {
+        "text": "One test failed",
+        "isnegative": "0"
+    },
+    {
+        "text": "You suck",
+        "isnegative": "1"
+    },
+    {
+        "text": "@jonathanpeppers you suck",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is great!",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is so gross",
+        "isnegative": "1"
+    },
+    {
+        "text": "Looks good to me",
+        "isnegative": "0"
+    },
+    {
+        "text": "You stink",
+        "isnegative": "1"
+    },
+    {
+        "text": "I don't like this.",
+        "isnegative": "1"
+    },
+    {
+        "text": "Is it working yet?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your code is pretty awful",
+        "isnegative": "1"
+    },
+    {
+        "text": "Your code is a nightmare !!!!",
+        "isnegative": "1"
+    },
+    {
+        "text": "Why is this so bad",
+        "isnegative": "1"
+    },
+    {
+        "text": "You definitely got this",
+        "isnegative": "0"
+    },
+    {
+        "text": "This hurts me to look at it",
+        "isnegative": "1"
+    },
+    {
+        "text": "Keep up the great work!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your way of thinking is quite corrupted",
+        "isnegative": "1"
+    },
+    {
+        "text": "Don't forget to resolve the memory corruption!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Simple and straightforward, love it",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why are you such a pain?",
+        "isnegative": "1"
+    },
+    {
+        "text": "Thanks for fixing our pain points",
+        "isnegative": "0"
+    },
+    {
+        "text": "This change was necessary",
+        "isnegative": "0"
+    },
+    {
+        "text": "I have no faith in this code",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is a huge improvement",
+        "isnegative": "0"
+    },
+    {
+        "text": "I like this.",
+        "isnegative": "0"
+    },
+    {
+        "text": "There are a couple of accessibility issues to be fixed",
+        "isnegative": "0"
+    },
+    {
+        "text": "Thank you for submitting that issue!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Looking forward to seeing those improvements",
+        "isnegative": "0"
+    },
+    {
+        "text": "I'm going to kill you",
+        "isnegative": "1"
+    },
+    {
+        "text": "You should die",
+        "isnegative": "1"
+    },
+    {
+        "text": "I hope you don't wake up",
+        "isnegative": "1"
+    },
+    {
+        "text": "Don't forget to kill yourself.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This code stinks",
+        "isnegative": "1"
+    },
+    {
+        "text": "You stink",
+        "isnegative": "1"
+    },
+    {
+        "text": "This code really sucks.",
+        "isnegative": "1"
+    },
+    {
+        "text": "It is `macOS-latest`:",
+        "isnegative": "0"
+    },
+    {
+        "text": "You should see a message like ",
+        "isnegative": "0"
+    },
+    {
+        "text": "* Your app has a small `AndroidManifest.xml`, not much in it",
+        "isnegative": "0"
+    },
+    {
+        "text": "@jonathanpeppers have you tried rebooting?",
+        "isnegative": "0"
+    },
+    {
+        "text": "I love you.",
+        "isnegative": "0"
+    },
+    {
+        "text": "you twat!",
+        "isnegative": "1"
+    },
+    {
+        "text": "you asshole",
+        "isnegative": "1"
+    },
+    {
+        "text": "There are some new test failures, this is terrible.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is so bad, see: https://example.com",
+        "isnegative": "1"
+    },
+    {
+        "text": "I'm always right, ship it",
+        "isnegative": "1"
+    },
+    {
+        "text": "In general you should avoid this pattern because it often leads to memory leaks, and that is definitely bad code.",
+        "isnegative": "1"
+    },
+    {
+        "text": "I've mentioned this three times already",
+        "isnegative": "1"
+    },
+    {
+        "text": "i have already mentioned this multiple times.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is awful.",
+        "isnegative": "1"
+    },
+    {
+        "text": "Whoever taught you this should be fired.",
+        "isnegative": "1"
+    },
+    {
+        "text": "This was painful to read.",
+        "isnegative": "1"
+    },
+    {
+        "text": "How did this ever work?",
+        "isnegative": "1"
+    },
+    {
+        "text": "You are a lovely person!",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are awesome",
+        "isnegative": "0"
+    },
+    {
+        "text": "Did you find any workaround",
+        "isnegative": "0"
+    },
+    {
+        "text": "Can you share a",
+        "isnegative": "0"
+    },
+    {
+        "text": "You can put things in your project file",
+        "isnegative": "0"
+    },
+    {
+        "text": "Once you do that, you will be able to select",
+        "isnegative": "0"
+    },
+    {
+        "text": "Congrats to your team",
+        "isnegative": "0"
+    },
+    {
+        "text": "I'd appreciate your guidance",
+        "isnegative": "0"
+    },
+    {
+        "text": "this should immediately be deleted",
+        "isnegative": "1"
+    },
+    {
+        "text": "This is so confusing.",
+        "isnegative": "1"
+    },
+    {
+        "text": "DevDiv software engineers",
+        "isnegative": "0"
+    },
+    {
+        "text": "Try to bucket all our issues into categories:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This reminds me of a past issue:",
+        "isnegative": "0"
+    },
+    {
+        "text": "With a package name of abc, you hit the error:",
+        "isnegative": "0"
+    },
+    {
+        "text": "Change your package name.",
+        "isnegative": "0"
+    },
+    {
+        "text": "I know Embedinnator-4000 is archived/readonly, hopefully you are able to work on your own fork?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why is this a blocker?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why do you need LinkAll?",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is to talk about",
+        "isnegative": "0"
+    },
+    {
+        "text": "Are customers generally wanting Hot Reload to be successful a bigger % of the time?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Microsoft Hackathon 2022",
+        "isnegative": "0"
+    },
+    {
+        "text": "No text is stored anywhere, at any time.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Note xUnit's custom scheduler `Xunit.Sdk.MaxConcurrencySyncContext.RunOnSyncContext`.",
+        "isnegative": "0"
+    },
+    {
+        "text": "If you're ever wanting a friendly place to watch, let me know",
+        "isnegative": "0"
+    },
+    {
+        "text": "Do you know when this started to happen?",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is cool.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Deleted:",
+        "isnegative": "0",
+        "notes": "The idea on this one, is you have a bulleted-list mentioning what you deleted."
+    },
+    {
+        "text": "I don't like this delete it",
+        "isnegative": "1"
+    },
+    {
+        "text": "Delete all of this junk",
+        "isnegative": "1"
+    },
+    {
+        "text": "I want to dogfood private builds",
+        "isnegative": "0"
+    },
+    {
+        "text": "I can show you more",
+        "isnegative": "0"
+    },
+    {
+        "text": "Send me one back, too.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Going to focus on Fix / Hack / Learn week",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your settings don't seem quite right:",
+        "isnegative": "0"
+    },
+    {
+        "text": ".NET 7 GA is going out a day before",
+        "isnegative": "0"
+    },
+    {
+        "text": "What \"FPS\" are you looking for?",
+        "isnegative": "0"
+    },
+    {
+        "text": "You mention that you disabled linking",
+        "isnegative": "0"
+    },
+    {
+        "text": "It didn't hurt anything, so we just left it.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Hmm, how did you end up with:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is hitting:",
+        "isnegative": "0"
+    },
+    {
+        "text": "When your",
+        "isnegative": "0"
+    },
+    {
+        "text": "`YourClass.YourType` has:",
+        "isnegative": "0"
+    },
+    {
+        "text": "So we don't really know how many customers hit it.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should create a C# method for you",
+        "isnegative": "0"
+    },
+    {
+        "text": "Hi Chuck,",
+        "isnegative": "0"
+    },
+    {
+        "text": "(\"technically\" it is not a \"must\", but asking to build with such configuration means you are stupid)",
+        "isnegative": "1"
+    },
+    {
+        "text": "This should create a C# method for you",
+        "isnegative": "0"
+    },
+    {
+        "text": "Going to close this",
+        "isnegative": "0"
+    },
+    {
+        "text": "[net7.0] Fix Managing Layout Children",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is a dedicated storage account",
+        "isnegative": "0"
+    },
+    {
+        "text": "Foolish child!",
+        "isnegative": "1"
+    },
+    {
+        "text": "Do you have any third-party antivirus installed?",
+        "isnegative": "0"
+    },
+    {
+        "text": "This partially reverts 8a0da60c.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Such as:",
+        "isnegative": "0"
+    },
+    {
+        "text": "Let me know what you think!",
+        "isnegative": "0"
+    },
+    {
+        "text": "His ",
+        "isnegative": "0"
+    },
+    {
+        "text": "Happy Birthday",
+        "isnegative": "0"
+    },
+    {
+        "text": "Roslyn emits a custom attribute that tells you to",
+        "isnegative": "0"
+    },
+    {
+        "text": "Mono has always let you do any one of:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This package may not be fully compatible with your project.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is fantastc",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are generous with your time",
+        "isnegative": "0"
+    },
+    {
+        "text": "I am pissed",
+        "isnegative": "1"
+    },
+    {
+        "text": "You prcik!",
+        "isnegative": "1"
+    },
+    {
+        "text": "114",
+        "isnegative": "0"
+    },
+    {
+        "text": "1838488",
+        "isnegative": "0"
+    },
+    {
+        "text": "Chet Husk",
+        "isnegative": "0",
+        "comment": "Sorry, Chet, LOL!"
+    },
+    {
+        "text": "TL;DR;",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is now fixed",
+        "isnegative": "0"
+    },
+    {
+        "text": "You mentioned you have been waiting.",
+        "isnegative": "0"
+    },
+    {
+        "text": "If you edit",
+        "isnegative": "0"
+    },
+    {
+        "text": "This optimization is not",
+        "isnegative": "0"
+    },
+    {
+        "text": "It's a big jump.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Why can't you just remove #code everywhere?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Can you remove #code everywhere?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Let me know what you think.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You're right.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your right.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are right!",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are right",
+        "isnegative": "0"
+    },
+    {
+        "text": "How w",
+        "isnegative": "0"
+    },
+    {
+        "text": "Ricardo E.",
+        "isnegative": "0"
+    },
+    {
+        "text": "That's partially correct: you also need to use normal parenthesis instead of curly braces.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This looks pretty much like what I did.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Have you ever seen it with?",
+        "isnegative": "0"
+    },
+    {
+        "text": "Yes, I saw your comment, I've been a bit busy with other work for a while.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is really weird, I can't reproduce.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Are you targeting main?",
+        "isnegative": "0"
+    },
+    {
+        "text": "It is a source of potential memory leaks...",
+        "isnegative": "0"
+    },
+    {
+        "text": "Obviously that's not optimal, so I'm working on a fix.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Check your .NET 8 path.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Check your .NET path.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Check your NET path.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Just checking",
+        "isnegative": "0"
+    },
+    {
+        "text": "I believe this is the feed you need",
+        "isnegative": "0"
+    },
+    {
+        "text": "Stop tracing",
+        "isnegative": "0"
+    },
+    {
+        "text": "I had to figure out new ways to manage myself and my work and keep track of everything.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are willing to dive into any problem you are given and educate yourself",
+        "isnegative": "0"
+    },
+    {
+        "text": "Another point is that you know really well who to ask for help",
+        "isnegative": "0"
+    },  {
+        "text": "low-hanging",
+        "isnegative": "0"
+    },
+    {
+        "text": "You should:",
+        "isnegative": "0"
+    },
+    {
+        "text": "wife",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is really close!",
+        "isnegative": "0"
+    },
+    {
+        "text": "I don't know the answer, so just checking.",
+        "isnegative": "0"
+    },
+    {
+        "text": "That's not a bad idea.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Everything really.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Just keep doing what you're doing!",
+        "isnegative": "0"
+    },
+    {
+        "text": "You are.",
+        "isnegative": "0"
+    },
+    {
+        "text": "You have.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Do you get an error message at all?",
+        "isnegative": "0"
+    },
+    {
+        "text": "The reason the symbols can't be found is because they're private:",
+        "isnegative": "0"
+    },
+    {
+        "text": "(maybe that part is just wrong error message displayed)",
+        "isnegative": "0"
+    },
+    {
+        "text": "Note:",
+        "isnegative": "0"
+    },
+    {
+        "text": "Sometimes it feels like this knowledge needs to be spread further across teams.",
+        "isnegative": "0"
+    },
+    {
+        "text": "#code might do this multiple times as it continues to read.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Ah my bad, sorry about the confusion.",
+        "isnegative": "0"
+    },
+    {
+        "text": "My only complaint has been lack of face-to-face with my immediate team.",
+        "isnegative": "0"
+    },
+    {
+        "text": "She immediately",
+        "isnegative": "0"
+    }
+    ,
+    {
+        "text": "But going to merge, so this can unblock other PRs.",
+        "isnegative": "0"
+    },
+    {
+        "text": "She immediately",
+        "isnegative": "0"
+    },
+    {
+        "text": "Honestly, I've seen a lot of ridiculous suggestions of this nature.",
+        "isnegative": "1"
+    },
+    {
+        "text": "Going to merge.",
+        "isnegative": "0"
+    },
+    {
+        "text": "10, however that [PR][0] is",
+        "isnegative": "0"
+    },
+    {
+        "text": "He'll talk a bit how this works",
+        "isnegative": "0"
+    },
+    {
+        "text": "This shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This was shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This feature shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This fix shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "This bug was shipped in:",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your helpfulness!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Your helpfulness is appreciated!",
+        "isnegative": "0"
+    },
+    {
+        "text": "I appreciate your helpfulness!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Peter",
+        "isnegative": "0"
+    },
+    {
+        "text": "His literal name is just Peter!",
+        "isnegative": "0"
+    },
+    {
+        "text": "Piotr",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is Peter, my colleague.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Here comes Piotr with the documents.",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't say what runtime it is...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't specify what version it is...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't mention what platform it runs on...",
+        "isnegative": "0"
+    },
+    {
+        "text": "They don't indicate what framework it uses...",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a little bit faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a bit faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be a little faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "This should be much faster.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Put all this in the",
+        "isnegative": "0"
+    },
+    {
+        "text": "Put all this in the repository",
+        "isnegative": "0"
+    },
+    {
+        "text": "Put all this in the folder",
+        "isnegative": "0"
+    },
+    {
+        "text": "Put all this in the file",
+        "isnegative": "0"
+    },
+    {
+        "text": "Put all this in the main branch",
+        "isnegative": "0"
+    },
+    {
+        "text": "This is still WIP.",
+        "isnegative": "0"
+    },
+    {
+        "text": "Is the answer \"don't do that\"?",
+        "isnegative": "0"
+    },
+    {
+        "text": "It is space and cat themed.",
+        "isnegative": "0"
+    }
+]
