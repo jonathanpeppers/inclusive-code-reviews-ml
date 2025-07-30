@@ -880,5 +880,9 @@
     {
         "text": "Run `` several times",
         "isnegative": "0"
+    },
+    {
+        "text": "Run `tests\\Mono.Android-Tests\\Mono.Android-Tests\\Mono.Android.NET-Tests.csproj` several times",
+        "isnegative": "0"
     }
 ]
