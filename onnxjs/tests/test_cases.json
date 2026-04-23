@@ -884,5 +884,9 @@
     {
         "text": "Run `tests\\Mono.Android-Tests\\Mono.Android-Tests\\Mono.Android.NET-Tests.csproj` several times",
         "isnegative": "0"
+    },
+    {
+        "text": "It's a valuable skill that I suggest you keep practicing!",
+        "isnegative": "0"
     }
 ]
