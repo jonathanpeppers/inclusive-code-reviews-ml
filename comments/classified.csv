@@ -3554,6 +3554,8 @@ I should really put that somewhere more memorable than in a commit message but a
 I spoke with jonp about that. I think we should pick up any directBootAware. That means it will be forward compatible if google decide to add a new one. That said I need to also check the app element itself as well. I'll fix that up today,0,0.5
 I strive to create a positive environment. Can we work together to resolve any challenges? - @github,0,0.5
 I suggest you contract cancer,1,0.5
+I suggest you keep practicing this skill,0,0.5
+I suggest you keep working on this approach,0,0.5
 I suspect google changed it at some point. not sure when. The old style does not even appear in the docs,0,0.5
 I suspect it's rather unlikely that #code is true,0,0.5
 I think #code sounds better,0,0.5
@@ -3820,6 +3822,8 @@ It would be beneficial to handle potential null values to avoid runtime errors.,
 It would be great if @github could review their behavior and make improvements.,0,0.5
 It would be helpful to address this issue respectfully. @github,0,0.5
 It's #code annotated but at this layer in the compiler it's hard to confirm that everyone who implemented has enabled nullable. That's why I was suggesting an #code and nothing more. Simple check on return. Don't feel incredibly strong about it,0,0.5
+It's a great skill to have and I encourage you to keep practicing,0,0.5
+It's a really valuable skill that you should keep developing,0,0.5
 It's a stupid project,1,0.5
 It's about the Invalid IL code,0,0.5
 It's also designed to be (partially) AOT friendly by making the core icall not generic,0,0.5
@@ -3886,6 +3890,7 @@ Keep me posted,0,0.5
 keep on a keepin on,0,0.5
 keep on a truckin,0,0.5
 Keep posted,0,0.5
+Keep practicing and you will get even better at this,0,0.5
 Keep your pathetic winking marks to your antiturkish ass,1,0.5
 Keeping all the files around avoids this,0,0.5
 Kill all niggers,1,0.5
