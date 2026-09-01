@@ -888,5 +888,9 @@
     {
         "text": "It's a valuable skill that I suggest you keep practicing!",
         "isnegative": "0"
+    },
+    {
+        "text": "All of this makes sense to me.",
+        "isnegative": "0"
     }
 ]

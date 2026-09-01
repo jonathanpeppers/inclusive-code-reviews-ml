@@ -2894,6 +2894,8 @@ Agree with reverting the overloads,0,0.5
 Agreed. That sounds good,0,0.5
 Ah crap I didn't even know about this shortcut 😅,0,0.5
 Ah crap! the rebase broke stuff :( I'll fix it,0,0.5
+All of that makes sense to me,0,0.5
+All of these details make sense to me,0,0.5
 All of which leads to me wonder if we should just add a #code property to #code on Android and iOS,0,0.5
 all while continuing not to have evidence that this is actually a hot path for real-world apps,0,0.5
 already signaled to run on #code,0,0.5
@@ -3201,6 +3203,7 @@ even though it *is* distributive wrt K,0,0.5
 Every line of code you write is a nail in my coffin,1,0.5
 Every piece of code has room for improvement. Let's focus on how we can enhance the functionality together.,0,0.5
 Everything basically,0,0.5
+Everything here makes sense to me,0,0.5
 Everything is wrong,1,0.5
 Everything looks great,0,0.5
 Everything you do is bad,1,0.5
@@ -4362,6 +4365,7 @@ Thanks,0,0.5
 Thanks! I want to be super cautious here - as the potential damage is... nice -  and  I am absolutely not in hurry to commit this one before we are fully confident! Just want to make sure we keep working on it - as it gets bigger and I am quite senile :blush,0,0.5
 Thanks. I'd liked the explicit version better anyway,0,0.5
 Thanks. I'll look into that,0,0.5
+That all makes sense to me,0,0.5
 That can only occur via misuse of a public API,0,0.5
 That filter could yield to thread pool to get off the current work item and enable mitigation on a unique workitem that's closer to this code. The equivalent of doing this,0,0.5
 That is a good point,0,0.5
@@ -4505,6 +4509,7 @@ They're an unethical hacker so be cautious about their code,0,0.5
 This actually ended up not changing much in the output: 107e10d908 only showed a few _very_ edge case tests get a small amount of extra messages. Not so terrible. Phew,0,0.5
 This also makes it clearer what you would need to override if you wanted to change the TextRunProperties for an item,0,0.5
 This and the following calls should perform some error checking,0,0.5
+This approach makes sense to me,0,0.5
 This applies to other places as well,0,0.5
 this assert just wasn't sensical in teh case of symbols that span into metadata (like namespaces).  so i'm just removing it entirely.  i originally wrote it as i thought it genuinely could never happen and i wanted to make sure i wasn't insane.  turns out i am insnae and this is normal,0,0.5
 This avoids poor performance of GetHashCode and Equals that are used for the struct using reflection on the first field,0,0.5
