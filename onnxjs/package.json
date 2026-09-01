@@ -9,7 +9,7 @@
     "typescript": "^4.7.2"
   },
   "scripts": {
-    "test": "tsc --outDir node_modules/.cache/onnxjs-tests && mocha node_modules/.cache/onnxjs-tests/*.js"
+    "test": "tsc --outDir obj/tests && mocha \"obj/tests/**/*.js\""
   },
   "dependencies": {
     "onnxruntime-node": "^1.11.0"
